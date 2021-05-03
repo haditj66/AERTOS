@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfTestGUIDRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TestGUIDRecord>
+    <TestName>DemoTestGroup_FailingTest</TestName>
+    <GUID>c540bd90-fbdf-49b0-89f9-71ebced1a386</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>DemoTestGroup_SuccessfulTest2</TestName>
+    <GUID>4b3e3be6-6a77-446e-9eee-8117b8125f94</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>DemoTestGroup_SuccessfulTest1</TestName>
+    <GUID>4d89fd7b-8ad8-48bf-bf74-7182786bdbb8</GUID>
+  </TestGUIDRecord>
+</ArrayOfTestGUIDRecord>

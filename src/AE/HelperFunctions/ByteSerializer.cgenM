@@ -1,0 +1,178 @@
+##Macro1 
+##Macro2 
+##Macro3 
+##Macro4
+##Macro5
+##Macro6
+##Macro7
+##Macro8
+##Macro9
+##Macro10
+##LoopIncrement1 6
+##LoopIncrement2 
+##LoopIncrement3 
+##LoopIncrement4 
+##LoopIncrement5
+##LoopIncrement6
+##LoopIncrement7
+##LoopIncrement8
+##LoopIncrement9
+##LoopIncrement10
+
+##ToFile ByteSerializer.h
+
+
+
+#pragma once
+
+#include <cstdint>
+
+
+constexpr int GetMax(const int a, const int b) {
+	return (a < b) ? b : a;
+}
+
+constexpr int GetMax(const int a, const int b, const int c) {
+	return GetMax(a, GetMax(b, c));
+}
+
+constexpr int GetMax(const int a, const int b, const int c, const int d) {
+	return GetMax(a, GetMax(b, c, d));
+}
+
+
+constexpr int GetMax(const int a, const int b, const int c, const int d, const int e) {
+	return GetMax(a, GetMax(b, c, d, e));
+}
+
+##LOOP_1##
+ 
+#define templateByteSerializer \
+class arg1_t <#if!1#>,\<#if!END#>
+<#if2#> class arg2_t <#if!2#>,\<#if!END#><#ifEND#>
+<#if3#> class arg3_t <#if!3#>,\<#if!END#><#ifEND#>
+<#if4#> class arg4_t <#if!4#>,\<#if!END#><#ifEND#>
+<#if5#> class arg5_t <#if!5#>,\<#if!END#><#ifEND#>
+<#if6#> class arg6_t <#if!6#>,\<#if!END#><#ifEND#>
+
+#define templateargsByteSerializer \
+arg1_t <#if!1#>,\<#if!END#>
+<#if2#> arg2_t <#if!2#>,\<#if!END#><#ifEND#>
+<#if3#> arg3_t <#if!3#>,\<#if!END#><#ifEND#>
+<#if4#> arg4_t <#if!4#>,\<#if!END#><#ifEND#>
+<#if5#> arg5_t <#if!5#>,\<#if!END#><#ifEND#>
+<#if6#> arg6_t <#if!6#>,\<#if!END#><#ifEND#>
+ 
+
+#define functionargsByteSerializer \
+arg1_t* arg1 <#if!1#>,\<#if!END#>
+<#if2#> arg2_t* arg2 <#if!2#>,\<#if!END#><#ifEND#>
+<#if3#> arg3_t* arg3 <#if!3#>,\<#if!END#><#ifEND#>
+<#if4#> arg4_t* arg4 <#if!4#>,\<#if!END#><#ifEND#>
+<#if5#> arg5_t* arg5 <#if!5#>,\<#if!END#><#ifEND#>
+<#if6#> arg6_t* arg6 <#if!6#>,\<#if!END#><#ifEND#>
+
+
+
+template<templateByteSerializer>
+class ByteSerializer<#i#>
+{
+
+protected:
+	static  ByteSerializer<#i#><templateargsByteSerializer>* getInstance();
+	ByteSerializer<#i#>(ByteSerializer<#i#><templateargsByteSerializer> const&) = delete;
+	void operator=(ByteSerializer<#i#><templateargsByteSerializer> const&) = delete;
+
+	static ByteSerializer<#i#><templateargsByteSerializer>* Instance;
+	 
+	ByteSerializer<#i#>() {};
+
+public:
+
+	static const uint32_t sizeOfCharData = sizeof(arg1_t) 
+<#if2#> + sizeof(arg2_t) <#ifEND#>
+<#if3#> + sizeof(arg3_t) <#ifEND#>
+<#if4#> + sizeof(arg4_t) <#ifEND#>
+<#if5#> + sizeof(arg5_t) <#ifEND#>
+<#if6#> + sizeof(arg6_t) <#ifEND#>;
+
+	
+ 
+
+	static void DeSerializeData(char* dataToSerializeFrom, functionargsByteSerializer) {
+
+		uint32_t indexOfDataSerialized = 0;
+		 
+
+		<#if1#> memcpy((void*)arg1, dataToSerializeFrom + indexOfDataSerialized, sizeof(arg1_t));
+		indexOfDataSerialized += sizeof(arg1_t);<#ifEND#>
+
+		<#if2#> memcpy((void*)arg2, dataToSerializeFrom + indexOfDataSerialized, sizeof(arg2_t));
+		indexOfDataSerialized += sizeof(arg2_t);<#ifEND#>
+
+		<#if3#> memcpy((void*)arg3, dataToSerializeFrom + indexOfDataSerialized, sizeof(arg3_t));
+		indexOfDataSerialized += sizeof(arg3_t);<#ifEND#>
+
+		<#if4#> memcpy((void*)arg4, dataToSerializeFrom + indexOfDataSerialized, sizeof(arg4_t));
+		indexOfDataSerialized += sizeof(arg4_t);<#ifEND#>
+
+		<#if5#> memcpy((void*)arg5, dataToSerializeFrom + indexOfDataSerialized, sizeof(arg5_t));
+		indexOfDataSerialized += sizeof(arg5_t);<#ifEND#>
+
+		<#if6#> memcpy((void*)arg6, dataToSerializeFrom + indexOfDataSerialized, sizeof(arg6_t));
+		indexOfDataSerialized += sizeof(arg6_t);<#ifEND#> 
+
+
+		 
+	};
+
+	static void SerializeData(char* dataToSerializeTo, functionargsByteSerializer) {
+
+		uint32_t indexOfDataSerialized = 0;
+		//arg1 get size of argument1 and serialize it; 
+
+		<#if1#> memcpy(dataToSerializeTo+indexOfDataSerialized, arg1, sizeof(arg1_t));
+		indexOfDataSerialized += sizeof(arg1_t);<#ifEND#>
+
+		<#if2#> memcpy(dataToSerializeTo+indexOfDataSerialized, arg2, sizeof(arg2_t));
+		indexOfDataSerialized += sizeof(arg2_t);<#ifEND#>
+
+		<#if3#> memcpy(dataToSerializeTo+indexOfDataSerialized, arg3, sizeof(arg3_t));
+		indexOfDataSerialized += sizeof(arg3_t);<#ifEND#>
+
+		<#if4#> memcpy(dataToSerializeTo+indexOfDataSerialized, arg4, sizeof(arg4_t));
+		indexOfDataSerialized += sizeof(arg4_t);<#ifEND#>
+
+		<#if5#> memcpy(dataToSerializeTo+indexOfDataSerialized, arg5, sizeof(arg5_t));
+		indexOfDataSerialized += sizeof(arg5_t);<#ifEND#>
+
+		<#if6#> memcpy(dataToSerializeTo+indexOfDataSerialized, arg6, sizeof(arg6_t));
+		indexOfDataSerialized += sizeof(arg6_t);<#ifEND#> 
+
+	};
+	 
+
+};
+ 
+
+
+template<templateByteSerializer>
+ByteSerializer<#i#><templateargsByteSerializer>* ByteSerializer<#i#><templateargsByteSerializer>::getInstance() {
+
+	if (Instance == 0)
+	{
+		static ByteSerializer<#i#><templateargsByteSerializer> soleInstance;
+		Instance = &soleInstance;
+		 
+	}
+	return Instance;
+
+}
+ 
+
+template<templateByteSerializer>
+ByteSerializer<#i#><templateargsByteSerializer>* ByteSerializer<#i#><templateargsByteSerializer>::Instance = nullptr;
+
+
+
+##END##

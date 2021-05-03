@@ -1,0 +1,459 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/croutine.c.obj"
+		},
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/event_groups.c.obj"
+		},
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/list.c.obj"
+		},
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/queue.c.obj"
+		},
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/stream_buffer.c.obj"
+		},
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/tasks.c.obj"
+		},
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/timers.c.obj"
+		},
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/portable/MSVC-MingW/port.c.obj"
+		},
+		{
+			"path" : "CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/portable/MemMang/heap_5.c.obj"
+		}
+	],
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"create_bsp_library",
+			"create_bsp_framework_library_from_vars",
+			"include",
+			"_target_link_libraries",
+			"target_link_libraries",
+			"add_compile_definitions"
+		],
+		"files" : 
+		[
+			"C:/Program Files (x86)/Sysprogs/VisualGDB/CMake/embedded/bsp.cmake",
+			"C:/Program Files (x86)/Sysprogs/VisualGDB/CMake/embedded/efp.cmake",
+			"cmake/GetFREERTOS_MINGW.cmake",
+			"CMakeLists.txt",
+			"cmake/MyCmakeHelpers.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 163,
+				"parent" : 0
+			},
+			{
+				"file" : 2,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 53,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 13,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 33,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 13,
+				"parent" : 6
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 113,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 112,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 115,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 117,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g3 -O0   -ffunction-sections -fdata-sections"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 8,
+					"define" : "AEConfigLocation=\"C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h\""
+				},
+				{
+					"backtrace" : 9,
+					"define" : "MCU_ARM"
+				},
+				{
+					"backtrace" : 10,
+					"define" : "MCU_ARM_ARCHITECTURE"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "SIMULATION"
+				},
+				{
+					"backtrace" : 9,
+					"define" : "STM32F411RE"
+				},
+				{
+					"backtrace" : 12,
+					"define" : "USING_FREERTOS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/CMSIS_RTOS"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/Include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/Portable/MSVC-MingW"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/conf"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				6,
+				8,
+				9,
+				27,
+				29
+			],
+			"traceableCompileCommandFragments" : 
+			[
+				{
+					"backtrace" : 7,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "-fdata-sections"
+				}
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "BSP::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "BSP_com.sysprogs.arm.stm32.freertos::@6890427a1f51a3e7e1df",
+	"name" : "BSP_com.sysprogs.arm.stm32.freertos",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0,
+				5,
+				7
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				6,
+				8,
+				9,
+				27,
+				29
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				28
+			]
+		},
+		{
+			"name" : "Object Libraries",
+			"sourceIndexes" : 
+			[
+				30
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/License/license.txt",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/croutine.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/event_groups.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/list.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/queue.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/readme.txt",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/stream_buffer.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/st_readme.txt",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/tasks.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/timers.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/croutine.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/deprecated_definitions.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/event_groups.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/FreeRTOS.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/list.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/message_buffer.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/mpu_prototypes.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/mpu_wrappers.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/portable.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/projdefs.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/queue.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/semphr.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/StackMacros.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/stack_macros.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/stream_buffer.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/task.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/include/timers.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/portable/MSVC-MingW/port.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/portable/MSVC-MingW/portmacro.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/portable/MemMang/heap_5.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 7,
+			"isGenerated" : true,
+			"path" : "cmake-build-vgdb/CMakeFiles/BSP.dir/C_/Program_Files_(x86)/Sysprogs/VisualGDB/CMake/embedded/dummy.c.obj",
+			"sourceGroupIndex" : 3
+		}
+	],
+	"type" : "OBJECT_LIBRARY"
+}

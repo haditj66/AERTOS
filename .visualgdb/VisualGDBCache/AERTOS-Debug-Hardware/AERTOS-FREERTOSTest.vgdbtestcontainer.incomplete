@@ -1,0 +1,98 @@
+--- GDB Session ---
+
+--- openocd ---
+C:\Users\Hadi\AppData\Local\VisualGDB\EmbeddedDebugPackages\com.sysprogs.arm.openocd\bin\openocd.exe -c "gdb_port 63990" -c "telnet_port 63989" -f interface/stlink.cfg -f target/stm32f4x.cfg -c init -c "reset init" -c "echo VisualGDB_OpenOCD_Ready"
+Open On-Chip Debugger 0.10.0 (2020-12-28) [https://github.com/sysprogs/openocd]
+Licensed under GNU GPL v2
+libusb1 09e75e98b4d9ea7909e8837b7a3f00dda4589dc3
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 2000 kHz
+Info : STLINK V2J17S0 (API v2) VID:PID 0483:3748
+Info : Target voltage: 2.893034
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : starting gdb server for stm32f4x.cpu on 63990
+Info : Listening on port 63990 for gdb connections
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08001218 msp: 0x20020000
+VisualGDB_OpenOCD_Ready
+Info : Listening on port 6666 for tcl connections
+Info : Listening on port 63989 for telnet connections
+Info : accepting 'gdb' connection on tcp/63990
+Info : device id = 0x10006431
+Info : flash size = 512 kbytes
+Info : flash size = 512 bytes
+Warn : Prefer GDB command "target extended-remote 63990" instead of "target remote 63990"
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08001218 msp: 0x20020000
+Info : device id = 0x10006431
+Info : flash size = 512 kbytes
+Info : flash size = 512 bytes
+flash_bank_summary:0x8000000|0x80000|stm32f4x.flash
+flash_bank_summary:0x1fff7800|0x200|stm32f4x.otp
+FLASH progress reporting is now on
+
+
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08001218 msp: 0x20020000
+Info : Erasing FLASH: 0x08000000-0x08060000...
+Info : Programming FLASH (2 sections, 319496 bytes)...
+Info : Programming FLASH section 1/2 (408 bytes) at 0x08000000...
+Info : Padding image section 0 at 0x08000198 with 8 bytes
+Info : flash_write_start:0x8000000|0x804e010|stm32f4x.flash
+Info : flash_write_done:stm32f4x.flash
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08001220 msp: 0x20020000
+Info : dropped 'gdb' connection (error -400)
+
+
+--- openocd ---
+C:\Users\Hadi\AppData\Local\VisualGDB\EmbeddedDebugPackages\com.sysprogs.arm.openocd\bin\openocd.exe -c "gdb_port 63990" -c "telnet_port 63989" -f interface/stlink.cfg -f target/stm32f4x.cfg -c init -c "reset init" -c "echo VisualGDB_OpenOCD_Ready"
+Open On-Chip Debugger 0.10.0 (2020-12-28) [https://github.com/sysprogs/openocd]
+Licensed under GNU GPL v2
+libusb1 09e75e98b4d9ea7909e8837b7a3f00dda4589dc3
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 2000 kHz
+Info : STLINK V2J17S0 (API v2) VID:PID 0483:3748
+Info : Target voltage: 2.893034
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : starting gdb server for stm32f4x.cpu on 63990
+Info : Listening on port 63990 for gdb connections
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08001218 msp: 0x20020000
+VisualGDB_OpenOCD_Ready
+Info : Listening on port 6666 for tcl connections
+Info : Listening on port 63989 for telnet connections
+Info : accepting 'gdb' connection on tcp/63990
+Info : device id = 0x10006431
+Info : flash size = 512 kbytes
+Info : flash size = 512 bytes
+Warn : Prefer GDB command "target extended-remote 63990" instead of "target remote 63990"
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08001218 msp: 0x20020000
+Info : device id = 0x10006431
+Info : flash size = 512 kbytes
+Info : flash size = 512 bytes
+flash_bank_summary:0x8000000|0x80000|stm32f4x.flash
+flash_bank_summary:0x1fff7800|0x200|stm32f4x.otp
+FLASH progress reporting is now on
+
+
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08001218 msp: 0x20020000
+Info : Erasing FLASH: 0x08000000-0x08060000...
+Info : Programming FLASH (2 sections, 319496 bytes)...
+Info : Programming FLASH section 1/2 (408 bytes) at 0x08000000...
+Info : Padding image section 0 at 0x08000198 with 8 bytes
+Info : flash_write_start:0x8000000|0x804e010|stm32f4x.flash
+Info : flash_write_done:stm32f4x.flash
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08001220 msp: 0x20020000
+Info : dropped 'gdb' connection (error -400)
+
+

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<VisualGDBTestSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Tests>
+    <Test xsi:type="EmbeddedIntegrationTest">
+      <Name>RecordedIntegrationTest1</Name>
+      <Steps>
+        <TestStep xsi:type="CreateBreakpoint">
+          <BreakpointRequest xsi:type="CodeTag">
+            <Name>NewTestTag1</Name>
+            <RelativeFilePath>src\AE\exeTest\main.cpp</RelativeFilePath>
+          </BreakpointRequest>
+          <BreakpointNumber>2</BreakpointNumber>
+        </TestStep>
+        <TestStep xsi:type="CreateBreakpoint">
+          <BreakpointRequest xsi:type="CodeTag">
+            <Name>NewTestTag2</Name>
+            <RelativeFilePath>src\AE\exeTest\main.cpp</RelativeFilePath>
+          </BreakpointRequest>
+          <BreakpointNumber>3</BreakpointNumber>
+        </TestStep>
+        <TestStep xsi:type="ResumeExecution">
+          <Type>Continue</Type>
+          <ExpectedBreakpoint>2</ExpectedBreakpoint>
+        </TestStep>
+        <TestStep xsi:type="ResumeExecution">
+          <Type>Continue</Type>
+          <ExpectedBreakpoint>3</ExpectedBreakpoint>
+        </TestStep>
+        <TestStep xsi:type="CreateTimeLabel">
+          <LabelNumber>1</LabelNumber>
+          <LabelName>MyTestTimer1</LabelName>
+        </TestStep>
+        <TestStep xsi:type="CreateBreakpoint">
+          <BreakpointRequest xsi:type="CodeTag">
+            <Name>NewTestTag3</Name>
+            <RelativeFilePath>src\AE\exeTest\main.cpp</RelativeFilePath>
+          </BreakpointRequest>
+          <BreakpointNumber>4</BreakpointNumber>
+        </TestStep>
+        <TestStep xsi:type="ResumeExecution">
+          <Type>Continue</Type>
+          <ExpectedBreakpoint>4</ExpectedBreakpoint>
+        </TestStep>
+        <TestStep xsi:type="VerifyTimeLabel">
+          <MaxTicks>384</MaxTicks>
+          <MinTicks>1</MinTicks>
+          <ReferenceTime>254</ReferenceTime>
+          <LabelNumber>1</LabelNumber>
+        </TestStep>
+      </Steps>
+    </Test>
+    <Test xsi:type="EmbeddedIntegrationTest">
+      <Name>RecordedIntegrationTest2</Name>
+      <Steps>
+        <TestStep xsi:type="CreateBreakpoint">
+          <BreakpointRequest xsi:type="Function">
+            <Name>main</Name>
+          </BreakpointRequest>
+          <BreakpointNumber>1</BreakpointNumber>
+        </TestStep>
+        <TestStep xsi:type="ResumeExecution">
+          <Type>Continue</Type>
+          <ExpectedBreakpoint>1</ExpectedBreakpoint>
+        </TestStep>
+        <TestStep xsi:type="CreateBreakpoint">
+          <BreakpointRequest xsi:type="CodeTag">
+            <Name>NewTestTag1</Name>
+            <RelativeFilePath>src\AE\exeTest\main.cpp</RelativeFilePath>
+          </BreakpointRequest>
+          <BreakpointNumber>2</BreakpointNumber>
+        </TestStep>
+        <TestStep xsi:type="CreateBreakpoint">
+          <BreakpointRequest xsi:type="CodeTag">
+            <Name>NewTestTag2</Name>
+            <RelativeFilePath>src\AE\exeTest\main.cpp</RelativeFilePath>
+          </BreakpointRequest>
+          <BreakpointNumber>3</BreakpointNumber>
+        </TestStep>
+        <TestStep xsi:type="ResumeExecution">
+          <Type>Continue</Type>
+          <ExpectedBreakpoint>2</ExpectedBreakpoint>
+        </TestStep>
+        <TestStep xsi:type="CreateTimeLabel">
+          <LabelNumber>1</LabelNumber>
+          <LabelName>MyTimer1</LabelName>
+        </TestStep>
+        <TestStep xsi:type="ResumeExecution">
+          <Type>Continue</Type>
+          <ExpectedBreakpoint>3</ExpectedBreakpoint>
+        </TestStep>
+        <TestStep xsi:type="VerifyTimeLabel">
+          <MaxTicks>5478</MaxTicks>
+          <MinTicks>0</MinTicks>
+          <ReferenceTime>4565</ReferenceTime>
+          <LabelNumber>1</LabelNumber>
+        </TestStep>
+      </Steps>
+    </Test>
+ 
+  </Tests>
+</VisualGDBTestSet>

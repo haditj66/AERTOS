@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "AERTOS", "AERTOS.vgdbcmake", "{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Hardware = Debug|Hardware
+		Debug|Simulation = Debug|Simulation
+		MinSizeRel|Hardware = MinSizeRel|Hardware
+		MinSizeRel|Simulation = MinSizeRel|Simulation
+		Release|Hardware = Release|Hardware
+		Release|Simulation = Release|Simulation
+		RelWithDebInfo|Hardware = RelWithDebInfo|Hardware
+		RelWithDebInfo|Simulation = RelWithDebInfo|Simulation
+		Debug|Linux = Debug|Linux
+		MinSizeRel|Linux = MinSizeRel|Linux
+		Release|Linux = Release|Linux
+		RelWithDebInfo|Linux = RelWithDebInfo|Linux
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|Hardware.ActiveCfg = Debug|Hardware
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|Hardware.Build.0 = Debug|Hardware
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|Hardware.ActiveCfg = MinSizeRel|Hardware
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|Hardware.Build.0 = MinSizeRel|Hardware
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|Hardware.ActiveCfg = Release|Hardware
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|Hardware.Build.0 = Release|Hardware
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|Hardware.ActiveCfg = RelWithDebInfo|Hardware
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|Hardware.Build.0 = RelWithDebInfo|Hardware
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|Simulation.ActiveCfg = Debug|Simulation
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|Simulation.Build.0 = Debug|Simulation
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|Simulation.ActiveCfg = MinSizeRel|Simulation
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|Simulation.Build.0 = MinSizeRel|Simulation
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|Simulation.ActiveCfg = Release|Simulation
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|Simulation.Build.0 = Release|Simulation
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|Simulation.ActiveCfg = RelWithDebInfo|Simulation
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|Simulation.Build.0 = RelWithDebInfo|Simulation
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|Linux.ActiveCfg = Debug|Linux
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|Linux.Build.0 = Debug|Linux
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|Linux.ActiveCfg = MinSizeRel|Linux
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|Linux.Build.0 = MinSizeRel|Linux
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|Linux.ActiveCfg = Release|Linux
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|Linux.Build.0 = Release|Linux
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|Linux.ActiveCfg = RelWithDebInfo|Linux
+		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|Linux.Build.0 = RelWithDebInfo|Linux
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5BCF290-C203-4033-9DCA-01515FDD4F06}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+C:\Users\Hadi\AppData\Local\VisualGDB\CMake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug ../../.. -G Ninja -DCMAKE_BUILD_TYPE=DEBUG -DTOOLCHAIN_ROOT=C:/SysGCC/mingw32 "-DCMAKE_MAKE_PROGRAM=C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe" -DCMAKE_TOOLCHAIN_FILE=C:\visualgdb_projects\AERTOSCopy/build/Simulation/Debug/toolchain.cmake -DPLATFORM=Simulation C:\visualgdb_projects\AERTOSCopy
+_BSP_MCU -----------------STM32F411RE
+ _BSP_BSP_CONFIGURATION_com.sysprogs.bspoptions.arm.core ----------------- 
+CMAKE_BUILD_TYPE -----------------DEBUG
+PLATFORM -----------------Simulation
+FREERTOS_INCLUDES------------------- C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/CMSIS_RTOS;C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/Include;C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/Portable/MSVC-MingW
+_exe_SOURCES-------------main.cpp;C:/visualgdb_projects/AERTOSCopy/test/conf_group1/AEConfig.h;C:/visualgdb_projects/AERTOSCopy/test/conf_group1/UserBSPConfig.cpp
+_extra_sources-------------
+_exe_BSP_ALIAS_LIBRARIES-------------BSP
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/visualgdb_projects/AERTOSCopy/cmake-build-vgdb

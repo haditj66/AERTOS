@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/AECore.dir/main.cpp.o CMakeFiles/AECore.dir/__/__/__/test/conf_group1/UserBSPConfig.cpp.o  -o AECore  ../libAECoreLib.a 

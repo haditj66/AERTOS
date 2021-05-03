@@ -1,0 +1,6 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DUSINGLINUX -G "CodeBlocks - Unix Makefiles" /tmp/tmp.8nHQaDrhzQ
+Parse error in command line argument: -DUSINGLINUX
+Should be: VAR:type=value
+CMake Error: No cmake script provided.
+CMake Error: Problem processing arguments. Aborting.
+
