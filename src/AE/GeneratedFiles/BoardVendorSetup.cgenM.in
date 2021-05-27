@@ -1,0 +1,43 @@
+##Macro1 hello
+##Macro2 this is code
+##Macro3 somenamespacee::someclass
+##Macro4
+##Macro5
+##Macro6
+##Macro7
+##Macro8
+##Macro9
+##Macro10
+##LoopIncrement1 10
+##LoopIncrement2 10
+##LoopIncrement3 20
+##LoopIncrement4 20
+##LoopIncrement5 20
+##LoopIncrement6
+##LoopIncrement7
+##LoopIncrement8
+##LoopIncrement9
+##LoopIncrement10
+
+##ToFile BoardVendorSetup.h
+
+#include "AE_Init.h"
+
+
+class BoardVendorSetup : public AESetUpBase
+{
+public:
+	BoardVendorSetup() {}; 
+	
+	void RTOSInit(){
+	AESetUpBase::AESetUpBase();
+	
+	
+	}
+	
+	void BSPInit(){}
+	//any things needed to be changed in the BSP to satisfy the RTOS being used
+	void RTOS_ToBSP_SpecificCode(){}
+
+private: 
+};

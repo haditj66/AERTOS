@@ -1,0 +1,167 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"build" : "src/AE",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/AE",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "src/AE/exeTest",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/AE/exeTest",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "DEBUG",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "AERTOS",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "AECore::@fbc3202595bd5a31289e",
+					"jsonFile" : "target-AECore-DEBUG-3f0e961a37cb8229d30d.json",
+					"name" : "AECore",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "AECore-bin::@fbc3202595bd5a31289e",
+					"jsonFile" : "target-AECore-bin-DEBUG-ea89bc3ae3c87aa74539.json",
+					"name" : "AECore-bin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "AECoreLib::@dbae314adb83077d4c0f",
+					"jsonFile" : "target-AECoreLib-DEBUG-0aa5ec8796c277b89fe0.json",
+					"name" : "AECoreLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP-DEBUG-77e59511cfe9d9e3247c.json",
+					"name" : "BSP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_EFP_semihosting_and_profiler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_EFP_semihosting_and_profiler-DEBUG-7c098cc3287bb8ca0f63.json",
+					"name" : "BSP_EFP_semihosting_and_profiler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_com.sysprogs.arm.stm32.freertos::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_com.sysprogs.arm.stm32.freertos-DEBUG-a055e2ae4df15c4963f3.json",
+					"name" : "BSP_com.sysprogs.arm.stm32.freertos",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_com.sysprogs.arm.stm32.hal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_com.sysprogs.arm.stm32.hal-DEBUG-cd63f778a3d671a9ab6d.json",
+					"name" : "BSP_com.sysprogs.arm.stm32.hal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_com.sysprogs.arm.stm32.ll::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_com.sysprogs.arm.stm32.ll-DEBUG-356e4ed35bafe8b44d6a.json",
+					"name" : "BSP_com.sysprogs.arm.stm32.ll",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TESTFW::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TESTFW-DEBUG-bb370a127a467ad00201.json",
+					"name" : "TESTFW",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/visualgdb_projects/AERTOSCopy/build/Hardware/Debug",
+		"source" : "C:/visualgdb_projects/AERTOSCopy"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

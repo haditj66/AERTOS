@@ -1,0 +1,5 @@
+
+NAME AERTOS_ENVIRONMENT
+DESCRIPTION what environment is this AE application set in
+POSSIBLEVALUES RTOS_MICRO
+CONSTRICTS_LATER_OPTIONS RTOS_MICRO*Build_System*VSGDBCmake_Ninja;RTOS_PC*Build_System*mingw

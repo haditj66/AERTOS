@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ArrayOfTestGUIDRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TestGUIDRecord>
+    <TestName>RecordedIntegrationTest1</TestName>
+    <GUID>89ab2263-95cf-4fd7-a987-5eebd4893f8b</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>RecordedIntegrationTest2</TestName>
+    <GUID>e9f228fb-09f8-4cd8-8838-ed51d02df243</GUID>
+  </TestGUIDRecord>
+</ArrayOfTestGUIDRecord>

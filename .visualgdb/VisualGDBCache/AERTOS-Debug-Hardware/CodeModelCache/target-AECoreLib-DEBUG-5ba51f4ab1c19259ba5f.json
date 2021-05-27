@@ -1,0 +1,1448 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/AE/libAECoreLib.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_bsp_based_library",
+			"_target_link_libraries",
+			"target_link_libraries",
+			"target_include_directories",
+			"add_compile_definitions"
+		],
+		"files" : 
+		[
+			"C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/root.cmake",
+			"src/AE/CMakeLists.txt",
+			"cmake/MyCmakeHelpers.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 153,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 207,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 13,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 184,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 185,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 186,
+				"parent" : 0
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 12,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 112,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 113,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 19,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g3 -O0   -fno-exceptions -fno-rtti -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -include C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerFreeRTOSHooks.h"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 9,
+					"define" : "AEConfigLocation=\"C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h\""
+				},
+				{
+					"backtrace" : 4,
+					"define" : "ARM_MATH_CM4"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "DEBUG=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_BLOCKING_MODE=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_BUFFER_SIZE=4096"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_PROFILER_DRIVER=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_STDIO_DRIVER=1"
+				},
+				{
+					"backtrace" : 10,
+					"define" : "M4"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "MCU_ARM"
+				},
+				{
+					"backtrace" : 10,
+					"define" : "MCU_ARM_ARCHITECTURE"
+				},
+				{
+					"backtrace" : 12,
+					"define" : "PRINT_METHOD"
+				},
+				{
+					"backtrace" : 12,
+					"define" : "PRINT_SEMIHOSTING"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "PROFILER_STM32F4"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "STM32F411RE"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "STM32F411xE"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_FREERTOS"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_FREERTOS_IF_FOUND"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_HAL_DRIVER"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "flash_layout"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/HelperFunctions"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/board_files"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/CMSIS_RTOS"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/Portable/gcc/ARM_CM4F"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc/Legacy"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/CMSIS_HAL/Core/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/CMSIS_HAL/Device/ST/STM32F4xx/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/CMSIS_HAL/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/CMSIS_HAL/RTOS2/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/conf"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				2,
+				6,
+				9,
+				15
+			],
+			"traceableCompileCommandFragments" : 
+			[
+				{
+					"backtrace" : 4,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mcpu=cortex-m4"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mthumb"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mfpu=fpv4-sp-d16"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mfloat-abi=hard"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerFreeRTOSHooks.h"
+				}
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g3 -O0   -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -include C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerFreeRTOSHooks.h"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 9,
+					"define" : "AEConfigLocation=\"C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h\""
+				},
+				{
+					"backtrace" : 4,
+					"define" : "ARM_MATH_CM4"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "DEBUG=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_BLOCKING_MODE=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_BUFFER_SIZE=4096"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_PROFILER_DRIVER=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_STDIO_DRIVER=1"
+				},
+				{
+					"backtrace" : 10,
+					"define" : "M4"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "MCU_ARM"
+				},
+				{
+					"backtrace" : 10,
+					"define" : "MCU_ARM_ARCHITECTURE"
+				},
+				{
+					"backtrace" : 12,
+					"define" : "PRINT_METHOD"
+				},
+				{
+					"backtrace" : 12,
+					"define" : "PRINT_SEMIHOSTING"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "PROFILER_STM32F4"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "STM32F411RE"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "STM32F411xE"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_FREERTOS"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_FREERTOS_IF_FOUND"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_HAL_DRIVER"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "flash_layout"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/HelperFunctions"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/board_files"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/CMSIS_RTOS"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/Portable/gcc/ARM_CM4F"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc/Legacy"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/CMSIS_HAL/Core/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/CMSIS_HAL/Device/ST/STM32F4xx/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/CMSIS_HAL/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/CMSIS_HAL/RTOS2/Include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/conf"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				11,
+				14
+			],
+			"traceableCompileCommandFragments" : 
+			[
+				{
+					"backtrace" : 4,
+					"fragment" : "-mcpu=cortex-m4"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mthumb"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mfpu=fpv4-sp-d16"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mfloat-abi=hard"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerFreeRTOSHooks.h"
+				}
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "BSP::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "BSP_com.sysprogs.arm.stm32.freertos::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "BSP_EFP_semihosting_and_profiler::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "BSP_com.sysprogs.arm.stm32.ll::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "BSP_com.sysprogs.arm.stm32.hal::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "AECoreLib::@dbae314adb83077d4c0f",
+	"name" : "AECoreLib",
+	"nameOnDisk" : "libAECoreLib.a",
+	"paths" : 
+	{
+		"build" : "src/AE",
+		"source" : "src/AE"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				3,
+				4,
+				5,
+				7,
+				8,
+				10,
+				12,
+				13,
+				19
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				2,
+				6,
+				9,
+				11,
+				14,
+				15
+			]
+		},
+		{
+			"name" : "HelperFunctions",
+			"sourceIndexes" : 
+			[
+				16,
+				17,
+				18
+			]
+		},
+		{
+			"name" : "Object Libraries",
+			"sourceIndexes" : 
+			[
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEDefines.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEUtils.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEUtils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEObjects.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AE_Init.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AE_Init.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESet.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AECircularBuffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/FreeRTOSConfigFiles/FreeRTOSConfig.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/boards/STM32F411RE/board_files/UARTConsole.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/hal/boards/STM32F411RE/board_files/UARTConsole.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/hal/boards/STM32F411RE/board_files/stm32f4xx_hal_conf.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/boards/STM32F411RE/board_files/system_stm32f4xx.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles/AEPerformanceTimer.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/HelperFunctions/AEmemcpy.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/HelperFunctions/ByteSerializer.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/HelperFunctions/FastSine.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEPerformanceTimer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP.dir/09c76d75be9a494bed4d924280db53e7/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/StartupFiles/startup_stm32f411xe.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/09c76d75be9a494bed4d924280db53e7/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/croutine.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/a528947e37de7715dda0eba044d3edb0/com.sysprogs.arm.stm32/FreeRTOS/Source/event_groups.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/09c76d75be9a494bed4d924280db53e7/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/list.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/09c76d75be9a494bed4d924280db53e7/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/queue.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/a528947e37de7715dda0eba044d3edb0/com.sysprogs.arm.stm32/FreeRTOS/Source/stream_buffer.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/09c76d75be9a494bed4d924280db53e7/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/tasks.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/09c76d75be9a494bed4d924280db53e7/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/timers.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/5a3635d2199b4fb9632a69d2a7189a50/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/5a3635d2199b4fb9632a69d2a7189a50/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/5a3635d2199b4fb9632a69d2a7189a50/FreeRTOS/Source/portable/MemMang/heap_1.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dfsdm.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/027e43ff491c8b9152964f406da55de9/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpsmbus.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smbus.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_crc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dac.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma2d.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_exti.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmpi2c.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_i2c.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_lptim.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_pwr.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rcc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rng.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rtc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_spi.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usart.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_utils.c.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_EFP_semihosting_and_profiler.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/FastSemihosting.cpp.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_EFP_semihosting_and_profiler.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/InstrumentingProfiler.cpp.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_EFP_semihosting_and_profiler.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/TestResourceManager.cpp.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_EFP_semihosting_and_profiler.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/SamplingProfiler.cpp.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_EFP_semihosting_and_profiler.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerDriver_STM32_HAL.cpp.obj",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/CMakeFiles/BSP_EFP_semihosting_and_profiler.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerRTOS_FreeRTOS.c.obj",
+			"sourceGroupIndex" : 3
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

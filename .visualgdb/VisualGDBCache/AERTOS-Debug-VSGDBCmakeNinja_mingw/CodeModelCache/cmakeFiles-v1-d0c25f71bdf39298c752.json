@@ -1,0 +1,898 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/CgenCmakeConfigFunctions.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/FromGuiOrProject.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_mingw/Debug/CGensaveFiles/cgenCmakeCache.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineSystem.cmake"
+		},
+		{
+			"path" : "toolchains/mingw/toolchain.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/root.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/bsp.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/coverage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/prefixes.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/testfw.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/efp.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/resources.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/VisualGDB/FindFrameworks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeSystem.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeSystem.cmake"
+		},
+		{
+			"path" : "toolchains/mingw/toolchain.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/root.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/bsp.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/coverage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/prefixes.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/testfw.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/efp.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/resources.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/VisualGDB/FindFrameworks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompilerId.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCompilerIdDetection.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/ADSP-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/ARMClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/AppleClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Clang-DetermineCompilerInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Borland-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Bruce-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Clang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Clang-DetermineCompilerInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Compaq-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Cray-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Embarcadero-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Fujitsu-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GHS-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/HP-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/IAR-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Intel-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/MSVC-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/NVIDIA-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/PGI-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/PathScale-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/SCO-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/SDCC-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/SunPro-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/TI-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Watcom-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/XL-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/XLClang-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/zOS-C-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeFindBinUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU-FindBinUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCCompiler.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows-Determine-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompilerId.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCompilerIdDetection.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/ADSP-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/ARMClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/AppleClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Clang-DetermineCompilerInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Borland-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Clang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Clang-DetermineCompilerInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Cray-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Embarcadero-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Fujitsu-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GHS-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/HP-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/IAR-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Intel-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/MSVC-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/NVIDIA-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/PGI-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/PathScale-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/SCO-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/TI-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/Watcom-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/XL-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeFindBinUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU-FindBinUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCXXCompiler.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineASMCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompilerId.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCompilerIdDetection.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeFindBinUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU-FindBinUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeASMCompiler.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeASMCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/WindowsPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Internal/CMakeCheckCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeRCCompiler.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeRCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows-windres.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeTestRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeTestCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeTestCompilerCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompilerABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeParseImplicitIncludeInfo.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeParseImplicitLinkInfo.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeTestCompilerCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCCompilerABI.c"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompileFeatures.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Internal/FeatureTesting.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCCompiler.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows-GNU-C-ABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeTestCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeTestCompilerCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompilerABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeParseImplicitIncludeInfo.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeParseImplicitLinkInfo.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeTestCompilerCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeDetermineCompileFeatures.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Internal/FeatureTesting.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCXXCompiler.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeASMInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU-ASM.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeTestASMCompiler.cmake"
+		},
+		{
+			"path" : "cmake/MyCmakeHelpers.cmake"
+		},
+		{
+			"path" : "cmake/GetBoardMetaTypes.cmake"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFile.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFilecpp.cgenM.in"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/VisualGDB/FindBSP.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/TestFrameworks/com.sysprogs.unittest.googletest/framework.cmake"
+		},
+		{
+			"path" : "cmake/GetFREERTOS_MINGW.cmake"
+		},
+		{
+			"path" : "src/AE/CMakeLists.txt"
+		},
+		{
+			"path" : "src/AE/exeTest/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug",
+		"source" : "C:/visualgdb_projects/AERTOSCopy"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

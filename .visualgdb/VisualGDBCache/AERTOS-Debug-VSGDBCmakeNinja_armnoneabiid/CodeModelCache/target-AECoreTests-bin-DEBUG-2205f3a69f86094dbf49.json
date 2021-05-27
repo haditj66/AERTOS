@@ -1,0 +1,95 @@
+{
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"add_bsp_based_executable",
+			"create_tests_for_target"
+		],
+		"files" : 
+		[
+			"C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/root.cmake",
+			"cmake/MyCmakeHelpers.cmake",
+			"src/AE/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 215,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 92,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 94,
+				"parent" : 2
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "AECoreTests::@dbae314adb83077d4c0f"
+		}
+	],
+	"id" : "AECoreTests-bin::@dbae314adb83077d4c0f",
+	"name" : "AECoreTests-bin",
+	"paths" : 
+	{
+		"build" : "src/AE",
+		"source" : "src/AE"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_armnoneabiid/Debug/src/AE/CMakeFiles/AECoreTests-bin",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_armnoneabiid/Debug/src/AE/CMakeFiles/AECoreTests-bin.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_armnoneabiid/Debug/src/AE/AECoreTests.bin.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

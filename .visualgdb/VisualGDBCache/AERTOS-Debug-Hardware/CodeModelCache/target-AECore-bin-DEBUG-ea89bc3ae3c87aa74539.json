@@ -1,0 +1,87 @@
+{
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"add_bsp_based_executable"
+		],
+		"files" : 
+		[
+			"C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/root.cmake",
+			"src/AE/exeTest/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 18,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 94,
+				"parent" : 1
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "AECore::@fbc3202595bd5a31289e"
+		}
+	],
+	"id" : "AECore-bin::@fbc3202595bd5a31289e",
+	"name" : "AECore-bin",
+	"paths" : 
+	{
+		"build" : "src/AE/exeTest",
+		"source" : "src/AE/exeTest"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/src/AE/exeTest/CMakeFiles/AECore-bin",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/src/AE/exeTest/CMakeFiles/AECore-bin.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Hardware/Debug/src/AE/exeTest/AECore.bin.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}
