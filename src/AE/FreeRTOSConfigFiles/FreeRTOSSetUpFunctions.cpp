@@ -9,7 +9,7 @@
 
 
 
-#ifdef SIMULATION 
+#if SWIL_HWIL_DRIVEN == SWIL
 	
 #define mainREGION_1_SIZE	8201
 #define mainREGION_2_SIZE	29905
@@ -52,7 +52,7 @@ void  prvInitialiseHeap(void)
 #endif 
  
 /*
-#ifdef SIMULATION
+#if SWIL_HWIL_DRIVEN == SWIL
 extern void RTOSInit()
 { prvInitialiseHeap();}
 #else
@@ -193,7 +193,7 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, signed char *pcTaskName)
 		(void)pcFileName; 
 		
 		
-#ifdef SIMULATION 
+#if SWIL_HWIL_DRIVEN == SWIL
 		printf("ASSERT! Line %ld, file %s, GetLastError() %ld\r\n", ulLine, pcFileName, GetLastError());
 #else
 		AEPrint((char*)"config assertion failed at line %d \n", ulLine); 

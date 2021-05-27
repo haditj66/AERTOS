@@ -1,5 +1,7 @@
 #include "AEPerformanceTimer.h"
 
+#include "stm32f4xx_hal.h"
+
 static bool AEPerfInitAlready = false;
 static float FrequencyInNano = 0;
 

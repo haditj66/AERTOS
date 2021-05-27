@@ -1,0 +1,11 @@
+C:/visualgdb_projects/AERTOSCopy/CMakeFiles/BSP.dir
+C:/visualgdb_projects/AERTOSCopy/CMakeFiles/TESTFW.dir
+C:/visualgdb_projects/AERTOSCopy/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir
+C:/visualgdb_projects/AERTOSCopy/CMakeFiles/edit_cache.dir
+C:/visualgdb_projects/AERTOSCopy/CMakeFiles/rebuild_cache.dir
+C:/visualgdb_projects/AERTOSCopy/src/AE/CMakeFiles/AECoreLib.dir
+C:/visualgdb_projects/AERTOSCopy/src/AE/CMakeFiles/edit_cache.dir
+C:/visualgdb_projects/AERTOSCopy/src/AE/CMakeFiles/rebuild_cache.dir
+C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/CMakeFiles/edit_cache.dir
+C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/CMakeFiles/AECore.dir
+C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/CMakeFiles/rebuild_cache.dir

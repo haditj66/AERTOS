@@ -42,15 +42,15 @@ BSP_com.sysprogs.arm.stm32.freertos_BSP_ALIAS:STRING=BSP
 BUILD_TESTS:BOOL=OFF
 
 //Path to a program.
-CMAKE_AR:FILEPATH=C:/SysGCC/mingw32/bin/ar.exe
+CMAKE_AR:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/ar.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_ASM_COMPILER_AR:FILEPATH=C:/SysGCC/mingw32/bin/gcc-ar.exe
+CMAKE_ASM_COMPILER_AR:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_ASM_COMPILER_RANLIB:FILEPATH=C:/SysGCC/mingw32/bin/gcc-ranlib.exe
+CMAKE_ASM_COMPILER_RANLIB:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/gcc-ranlib.exe
 
 //Flags used by the ASM compiler during all build types.
 CMAKE_ASM_FLAGS:STRING=
@@ -67,17 +67,16 @@ CMAKE_ASM_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the ASM compiler during RELWITHDEBINFO builds.
 CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//Choose the type of build, options are: None Debug Release RelWithDebInfo
-// MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=DEBUG
+//No help, variable specified on the command line.
+CMAKE_BUILD_TYPE:UNINITIALIZED=DEBUG
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=C:/SysGCC/mingw32/bin/gcc-ar.exe
+CMAKE_CXX_COMPILER_AR:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/SysGCC/mingw32/bin/gcc-ranlib.exe
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/gcc-ranlib.exe
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
@@ -99,11 +98,11 @@ CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_AR:FILEPATH=C:/SysGCC/mingw32/bin/gcc-ar.exe
+CMAKE_C_COMPILER_AR:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/SysGCC/mingw32/bin/gcc-ranlib.exe
+CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/gcc-ranlib.exe
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -148,10 +147,10 @@ CMAKE_GNUtoMS:BOOL=OFF
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/AERTOS
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=C:/SysGCC/mingw32/bin/ld.exe
+CMAKE_LINKER:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/ld.exe
 
-//make program
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe
+//No help, variable specified on the command line.
+CMAKE_MAKE_PROGRAM:UNINITIALIZED=C:/VisualGDBAllFiles/Sysprogs/VisualGDB/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -174,13 +173,13 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_NM:FILEPATH=C:/SysGCC/mingw32/bin/nm.exe
+CMAKE_NM:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/nm.exe
 
 //Path to a program.
-CMAKE_OBJCOPY:FILEPATH=C:/SysGCC/mingw32/bin/objcopy.exe
+CMAKE_OBJCOPY:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/objcopy.exe
 
 //Path to a program.
-CMAKE_OBJDUMP:FILEPATH=C:/SysGCC/mingw32/bin/objdump.exe
+CMAKE_OBJDUMP:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/objdump.exe
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -192,7 +191,7 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=AERTOS
 
 //Path to a program.
-CMAKE_RANLIB:FILEPATH=C:/SysGCC/mingw32/bin/ranlib.exe
+CMAKE_RANLIB:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/ranlib.exe
 
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=C:/SysGCC/mingw32/bin/windres.exe
@@ -260,7 +259,7 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_STRIP:FILEPATH=C:/SysGCC/mingw32/bin/strip.exe
+CMAKE_STRIP:FILEPATH=C:/VisualGDBAllFiles/SysGCC/mingw32/bin/strip.exe
 
 //No help, variable specified on the command line.
 CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=C:\visualgdb_projects\AERTOSCopy/build/Simulation/Debug/toolchain.cmake
@@ -276,7 +275,7 @@ INCLUDE_HAL:BOOL=ON
 
 //Specifies the list of variables like 'BSP_ROOT' that will be
 // substituted by the IDE when referencing source files.
-KNOWN_PATH_PREFIX_VARIABLES:STRING=BSP_ROOT;BSP_ROOT;BSP_ROOT
+KNOWN_PATH_PREFIX_VARIABLES:STRING=BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT;BSP_ROOT
 
 //No help, variable specified on the command line.
 PLATFORM:UNINITIALIZED=Simulation
@@ -291,7 +290,7 @@ PRINT_USE_CACHE:BOOL=FALSE
 TESTFW_BSP_ALIAS:STRING=
 
 //No help, variable specified on the command line.
-TOOLCHAIN_ROOT:UNINITIALIZED=C:/SysGCC/mingw32
+TOOLCHAIN_ROOT:UNINITIALIZED=C:/VisualGDBAllFiles/SysGCC/mingw32
 
 //which test group to activate
 TestGroups:STRING=Test_Group2
@@ -413,7 +412,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

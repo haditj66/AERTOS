@@ -27,8 +27,16 @@ endif()
 
 
 #include the AEHal
-option(INCLUDE_HAL "include the AEHAL or not" TRUE )
-set(INCLUDE_HAL  TRUE FORCE) 
+Cgen_Option(
+        NAME INCLUDE_HAL
+        DESCRIPTION "include the AEHAL or not"
+        POSSIBLEVALUES TRUE FALSE
+        CONSTRICTS_LATER_OPTIONS
+)
+#option(INCLUDE_HAL "include the AEHAL or not" TRUE )
+#set(INCLUDE_HAL  TRUE FORCE)
+
+
 #set_property(CACHE Include_HAL PROPERTY STRINGS ${Include_HAL})
 
 ###################################
@@ -97,7 +105,10 @@ set(INCLUDE_HAL  TRUE FORCE)
 
 
 
- if(${USING_FREERTOS})
+if(${RTOS_USED} STREQUAL "FREERTOS" )
+
+
+
  set(AECoreLib_IncludePaths   ${AECoreLib_IncludePaths} 
   "${CMAKE_CURRENT_LIST_DIR}/FreeRTOSConfigFiles"
 
@@ -142,13 +153,13 @@ endforeach()
  ###################################
  #AECoreLib
  ###################################
-  
 
 
- if(NOT USING_LINUX)
+if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
  
  	 add_bsp_based_library(NAME AECoreLib
 	SOURCES
+        ${AESetupFiles}
 		${AECoreLib_SRCs}
 		${USER_CONFIG_FILES}
 		${BOARD_SPECIFIC_FILES}
@@ -162,7 +173,8 @@ endforeach()
 	
  else()
 
- add_library(AECoreLib  		
+ add_library(AECoreLib
+        ${AESetupFiles}
 		${AECoreLib_SRCs}
 		${USER_CONFIG_FILES}
 		${BOARD_SPECIFIC_FILES}
@@ -172,52 +184,54 @@ endforeach()
 
  endif()
 
- Set_Sources_in_SourceGroup(NAMEOFGROUP "HelperFunctions" LISTOFSOURCES  ${HelperFunctions})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "HelperFunctions" LISTOFSOURCES  ${HelperFunctions})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "SetupFiles" LISTOFSOURCES  ${AESetupFiles})
+target_sources(AECoreLib PUBLIC ${AESetupFiles})
 
-
-	 
+#set(PATH_TO_GeneratorFiles "${CMAKE_CURRENT_SOURCE_DIR}/GeneratedFiles")
+#file(GLOB GeneratorFiles
+#        "${PATH_TO_GeneratorFiles}/*.*.*"
+#        )
+#target_sources(AECoreLib PUBLIC ${GeneratorFiles})
 
 
 target_include_directories(AECoreLib PUBLIC ${AECoreLib_IncludePaths}) 
 target_include_directories(AECoreLib PUBLIC ${PATH_TO_BOARD_SPECIFIC_FILES})  
 target_include_directories(AECoreLib PUBLIC ${PATH_TO_REQUIRED_Hal_FILES}) 
- 
+target_include_directories(AECoreLib PUBLIC ${AESetupFiles_PATHS})
 
 
 
- if(NOT USING_LINUX)
 
-
- target_link_libraries(AECoreLib PRIVATE    BSP_com.sysprogs.arm.stm32.freertos) 
-
-  endif()
+if(${RTOS_USED} STREQUAL "FREERTOS" )
+        target_link_libraries(AECoreLib PRIVATE    BSP_com.sysprogs.arm.stm32.freertos)
+endif()
   
  
  #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  
 
- if(BUILD_UNIT_TESTS) 
- #create_tests_for_target(
-  #TestsForTarget AECoreLib 
-  #NameOfTestTarget AECoreTests 
-  #ForUserConfigNum 2) 
+
+if(${BUILD_TESTS} STREQUAL "TRUE" )
+# create_tests_for_target(
+#  TestsForTarget AECoreLib
+#  NameOfTestTarget AECoreTests
+#  ForUserConfigNum 2)
   endif()
 
- #if(${TestGroups} STREQUAL  "Test_Group2")	 
+ if(${TestGroups} STREQUAL  "Test_Group2")
  add_subdirectory(exeTest)
- #endif()   
-
-
-
-
-if(NOT USING_LINUX)
-
- ################################### 
- #get AEHal
- ################################### 
- if(INCLUDE_HAL)
- #add_subdirectory(hal)
  endif()
 
 
+
+
+
+
+ ################################### 
+ #get AEHal
+ ###################################
+
+if(${INCLUDE_HAL} STREQUAL  "TRUE")
+add_subdirectory(hal)
 endif()
+

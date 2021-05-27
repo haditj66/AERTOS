@@ -68,6 +68,7 @@
         <string>C:/visualgdb_projects/AERTOSCopy/cmake/GetFREERTOS_MINGW.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/CMakeLists.txt</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/CMakeLists.txt</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/CMakeLists.txt</string>
       </AllCMakeFiles>
       <ExtraDependencies />
       <Install>false</Install>

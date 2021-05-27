@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "C:/SysGCC/mingw32/bin/g++.exe")
+set(CMAKE_CXX_COMPILER "C:/VisualGDBAllFiles/SysGCC/mingw32/bin/g++.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_COMPILER_VERSION "9.1.0")
@@ -19,11 +19,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "C:/SysGCC/mingw32/bin/ar.exe")
-set(CMAKE_CXX_COMPILER_AR "C:/SysGCC/mingw32/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "C:/SysGCC/mingw32/bin/ranlib.exe")
-set(CMAKE_CXX_COMPILER_RANLIB "C:/SysGCC/mingw32/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "C:/SysGCC/mingw32/bin/ld.exe")
+set(CMAKE_AR "C:/VisualGDBAllFiles/SysGCC/mingw32/bin/ar.exe")
+set(CMAKE_CXX_COMPILER_AR "C:/VisualGDBAllFiles/SysGCC/mingw32/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "C:/VisualGDBAllFiles/SysGCC/mingw32/bin/ranlib.exe")
+set(CMAKE_CXX_COMPILER_RANLIB "C:/VisualGDBAllFiles/SysGCC/mingw32/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/VisualGDBAllFiles/SysGCC/mingw32/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
@@ -73,7 +73,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/SysGCC/mingw32/include/c++/9.1.0;C:/SysGCC/mingw32/include/c++/9.1.0/i686-w64-mingw32;C:/SysGCC/mingw32/include/c++/9.1.0/backward;C:/SysGCC/mingw32/lib/gcc/i686-w64-mingw32/9.1.0/include;C:/SysGCC/mingw32/include;C:/SysGCC/mingw32/lib/gcc/i686-w64-mingw32/9.1.0/include-fixed;C:/SysGCC/mingw32/i686-w64-mingw32/include")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/VisualGDBAllFiles/SysGCC/mingw32/include/c++/9.1.0;C:/VisualGDBAllFiles/SysGCC/mingw32/include/c++/9.1.0/i686-w64-mingw32;C:/VisualGDBAllFiles/SysGCC/mingw32/include/c++/9.1.0/backward;C:/VisualGDBAllFiles/SysGCC/mingw32/lib/gcc/i686-w64-mingw32/9.1.0/include;C:/VisualGDBAllFiles/SysGCC/mingw32/include;C:/VisualGDBAllFiles/SysGCC/mingw32/lib/gcc/i686-w64-mingw32/9.1.0/include-fixed;C:/VisualGDBAllFiles/SysGCC/mingw32/i686-w64-mingw32/include")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc_s;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/SysGCC/mingw32/lib/gcc/i686-w64-mingw32/9.1.0;C:/SysGCC/mingw32/lib/gcc;C:/SysGCC/mingw32/i686-w64-mingw32/lib;C:/SysGCC/mingw32/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/VisualGDBAllFiles/SysGCC/mingw32/lib/gcc/i686-w64-mingw32/9.1.0;C:/VisualGDBAllFiles/SysGCC/mingw32/lib/gcc;C:/VisualGDBAllFiles/SysGCC/mingw32/i686-w64-mingw32/lib;C:/VisualGDBAllFiles/SysGCC/mingw32/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

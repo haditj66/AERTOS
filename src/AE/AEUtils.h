@@ -1,9 +1,12 @@
 #pragma once
 
-#ifdef SIMULATION
+#if SWIL_HWIL_DRIVEN == SWIL
 #include <cstdint>				  
-#endif // SIMULATION
+#endif  
  
+
+
+
 
 
 #include "AE.h"
@@ -12,6 +15,16 @@
 
 #include "AEDefines.h"
  
+#if RTOS_USED == FREERTOS
+#include "FreeRTOS.h"
+#include "task.h"
+#include "timers.h"
+#include "queue.h"
+#include "semphr.h"
+#include "event_groups.h"
+#endif
+
+
 
 #define PoolManager AEPoolManager<Event1, Event1Size, Event2, Event2Size, Event3, Event3Size, Event4, Event4Size, Event5, Event5Size>::getInstance()
 #define PublishSubscribeManager AEPublishSubscribeManager::getInstance()
@@ -634,7 +647,7 @@ else \
 //Writing to file 
 //############################### 
  
-#ifdef HARDWARE
+#if SWIL_HWIL_DRIVEN == HWIL
 #include <TestResourceManager.h>	
 inline void  AEWriteToEndOfFile(const char* FileNameToWriteTo, const void* ThingToWrite, uint32_t SizeOfThingToWrite) 
 {
@@ -828,7 +841,7 @@ AEPrintTimerDuration(forTimer)\
 inline void _AELogTimer(PerfElapsed_t duration, const char* FileNameToWriteTo) 
 {
 	
-#ifdef HARDWARE
+#if SWIL_HWIL_DRIVEN == HWIL
 	std::string PathtoFile = "PerformanceTimes\\Hardware\\%s\\%s.txt";
 	char PathtoFile1[250]; 
 	AEFormatMsg(PathtoFile1, sizeof(PathtoFile1), PathtoFile.c_str(), FileNameToWriteTo, FileNameToWriteTo);

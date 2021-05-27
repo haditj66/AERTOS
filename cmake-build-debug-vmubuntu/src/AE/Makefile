@@ -179,33 +179,6 @@ AE_Init.cpp.s:
 	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu && $(MAKE) -f src/AE/CMakeFiles/AECoreLib.dir/build.make src/AE/CMakeFiles/AECoreLib.dir/AE_Init.cpp.s
 .PHONY : AE_Init.cpp.s
 
-FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.o: FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o
-
-.PHONY : FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.o
-
-# target to build an object file
-FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o:
-	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu && $(MAKE) -f src/AE/CMakeFiles/AECoreLib.dir/build.make src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o
-.PHONY : FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o
-
-FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.i: FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.i
-
-.PHONY : FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.i
-
-# target to preprocess a source file
-FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.i:
-	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu && $(MAKE) -f src/AE/CMakeFiles/AECoreLib.dir/build.make src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.i
-.PHONY : FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.i
-
-FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.s: FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.s
-
-.PHONY : FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.s
-
-# target to generate assembly for a file
-FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.s:
-	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu && $(MAKE) -f src/AE/CMakeFiles/AECoreLib.dir/build.make src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.s
-.PHONY : FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.s
-
 hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.o: hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.o
 
 .PHONY : hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.o
@@ -248,9 +221,6 @@ help:
 	@echo "... AE_Init.o"
 	@echo "... AE_Init.i"
 	@echo "... AE_Init.s"
-	@echo "... FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.o"
-	@echo "... FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.i"
-	@echo "... FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.s"
 	@echo "... hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.o"
 	@echo "... hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.i"
 	@echo "... hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.s"

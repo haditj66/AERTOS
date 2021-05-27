@@ -8,4 +8,24 @@
     <TestName>RecordedIntegrationTest2</TestName>
     <GUID>81bca1b2-584a-46dc-8818-d777ca556d6a</GUID>
   </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEPerformanceTimer_multiple_Timers</TestName>
+    <GUID>f03175c3-be1f-4f7e-8a54-8df9684370ba</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEPrint_simple_print_with_nums</TestName>
+    <GUID>b085edfe-1dff-4fff-a232-f50cb014206b</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEPerformanceTimer_simple_timer_test</TestName>
+    <GUID>d110e728-1327-4f28-927c-7bca19cdba75</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEPerformanceTimer_simple_EnterAndReenter</TestName>
+    <GUID>df7bfd20-995c-4dd9-8b6b-beaaff7c91c4</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEPrint_simple_print</TestName>
+    <GUID>7e645ad5-0774-4633-8d2f-9a866e6a22d9</GUID>
+  </TestGUIDRecord>
 </ArrayOfTestGUIDRecord>

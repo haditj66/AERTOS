@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="AERTOS"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\src\;CMake Files\src\AE\;CMake Files\src\AE\exeTest\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AECoreLib">
+				<Option output="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/libAECoreLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DAEConfigLocation=&quot;C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h&quot;"/>
+					<Add option="-DMCU_ARM_ARCHITECTURE"/>
+					<Add option="-DMCU_ARM"/>
+					<Add option="-DUSING_LINUX"/>
+					<Add option="-DPRINT_METHOD"/>
+					<Add option="-DPRINT_SEMIHOSTING"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/HelperFunctions"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/board_files"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest/conf"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/Makefile&quot;  VERBOSE=1 AECoreLib"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AECoreLib/fast">
+				<Option output="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/libAECoreLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DAEConfigLocation=&quot;C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h&quot;"/>
+					<Add option="-DMCU_ARM_ARCHITECTURE"/>
+					<Add option="-DMCU_ARM"/>
+					<Add option="-DUSING_LINUX"/>
+					<Add option="-DPRINT_METHOD"/>
+					<Add option="-DPRINT_SEMIHOSTING"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/HelperFunctions"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/board_files"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest/conf"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/Makefile&quot;  VERBOSE=1 AECoreLib/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AECore">
+				<Option output="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/AECore" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DAEConfigLocation=&quot;C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h&quot;"/>
+					<Add option="-DMCU_ARM_ARCHITECTURE"/>
+					<Add option="-DMCU_ARM"/>
+					<Add option="-DUSING_LINUX"/>
+					<Add option="-DPRINT_METHOD"/>
+					<Add option="-DPRINT_SEMIHOSTING"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/HelperFunctions"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/board_files"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest/conf"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/Makefile&quot;  VERBOSE=1 AECore"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AECore/fast">
+				<Option output="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/AECore" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DAEConfigLocation=&quot;C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h&quot;"/>
+					<Add option="-DMCU_ARM_ARCHITECTURE"/>
+					<Add option="-DMCU_ARM"/>
+					<Add option="-DUSING_LINUX"/>
+					<Add option="-DPRINT_METHOD"/>
+					<Add option="-DPRINT_SEMIHOSTING"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/HelperFunctions"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/board_files"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"/>
+					<Add directory="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest/conf"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/Makefile&quot;  VERBOSE=1 AECore/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi/src/AE/exeTest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AE.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AECircularBuffer.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AEDefines.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AEObjects.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AEPerformanceTimer.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AESet.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AEUtils.cpp">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AEUtils.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AE_Init.cpp">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/AE_Init.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/HelperFunctions/AEmemcpy.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/HelperFunctions/ByteSerializer.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/HelperFunctions/FastSine.h">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest/main.cpp">
+			<Option target="AECore"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp">
+			<Option target="AECoreLib"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/test/conf_group1/AEConfig.h">
+			<Option target="AECore"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/test/conf_group1/UserBSPConfig.cpp">
+			<Option target="AECore"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/cmake/MyCmakeHelpers.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\AE\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.8nHQaDrhzQ/src/AE/exeTest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\AE\exeTest\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

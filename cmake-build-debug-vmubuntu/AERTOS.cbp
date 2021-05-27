@@ -53,7 +53,6 @@
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/HelperFunctions"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest"/>
-					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/board_files"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest/conf"/>
@@ -88,7 +87,6 @@
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/HelperFunctions"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest"/>
-					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/board_files"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest/conf"/>
@@ -123,7 +121,6 @@
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/HelperFunctions"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest"/>
-					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/board_files"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest/conf"/>
@@ -158,7 +155,6 @@
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/HelperFunctions"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest"/>
-					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/board_files"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"/>
 					<Add directory="/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest/conf"/>
@@ -206,15 +202,6 @@
 			<Option target="AECoreLib"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.Wi47S6lgtZ/src/AE/AE_Init.h">
-			<Option target="AECoreLib"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles/FreeRTOSConfig.h">
-			<Option target="AECoreLib"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp">
-			<Option target="AECoreLib"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.h">
 			<Option target="AECoreLib"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.Wi47S6lgtZ/src/AE/HelperFunctions/AEmemcpy.h">

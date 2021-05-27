@@ -83,22 +83,9 @@ src/AE/CMakeFiles/AECoreLib.dir/AE_Init.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AECoreLib.dir/AE_Init.cpp.s"
 	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/src/AE && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.Wi47S6lgtZ/src/AE/AE_Init.cpp -o CMakeFiles/AECoreLib.dir/AE_Init.cpp.s
 
-src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o: src/AE/CMakeFiles/AECoreLib.dir/flags.make
-src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o: ../src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o"
-	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/src/AE && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o -c /tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp
-
-src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.i"
-	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/src/AE && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp > CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.i
-
-src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.s"
-	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/src/AE && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp -o CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.s
-
 src/AE/CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.o: src/AE/CMakeFiles/AECoreLib.dir/flags.make
 src/AE/CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.o: ../src/AE/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/AE/CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/AE/CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.o"
 	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/src/AE && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.o -c /tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp
 
 src/AE/CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.i: cmake_force
@@ -113,7 +100,6 @@ src/AE/CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPe
 AECoreLib_OBJECTS = \
 "CMakeFiles/AECoreLib.dir/AEUtils.cpp.o" \
 "CMakeFiles/AECoreLib.dir/AE_Init.cpp.o" \
-"CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o" \
 "CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.o"
 
 # External object files for target AECoreLib
@@ -121,11 +107,10 @@ AECoreLib_EXTERNAL_OBJECTS =
 
 src/AE/libAECoreLib.a: src/AE/CMakeFiles/AECoreLib.dir/AEUtils.cpp.o
 src/AE/libAECoreLib.a: src/AE/CMakeFiles/AECoreLib.dir/AE_Init.cpp.o
-src/AE/libAECoreLib.a: src/AE/CMakeFiles/AECoreLib.dir/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp.o
 src/AE/libAECoreLib.a: src/AE/CMakeFiles/AECoreLib.dir/hal/boards/simulated/AECoreHalRequiredFiles/AEPerformanceTimer.cpp.o
 src/AE/libAECoreLib.a: src/AE/CMakeFiles/AECoreLib.dir/build.make
 src/AE/libAECoreLib.a: src/AE/CMakeFiles/AECoreLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libAECoreLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libAECoreLib.a"
 	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/src/AE && $(CMAKE_COMMAND) -P CMakeFiles/AECoreLib.dir/cmake_clean_target.cmake
 	cd /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu/src/AE && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AECoreLib.dir/link.txt --verbose=$(VERBOSE)
 

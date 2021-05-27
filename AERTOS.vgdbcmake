@@ -90,6 +90,14 @@
     <PostDebugActions />
     <DebugStopActions />
     <BreakMode>Default</BreakMode>
+    <CustomBreakCommand>
+      <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+      <RemoteHost>
+        <HostName>BuildMachine</HostName>
+        <Transport>BuiltinShortcut</Transport>
+      </RemoteHost>
+      <BackgroundMode xsi:nil="true" />
+    </CustomBreakCommand>
   </CustomDebug>
   <DeviceTerminalSettings>
     <Connection xsi:type="com.sysprogs.terminal.connection.serial">
@@ -222,10 +230,10 @@
   </CodeSense>
   <Configurations>
     <VisualGDBConfiguration>
-      <PlatformName>Hardware</PlatformName>
+      <PlatformName>VSGDBCmakeNinja_armnoneabiid</PlatformName>
     </VisualGDBConfiguration>
     <VisualGDBConfiguration>
-      <PlatformName>Simulation</PlatformName>
+      <PlatformName>VSGDBCmakeNinja_mingw</PlatformName>
       <ProjectSettingsOverride xsi:type="com.visualgdb.project.windows">
         <CustomSourceDirectories>
           <Directories />
@@ -254,6 +262,7 @@
             <Transport>BuiltinShortcut</Transport>
           </RemoteHost>
           <Command>$(VISUALGDB_DIR)/ninja.exe</Command>
+          <Arguments />
           <WorkingDirectory>$(BuildDir)</WorkingDirectory>
           <BackgroundMode xsi:nil="true" />
         </MakeCommandTemplate>
@@ -321,7 +330,7 @@
           <ExitAction>None</ExitAction>
           <DisableDisassembly>false</DisableDisassembly>
           <ExamineMemoryWithXCommand>false</ExamineMemoryWithXCommand>
-          <StepIntoNewInstanceEntry>main</StepIntoNewInstanceEntry>
+          <StepIntoNewInstanceEntry />
           <ExamineRegistersInRawFormat>true</ExamineRegistersInRawFormat>
           <DisableSignals>false</DisableSignals>
           <EnableAsyncExecutionMode>false</EnableAsyncExecutionMode>
@@ -341,7 +350,7 @@
       </DebugSettingsOverride>
     </VisualGDBConfiguration>
     <VisualGDBConfiguration>
-      <PlatformName>Linux</PlatformName>
+      <PlatformName>CmakeUnixMakefiles_gnu</PlatformName>
       <ProjectSettingsOverride xsi:type="com.visualgdb.project.linux">
         <CustomSourceDirectories>
           <Directories />
@@ -385,6 +394,16 @@
           <DeleteDisappearedFiles>false</DeleteDisappearedFiles>
           <ApplyGlobalExclusionList>true</ApplyGlobalExclusionList>
         </MainSourceTransferCommand>
+        <MountInfo>
+          <Mode>SharedWindowsDirectory</Mode>
+          <RemoteHost>
+            <HostName>192.168.1.116</HostName>
+            <Transport>SSH</Transport>
+            <UserName>hadi</UserName>
+          </RemoteHost>
+          <LocalDirectory />
+          <RemoteDirectory>/home/hadi/Documents/AERTOSMount</RemoteDirectory>
+        </MountInfo>
         <AllowChangingHostForMainCommands>false</AllowChangingHostForMainCommands>
         <SkipBuildIfNoSourceFilesChanged>false</SkipBuildIfNoSourceFilesChanged>
         <IgnoreFileTransferErrors>false</IgnoreFileTransferErrors>
@@ -496,11 +515,6 @@
         <SuppressTTYCreation>false</SuppressTTYCreation>
         <IndexDebugSymbols>false</IndexDebugSymbols>
       </DebugSettingsOverride>
-      <MergeableBuildSettingsExtension xsi:type="com.visualgdb.build.cmake.mergeable">
-        <AdditionalDefinitions>
-          <string>USING_LINUX</string>
-        </AdditionalDefinitions>
-      </MergeableBuildSettingsExtension>
     </VisualGDBConfiguration>
   </Configurations>
   <ProgramArgumentsSuggestions />

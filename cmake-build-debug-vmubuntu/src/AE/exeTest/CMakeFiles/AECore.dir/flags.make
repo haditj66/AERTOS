@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = -DAEConfigLocation=\"C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h\" -DMCU_ARM -DMCU_ARM_ARCHITECTURE -DPRINT_METHOD -DPRINT_SEMIHOSTING -DUSING_LINUX
 
-CXX_INCLUDES = -I/tmp/tmp.Wi47S6lgtZ/src/AE -I/tmp/tmp.Wi47S6lgtZ/src/AE/HelperFunctions -I/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest -I/tmp/tmp.Wi47S6lgtZ/src/AE/FreeRTOSConfigFiles -I/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/board_files -I/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles -I/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest/conf 
+CXX_INCLUDES = -I/tmp/tmp.Wi47S6lgtZ/src/AE -I/tmp/tmp.Wi47S6lgtZ/src/AE/HelperFunctions -I/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest -I/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/board_files -I/tmp/tmp.Wi47S6lgtZ/src/AE/hal/boards/simulated/AECoreHalRequiredFiles -I/tmp/tmp.Wi47S6lgtZ/src/AE/exeTest/conf 
 

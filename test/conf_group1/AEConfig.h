@@ -331,7 +331,7 @@
 #endif // Target_RealSPI1
 
 
-#ifdef HARDWARE
+#if SWIL_HWIL_DRIVEN == HWIL
 #ifndef Target_RealUART
 #include "UARTConsole.h"
 #endif

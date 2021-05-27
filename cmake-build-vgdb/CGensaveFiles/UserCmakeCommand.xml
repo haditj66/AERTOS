@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<CmakeSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CmakeLocation>C:\Users\Hadi\AppData\Local\VisualGDB\CMake\bin\cmake.exe</CmakeLocation>
+  <Generator>Ninja</Generator>
+  <CmakeOptions>-DCMAKE_BUILD_TYPE=DEBUG -DTOOLCHAIN_ROOT=C:/SysGCC/mingw32 -DCMAKE_MAKE_PROGRAM="C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe" -DCMAKE_TOOLCHAIN_FILE=C:\visualgdb_projects\AERTOSCopy/build/Simulation/Debug/toolchain.cmake -DPLATFORM=Simulation</CmakeOptions>
+</CmakeSettings>

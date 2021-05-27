@@ -24,7 +24,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/AE"
   "../src/AE/HelperFunctions"
   "../src/AE/exeTest"
-  "../src/AE/FreeRTOSConfigFiles"
   "../src/AE/hal/boards/simulated/board_files"
   "../src/AE/hal/boards/simulated/AECoreHalRequiredFiles"
   "../src/AE/exeTest/conf"

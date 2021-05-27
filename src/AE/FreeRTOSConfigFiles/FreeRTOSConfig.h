@@ -92,7 +92,7 @@
 #endif
 
 
-#ifdef HARDWARE
+#if SWIL_HWIL_DRIVEN == HWIL
 #define configAPPLICATION_ALLOCATED_HEAP 0
 #else 
 #define configAPPLICATION_ALLOCATED_HEAP 1

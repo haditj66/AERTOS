@@ -1,22 +1,15 @@
 
 /* Includes ------------------------------------------------------------------*/
-#if MCU_ARM ==STM32F411
-#include <stm32f4xx_hal.h>
-#endif
 
-//#include <../CMSIS_RTOS/cmsis_os.h> 
-#include "FreeRTOS.h"
-#include "task.h"
-#include "timers.h"
-#include "queue.h"
-#include "semphr.h"
-#include "event_groups.h"
+
+//#include <../CMSIS_RTOS/cmsis_os.h>
+
 
 #include "AE_Init.h"
 #include "FastSine.h"
 #include "ByteSerializer.h"
 
-#ifndef USING_LINUX
+#if RTOS_USED == FREERTOS
 
 #include "AESet.h"
 #include "AECircularBuffer.h" 
@@ -73,7 +66,7 @@ void UART_Printf(const char *pFormat, ...)
 
 
 
-#ifndef USING_LINUX
+#if RTOS_USED == FREERTOS
 		
 
 		
@@ -95,7 +88,7 @@ void UART_Printf(const char *pFormat, ...)
 
 
 		
-		#ifdef HARDWARE 
+		#if SWIL_HWIL_DRIVEN == HWIL
 			//TransmitMsg("hi from uart console", 0);
 		
 		__GPIOD_CLK_ENABLE();
@@ -163,7 +156,7 @@ extern "C" void vApplicationStackOverflowHook( TaskHandle_t xTask,
 	{
 		(void) argument;
   
-		#ifndef SIMULATION
+#if SWIL_HWIL_DRIVEN == HWIL
 		for (;;)
 		{
 			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
@@ -198,13 +191,16 @@ extern "C" void vApplicationStackOverflowHook( TaskHandle_t xTask,
 		for (;;)
 		{
 			
-		#ifndef SIMULATION
+#if SWIL_HWIL_DRIVEN == HWIL
 			HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
 			#endif
 			AEPrint("ela\n");
 			//osDelay(200);
+
+#if RTOS_USED == FREERTOS
 			TickType_t ticks2 = 2000 / portTICK_PERIOD_MS; 
-			vTaskDelay(ticks2 ? ticks2 : 1);   
+			vTaskDelay(ticks2 ? ticks2 : 1);
+#endif
 		}
 	}
 

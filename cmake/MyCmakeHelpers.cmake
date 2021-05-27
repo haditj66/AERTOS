@@ -100,16 +100,66 @@ set(PathToConf  "${CMAKE_SOURCE_DIR}/test/conf_group${_arg_ForUserConfigNum}")
 	BUILD_UNIT_TESTS)
 #target_include_directories(BSP PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/${_arg_TestsForTarget}_Tests/conf")
 target_include_directories(BSP PUBLIC "${PathToConf}")
-target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${PathToConf}")
+target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${PathToConf}") 
 
 target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 
 Set_Sources_in_SourceGroup(NAMEOFGROUP "UserAEConf" LISTOFSOURCES  ${SRCsForTestsUserConf})
 
-target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  BSP)   
+target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  BSP)  
 target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  ${_arg_TestsForTarget})    
 target_compile_definitions(${_arg_NameOfTestTarget} PRIVATE GOOGLE_TESTING)
 
 endif()
+
+endfunction()
+
+
+
+ 
+
+
+#########################
+#generate a cgen macro file given a .in file located in the GeneratedFiles folder
+#INPUT_FILE_NAME: the .in file name in the GeneratedFiles folder that will be used to generate the file
+#OUTPUT_FILE_NAME: the name of the file outputted. (just name without extension not including path )
+#OUTPUT_FILE_EXTENSION: extension of output file
+#WORKINGDIRECTORY the directory to put the generated file
+
+#########################
+function(Generate_File_Using_Cgen )
+    set(options)
+    set(oneValueArgs WORKINGDIRECTORY INPUT_FILE_NAME OUTPUT_FILE_NAME OUTPUT_FILE_EXTENSION)
+    set(multiValueArgs)
+    cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+
+    #if generated file does not exist yet, create it
+    #if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}")
+        #file(WRITE "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}" "newfile")
+        #ctest_sleep(5)
+    #endif()
+
+
+    #generate the file
+    configure_file(${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in
+            ${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.cgenM @ONLY)
+
+
+    #run cgen macro in this directory to generate the cmake generated file
+    execute_process(COMMAND  cgen macro
+            WORKING_DIRECTORY ${_arg_WORKINGDIRECTORY}
+            OUTPUT_VARIABLE outVar 
+            ERROR_VARIABLE errorVar)
+             
+if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}")
+                execute_process(COMMAND  cgen macro
+            WORKING_DIRECTORY ${_arg_WORKINGDIRECTORY}
+            OUTPUT_VARIABLE outVar
+            ERROR_VARIABLE errorVar)
+
+    endif()
+
+
 
 endfunction()

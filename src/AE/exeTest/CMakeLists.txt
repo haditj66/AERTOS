@@ -12,8 +12,8 @@
   "${PathToConf}/UserBSPConfig.cpp")
 
 
-  
-if(NOT USING_LINUX)
+
+if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 
  add_bsp_based_executable(NAME AECore
 	SOURCES 

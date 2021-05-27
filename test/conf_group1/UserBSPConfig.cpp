@@ -1,4 +1,4 @@
-#ifdef HARDWARE
+#if (SWIL_HWIL_DRIVEN == HWIL)
 
 
 

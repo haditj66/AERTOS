@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-#ifdef USING_FREERTOS 
+#if RTOS_USED == FREERTOS
 #include "FreeRTOS.h"
 #include "task.h"
 #include "timers.h"
@@ -10,7 +10,7 @@
 #include "semphr.h"
 #include "event_groups.h"
 
-#endif // USING_FREERTOS 
+#endif 
 
 
 

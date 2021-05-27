@@ -17,7 +17,7 @@
 rule C_COMPILER__BSP
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\SysGCC\mingw32\bin\gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  command = C:\VisualGDBAllFiles\SysGCC\mingw32\bin\gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
   description = Building C object $out
 
 
@@ -27,7 +27,7 @@ rule C_COMPILER__BSP
 rule CXX_COMPILER__TESTFW
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\SysGCC\mingw32\bin\g++.exe  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = C:\VisualGDBAllFiles\SysGCC\mingw32\bin\g++.exe  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -37,7 +37,7 @@ rule CXX_COMPILER__TESTFW
 rule C_COMPILER__BSP_com.2esysprogs.2earm.2estm32.2efreertos
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\SysGCC\mingw32\bin\gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  command = C:\VisualGDBAllFiles\SysGCC\mingw32\bin\gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
   description = Building C object $out
 
 
@@ -55,7 +55,7 @@ rule CUSTOM_COMMAND
 rule CXX_COMPILER__AECoreLib
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\SysGCC\mingw32\bin\g++.exe  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = C:\VisualGDBAllFiles\SysGCC\mingw32\bin\g++.exe  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -63,7 +63,7 @@ rule CXX_COMPILER__AECoreLib
 # Rule for linking CXX static library.
 
 rule CXX_STATIC_LIBRARY_LINKER__AECoreLib
-  command = cmd.exe /C "$PRE_LINK && C:\Users\Hadi\AppData\Local\VisualGDB\CMake\bin\cmake.exe -E remove $TARGET_FILE && C:\SysGCC\mingw32\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\SysGCC\mingw32\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\Users\Hadi\AppData\Local\VisualGDB\CMake\bin\cmake.exe -E remove $TARGET_FILE && C:\VisualGDBAllFiles\SysGCC\mingw32\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\VisualGDBAllFiles\SysGCC\mingw32\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
 
@@ -74,7 +74,7 @@ rule CXX_STATIC_LIBRARY_LINKER__AECoreLib
 rule CXX_COMPILER__AECore
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\SysGCC\mingw32\bin\g++.exe  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = C:\VisualGDBAllFiles\SysGCC\mingw32\bin\g++.exe  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -82,7 +82,7 @@ rule CXX_COMPILER__AECore
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__AECore
-  command = cmd.exe /C "$PRE_LINK && C:\SysGCC\mingw32\bin\g++.exe $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\VisualGDBAllFiles\SysGCC\mingw32\bin\g++.exe $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -100,7 +100,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = "C:\Program Files (x86)\Sysprogs\VisualGDB\ninja.exe" -t clean
+  command = C:\VisualGDBAllFiles\Sysprogs\VisualGDB\ninja.exe -t clean
   description = Cleaning all built files...
 
 
@@ -108,6 +108,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = "C:\Program Files (x86)\Sysprogs\VisualGDB\ninja.exe" -t targets
+  command = C:\VisualGDBAllFiles\Sysprogs\VisualGDB\ninja.exe -t targets
   description = All primary targets available:
 

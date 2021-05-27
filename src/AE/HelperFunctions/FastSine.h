@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef SIMULATION
+#if SWIL_HWIL_DRIVEN == SWIL
 #include <cstdint>				  
 #endif // SIMULATION
 

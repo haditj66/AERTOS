@@ -10,7 +10,9 @@
 
 //includes
 //UserCode_Sectiona
+#if RTOS_USED == FREERTOS
 extern 	void prvInitialiseHeap();
+#endif
 //UserCode_Sectiona_end
 
 
@@ -23,7 +25,9 @@ public:
 	AESetUpBase::RTOSInit();
 	
 	//UserCode_Sectionb
+#if RTOS_USED == FREERTOS
 prvInitialiseHeap();
+#endif
 //UserCode_Sectionb_end
 	
 	}

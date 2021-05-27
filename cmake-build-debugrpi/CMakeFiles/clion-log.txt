@@ -1,6 +1,8 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DUSINGLINUX -G "CodeBlocks - Unix Makefiles" /tmp/tmp.8nHQaDrhzQ
-Parse error in command line argument: -DUSINGLINUX
-Should be: VAR:type=value
-CMake Error: No cmake script provided.
-CMake Error: Problem processing arguments. Aborting.
-
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DUSING_LINUX=1 -G "CodeBlocks - Unix Makefiles" /tmp/tmp.8nHQaDrhzQ
+_BSP_MCU -----------------
+ _BSP_BSP_CONFIGURATION_com.sysprogs.bspoptions.arm.core ----------------- 
+CMAKE_BUILD_TYPE -----------------Debug
+PLATFORM -----------------
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/tmp.8nHQaDrhzQ/cmake-build-debugrpi

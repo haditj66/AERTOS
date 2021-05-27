@@ -36,7 +36,7 @@ static  void _AEPrint(char* msg);
 #endif
 
 
-#ifdef  HARDWARE
+#if (SWIL_HWIL_DRIVEN == HWIL)
 
 #if (PRINT_METHOD == PRINT_SEMIHOSTING)
 static void _AEPrint(char* msg)
@@ -56,8 +56,7 @@ void _AEPrint(char* msg)
 #endif
 
 
-
-
+ 
 
 #if (PRINT_METHOD == PRINT_NONE)
 
@@ -68,15 +67,20 @@ void _AEPrint(char* msg)
 }
 #endif
 
+#endif
 
-#elif defined(SIMULATION)
+
+
+#if (SWIL_HWIL_DRIVEN == SWIL)
 void _AEPrint(char* msg)
 { 
 	printf(msg);
     fflush(stdout);
 }
 
-#elif defined(USING_LINUX)
+#endif
+
+#if defined(USING_LINUX)
 
 #include "iostream"
 void _AEPrint(char* msg)
