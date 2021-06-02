@@ -6,10 +6,7 @@
  ###################################
  #AECore:EXE
  ################################### 
- set(PathToConf  "${CMAKE_SOURCE_DIR}/test/conf_group1")
- set(SRCsForTestsUserConf  	
-  "${PathToConf}/AEConfig.h"
-  "${PathToConf}/UserBSPConfig.cpp")
+ 
 
 
 
@@ -18,7 +15,7 @@ if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
  add_bsp_based_executable(NAME AECore
 	SOURCES 
 		 main.cpp 
-		${SRCsForTestsUserConf}
+		${SRCS_TO_TEST_CONFIG}
 	GENERATE_BIN
 	GENERATE_MAP) 
 	 
@@ -30,7 +27,7 @@ if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 
 	 add_executable( AECore 
 		 main.cpp 
-		${SRCsForTestsUserConf}
+		${SRCS_TO_TEST_CONFIG}
 		) 
 
 

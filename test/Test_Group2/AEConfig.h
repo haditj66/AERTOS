@@ -264,11 +264,11 @@
 #define Target_RealPWM
 #endif
 
-#define UARTPERIPHERAL2 UARTPeripheral<2,PortD, PIN5, PortA, PIN3>//<2,PortA, PIN2, PortA, PIN3>
-#define SPIPERIPHERAL1 SPIPeripheral<1,false,PortA,PIN5,PortA,PIN6,PortA,PIN7,PortA,PIN4> 
-#define ADCPERIPHERAL1 ADCPeripheral<1,PortB, PIN0> 
-#define ButtonPERIPHERAL1 ButtonPeripheral<1,PortD, PIN0> 
-#define PWMPERIPHERAL1 PWMPeripheral<1,PortD, PIN12> 
+//#define UARTPERIPHERAL2 UARTPeripheral<2,PortD, PIN5, PortA, PIN3>//<2,PortA, PIN2, PortA, PIN3>
+//#define SPIPERIPHERAL1 SPIPeripheral<1,false,PortA,PIN5,PortA,PIN6,PortA,PIN7,PortA,PIN4> 
+//#define ADCPERIPHERAL1 ADCPeripheral<1,PortB, PIN0> 
+//#define ButtonPERIPHERAL1 ButtonPeripheral<1,PortD, PIN0> 
+//#define PWMPERIPHERAL1 PWMPeripheral<1,PortD, PIN12> 
 //#define I2CPERIPHERAL1 I2CPeripheral<1,PortB, PIN6,PortB, PIN7, 20000> 
 
 

@@ -12,7 +12,7 @@
       <ShowMemoryUsageOutput>true</ShowMemoryUsageOutput>
       <AllCMakeFiles>
         <string>C:/visualgdb_projects/AERTOSCopy/CMakeLists.txt</string>
-        <string>C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/CgenCmakeConfigFunctions.cmake</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/cmake/CgenCmakeConfigFunctions.cmake</string>
         <string>C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/FromGuiOrProject.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CGensaveFiles/cgenCmakeCache.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeSystem.cmake</string>
@@ -86,7 +86,7 @@
           <Name>BSP</Name>
           <Location>
             <RawFilePath>C:/visualgdb_projects/AERTOSCopy/CMakeLists.txt</RawFilePath>
-            <LineNumber>239</LineNumber>
+            <LineNumber>279</LineNumber>
             <StatementName>find_bsp</StatementName>
           </Location>
         </BSPReference>

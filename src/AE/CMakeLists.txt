@@ -211,14 +211,14 @@ endif()
  #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
-if(${BUILD_TESTS} STREQUAL "TRUE" )
-# create_tests_for_target(
-#  TestsForTarget AECoreLib
-#  NameOfTestTarget AECoreTests
-#  ForUserConfigNum 2)
-  endif()
 
- if(${TestGroups} STREQUAL  "Test_Group2")
+ create_unittests_for_target(
+  TestsForTarget AECoreLib
+  NameOfTestTarget AECoreTests
+  ForUserConfigNum 2)
+
+
+ if(${INTEGRATION_TESTS} STREQUAL  "AECore_Tests1")
  add_subdirectory(exeTest)
  endif()
 

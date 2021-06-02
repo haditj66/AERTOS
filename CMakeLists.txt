@@ -22,21 +22,21 @@ cmake_minimum_required(VERSION 3.15)
 # OSUSED_TOOLCHAINUSED
 if(${PLATFORM} STREQUAL "VSGDBCmakeNinja_mingw" )
 
-    set(Build_System VSGDBCmake_Ninja)
-    add_compile_definitions(Build_System "${Build_System}")
-    set(TOOLCHAIN_USED mingw)
-    add_compile_definitions(TOOLCHAIN_USED "${TOOLCHAIN_USED}")
-
-
-    set(AERTOS_ENVIRONMENT RTOS_PC)
-    add_compile_definitions(AERTOS_ENVIRONMENT "${AERTOS_ENVIRONMENT}")
-
-    set(OS_USED WINDOWS)
-    add_compile_definitions(OS_USED "${OS_USED}")
-    set(SWIL_HWIL_DRIVEN SWIL)
-    add_compile_definitions(SWIL_HWIL_DRIVEN "${SWIL_HWIL_DRIVEN}")
-    set(BOARD_USED X64)
-    add_compile_definitions(BOARD_USED "${BOARD_USED}")
+    #set(Build_System VSGDBCmake_Ninja)
+    #add_compile_definitions(Build_System "${Build_System}")
+    #set(TOOLCHAIN_USED mingw)
+    #add_compile_definitions(TOOLCHAIN_USED "${TOOLCHAIN_USED}")
+#
+#
+    #set(AERTOS_ENVIRONMENT RTOS_PC)
+    #add_compile_definitions(AERTOS_ENVIRONMENT "${AERTOS_ENVIRONMENT}")
+#
+    #set(OS_USED WINDOWS)
+    #add_compile_definitions(OS_USED "${OS_USED}")
+    #set(SWIL_HWIL_DRIVEN SWIL)
+    #add_compile_definitions(SWIL_HWIL_DRIVEN "${SWIL_HWIL_DRIVEN}")
+    #set(BOARD_USED X64)
+    #add_compile_definitions(BOARD_USED "${BOARD_USED}")
 
 
 
@@ -78,16 +78,23 @@ elseif(${PLATFORM} STREQUAL "VSGDBCmakeNinja_armnoneabiid" )
 
 endif()
 
-if(NOT ${OS_USED} STREQUAL "UBUNTU")
+#if(NOT ${OS_USED} STREQUAL "UBUNTU")
     if (WIN32)
     set(CODEGENGUI_PATH "C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui")
     FILE(READ "${CODEGENGUI_PATH}/CgenCmakeConfigFunctions.cmake" contentsOut)
     FILE(WRITE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/CgenCmakeConfigFunctions.cmake" ${contentsOut})
     endif()
-endif()
+#endif()
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/CgenCmakeConfigFunctions.cmake")
 Cgen_Start()
 
+ 
+Cgen_Option(
+        NAME PLATFORM
+        DESCRIPTION "what platform is this for (this is chosen by IDE command line -D variable)"
+        POSSIBLEVALUES VSGDBCmakeNinja_mingw VSGDBCmakeNinja_armnoneabiid CmakeUnixMakefiles_gnu
+        CONSTRICTS_LATER_OPTIONS
+)
 
 Cgen_Option( 
         NAME AERTOS_ENVIRONMENT
@@ -149,6 +156,28 @@ Cgen_Option(
 )
 
 
+Cgen_Option(
+        NAME INTEGRATION_TESTS
+        DESCRIPTION "choose an integration test to build"
+        POSSIBLEVALUES AECore_Tests1 AEHal_Tests1
+        CONSTRICTS_LATER_OPTIONS
+)
+
+Cgen_Option(
+        NAME BUILD_UNIT_TESTS
+        DESCRIPTION "to build all UNIT tests under the test group chosen"
+        POSSIBLEVALUES TRUE FALSE
+        CONSTRICTS_LATER_OPTIONS
+)
+
+Cgen_Option(
+        NAME BUILD_TESTS
+        DESCRIPTION "to build INTEGRATION any tests or not"
+        POSSIBLEVALUES TRUE FALSE
+        CONSTRICTS_LATER_OPTIONS
+)
+
+
 #write the proper toolchain file to its build location since VSGDB auto generates the toolchain file. I want to write over it.
 if(NOT ${OS_USED} STREQUAL "UBUNTU")
 SET(CMAKE_TOOLCHAIN_FILE "C:/visualgdb_projects/AERTOSCopy/toolchains/${TOOLCHAIN_USED}/toolchain.cmake" )
@@ -201,13 +230,6 @@ Set_Sources_in_SourceGroup(NAMEOFGROUP "GeneratorInputFiles" LISTOFSOURCES  ${AE
 
 
 
-Cgen_Option(
-        NAME BUILD_TESTS
-        DESCRIPTION "to build any tests or not"
-        POSSIBLEVALUES TRUE FALSE
-        CONSTRICTS_LATER_OPTIONS
-)
-
 if(${BUILD_TESTS} STREQUAL "TRUE" )
 
     Cgen_Option(
@@ -216,9 +238,25 @@ if(${BUILD_TESTS} STREQUAL "TRUE" )
             POSSIBLEVALUES Test_Group1 Test_Group2 Test_Group3 Test_Group4
             CONSTRICTS_LATER_OPTIONS
     )
-endif()
- 
 
+endif()
+
+if(${BUILD_UNIT_TESTS} STREQUAL "TRUE" )
+
+    Cgen_Option(
+            NAME TestGroups
+            DESCRIPTION "what test group do you wanna enable"
+            POSSIBLEVALUES Test_Group1 Test_Group2 Test_Group3 Test_Group4
+            CONSTRICTS_LATER_OPTIONS
+    )
+
+endif()
+
+
+
+set(PATH_TO_TEST_CONFIG  "${CMAKE_SOURCE_DIR}/test/${TestGroups}")
+set(SRCS_TO_TEST_CONFIG  "${PATH_TO_TEST_CONFIG}/AEConfig.h"
+        "${PATH_TO_TEST_CONFIG}/UserBSPConfig.cpp")
 
 
 

@@ -74,42 +74,38 @@ endfunction()
 #in directory ${TestsForTarget}_Tests with file names ${NameOfTestTarget}.cpp
 #TestsForTarget: the target that these tests are meant for. for example AECoreLib
 #########################
-function(create_tests_for_target) 
+function(create_unittests_for_target) 
 set(options)
 set(oneValueArgs TestsForTarget NameOfTestTarget ForUserConfigNum )
 set(multiValueArgs LISTOF_EXTRA_SOURCES) 
 cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
+if(${BUILD_UNIT_TESTS} STREQUAL "TRUE" )
 if(${TestGroups} STREQUAL  "Test_Group${_arg_ForUserConfigNum}")	 
 
-set(PathToConf  "${CMAKE_SOURCE_DIR}/test/conf_group${_arg_ForUserConfigNum}")
- set(SRCsForTestsUserConf  	
-  "${PathToConf}/AEConfig.h"
-  "${PathToConf}/UserBSPConfig.cpp")
- #"${CMAKE_CURRENT_SOURCE_DIR}/${_arg_TestsForTarget}_Tests/conf/AEConfig.h"
-		#"${CMAKE_CURRENT_SOURCE_DIR}/${_arg_TestsForTarget}_Tests/conf/UserBSPConfig.cpp")
-          
+
  add_bsp_based_executable(NAME ${_arg_NameOfTestTarget}
 	SOURCES
          ${_arg_LISTOF_EXTRA_SOURCES}
-		 ${SRCsForTestsUserConf}
+		 ${SRCS_TO_TEST_CONFIG}
 		"${CMAKE_CURRENT_SOURCE_DIR}/${_arg_TestsForTarget}_Tests/${_arg_NameOfTestTarget}.cpp"  
 		"${CMAKE_SOURCE_DIR}/test/mainUnitTest.cpp"
 	GENERATE_BIN
 	GENERATE_MAP
 	BUILD_UNIT_TESTS)
 #target_include_directories(BSP PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/${_arg_TestsForTarget}_Tests/conf")
-target_include_directories(BSP PUBLIC "${PathToConf}")
-target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${PathToConf}") 
+target_include_directories(BSP PUBLIC "${PATH_TO_TEST_CONFIG}")
+target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${PATH_TO_TEST_CONFIG}")
 
 target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 
-Set_Sources_in_SourceGroup(NAMEOFGROUP "UserAEConf" LISTOFSOURCES  ${SRCsForTestsUserConf})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "UserAEConf" LISTOFSOURCES  ${SRCS_TO_TEST_CONFIG})
 
 target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  BSP)  
 target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  ${_arg_TestsForTarget})    
 target_compile_definitions(${_arg_NameOfTestTarget} PRIVATE GOOGLE_TESTING)
 
+endif()
 endif()
 
 endfunction()

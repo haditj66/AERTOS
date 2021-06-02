@@ -1,5 +1,10 @@
 
 
+NAME PLATFORM
+DESCRIPTION what platform is this for (this is chosen by IDE command line -D variable)
+POSSIBLEVALUES VSGDBCmakeNinja_mingw VSGDBCmakeNinja_armnoneabiid CmakeUnixMakefiles_gnu
+CONSTRICTS_LATER_OPTIONS VSGDBCmakeNinja_mingw@Build_System@VSGDBCmake_Ninja;VSGDBCmakeNinja_mingw@TOOLCHAIN_USED@mingw;VSGDBCmakeNinja_mingw@OS_USED@WINDOWS;VSGDBCmakeNinja_mingw@AERTOS_ENVIRONMENT@RTOS_PC;VSGDBCmakeNinja_mingw@SWIL_HWIL_DRIVEN@SWIL;VSGDBCmakeNinja_mingw@BOARD_USED@X64;VSGDBCmakeNinja_armnoneabiid@Build_System@VSGDBCmake_Ninja;VSGDBCmakeNinja_armnoneabiid@TOOLCHAIN_USED@arm_non_eabi_id;VSGDBCmakeNinja_armnoneabiid@AERTOS_ENVIRONMENT@RTOS_MICRO;VSGDBCmakeNinja_armnoneabiid@OS_USED@NONE;VSGDBCmakeNinja_armnoneabiid@SWIL_HWIL_DRIVEN@HWIL;CmakeUnixMakefiles_gnu@Build_System@Cmake_UnixMakefiles;CmakeUnixMakefiles_gnu@TOOLCHAIN_USED@gnu;CmakeUnixMakefiles_gnu@RTOS_USED@NONE;CmakeUnixMakefiles_gnu@OS_USED@UBUNTU;
+
 NAME Build_System
 DESCRIPTION what kind of build environment are you using
 POSSIBLEVALUES VSGDBCmake_Ninja AmentCmake_colcon Cmake_UnixMakefiles Cmake_MinGWMakefiles
@@ -52,5 +57,15 @@ CONSTRICTS_LATER_OPTIONS
 
 NAME INCLUDE_HAL
 DESCRIPTION include the AEHAL or not
+POSSIBLEVALUES TRUE FALSE
+CONSTRICTS_LATER_OPTIONS 
+
+NAME INTEGRATION_TESTS
+DESCRIPTION choose an integration test to build
+POSSIBLEVALUES AECore_Tests1 AEHal_Tests1
+CONSTRICTS_LATER_OPTIONS AECore_Tests1@AERTOS_ENVIRONMENT@RTOS_MICRO;AECore_Tests1@AERTOS_ENVIRONMENT@RTOS_PC;AECore_Tests1@TestGroups@Test_Group2;
+
+NAME BUILD_UNIT_TESTS
+DESCRIPTION to build all UNIT tests under the test group chosen
 POSSIBLEVALUES TRUE FALSE
 CONSTRICTS_LATER_OPTIONS 

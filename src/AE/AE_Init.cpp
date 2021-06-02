@@ -27,7 +27,7 @@ void AE_Init(void)
 
 	
 
-#ifdef Using_AEHAL 
+#if INCLUDE_HAL == TRUE 
 	InitializeAllPeripheral
 		
 // ADCPERIPHERAL1_Instance = ADCPERIPHERAL1::getInstance(); ADCPERIPHERAL1_Instance->initializePeripheral();  
@@ -46,56 +46,6 @@ void AE_Init(void)
 //############################################
 //Poratable implementations for ROS intitializeaions
 //############################################
-
-
-//######################
-//For stm32f411RE
-//###################### 
-#if (1)//(BOARD_USED == STM32F411RE)
- 
-
-
-
-
-
-
-//simulation--------------------------
-#if SWIL_HWIL_DRIVEN == SWIL
-
-extern 	void prvInitialiseHeap();  
-
-void RTOSInit()
-{
-#if RTOS_USED == FREERTOS
-	prvInitialiseHeap();
-#endif
-}
-
-
-void BSPInit()
-{ 
-}
-
-
-#if RTOS_USED == FREERTOS
-void RTOS_ToBSP_SpecificCode()
-{
-	
-}
-#endif
-
-
-
-
-
-
-
-
-#endif
-
-
-#endif
-//###################### stm32f411RE
 
 
 

@@ -96,13 +96,11 @@ target_compile_definitions(AECoreLib PUBLIC Using_AEHAL)
 
  target_compile_definitions(AEHalLib PUBLIC ${AEHALDefinitions})
  target_compile_definitions(AECoreLib PUBLIC ${AEHALDefinitions})
-
- if(BUILD_UNIT_TESTS) 
- create_tests_for_target(
+  
+ create_unittests_for_target(
  TestsForTarget AEHalLib 
  NameOfTestTarget AEHalTests
- ForUserConfigNum 1) 
-  endif()
+ ForUserConfigNum 1)  
 
 
 #if(${TestGroups} STREQUAL  "Test_Group1")	 
@@ -113,7 +111,7 @@ target_compile_definitions(AECoreLib PUBLIC Using_AEHAL)
 
 
 
-  if(${TestGroups} STREQUAL  "Test_Group1")	 
+ if(${INTEGRATION_TESTS} STREQUAL  "AEHal_Tests1")
  add_subdirectory(exeHalTest)
 endif()
 

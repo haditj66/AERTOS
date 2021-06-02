@@ -12,7 +12,7 @@
       <ShowMemoryUsageOutput>true</ShowMemoryUsageOutput>
       <AllCMakeFiles>
         <string>C:/visualgdb_projects/AERTOSCopy/CMakeLists.txt</string>
-        <string>C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/CgenCmakeConfigFunctions.cmake</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/cmake/CgenCmakeConfigFunctions.cmake</string>
         <string>C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/FromGuiOrProject.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CGensaveFiles/cgenCmakeCache.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.15.2/CMakeSystem.cmake</string>
@@ -67,18 +67,18 @@
         <string>C:/Users/Hadi/AppData/Local/VisualGDB/TestFrameworks/com.sysprogs.unittest.googletest/framework.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/cmake/GetFREERTOS_MINGW.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/CMakeLists.txt</string>
-        <string>C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/CMakeLists.txt</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/CMakeLists.txt</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/exeHalTest/CMakeLists.txt</string>
       </AllCMakeFiles>
       <ExtraDependencies />
       <Install>false</Install>
       <HasUnitTests>false</HasUnitTests>
       <Extension xsi:type="EmbeddedCMakeExtension">
         <StartupTargetReference>
-          <Name>AECore</Name>
+          <Name>AEHalexe</Name>
           <Location>
-            <RawFilePath>C:/visualgdb_projects/AERTOSCopy/src/AE/exeTest/CMakeLists.txt</RawFilePath>
-            <LineNumber>18</LineNumber>
+            <RawFilePath>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/exeHalTest/CMakeLists.txt</RawFilePath>
+            <LineNumber>8</LineNumber>
             <StatementName>add_bsp_based_executable</StatementName>
           </Location>
         </StartupTargetReference>
@@ -86,7 +86,7 @@
           <Name>BSP</Name>
           <Location>
             <RawFilePath>C:/visualgdb_projects/AERTOSCopy/CMakeLists.txt</RawFilePath>
-            <LineNumber>239</LineNumber>
+            <LineNumber>260</LineNumber>
             <StatementName>find_bsp</StatementName>
           </Location>
         </BSPReference>
@@ -96,6 +96,7 @@
           </Location>
         </TestFWReference>
         <AllReferencedLibraries>
+          <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/libAEHalLib.a</string>
           <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/libAECoreLib.a</string>
           <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/BSP.dir/C_/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/dummy.c.obj</string>
         </AllReferencedLibraries>
@@ -107,14 +108,14 @@
       <Entries>
         <KeyValue>
           <Key>SelectedCMakeTarget</Key>
-          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/exeTest/AECore.exe</Value>
+          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/exeHalTest/AEHalexe.exe</Value>
         </KeyValue>
         <KeyValue>
           <Key>SelectedCMakeTargetArgs</Key>
         </KeyValue>
         <KeyValue>
           <Key>SelectedCMakeTargetLaunchDir</Key>
-          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/exeTest</Value>
+          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/exeHalTest</Value>
         </KeyValue>
       </Entries>
     </ExtraProjectVariables>
@@ -128,6 +129,7 @@
     <ExtraLibrariesForLDLibraryPath>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/BSP.dir/C_/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/dummy.c.obj</string>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/croutine.c.obj</string>
+      <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/libAEHalLib.a</string>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/libAECoreLib.a</string>
     </ExtraLibrariesForLDLibraryPath>
     <CodeCoverageForMainProjectQueried>false</CodeCoverageForMainProjectQueried>

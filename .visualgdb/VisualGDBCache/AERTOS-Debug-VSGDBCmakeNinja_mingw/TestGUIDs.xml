@@ -28,4 +28,16 @@
     <TestName>AEPerformanceTimer_multiple_Timers</TestName>
     <GUID>554f2e1e-17f9-4f0f-a779-76722e40f183</GUID>
   </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>PinSelector_pin_validation</TestName>
+    <GUID>21775ec5-3920-43f3-a416-91734a757c23</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEGPIO_simple_init</TestName>
+    <GUID>f6872022-5a1a-4a07-ab4b-12c5d1eb62aa</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEPeripheral_simple_init</TestName>
+    <GUID>8871c165-41f9-4d44-bede-569abfc98cb6</GUID>
+  </TestGUIDRecord>
 </ArrayOfTestGUIDRecord>

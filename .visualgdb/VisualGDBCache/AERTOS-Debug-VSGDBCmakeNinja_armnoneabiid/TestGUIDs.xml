@@ -28,4 +28,16 @@
     <TestName>AEPrint_simple_print</TestName>
     <GUID>7e645ad5-0774-4633-8d2f-9a866e6a22d9</GUID>
   </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEGPIO_simple_init</TestName>
+    <GUID>368e66b5-7aac-4d08-8004-7bdfe1918e42</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>PinSelector_pin_validation</TestName>
+    <GUID>3b0be7d4-eef4-4c5b-b7eb-35d6deed289c</GUID>
+  </TestGUIDRecord>
+  <TestGUIDRecord>
+    <TestName>AEPeripheral_simple_init</TestName>
+    <GUID>20431473-46c0-41ae-ad1c-7b605b4ab95e</GUID>
+  </TestGUIDRecord>
 </ArrayOfTestGUIDRecord>
