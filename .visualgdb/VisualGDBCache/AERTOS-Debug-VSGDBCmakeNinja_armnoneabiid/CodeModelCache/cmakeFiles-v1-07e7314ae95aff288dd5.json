@@ -1,0 +1,241 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"path" : "cmake/CgenCmakeConfigFunctions.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/FromGuiOrProject.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_armnoneabiid/Debug/CGensaveFiles/cgenCmakeCache.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/3.19.3/CMakeSystem.cmake"
+		},
+		{
+			"path" : "toolchains/arm_non_eabi_id/toolchain.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/root.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/bsp.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/coverage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/prefixes.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/testfw.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/efp.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/resources.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/FindFrameworks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/3.19.3/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/3.19.3/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/3.19.3/CMakeASMCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Platform/Generic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Platform/Generic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Platform/Generic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeASMInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU-ASM.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"path" : "cmake/MyCmakeHelpers.cmake"
+		},
+		{
+			"path" : "cmake/GetBoardMetaTypes.cmake"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFile.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFilecpp.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFile.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFilecpp.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFile.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFilecpp.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFile.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFilecpp.cgenM.in"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/FindBSP.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/bsp.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/framework.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/Hadi/AppData/Local/VisualGDB/TestFrameworks/com.sysprogs.unittest.googletest/framework.cmake"
+		},
+		{
+			"path" : "src/AE/CMakeLists.txt"
+		},
+		{
+			"path" : "src/AE/hal/CMakeLists.txt"
+		},
+		{
+			"path" : "src/AE/hal/exeHalTest/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug",
+		"source" : "C:/visualgdb_projects/AERTOSCopy"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

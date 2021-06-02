@@ -1,0 +1,195 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"path" : "cmake/CgenCmakeConfigFunctions.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CmakeUnixMakefiles_gnu/debug/CGensaveFiles/cgenCmakeCache.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CmakeUnixMakefiles_gnu/debug/CMakeFiles/3.19.2/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CmakeUnixMakefiles_gnu/debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CmakeUnixMakefiles_gnu/debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CmakeUnixMakefiles_gnu/debug/CMakeFiles/3.19.2/CMakeASMCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeFindCodeBlocks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/ProcessorCount.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/CMakeASMInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-ASM.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/151/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"path" : "cmake/MyCmakeHelpers.cmake"
+		},
+		{
+			"path" : "cmake/GetBoardMetaTypes.cmake"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFile.cgenM.in"
+		},
+		{
+			"path" : "GeneratedFiles/SetupFilecpp.cgenM.in"
+		},
+		{
+			"path" : "src/AE/CMakeLists.txt"
+		},
+		{
+			"path" : "src/AE/exeTest/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/home/hadi/Documents/AERTOSMount/build/CmakeUnixMakefiles_gnu/debug",
+		"source" : "/home/hadi/Documents/AERTOSMount"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}
