@@ -1,0 +1,212 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "src/AE",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/AE",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src/AE/hal",
+					"childIndexes" : 
+					[
+						3
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/AE/hal",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "src/AE/hal/exeHalTest",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/AE/hal/exeHalTest",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				}
+			],
+			"name" : "DEBUG",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "AERTOS",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "AECoreLib::@dbae314adb83077d4c0f",
+					"jsonFile" : "target-AECoreLib-DEBUG-d5bb08c8178ce5d1380c.json",
+					"name" : "AECoreLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "AEHalLib::@f3e1d49ac31996c899d3",
+					"jsonFile" : "target-AEHalLib-DEBUG-e07af24fca120e389809.json",
+					"name" : "AEHalLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "AEHalTests::@f3e1d49ac31996c899d3",
+					"jsonFile" : "target-AEHalTests-DEBUG-2420a854e084ac732aa4.json",
+					"name" : "AEHalTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "AEHalTests-bin::@f3e1d49ac31996c899d3",
+					"jsonFile" : "target-AEHalTests-bin-DEBUG-9493351c0e6ec47a6b44.json",
+					"name" : "AEHalTests-bin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "AEHalexe::@58cde663eddb9861db5a",
+					"jsonFile" : "target-AEHalexe-DEBUG-6371e89a032aff860afa.json",
+					"name" : "AEHalexe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "AEHalexe-bin::@58cde663eddb9861db5a",
+					"jsonFile" : "target-AEHalexe-bin-DEBUG-beb98a4158c5c364b82f.json",
+					"name" : "AEHalexe-bin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP-DEBUG-bc87d4c6a4a791f17de1.json",
+					"name" : "BSP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_EFP_semihosting_and_profiler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_EFP_semihosting_and_profiler-DEBUG-f865a12fd41633a1c438.json",
+					"name" : "BSP_EFP_semihosting_and_profiler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_com.sysprogs.arm.stm32.freertos::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_com.sysprogs.arm.stm32.freertos-DEBUG-796549c8fe7dfa2c220d.json",
+					"name" : "BSP_com.sysprogs.arm.stm32.freertos",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_com.sysprogs.arm.stm32.hal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_com.sysprogs.arm.stm32.hal-DEBUG-045402cb44336666dddb.json",
+					"name" : "BSP_com.sysprogs.arm.stm32.hal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_com.sysprogs.arm.stm32.ll::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_com.sysprogs.arm.stm32.ll-DEBUG-08b877561265d201fead.json",
+					"name" : "BSP_com.sysprogs.arm.stm32.ll",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TESTFW::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TESTFW-DEBUG-29b1df7278982d0fcc3e.json",
+					"name" : "TESTFW",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug",
+		"source" : "C:/visualgdb_projects/AERTOSCopy"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

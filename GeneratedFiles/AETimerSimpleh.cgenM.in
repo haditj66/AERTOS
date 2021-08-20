@@ -1,0 +1,60 @@
+##Macro1 
+##Macro2  
+##Macro3  
+##Macro4
+##Macro5
+##Macro6
+##Macro7
+##Macro8
+##Macro9
+##Macro10
+##LoopIncrement1 
+##LoopIncrement2 
+##LoopIncrement3 
+##LoopIncrement4 
+##LoopIncrement5 
+##LoopIncrement6
+##LoopIncrement7
+##LoopIncrement8
+##LoopIncrement9
+##LoopIncrement10
+
+##ToFile @_arg_OUTPUT_FILE_NAME@.@_arg_OUTPUT_FILE_EXTENSION@
+
+#pragma once
+
+
+//includes
+##UserCode_a
+
+typedef void (*TimerSimpleCallback_t)( void* );
+
+class AETimerSimple
+{
+public:
+    AETimerSimple(TimerSimpleCallback_t timerSimpleCallback, uint32_t periodOfTimerTicksInMilli, bool autoReload);
+	
+	void StartTimer();
+    void StopTimer();
+    void PauseTimer();
+    bool IsTimerActive();
+
+    uint32_t GetPeriodOfTimer()
+    {
+        return PeriodOfTimerTicksInMilli;
+    }
+
+	##UserCode_c
+
+
+private:
+    TimerSimpleCallback_t TimerSimpleCallback;
+	uint32_t PeriodOfTimerTicksInMilli;
+	bool AutoReload;
+
+
+
+    ##UserCode_d
+};
+
+##UserCode_e

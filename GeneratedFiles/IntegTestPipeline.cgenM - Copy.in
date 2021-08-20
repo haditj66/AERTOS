@@ -1,0 +1,26 @@
+##Macro1 
+##Macro2  
+##Macro3  
+##Macro4
+##Macro5
+##Macro6
+##Macro7
+##Macro8
+##Macro9
+##Macro10
+##LoopIncrement1 
+##LoopIncrement2 
+##LoopIncrement3 
+##LoopIncrement4 
+##LoopIncrement5 
+##LoopIncrement6
+##LoopIncrement7
+##LoopIncrement8
+##LoopIncrement9
+##LoopIncrement10
+
+##ToFile @_arg_OUTPUT_FILE_NAME@.@_arg_OUTPUT_FILE_EXTENSION@
+
+#pragma once
+ 
+ 

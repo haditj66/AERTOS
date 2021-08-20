@@ -1,0 +1,70 @@
+##Macro1
+##Macro2
+##Macro3
+##Macro4
+##Macro5
+##Macro6
+##Macro7
+##Macro8
+##Macro9
+##Macro10
+##LoopIncrement1
+##LoopIncrement2
+##LoopIncrement3
+##LoopIncrement4
+##LoopIncrement5
+##LoopIncrement6
+##LoopIncrement7
+##LoopIncrement8
+##LoopIncrement9
+##LoopIncrement10
+
+##ToFile AETimerSimple.cpp
+
+
+//includes
+#include "AETimerSimple.h"
+
+##UserCode_f
+
+
+AETimerSimple::AETimerSimple(TimerSimpleCallback_t timerSimpleCallback, uint32_t periodOfTimerTicksInMilli, bool autoReload)
+{
+TimerSimpleCallback = timerSimpleCallback;
+PeriodOfTimerTicksInMilli = periodOfTimerTicksInMilli;
+AutoReload = autoReload;
+
+##UserCode_a
+
+    //always stop the timer
+    StopTimer();
+
+}
+
+
+
+void AETimerSimple::StartTimer(){
+    ##UserCode_b
+}
+
+
+void AETimerSimple::StopTimer(){
+    ##UserCode_c
+}
+
+void AETimerSimple::PauseTimer(){
+    ##UserCode_d
+}
+
+bool AETimerSimple::IsTimerActive(){
+    ##UserCode_e
+}
+
+
+void AETimerSimple::ChangePeriod(uint32_t newPeriod){
+    ##UserCode_g
+}
+
+uint32_t AETimerSimple::GetPeriodOfTimer()  const {
+    ##UserCode_h
+}
