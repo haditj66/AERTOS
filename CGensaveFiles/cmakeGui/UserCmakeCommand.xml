@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<CmakeSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CmakeLocation>cmake</CmakeLocation>
+  <Generator>Ninja</Generator>
+  <CmakeOptions />
+  <IsRemotePC>false</IsRemotePC>
+  <RemoteWorkingDirectory />
+  <RemoteIPAddress />
+  <RemoteUsername />
+  <RemotePassword />
+</CmakeSettings>

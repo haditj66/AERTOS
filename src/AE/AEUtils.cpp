@@ -36,7 +36,6 @@ static  void _AEPrint(char* msg);
 #endif
 
 
-#if (SWIL_HWIL_DRIVEN == HWIL)
 
 #if (PRINT_METHOD == PRINT_SEMIHOSTING)
 static void _AEPrint(char* msg)
@@ -67,11 +66,11 @@ void _AEPrint(char* msg)
 }
 #endif
 
-#endif
 
 
 
-#if (SWIL_HWIL_DRIVEN == SWIL)
+
+#if (PRINT_METHOD == NORMAL_PRINTF_WINDOWS)
 void _AEPrint(char* msg)
 { 
 	printf(msg);
@@ -80,7 +79,7 @@ void _AEPrint(char* msg)
 
 #endif
 
-#if defined(USING_LINUX)
+#if (PRINT_METHOD == NORMAL_PRINTF_LINUX)
 
 #include "iostream"
 void _AEPrint(char* msg)

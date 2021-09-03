@@ -1,4 +1,8 @@
-#pragma once
+/**
+* @file AECircularBuffer.h
+* sdvsdv
+*/
+# pragma once
 
 
 #include <cstdint>
@@ -17,7 +21,11 @@ public:
 	AECircularBuffer(); 
 
 
+	/**
 
+	 … test function that runs or somethign.…
+
+	 */
 	void Push(ContainerType item, bool withFullCheck = true) {
 		CircularBuffMutexTake Push_IMPL(item, withFullCheck);  CircularBuffMutexGive;
 	};

@@ -1,0 +1,17 @@
+/** \page IntegrationTest
+## Module's Role
+AERTOS has it's own module for conducting Integration tests.<br><br>These are the APIs for integration testing</pre>
+
+\include c:\visualgdb_projects\AERTOSCopy\build\VSGDBCmakeNinja_armnoneabiid\Debug\CGensaveFiles\IntegrationTestMacros.h
+
+    <h4>integration test enders: will end the test in various ways<span style="font-family: monospace;"></span></h4>
+    the following will end the test after 5 seconds have passed \snippet c:\visualgdb_projects\aertoscopy\src\AE\hal\exeHalTest\ADC_TEST.cpp timed end
+
+    <h4>integration test specifics:</h4>
+    expects a test with the name specified to run at a later time. if this test does not run, the test will fail. \snippet c:\visualgdb_projects\aertoscopy\src\AE\hal\exeHalTest\ADC_TEST.cpp expect to run
+
+   
+    \code
+okp
+\endcode
+*/

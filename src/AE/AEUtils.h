@@ -1,3 +1,8 @@
+/** \file AEUtils.h
+ * A collection of utility functions for AE
+ * A more elaborated file description.
+ */
+
 #pragma once
 
 #if SWIL_HWIL_DRIVEN == SWIL
@@ -50,8 +55,8 @@
 
 enum AEPriorities
 {
-	LowestPriority = AOPRIORITYLOWEST,
-	MediumPriority = AOPRIORITYMEDIUM,
+	LowestPriority  = AOPRIORITYLOWEST,
+	MediumPriority  = AOPRIORITYMEDIUM,
 	HighestPriority = AOPRIORITYHIGHEST - 1 // -1 so to leave room to the actual highest priority that the AE uses
 };
 
@@ -63,8 +68,10 @@ class AENullFSMUtility
 {
 public:
 	template<class TBla>
-	void SetExclusivePossessor(TBla*) {};
-	uint16_t GetAO_ID() { return 0; };
+		void SetExclusivePossessor(TBla*) {}
+	;
+	uint16_t GetAO_ID() { return 0; }
+	;
 };
 
 
@@ -72,16 +79,22 @@ class NULLPeripheral
 {
 public:
 	static void* Instance;
-	static void* getInstance() { return nullptr; };
-	void initializePeripheral() {};
+	static void* getInstance() { return nullptr; }
+	;
+	void initializePeripheral() {}
+	;
 
 };
 
 class AENullClass {
-public:float operator()(float a) { return 0; };
-	   void Initialize(float a) {};
-	   float GetObservation() { return 1; };
-	   float* GetOutputDataAddress() { return nullptr; };
+public:float operator()(float a) { return 0; }
+	;
+	void Initialize(float a) {}
+	;
+	float GetObservation() { return 1; }
+	;
+	float* GetOutputDataAddress() { return nullptr; }
+	;
 };
 
 class AENULLEvent
@@ -90,8 +103,10 @@ public:
 	bool EvtId;
 	bool EvtIdStatic;
 #pragma warning( disable : 26495)
-	AENULLEvent() {};
-	void init(uint16_t evtId) {};
+	AENULLEvent() {}
+	;
+	void init(uint16_t evtId) {}
+	;
 };
 
 typedef	bool AENull;
@@ -101,26 +116,28 @@ class AENullActionRequest;
 
 
 template<typename TypeOfArgToCheck>
-struct IsArrayChecker
-{
-	static const bool IsArgumentArray(TypeOfArgToCheck argToCheck);
-};
+	struct IsArrayChecker
+	{
+		static const bool IsArgumentArray(TypeOfArgToCheck argToCheck);
+	};
 
 template<typename TypeOfArgToCheck>
-inline const bool IsArrayChecker< TypeOfArgToCheck>::IsArgumentArray(TypeOfArgToCheck argToCheck)
-{
-	return sizeof(TypeOfArgToCheck) != sizeof(argToCheck);
-}
+	inline const bool IsArrayChecker< TypeOfArgToCheck>::IsArgumentArray(TypeOfArgToCheck argToCheck)
+	{
+		return sizeof(TypeOfArgToCheck) != sizeof(argToCheck);
+	}
 
 template<class TTypeToCopyFrom>
-class ArrayCheckToMemCopy
-{
-public:
-	static void AEMemcpy(void* dest, TTypeToCopyFrom source, uint32_t size);
-private:
-	static void AEMemcpyIMPL1(void* dest, TTypeToCopyFrom source, uint32_t size) { memcpy(dest, (void*)source, size); };
-	static void AEMemcpyIMPL2(void* dest, TTypeToCopyFrom source, uint32_t size) { memcpy(dest, (void*)&source, size); };
-};
+	class ArrayCheckToMemCopy
+	{
+	public:
+		static void AEMemcpy(void* dest, TTypeToCopyFrom source, uint32_t size);
+	private:
+		static void AEMemcpyIMPL1(void* dest, TTypeToCopyFrom source, uint32_t size) { memcpy(dest, (void*)source, size); }
+		;
+		static void AEMemcpyIMPL2(void* dest, TTypeToCopyFrom source, uint32_t size) { memcpy(dest, (void*)&source, size); }
+		;
+	};
 
 /*
 template<class TTypeToCopyFrom, uint32_t N>
@@ -136,33 +153,33 @@ private:
 
 
 template<class TTypeToCopyFrom>
-inline void ArrayCheckToMemCopy<TTypeToCopyFrom>::AEMemcpy(void* dest, TTypeToCopyFrom source, uint32_t size) {
+	inline void ArrayCheckToMemCopy<TTypeToCopyFrom>::AEMemcpy(void* dest, TTypeToCopyFrom source, uint32_t size) {
 
-	memcpy(dest, source, size);
-}
-
-template<>
-inline void ArrayCheckToMemCopy<const char*>::AEMemcpy(void* dest, const char * source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+		memcpy(dest, source, size);
+	}
 
 template<>
-inline void ArrayCheckToMemCopy<char*>::AEMemcpy(void* dest, char* source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
-template<>
-inline void ArrayCheckToMemCopy<uint8_t*>::AEMemcpy(void* dest, uint8_t* source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<const char*>::AEMemcpy(void* dest, const char * source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 
 template<>
-inline void ArrayCheckToMemCopy<char>::AEMemcpy(void* dest, char source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<char*>::AEMemcpy(void* dest, char* source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
+template<>
+	inline void ArrayCheckToMemCopy<uint8_t*>::AEMemcpy(void* dest, uint8_t* source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
+
+template<>
+	inline void ArrayCheckToMemCopy<char>::AEMemcpy(void* dest, char source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 
 
 
@@ -173,72 +190,72 @@ inline void ArrayCheckToMemCopy<char>::AEMemcpy(void* dest, char source, uint32_
 	memcpy(dest, &source, size);
 }*/
 template<>
-inline void ArrayCheckToMemCopy<float>::AEMemcpy(void* dest, float source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<float>::AEMemcpy(void* dest, float source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 template<>
-inline void ArrayCheckToMemCopy<uint32_t>::AEMemcpy(void* dest, uint32_t source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<uint32_t>::AEMemcpy(void* dest, uint32_t source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 template<>
-inline void ArrayCheckToMemCopy<uint16_t>::AEMemcpy(void* dest, uint16_t source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<uint16_t>::AEMemcpy(void* dest, uint16_t source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 template<>
-inline void ArrayCheckToMemCopy<uint8_t>::AEMemcpy(void* dest, uint8_t source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<uint8_t>::AEMemcpy(void* dest, uint8_t source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 template<>
-inline void ArrayCheckToMemCopy<bool>::AEMemcpy(void* dest, bool source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<bool>::AEMemcpy(void* dest, bool source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 template<>
-inline void ArrayCheckToMemCopy<double>::AEMemcpy(void* dest, double source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<double>::AEMemcpy(void* dest, double source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 template<>
-inline void ArrayCheckToMemCopy<int>::AEMemcpy(void* dest, int source, uint32_t size)
-{
-	memcpy(dest, &source, size);
-}
+	inline void ArrayCheckToMemCopy<int>::AEMemcpy(void* dest, int source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
 
 
 
 template<typename TTypeToCheck1, typename TTypeToCheck2 >
-struct TypeChecker_isSame
-{
+	struct TypeChecker_isSame
+	{
 
-	static const bool value = false;
-};
+		static const bool value = false;
+	};
 
 template<typename TTypeToCheck1>
-struct TypeChecker_isSame<TTypeToCheck1, TTypeToCheck1>
-{
-	static const bool value = true;
-};
+	struct TypeChecker_isSame<TTypeToCheck1, TTypeToCheck1>
+	{
+		static const bool value = true;
+	};
 
 struct TypeChecker
 {
 	template<class TTypeToCheck>
-	static bool IsAENullActionRequest();
+		static bool IsAENullActionRequest();
 	template<class TTypeToCheck>
-	static bool IsAENullFSMUtility();
+		static bool IsAENullFSMUtility();
 	template<class TTypetoCheck>
-	static bool IsAENull();
+		static bool IsAENull();
 	template<class TTypetoCheck>
-	static bool Isuint32_tPtr();
+		static bool Isuint32_tPtr();
 	template<class TTypetoCheck>
-	static bool IsfloatPtr();
+		static bool IsfloatPtr();
 	template<class TTypetoCheck>
-	static bool IsAEEventNullClass();
+		static bool IsAEEventNullClass();
 	template<class TTypetoCheck>
-	static bool IsNULLPeripheral();
+		static bool IsNULLPeripheral();
 };
 
 //specialization function to check if a template parameter passed was an AENull in order to not use __FUNCTION__ or RTTI
@@ -256,10 +273,10 @@ inline bool TypeChecker::IsAENullActionRequest()
 }
 
 template<>
-inline bool TypeChecker::IsAENullFSMUtility<AENullFSMUtility>()
-{
-	return true;
-}
+	inline bool TypeChecker::IsAENullFSMUtility<AENullFSMUtility>()
+	{
+		return true;
+	}
 //if any other type 
 template<class TTypetoCheck>
 inline bool TypeChecker::IsAENullFSMUtility()
@@ -268,10 +285,10 @@ inline bool TypeChecker::IsAENullFSMUtility()
 }
 
 template<>
-inline bool TypeChecker::IsAEEventNullClass<AENULLEvent>()
-{
-	return true;
-}
+	inline bool TypeChecker::IsAEEventNullClass<AENULLEvent>()
+	{
+		return true;
+	}
 //if any other type 
 template<class TTypetoCheck>
 inline bool TypeChecker::IsAEEventNullClass()
@@ -280,10 +297,10 @@ inline bool TypeChecker::IsAEEventNullClass()
 }
 
 template<>
-inline bool TypeChecker::IsAENull<AENull>()
-{
-	return true;
-}
+	inline bool TypeChecker::IsAENull<AENull>()
+	{
+		return true;
+	}
 //if any other type 
 template<class TTypetoCheck>
 inline bool TypeChecker::IsAENull()
@@ -292,10 +309,10 @@ inline bool TypeChecker::IsAENull()
 }
 
 template<>
-inline bool TypeChecker::Isuint32_tPtr<uint32_t>()
-{
-	return true;
-}
+	inline bool TypeChecker::Isuint32_tPtr<uint32_t>()
+	{
+		return true;
+	}
 //if any other type 
 template<class TTypetoCheck>
 inline bool TypeChecker::Isuint32_tPtr()
@@ -304,10 +321,10 @@ inline bool TypeChecker::Isuint32_tPtr()
 }
 
 template<>
-inline bool TypeChecker::IsfloatPtr<float>()
-{
-	return true;
-}
+	inline bool TypeChecker::IsfloatPtr<float>()
+	{
+		return true;
+	}
 //if any other type 
 template<class TTypetoCheck>
 inline bool TypeChecker::IsfloatPtr()
@@ -316,10 +333,10 @@ inline bool TypeChecker::IsfloatPtr()
 }
 
 template<>
-inline bool TypeChecker::IsNULLPeripheral<NULLPeripheral>()
-{
-	return true;
-}
+	inline bool TypeChecker::IsNULLPeripheral<NULLPeripheral>()
+	{
+		return true;
+	}
 //if any other type 
 template<class TTypetoCheck>
 inline bool TypeChecker::IsNULLPeripheral()
@@ -433,7 +450,8 @@ enum AETransitionType {
 	UNHANDLED,
 	DEACTIVE,
 	ACTIVATE
-};
+}
+;
 
 enum AEFSMActiveTypeEnum {
 	PAUSE_TO_ACTIVATE,
@@ -576,11 +594,12 @@ public: \
 
 
 enum StyleOfSPB {
-	EachSPBTask, //each spb has its own task that it will use to execute its refresh
-	ChainOfSPBsTask,// there is one "chain task" that will run all refreshs
+	EachSPBTask,  //each spb has its own task that it will use to execute its refresh
+	ChainOfSPBsTask, // there is one "chain task" that will run all refreshs
 	ChainOfSPBsFromInterrupt //there are no tasks involved and so everything is run within the interrupt. 
 
-};
+}
+;
 
 
 
@@ -649,6 +668,9 @@ else \
  
 #if SWIL_HWIL_DRIVEN == HWIL
 #include <TestResourceManager.h>	
+
+ 
+
 inline void  AEWriteToEndOfFile(const char* FileNameToWriteTo, const void* ThingToWrite, uint32_t SizeOfThingToWrite) 
 {
 	auto hInputs = TRMCreateFile(FileNameToWriteTo, sfmCreateOrAppendWriteOnly);
@@ -668,19 +690,24 @@ inline void  AEClearContentsOfFile(const char* FileNameToClear)
 #include <stdio.h>
 inline void  AEWriteToEndOfFile(const char* FileNameToWriteTo, const void* ThingToWrite, uint32_t SizeOfThingToWrite) 
 {
-	std::string PathtoFile = "C:\\visualgdb_projects\\AERTOS\\TestResources\\";
+	std::string PathtoFile = CGEN_CMAKE_CURRENT_SOURCE_DIR;
+	//	std::string PathtoFile = "C:\\visualgdb_projects\\AERTOSCopy\\TestResources\\";
+		PathtoFile.append("\\TestResources\\");
 	PathtoFile.append(FileNameToWriteTo);
 	FILE* fp = fopen(PathtoFile.c_str(), "a");
 	//if fp=0 then file must not exist
 	if(fp != 0)
-	{fprintf(fp, "%s", ThingToWrite); 
-	fclose(fp);
+	{
+		fprintf(fp, "%s", ThingToWrite); 
+		fclose(fp);
 	}
 }
 
 inline void  AEClearContentsOfFile(const char* FileNameToClear) 
 {
-	std::string PathtoFile = "C:\\visualgdb_projects\\AERTOS\\TestResources\\";
+	std::string PathtoFile = CGEN_CMAKE_CURRENT_SOURCE_DIR;
+	//	std::string PathtoFile = "C:\\visualgdb_projects\\AERTOSCopy\\TestResources\\";
+		PathtoFile.append("\\TestResources\\");
 	PathtoFile.append(FileNameToClear);
 	FILE* fp = fopen(PathtoFile.c_str(), "w");
 	fprintf(fp, "%s", ""); 
@@ -708,30 +735,81 @@ inline void  AEClearContentsOfFile(const char* FileNameToClear)
 
 class AssertTestCheck
 {
-  public:
+public:
 	AssertTestCheck(std::string assertName, bool isToCheckPass)
-		: AssertName(assertName), IsToCheckPass(isToCheckPass){}
+		: AssertName(assertName)
+		, IsToCheckPass(isToCheckPass) {}
 	std::string AssertName; 
 	bool IsToCheckPass;
-};
+}
+;
 
 #include <vector>
 static std::vector<AssertTestCheck*> UniqueIdsOfTestingAsserts;
 //use the GoogleTest assert
+ 
+ 
+
 #define TheAssertToUse(predicate) EXPECT_TRUE(predicate)
 
 #define AE_Expect_Assert_To_Fail(AssertionMessage) UniqueIdsOfTestingAsserts.push_back(new AssertTestCheck(AssertionMessage, false));
 #define AE_Expect_Assert_To_Pass(AssertionMessage) UniqueIdsOfTestingAsserts.push_back(new AssertTestCheck(AssertionMessage, true));
 #define AE_Clear_Expectations_Of_Asserts UniqueIdsOfTestingAsserts.clear();
+ 
 
 #else
+
 //use the freeRTOS assert
 
+
+
+
+
+
+//
+//#define _AEweaks(ret, funcName) ret funcName##r
+//
+//#if  AEPLATFORM == VSGDBCmakeNinja_armnoneabiid
+//#define _AEweak(ret, funcName) __weak ret funcName
+//
+//#elif AEPLATFORM == VSGDBCmakeNinja_mingw
+//#define _AEweak(ret, funcName) ret funcName
+//
+//#endif
+//
+//typedef void (*RuntimeAssertfnc_t)(void);
+//static RuntimeAssertfnc_t fncr = NULL;
+//void RuntimeAssertr()
+//{
+//	if (fncr != nullptr)
+//	{
+//		fncr();
+//	}
+//}
+
+  
+
+ 
+//_AEweaks(void, RuntimeAssert)()
+//{
+//}
+//
+//void RuntimeAssert()
+//{
+//	//implementation
+//}
+
+
+
+
+
+
+/// \def assert the the predicate. test code: sdve46ydv
 #define TheAssertToUse(predicate) configASSERT(predicate)
 #endif
 
 
-
+///  this will assert the predicate. if fails, will print assert command. test code: asvasf343
 #define AEAssertRuntime(thingToAssert, AssertionMessage)\
 if(thingToAssert == false){\
 AEPrint(AssertionMessage);\
@@ -741,7 +819,9 @@ TheAssertToUse(thingToAssert); }
 #define AEAssertRuntimeNoMsg(thingToAssert) AEAssertRuntime(thingToAssert, "")
 
 #if GOOGLE_TESTING
-//use this for testing when you want to later test that this assert failed
+
+///####
+///Use this for testing when you want to later test that this assert passed or failed with a unit test.
 #define AEAssertRuntimeWithAssertCodeToTest(thingToAssert, uniqueNameOfAssert, AssertionMessage) \
 for (size_t i = 0; i < UniqueIdsOfTestingAsserts.size(); i++)\
 {\
@@ -767,6 +847,7 @@ for (size_t i = 0; i < UniqueIdsOfTestingAsserts.size(); i++)\
 //inline static void AEResetAssertCodes() { UniqueIdsOfTestingAsserts.clear();}
 
 #else 
+///Use this for testing when you want to later test that this assert passed or failed with a unit test.
 #define AEAssertRuntimeWithAssertCodeToTest(thingToAssert, uniqueNameOfAssert, AssertionMessage) AEAssertRuntime(thingToAssert, AssertionMessage)
 #endif
 
@@ -905,6 +986,28 @@ static float AE_Map(float valueToMap, float lowerBoundOfMapFROM, float UpperBoun
 
 	return mappedValue;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
 
 
 

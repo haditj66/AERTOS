@@ -20,5 +20,21 @@
 ##LoopIncrement10
 
 ##ToFile @_arg_OUTPUT_FILE_NAME@.@_arg_OUTPUT_FILE_EXTENSION@
+
+#if INTEGRATION_TESTS_FOR_@INTEGRATION_TESTS@ == @TEST_NAME@
  
- 
+#include "IntegTestPipeline.h"
+
+##UserCode_a
+
+void RunSelectedIntegrationTest_@TEST_NAME@()
+{
+
+##UserCode_b
+
+}
+
+
+##UserCode_c
+
+#endif

@@ -357,11 +357,6 @@
           <PathStyle>Unknown</PathStyle>
         </CustomSourceDirectories>
         <AutoProgramSPIFFSPartition>true</AutoProgramSPIFFSPartition>
-        <BuildHost>
-          <HostName>192.168.1.116</HostName>
-          <Transport>SSH</Transport>
-          <UserName>hadi</UserName>
-        </BuildHost>
         <DeploymentHost>
           <HostName>192.168.1.116</HostName>
           <Transport>SSH</Transport>
@@ -414,9 +409,11 @@
       <BuildSettingsOverride xsi:type="com.visualgdb.build.cmake">
         <BuildLogMode xsi:nil="true" />
         <ToolchainID>
-          <ID>com.sysprogs.toolchain.default-gcc</ID>
+          <ID>com.visualgdb.ubuntu.x64</ID>
           <Version>
-            <Revision>0</Revision>
+            <GCC>9.3.0</GCC>
+            <GDB>9.1</GDB>
+            <Revision>1</Revision>
           </Version>
         </ToolchainID>
         <RelativeSourceDirectory />

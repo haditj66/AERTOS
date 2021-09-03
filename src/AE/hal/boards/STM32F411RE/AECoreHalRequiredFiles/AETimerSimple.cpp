@@ -1,0 +1,101 @@
+//generated file: AETimerSimple.cpp
+
+
+
+//includes
+#include "AETimerSimple.h"
+
+//UserCode_Sectionf
+//UserCode_Sectionf_end
+
+
+AETimerSimple::AETimerSimple(uint32_t periodOfTimerTicksInMilli, bool autoReload,TimerSimpleCallback_t timerSimpleCallback)
+{
+TimerSimpleCallback = timerSimpleCallback;
+PeriodOfTimerTicksInMilli = periodOfTimerTicksInMilli;
+AutoReload = autoReload;
+
+//UserCode_Sectiona
+uint16_t periodInTicks = pdMS_TO_TICKS(PeriodOfTimerTicksInMilli);
+	
+//create the timer for freertos
+	UpdateTimePaused = false;
+	
+		xTimerForThisSimpleTimer = xTimerCreate
+		( /* Just a text name, not used by the RTOS
+		  kernel. */
+			"Timer",
+		/* The timer period in ticks, must be
+		greater than 0. */
+		periodInTicks,
+		/* The timers will auto-reload themselves
+		when they expire. */
+		autoReload,
+		/* The ID is used to store the AO id*/
+		(void *)1,
+		/* Each timer calls the same callback when
+		it expires. */
+		timerSimpleCallback
+);
+//UserCode_Sectiona_end
+
+    //always stop the timer
+    StopTimer();
+
+}
+
+
+
+void AETimerSimple::StartTimer(){
+    //UserCode_Sectionb
+xTimerStart(xTimerForThisSimpleTimer, 0);
+//UserCode_Sectionb_end
+}
+
+
+void AETimerSimple::StopTimer(){
+    //UserCode_Sectionc
+xTimerStop(xTimerForThisSimpleTimer, 0);
+//UserCode_Sectionc_end
+}
+
+void AETimerSimple::PauseTimer(){
+    //UserCode_Sectiond
+//this will pause the timer only if it is active
+	if(xTimerIsTimerActive(xTimerForThisSimpleTimer) != pdFALSE)
+	{
+		//TODO: first maybe I need to grab the ticks remaining for when there is an unpause?
+		//auto xRemainingTime = xTimerGetExpiryTime(xTimerForUpdatingStates) - xTaskGetTickCount();
+		xTimerStop(xTimerForThisSimpleTimer, 0);
+
+		UpdateTimePaused = true;
+	}
+	else
+	{
+		UpdateTimePaused = false;
+	}
+//UserCode_Sectiond_end
+}
+
+bool AETimerSimple::IsTimerActive(){
+    //UserCode_Sectione
+return xTimerIsTimerActive(xTimerForThisSimpleTimer);
+//UserCode_Sectione_end
+}
+
+
+void AETimerSimple::ChangePeriod(uint32_t newPeriod){
+    //UserCode_Sectiong
+uint16_t periodInTicks = pdMS_TO_TICKS(newPeriod);
+	AEAssertRuntime(periodInTicks >= 1, "");
+
+	
+	xTimerChangePeriod(xTimerForThisSimpleTimer, periodInTicks, 0);
+//UserCode_Sectiong_end
+}
+
+uint32_t AETimerSimple::GetPeriodOfTimer()  const {
+    //UserCode_Sectionh
+return xTimerGetPeriod(xTimerForThisSimpleTimer);
+//UserCode_Sectionh_end
+}

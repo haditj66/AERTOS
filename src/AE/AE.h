@@ -2,11 +2,13 @@
 
 
 
+//DONT PUT #include AEUtils.H HERE. IT WONT WORK!
 
-
-
-
+//! [Adding a resource]
+ 
 #include "AEConfig.h" 
+
+//! [Adding a resource]
 
 
 

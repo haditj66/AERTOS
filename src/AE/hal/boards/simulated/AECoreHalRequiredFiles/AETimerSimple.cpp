@@ -16,6 +16,7 @@ PeriodOfTimerTicksInMilli = periodOfTimerTicksInMilli;
 AutoReload = autoReload;
 
 //UserCode_Sectiona
+#if RTOS_USED == FREERTOS
 uint16_t periodInTicks = pdMS_TO_TICKS(PeriodOfTimerTicksInMilli);
 	
 	//create the timer for freertos
@@ -36,6 +37,8 @@ uint16_t periodInTicks = pdMS_TO_TICKS(PeriodOfTimerTicksInMilli);
 		/* Each timer calls the same callback when
 		it expires. */
 		timerSimpleCallback);
+	
+#endif
 //UserCode_Sectiona_end
 
     //always stop the timer
@@ -47,19 +50,24 @@ uint16_t periodInTicks = pdMS_TO_TICKS(PeriodOfTimerTicksInMilli);
 
 void AETimerSimple::StartTimer(){
     //UserCode_Sectionb
+#if RTOS_USED == FREERTOS
 xTimerStart(xTimerForThisSimpleTimer, 0);
+#endif
 //UserCode_Sectionb_end
 }
 
 
 void AETimerSimple::StopTimer(){
     //UserCode_Sectionc
+#if RTOS_USED == FREERTOS
 xTimerStop(xTimerForThisSimpleTimer, 0);
+#endif
 //UserCode_Sectionc_end
 }
 
 void AETimerSimple::PauseTimer(){
     //UserCode_Sectiond
+#if RTOS_USED == FREERTOS
 //this will pause the timer only if it is active
 		if(xTimerIsTimerActive(xTimerForThisSimpleTimer) != pdFALSE)
 	{
@@ -73,28 +81,40 @@ void AETimerSimple::PauseTimer(){
 	{
 		UpdateTimePaused = false;
 	}
+	
+#endif
 //UserCode_Sectiond_end
 }
 
 bool AETimerSimple::IsTimerActive(){
     //UserCode_Sectione
+#if RTOS_USED == FREERTOS
 return xTimerIsTimerActive(xTimerForThisSimpleTimer);
+#else
+	return true;
+#endif
 //UserCode_Sectione_end
 }
 
 
 void AETimerSimple::ChangePeriod(uint32_t newPeriod){
     //UserCode_Sectiong
+#if RTOS_USED == FREERTOS
 uint16_t periodInTicks = pdMS_TO_TICKS(newPeriod);
 	AEAssertRuntime(periodInTicks >= 1, "");
 
 	
 	xTimerChangePeriod(xTimerForThisSimpleTimer, periodInTicks, 0);
+#endif
 //UserCode_Sectiong_end
 }
 
 uint32_t AETimerSimple::GetPeriodOfTimer()  const {
     //UserCode_Sectionh
+#if RTOS_USED == FREERTOS
 return xTimerGetPeriod(xTimerForThisSimpleTimer);
+#else
+	return 1;
+#endif
 //UserCode_Sectionh_end
 }

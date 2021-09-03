@@ -28,7 +28,7 @@
 ##UserCode_f
 
 
-AETimerSimple::AETimerSimple(TimerSimpleCallback_t timerSimpleCallback, uint32_t periodOfTimerTicksInMilli, bool autoReload)
+AETimerSimple::AETimerSimple(uint32_t periodOfTimerTicksInMilli, bool autoReload,TimerSimpleCallback_t timerSimpleCallback)
 {
 TimerSimpleCallback = timerSimpleCallback;
 PeriodOfTimerTicksInMilli = periodOfTimerTicksInMilli;

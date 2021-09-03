@@ -14,10 +14,10 @@ void RunSelectedIntegrationTest_UART_TEST()
 {
 
 //UserCode_Sectionb
-AEITEST_END_TestsAfterTimer_AEHal_Tests1(5000)
-
 AE_Init();  
 	
+	AEITEST_END_TestsAfterTimer_AEHal_Tests1(5000)
+		
 	
 	uart1->TansmitMsg("hello", 5);
 	uart1->SetRxCpltCallback([](char* msgReceived, uint32_t sizeOfReceivedMsg)->void {

@@ -1,0 +1,28 @@
+var _all_peripheral_objects_8h =
+[
+    [ "ADCPERIPHERAL1_INITIALIZE", "_all_peripheral_objects_8h.html#ab68eaa44f0bb0d7fb02806bc0453ce7a", null ],
+    [ "ADCPERIPHERAL2_INITIALIZE", "_all_peripheral_objects_8h.html#a8316ee63e092b3ae63bdbc1a23be0ad0", null ],
+    [ "ADCPERIPHERAL3_INITIALIZE", "_all_peripheral_objects_8h.html#ab9b66d0aa2452e1180e53c7f7a01e565", null ],
+    [ "ADCPERIPHERAL4_INITIALIZE", "_all_peripheral_objects_8h.html#afcc10b81dc603ecc3782712fdc28423c", null ],
+    [ "ADCPERIPHERAL5_INITIALIZE", "_all_peripheral_objects_8h.html#ae2af6ed30b2f1754b09670195c61c547", null ],
+    [ "ADCPERIPHERAL6_INITIALIZE", "_all_peripheral_objects_8h.html#a1d20e172e7e8dd360ed65085ddcd5c17", null ],
+    [ "GPIOInputPERIPHERAL1_INITIALIZE", "_all_peripheral_objects_8h.html#af1461a8662892e88a3eef8efdca1947e", null ],
+    [ "GPIOInputPERIPHERAL2_INITIALIZE", "_all_peripheral_objects_8h.html#ab41934c3afbc54b33b2cc7881655c5d8", null ],
+    [ "GPIOInputPERIPHERAL3_INITIALIZE", "_all_peripheral_objects_8h.html#a50299a5eab0cc95909271c9306b001c0", null ],
+    [ "GPIOInputPERIPHERAL4_INITIALIZE", "_all_peripheral_objects_8h.html#a48f5781ff757d2849d39269a2d3fd1f4", null ],
+    [ "GPIOInputPERIPHERAL5_INITIALIZE", "_all_peripheral_objects_8h.html#a16437660e25085831717c9366513195f", null ],
+    [ "GPIOInputPERIPHERAL6_INITIALIZE", "_all_peripheral_objects_8h.html#a5a4a32ac6d888e4b0a32d3cd757f84ae", null ],
+    [ "GPIOPERIPHERAL1_INITIALIZE", "_all_peripheral_objects_8h.html#aac39da9dfa251b0d91eff22e5b39002a", null ],
+    [ "GPIOPERIPHERAL2_INITIALIZE", "_all_peripheral_objects_8h.html#ae267f6fc408e3ae163b270acf48775d5", null ],
+    [ "GPIOPERIPHERAL3_INITIALIZE", "_all_peripheral_objects_8h.html#aabb5973b483dcebd39c1009efb302d14", null ],
+    [ "GPIOPERIPHERAL4_INITIALIZE", "_all_peripheral_objects_8h.html#a734d0e9471a8eb01fa16fdec6f98e6d3", null ],
+    [ "GPIOPERIPHERAL5_INITIALIZE", "_all_peripheral_objects_8h.html#a058f77ae8fb8c8d659c7a5e1e05ddca9", null ],
+    [ "GPIOPERIPHERAL6_INITIALIZE", "_all_peripheral_objects_8h.html#add9cec0f9654ea7d53a77b44a81f6c57", null ],
+    [ "InitializeAllPeripheral", "_all_peripheral_objects_8h.html#a7add2f554870da7e6722a2f672653d1c", null ],
+    [ "UARTPERIPHERAL1_INITIALIZE", "_all_peripheral_objects_8h.html#ab8e3065582b300795dd240b190cd9f19", null ],
+    [ "UARTPERIPHERAL2_INITIALIZE", "_all_peripheral_objects_8h.html#a47705c14921f5bdb28f9b8ac5159209c", null ],
+    [ "UARTPERIPHERAL3_INITIALIZE", "_all_peripheral_objects_8h.html#a90ab8a32c703ada9b74cbe8a4ec58072", null ],
+    [ "UARTPERIPHERAL4_INITIALIZE", "_all_peripheral_objects_8h.html#a9418d53146227ef0e6d9ed3156bd0391", null ],
+    [ "UARTPERIPHERAL5_INITIALIZE", "_all_peripheral_objects_8h.html#a8d5bbbe6aaa18996c4a20220e38cd325", null ],
+    [ "UARTPERIPHERAL6_INITIALIZE", "_all_peripheral_objects_8h.html#a198ab3c02338f0821d347de63ffee80c", null ]
+];

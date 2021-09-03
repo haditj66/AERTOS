@@ -61,6 +61,8 @@ static BoardVendorSetup setup;
 //these are all the functions needed to be implemented by RTOS, BSP, and RTOS-specific changes for a BSP
 //###################
 
+
+
 //intialization for the RTOS in use.  
 //static void RTOSInit();
 ////HAL specific intialization code
@@ -69,6 +71,15 @@ static BoardVendorSetup setup;
 //static void RTOS_ToBSP_SpecificCode();
 
 
+//$(BuildDir)/build/$(PlatformName)/$(ConfigurationName)
+//#define CAT_(a, b) a ## _ ## b
+//#define CAT(a, b) CAT_(a, b)
+//#define cgenweak static bool CAT(weak, __LINE__) ;
+
+//cgenweak
+
 void AE_Init(void);
 
+void AEConfigureAndStart();
 
+//cgenweak

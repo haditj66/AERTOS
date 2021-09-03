@@ -7,16 +7,17 @@
 
  add_bsp_based_executable(NAME AEHalexe
 	SOURCES 
-		main.cpp
-	#"../PinSelector.cpp"
-	#"../AEPortAndPin.cpp"
-	#"${PATH_TO_REQUIRED_Hal_FILES}/UserDefinedInstances.cpp"
-
-	#"../AEPort.cpp" 
-	#"../AllPeripheralObjects.cpp"
+		main.cpp 
 	${SRCS_TO_TEST_CONFIG}
 	GENERATE_BIN
-	GENERATE_MAP ) 
+	GENERATE_MAP )
+
+ set(All_TEST_NAMES ADC_TEST UART_TEST)
+ IntegrationTest_add_test(FOR_TARGET AEHalexe All_TEST_NAMES ${All_TEST_NAMES})
+
+ set(ALL_SOURCES)
+ get_all_sources_of_target(AEHalexe ALL_SOURCES)
+ message("ALL_SOURCES ------------------------------${ALL_SOURCES}")
 
 	 #add_executable(AEHalexe
 	#main.cpp

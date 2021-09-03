@@ -29,7 +29,7 @@ set(User_Peripheral_Hal_Files )
 	 "${PATH_TO_Hal_FILES}/*.hpp"
 	 "${PATH_TO_Hal_FILES}/*.c"
 )
- 
+
  #make sure that the following files are located here  
 foreach(reqFile IN LISTS Possible_Hal_Files) 
 
@@ -108,7 +108,6 @@ target_compile_definitions(AECoreLib PUBLIC Using_AEHAL)
 #endif()
 #
  #endif()
-
 
 
  if(${INTEGRATION_TESTS} STREQUAL  "AEHal_Tests1")

@@ -4,20 +4,26 @@
 #-----------------------------------------
 
 
-
 ###################################
 #User Options
 ###################################    
  
-#AEPrintOptions---------
-set(PRINT_METHOD_TYPES PRINT_SEMIHOSTING PRINT_UART_NON_AE PRINT_UART_AE PRINT_NONE)
-set(PRINT_METHOD PRINT_SEMIHOSTING  CACHE STRING "Method of printing" FORCE)
-set_property(CACHE PRINT_METHOD PROPERTY STRINGS ${PRINT_METHOD_TYPES})
+#AEPrintOptions--------- 
+
+Cgen_Option(
+        NAME PRINT_METHOD
+        DESCRIPTION "Method of printing"
+        POSSIBLEVALUES NORMAL_PRINTF_WINDOWS NORMAL_PRINTF_LINUX PRINT_SEMIHOSTING PRINT_UART_NON_AE PRINT_UART_AE PRINT_NONE
+        CONSTRICTS_LATER_OPTIONS
+)
+
+#set(PRINT_METHOD_TYPES PRINT_SEMIHOSTING PRINT_UART_NON_AE PRINT_UART_AE PRINT_NONE)
+#set(PRINT_METHOD PRINT_SEMIHOSTING  CACHE STRING "Method of printing" FORCE)
+#set_property(CACHE PRINT_METHOD PROPERTY STRINGS ${PRINT_METHOD_TYPES})
 
 
 set(PRINT_USE_CACHE FALSE CACHE BOOL FALSE FORCE )
-  add_compile_definitions(PRINT_METHOD "${PRINT_METHOD}")
-  
+
 if(${PRINT_USE_CACHE})
  add_compile_definitions(PRINT_USE_CACHE)
 set(PRINT_CACHE_NUM  4   )
@@ -53,7 +59,9 @@ Cgen_Option(
  set(REQUIRED_Hal_FILES)
  #this is the list of files that will be required by AECoreLib
  set(All_Required_Hal_Files 
- AEPerformanceTimer.cpp)
+ AEPerformanceTimer.cpp
+ AETimerSimple.h
+ AETimerSimple.cpp)
 
 
 
@@ -94,7 +102,9 @@ Cgen_Option(
  AE_Init.cpp
  AESet.h 
  AECircularBuffer.h
-
+ AEIntegrationTesting.h
+ AEIntegrationTesting.cpp
+ AECore.h
  )
  set(HelperFunctions  
   "HelperFunctions/AEmemcpy.h"  
@@ -130,12 +140,26 @@ if(${RTOS_USED} STREQUAL "FREERTOS" )
  #make sure that the following files are located here 
  foreach(reqFile IN LISTS All_Required_Hal_Files)
 
-if(NOT EXISTS "${PATH_TO_REQUIRED_Hal_FILES}/${reqFile}") 
- message(FATAL_ERROR "${reqFile} does not exist in ${PATH_TO_REQUIRED_Hal_FILES} "
- "you need to define this file for porting purposes for this board.")
+if(NOT EXISTS "${PATH_TO_REQUIRED_Hal_FILES}/${reqFile}")
+    FILE(WRITE "${PATH_TO_REQUIRED_Hal_FILES}/${reqFile}" "")
+ message(WARNING "${reqFile} does not exist in ${PATH_TO_REQUIRED_Hal_FILES} "
+ ". Creating this file for porting purposes for this board. You need to implement this file though")
+
  else()
   set(REQUIRED_Hal_FILES ${REQUIRED_Hal_FILES} ${PATH_TO_REQUIRED_Hal_FILES}/${reqFile})
 endif()
+
+# generate the template file in cgen
+strip_file_extension(MYFILE ${reqFile})
+set(reqFile_NoExt ${OUT_VAR})
+get_file_extension(MYFILE ${reqFile} )
+set(reqFile_ext ${OUT_VAR})
+Generate_File_Using_Cgen(
+        WORKINGDIRECTORY ${PATH_TO_REQUIRED_Hal_FILES}
+        INPUT_FILE_NAME ${reqFile_NoExt}${reqFile_ext}
+        OUTPUT_FILE_NAME ${reqFile_NoExt}
+        OUTPUT_FILE_EXTENSION ${reqFile_ext}
+)
 
 endforeach()
 

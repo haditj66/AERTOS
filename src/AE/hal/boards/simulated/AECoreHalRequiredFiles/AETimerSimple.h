@@ -11,7 +11,7 @@
 //UserCode_Sectiona_end
 
 #if RTOS_USED != FREERTOS
-typedef TimerHandle_t uint8_t
+typedef  TimerHandle_t uint8_t;
 typedef void (*TimerSimpleCallback_t)( TimerHandle_t xTimer );
 #else
 typedef TimerCallbackFunction_t TimerSimpleCallback_t;

@@ -1,17 +1,14 @@
 
 /* Includes ------------------------------------------------------------------*/
-#ifndef SIMULATION
-#include <stm32f4xx_hal.h>
-#endif
-#include "FreeRTOS.h"
-#include "task.h"
-#include "timers.h"
-#include "queue.h"
-#include "semphr.h"
-#include "event_groups.h"
+//#if SWIL_HWIL_DRIVEN == HWIL
+////#include <stm32f4xx_hal.h>
+//#endif
 
 
 
+#include "AECore.h"
+#include "IntegTestPipeline.h"
+ 
 #include "AE_Init.h"
 
 
@@ -34,17 +31,11 @@ DECLARE_ALL_AO_PTR
 #include "iostream"
  
 
-uint32_t adcCountToPrint1 = 0;
-uint32_t adcCountToPrint2 = 0;
-uint32_t adcCountToPrint3 = 0;
+
 
 int main(void)
-{ 
-
-	
-	
-	AE_Init();  
-	AEPrint("asd");
+{  
+	RunSelectedIntegrationTest();
 	
 	uart1->TansmitMsg("hello", 5);
 	uart1->SetRxCpltCallback([](char* msgReceived, uint32_t sizeOfReceivedMsg)->void {
@@ -54,36 +45,6 @@ int main(void)
 		
 	});
 	
-	adc1->SetADC_ConvCpltCallback_t([]()->void {
-		adcCountToPrint1++;
-		if (adcCountToPrint1 > 1000)
-		{
-			AEPrint("adc1 data is %d \n", adc1->GetADCData());
-			adcCountToPrint1 = 0;
-		}
-	});
-	
-	adc2->SetADC_ConvCpltCallback_t([]()->void {
-		adcCountToPrint2++;
-		if (adcCountToPrint2 > 1000)
-		{
-			AEPrint("adc2 data is %d \n", adc2->GetADCData());
-			adcCountToPrint2 = 0;
-		}
-	});
-	
-	adc3->SetADC_ConvCpltCallback_t([]()->void {
-//		if (adc3->GetADCData() > 2000)
-//		{ GpioLed1->GPIO_SetHigh(); }
-//		else
-//		{ GpioLed1->GPIO_SetLow(); }
-		adcCountToPrint3++;
-		if (adcCountToPrint3 > 1000)
-		{
-			AEPrint("adc3 data is %d \n", adc3->GetADCData());
-			adcCountToPrint3 = 0;
-		}
-	});
 	
 //	static auto sfaf = ADCPERIPHERAL1_Instance->ADCdata[0];
 //	adc1->GetADCData();
@@ -113,19 +74,13 @@ LEDThread1Handle = (TaskHandle_t) xTaskCreate((TaskFunction_t)LED_Thread1,
 		NULL); 
 
 		
-	/* Start scheduler */ 
-	vTaskStartScheduler();
+
 		
 		
 	for (;;) ;
 }
 
 
-extern "C" void HardFault_Handler()
-{
-	
-	int y = 0;
-}
 
 
 

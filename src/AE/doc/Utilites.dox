@@ -1,0 +1,41 @@
+/** \page Utilites
+\section Assertions
+There are three types of assertions. static, runtime and config runtime assertions.  
+<ul>
+
+<li>
+ Static assertion:\todo implement static asserts.
+</li>
+
+<li>
+runtime assertions: these should be used during execution of the AE program.
+
+
+
+</li>
+
+<li>
+config runtime assertions: these should be used when in configuration stage of AE for your own application level configurations.
+</li>
+
+</ul>
+
+\subsection  Static assertion \todo implement static asserts.
+
+
+
+
+\subsection  runtime assertions  
+APIs
+\ref AEAssertRuntime(thingToAssert, AssertionMessage)
+ 
+ 
+ 
+ 
+  \ref AECircularBuffer::Push(ContainerType item, bool withFullCheck)
+ 
+  For more information, please see @ref abc
+
+ For more information, please see @ref abc
+ 
+ */

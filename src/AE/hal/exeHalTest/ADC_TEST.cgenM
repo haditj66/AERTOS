@@ -20,5 +20,21 @@
 ##LoopIncrement10
 
 ##ToFile ADC_TEST.cpp
+
+#if INTEGRATION_TESTS_FOR_AEHal_Tests1 == ADC_TEST
  
- 
+#include "IntegTestPipeline.h"
+
+##UserCode_a
+
+void RunSelectedIntegrationTest_ADC_TEST()
+{
+
+##UserCode_b
+
+}
+
+
+##UserCode_c
+
+#endif

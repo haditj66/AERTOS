@@ -129,13 +129,19 @@ function(Generate_File_Using_Cgen )
     set(multiValueArgs)
     cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
-
+     
     #if generated file does not exist yet, create it
     #if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}")
         #file(WRITE "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}" "newfile")
         #ctest_sleep(5)
     #endif()
-
+     
+    #first make sure the input file even exists. if not, dont do anything
+    if (NOT EXISTS ${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in) 
+        message(WARNING "HADI: the input file ${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in  did not exist when
+                attempting to cgen generate macro.")
+        return()
+    endif ()
 
     #generate the file
     configure_file(${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in
@@ -157,5 +163,39 @@ if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_E
     endif()
 
 
+
+endfunction()
+
+
+
+#########################
+#strip file name of its extension
+#MYFILE:
+#OUT_VAR
+#########################
+function(strip_file_extension)
+    set(options)
+    set(oneValueArgs MYFILE)
+    set(multiValueArgs)
+    cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+string(REGEX REPLACE "\.[^.]*$" "" OUT_VAR ${_arg_MYFILE})
+
+    set(OUT_VAR ${OUT_VAR} PARENT_SCOPE)
+endfunction()
+
+
+#########################
+#get file extension
+#MYFILE:
+#OUT_VAR
+#########################
+function(get_file_extension )
+    set(options)
+    set(oneValueArgs MYFILE  )
+    set(multiValueArgs)
+    cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+    string(REGEX MATCH "\.[^.]*$"  OUT_VAR ${_arg_MYFILE})
+    string(REGEX REPLACE "[\.]" "" OUT_VAR ${OUT_VAR})
+    set(OUT_VAR ${OUT_VAR} PARENT_SCOPE)
 
 endfunction()

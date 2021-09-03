@@ -30,8 +30,7 @@ void AE_Init(void)
 #if INCLUDE_HAL == TRUE 
 	InitializeAllPeripheral
 		
-// ADCPERIPHERAL1_Instance = ADCPERIPHERAL1::getInstance(); ADCPERIPHERAL1_Instance->initializePeripheral();  
-//	ADCPERIPHERAL1_Name_CH1 = ADCPERIPHERAL1_Instance->GetPeripheralInstanceCh1(); 
+		
 #endif
 
 		
@@ -39,6 +38,12 @@ void AE_Init(void)
 
  
 
+void AEConfigureAndStart()
+{
+#if RTOS_USED == FREERTOS
+	vTaskStartScheduler();
+#endif
+}
 
 
 

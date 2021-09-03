@@ -7,6 +7,8 @@
 #include "BoardVendorSetup.h"
 
 //UserCode_Sectiona
+#include "AEIntegrationTesting.h"
+
 extern "C"
 { 
 	//extern TIM_HandleTypeDef htim1;
@@ -26,6 +28,20 @@ extern "C"
 
 }
 
+
+
+extern "C" void HardFault_Handler()
+{
+	
+	//if integration testing is on, then signal a failed because
+	//of a hardfault
+#if BUILD_TESTS == TRUE
+	AEITEST_END_HARDFAULT_FUNC();
+#endif
+	for (;;)
+	{  
+	}
+}
 
 
 

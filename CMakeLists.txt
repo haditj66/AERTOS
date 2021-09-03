@@ -3,11 +3,13 @@
 # Targets: FreeRTOS  BSP 
 #-----------------------------------------
 
-
+ 
 cmake_minimum_required(VERSION 3.15)
+  
 
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --save-temps")
 
-
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --save-temps")
 
 ###################################
 #User Options
@@ -44,16 +46,16 @@ if(${PLATFORM} STREQUAL "VSGDBCmakeNinja_mingw" )
 elseif(${PLATFORM} STREQUAL "CmakeUnixMakefiles_gnu" )
 
 
-    set(Build_System Cmake_UnixMakefiles)
-    add_compile_definitions(Build_System "${Build_System}")
-    set(TOOLCHAIN_USED gnu)
-    add_compile_definitions(TOOLCHAIN_USED "${TOOLCHAIN_USED}")
-
-
-    set(RTOS_USED NONE)
-    add_compile_definitions(RTOS_USED "${RTOS_USED}")
-    set(OS_USED UBUNTU)
-    add_compile_definitions(OS_USED "${OS_USED}")
+#    set(Build_System Cmake_UnixMakefiles)
+#    add_compile_definitions(Build_System "${Build_System}")
+#    set(TOOLCHAIN_USED gnu)
+#    add_compile_definitions(TOOLCHAIN_USED "${TOOLCHAIN_USED}")
+#
+#
+#    set(RTOS_USED NONE)
+#    add_compile_definitions(RTOS_USED "${RTOS_USED}")
+#    set(OS_USED UBUNTU)
+#    add_compile_definitions(OS_USED "${OS_USED}")
 
 #    set(USING_LINUX 1)
 #    add_compile_definitions(USING_LINUX "${USING_LINUX}")
@@ -61,18 +63,18 @@ elseif(${PLATFORM} STREQUAL "CmakeUnixMakefiles_gnu" )
 
 elseif(${PLATFORM} STREQUAL "VSGDBCmakeNinja_armnoneabiid" )
 
-    set(Build_System VSGDBCmake_Ninja)
-    add_compile_definitions(Build_System "${Build_System}")
-    set(TOOLCHAIN_USED arm_non_eabi_id)
-    add_compile_definitions(TOOLCHAIN_USED "${TOOLCHAIN_USED}")
-
-
-    set(AERTOS_ENVIRONMENT RTOS_MICRO)
-    add_compile_definitions(AERTOS_ENVIRONMENT "${AERTOS_ENVIRONMENT}")
-    set(OS_USED NONE)
-    add_compile_definitions(OS_USED "${OS_USED}")
-    set(SWIL_HWIL_DRIVEN HWIL)
-    add_compile_definitions(SWIL_HWIL_DRIVEN "${SWIL_HWIL_DRIVEN}")
+    #set(Build_System VSGDBCmake_Ninja)
+    #add_compile_definitions(Build_System "${Build_System}")
+    #set(TOOLCHAIN_USED arm_non_eabi_id)
+    #add_compile_definitions(TOOLCHAIN_USED "${TOOLCHAIN_USED}")
+#
+#
+    #set(AERTOS_ENVIRONMENT RTOS_MICRO)
+    #add_compile_definitions(AERTOS_ENVIRONMENT "${AERTOS_ENVIRONMENT}")
+    #set(OS_USED NONE)
+    #add_compile_definitions(OS_USED "${OS_USED}")
+    #set(SWIL_HWIL_DRIVEN HWIL)
+    #add_compile_definitions(SWIL_HWIL_DRIVEN "${SWIL_HWIL_DRIVEN}")
 
 
 
@@ -90,7 +92,7 @@ Cgen_Start()
 
  
 Cgen_Option(
-        NAME PLATFORM
+        NAME AEPLATFORM
         DESCRIPTION "what platform is this for (this is chosen by IDE command line -D variable)"
         POSSIBLEVALUES VSGDBCmakeNinja_mingw VSGDBCmakeNinja_armnoneabiid CmakeUnixMakefiles_gnu
         CONSTRICTS_LATER_OPTIONS
@@ -155,7 +157,6 @@ Cgen_Option(
         CONSTRICTS_LATER_OPTIONS
 )
 
-
 Cgen_Option(
         NAME INTEGRATION_TESTS
         DESCRIPTION "choose an integration test to build"
@@ -195,21 +196,23 @@ endif()
 
 
 
-
-
+ if(${PLATFORM} STREQUAL "CmakeUnixMakefiles_gnu" )
+    if (NOT WIN32)
 project(AERTOS LANGUAGES C CXX ASM)
- 
+ endif()
+ else()
+ project(AERTOS LANGUAGES C CXX ASM)
+  endif()
 
 include("cmake/MyCmakeHelpers.cmake")
 
-
- 
+  
 
 message("workspaceRoot-------------------------${VS_DEBUGGER_WORKING_DIRECTORY}")
  
 
 
-  add_compile_definitions(AEConfigLocation="C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h")
+  #add_compile_definitions(AEConfigLocation="C:/visualgdb_projects/AERTOS/src/AE/exeTest/AEConfig.h")
 
 set(clion TRUE)
 

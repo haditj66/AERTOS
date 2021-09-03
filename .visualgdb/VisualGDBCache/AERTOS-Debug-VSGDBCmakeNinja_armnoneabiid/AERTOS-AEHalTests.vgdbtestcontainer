@@ -66,8 +66,12 @@
         <string>C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/framework.cmake</string>
         <string>C:/Users/Hadi/AppData/Local/VisualGDB/TestFrameworks/com.sysprogs.unittest.googletest/framework.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/CMakeLists.txt</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/AETimerSimpleh.cgenM.in</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/AETimerSimplecpp.cgenM.in</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/CMakeLists.txt</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/exeHalTest/CMakeLists.txt</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/IntegTestTemplate.cgenM.in</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/IntegTestPipeline.cgenM.in</string>
       </AllCMakeFiles>
       <ExtraDependencies />
       <Install>false</Install>
@@ -85,7 +89,7 @@
           <Name>BSP</Name>
           <Location>
             <RawFilePath>C:/visualgdb_projects/AERTOSCopy/CMakeLists.txt</RawFilePath>
-            <LineNumber>279</LineNumber>
+            <LineNumber>282</LineNumber>
             <StatementName>find_bsp</StatementName>
           </Location>
         </BSPReference>

@@ -22,5 +22,10 @@
 ##ToFile @_arg_OUTPUT_FILE_NAME@.@_arg_OUTPUT_FILE_EXTENSION@
 
 #pragma once
- 
- 
+
+void RunSelectedIntegrationTest_@TEST_NAME@();
+
+static void RunSelectedIntegrationTest()
+{
+    RunSelectedIntegrationTest_@TEST_NAME@();
+}
