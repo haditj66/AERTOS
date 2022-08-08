@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_a_e_utils_8h.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,6 +61,7 @@ $(document).ready(function(){initNavTree('_a_e_utils_8h.html',''); initResizable
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -93,19 +73,11 @@ $(document).ready(function(){initNavTree('_a_e_utils_8h.html',''); initResizable
   <div class="headertitle"><div class="title">C:/visualgdb_projects/AERTOSCopy/src/AE/AEUtils.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
-<code>#include &quot;<a class="el" href="_a_e_8h_source.html">AE.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;AE.h&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="_a_e_performance_timer_8h_source.html">AEPerformanceTimer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_a_e_defines_8h_source.html">AEDefines.h</a>&quot;</code><br />
-<code>#include &quot;FreeRTOS.h&quot;</code><br />
-<code>#include &quot;task.h&quot;</code><br />
-<code>#include &quot;timers.h&quot;</code><br />
-<code>#include &quot;queue.h&quot;</code><br />
-<code>#include &quot;semphr.h&quot;</code><br />
-<code>#include &quot;event_groups.h&quot;</code><br />
+<code>#include &quot;AEPerformanceTimer.h&quot;</code><br />
+<code>#include &quot;AEDefines.h&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;TestResourceManager.h&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 </div>
 <p><a href="_a_e_utils_8h_source.html">Go to the source code of this file.</a></p>
@@ -133,35 +105,48 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a867111db558fbc4539935c3038a190c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a867111db558fbc4539935c3038a190c3">PoolManager</a>&#160;&#160;&#160;AEPoolManager&lt;<a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#ab763243abc1e6806809ce86b8f8ca016">Event1</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a964772a7f1d35157da8f57261b4263d4">Event1Size</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a59627dfeb3aed94ee5092c4c5781cf8c">Event2</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a982bd87aef2aa5f5bd293b43c5952d00">Event2Size</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#abfd6260b832b3562d5f532d4adb91358">Event3</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a3ba58fb448d30e4082ef003125c128ca">Event3Size</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#acf6c54b784eda4f98035e09def5522cc">Event4</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a72d5ef45048aef385ac3312cb131f71e">Event4Size</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a62abd9c2f744a29f20f238d9a911bd98">Event5</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a59c3a3e39e286ba96849dd4643601460">Event5Size</a>&gt;::getInstance()</td></tr>
+<tr class="memitem:a867111db558fbc4539935c3038a190c3"><td class="memItemLeft" align="right" valign="top"><a id="a867111db558fbc4539935c3038a190c3" name="a867111db558fbc4539935c3038a190c3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PoolManager</b>&#160;&#160;&#160;AEPoolManager&lt;Event1, Event1Size, Event2, Event2Size, Event3, Event3Size, Event4, Event4Size, Event5, Event5Size&gt;::getInstance()</td></tr>
 <tr class="separator:a867111db558fbc4539935c3038a190c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351b5b6f5f0ee0b7b5abdf013b42824d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a351b5b6f5f0ee0b7b5abdf013b42824d">PublishSubscribeManager</a>&#160;&#160;&#160;AEPublishSubscribeManager::getInstance()</td></tr>
+<tr class="memitem:a351b5b6f5f0ee0b7b5abdf013b42824d"><td class="memItemLeft" align="right" valign="top"><a id="a351b5b6f5f0ee0b7b5abdf013b42824d" name="a351b5b6f5f0ee0b7b5abdf013b42824d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PublishSubscribeManager</b>&#160;&#160;&#160;AEPublishSubscribeManager::getInstance()</td></tr>
 <tr class="separator:a351b5b6f5f0ee0b7b5abdf013b42824d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95e4a474fd28decd16c4465b0fc86d21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a95e4a474fd28decd16c4465b0fc86d21">AE_Tick_To_Milli</a>(millis)</td></tr>
 <tr class="separator:a95e4a474fd28decd16c4465b0fc86d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2707bdb76df82f7005461cb2809b5844"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a2707bdb76df82f7005461cb2809b5844">ENTEREVENT_Id</a>&#160;&#160;&#160;0xff</td></tr>
+<tr class="memitem:a2707bdb76df82f7005461cb2809b5844"><td class="memItemLeft" align="right" valign="top"><a id="a2707bdb76df82f7005461cb2809b5844" name="a2707bdb76df82f7005461cb2809b5844"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENTEREVENT_Id</b>&#160;&#160;&#160;0xff</td></tr>
 <tr class="separator:a2707bdb76df82f7005461cb2809b5844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa62e9dfb05c579b5bbcaab7a478c13ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#aa62e9dfb05c579b5bbcaab7a478c13ad">EXITEVENT_Id</a>&#160;&#160;&#160;0xff - 1</td></tr>
+<tr class="memitem:aa62e9dfb05c579b5bbcaab7a478c13ad"><td class="memItemLeft" align="right" valign="top"><a id="aa62e9dfb05c579b5bbcaab7a478c13ad" name="aa62e9dfb05c579b5bbcaab7a478c13ad"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXITEVENT_Id</b>&#160;&#160;&#160;0xff - 1</td></tr>
 <tr class="separator:aa62e9dfb05c579b5bbcaab7a478c13ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a1bf413fcd8671efb7a01003ed65d07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a6a1bf413fcd8671efb7a01003ed65d07">CastToStateFuncPtr</a>(stateToTransitionTo)&#160;&#160;&#160;reinterpret_cast&lt;TypeOfThisFSM::StateFuncPtr&gt;(stateToTransitionTo);</td></tr>
+<tr class="memitem:a6a1bf413fcd8671efb7a01003ed65d07"><td class="memItemLeft" align="right" valign="top"><a id="a6a1bf413fcd8671efb7a01003ed65d07" name="a6a1bf413fcd8671efb7a01003ed65d07"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CastToStateFuncPtr</b>(stateToTransitionTo)&#160;&#160;&#160;reinterpret_cast&lt;TypeOfThisFSM::StateFuncPtr&gt;(stateToTransitionTo);</td></tr>
 <tr class="separator:a6a1bf413fcd8671efb7a01003ed65d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b403641b89bd24b408bb8cdffb84bc7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a4b403641b89bd24b408bb8cdffb84bc7">TRANSITION_TOSTATE</a>(stateToTransitionTo)</td></tr>
 <tr class="separator:a4b403641b89bd24b408bb8cdffb84bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed10b49463bae0fa0202c0ff603f709d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#aed10b49463bae0fa0202c0ff603f709d">AE_EXIT</a>()&#160;&#160;&#160;transitionType = <a class="el" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8aa6b784b2b2bbb43e39250f30d610d72e">DEACTIVE</a>;</td></tr>
+<tr class="memitem:aed10b49463bae0fa0202c0ff603f709d"><td class="memItemLeft" align="right" valign="top"><a id="aed10b49463bae0fa0202c0ff603f709d" name="aed10b49463bae0fa0202c0ff603f709d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AE_EXIT</b>()&#160;&#160;&#160;transitionType = DEACTIVE;</td></tr>
 <tr class="separator:aed10b49463bae0fa0202c0ff603f709d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a417b65b7017c24f2d2e512ddd94236"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a4a417b65b7017c24f2d2e512ddd94236">AE_CastEvent</a>(TypeToCastTo)&#160;&#160;&#160;((TypeToCastTo)evt-&gt;evt)</td></tr>
+<tr class="memitem:a4a417b65b7017c24f2d2e512ddd94236"><td class="memItemLeft" align="right" valign="top"><a id="a4a417b65b7017c24f2d2e512ddd94236" name="a4a417b65b7017c24f2d2e512ddd94236"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AE_CastEvent</b>(TypeToCastTo)&#160;&#160;&#160;((TypeToCastTo)evt-&gt;evt)</td></tr>
 <tr class="separator:a4a417b65b7017c24f2d2e512ddd94236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac67d56a22930fb32f533fbb1a9729890"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#ac67d56a22930fb32f533fbb1a9729890">DO_EXPAND</a>(VAL)&#160;&#160;&#160;VAL ## 1</td></tr>
+<tr class="memitem:ac67d56a22930fb32f533fbb1a9729890"><td class="memItemLeft" align="right" valign="top"><a id="ac67d56a22930fb32f533fbb1a9729890" name="ac67d56a22930fb32f533fbb1a9729890"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DO_EXPAND</b>(VAL)&#160;&#160;&#160;VAL ## 1</td></tr>
 <tr class="separator:ac67d56a22930fb32f533fbb1a9729890"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd6dc610405342de091109cfb184eb69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#afd6dc610405342de091109cfb184eb69">EXPAND</a>(VAL)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#ac67d56a22930fb32f533fbb1a9729890">DO_EXPAND</a>(VAL)</td></tr>
+<tr class="memitem:afd6dc610405342de091109cfb184eb69"><td class="memItemLeft" align="right" valign="top"><a id="afd6dc610405342de091109cfb184eb69" name="afd6dc610405342de091109cfb184eb69"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXPAND</b>(VAL)&#160;&#160;&#160;DO_EXPAND(VAL)</td></tr>
 <tr class="separator:afd6dc610405342de091109cfb184eb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a679423aa43d418febee853c2c64fbd8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a679423aa43d418febee853c2c64fbd8e">S_CONC</a>(A,  B)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#afae4a8b3f6efd74c57dba4c9f8c12ef0">S_CONC_</a>(A, B)</td></tr>
+<tr class="memitem:a679423aa43d418febee853c2c64fbd8e"><td class="memItemLeft" align="right" valign="top"><a id="a679423aa43d418febee853c2c64fbd8e" name="a679423aa43d418febee853c2c64fbd8e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_CONC</b>(A,  B)&#160;&#160;&#160;S_CONC_(A, B)</td></tr>
 <tr class="separator:a679423aa43d418febee853c2c64fbd8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afae4a8b3f6efd74c57dba4c9f8c12ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#afae4a8b3f6efd74c57dba4c9f8c12ef0">S_CONC_</a>(A,  B)&#160;&#160;&#160;static A * B ;</td></tr>
+<tr class="memitem:afae4a8b3f6efd74c57dba4c9f8c12ef0"><td class="memItemLeft" align="right" valign="top"><a id="afae4a8b3f6efd74c57dba4c9f8c12ef0" name="afae4a8b3f6efd74c57dba4c9f8c12ef0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_CONC_</b>(A,  B)&#160;&#160;&#160;static A * B ;</td></tr>
 <tr class="separator:afae4a8b3f6efd74c57dba4c9f8c12ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a746684210326b5bdd441f19fba002e02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a746684210326b5bdd441f19fba002e02">A_CONC</a>(A,  B)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#afae4a8b3f6efd74c57dba4c9f8c12ef0">S_CONC_</a>(A, B)</td></tr>
+<tr class="memitem:a746684210326b5bdd441f19fba002e02"><td class="memItemLeft" align="right" valign="top"><a id="a746684210326b5bdd441f19fba002e02" name="a746684210326b5bdd441f19fba002e02"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>A_CONC</b>(A,  B)&#160;&#160;&#160;S_CONC_(A, B)</td></tr>
 <tr class="separator:a746684210326b5bdd441f19fba002e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6a435235511f782dc200e822fd29414"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#ad6a435235511f782dc200e822fd29414">A_CONC_</a>(A,  B)&#160;&#160;&#160;A B</td></tr>
+<tr class="memitem:ad6a435235511f782dc200e822fd29414"><td class="memItemLeft" align="right" valign="top"><a id="ad6a435235511f782dc200e822fd29414" name="ad6a435235511f782dc200e822fd29414"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>A_CONC_</b>(A,  B)&#160;&#160;&#160;A B</td></tr>
 <tr class="separator:ad6a435235511f782dc200e822fd29414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff16ec24800fdb71a7525351a40db139"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#aff16ec24800fdb71a7525351a40db139">MAKE_SINGLETON</a>(className)</td></tr>
 <tr class="separator:aff16ec24800fdb71a7525351a40db139"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,252 +162,121 @@ Macros</h2></td></tr>
 <tr class="separator:a3c2f108f01521223502c1fbac103c3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af96700bae6153a0549defd61f43a9a1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#af96700bae6153a0549defd61f43a9a1b">CREATE_AND_SET_CHANNEL</a>(CHANNEL_ID,  INPUTSIZE,  COUNTBUFFER)</td></tr>
 <tr class="separator:af96700bae6153a0549defd61f43a9a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa68ce86b7f7200cb8074e4c28e587072"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#aa68ce86b7f7200cb8074e4c28e587072">AEFRIEND_TEST</a>(groupName,  testName)</td></tr>
+<tr class="memitem:aa68ce86b7f7200cb8074e4c28e587072"><td class="memItemLeft" align="right" valign="top"><a id="aa68ce86b7f7200cb8074e4c28e587072" name="aa68ce86b7f7200cb8074e4c28e587072"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AEFRIEND_TEST</b>(groupName,  testName)</td></tr>
 <tr class="separator:aa68ce86b7f7200cb8074e4c28e587072"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a970596eb744dd008c300cedc78d42a1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a970596eb744dd008c300cedc78d42a1d">TheAssertToUse</a>(predicate)&#160;&#160;&#160;<a class="el" href="_free_r_t_o_s_config_8h.html#a228c70cd48927d6ab730ed1a6dfbe35f">configASSERT</a>(predicate)</td></tr>
+<tr class="memitem:a970596eb744dd008c300cedc78d42a1d"><td class="memItemLeft" align="right" valign="top"><a id="a970596eb744dd008c300cedc78d42a1d" name="a970596eb744dd008c300cedc78d42a1d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TheAssertToUse</b>(predicate)&#160;&#160;&#160;configASSERT(predicate)</td></tr>
 <tr class="separator:a970596eb744dd008c300cedc78d42a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e2e1fbe1c4de456d98706dbe8b36950"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(thingToAssert,  AssertionMessage)</td></tr>
 <tr class="memdesc:a9e2e1fbe1c4de456d98706dbe8b36950"><td class="mdescLeft">&#160;</td><td class="mdescRight">this will assert the predicate. if fails, will print assert command. test code: asvasf343  <a href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">More...</a><br /></td></tr>
 <tr class="separator:a9e2e1fbe1c4de456d98706dbe8b36950"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab27c8391aa88863bb2ed2a950984811a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#ab27c8391aa88863bb2ed2a950984811a">AEAssertRuntimeNoMsg</a>(thingToAssert)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(thingToAssert, &quot;&quot;)</td></tr>
+<tr class="memitem:ab27c8391aa88863bb2ed2a950984811a"><td class="memItemLeft" align="right" valign="top"><a id="ab27c8391aa88863bb2ed2a950984811a" name="ab27c8391aa88863bb2ed2a950984811a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AEAssertRuntimeNoMsg</b>(thingToAssert)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(thingToAssert, &quot;&quot;)</td></tr>
 <tr class="separator:ab27c8391aa88863bb2ed2a950984811a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee5fb15ba7d0d41da3d16b6861de79da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#aee5fb15ba7d0d41da3d16b6861de79da">AEAssertRuntimeWithAssertCodeToTest</a>(thingToAssert,  uniqueNameOfAssert,  AssertionMessage)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(thingToAssert, AssertionMessage)</td></tr>
-<tr class="memdesc:aee5fb15ba7d0d41da3d16b6861de79da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this for testing when you want to later test that this assert passed or failed with a unit test.  <a href="_a_e_utils_8h.html#aee5fb15ba7d0d41da3d16b6861de79da">More...</a><br /></td></tr>
+<tr class="memitem:aee5fb15ba7d0d41da3d16b6861de79da"><td class="memItemLeft" align="right" valign="top"><a id="aee5fb15ba7d0d41da3d16b6861de79da" name="aee5fb15ba7d0d41da3d16b6861de79da"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AEAssertRuntimeWithAssertCodeToTest</b>(thingToAssert,  uniqueNameOfAssert,  AssertionMessage)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(thingToAssert, AssertionMessage)</td></tr>
+<tr class="memdesc:aee5fb15ba7d0d41da3d16b6861de79da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this for testing when you want to later test that this assert passed or failed with a unit test. <br /></td></tr>
 <tr class="separator:aee5fb15ba7d0d41da3d16b6861de79da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fa3350e864698c233c0bd38d4725cf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a3fa3350e864698c233c0bd38d4725cf6">AEAssertStatic</a></td></tr>
+<tr class="memitem:a3fa3350e864698c233c0bd38d4725cf6"><td class="memItemLeft" align="right" valign="top"><a id="a3fa3350e864698c233c0bd38d4725cf6" name="a3fa3350e864698c233c0bd38d4725cf6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AEAssertStatic</b></td></tr>
 <tr class="separator:a3fa3350e864698c233c0bd38d4725cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac29d3295defcec4fbe0bb51d6bcdedcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#ac29d3295defcec4fbe0bb51d6bcdedcd">PRIV_AEStartTimer</a>(forTimer)&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;AEStart_Timer();</td></tr>
+<tr class="memitem:ac29d3295defcec4fbe0bb51d6bcdedcd"><td class="memItemLeft" align="right" valign="top"><a id="ac29d3295defcec4fbe0bb51d6bcdedcd" name="ac29d3295defcec4fbe0bb51d6bcdedcd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PRIV_AEStartTimer</b>(forTimer)&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;AEStart_Timer();</td></tr>
 <tr class="separator:ac29d3295defcec4fbe0bb51d6bcdedcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a378c51c21cf4d71705076eddbec03153"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a378c51c21cf4d71705076eddbec03153">PRIV_AEStopTimer</a>(forTimer)&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;AEStop_Timer();</td></tr>
+<tr class="memitem:a378c51c21cf4d71705076eddbec03153"><td class="memItemLeft" align="right" valign="top"><a id="a378c51c21cf4d71705076eddbec03153" name="a378c51c21cf4d71705076eddbec03153"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PRIV_AEStopTimer</b>(forTimer)&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;AEStop_Timer();</td></tr>
 <tr class="separator:a378c51c21cf4d71705076eddbec03153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a824a068c853c370ab261b23816504c8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a824a068c853c370ab261b23816504c8d">AEStartTimer</a>(forTimer)</td></tr>
 <tr class="separator:a824a068c853c370ab261b23816504c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ac92f366a42b6bc3df5e19a65817911"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a8ac92f366a42b6bc3df5e19a65817911">AEStopTimer</a>(forTimer)</td></tr>
 <tr class="separator:a8ac92f366a42b6bc3df5e19a65817911"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06ad386af077ef3a1c714d3f702e91e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a06ad386af077ef3a1c714d3f702e91e4">AEPrintTimerDuration</a>(forTimer)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a094588d2e406c89d903b44f7bda3c54e">AEPrint</a>(&quot;timer %d took: %d \n&quot;, forTimer, AEPerfTimer##forTimer-&gt;GetElapsedTimeInNanoSeconds());</td></tr>
+<tr class="memitem:a06ad386af077ef3a1c714d3f702e91e4"><td class="memItemLeft" align="right" valign="top"><a id="a06ad386af077ef3a1c714d3f702e91e4" name="a06ad386af077ef3a1c714d3f702e91e4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AEPrintTimerDuration</b>(forTimer)&#160;&#160;&#160;AEPrint(&quot;timer %d took: %d \n&quot;, forTimer, AEPerfTimer##forTimer-&gt;GetElapsedTimeInNanoSeconds());</td></tr>
 <tr class="separator:a06ad386af077ef3a1c714d3f702e91e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0001c487b077a8515ac1fbde16cbe87c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a0001c487b077a8515ac1fbde16cbe87c">AEGetTimerDuration</a>(forTimer)&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;GetElapsedTimeInNanoSeconds()</td></tr>
+<tr class="memitem:a0001c487b077a8515ac1fbde16cbe87c"><td class="memItemLeft" align="right" valign="top"><a id="a0001c487b077a8515ac1fbde16cbe87c" name="a0001c487b077a8515ac1fbde16cbe87c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AEGetTimerDuration</b>(forTimer)&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;GetElapsedTimeInNanoSeconds()</td></tr>
 <tr class="separator:a0001c487b077a8515ac1fbde16cbe87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a026babcecb469d707b8db52e4c43a9c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a026babcecb469d707b8db52e4c43a9c3">AEPrintAllTimerDuration</a></td></tr>
 <tr class="separator:a026babcecb469d707b8db52e4c43a9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acde9881e17cf7f9feaf517673e258a9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#acde9881e17cf7f9feaf517673e258a9c">AETimerForEnteringAndReEntering_AndPrint</a>(forTimer)</td></tr>
 <tr class="separator:acde9881e17cf7f9feaf517673e258a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a752593998b939b811f716861a4a7f901"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a752593998b939b811f716861a4a7f901">AELogTimer</a>(forTimer,  FileNameToWriteTo)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a18714a3e8bac50d7e9a9175d3604bb81">_AELogTimer</a>(<a class="el" href="_a_e_utils_8h.html#a0001c487b077a8515ac1fbde16cbe87c">AEGetTimerDuration</a>(forTimer), FileNameToWriteTo)</td></tr>
+<tr class="memitem:a752593998b939b811f716861a4a7f901"><td class="memItemLeft" align="right" valign="top"><a id="a752593998b939b811f716861a4a7f901" name="a752593998b939b811f716861a4a7f901"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AELogTimer</b>(forTimer,  FileNameToWriteTo)&#160;&#160;&#160;_AELogTimer(AEGetTimerDuration(forTimer), FileNameToWriteTo)</td></tr>
 <tr class="separator:a752593998b939b811f716861a4a7f901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab716212ce19b09cde0048df1a2cf7fa6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#ab716212ce19b09cde0048df1a2cf7fa6">AE_GET_LAST_BITS</a>(VarToGetBits,  ThisManyBitsFromLast)&#160;&#160;&#160;((VarToGetBits) &amp; ((1&lt;&lt;(ThisManyBitsFromLast))-1))</td></tr>
+<tr class="memitem:ab716212ce19b09cde0048df1a2cf7fa6"><td class="memItemLeft" align="right" valign="top"><a id="ab716212ce19b09cde0048df1a2cf7fa6" name="ab716212ce19b09cde0048df1a2cf7fa6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AE_GET_LAST_BITS</b>(VarToGetBits,  ThisManyBitsFromLast)&#160;&#160;&#160;((VarToGetBits) &amp; ((1&lt;&lt;(ThisManyBitsFromLast))-1))</td></tr>
 <tr class="separator:ab716212ce19b09cde0048df1a2cf7fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac63832882dcca385e1a2ff84267f14b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#ac63832882dcca385e1a2ff84267f14b1">AE_GET_MID_BITS</a>(VarToGetBits,  FromBit,  ToBit)&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#ab716212ce19b09cde0048df1a2cf7fa6">AE_GET_LAST_BITS</a>((VarToGetBits)&gt;&gt;(FromBit),((ToBit)-(FromBit)))</td></tr>
+<tr class="memitem:ac63832882dcca385e1a2ff84267f14b1"><td class="memItemLeft" align="right" valign="top"><a id="ac63832882dcca385e1a2ff84267f14b1" name="ac63832882dcca385e1a2ff84267f14b1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AE_GET_MID_BITS</b>(VarToGetBits,  FromBit,  ToBit)&#160;&#160;&#160;AE_GET_LAST_BITS((VarToGetBits)&gt;&gt;(FromBit),((ToBit)-(FromBit)))</td></tr>
 <tr class="separator:ac63832882dcca385e1a2ff84267f14b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a2029c55b9805d1ddb3916444dc0a3b49"><td class="memItemLeft" align="right" valign="top">typedef bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a2029c55b9805d1ddb3916444dc0a3b49">AENull</a></td></tr>
+<tr class="memitem:a2029c55b9805d1ddb3916444dc0a3b49"><td class="memItemLeft" align="right" valign="top"><a id="a2029c55b9805d1ddb3916444dc0a3b49" name="a2029c55b9805d1ddb3916444dc0a3b49"></a>
+typedef bool&#160;</td><td class="memItemRight" valign="bottom"><b>AENull</b></td></tr>
 <tr class="separator:a2029c55b9805d1ddb3916444dc0a3b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a1f645eee5f8e8d3ef2b71d25e0bf1dac"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a1f645eee5f8e8d3ef2b71d25e0bf1dac">AEPriorities</a> { <a class="el" href="_a_e_utils_8h.html#a1f645eee5f8e8d3ef2b71d25e0bf1dacac88e2ec789848e366512cf0a6e27c56d">LowestPriority</a> = AOPRIORITYLOWEST
-, <a class="el" href="_a_e_utils_8h.html#a1f645eee5f8e8d3ef2b71d25e0bf1dacaa9ec7658707bd46a66e06e616d467a14">MediumPriority</a> = AOPRIORITYMEDIUM
-, <a class="el" href="_a_e_utils_8h.html#a1f645eee5f8e8d3ef2b71d25e0bf1daca86c533a495a6b4ee30ac6a88739df87d">HighestPriority</a> = AOPRIORITYHIGHEST - 1
+<tr class="memitem:a1f645eee5f8e8d3ef2b71d25e0bf1dac"><td class="memItemLeft" align="right" valign="top"><a id="a1f645eee5f8e8d3ef2b71d25e0bf1dac" name="a1f645eee5f8e8d3ef2b71d25e0bf1dac"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>AEPriorities</b> { <b>LowestPriority</b> = AOPRIORITYLOWEST
+, <b>MediumPriority</b> = AOPRIORITYMEDIUM
+, <b>HighestPriority</b> = AOPRIORITYHIGHEST - 1
  }</td></tr>
 <tr class="separator:a1f645eee5f8e8d3ef2b71d25e0bf1dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4d2618aef76a3430205350907f1d2c8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8">AETransitionType</a> { <a class="el" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8a544dafaf104c4d12f4f6590528c12c3c">TRANSITION</a> = 0
-, <a class="el" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8a9f76d9580f3a70864192ccc97e393251">UNHANDLED</a>
-, <a class="el" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8aa6b784b2b2bbb43e39250f30d610d72e">DEACTIVE</a>
-, <a class="el" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8a9a25989a7678e52c9900c88a81fb18d3">ACTIVATE</a>
+<tr class="memitem:ab4d2618aef76a3430205350907f1d2c8"><td class="memItemLeft" align="right" valign="top"><a id="ab4d2618aef76a3430205350907f1d2c8" name="ab4d2618aef76a3430205350907f1d2c8"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>AETransitionType</b> { <b>TRANSITION</b> = 0
+, <b>UNHANDLED</b>
+, <b>DEACTIVE</b>
+, <b>ACTIVATE</b>
  }</td></tr>
 <tr class="separator:ab4d2618aef76a3430205350907f1d2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a370752cae6f8f26977a82f3d510c80ee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a370752cae6f8f26977a82f3d510c80ee">AEFSMActiveTypeEnum</a> { <a class="el" href="_a_e_utils_8h.html#a370752cae6f8f26977a82f3d510c80eea7bbf29a020e38c601b7028afbda40fb0">PAUSE_TO_ACTIVATE</a>
-, <a class="el" href="_a_e_utils_8h.html#a370752cae6f8f26977a82f3d510c80eeadfac7f899239d4d94673a62e7831fc1a">RESET_TO_ACTIVATE</a>
+<tr class="memitem:a370752cae6f8f26977a82f3d510c80ee"><td class="memItemLeft" align="right" valign="top"><a id="a370752cae6f8f26977a82f3d510c80ee" name="a370752cae6f8f26977a82f3d510c80ee"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>AEFSMActiveTypeEnum</b> { <b>PAUSE_TO_ACTIVATE</b>
+, <b>RESET_TO_ACTIVATE</b>
  }</td></tr>
 <tr class="separator:a370752cae6f8f26977a82f3d510c80ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a958975e0455c91e0f474ee476c4d7271"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a958975e0455c91e0f474ee476c4d7271">StyleOfSPB</a> { <a class="el" href="_a_e_utils_8h.html#a958975e0455c91e0f474ee476c4d7271a50551169e5a6076acc637417c9cd57be">EachSPBTask</a>
-, <a class="el" href="_a_e_utils_8h.html#a958975e0455c91e0f474ee476c4d7271ab4b4593a1d1d6ef00db4c048099d2b3b">ChainOfSPBsTask</a>
-, <a class="el" href="_a_e_utils_8h.html#a958975e0455c91e0f474ee476c4d7271a0ff8a183a60548a07166e9fb2e65780a">ChainOfSPBsFromInterrupt</a>
+<tr class="memitem:a958975e0455c91e0f474ee476c4d7271"><td class="memItemLeft" align="right" valign="top"><a id="a958975e0455c91e0f474ee476c4d7271" name="a958975e0455c91e0f474ee476c4d7271"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>StyleOfSPB</b> { <b>EachSPBTask</b>
+, <b>ChainOfSPBsTask</b>
+, <b>ChainOfSPBsFromInterrupt</b>
  }</td></tr>
 <tr class="separator:a958975e0455c91e0f474ee476c4d7271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abecfa95d5bb3319cae2475657c9f4aa3"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:abecfa95d5bb3319cae2475657c9f4aa3"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#abecfa95d5bb3319cae2475657c9f4aa3">numDigits</a> (T number)</td></tr>
+<tr class="memitem:abecfa95d5bb3319cae2475657c9f4aa3"><td class="memTemplParams" colspan="2"><a id="abecfa95d5bb3319cae2475657c9f4aa3" name="abecfa95d5bb3319cae2475657c9f4aa3"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:abecfa95d5bb3319cae2475657c9f4aa3"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><b>numDigits</b> (T number)</td></tr>
 <tr class="separator:abecfa95d5bb3319cae2475657c9f4aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a094588d2e406c89d903b44f7bda3c54e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a094588d2e406c89d903b44f7bda3c54e">AEPrint</a> (const char *pFormat,...)</td></tr>
+<tr class="memitem:a094588d2e406c89d903b44f7bda3c54e"><td class="memItemLeft" align="right" valign="top"><a id="a094588d2e406c89d903b44f7bda3c54e" name="a094588d2e406c89d903b44f7bda3c54e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AEPrint</b> (const char *pFormat,...)</td></tr>
 <tr class="separator:a094588d2e406c89d903b44f7bda3c54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8d0d9794eadc2dc3f3c0f4587635534"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#ab8d0d9794eadc2dc3f3c0f4587635534">AEFormatMsg</a> (char *formattedBuffer, uint32_t sizeOfFormat, const char *msgToFormat,...)</td></tr>
+<tr class="memitem:ab8d0d9794eadc2dc3f3c0f4587635534"><td class="memItemLeft" align="right" valign="top"><a id="ab8d0d9794eadc2dc3f3c0f4587635534" name="ab8d0d9794eadc2dc3f3c0f4587635534"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AEFormatMsg</b> (char *formattedBuffer, uint32_t sizeOfFormat, const char *msgToFormat,...)</td></tr>
 <tr class="separator:ab8d0d9794eadc2dc3f3c0f4587635534"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f130823fe3c766c25a651dff140997d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a7f130823fe3c766c25a651dff140997d">AEWriteToEndOfFile</a> (const char *FileNameToWriteTo, const void *ThingToWrite, uint32_t SizeOfThingToWrite)</td></tr>
+<tr class="memitem:a7f130823fe3c766c25a651dff140997d"><td class="memItemLeft" align="right" valign="top"><a id="a7f130823fe3c766c25a651dff140997d" name="a7f130823fe3c766c25a651dff140997d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AEWriteToEndOfFile</b> (const char *FileNameToWriteTo, const void *ThingToWrite, uint32_t SizeOfThingToWrite)</td></tr>
 <tr class="separator:a7f130823fe3c766c25a651dff140997d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97051ced6019e80c7cc3c03b684d1f27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a97051ced6019e80c7cc3c03b684d1f27">AEClearContentsOfFile</a> (const char *FileNameToClear)</td></tr>
+<tr class="memitem:a97051ced6019e80c7cc3c03b684d1f27"><td class="memItemLeft" align="right" valign="top"><a id="a97051ced6019e80c7cc3c03b684d1f27" name="a97051ced6019e80c7cc3c03b684d1f27"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AEClearContentsOfFile</b> (const char *FileNameToClear)</td></tr>
 <tr class="separator:a97051ced6019e80c7cc3c03b684d1f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18714a3e8bac50d7e9a9175d3604bb81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a18714a3e8bac50d7e9a9175d3604bb81">_AELogTimer</a> (<a class="el" href="_a_e_performance_timer_8h.html#afb61b0ca6dceb3f8f58af22de1359e11">PerfElapsed_t</a> duration, const char *FileNameToWriteTo)</td></tr>
+<tr class="memitem:a18714a3e8bac50d7e9a9175d3604bb81"><td class="memItemLeft" align="right" valign="top"><a id="a18714a3e8bac50d7e9a9175d3604bb81" name="a18714a3e8bac50d7e9a9175d3604bb81"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>_AELogTimer</b> (PerfElapsed_t duration, const char *FileNameToWriteTo)</td></tr>
 <tr class="separator:a18714a3e8bac50d7e9a9175d3604bb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a1d0f32bfef6f77eb5c583c1a2507a9a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a1d0f32bfef6f77eb5c583c1a2507a9a4">AEPerfTimer1</a></td></tr>
+<tr class="memitem:a1d0f32bfef6f77eb5c583c1a2507a9a4"><td class="memItemLeft" align="right" valign="top"><a id="a1d0f32bfef6f77eb5c583c1a2507a9a4" name="a1d0f32bfef6f77eb5c583c1a2507a9a4"></a>
+<a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>AEPerfTimer1</b></td></tr>
 <tr class="separator:a1d0f32bfef6f77eb5c583c1a2507a9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55355de81fe67434d3724e88378d8bdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a55355de81fe67434d3724e88378d8bdc">AEPerfTimer2</a></td></tr>
+<tr class="memitem:a55355de81fe67434d3724e88378d8bdc"><td class="memItemLeft" align="right" valign="top"><a id="a55355de81fe67434d3724e88378d8bdc" name="a55355de81fe67434d3724e88378d8bdc"></a>
+<a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>AEPerfTimer2</b></td></tr>
 <tr class="separator:a55355de81fe67434d3724e88378d8bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a4e19c98b0b1da698870a17586df74f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_e_utils_8h.html#a2a4e19c98b0b1da698870a17586df74f">AEPerfTimer3</a></td></tr>
+<tr class="memitem:a2a4e19c98b0b1da698870a17586df74f"><td class="memItemLeft" align="right" valign="top"><a id="a2a4e19c98b0b1da698870a17586df74f" name="a2a4e19c98b0b1da698870a17586df74f"></a>
+<a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>AEPerfTimer3</b></td></tr>
 <tr class="separator:a2a4e19c98b0b1da698870a17586df74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >A collection of utility functions for <a class="el" href="namespace_a_e.html">AE</a> A more elaborated file description. </p>
+<div class="textblock"><p >A collection of utility functions for AE A more elaborated file description. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a746684210326b5bdd441f19fba002e02" name="a746684210326b5bdd441f19fba002e02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a746684210326b5bdd441f19fba002e02">&#9670;&nbsp;</a></span>A_CONC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define A_CONC</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">A, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">B&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#afae4a8b3f6efd74c57dba4c9f8c12ef0">S_CONC_</a>(A, B)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad6a435235511f782dc200e822fd29414" name="ad6a435235511f782dc200e822fd29414"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6a435235511f782dc200e822fd29414">&#9670;&nbsp;</a></span>A_CONC_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define A_CONC_</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">A, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">B&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;A B</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4a417b65b7017c24f2d2e512ddd94236" name="a4a417b65b7017c24f2d2e512ddd94236"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a417b65b7017c24f2d2e512ddd94236">&#9670;&nbsp;</a></span>AE_CastEvent</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AE_CastEvent</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">TypeToCastTo</td><td>)</td>
-          <td>&#160;&#160;&#160;((TypeToCastTo)evt-&gt;evt)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aed10b49463bae0fa0202c0ff603f709d" name="aed10b49463bae0fa0202c0ff603f709d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed10b49463bae0fa0202c0ff603f709d">&#9670;&nbsp;</a></span>AE_EXIT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AE_EXIT</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;transitionType = <a class="el" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8aa6b784b2b2bbb43e39250f30d610d72e">DEACTIVE</a>;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab716212ce19b09cde0048df1a2cf7fa6" name="ab716212ce19b09cde0048df1a2cf7fa6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab716212ce19b09cde0048df1a2cf7fa6">&#9670;&nbsp;</a></span>AE_GET_LAST_BITS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AE_GET_LAST_BITS</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">VarToGetBits, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ThisManyBitsFromLast&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((VarToGetBits) &amp; ((1&lt;&lt;(ThisManyBitsFromLast))-1))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac63832882dcca385e1a2ff84267f14b1" name="ac63832882dcca385e1a2ff84267f14b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac63832882dcca385e1a2ff84267f14b1">&#9670;&nbsp;</a></span>AE_GET_MID_BITS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AE_GET_MID_BITS</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">VarToGetBits, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">FromBit, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ToBit&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#ab716212ce19b09cde0048df1a2cf7fa6">AE_GET_LAST_BITS</a>((VarToGetBits)&gt;&gt;(FromBit),((ToBit)-(FromBit)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a95e4a474fd28decd16c4465b0fc86d21" name="a95e4a474fd28decd16c4465b0fc86d21"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95e4a474fd28decd16c4465b0fc86d21">&#9670;&nbsp;</a></span>AE_Tick_To_Milli</h2>
 
@@ -438,9 +292,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">( TickType_t )(millis / (1000/<a class="code hl_define" href="_a_e_core_lib___tests_2conf_2_a_e_config_8h.html#a1ad59bbcd680d6abe07d2a603a79d3f0">AEconfigTICK_RATE_HZ</a>));\</div>
-<div class="line">configASSERT((millis / (1000/<a class="code hl_define" href="_a_e_core_lib___tests_2conf_2_a_e_config_8h.html#a1ad59bbcd680d6abe07d2a603a79d3f0">AEconfigTICK_RATE_HZ</a>)) &gt; 0);</div>
-<div class="ttc" id="a_a_e_core_lib___tests_2conf_2_a_e_config_8h_html_a1ad59bbcd680d6abe07d2a603a79d3f0"><div class="ttname"><a href="_a_e_core_lib___tests_2conf_2_a_e_config_8h.html#a1ad59bbcd680d6abe07d2a603a79d3f0">AEconfigTICK_RATE_HZ</a></div><div class="ttdeci">#define AEconfigTICK_RATE_HZ</div><div class="ttdef"><b>Definition:</b> AEConfig.h:48</div></div>
+<b>Value:</b><div class="fragment"><div class="line">( TickType_t )(millis / (1000/AEconfigTICK_RATE_HZ));\</div>
+<div class="line">configASSERT((millis / (1000/AEconfigTICK_RATE_HZ)) &gt; 0);</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -477,148 +330,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab27c8391aa88863bb2ed2a950984811a" name="ab27c8391aa88863bb2ed2a950984811a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab27c8391aa88863bb2ed2a950984811a">&#9670;&nbsp;</a></span>AEAssertRuntimeNoMsg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AEAssertRuntimeNoMsg</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">thingToAssert</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(thingToAssert, &quot;&quot;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aee5fb15ba7d0d41da3d16b6861de79da" name="aee5fb15ba7d0d41da3d16b6861de79da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee5fb15ba7d0d41da3d16b6861de79da">&#9670;&nbsp;</a></span>AEAssertRuntimeWithAssertCodeToTest</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AEAssertRuntimeWithAssertCodeToTest</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">thingToAssert, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">uniqueNameOfAssert, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">AssertionMessage&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(thingToAssert, AssertionMessage)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Use this for testing when you want to later test that this assert passed or failed with a unit test. </p>
-
-</div>
-</div>
-<a id="a3fa3350e864698c233c0bd38d4725cf6" name="a3fa3350e864698c233c0bd38d4725cf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fa3350e864698c233c0bd38d4725cf6">&#9670;&nbsp;</a></span>AEAssertStatic</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AEAssertStatic</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa68ce86b7f7200cb8074e4c28e587072" name="aa68ce86b7f7200cb8074e4c28e587072"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa68ce86b7f7200cb8074e4c28e587072">&#9670;&nbsp;</a></span>AEFRIEND_TEST</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AEFRIEND_TEST</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">groupName, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">testName&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0001c487b077a8515ac1fbde16cbe87c" name="a0001c487b077a8515ac1fbde16cbe87c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0001c487b077a8515ac1fbde16cbe87c">&#9670;&nbsp;</a></span>AEGetTimerDuration</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AEGetTimerDuration</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">forTimer</td><td>)</td>
-          <td>&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;GetElapsedTimeInNanoSeconds()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a752593998b939b811f716861a4a7f901" name="a752593998b939b811f716861a4a7f901"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a752593998b939b811f716861a4a7f901">&#9670;&nbsp;</a></span>AELogTimer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AELogTimer</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">forTimer, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">FileNameToWriteTo&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a18714a3e8bac50d7e9a9175d3604bb81">_AELogTimer</a>(<a class="el" href="_a_e_utils_8h.html#a0001c487b077a8515ac1fbde16cbe87c">AEGetTimerDuration</a>(forTimer), FileNameToWriteTo)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a026babcecb469d707b8db52e4c43a9c3" name="a026babcecb469d707b8db52e4c43a9c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a026babcecb469d707b8db52e4c43a9c3">&#9670;&nbsp;</a></span>AEPrintAllTimerDuration</h2>
 
@@ -630,29 +341,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="_a_e_utils_8h.html#a06ad386af077ef3a1c714d3f702e91e4">AEPrintTimerDuration</a>(1)\</div>
+<b>Value:</b><div class="fragment"><div class="line">AEPrintTimerDuration(1)\</div>
 <div class="line">AEPrintTimerDuration(2)\</div>
 <div class="line">AEPrintTimerDuration(3)</div>
-<div class="ttc" id="a_a_e_utils_8h_html_a06ad386af077ef3a1c714d3f702e91e4"><div class="ttname"><a href="_a_e_utils_8h.html#a06ad386af077ef3a1c714d3f702e91e4">AEPrintTimerDuration</a></div><div class="ttdeci">#define AEPrintTimerDuration(forTimer)</div><div class="ttdef"><b>Definition:</b> AEUtils.h:852</div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a06ad386af077ef3a1c714d3f702e91e4" name="a06ad386af077ef3a1c714d3f702e91e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06ad386af077ef3a1c714d3f702e91e4">&#9670;&nbsp;</a></span>AEPrintTimerDuration</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AEPrintTimerDuration</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">forTimer</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#a094588d2e406c89d903b44f7bda3c54e">AEPrint</a>(&quot;timer %d took: %d \n&quot;, forTimer, AEPerfTimer##forTimer-&gt;GetElapsedTimeInNanoSeconds());</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 </div>
 </div>
 <a id="a824a068c853c370ab261b23816504c8d" name="a824a068c853c370ab261b23816504c8d"></a>
@@ -674,7 +366,7 @@ Variables</h2></td></tr>
 <div class="line">AEAssertRuntime(AEPerfTimer##forTimer-&gt;_TimerRunningFromReEnter == <span class="keyword">false</span>, <span class="stringliteral">&quot;you cant mix calling AETimerForEnteringAndReEntering and AEStartTimer for timer ##forTimer&quot;</span>)\</div>
 <div class="line">AEPerfTimer##forTimer-&gt;_TimerRunningFromStart = <span class="keyword">true</span>; \</div>
 <div class="line">PRIV_AEStartTimer(forTimer)</div>
-<div class="ttc" id="a_a_e_utils_8h_html_a9e2e1fbe1c4de456d98706dbe8b36950"><div class="ttname"><a href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a></div><div class="ttdeci">#define AEAssertRuntime(thingToAssert, AssertionMessage)</div><div class="ttdoc">this will assert the predicate. if fails, will print assert command. test code: asvasf343</div><div class="ttdef"><b>Definition:</b> AEUtils.h:771</div></div>
+<div class="ttc" id="a_a_e_utils_8h_html_a9e2e1fbe1c4de456d98706dbe8b36950"><div class="ttname"><a href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a></div><div class="ttdeci">#define AEAssertRuntime(thingToAssert, AssertionMessage)</div><div class="ttdoc">this will assert the predicate. if fails, will print assert command. test code: asvasf343</div><div class="ttdef"><b>Definition:</b> AEUtils.h:813</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -716,31 +408,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(AEPerfTimer##forTimer-&gt;_TimerRunningFromStart == <span class="keyword">false</span>,<span class="stringliteral">&quot;you already ran AEStartTimer and then tried to call AETimerForEnteringAndReEntering. You should only use this macro for reentering starting and stopping the timer&quot;</span>)\</div>
-<div class="line">if(AEPerfTimer##forTimer-&gt;_TimerRunningFromReEnter == <span class="keyword">false</span>){ AEPerfTimer##forTimer-&gt;_TimerRunningFromReEnter = <span class="keyword">true</span>; <a class="code hl_define" href="_a_e_utils_8h.html#ac29d3295defcec4fbe0bb51d6bcdedcd">PRIV_AEStartTimer</a>(forTimer); }\</div>
-<div class="line">else{<a class="code hl_define" href="_a_e_utils_8h.html#a378c51c21cf4d71705076eddbec03153">PRIV_AEStopTimer</a>(forTimer); AEPerfTimer##forTimer-&gt;_TimerRunningFromReEnter = <span class="keyword">false</span>;\</div>
+<div class="line">if(AEPerfTimer##forTimer-&gt;_TimerRunningFromReEnter == <span class="keyword">false</span>){ AEPerfTimer##forTimer-&gt;_TimerRunningFromReEnter = <span class="keyword">true</span>; PRIV_AEStartTimer(forTimer); }\</div>
+<div class="line">else{PRIV_AEStopTimer(forTimer); AEPerfTimer##forTimer-&gt;_TimerRunningFromReEnter = <span class="keyword">false</span>;\</div>
 <div class="line">AEPrintTimerDuration(forTimer)\</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_e_utils_8h_html_a378c51c21cf4d71705076eddbec03153"><div class="ttname"><a href="_a_e_utils_8h.html#a378c51c21cf4d71705076eddbec03153">PRIV_AEStopTimer</a></div><div class="ttdeci">#define PRIV_AEStopTimer(forTimer)</div><div class="ttdef"><b>Definition:</b> AEUtils.h:830</div></div>
-<div class="ttc" id="a_a_e_utils_8h_html_ac29d3295defcec4fbe0bb51d6bcdedcd"><div class="ttname"><a href="_a_e_utils_8h.html#ac29d3295defcec4fbe0bb51d6bcdedcd">PRIV_AEStartTimer</a></div><div class="ttdeci">#define PRIV_AEStartTimer(forTimer)</div><div class="ttdef"><b>Definition:</b> AEUtils.h:827</div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a6a1bf413fcd8671efb7a01003ed65d07" name="a6a1bf413fcd8671efb7a01003ed65d07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a1bf413fcd8671efb7a01003ed65d07">&#9670;&nbsp;</a></span>CastToStateFuncPtr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CastToStateFuncPtr</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">stateToTransitionTo</td><td>)</td>
-          <td>&#160;&#160;&#160;reinterpret_cast&lt;TypeOfThisFSM::StateFuncPtr&gt;(stateToTransitionTo);</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 </div>
 </div>
 <a id="af96700bae6153a0549defd61f43a9a1b" name="af96700bae6153a0549defd61f43a9a1b"></a>
@@ -795,70 +467,6 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ac67d56a22930fb32f533fbb1a9729890" name="ac67d56a22930fb32f533fbb1a9729890"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac67d56a22930fb32f533fbb1a9729890">&#9670;&nbsp;</a></span>DO_EXPAND</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DO_EXPAND</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">VAL</td><td>)</td>
-          <td>&#160;&#160;&#160;VAL ## 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2707bdb76df82f7005461cb2809b5844" name="a2707bdb76df82f7005461cb2809b5844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2707bdb76df82f7005461cb2809b5844">&#9670;&nbsp;</a></span>ENTEREVENT_Id</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ENTEREVENT_Id&#160;&#160;&#160;0xff</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa62e9dfb05c579b5bbcaab7a478c13ad" name="aa62e9dfb05c579b5bbcaab7a478c13ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa62e9dfb05c579b5bbcaab7a478c13ad">&#9670;&nbsp;</a></span>EXITEVENT_Id</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXITEVENT_Id&#160;&#160;&#160;0xff - 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afd6dc610405342de091109cfb184eb69" name="afd6dc610405342de091109cfb184eb69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd6dc610405342de091109cfb184eb69">&#9670;&nbsp;</a></span>EXPAND</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXPAND</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">VAL</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#ac67d56a22930fb32f533fbb1a9729890">DO_EXPAND</a>(VAL)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aff16ec24800fdb71a7525351a40db139" name="aff16ec24800fdb71a7525351a40db139"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aff16ec24800fdb71a7525351a40db139">&#9670;&nbsp;</a></span>MAKE_SINGLETON</h2>
 
@@ -911,56 +519,6 @@ Variables</h2></td></tr>
 <div class="line">    return instance; \</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a867111db558fbc4539935c3038a190c3" name="a867111db558fbc4539935c3038a190c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a867111db558fbc4539935c3038a190c3">&#9670;&nbsp;</a></span>PoolManager</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PoolManager&#160;&#160;&#160;AEPoolManager&lt;<a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#ab763243abc1e6806809ce86b8f8ca016">Event1</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a964772a7f1d35157da8f57261b4263d4">Event1Size</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a59627dfeb3aed94ee5092c4c5781cf8c">Event2</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a982bd87aef2aa5f5bd293b43c5952d00">Event2Size</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#abfd6260b832b3562d5f532d4adb91358">Event3</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a3ba58fb448d30e4082ef003125c128ca">Event3Size</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#acf6c54b784eda4f98035e09def5522cc">Event4</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a72d5ef45048aef385ac3312cb131f71e">Event4Size</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a62abd9c2f744a29f20f238d9a911bd98">Event5</a>, <a class="el" href="test_a_e_core_2_simple___build_2_user_configs_2_a_e_config_8h.html#a59c3a3e39e286ba96849dd4643601460">Event5Size</a>&gt;::getInstance()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac29d3295defcec4fbe0bb51d6bcdedcd" name="ac29d3295defcec4fbe0bb51d6bcdedcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac29d3295defcec4fbe0bb51d6bcdedcd">&#9670;&nbsp;</a></span>PRIV_AEStartTimer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRIV_AEStartTimer</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">forTimer</td><td>)</td>
-          <td>&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;AEStart_Timer();</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a378c51c21cf4d71705076eddbec03153" name="a378c51c21cf4d71705076eddbec03153"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a378c51c21cf4d71705076eddbec03153">&#9670;&nbsp;</a></span>PRIV_AEStopTimer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRIV_AEStopTimer</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">forTimer</td><td>)</td>
-          <td>&#160;&#160;&#160;AEPerfTimer##forTimer-&gt;AEStop_Timer();</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 </div>
 </div>
 <a id="aca4767473a5dadfd11aa424ce4fc909f" name="aca4767473a5dadfd11aa424ce4fc909f"></a>
@@ -1093,94 +651,6 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a351b5b6f5f0ee0b7b5abdf013b42824d" name="a351b5b6f5f0ee0b7b5abdf013b42824d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a351b5b6f5f0ee0b7b5abdf013b42824d">&#9670;&nbsp;</a></span>PublishSubscribeManager</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PublishSubscribeManager&#160;&#160;&#160;AEPublishSubscribeManager::getInstance()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a679423aa43d418febee853c2c64fbd8e" name="a679423aa43d418febee853c2c64fbd8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a679423aa43d418febee853c2c64fbd8e">&#9670;&nbsp;</a></span>S_CONC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define S_CONC</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">A, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">B&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="_a_e_utils_8h.html#afae4a8b3f6efd74c57dba4c9f8c12ef0">S_CONC_</a>(A, B)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afae4a8b3f6efd74c57dba4c9f8c12ef0" name="afae4a8b3f6efd74c57dba4c9f8c12ef0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afae4a8b3f6efd74c57dba4c9f8c12ef0">&#9670;&nbsp;</a></span>S_CONC_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define S_CONC_</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">A, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">B&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;static A * B ;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a970596eb744dd008c300cedc78d42a1d" name="a970596eb744dd008c300cedc78d42a1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a970596eb744dd008c300cedc78d42a1d">&#9670;&nbsp;</a></span>TheAssertToUse</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TheAssertToUse</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">predicate</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="_free_r_t_o_s_config_8h.html#a228c70cd48927d6ab730ed1a6dfbe35f">configASSERT</a>(predicate)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a4b403641b89bd24b408bb8cdffb84bc7" name="a4b403641b89bd24b408bb8cdffb84bc7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b403641b89bd24b408bb8cdffb84bc7">&#9670;&nbsp;</a></span>TRANSITION_TOSTATE</h2>
 
@@ -1196,373 +666,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">thisFSM-&gt;StateToTransitionTo = <a class="code hl_define" href="_a_e_utils_8h.html#a6a1bf413fcd8671efb7a01003ed65d07">CastToStateFuncPtr</a>(stateToTransitionTo)\</div>
-<div class="line">transitionType = <a class="code hl_enumvalue" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8a544dafaf104c4d12f4f6590528c12c3c">TRANSITION</a>;</div>
-<div class="ttc" id="a_a_e_utils_8h_html_a6a1bf413fcd8671efb7a01003ed65d07"><div class="ttname"><a href="_a_e_utils_8h.html#a6a1bf413fcd8671efb7a01003ed65d07">CastToStateFuncPtr</a></div><div class="ttdeci">#define CastToStateFuncPtr(stateToTransitionTo)</div><div class="ttdef"><b>Definition:</b> AEUtils.h:473</div></div>
-<div class="ttc" id="a_a_e_utils_8h_html_ab4d2618aef76a3430205350907f1d2c8a544dafaf104c4d12f4f6590528c12c3c"><div class="ttname"><a href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8a544dafaf104c4d12f4f6590528c12c3c">TRANSITION</a></div><div class="ttdeci">@ TRANSITION</div><div class="ttdef"><b>Definition:</b> AEUtils.h:449</div></div>
+<b>Value:</b><div class="fragment"><div class="line">thisFSM-&gt;StateToTransitionTo = CastToStateFuncPtr(stateToTransitionTo)\</div>
+<div class="line">transitionType = TRANSITION;</div>
 </div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a2029c55b9805d1ddb3916444dc0a3b49" name="a2029c55b9805d1ddb3916444dc0a3b49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2029c55b9805d1ddb3916444dc0a3b49">&#9670;&nbsp;</a></span>AENull</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef bool <a class="el" href="_a_e_utils_8h.html#a2029c55b9805d1ddb3916444dc0a3b49">AENull</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a370752cae6f8f26977a82f3d510c80ee" name="a370752cae6f8f26977a82f3d510c80ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a370752cae6f8f26977a82f3d510c80ee">&#9670;&nbsp;</a></span>AEFSMActiveTypeEnum</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_a_e_utils_8h.html#a370752cae6f8f26977a82f3d510c80ee">AEFSMActiveTypeEnum</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a370752cae6f8f26977a82f3d510c80eea7bbf29a020e38c601b7028afbda40fb0" name="a370752cae6f8f26977a82f3d510c80eea7bbf29a020e38c601b7028afbda40fb0"></a>PAUSE_TO_ACTIVATE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a370752cae6f8f26977a82f3d510c80eeadfac7f899239d4d94673a62e7831fc1a" name="a370752cae6f8f26977a82f3d510c80eeadfac7f899239d4d94673a62e7831fc1a"></a>RESET_TO_ACTIVATE&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a1f645eee5f8e8d3ef2b71d25e0bf1dac" name="a1f645eee5f8e8d3ef2b71d25e0bf1dac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f645eee5f8e8d3ef2b71d25e0bf1dac">&#9670;&nbsp;</a></span>AEPriorities</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_a_e_utils_8h.html#a1f645eee5f8e8d3ef2b71d25e0bf1dac">AEPriorities</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1f645eee5f8e8d3ef2b71d25e0bf1dacac88e2ec789848e366512cf0a6e27c56d" name="a1f645eee5f8e8d3ef2b71d25e0bf1dacac88e2ec789848e366512cf0a6e27c56d"></a>LowestPriority&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1f645eee5f8e8d3ef2b71d25e0bf1dacaa9ec7658707bd46a66e06e616d467a14" name="a1f645eee5f8e8d3ef2b71d25e0bf1dacaa9ec7658707bd46a66e06e616d467a14"></a>MediumPriority&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1f645eee5f8e8d3ef2b71d25e0bf1daca86c533a495a6b4ee30ac6a88739df87d" name="a1f645eee5f8e8d3ef2b71d25e0bf1daca86c533a495a6b4ee30ac6a88739df87d"></a>HighestPriority&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="ab4d2618aef76a3430205350907f1d2c8" name="ab4d2618aef76a3430205350907f1d2c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4d2618aef76a3430205350907f1d2c8">&#9670;&nbsp;</a></span>AETransitionType</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_a_e_utils_8h.html#ab4d2618aef76a3430205350907f1d2c8">AETransitionType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab4d2618aef76a3430205350907f1d2c8a544dafaf104c4d12f4f6590528c12c3c" name="ab4d2618aef76a3430205350907f1d2c8a544dafaf104c4d12f4f6590528c12c3c"></a>TRANSITION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab4d2618aef76a3430205350907f1d2c8a9f76d9580f3a70864192ccc97e393251" name="ab4d2618aef76a3430205350907f1d2c8a9f76d9580f3a70864192ccc97e393251"></a>UNHANDLED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab4d2618aef76a3430205350907f1d2c8aa6b784b2b2bbb43e39250f30d610d72e" name="ab4d2618aef76a3430205350907f1d2c8aa6b784b2b2bbb43e39250f30d610d72e"></a>DEACTIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab4d2618aef76a3430205350907f1d2c8a9a25989a7678e52c9900c88a81fb18d3" name="ab4d2618aef76a3430205350907f1d2c8a9a25989a7678e52c9900c88a81fb18d3"></a>ACTIVATE&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a958975e0455c91e0f474ee476c4d7271" name="a958975e0455c91e0f474ee476c4d7271"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a958975e0455c91e0f474ee476c4d7271">&#9670;&nbsp;</a></span>StyleOfSPB</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_a_e_utils_8h.html#a958975e0455c91e0f474ee476c4d7271">StyleOfSPB</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a958975e0455c91e0f474ee476c4d7271a50551169e5a6076acc637417c9cd57be" name="a958975e0455c91e0f474ee476c4d7271a50551169e5a6076acc637417c9cd57be"></a>EachSPBTask&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a958975e0455c91e0f474ee476c4d7271ab4b4593a1d1d6ef00db4c048099d2b3b" name="a958975e0455c91e0f474ee476c4d7271ab4b4593a1d1d6ef00db4c048099d2b3b"></a>ChainOfSPBsTask&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a958975e0455c91e0f474ee476c4d7271a0ff8a183a60548a07166e9fb2e65780a" name="a958975e0455c91e0f474ee476c4d7271a0ff8a183a60548a07166e9fb2e65780a"></a>ChainOfSPBsFromInterrupt&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a18714a3e8bac50d7e9a9175d3604bb81" name="a18714a3e8bac50d7e9a9175d3604bb81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18714a3e8bac50d7e9a9175d3604bb81">&#9670;&nbsp;</a></span>_AELogTimer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void _AELogTimer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_a_e_performance_timer_8h.html#afb61b0ca6dceb3f8f58af22de1359e11">PerfElapsed_t</a>&#160;</td>
-          <td class="paramname"><em>duration</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>FileNameToWriteTo</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a97051ced6019e80c7cc3c03b684d1f27" name="a97051ced6019e80c7cc3c03b684d1f27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97051ced6019e80c7cc3c03b684d1f27">&#9670;&nbsp;</a></span>AEClearContentsOfFile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AEClearContentsOfFile </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>FileNameToClear</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab8d0d9794eadc2dc3f3c0f4587635534" name="ab8d0d9794eadc2dc3f3c0f4587635534"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8d0d9794eadc2dc3f3c0f4587635534">&#9670;&nbsp;</a></span>AEFormatMsg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AEFormatMsg </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>formattedBuffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>sizeOfFormat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>msgToFormat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a094588d2e406c89d903b44f7bda3c54e" name="a094588d2e406c89d903b44f7bda3c54e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a094588d2e406c89d903b44f7bda3c54e">&#9670;&nbsp;</a></span>AEPrint()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AEPrint </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>pFormat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7f130823fe3c766c25a651dff140997d" name="a7f130823fe3c766c25a651dff140997d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f130823fe3c766c25a651dff140997d">&#9670;&nbsp;</a></span>AEWriteToEndOfFile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AEWriteToEndOfFile </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>FileNameToWriteTo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>ThingToWrite</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>SizeOfThingToWrite</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abecfa95d5bb3319cae2475657c9f4aa3" name="abecfa95d5bb3319cae2475657c9f4aa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abecfa95d5bb3319cae2475657c9f4aa3">&#9670;&nbsp;</a></span>numDigits()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">int numDigits </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>number</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a1d0f32bfef6f77eb5c583c1a2507a9a4" name="a1d0f32bfef6f77eb5c583c1a2507a9a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d0f32bfef6f77eb5c583c1a2507a9a4">&#9670;&nbsp;</a></span>AEPerfTimer1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a>* AEPerfTimer1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a55355de81fe67434d3724e88378d8bdc" name="a55355de81fe67434d3724e88378d8bdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55355de81fe67434d3724e88378d8bdc">&#9670;&nbsp;</a></span>AEPerfTimer2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a>* AEPerfTimer2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2a4e19c98b0b1da698870a17586df74f" name="a2a4e19c98b0b1da698870a17586df74f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a4e19c98b0b1da698870a17586df74f">&#9670;&nbsp;</a></span>AEPerfTimer3</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_performance_timer.html">AEPerformanceTimer</a>* AEPerfTimer3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="_a_e_utils_8h.html">AEUtils.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

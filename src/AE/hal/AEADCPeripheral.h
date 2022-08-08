@@ -5,7 +5,7 @@
 //#pragma warning( push )
 //#pragma warning( disable : 4005)
 
-#include "AEConfig.h"
+//#include "AEConfig.h"
 #include "AEPeripheral.h"
  
 

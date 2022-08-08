@@ -1,0 +1,315 @@
+\hypertarget{exe_test_2conf_2_a_e_config_8h_source}{}\doxysection{AEConfig.\+h}
+\label{exe_test_2conf_2_a_e_config_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/exeTest/conf/AEConfig.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/exeTest/conf/AEConfig.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once }}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3  }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define blabla}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{//\#define TESTWITH\_AO\_PublishSubscribe}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//\#define TESTWITH\_ACTIONREQUEST2}}
+\DoxyCodeLine{9 \textcolor{comment}{//\#define TESTWITH\_ACTIONREQUEST }}
+\DoxyCodeLine{10 \textcolor{comment}{//\#define TESTWITH\_UPDATE}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//\#define TestWith\_SimpleFSMAO}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//\#define TEST\_VIRTUAL\_PERFORMANCE}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define TEST\_PWMPeripheral}}
+\DoxyCodeLine{17  }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//pick only one at a time example}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define NoneExample\_DESIGN}}
+\DoxyCodeLine{21 \textcolor{comment}{//\#define TEST\_SPB\_TYPES}}
+\DoxyCodeLine{22 \textcolor{comment}{//\#define VerySimple\_DESIGN}}
+\DoxyCodeLine{23 \textcolor{comment}{//\#define TESTWITH\_HOLTERMONITOR  }}
+\DoxyCodeLine{24 \textcolor{comment}{//\#define TEST\_WITH\_VELOCITY\_DESIGN}}
+\DoxyCodeLine{25 \textcolor{comment}{//\#define TEST\_WITH\_ACCELERATION\_Design}}
+\DoxyCodeLine{26 \textcolor{comment}{//\#define TEST\_WITH\_HEARTRATE\_DESIGN}}
+\DoxyCodeLine{27 \textcolor{comment}{//\#define TEST\_TDUASPOSSESSION\_DESIGN}}
+\DoxyCodeLine{28 \textcolor{comment}{//\#define TEST\_FSM\_ACTIVATION}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define TEST\_AELoopObject\_SPBSub\_ReadWriteVar\_Test}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{//\#define TEST\_WITH\_HEARTRATE\_DESIGN2   }}
+\DoxyCodeLine{33 \textcolor{comment}{//\#define TEST\_WITH\_HEARTRATE\_DESIGN2\_type1}}
+\DoxyCodeLine{34 \textcolor{comment}{//\#define TEST\_WITH\_HEARTRATE\_DESIGN2\_type2}}
+\DoxyCodeLine{35 \textcolor{comment}{//\#define TEST\_WITH\_HEARTRATE\_DESIGN2\_type3}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37  }
+\DoxyCodeLine{38  \textcolor{comment}{//give the target device }}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define PLATFORM\_VS 2}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define PLATFORM\_IAR 3}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define PLATFORM\_stm32f4 4}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define PLATFORM PLATFORM\_stm32f4}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define Target\_stm32f4}}
+\DoxyCodeLine{45 \textcolor{comment}{//\#define Target\_stm32f7}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{//RTOS configs}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define AEconfigTICK\_RATE\_HZ 1000}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define AEconfigMINIMAL\_STACK\_SIZE 928}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define AEconfigTIMER\_TASK\_STACK\_DEPTH 1500}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define AEconfigTOTAL\_HEAP\_SIZE 56360}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{//AE configs}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define AOPRIORITYLOWEST 5}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define AOPRIORITYMEDIUM 10}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define AOPRIORITYHIGHEST 29}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define NUMOFACTIVEOBJECTS 20}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define HIGHEST\_NUM\_OF\_EVT\_INSTANCES 25}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{//\#define MAXSPB\_CHAIN\_POOLSIZE 5}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define MAXNUMOFOBSERVORS 30}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define MAXNUMOFINTERPRETORS 15}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define MAXNUMOFSPB 25}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define MAXNUMOFSENSORS 15}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define MAXNUMOFOBSERVERINFLUENCES 25}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define MAXNUMBEROF\_FILTERS 5}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define MAXNUMBEROF\_FILTERS\_From\_A\_Sensor 2}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define MAXNUMBEROFINPUTSIGNALS\_TO\_A\_SPB 10}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define MAXNUMBEROFOUTPUTSIGNALS\_TO\_A\_SPB 4}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define MAXNUM\_OF\_SUBSCRIBERS\_To\_A\_SPB 3}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define MAXNUM\_OF\_AE\_SUBSCRIPTIONS\_To\_SPBs 3}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define TOTALMAXNUMBEROFOUTPUTSIGNALS\_TO\_ALL\_SPBs 25}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define MAXNUMOFTDUSSETTOTheSameSPB 3}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define SPB\_OF\_FILTER1\_SUBSCRIBED}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define CRCUseTable}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{//\#define Config\_Check\_Build\_RTTI}}
+\DoxyCodeLine{85 \textcolor{comment}{//\#define Runtime\_Build}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{comment}{//\#ifdef TESTWITH\_ACTIONREQUEST2}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define configAE\_USE\_TDUs\_AsService  1}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define configAE\_USE\_U\_AsService  1}}
+\DoxyCodeLine{90 \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define configAE\_USE\_DDSM\_AsService  0}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94  }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define Event1 EventTest1}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define Event1Size 10}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define Event2 EventTest2}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define Event2Size 15}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define Event3 Uart2RecieveEVT}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define Event3Size 20}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define Event4 SPBDecompressionDone}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define Event4Size 5}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define Event5 PCConnecttionCheckEVT}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define Event5Size 5}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define Event6 AENULLEvent}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define Event6Size 0}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{comment}{//place your signals events here. }}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define Signal1 DoneUploading\_Sig}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define Signal2 SomeOther\_Sig}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define Signal3 Button1\_Sig }\textcolor{comment}{//value for a null signal}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define Signal4 Button2\_Sig }\textcolor{comment}{//value for a null signal}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define Signal5 Button3\_Sig }\textcolor{comment}{//value for a null signal}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define Signal6 1000 }\textcolor{comment}{//value for a null signal}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define Signal7 1000 }\textcolor{comment}{//value for a null signal}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#ifdef TEST\_FSM\_ACTIVATION}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define AOInclude1 UUartDriver}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define TemplateToAO1 }}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define ClassNameOfAO1 UUartDriver}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define TypeOfAO1\_1 UUartDriver}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_1 uartDriver}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define TypeOfAO1\_2}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_2}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define TypeOfAO1\_2}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_2}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define TypeOfAO1\_3}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_3}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define TypeOfAO1\_4}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_4}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#ifdef TESTWITH\_HOLTERMONITOR }}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{comment}{//sensors and clocks configurations}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define ClockType1 AEClock<1, 0, 2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define ClockName1 clock\_C1}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define ClockType2 }}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define ClockName2}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define ClockType3 }}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define ClockName3}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define ClockType4 }}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define ClockName4}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define ClockType5 }}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define ClockName5}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define ClockType6 }}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define ClockName6}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define SensorName1 SensorEKG}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define SensorName2}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define SensorName3 }}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define SensorName4}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define SensorName5}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define SensorName6}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define SensorName7}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define SensorName8}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define SensorName9}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define SensorName10}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{comment}{//AO configurations}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define AOInclude1 UUartDriver}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define TemplateToAO1 }}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define ClassNameOfAO1 UUartDriver}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define TypeOfAO1\_1 UUartDriver}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_1 uartDriver}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define TypeOfAO1\_2}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_2}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define TypeOfAO1\_2}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_2}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define TypeOfAO1\_3}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_3}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define TypeOfAO1\_4}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define InstanceNameOfAO1\_4}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define AOInclude2 HolterMonitorSPBs}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define TemplateToAO2 template<uint8\_t NumOfFilters, uint8\_t NUMOFMultiChannelFILTERS, class TFilter1, class TFilter2, uint8\_t Filter2LinksFrom, class TFilter3, uint8\_t Filter3LinksFrom, class TFilter4, uint8\_t Filter4LinksFrom, class TFilter5, uint8\_t Filter5LinksFrom> }}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define ClassNameOfAO2 WaveletTransform5\_SPB}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define TypeOfAO2\_1 WaveletTransform5\_SPB<0,0,AENullClass, AENullClass,0, AENullClass,00, AENullClass,0, AENullClass,0>}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define InstanceNameOfAO2\_1 waveletTSPB}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define TypeOfAO2\_2}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define InstanceNameOfAO2\_2}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define TypeOfAO2\_2}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define InstanceNameOfAO2\_2}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define TypeOfAO2\_3}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define InstanceNameOfAO2\_3}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define TypeOfAO2\_4}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define InstanceNameOfAO2\_4}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{comment}{//\#define AOInclude3 UIHolterMonitorFSM}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define TemplateToAO3}}
+\DoxyCodeLine{194 \textcolor{comment}{//\#define ClassNameOfAO3 UIHolterMonitorFSM}}
+\DoxyCodeLine{195 \textcolor{comment}{//\#define TypeOfAO3\_1 UIHolterMonitorFSM}}
+\DoxyCodeLine{196 \textcolor{comment}{//\#define InstanceNameOfAO3\_1 FSMHolterUI}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#define TypeOfAO3\_2}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define InstanceNameOfAO3\_2}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define TypeOfAO3\_2}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define InstanceNameOfAO3\_2}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define TypeOfAO3\_3}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define InstanceNameOfAO3\_3}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define TypeOfAO3\_4}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define InstanceNameOfAO3\_4}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define AOInclude4 w25DriverTDU}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define TemplateToAO4}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define ClassNameOfAO4 w25DriverTDU}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define TypeOfAO4\_1 w25DriverTDU}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define InstanceNameOfAO4\_1 W25DriverTDU}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define TypeOfAO4\_2}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define InstanceNameOfAO4\_2}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define TypeOfAO4\_2}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define InstanceNameOfAO4\_2}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define TypeOfAO4\_3}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define InstanceNameOfAO4\_3}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define TypeOfAO4\_4}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define InstanceNameOfAO4\_4}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define AOInclude5 UploadDataToPCTDU}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define TemplateToAO5}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define ClassNameOfAO5 UploadDataToPCTDU}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define TypeOfAO5\_1 UploadDataToPCTDU}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define InstanceNameOfAO5\_1 UPloadDataToPC\_TDU}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define TypeOfAO5\_2}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define InstanceNameOfAO5\_2}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define TypeOfAO5\_2}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define InstanceNameOfAO5\_2}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define TypeOfAO5\_3}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define InstanceNameOfAO5\_3}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define TypeOfAO5\_4}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define InstanceNameOfAO5\_4}}
+\DoxyCodeLine{233  }
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define TemplateToAO6}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define ClassNameOfAO6}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#define TypeOfAO6\_1}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define InstanceNameOfAO6\_1}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#define TypeOfAO6\_2}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#define InstanceNameOfAO6\_2}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define TypeOfAO6\_2}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define InstanceNameOfAO6\_2}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#define TypeOfAO6\_3}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define InstanceNameOfAO6\_3}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define TypeOfAO6\_4}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define InstanceNameOfAO6\_4}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TESTWITH\_HOLTERMONITOR}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253  }
+\DoxyCodeLine{254 \textcolor{comment}{//enabling hardware peripherals }}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#ifdef IARBuild}}
+\DoxyCodeLine{256 \textcolor{comment}{//\#define Target\_RealUART}}
+\DoxyCodeLine{257 \textcolor{comment}{//\#define Target\_RealI2C}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#define Target\_RealSPI}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define Target\_RealADC}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define Target\_RealGPIO}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define Target\_RealButton}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define Target\_RealPWM}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 \textcolor{comment}{//\#define UARTPERIPHERAL2 UARTPeripheral<2,PortD, PIN5, PortA, PIN3>//<2,PortA, PIN2, PortA, PIN3>}}
+\DoxyCodeLine{266 \textcolor{comment}{//\#define SPIPERIPHERAL1 SPIPeripheral<1,false,PortA,PIN5,PortA,PIN6,PortA,PIN7,PortA,PIN4> }}
+\DoxyCodeLine{267 \textcolor{comment}{//\#define ADCPERIPHERAL1 ADCPeripheral<1,PortB, PIN0> }}
+\DoxyCodeLine{268 \textcolor{comment}{//\#define ButtonPERIPHERAL1 ButtonPeripheral<1,PortD, PIN0> }}
+\DoxyCodeLine{269 \textcolor{comment}{//\#define PWMPERIPHERAL1 PWMPeripheral<1,PortD, PIN12> }}
+\DoxyCodeLine{270 \textcolor{comment}{//\#define I2CPERIPHERAL1 I2CPeripheral<1,PortB, PIN6,PortB, PIN7, 20000> }}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{comment}{//\#define Using\_SPI1Peripheral}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{comment}{//\#define SPI1PERIPHERAL SPI1Peripheral<PortA,PIN5,PortA,PIN6,PortA,PIN7>  }}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 \textcolor{comment}{//\#define Using\_ADC1Peripheral}}
+\DoxyCodeLine{278 \textcolor{comment}{//\#define Target\_RealADC}}
+\DoxyCodeLine{279 \textcolor{comment}{//\#define ADC1PERIPHERAL ADC1Peripheral<PortB, PIN0> }}
+\DoxyCodeLine{280  }
+\DoxyCodeLine{281  }
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#ifdef Target\_RealSPI1}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#define Target\_RealW25}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// Target\_RealSPI1}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#ifndef USING\_LINUX}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#ifdef HARDWARE}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#ifndef Target\_RealUART}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#include "{}UARTConsole.h"{}}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 }
+
+\end{DoxyCode}

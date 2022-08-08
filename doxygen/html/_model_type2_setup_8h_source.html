@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_model_type2_setup_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,11 +61,16 @@ $(document).ready(function(){initNavTree('_model_type2_setup_8h_source.html','')
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_aaecfe769f90e6d3fc04284050d5a7a2.html">AESetup</a></li><li class="navelem"><a class="el" href="dir_0b455534f90e8813566529dafb744e8c.html">Board</a></li><li class="navelem"><a class="el" href="dir_4f85e67eb9fc22b4666df93f848baa6e.html">Vendor_STM32</a></li><li class="navelem"><a class="el" href="dir_9a7b198ee587c25a11fa2d0daa515360.html">Series_F4</a></li><li class="navelem"><a class="el" href="dir_368e15d6402c23aa0a93c9261c49aa06.html">ModelType1_11</a></li><li class="navelem"><a class="el" href="dir_4664f4129cd76c0308fbc4781f557d35.html">ModelType2_RE</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">ModelType2Setup.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_model_type2_setup_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//generated file: ModelType2Setup.h</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//generated file: ModelType2Setup.h</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
@@ -94,7 +78,7 @@ $(document).ready(function(){initNavTree('_model_type2_setup_8h_source.html','')
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// this is for board STM32F411RE for the </span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// RE part of it</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_model_type1_setup_8h.html">ModelType1Setup.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;ModelType1Setup.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//includes</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//UserCode_Sectiona</span></div>
@@ -104,18 +88,18 @@ $(document).ready(function(){initNavTree('_model_type2_setup_8h_source.html','')
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_model_type2_setup.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_model_type2_setup.html">ModelType2Setup</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_model_type1_setup.html">ModelType1Setup</a></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_model_type2_setup.html#abd7b1cf1cbecd18c382520cd21b6ddf8">   19</a></span>    <a class="code hl_function" href="class_model_type2_setup.html#abd7b1cf1cbecd18c382520cd21b6ddf8">ModelType2Setup</a>() {}; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="class_model_type2_setup.html">ModelType2Setup</a>() {}; </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_model_type2_setup.html#a44acc4f85685ee5739a653d800168e50">   21</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model_type2_setup.html#a44acc4f85685ee5739a653d800168e50">RTOSInit</a>(){</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="class_model_type1_setup.html#a0d67b4752bc3a6179b9446207ed5a5a3">ModelType1Setup::RTOSInit</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> RTOSInit(){</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    ModelType1Setup::RTOSInit();</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//UserCode_Sectionb</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//UserCode_Sectionb_end</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_model_type2_setup.html#a47988097e6ff0a3140c18d6571d4d9c3">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model_type2_setup.html#a47988097e6ff0a3140c18d6571d4d9c3">BSPInit</a>(){</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="class_model_type1_setup.html#a90e9a37083c734652883f913e391d5f9">ModelType1Setup::BSPInit</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> BSPInit(){</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    ModelType1Setup::BSPInit();</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">//UserCode_Sectionc</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//UserCode_Sectionc_end</span></div>
@@ -124,8 +108,8 @@ $(document).ready(function(){initNavTree('_model_type2_setup_8h_source.html','')
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">//any things needed to be changed in the BSP to satisfy the RTOS being used</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_model_type2_setup.html#a943ef9983681a8c1837c1ee569f6f4cf">   39</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model_type2_setup.html#a943ef9983681a8c1837c1ee569f6f4cf">RTOS_ToBSP_SpecificCode</a>(){</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="class_model_type1_setup.html#a325cb2e784a4c09f45c92f3b57861ea8">ModelType1Setup::RTOS_ToBSP_SpecificCode</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> RTOS_ToBSP_SpecificCode(){</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    ModelType1Setup::RTOS_ToBSP_SpecificCode();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">//UserCode_Sectiond</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//UserCode_Sectiond_end</span></div>
@@ -137,24 +121,12 @@ $(document).ready(function(){initNavTree('_model_type2_setup_8h_source.html','')
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//UserCode_Sectione</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">//UserCode_Sectione_end</span></div>
-<div class="ttc" id="a_model_type1_setup_8h_html"><div class="ttname"><a href="_model_type1_setup_8h.html">ModelType1Setup.h</a></div></div>
 <div class="ttc" id="aclass_model_type1_setup_html"><div class="ttname"><a href="class_model_type1_setup.html">ModelType1Setup</a></div><div class="ttdef"><b>Definition:</b> ModelType1Setup.h:17</div></div>
-<div class="ttc" id="aclass_model_type1_setup_html_a0d67b4752bc3a6179b9446207ed5a5a3"><div class="ttname"><a href="class_model_type1_setup.html#a0d67b4752bc3a6179b9446207ed5a5a3">ModelType1Setup::RTOSInit</a></div><div class="ttdeci">void RTOSInit()</div><div class="ttdef"><b>Definition:</b> ModelType1Setup.h:21</div></div>
-<div class="ttc" id="aclass_model_type1_setup_html_a325cb2e784a4c09f45c92f3b57861ea8"><div class="ttname"><a href="class_model_type1_setup.html#a325cb2e784a4c09f45c92f3b57861ea8">ModelType1Setup::RTOS_ToBSP_SpecificCode</a></div><div class="ttdeci">void RTOS_ToBSP_SpecificCode()</div><div class="ttdef"><b>Definition:</b> ModelType1Setup.h:39</div></div>
-<div class="ttc" id="aclass_model_type1_setup_html_a90e9a37083c734652883f913e391d5f9"><div class="ttname"><a href="class_model_type1_setup.html#a90e9a37083c734652883f913e391d5f9">ModelType1Setup::BSPInit</a></div><div class="ttdeci">void BSPInit()</div><div class="ttdef"><b>Definition:</b> ModelType1Setup.h:29</div></div>
 <div class="ttc" id="aclass_model_type2_setup_html"><div class="ttname"><a href="class_model_type2_setup.html">ModelType2Setup</a></div><div class="ttdef"><b>Definition:</b> ModelType2Setup.h:17</div></div>
-<div class="ttc" id="aclass_model_type2_setup_html_a44acc4f85685ee5739a653d800168e50"><div class="ttname"><a href="class_model_type2_setup.html#a44acc4f85685ee5739a653d800168e50">ModelType2Setup::RTOSInit</a></div><div class="ttdeci">void RTOSInit()</div><div class="ttdef"><b>Definition:</b> ModelType2Setup.h:21</div></div>
-<div class="ttc" id="aclass_model_type2_setup_html_a47988097e6ff0a3140c18d6571d4d9c3"><div class="ttname"><a href="class_model_type2_setup.html#a47988097e6ff0a3140c18d6571d4d9c3">ModelType2Setup::BSPInit</a></div><div class="ttdeci">void BSPInit()</div><div class="ttdef"><b>Definition:</b> ModelType2Setup.h:29</div></div>
-<div class="ttc" id="aclass_model_type2_setup_html_a943ef9983681a8c1837c1ee569f6f4cf"><div class="ttname"><a href="class_model_type2_setup.html#a943ef9983681a8c1837c1ee569f6f4cf">ModelType2Setup::RTOS_ToBSP_SpecificCode</a></div><div class="ttdeci">void RTOS_ToBSP_SpecificCode()</div><div class="ttdef"><b>Definition:</b> ModelType2Setup.h:39</div></div>
-<div class="ttc" id="aclass_model_type2_setup_html_abd7b1cf1cbecd18c382520cd21b6ddf8"><div class="ttname"><a href="class_model_type2_setup.html#abd7b1cf1cbecd18c382520cd21b6ddf8">ModelType2Setup::ModelType2Setup</a></div><div class="ttdeci">ModelType2Setup()</div><div class="ttdef"><b>Definition:</b> ModelType2Setup.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_aaecfe769f90e6d3fc04284050d5a7a2.html">AESetup</a></li><li class="navelem"><a class="el" href="dir_0b455534f90e8813566529dafb744e8c.html">Board</a></li><li class="navelem"><a class="el" href="dir_4f85e67eb9fc22b4666df93f848baa6e.html">Vendor_STM32</a></li><li class="navelem"><a class="el" href="dir_9a7b198ee587c25a11fa2d0daa515360.html">Series_F4</a></li><li class="navelem"><a class="el" href="dir_368e15d6402c23aa0a93c9261c49aa06.html">ModelType1_11</a></li><li class="navelem"><a class="el" href="dir_4664f4129cd76c0308fbc4781f557d35.html">ModelType2_RE</a></li><li class="navelem"><a class="el" href="_model_type2_setup_8h.html">ModelType2Setup.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

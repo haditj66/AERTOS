@@ -9,6 +9,7 @@
     <AutoProgramSPIFFSPartition>true</AutoProgramSPIFFSPartition>
     <MainSourceDirectory>$(ProjectDir)</MainSourceDirectory>
     <ExportAdvancedBuildVariables>false</ExportAdvancedBuildVariables>
+    <SkipImportedProjectChecks>false</SkipImportedProjectChecks>
     <MemoryListSource>DeviceDefinition</MemoryListSource>
   </Project>
   <Build xsi:type="com.visualgdb.build.cmake">
@@ -16,15 +17,15 @@
     <ToolchainID>
       <ID>com.visualgdb.arm-eabi</ID>
       <Version>
-        <GCC>9.3.1</GCC>
-        <GDB>9.2.0</GDB>
-        <Revision>2</Revision>
+        <GCC>10.3.1</GCC>
+        <GDB>10.2.90</GDB>
+        <Revision>1</Revision>
       </Version>
     </ToolchainID>
     <RelativeSourceDirectory />
     <ConfigurationType>DEBUG</ConfigurationType>
     <BinaryDirectory>build/$(PlatformName)/$(ConfigurationName)</BinaryDirectory>
-    <MainCMakeTarget>AECore</MainCMakeTarget>
+    <MainCMakeTarget>exeHalTest</MainCMakeTarget>
     <MakeCommandTemplate>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
       <RemoteHost>
@@ -75,7 +76,7 @@
       <ConfigurationNameCase>Upper</ConfigurationNameCase>
       <DefaultHeaderDiscoveryMode>None</DefaultHeaderDiscoveryMode>
       <EnableFastUpToDateCheck>true</EnableFastUpToDateCheck>
-      <StartupTarget>AECore</StartupTarget>
+      <StartupTarget>exeHalTest</StartupTarget>
     </ProjectModeSettings>
   </Build>
   <CustomBuild>
@@ -231,6 +232,11 @@
   <Configurations>
     <VisualGDBConfiguration>
       <PlatformName>VSGDBCmakeNinja_armnoneabiid</PlatformName>
+      <MergeableBuildSettingsExtension xsi:type="com.visualgdb.build.cmake.mergeable">
+        <AdditionalDefinitions>
+          <string>VSGDBCmakeNinja_armnoneabiid</string>
+        </AdditionalDefinitions>
+      </MergeableBuildSettingsExtension>
     </VisualGDBConfiguration>
     <VisualGDBConfiguration>
       <PlatformName>VSGDBCmakeNinja_mingw</PlatformName>
@@ -334,9 +340,12 @@
           <ExamineRegistersInRawFormat>true</ExamineRegistersInRawFormat>
           <DisableSignals>false</DisableSignals>
           <EnableAsyncExecutionMode>false</EnableAsyncExecutionMode>
+          <AsyncModeSupportsBreakpoints>true</AsyncModeSupportsBreakpoints>
+          <TemporaryBreakConsolidationTimeout>0</TemporaryBreakConsolidationTimeout>
           <EnableNonStopMode>false</EnableNonStopMode>
           <MaxBreakpointLimit>0</MaxBreakpointLimit>
           <EnableVerboseMode>true</EnableVerboseMode>
+          <EnablePrettyPrinters>false</EnablePrettyPrinters>
         </AdditionalGDBSettings>
         <LaunchGDBSettings xsi:type="GDBLaunchParametersNewInstance">
           <DebuggedProgram>$(SelectedCMakeTarget)</DebuggedProgram>
@@ -348,6 +357,11 @@
         <GenerateCtrlBreakInsteadOfCtrlC>false</GenerateCtrlBreakInsteadOfCtrlC>
         <SuppressArgumentVariablesCheck>false</SuppressArgumentVariablesCheck>
       </DebugSettingsOverride>
+      <MergeableBuildSettingsExtension xsi:type="com.visualgdb.build.cmake.mergeable">
+        <AdditionalDefinitions>
+          <string>VSGDBCmakeNinja_mingw</string>
+        </AdditionalDefinitions>
+      </MergeableBuildSettingsExtension>
     </VisualGDBConfiguration>
     <VisualGDBConfiguration>
       <PlatformName>CmakeUnixMakefiles_gnu</PlatformName>
@@ -398,6 +412,7 @@
           </RemoteHost>
           <LocalDirectory />
           <RemoteDirectory>/home/hadi/Documents/AERTOSMount</RemoteDirectory>
+          <SuppressPathChangeWarnings>false</SuppressPathChangeWarnings>
         </MountInfo>
         <AllowChangingHostForMainCommands>false</AllowChangingHostForMainCommands>
         <SkipBuildIfNoSourceFilesChanged>false</SkipBuildIfNoSourceFilesChanged>
@@ -497,9 +512,12 @@
           <ExamineRegistersInRawFormat>true</ExamineRegistersInRawFormat>
           <DisableSignals>false</DisableSignals>
           <EnableAsyncExecutionMode>false</EnableAsyncExecutionMode>
+          <AsyncModeSupportsBreakpoints>true</AsyncModeSupportsBreakpoints>
+          <TemporaryBreakConsolidationTimeout>0</TemporaryBreakConsolidationTimeout>
           <EnableNonStopMode>false</EnableNonStopMode>
           <MaxBreakpointLimit>0</MaxBreakpointLimit>
           <EnableVerboseMode>true</EnableVerboseMode>
+          <EnablePrettyPrinters>false</EnablePrettyPrinters>
         </AdditionalGDBSettings>
         <GenerateCtrlBreakInsteadOfCtrlC>false</GenerateCtrlBreakInsteadOfCtrlC>
         <SuppressArgumentVariablesCheck>false</SuppressArgumentVariablesCheck>
@@ -512,8 +530,20 @@
         <SuppressTTYCreation>false</SuppressTTYCreation>
         <IndexDebugSymbols>false</IndexDebugSymbols>
       </DebugSettingsOverride>
+      <MergeableBuildSettingsExtension xsi:type="com.visualgdb.build.cmake.mergeable">
+        <AdditionalDefinitions>
+          <string>CmakeUnixMakefiles_gnu</string>
+        </AdditionalDefinitions>
+      </MergeableBuildSettingsExtension>
     </VisualGDBConfiguration>
   </Configurations>
+  <CommonSettings>
+    <TestFrameworkID>com.sysprogs.unittest.googletest</TestFrameworkID>
+    <TestFrameworkSubdirectory>TestFramework</TestFrameworkSubdirectory>
+    <TestFrameworkSettings>
+      <Entries />
+    </TestFrameworkSettings>
+  </CommonSettings>
   <ProgramArgumentsSuggestions />
   <Debug xsi:type="com.visualgdb.debug.embedded">
     <AdditionalStartupCommands />
@@ -544,9 +574,12 @@
       <ExamineRegistersInRawFormat>true</ExamineRegistersInRawFormat>
       <DisableSignals>false</DisableSignals>
       <EnableAsyncExecutionMode>false</EnableAsyncExecutionMode>
+      <AsyncModeSupportsBreakpoints>true</AsyncModeSupportsBreakpoints>
+      <TemporaryBreakConsolidationTimeout>0</TemporaryBreakConsolidationTimeout>
       <EnableNonStopMode>false</EnableNonStopMode>
       <MaxBreakpointLimit>0</MaxBreakpointLimit>
       <EnableVerboseMode>true</EnableVerboseMode>
+      <EnablePrettyPrinters>false</EnablePrettyPrinters>
     </AdditionalGDBSettings>
     <DebugMethod>
       <ID>com.sysprogs.arm.openocd</ID>

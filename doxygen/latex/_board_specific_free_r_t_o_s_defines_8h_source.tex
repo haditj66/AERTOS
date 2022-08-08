@@ -1,0 +1,19 @@
+\hypertarget{_board_specific_free_r_t_o_s_defines_8h_source}{}\doxysection{Board\+Specific\+Free\+RTOSDefines.\+h}
+\label{_board_specific_free_r_t_o_s_defines_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles/BoardSpecificFreeRTOSDefines.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles/BoardSpecificFreeRTOSDefines.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//Board specific defines}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#if (MCU\_ARM\_ARCHITECTURE == M4) || (MCU\_ARM\_ARCHITECTURE == M3)}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/* Cortex-\/M specific definitions. */}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifdef \_\_NVIC\_PRIO\_BITS}}
+\DoxyCodeLine{6     \textcolor{comment}{/* \_\_BVIC\_PRIO\_BITS will be specified when CMSIS is being used. */}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define configPRIO\_BITS             \_\_NVIC\_PRIO\_BITS}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define configPRIO\_BITS             4        }\textcolor{comment}{/* 15 priority levels */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

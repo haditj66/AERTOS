@@ -1,0 +1,59 @@
+\hypertarget{class_pin_selector}{}\doxysection{Pin\+Selector Class Reference}
+\label{class_pin_selector}\index{PinSelector@{PinSelector}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pin_selector_a2e1fa77efefbf2c4e5d67166bb86c0cb}\label{class_pin_selector_a2e1fa77efefbf2c4e5d67166bb86c0cb}} 
+{\bfseries Pin\+Selector} (\mbox{\hyperlink{class_pin_selector}{Pin\+Selector}} const \&)=delete
+\item 
+\mbox{\Hypertarget{class_pin_selector_a759a2544fc0c1b81c420c0c2d36f64a1}\label{class_pin_selector_a759a2544fc0c1b81c420c0c2d36f64a1}} 
+void {\bfseries operator=} (\mbox{\hyperlink{class_pin_selector}{Pin\+Selector}} const \&)=delete
+\item 
+\mbox{\Hypertarget{class_pin_selector_ae6986beae754180cdf71caeec79f6edd}\label{class_pin_selector_ae6986beae754180cdf71caeec79f6edd}} 
+void {\bfseries Include\+Possible\+Pin} (Portenum port, Pin\+Enum pin)
+\item 
+\mbox{\Hypertarget{class_pin_selector_a74526dea8edaaa9a8fcde20624b464a4}\label{class_pin_selector_a74526dea8edaaa9a8fcde20624b464a4}} 
+void {\bfseries Any\+Pin\+Is\+Possible} ()
+\item 
+\mbox{\Hypertarget{class_pin_selector_a86ae5fc4577c4a46cc14490d625a288d}\label{class_pin_selector_a86ae5fc4577c4a46cc14490d625a288d}} 
+void {\bfseries Only\+This\+Pin\+Possible} (Portenum port, Pin\+Enum pin)
+\item 
+\mbox{\Hypertarget{class_pin_selector_a73a8a58f88a7bcb743866b65f57cd6ba}\label{class_pin_selector_a73a8a58f88a7bcb743866b65f57cd6ba}} 
+bool {\bfseries Check\+If\+Pin\+Is\+Valid} (Portenum port, Pin\+Enum pin)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pin_selector_a9bdc89c3be419499fec6021f91885f48}\label{class_pin_selector_a9bdc89c3be419499fec6021f91885f48}} 
+static \mbox{\hyperlink{class_pin_selector}{Pin\+Selector}} $\ast$ {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pin_selector_a2e2e21162eccd0a8bbdf019a6d26ac8d}\label{class_pin_selector_a2e2e21162eccd0a8bbdf019a6d26ac8d}} 
+Portenum {\bfseries ports} \mbox{[}Max\+Num\+Of\+Pin\+Possibilities\mbox{]}
+\item 
+\mbox{\Hypertarget{class_pin_selector_aa43785ccff4125da24fffaf6ea031334}\label{class_pin_selector_aa43785ccff4125da24fffaf6ea031334}} 
+Pin\+Enum {\bfseries pins} \mbox{[}Max\+Num\+Of\+Pin\+Possibilities\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pin_selector_a465b914ea05e4455564971f870275357}\label{class_pin_selector_a465b914ea05e4455564971f870275357}} 
+void {\bfseries Reset\+Selector} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pin_selector_a958096b418a068d78e2483784519e776}\label{class_pin_selector_a958096b418a068d78e2483784519e776}} 
+{\footnotesize template$<$Template\+For\+\_\+\+AEPeripherals\+\_\+\+No\+Defaults $>$ }\\class {\bfseries AEPeripheral}
+\item 
+\mbox{\Hypertarget{class_pin_selector_a49927a3792b174ed66d024589a34e9a4}\label{class_pin_selector_a49927a3792b174ed66d024589a34e9a4}} 
+class {\bfseries AEPort\+And\+Pin}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/hal/Pin\+Selector.\+h\item 
+C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/hal/Pin\+Selector.\+cpp\end{DoxyCompactItemize}

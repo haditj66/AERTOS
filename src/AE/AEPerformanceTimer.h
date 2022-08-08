@@ -4,18 +4,18 @@
  
 #include <cstdint>
 
-#if (TOOLCHAIN_USED == arm_non_eabi_id )
+#ifdef TOOLCHAIN_USED__arm_non_eabi_id 
 typedef uint32_t PerfIntSize_t;
 typedef uint32_t PerfElapsed_t;
 #endif
-#if (TOOLCHAIN_USED == mingw)
+#ifdef TOOLCHAIN_USED__mingw
 #include <sys\timeb.h> 
 #include "sysinfoapi.h"
 #include <chrono>
 typedef std::chrono::time_point<std::chrono::steady_clock> PerfIntSize_t;
 typedef long PerfElapsed_t;
 #endif
-#if (TOOLCHAIN_USED == gnu)
+#ifdef TOOLCHAIN_USED__gnu
 #include <chrono>
 typedef std::chrono::time_point<std::chrono::steady_clock> PerfIntSize_t;
 typedef long PerfElapsed_t;
@@ -34,7 +34,7 @@ public:
 
 	PerfElapsed_t GetElapsedTimeInNanoSeconds();
 	
-#if SWIL_HWIL_DRIVEN == HWIL
+#ifdef SWIL_HWIL_DRIVEN__HWIL
 	uint32_t GetElapsedTimeCPUCycles();
 #endif
 	
@@ -49,7 +49,7 @@ public:
 private:
 	void _init() {_TimerRunningFromStart = false; _TimerRunningFromReEnter = false; }
 	
-#if SWIL_HWIL_DRIVEN == SWIL
+#ifdef SWIL_HWIL_DRIVEN__SWIL
 	std::chrono::time_point<std::chrono::steady_clock>  start; 
 	std::chrono::time_point<std::chrono::steady_clock>  end;
 #endif

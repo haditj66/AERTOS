@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_pin_selector.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,6 +61,7 @@ $(document).ready(function(){initNavTree('class_pin_selector.html',''); initResi
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -93,374 +73,67 @@ $(document).ready(function(){initNavTree('class_pin_selector.html',''); initResi
   <div class="headertitle"><div class="title">PinSelector Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_pin_selector_8h_source.html">PinSelector.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e1fa77efefbf2c4e5d67166bb86c0cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a2e1fa77efefbf2c4e5d67166bb86c0cb">PinSelector</a> (<a class="el" href="class_pin_selector.html">PinSelector</a> const &amp;)=delete</td></tr>
+<tr class="memitem:a2e1fa77efefbf2c4e5d67166bb86c0cb"><td class="memItemLeft" align="right" valign="top"><a id="a2e1fa77efefbf2c4e5d67166bb86c0cb" name="a2e1fa77efefbf2c4e5d67166bb86c0cb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PinSelector</b> (<a class="el" href="class_pin_selector.html">PinSelector</a> const &amp;)=delete</td></tr>
 <tr class="separator:a2e1fa77efefbf2c4e5d67166bb86c0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a759a2544fc0c1b81c420c0c2d36f64a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a759a2544fc0c1b81c420c0c2d36f64a1">operator=</a> (<a class="el" href="class_pin_selector.html">PinSelector</a> const &amp;)=delete</td></tr>
+<tr class="memitem:a759a2544fc0c1b81c420c0c2d36f64a1"><td class="memItemLeft" align="right" valign="top"><a id="a759a2544fc0c1b81c420c0c2d36f64a1" name="a759a2544fc0c1b81c420c0c2d36f64a1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="class_pin_selector.html">PinSelector</a> const &amp;)=delete</td></tr>
 <tr class="separator:a759a2544fc0c1b81c420c0c2d36f64a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6986beae754180cdf71caeec79f6edd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#ae6986beae754180cdf71caeec79f6edd">IncludePossiblePin</a> (<a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a> port, <a class="el" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a> pin)</td></tr>
+<tr class="memitem:ae6986beae754180cdf71caeec79f6edd"><td class="memItemLeft" align="right" valign="top"><a id="ae6986beae754180cdf71caeec79f6edd" name="ae6986beae754180cdf71caeec79f6edd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>IncludePossiblePin</b> (Portenum port, PinEnum pin)</td></tr>
 <tr class="separator:ae6986beae754180cdf71caeec79f6edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74526dea8edaaa9a8fcde20624b464a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a74526dea8edaaa9a8fcde20624b464a4">AnyPinIsPossible</a> ()</td></tr>
+<tr class="memitem:a74526dea8edaaa9a8fcde20624b464a4"><td class="memItemLeft" align="right" valign="top"><a id="a74526dea8edaaa9a8fcde20624b464a4" name="a74526dea8edaaa9a8fcde20624b464a4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AnyPinIsPossible</b> ()</td></tr>
 <tr class="separator:a74526dea8edaaa9a8fcde20624b464a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86ae5fc4577c4a46cc14490d625a288d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a86ae5fc4577c4a46cc14490d625a288d">OnlyThisPinPossible</a> (<a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a> port, <a class="el" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a> pin)</td></tr>
+<tr class="memitem:a86ae5fc4577c4a46cc14490d625a288d"><td class="memItemLeft" align="right" valign="top"><a id="a86ae5fc4577c4a46cc14490d625a288d" name="a86ae5fc4577c4a46cc14490d625a288d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnlyThisPinPossible</b> (Portenum port, PinEnum pin)</td></tr>
 <tr class="separator:a86ae5fc4577c4a46cc14490d625a288d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73a8a58f88a7bcb743866b65f57cd6ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a73a8a58f88a7bcb743866b65f57cd6ba">CheckIfPinIsValid</a> (<a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a> port, <a class="el" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a> pin)</td></tr>
+<tr class="memitem:a73a8a58f88a7bcb743866b65f57cd6ba"><td class="memItemLeft" align="right" valign="top"><a id="a73a8a58f88a7bcb743866b65f57cd6ba" name="a73a8a58f88a7bcb743866b65f57cd6ba"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>CheckIfPinIsValid</b> (Portenum port, PinEnum pin)</td></tr>
 <tr class="separator:a73a8a58f88a7bcb743866b65f57cd6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9bdc89c3be419499fec6021f91885f48"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_pin_selector.html">PinSelector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a9bdc89c3be419499fec6021f91885f48">getInstance</a> ()</td></tr>
+<tr class="memitem:a9bdc89c3be419499fec6021f91885f48"><td class="memItemLeft" align="right" valign="top"><a id="a9bdc89c3be419499fec6021f91885f48" name="a9bdc89c3be419499fec6021f91885f48"></a>
+static <a class="el" href="class_pin_selector.html">PinSelector</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
 <tr class="separator:a9bdc89c3be419499fec6021f91885f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2e2e21162eccd0a8bbdf019a6d26ac8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a2e2e21162eccd0a8bbdf019a6d26ac8d">ports</a> [<a class="el" href="_pin_selector_8h.html#a8242de2fc6b1212be0f4374456d41c29">MaxNumOfPinPossibilities</a>]</td></tr>
+<tr class="memitem:a2e2e21162eccd0a8bbdf019a6d26ac8d"><td class="memItemLeft" align="right" valign="top"><a id="a2e2e21162eccd0a8bbdf019a6d26ac8d" name="a2e2e21162eccd0a8bbdf019a6d26ac8d"></a>
+Portenum&#160;</td><td class="memItemRight" valign="bottom"><b>ports</b> [MaxNumOfPinPossibilities]</td></tr>
 <tr class="separator:a2e2e21162eccd0a8bbdf019a6d26ac8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa43785ccff4125da24fffaf6ea031334"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#aa43785ccff4125da24fffaf6ea031334">pins</a> [<a class="el" href="_pin_selector_8h.html#a8242de2fc6b1212be0f4374456d41c29">MaxNumOfPinPossibilities</a>]</td></tr>
+<tr class="memitem:aa43785ccff4125da24fffaf6ea031334"><td class="memItemLeft" align="right" valign="top"><a id="aa43785ccff4125da24fffaf6ea031334" name="aa43785ccff4125da24fffaf6ea031334"></a>
+PinEnum&#160;</td><td class="memItemRight" valign="bottom"><b>pins</b> [MaxNumOfPinPossibilities]</td></tr>
 <tr class="separator:aa43785ccff4125da24fffaf6ea031334"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a465b914ea05e4455564971f870275357"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a465b914ea05e4455564971f870275357">ResetSelector</a> ()</td></tr>
+<tr class="memitem:a465b914ea05e4455564971f870275357"><td class="memItemLeft" align="right" valign="top"><a id="a465b914ea05e4455564971f870275357" name="a465b914ea05e4455564971f870275357"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetSelector</b> ()</td></tr>
 <tr class="separator:a465b914ea05e4455564971f870275357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a958096b418a068d78e2483784519e776"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt; </td></tr>
-<tr class="memitem:a958096b418a068d78e2483784519e776"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a958096b418a068d78e2483784519e776">AEPeripheral</a></td></tr>
+<tr class="memitem:a958096b418a068d78e2483784519e776"><td class="memTemplParams" colspan="2"><a id="a958096b418a068d78e2483784519e776" name="a958096b418a068d78e2483784519e776"></a>
+template&lt;TemplateFor_AEPeripherals_NoDefaults &gt; </td></tr>
+<tr class="memitem:a958096b418a068d78e2483784519e776"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><b>AEPeripheral</b></td></tr>
 <tr class="separator:a958096b418a068d78e2483784519e776"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49927a3792b174ed66d024589a34e9a4"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_selector.html#a49927a3792b174ed66d024589a34e9a4">AEPortAndPin</a></td></tr>
+<tr class="memitem:a49927a3792b174ed66d024589a34e9a4"><td class="memItemLeft" align="right" valign="top"><a id="a49927a3792b174ed66d024589a34e9a4" name="a49927a3792b174ed66d024589a34e9a4"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>AEPortAndPin</b></td></tr>
 <tr class="separator:a49927a3792b174ed66d024589a34e9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2e1fa77efefbf2c4e5d67166bb86c0cb" name="a2e1fa77efefbf2c4e5d67166bb86c0cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e1fa77efefbf2c4e5d67166bb86c0cb">&#9670;&nbsp;</a></span>PinSelector()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">PinSelector::PinSelector </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_pin_selector.html">PinSelector</a> const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a74526dea8edaaa9a8fcde20624b464a4" name="a74526dea8edaaa9a8fcde20624b464a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74526dea8edaaa9a8fcde20624b464a4">&#9670;&nbsp;</a></span>AnyPinIsPossible()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PinSelector::AnyPinIsPossible </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a73a8a58f88a7bcb743866b65f57cd6ba" name="a73a8a58f88a7bcb743866b65f57cd6ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73a8a58f88a7bcb743866b65f57cd6ba">&#9670;&nbsp;</a></span>CheckIfPinIsValid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool PinSelector::CheckIfPinIsValid </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a>&#160;</td>
-          <td class="paramname"><em>port</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a>&#160;</td>
-          <td class="paramname"><em>pin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9bdc89c3be419499fec6021f91885f48" name="a9bdc89c3be419499fec6021f91885f48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bdc89c3be419499fec6021f91885f48">&#9670;&nbsp;</a></span>getInstance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_pin_selector.html">PinSelector</a> * PinSelector::getInstance </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae6986beae754180cdf71caeec79f6edd" name="ae6986beae754180cdf71caeec79f6edd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6986beae754180cdf71caeec79f6edd">&#9670;&nbsp;</a></span>IncludePossiblePin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PinSelector::IncludePossiblePin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a>&#160;</td>
-          <td class="paramname"><em>port</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a>&#160;</td>
-          <td class="paramname"><em>pin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a86ae5fc4577c4a46cc14490d625a288d" name="a86ae5fc4577c4a46cc14490d625a288d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86ae5fc4577c4a46cc14490d625a288d">&#9670;&nbsp;</a></span>OnlyThisPinPossible()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PinSelector::OnlyThisPinPossible </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a>&#160;</td>
-          <td class="paramname"><em>port</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a>&#160;</td>
-          <td class="paramname"><em>pin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a759a2544fc0c1b81c420c0c2d36f64a1" name="a759a2544fc0c1b81c420c0c2d36f64a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a759a2544fc0c1b81c420c0c2d36f64a1">&#9670;&nbsp;</a></span>operator=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PinSelector::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_pin_selector.html">PinSelector</a> const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a465b914ea05e4455564971f870275357" name="a465b914ea05e4455564971f870275357"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a465b914ea05e4455564971f870275357">&#9670;&nbsp;</a></span>ResetSelector()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PinSelector::ResetSelector </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a958096b418a068d78e2483784519e776" name="a958096b418a068d78e2483784519e776"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a958096b418a068d78e2483784519e776">&#9670;&nbsp;</a></span>AEPeripheral</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a49927a3792b174ed66d024589a34e9a4" name="a49927a3792b174ed66d024589a34e9a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49927a3792b174ed66d024589a34e9a4">&#9670;&nbsp;</a></span>AEPortAndPin</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa43785ccff4125da24fffaf6ea031334" name="aa43785ccff4125da24fffaf6ea031334"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa43785ccff4125da24fffaf6ea031334">&#9670;&nbsp;</a></span>pins</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a> PinSelector::pins[<a class="el" href="_pin_selector_8h.html#a8242de2fc6b1212be0f4374456d41c29">MaxNumOfPinPossibilities</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2e2e21162eccd0a8bbdf019a6d26ac8d" name="a2e2e21162eccd0a8bbdf019a6d26ac8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e2e21162eccd0a8bbdf019a6d26ac8d">&#9670;&nbsp;</a></span>ports</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a> PinSelector::ports[<a class="el" href="_pin_selector_8h.html#a8242de2fc6b1212be0f4374456d41c29">MaxNumOfPinPossibilities</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/<a class="el" href="_pin_selector_8h_source.html">PinSelector.h</a></li>
-<li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/<a class="el" href="_pin_selector_8cpp.html">PinSelector.cpp</a></li>
+<li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/PinSelector.cpp</li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_pin_selector.html">PinSelector</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

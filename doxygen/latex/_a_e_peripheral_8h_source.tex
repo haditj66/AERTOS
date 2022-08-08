@@ -1,0 +1,300 @@
+\hypertarget{_a_e_peripheral_8h_source}{}\doxysection{AEPeripheral.\+h}
+\label{_a_e_peripheral_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEPeripheral.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEPeripheral.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}AEPortAndPin.h"{}}}
+\DoxyCodeLine{4  }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{//helper macro for the pinselector}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define StartPinSelectorForPin(forPin) this-\/>functPtrsToChangeTypeSelectors[forPin -\/ 1] = []() -\/> void  \{}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define M\_IncludePossiblePin(portEnum, pinEnum) PinSelector::getInstance()-\/>IncludePossiblePin(portEnum, pinEnum);}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define M\_AnyPinIsPossible PinSelector::getInstance()-\/>AnyPinIsPossible();}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define M\_OnlyThisPinPossible(portEnum, pinEnum)  PinSelector::getInstance()-\/>OnlyThisPinPossible(portEnum, pinEnum);}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define EndPinSelectorForPin \};}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{enum class} PeripheralEnum}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     UART,}
+\DoxyCodeLine{18     SPI,}
+\DoxyCodeLine{19     I2C,}
+\DoxyCodeLine{20     GPIOInput,}
+\DoxyCodeLine{21     GPIOOutput,}
+\DoxyCodeLine{22     None}
+\DoxyCodeLine{23 \}}
+\DoxyCodeLine{24 ;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{typedef} void (*CreateTypeSelector\_funcPtr)(void);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{template} <TemplateFor\_AEPeripherals>}
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{friend} \textcolor{keywordtype}{void} AE\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{38     AEFRIEND\_TEST(\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}, simple\_init);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keyword}{public}:}
+\DoxyCodeLine{41     }
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     \textcolor{keyword}{static} DerivedType *getInstance();}
+\DoxyCodeLine{44     \mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}(\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral<TemplateArgs\_AEPeripherals>}} \textcolor{keyword}{const} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} operator=(\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral<TemplateArgs\_AEPeripherals>}} \textcolor{keyword}{const} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     PeripheralHandleTypeDef PeripheralHandle\_t;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{50     uint8\_t ForWhichPeripheralNumber;}
+\DoxyCodeLine{51     \textcolor{keyword}{static} DerivedType *Instance;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} isAlreadyInitialized;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifdef AESIMULATION}}
+\DoxyCodeLine{56     SimulatedProperty *PropertiesIEffect[4];}
+\DoxyCodeLine{57     uint8\_t PropertiesIEffectSoFarIndex;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} AddSimulatedProperty(SimulatedProperty *simulatedPropertytoAdd)}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         PropertiesIEffect[PropertiesIEffectSoFarIndex] = simulatedPropertytoAdd;}
+\DoxyCodeLine{62         PropertiesIEffectSoFarIndex++;}
+\DoxyCodeLine{63     \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keyword}{typedef} void (*DoToPropertyFncPtr)(SimulatedProperty *);}
+\DoxyCodeLine{66     DoThisToAllPropertiesIEffect\_AndUpdateThem(DoToPropertyFncPtr doToPropertyFncPtr)}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < PropertiesIEffectSoFarIndex; i++)}
+\DoxyCodeLine{69         \{}
+\DoxyCodeLine{70             doToPropertyFncPtr(PropertiesIEffect[i]);}
+\DoxyCodeLine{71             PropertiesIEffect[i].\_UpdatePropWithinSimulation();}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} initializePeripheral()}
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79         }
+\DoxyCodeLine{80         \textcolor{comment}{//create instances of PinandPorts}}
+\DoxyCodeLine{81         \textcolor{keywordflow}{if}(PIN1 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{82         \{GPIOPinSelected1.\_Init(PORT1, PIN1); \}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if} (PIN2 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{84         \{GPIOPinSelected2.\_Init(PORT2, PIN2); \}}
+\DoxyCodeLine{85         \textcolor{keywordflow}{if} (PIN3 != PinEnum::PINMaxNum) }
+\DoxyCodeLine{86         \{GPIOPinSelected3.\_Init(PORT3, PIN3); \}}
+\DoxyCodeLine{87         \textcolor{keywordflow}{if} (PIN4 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{88         \{GPIOPinSelected4.\_Init(PORT4, PIN4); \}}
+\DoxyCodeLine{89         \textcolor{keywordflow}{if} (PIN5 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{90         \{GPIOPinSelected5.\_Init(PORT5, PIN5); \}}
+\DoxyCodeLine{91         }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#ifdef AESIMULATION}}
+\DoxyCodeLine{94         PropertiesIEffectSoFarIndex = 0;}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \_InitializePinSelectors(this-\/>functPtrsToChangeTypeSelectors);}
+\DoxyCodeLine{98         \textcolor{comment}{//assert that the this-\/>functPtrsToChangeTypeSelectors did not come back null}}
+\DoxyCodeLine{99         \textcolor{comment}{//you must have forgettent to specify pins selections on a peripheral.}}
+\DoxyCodeLine{100         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NumOfGpioPinsNeeded; i++)}
+\DoxyCodeLine{101         \{}
+\DoxyCodeLine{102             configASSERT(this-\/>functPtrsToChangeTypeSelectors[i] != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{103         \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{keywordflow}{if} (NumOfGpioPinsNeeded >= 1) \{}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107             \textcolor{comment}{//check that all pins are of a valid selection}}
+\DoxyCodeLine{108             \textcolor{comment}{//first run the function for pinselection of pin one.}}
+\DoxyCodeLine{109             \textcolor{comment}{//only check if not null}}
+\DoxyCodeLine{110             PinSelector::getInstance()-\/>ResetSelector();}
+\DoxyCodeLine{111             \textcolor{keywordflow}{if} (PIN1 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{112             \{}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114                 this-\/>functPtrsToChangeTypeSelectors[0]();}
+\DoxyCodeLine{115                 configASSERT(PinSelector::getInstance()-\/>CheckIfPinIsValid(GPIOPinSelected1.GetThePortenum(), GPIOPinSelected1.GetThePinenum()));  }
+\DoxyCodeLine{116                 PinSelector::getInstance()-\/>ResetSelector();}
+\DoxyCodeLine{117                                  }
+\DoxyCodeLine{118             \}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120             \textcolor{keywordflow}{if} (PIN2 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{121             \{}
+\DoxyCodeLine{122                 this-\/>functPtrsToChangeTypeSelectors[1]();}
+\DoxyCodeLine{123                 configASSERT(PinSelector::getInstance()-\/>CheckIfPinIsValid(GPIOPinSelected2.GetThePortenum(), GPIOPinSelected2.GetThePinenum()));}
+\DoxyCodeLine{124                 PinSelector::getInstance()-\/>ResetSelector();}
+\DoxyCodeLine{125             \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127             \textcolor{keywordflow}{if} (PIN3 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{128             \{}
+\DoxyCodeLine{129                 this-\/>functPtrsToChangeTypeSelectors[2]();}
+\DoxyCodeLine{130                 configASSERT(PinSelector::getInstance()-\/>CheckIfPinIsValid(GPIOPinSelected3.GetThePortenum(), GPIOPinSelected3.GetThePinenum()));}
+\DoxyCodeLine{131                 PinSelector::getInstance()-\/>ResetSelector();}
+\DoxyCodeLine{132             \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134             \textcolor{keywordflow}{if} (PIN4 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{135             \{}
+\DoxyCodeLine{136                 this-\/>functPtrsToChangeTypeSelectors[3]();}
+\DoxyCodeLine{137                 configASSERT(PinSelector::getInstance()-\/>CheckIfPinIsValid(GPIOPinSelected4.GetThePortenum(), GPIOPinSelected4.GetThePinenum()));}
+\DoxyCodeLine{138                 PinSelector::getInstance()-\/>ResetSelector();}
+\DoxyCodeLine{139             \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141             \textcolor{keywordflow}{if} (PIN5 != PinEnum::PINMaxNum)}
+\DoxyCodeLine{142             \{}
+\DoxyCodeLine{143                 this-\/>functPtrsToChangeTypeSelectors[4]();}
+\DoxyCodeLine{144                 configASSERT(PinSelector::getInstance()-\/>CheckIfPinIsValid(GPIOPinSelected5.GetThePortenum(), GPIOPinSelected5.GetThePinenum()));}
+\DoxyCodeLine{145                 PinSelector::getInstance()-\/>ResetSelector();}
+\DoxyCodeLine{146             \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148             \textcolor{comment}{/*}}
+\DoxyCodeLine{149 \textcolor{comment}{            if (NumOfGpioPinsNeeded == 0)}}
+\DoxyCodeLine{150 \textcolor{comment}{            \{}}
+\DoxyCodeLine{151 \textcolor{comment}{                \_Initialize();}}
+\DoxyCodeLine{152 \textcolor{comment}{            \}*/}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154                 \textcolor{comment}{// I need to check if the ports that will be used for this peripheral have been started yet.}}
+\DoxyCodeLine{155                 \textcolor{comment}{// if they have not been started yet, I need to start them here. each platform will have it's}}
+\DoxyCodeLine{156                 \textcolor{comment}{//own way of starting the peripheral.}}
+\DoxyCodeLine{157     \textcolor{comment}{//}}
+\DoxyCodeLine{158     \textcolor{comment}{//          if (HasPortBeenInitYet[GPIOPinSelected1.thePORT] == false \&\& (GPIOPinSelected1.thePORT != Portenum::PortsMaxNum))}}
+\DoxyCodeLine{159     \textcolor{comment}{//          \{}}
+\DoxyCodeLine{160     \textcolor{comment}{//              functPtrsToInitializePorts[GPIOPinSelected1.thePORT]();}}
+\DoxyCodeLine{161     \textcolor{comment}{//              HasPortBeenInitYet[GPIOPinSelected1.thePORT] = true;}}
+\DoxyCodeLine{162     \textcolor{comment}{//          \}}}
+\DoxyCodeLine{163     \textcolor{comment}{//          if (HasPortBeenInitYet[GPIOPinSelected2.thePORT] == false \&\& (GPIOPinSelected2.thePORT != Portenum::PortsMaxNum))}}
+\DoxyCodeLine{164     \textcolor{comment}{//          \{}}
+\DoxyCodeLine{165     \textcolor{comment}{//              functPtrsToInitializePorts[GPIOPinSelected2.thePORT]();}}
+\DoxyCodeLine{166     \textcolor{comment}{//              HasPortBeenInitYet[GPIOPinSelected2.thePORT] = true;}}
+\DoxyCodeLine{167     \textcolor{comment}{//          \}}}
+\DoxyCodeLine{168     \textcolor{comment}{//          if (HasPortBeenInitYet[GPIOPinSelected3.thePORT] == false \&\& (GPIOPinSelected3.thePORT != Portenum::PortsMaxNum))}}
+\DoxyCodeLine{169     \textcolor{comment}{//          \{}}
+\DoxyCodeLine{170     \textcolor{comment}{//              functPtrsToInitializePorts[GPIOPinSelected3.thePORT]();}}
+\DoxyCodeLine{171     \textcolor{comment}{//              HasPortBeenInitYet[GPIOPinSelected3.thePORT] = true;}}
+\DoxyCodeLine{172     \textcolor{comment}{//          \}}}
+\DoxyCodeLine{173     \textcolor{comment}{//          if (HasPortBeenInitYet[GPIOPinSelected4.thePORT] == false \&\& (GPIOPinSelected4.thePORT != Portenum::PortsMaxNum))}}
+\DoxyCodeLine{174     \textcolor{comment}{//          \{}}
+\DoxyCodeLine{175     \textcolor{comment}{//              functPtrsToInitializePorts[GPIOPinSelected4.thePORT]();}}
+\DoxyCodeLine{176     \textcolor{comment}{//              HasPortBeenInitYet[GPIOPinSelected4.thePORT] = true;}}
+\DoxyCodeLine{177     \textcolor{comment}{//          \}}}
+\DoxyCodeLine{178     \textcolor{comment}{//          if (HasPortBeenInitYet[GPIOPinSelected5.thePORT] == false \&\& (GPIOPinSelected5.thePORT != Portenum::PortsMaxNum))}}
+\DoxyCodeLine{179     \textcolor{comment}{//          \{}}
+\DoxyCodeLine{180     \textcolor{comment}{//              functPtrsToInitializePorts[GPIOPinSelected5.thePORT]();}}
+\DoxyCodeLine{181     \textcolor{comment}{//              HasPortBeenInitYet[GPIOPinSelected5.thePORT] = true;}}
+\DoxyCodeLine{182     \textcolor{comment}{//          \}}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184                 Pre\_Initialize(}
+\DoxyCodeLine{185                     GPIOPinSelected1.GetThePort(), GPIOPinSelected1.GetThePin(),}
+\DoxyCodeLine{186                     GPIOPinSelected2.GetThePort(), GPIOPinSelected2.GetThePin(),}
+\DoxyCodeLine{187                     GPIOPinSelected3.GetThePort(), GPIOPinSelected3.GetThePin(),}
+\DoxyCodeLine{188                     GPIOPinSelected4.GetThePort(), GPIOPinSelected4.GetThePin(),}
+\DoxyCodeLine{189                     GPIOPinSelected5.GetThePort(), GPIOPinSelected5.GetThePin());}
+\DoxyCodeLine{190             }
+\DoxyCodeLine{191                     \_Initialize(}
+\DoxyCodeLine{192                     GPIOPinSelected1.GetThePort(), GPIOPinSelected1.GetThePin(),}
+\DoxyCodeLine{193                     GPIOPinSelected2.GetThePort(), GPIOPinSelected2.GetThePin(),}
+\DoxyCodeLine{194                     GPIOPinSelected3.GetThePort(), GPIOPinSelected3.GetThePin(),}
+\DoxyCodeLine{195                     GPIOPinSelected4.GetThePort(), GPIOPinSelected4.GetThePin(),}
+\DoxyCodeLine{196                     GPIOPinSelected5.GetThePort(), GPIOPinSelected5.GetThePin());  }
+\DoxyCodeLine{197             \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199         }
+\DoxyCodeLine{200     \};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     }
+\DoxyCodeLine{204     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \_InitializePinSelectors(CreateTypeSelector\_funcPtr (\&functPtrsToChangeTypeSelectors)[NumOfGpioPinsNeeded]) = 0;}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     }
+\DoxyCodeLine{207     CreateTypeSelector\_funcPtr functPtrsToChangeTypeSelectors[NumOfGpioPinsNeeded];}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     }
+\DoxyCodeLine{211     \mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}} GPIOPinSelected1; }
+\DoxyCodeLine{212     \mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}} GPIOPinSelected2; }
+\DoxyCodeLine{213     \mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}} GPIOPinSelected3; }
+\DoxyCodeLine{214     \mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}} GPIOPinSelected4; }
+\DoxyCodeLine{215     \mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}} GPIOPinSelected5; }
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}()}
+\DoxyCodeLine{218     \{}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220  }
+\DoxyCodeLine{221         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(isAlreadyInitialized == \textcolor{keyword}{false}, \textcolor{stringliteral}{"{} AEPeripherals are singletons. If more than one even attempt to be intialized, than there must be some config error"{}});}
+\DoxyCodeLine{222         isAlreadyInitialized = \textcolor{keyword}{true};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224         Instance = \textcolor{keyword}{static\_cast<}DerivedType *\textcolor{keyword}{>}(\textcolor{keyword}{this}); \textcolor{comment}{// GetSingletonInstance();//static\_cast<DerivedType*>(this);}}
+\DoxyCodeLine{225     \};}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{comment}{//  virtual void \_Initialize()}}
+\DoxyCodeLine{228 \textcolor{comment}{//  \{}}
+\DoxyCodeLine{229 \textcolor{comment}{//      if (NumOfGpioPinsNeeded == 0)}}
+\DoxyCodeLine{230 \textcolor{comment}{//      \{}}
+\DoxyCodeLine{231 \textcolor{comment}{//          //this function needs to be overridden to implement periperal initalization}}
+\DoxyCodeLine{232 \textcolor{comment}{//          configASSERT(false);}}
+\DoxyCodeLine{233 \textcolor{comment}{//      \}}}
+\DoxyCodeLine{234 \textcolor{comment}{//      if (NumOfGpioPinsNeeded != 0)}}
+\DoxyCodeLine{235 \textcolor{comment}{//      \{}}
+\DoxyCodeLine{236 \textcolor{comment}{//          //this initialization function is the wrong overloaded one to call.}}
+\DoxyCodeLine{237 \textcolor{comment}{//          configASSERT(false);}}
+\DoxyCodeLine{238 \textcolor{comment}{//      \}}}
+\DoxyCodeLine{239 \textcolor{comment}{//  \};}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     }
+\DoxyCodeLine{243     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \_Initialize(}
+\DoxyCodeLine{244         Port\_t port1, Pin\_t pin1,}
+\DoxyCodeLine{245         Port\_t port2, Pin\_t pin2,}
+\DoxyCodeLine{246         Port\_t port3, Pin\_t pin3,}
+\DoxyCodeLine{247         Port\_t port4, Pin\_t pin4,}
+\DoxyCodeLine{248         Port\_t port5, Pin\_t pin5) = 0;}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250     \textcolor{comment}{//this initialization of the peripheral needs to happen before the other \_initialize.}}
+\DoxyCodeLine{251     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Pre\_Initialize(}
+\DoxyCodeLine{252         Port\_t port1, Pin\_t pin1,}
+\DoxyCodeLine{253         Port\_t port2, Pin\_t pin2,}
+\DoxyCodeLine{254         Port\_t port3, Pin\_t pin3,}
+\DoxyCodeLine{255         Port\_t port4, Pin\_t pin4,}
+\DoxyCodeLine{256         Port\_t port5, Pin\_t pin5);}
+\DoxyCodeLine{257 \};}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 \textcolor{keyword}{template} <TemplateFor\_AEPeripherals\_NoDefaults>}
+\DoxyCodeLine{261 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral<TemplateArgs\_AEPeripherals>::Pre\_Initialize}}(Port\_t port1, Pin\_t pin1,}
+\DoxyCodeLine{262         Port\_t port2, Pin\_t pin2,}
+\DoxyCodeLine{263         Port\_t port3, Pin\_t pin3,}
+\DoxyCodeLine{264         Port\_t port4, Pin\_t pin4,}
+\DoxyCodeLine{265         Port\_t port5, Pin\_t pin5)}
+\DoxyCodeLine{266 \{ }
+\DoxyCodeLine{267 \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{keyword}{template} <TemplateFor\_AEPeripherals\_NoDefaults>}
+\DoxyCodeLine{271 DerivedType *\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral<TemplateArgs\_AEPeripherals>::getInstance}}()}
+\DoxyCodeLine{272 \{}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     \textcolor{keywordflow}{if} (Instance == 0)}
+\DoxyCodeLine{275     \{}
+\DoxyCodeLine{276         \textcolor{keyword}{static} DerivedType soleInstance;}
+\DoxyCodeLine{277         Instance = \&soleInstance;}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279         \textcolor{comment}{// I also want to initialize the peripheral here}}
+\DoxyCodeLine{280         \textcolor{comment}{//Instance-\/>initializePeripheral();}}
+\DoxyCodeLine{281     \}}
+\DoxyCodeLine{282     \textcolor{keywordflow}{return} Instance;}
+\DoxyCodeLine{283 \}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{keyword}{template} <TemplateFor\_AEPeripherals\_NoDefaults>}
+\DoxyCodeLine{286 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral<TemplateArgs\_AEPeripherals>::isAlreadyInitialized}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 \textcolor{keyword}{template} <TemplateFor\_AEPeripherals\_NoDefaults>}
+\DoxyCodeLine{289 DerivedType *\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral<TemplateArgs\_AEPeripherals>::Instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294 }
+
+\end{DoxyCode}

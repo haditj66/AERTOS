@@ -1,0 +1,61 @@
+\hypertarget{_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_d_m_a_8h_source}{}\doxysection{AEDMA.\+h}
+\label{_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_d_m_a_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AEHalFiles/AEDMA.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AEHalFiles/AEDMA.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}AEDMAPeripheral.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{template}<\textcolor{keyword}{class} PeriphOrMemType>}
+\DoxyCodeLine{11 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEDMA::\_Init(PeriphOrMemType* periphOrMem, uint32\_t mode)}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14          }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         }
+\DoxyCodeLine{17         \textcolor{keywordflow}{if}(mode == DMA\_NORMAL)}
+\DoxyCodeLine{18         \{}
+\DoxyCodeLine{19 \textcolor{comment}{//          \_\_HAL\_RCC\_DMA1\_CLK\_ENABLE();}}
+\DoxyCodeLine{20 \textcolor{comment}{//          \_dMAHandle.Instance = DMA1\_Stream6;}}
+\DoxyCodeLine{21 \textcolor{comment}{//          \_dMAHandle.Init.Channel = DMA\_CHANNEL\_4;}}
+\DoxyCodeLine{22 \textcolor{comment}{//          \_dMAHandle.Init.Direction = DMA\_MEMORY\_TO\_PERIPH;}}
+\DoxyCodeLine{23 \textcolor{comment}{//          \_dMAHandle.Init.PeriphInc = DMA\_PINC\_DISABLE;}}
+\DoxyCodeLine{24 \textcolor{comment}{//          \_dMAHandle.Init.MemInc = DMA\_MINC\_ENABLE;}}
+\DoxyCodeLine{25 \textcolor{comment}{//          \_dMAHandle.Init.PeriphDataAlignment = DMA\_PDATAALIGN\_BYTE;}}
+\DoxyCodeLine{26 \textcolor{comment}{//          \_dMAHandle.Init.MemDataAlignment = DMA\_MDATAALIGN\_BYTE;}}
+\DoxyCodeLine{27 \textcolor{comment}{//          \_dMAHandle.Init.Mode = DMA\_NORMAL;}}
+\DoxyCodeLine{28 \textcolor{comment}{//          \_dMAHandle.Init.Priority = DMA\_PRIORITY\_MEDIUM;}}
+\DoxyCodeLine{29 \textcolor{comment}{//          \_dMAHandle.Init.FIFOMode = DMA\_FIFOMODE\_DISABLE;}}
+\DoxyCodeLine{30 \textcolor{comment}{//          \_dMAHandle.Init.FIFOThreshold = DMA\_FIFO\_THRESHOLD\_FULL;}}
+\DoxyCodeLine{31 \textcolor{comment}{//          \_dMAHandle.Init.MemBurst = DMA\_MBURST\_INC4;}}
+\DoxyCodeLine{32 \textcolor{comment}{//          \_dMAHandle.Init.PeriphBurst = DMA\_PBURST\_INC4;}}
+\DoxyCodeLine{33 \textcolor{comment}{//          //hdma\_uart2\_TX.XferCpltCallback = \&DMATransferComplete;}}
+\DoxyCodeLine{34 \textcolor{comment}{//          HAL\_DMA\_Init(\&\_dMAHandle);}}
+\DoxyCodeLine{35 \textcolor{comment}{//          return;}}
+\DoxyCodeLine{36         }
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38         }
+\DoxyCodeLine{39         \_dMAHandle.Instance = *(\_dmaStream-\/>GetDMAStream());}
+\DoxyCodeLine{40         \_dMAHandle.Init.Channel = \_dmaCH-\/>GetChannel();}
+\DoxyCodeLine{41         \_dMAHandle.Init.Direction = DMA\_PERIPH\_TO\_MEMORY;}
+\DoxyCodeLine{42         \_dMAHandle.Init.PeriphBurst = DMA\_PINC\_DISABLE;}
+\DoxyCodeLine{43         \_dMAHandle.Init.MemInc = DMA\_MINC\_ENABLE;}
+\DoxyCodeLine{44         \_dMAHandle.Init.PeriphDataAlignment = DMA\_PDATAALIGN\_HALFWORD;}
+\DoxyCodeLine{45         \_dMAHandle.Init.MemDataAlignment = DMA\_MDATAALIGN\_HALFWORD;}
+\DoxyCodeLine{46         \_dMAHandle.Init.Mode = mode;}
+\DoxyCodeLine{47         \_dMAHandle.Init.Priority = DMA\_PRIORITY\_LOW;}
+\DoxyCodeLine{48         \_dMAHandle.Init.FIFOMode = DMA\_FIFOMODE\_DISABLE;}
+\DoxyCodeLine{49         HAL\_DMA\_Init(\&\_dMAHandle);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         }
+\DoxyCodeLine{52          }
+\DoxyCodeLine{53         }
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55     }
+
+\end{DoxyCode}

@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,40 +61,41 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_core_hal_requi
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="dir_a73106cba3fc1ee97b18c1f41ce635cc.html">boards</a></li><li class="navelem"><a class="el" href="dir_79e8dbc9668083594ec93e2eb168f5db.html">STM32F411RE</a></li><li class="navelem"><a class="el" href="dir_95ec560c56436d0dcf88369ea0326452.html">AECoreHalRequiredFiles</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">BoardTypes_1.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>  </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">    4</a></span><span class="preprocessor">#define Port_t GPIO_TypeDef* </span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">    5</a></span><span class="preprocessor">#define Pin_t uint16_t </span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac47df28832a31c6e489450f834ec977e">    6</a></span><span class="preprocessor">#define DMAStreamType_t DMA_Stream_TypeDef*</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#a6e712f898fdf16e2e5e5cf08b173d8c4">    7</a></span><span class="preprocessor">#define DMAHandleType_t DMA_HandleTypeDef</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#a46b8c7c1704297f264d7eb74250342ba">    8</a></span><span class="preprocessor">#define DMA_Numbers_Of_DMA 2</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define Port_t GPIO_TypeDef* </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define Pin_t uint16_t </span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define DMAStreamType_t DMA_Stream_TypeDef*</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define DMAHandleType_t DMA_HandleTypeDef</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define DMA_Numbers_Of_DMA 2</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//Gpio output</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#a3fbf691c2fbcd7a426894ada3f15c61a">   12</a></span><span class="preprocessor">#define GPIO_Handle char</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define GPIO_Handle char</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//Gpio input</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#a6c8ea9cd9e990a9d1b80c3bde67809bc">   15</a></span><span class="preprocessor">#define GPIOInput_Handle char</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define GPIOInput_Handle char</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//ADC </span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#aa49a762f591a86bc19064973982b6a1a">   19</a></span><span class="preprocessor">#define ADC_Handle ADC_HandleTypeDef</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define ADC_Handle ADC_HandleTypeDef</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//uart</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define UART_Handle UART_HandleTypeDef</span></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="dir_a73106cba3fc1ee97b18c1f41ce635cc.html">boards</a></li><li class="navelem"><a class="el" href="dir_79e8dbc9668083594ec93e2eb168f5db.html">STM32F411RE</a></li><li class="navelem"><a class="el" href="dir_95ec560c56436d0dcf88369ea0326452.html">AECoreHalRequiredFiles</a></li><li class="navelem"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html">BoardTypes_1.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

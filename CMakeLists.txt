@@ -11,6 +11,30 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --save-temps")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --save-temps")
 
+
+set(NAME_OF_THIS_MP_GROUP "somepub")
+set(USER_SECTIONS_POSSIBLE
+        za zb zc zd ze zf zg zh zi zj zk zl zm zn zo zp zq zr zs zt zu zv zw zx zy zz )
+set(USER_SECTIONS_SO_FAR 0)
+
+
+#set(_arg_WITH_VALUE "some stuff ")
+
+set(_arg_WITH_VALUE "some stuff ##UserCode")
+ 
+string(FIND "${_arg_WITH_VALUE}" "##UserCode" isFound)
+
+if(${isFound} STREQUAL "-1")
+else()
+ #increment and unique name
+ MATH(EXPR USER_SECTIONS_SO_FAR "${${NAME_OF_NODE}_ALL_SO_FAR}+1")
+ list(GET USER_SECTIONS_POSSIBLE ${USER_SECTIONS_SO_FAR} APPENDCODE)
+
+ set(NAME_FOR_USER_SECTION "${NAME_OF_THIS_MP_GROUP}${APPENDCODE}")
+
+endif()
+ string(REPLACE "##UserCode" "##UserCode_${NAME_FOR_USER_SECTION}" _arg_WITH_VALUE ${_arg_WITH_VALUE}) 
+
 ###################################
 #User Options
 ###################################
@@ -82,7 +106,7 @@ endif()
 
 #if(NOT ${OS_USED} STREQUAL "UBUNTU")
     if (WIN32)
-    set(CODEGENGUI_PATH "C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui")
+    set(CODEGENGUI_PATH "C:/CodeGenerator/CgenCmakeGui")
     FILE(READ "${CODEGENGUI_PATH}/CgenCmakeConfigFunctions.cmake" contentsOut)
     FILE(WRITE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/CgenCmakeConfigFunctions.cmake" ${contentsOut})
     endif()
@@ -90,7 +114,31 @@ endif()
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/CgenCmakeConfigFunctions.cmake")
 Cgen_Start()
 
- 
+###################################
+#add all cmake files needed for AE
+###################################
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/AEIntegrationTestsManager.cmake")
+
+
+###################################
+
+
+
+###################################
+#initialize any cmake environments
+###################################
+
+####AE integration test 
+##set up AE integration test environment. This will be called again and override by user
+# project that initialize this again. 
+AEintegrationTest_initialize(LOCATION_OF_USER_CONFIG_FILES "${CMAKE_SOURCE_DIR}/user_configs" )
+
+
+ ###################################
+
+
+
+
 Cgen_Option(
         NAME AEPLATFORM
         DESCRIPTION "what platform is this for (this is chosen by IDE command line -D variable)"
@@ -157,12 +205,7 @@ Cgen_Option(
         CONSTRICTS_LATER_OPTIONS
 )
 
-Cgen_Option(
-        NAME INTEGRATION_TESTS
-        DESCRIPTION "choose an integration test to build"
-        POSSIBLEVALUES AECore_Tests1 AEHal_Tests1
-        CONSTRICTS_LATER_OPTIONS
-)
+
 
 Cgen_Option(
         NAME BUILD_UNIT_TESTS
@@ -218,7 +261,8 @@ set(clion TRUE)
 
 
 
-
+#this will generate all those board config files located at  ${CMAKE_SOURCE_DIR}/src/AE/AESetup/Board
+#put all those board specific function implementations needed in those files.
 include("cmake/GetBoardMetaTypes.cmake")
 
 
@@ -231,35 +275,40 @@ Set_Sources_in_SourceGroup(NAMEOFGROUP "GeneratorInputFiles" LISTOFSOURCES  ${AE
 ################
 
 
+#this variable indicates whether find_test_framework(ID com.sysprogs.unittest.googletest) 
+#for google tests has been run yet
+set(IsFindTestFrameworkRan FALSE)
 
 
-if(${BUILD_TESTS} STREQUAL "TRUE" )
+#if(${BUILD_TESTS} STREQUAL "TRUE" )
+#
+    #Cgen_Option( 
+            #NAME TestGroups
+            #DESCRIPTION "what test group do you wanna enable" 
+            #POSSIBLEVALUES Test_Group1 Test_Group2 Test_Group3 Test_Group4
+            #CONSTRICTS_LATER_OPTIONS
+    #)  
+#
+#endif()
+# 
+#if(${BUILD_UNIT_TESTS} STREQUAL "TRUE" )
+#
+    #Cgen_Option( 
+            #NAME TestGroups
+            #DESCRIPTION "what test group do you wanna enable"
+            #POSSIBLEVALUES Test_Group1 Test_Group2 Test_Group3 Test_Group4
+            #CONSTRICTS_LATER_OPTIONS
+    #)
+#
+#endif()
 
-    Cgen_Option(
-            NAME TestGroups
-            DESCRIPTION "what test group do you wanna enable"
-            POSSIBLEVALUES Test_Group1 Test_Group2 Test_Group3 Test_Group4
-            CONSTRICTS_LATER_OPTIONS
-    )
-
-endif()
-
-if(${BUILD_UNIT_TESTS} STREQUAL "TRUE" )
-
-    Cgen_Option(
-            NAME TestGroups
-            DESCRIPTION "what test group do you wanna enable"
-            POSSIBLEVALUES Test_Group1 Test_Group2 Test_Group3 Test_Group4
-            CONSTRICTS_LATER_OPTIONS
-    )
-
-endif()
 
 
 
-set(PATH_TO_TEST_CONFIG  "${CMAKE_SOURCE_DIR}/test/${TestGroups}")
-set(SRCS_TO_TEST_CONFIG  "${PATH_TO_TEST_CONFIG}/AEConfig.h"
-        "${PATH_TO_TEST_CONFIG}/UserBSPConfig.cpp")
+
+#set(PATH_TO_USER_CONFIG_FILES  "${CMAKE_SOURCE_DIR}/test/${TestGroups}")
+#set(SRCS_TO_USER_CONFIG_FILES  "${PATH_TO_USER_CONFIG_FILES}/AEConfig.h"
+        #"${PATH_TO_TEST_CONFIG}/UserBSPConfig.cpp")
 
 
 
@@ -279,7 +328,8 @@ endif()
 ################
 
 if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
-find_bsp(ID com.sysprogs.arm.stm32
+find_bsp(
+	ID com.sysprogs.arm.stm32
 	VERSION 2021.02
 	MCU STM32F411RE
 	FRAMEWORKS
@@ -289,9 +339,11 @@ find_bsp(ID com.sysprogs.arm.stm32
 		com.sysprogs.embedded.semihosting_and_profiler
 	HWREGISTER_LIST_FILE STM32F4xxxx/DeviceDefinitions/stm32f411xe.xml
 	FWCONFIGURATION com.sysprogs.bspoptions.stm32.freertos.portcore=CM4F
-	FWCONFIGURATION com.sysprogs.bspoptions.stm32.freertos.heap=${FreeRTOS_HEAP_TYPE})
+	FWCONFIGURATION com.sysprogs.bspoptions.stm32.freertos.heap=${FreeRTOS_HEAP_TYPE}
+	CONFIGURATION "com.sysprogs.toolchainoptions.arm.libctype=--specs=nano.specs -u _printf_float")
 
 find_test_framework(ID com.sysprogs.unittest.googletest) 
+set(IsFindTestFrameworkRan TRUE)
 endif()
 
 
@@ -424,9 +476,39 @@ if(${BUILD_TESTS} STREQUAL "TRUE" )
 
 
 
+  
+
+#
+ #CREATE_TARGET_UNITTESTS(
+  #NameOfTestTarget AECoreTests
+  #LibrariesToLinkTo AECoreLib
+  #LOCATION_OF_TARGET "C:/visualgdb_projects/AERTOSCopy/src/AE"
+ #)
+
+  CREATE_TARGET_UNITTESTS(
+ NameOfTestTarget AEHalTests
+ LibrariesToLinkTo AECoreLib AEHalLib  
+ LOCATION_OF_TARGET "C:/visualgdb_projects/AERTOSCopy/src/AE/hal"
+  )   
+ 
+
+
+ CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET exeHalTest
+ LOCATION_OF_TARGET "C:/visualgdb_projects/AERTOSCopy/src/AE/hal"
+ LibrariesToLinkTo AECoreLib AEHalLib  
+ LIST_OF_TESTS ADC_TEST UART_TEST
+ ) 
+ #target_link_libraries(exeHalTest PUBLIC  AEHalLib)     
+
+ CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET AECoreTestEXE
+ LOCATION_OF_TARGET "C:/visualgdb_projects/AERTOSCopy/src/AE"
+ LibrariesToLinkTo AECoreLib 
+ LIST_OF_TESTS defaultTest
+ ) 
 
 
 
+  
 
 
 

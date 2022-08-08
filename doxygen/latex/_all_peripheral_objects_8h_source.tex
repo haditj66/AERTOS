@@ -1,0 +1,81 @@
+\hypertarget{_all_peripheral_objects_8h_source}{}\doxysection{All\+Peripheral\+Objects.\+h}
+\label{_all_peripheral_objects_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AllPeripheralObjects.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AllPeripheralObjects.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GPIOPERIPHERAL1\_INITIALIZE}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define GPIOPERIPHERAL2\_INITIALIZE}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define GPIOPERIPHERAL3\_INITIALIZE}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define GPIOPERIPHERAL4\_INITIALIZE}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define GPIOPERIPHERAL5\_INITIALIZE}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GPIOPERIPHERAL6\_INITIALIZE}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GPIOInputPERIPHERAL1\_INITIALIZE}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define GPIOInputPERIPHERAL2\_INITIALIZE}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GPIOInputPERIPHERAL3\_INITIALIZE}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GPIOInputPERIPHERAL4\_INITIALIZE}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GPIOInputPERIPHERAL5\_INITIALIZE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GPIOInputPERIPHERAL6\_INITIALIZE}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define ADCPERIPHERAL1\_INITIALIZE}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define ADCPERIPHERAL2\_INITIALIZE}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define ADCPERIPHERAL3\_INITIALIZE}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define ADCPERIPHERAL4\_INITIALIZE}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define ADCPERIPHERAL5\_INITIALIZE}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define ADCPERIPHERAL6\_INITIALIZE}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define UARTPERIPHERAL1\_INITIALIZE}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define UARTPERIPHERAL2\_INITIALIZE}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define UARTPERIPHERAL3\_INITIALIZE}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define UARTPERIPHERAL4\_INITIALIZE}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define UARTPERIPHERAL5\_INITIALIZE}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define UARTPERIPHERAL6\_INITIALIZE}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifdef USING\_AEGPIOOutput }}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}AEGPIOOutput.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifdef USING\_AEGPIOInput}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}AEGPIOInput.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif  }}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifdef USING\_AEADC }}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}AEADC.h"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifdef USING\_AEUART }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}AEUART.h"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define InitializeAllPeripheral                                                \(\backslash\)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{  GPIOPERIPHERAL1\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{  GPIOPERIPHERAL2\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{  GPIOPERIPHERAL3\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{  GPIOPERIPHERAL4\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{  GPIOPERIPHERAL5\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{  GPIOPERIPHERAL6\_INITIALIZE                                                    \(\backslash\)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{  GPIOInputPERIPHERAL1\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{  GPIOInputPERIPHERAL2\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{  GPIOInputPERIPHERAL3\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{  GPIOInputPERIPHERAL4\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{  GPIOInputPERIPHERAL5\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{  GPIOInputPERIPHERAL6\_INITIALIZE                                                   \(\backslash\)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{    ADCPERIPHERAL1\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{ADCPERIPHERAL2\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{ADCPERIPHERAL3\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{ADCPERIPHERAL4\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{ADCPERIPHERAL5\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{ADCPERIPHERAL6\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{    UARTPERIPHERAL1\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    UARTPERIPHERAL2\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{    UARTPERIPHERAL3\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{    UARTPERIPHERAL4\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{    UARTPERIPHERAL5\_INITIALIZE \(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{    UARTPERIPHERAL6\_INITIALIZE}}
+\DoxyCodeLine{74     }
+\DoxyCodeLine{75         \textcolor{comment}{//}}
+
+\end{DoxyCode}

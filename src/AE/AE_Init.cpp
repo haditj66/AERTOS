@@ -26,11 +26,10 @@ void AE_Init(void)
     setup.RTOS_ToBSP_SpecificCode();
 
 	
-
-#if INCLUDE_HAL == TRUE 
+	
+#ifdef INCLUDE_HAL__TRUE// INCLUDE_HAL__FREERTOS
 	InitializeAllPeripheral
-		
-		
+		 
 #endif
 
 		
@@ -40,7 +39,7 @@ void AE_Init(void)
 
 void AEConfigureAndStart()
 {
-#if RTOS_USED == FREERTOS
+#ifdef RTOS_USED__FREERTOS
 	vTaskStartScheduler();
 #endif
 }

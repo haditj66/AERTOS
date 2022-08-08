@@ -1,0 +1,249 @@
+\hypertarget{_a_e_a_d_c_peripheral_8h_source}{}\doxysection{AEADCPeripheral.\+h}
+\label{_a_e_a_d_c_peripheral_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEADCPeripheral.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEADCPeripheral.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//generated file: ADCPeripheral.h}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 \textcolor{comment}{//\#pragma warning( push )}}
+\DoxyCodeLine{6 \textcolor{comment}{//\#pragma warning( disable : 4005)}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}AEConfig.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}AEPeripheral.h"{}}}
+\DoxyCodeLine{10  }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef USING\_AEADC }}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#error you included this file but you did not provide a AEADC.h file in AEHalFiles directory.}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifdef USING\_AEDMA }}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}AEDMA.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} void(*AE\_ADC\_ConvCpltCallback\_t)(void);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_a_d_c}{AEADC}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}}() \{AE\_ADC\_ConvCpltCallback = []()-\/>\textcolor{keywordtype}{void} \{\};\}; }
+\DoxyCodeLine{28     }
+\DoxyCodeLine{29     }
+\DoxyCodeLine{30     AE\_ADC\_ConvCpltCallback\_t AE\_ADC\_ConvCpltCallback; }
+\DoxyCodeLine{31     }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} SetADC\_ConvCpltCallback\_t(AE\_ADC\_ConvCpltCallback\_t ae\_ADC\_ConvCpltCallback\_t)}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         AE\_ADC\_ConvCpltCallback = ae\_ADC\_ConvCpltCallback\_t;}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36     }
+\DoxyCodeLine{37     \textcolor{keyword}{inline} uint16\_t GetADCData()\textcolor{keyword}{ const}}
+\DoxyCodeLine{38 \textcolor{keyword}{    }\{\textcolor{keywordflow}{return} *ADCData;\}}
+\DoxyCodeLine{39     }
+\DoxyCodeLine{40     \textcolor{keyword}{inline} uint16\_t* GetADCDataAddress()\textcolor{keyword}{ const}}
+\DoxyCodeLine{41 \textcolor{keyword}{    }\{\textcolor{keywordflow}{return} ADCData;\}}
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} Init(Port\_t port, Pin\_t pin, uint16\_t* adcData)\textcolor{comment}{//, ADC\_Handle* gPIO\_Handle\_inst) }}
+\DoxyCodeLine{45     \{ }
+\DoxyCodeLine{46         ADCData = adcData;}
+\DoxyCodeLine{47         ADC\_Port = port;}
+\DoxyCodeLine{48         ADC\_Pin = pin; }
+\DoxyCodeLine{49     \} }
+\DoxyCodeLine{50     }
+\DoxyCodeLine{51     }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{private}: }
+\DoxyCodeLine{54     uint16\_t* ADCData;}
+\DoxyCodeLine{55     }
+\DoxyCodeLine{56     Port\_t ADC\_Port;}
+\DoxyCodeLine{57     Pin\_t  ADC\_Pin;}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define NumOFPinsNeeded 5  }}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define templateForADC\_def uint16\_t WhichInstanceOfADC, Portenum ADC\_ch1\_Port = PortsMaxNum, PinEnum ADC\_ch1\_Pin = PINMaxNum, Portenum ADC\_ch2\_Port = PortsMaxNum, PinEnum ADC\_ch2\_Pin = PINMaxNum, Portenum ADC\_ch3\_Port = PortsMaxNum, PinEnum ADC\_ch3\_Pin = PINMaxNum, Portenum ADC\_ch4\_Port = PortsMaxNum, PinEnum ADC\_ch4\_Pin = PINMaxNum, Portenum ADC\_ch5\_Port = PortsMaxNum, PinEnum ADC\_ch5\_Pin = PINMaxNum}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define templateForADC uint16\_t WhichInstanceOfADC, Portenum ADC\_ch1\_Port, PinEnum ADC\_ch1\_Pin, Portenum ADC\_ch2\_Port, PinEnum ADC\_ch2\_Pin, Portenum ADC\_ch3\_Port, PinEnum ADC\_ch3\_Pin, Portenum ADC\_ch4\_Port, PinEnum ADC\_ch4\_Pin, Portenum ADC\_ch5\_Port, PinEnum ADC\_ch5\_Pin}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define templateargsForADC WhichInstanceOfADC, ADC\_ch1\_Port, ADC\_ch1\_Pin, ADC\_ch2\_Port, ADC\_ch2\_Pin, ADC\_ch3\_Port, ADC\_ch3\_Pin, ADC\_ch4\_Port, ADC\_ch4\_Pin, ADC\_ch5\_Port, ADC\_ch5\_Pin }}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define templateargsForHardware  ADC\_ch1\_Port, ADC\_ch1\_Pin, ADC\_ch2\_Port, ADC\_ch2\_Pin, ADC\_ch3\_Port, ADC\_ch3\_Pin, ADC\_ch4\_Port, ADC\_ch4\_Pin, ADC\_ch5\_Port, ADC\_ch5\_Pin }}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{template}<templateForADC\_def>}
+\DoxyCodeLine{73     \textcolor{keyword}{class }\mbox{\hyperlink{class_a_d_c_peripheral}{ADCPeripheral}} :}
+\DoxyCodeLine{74         \textcolor{keyword}{public} \mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}} <ADCPeripheral<templateargsForADC>,}
+\DoxyCodeLine{75         NumOFPinsNeeded, }
+\DoxyCodeLine{76         ADC\_Handle, }
+\DoxyCodeLine{77         templateargsForHardware>}
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79         }
+\DoxyCodeLine{80         \textcolor{keyword}{friend} \textcolor{keywordtype}{void} AE\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{81         }
+\DoxyCodeLine{82     \textcolor{keyword}{public}:}
+\DoxyCodeLine{83 \textcolor{comment}{//      DMA\_HandleTypeDef hdma\_adcc;}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#ifdef USING\_AEDMA }}
+\DoxyCodeLine{85         \mbox{\hyperlink{class_a_e_d_m_a}{AEDMA}} dmaForADC;}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{87         }
+\DoxyCodeLine{88         }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         uint16\_t ADCdata[10];}
+\DoxyCodeLine{91  }
+\DoxyCodeLine{92         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} AEADC\_inst1;}
+\DoxyCodeLine{93         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} AEADC\_inst2;}
+\DoxyCodeLine{94         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} AEADC\_inst3;}
+\DoxyCodeLine{95         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} AEADC\_inst4;}
+\DoxyCodeLine{96         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} AEADC\_inst5;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         protected :}
+\DoxyCodeLine{99  }
+\DoxyCodeLine{100 \textcolor{comment}{//      Port\_t ch1\_Port;}}
+\DoxyCodeLine{101 \textcolor{comment}{//      Pin\_t  ch1\_Pin;}}
+\DoxyCodeLine{102 \textcolor{comment}{//      Port\_t ch2\_Port;}}
+\DoxyCodeLine{103 \textcolor{comment}{//      Pin\_t  ch2\_Pin;}}
+\DoxyCodeLine{104 \textcolor{comment}{//      Port\_t ch3\_Port;}}
+\DoxyCodeLine{105 \textcolor{comment}{//      Pin\_t  ch3\_Pin;}}
+\DoxyCodeLine{106 \textcolor{comment}{//      Port\_t ch4\_Port;}}
+\DoxyCodeLine{107 \textcolor{comment}{//      Pin\_t  ch4\_Pin;}}
+\DoxyCodeLine{108 \textcolor{comment}{//      Port\_t ch5\_Port;}}
+\DoxyCodeLine{109 \textcolor{comment}{//      Pin\_t  ch5\_Pin;}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{comment}{// Inherited via AEPeripheral }}
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} \_InitializePinSelectors(CreateTypeSelector\_funcPtr(\&functPtrsToChangeTypeSelectorss)[NumOFPinsNeeded]) \textcolor{keyword}{override};}
+\DoxyCodeLine{113  }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \textcolor{comment}{// Inherited via AEPeripheral}}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} \_Initialize(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2, Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4, Port\_t port5, Pin\_t pin5)\textcolor{keyword}{override};}
+\DoxyCodeLine{117         }
+\DoxyCodeLine{118         \textcolor{keywordtype}{void} Pre\_Initialize(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2, Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4, Port\_t port5, Pin\_t pin5)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{119         \textcolor{keywordflow}{if} (this-\/>ForWhichPeripheralNumber == 1)}
+\DoxyCodeLine{120         \{}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH1}}
+\DoxyCodeLine{122             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected1.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL1\_Name\_CH1 in AEConfig"{}})}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH2}}
+\DoxyCodeLine{125             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected2.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL1\_Name\_CH2 in AEConfig"{}})}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH3}}
+\DoxyCodeLine{128             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected3.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL1\_Name\_CH3 in AEConfig"{}})}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH4}}
+\DoxyCodeLine{131             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected4.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL1\_Name\_CH4 in AEConfig"{}})}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH5}}
+\DoxyCodeLine{134             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected5.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL1\_Name\_CH5 in AEConfig"{}})}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{136         \}}
+\DoxyCodeLine{137             }
+\DoxyCodeLine{138         \textcolor{keywordflow}{if} (this-\/>ForWhichPeripheralNumber == 2)}
+\DoxyCodeLine{139         \{}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL2\_Name\_CH1}}
+\DoxyCodeLine{141             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected1.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL2\_Name\_CH1 in AEConfig"{}})}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL2\_Name\_CH2}}
+\DoxyCodeLine{144             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected2.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL2\_Name\_CH2 in AEConfig"{}})}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL2\_Name\_CH3}}
+\DoxyCodeLine{147             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected3.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL2\_Name\_CH3 in AEConfig"{}})}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL2\_Name\_CH4}}
+\DoxyCodeLine{150             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected4.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL2\_Name\_CH4 in AEConfig"{}})}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL2\_Name\_CH5}}
+\DoxyCodeLine{153             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(this-\/>GPIOPinSelected5.isInitialized() , \textcolor{stringliteral}{"{}you did not give a pin and port for this channel but you gave a name for the channel ADCPERIPHERAL2\_Name\_CH5 in AEConfig"{}})}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{155         \}}
+\DoxyCodeLine{156             }
+\DoxyCodeLine{157 \textcolor{comment}{//          }}
+\DoxyCodeLine{158         \};}
+\DoxyCodeLine{159  }
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162         }
+\DoxyCodeLine{163         }
+\DoxyCodeLine{164         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}}* GetPeripheralInstanceCh1() }
+\DoxyCodeLine{165 \{       this-\/>AEADC\_inst1.Init(this-\/>GPIOPinSelected1.GetThePort(), this-\/>GPIOPinSelected1.GetThePin(), \&ADCdata[0]); \textcolor{keywordflow}{return} \&AEADC\_inst1;\}}
+\DoxyCodeLine{166         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}}* GetPeripheralInstanceCh2() }
+\DoxyCodeLine{167 \{       this-\/>AEADC\_inst2.Init(this-\/>GPIOPinSelected2.GetThePort(), this-\/>GPIOPinSelected2.GetThePin(), \&ADCdata[1]); \textcolor{keywordflow}{return} \&AEADC\_inst2;\}}
+\DoxyCodeLine{168         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}}* GetPeripheralInstanceCh3() }
+\DoxyCodeLine{169 \{       this-\/>AEADC\_inst3.Init(this-\/>GPIOPinSelected3.GetThePort(), this-\/>GPIOPinSelected3.GetThePin(), \&ADCdata[2]); \textcolor{keywordflow}{return} \&AEADC\_inst3;\}}
+\DoxyCodeLine{170         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}}* GetPeripheralInstanceCh4() }
+\DoxyCodeLine{171 \{       this-\/>AEADC\_inst4.Init(this-\/>GPIOPinSelected4.GetThePort(), this-\/>GPIOPinSelected4.GetThePin(), \&ADCdata[3]); \textcolor{keywordflow}{return} \&AEADC\_inst4;\}}
+\DoxyCodeLine{172         \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}}* GetPeripheralInstanceCh5() }
+\DoxyCodeLine{173 \{       this-\/>AEADC\_inst5.Init(this-\/>GPIOPinSelected5.GetThePort(), this-\/>GPIOPinSelected5.GetThePin(), \&ADCdata[4]); \textcolor{keywordflow}{return} \&AEADC\_inst5;\}}
+\DoxyCodeLine{174     \};}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177  }
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183  }
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185  \textcolor{comment}{//global pheripherals declaration}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define ADC\_CH1\_INIT}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define ADC\_CH2\_INIT}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define ADC\_CH3\_INIT}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define ADC\_CH4\_INIT}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define ADC\_CH5\_INIT}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{keyword}{extern} ADCPERIPHERAL1* ADCPERIPHERAL1\_Instance;  }
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#ifndef ADCPERIPHERAL1\_Name\_CH1}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#error You need to define ADCPERIPHERAL1\_Name\_CH1}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define ADC\_CH1\_INIT ADCPERIPHERAL1\_Name\_CH1 = ADCPERIPHERAL1\_Instance-\/>GetPeripheralInstanceCh1();}}
+\DoxyCodeLine{199 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} *ADCPERIPHERAL1\_Name\_CH1; }
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH2}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define ADC\_CH2\_INIT ADCPERIPHERAL1\_Name\_CH2 = ADCPERIPHERAL1\_Instance-\/>GetPeripheralInstanceCh2();}}
+\DoxyCodeLine{204 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} *ADCPERIPHERAL1\_Name\_CH2; }
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH3}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define ADC\_CH3\_INIT ADCPERIPHERAL1\_Name\_CH3 = ADCPERIPHERAL1\_Instance-\/>GetPeripheralInstanceCh3();}}
+\DoxyCodeLine{209 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} *ADCPERIPHERAL1\_Name\_CH3; }
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH4}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define ADC\_CH4\_INIT ADCPERIPHERAL1\_Name\_CH4 = ADCPERIPHERAL1\_Instance-\/>GetPeripheralInstanceCh4();}}
+\DoxyCodeLine{214 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} *ADCPERIPHERAL1\_Name\_CH4; }
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#ifdef ADCPERIPHERAL1\_Name\_CH5}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define ADC\_CH5\_INIT ADCPERIPHERAL1\_Name\_CH5 = ADCPERIPHERAL1\_Instance-\/>GetPeripheralInstanceCh5();}}
+\DoxyCodeLine{219 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_a_d_c}{AEADC}} *ADCPERIPHERAL1\_Name\_CH5; }
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define ADCPERIPHERAL1\_INITIALIZE ADCPERIPHERAL1\_Instance = ADCPERIPHERAL1::getInstance(); ADCPERIPHERAL1\_Instance-\/>ForWhichPeripheralNumber = 1; ADCPERIPHERAL1\_Instance-\/>initializePeripheral(); \(\backslash\)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{ADC\_CH1\_INIT ADC\_CH2\_INIT ADC\_CH3\_INIT ADC\_CH4\_INIT ADC\_CH5\_INIT}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227  }
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229  }
+\DoxyCodeLine{230  }
+\DoxyCodeLine{231 \textcolor{comment}{//\#endif //target\_stm32f4}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{comment}{//\#pragma warning( pop ) }}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 }
+
+\end{DoxyCode}

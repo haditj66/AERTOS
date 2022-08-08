@@ -1,0 +1,604 @@
+\hypertarget{_a_e_defines_8h_source}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AEDefines.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}cstdint"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//macro for action requests -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//actionrequests TDus -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{17 \textcolor{comment}{//1}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define TemplateForActionArgTDU1 \(\backslash\)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{    class ForwardDeclaredTDU = AENull}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_NoDefaults1 \(\backslash\)}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{    class ForwardDeclaredTDU}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_Args1 \(\backslash\)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{    ARG1, \(\backslash\)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{    ForwardDeclaredTDU}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{//2}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define TemplateForActionArgTDU2 \(\backslash\)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{    class ForwardDeclaredTDU = AENull}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_NoDefaults2 \(\backslash\)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{    class ForwardDeclaredTDU}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_Args2 \(\backslash\)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{    ARG1, \(\backslash\)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{    ARG2, \(\backslash\)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{    POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{    ForwardDeclaredTDU}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{//3}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define TemplateForActionArgTDU3 \(\backslash\)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{    class ForwardDeclaredTDU = AENull}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_NoDefaults3 \(\backslash\)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{    class ForwardDeclaredTDU}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_Args3 \(\backslash\)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{    ARG1, \(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{    ARG2, \(\backslash\)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{    ARG3, \(\backslash\)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{    POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{    ForwardDeclaredTDU}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{//4}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define TemplateForActionArgTDU4 \(\backslash\)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{    class ARG4, \(\backslash\)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{    class ForwardDeclaredTDU = AENull}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_NoDefaults4 \(\backslash\)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{    class ARG4, \(\backslash\)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{    class ForwardDeclaredTDU}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_Args4 \(\backslash\)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{     ARG1, \(\backslash\)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{    ARG2, \(\backslash\)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{    ARG3, \(\backslash\)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{    ARG4, \(\backslash\)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{    POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{    ForwardDeclaredTDU}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{comment}{//5}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define TemplateForActionArgTDU5 \(\backslash\)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{    class ARG4, \(\backslash\)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{    class ARG5, \(\backslash\)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{    class ForwardDeclaredTDU = AENull}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_NoDefaults5 \(\backslash\)}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{    class ARG4, \(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{    class ARG5, \(\backslash\)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{    uint8\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{    class ForwardDeclaredTDU}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define TemplateForActionArgTDU\_Args5 \(\backslash\)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{    ARG1, \(\backslash\)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{    ARG2, \(\backslash\)}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{    ARG3, \(\backslash\)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{    ARG4, \(\backslash\)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{    ARG5, \(\backslash\)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{    POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{    ForwardDeclaredTDU}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define Friend\_ToALL\_ActionRequestObjects\_TDU   \(\backslash\)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{template<TemplateForActionArgTDU\_NoDefaults1>\(\backslash\)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{friend class ActionRequestObjectArgTDU1;\(\backslash\)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{template<TemplateForActionArgTDU\_NoDefaults2>\(\backslash\)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{friend class ActionRequestObjectArgTDU2;\(\backslash\)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{template<TemplateForActionArgTDU\_NoDefaults3>\(\backslash\)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{friend class ActionRequestObjectArgTDU3;\(\backslash\)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{template<TemplateForActionArgTDU\_NoDefaults4>\(\backslash\)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{friend class ActionRequestObjectArgTDU4;\(\backslash\)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{template<TemplateForActionArgTDU\_NoDefaults5>\(\backslash\)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{friend class ActionRequestObjectArgTDU5;}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{comment}{//actionrequests -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{comment}{//1}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define TemplateForActionArg1 \(\backslash\)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{    class ForwardDeclaredUtility = AENull}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define TemplateForActionArg\_NoDefaults1 \(\backslash\)}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{    class ForwardDeclaredUtility}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define TemplateForActionArg\_Args1 \(\backslash\)}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{    ARG1, \(\backslash\)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{    \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{    ForwardDeclaredUtility}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{comment}{//2}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define TemplateForActionArg2 \(\backslash\)}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{    class ForwardDeclaredUtility = AENull}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define TemplateForActionArg\_NoDefaults2 \(\backslash\)}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{    class ForwardDeclaredUtility}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define TemplateForActionArg\_Args2 \(\backslash\)}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{    ARG1, \(\backslash\)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{    ARG2, \(\backslash\)}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{    \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{    ForwardDeclaredUtility}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 \textcolor{comment}{//3}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define TemplateForActionArg3 \(\backslash\)}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{    class ForwardDeclaredUtility = AENull}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define TemplateForActionArg\_NoDefaults3 \(\backslash\)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{    class ForwardDeclaredUtility}}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define TemplateForActionArg\_Args3 \(\backslash\)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{    ARG1, \(\backslash\)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{    ARG2, \(\backslash\)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{    ARG3, \(\backslash\)}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{    \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{    ForwardDeclaredUtility}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{comment}{//4}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define TemplateForActionArg4 \(\backslash\)}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{    class ARG4, \(\backslash\)}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{    class ForwardDeclaredUtility = AENull}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define TemplateForActionArg\_NoDefaults4 \(\backslash\)}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{    class ARG4, \(\backslash\)}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{    class ForwardDeclaredUtility}}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define TemplateForActionArg\_Args4 \(\backslash\)}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{     ARG1, \(\backslash\)}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{    ARG2, \(\backslash\)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{    ARG3, \(\backslash\)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{    ARG4, \(\backslash\)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{    \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{    ForwardDeclaredUtility}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{comment}{//5}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define TemplateForActionArg5 \(\backslash\)}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{    class ARG4, \(\backslash\)}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{    class ARG5, \(\backslash\)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{    class ForwardDeclaredUtility = AENull}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#define TemplateForActionArg\_NoDefaults5 \(\backslash\)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{    class ARG1, \(\backslash\)}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{    class ARG2, \(\backslash\)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{    class ARG3, \(\backslash\)}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{    class ARG4, \(\backslash\)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{    class ARG5, \(\backslash\)}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{    class RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{    uint8\_t \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{    class ForwardDeclaredUtility}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define TemplateForActionArg\_Args5 \(\backslash\)}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{    ARG1, \(\backslash\)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{    ARG2, \(\backslash\)}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{    ARG3, \(\backslash\)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{    ARG4, \(\backslash\)}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{    ARG5, \(\backslash\)}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{    RETURNARG, \(\backslash\)}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{    \_\_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{    ForwardDeclaredUtility}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define Friend\_ToALL\_ActionRequestObjects   \(\backslash\)}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{template<TemplateForActionArg\_NoDefaults1>\(\backslash\)}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{friend  class ActionRequestObjectArg1;\(\backslash\)}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{template<TemplateForActionArg\_NoDefaults2>\(\backslash\)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{friend  class ActionRequestObjectArg2;\(\backslash\)}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{template<TemplateForActionArg\_NoDefaults3>\(\backslash\)}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{friend  class ActionRequestObjectArg3;\(\backslash\)}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{template<TemplateForActionArg\_NoDefaults4>\(\backslash\)}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{friend  class ActionRequestObjectArg4;\(\backslash\)}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{template<TemplateForActionArg\_NoDefaults5>\(\backslash\)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{friend  class ActionRequestObjectArg5;}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{comment}{//macro for AESimpleFSM -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define TemplateFor\_SimpleFSM \(\backslash\)}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{    class TDerivedType,\(\backslash\)}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{    class TSubMachine1 = AENullFSMUtility,\(\backslash\)}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{    class TSubMachine2 = AENullFSMUtility,\(\backslash\)}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{    class TSubMachine3 = AENullFSMUtility}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#define TemplateFor\_SimpleFSM\_NoDefaults \(\backslash\)}}
+\DoxyCodeLine{312 \textcolor{preprocessor}{    class TDerivedType,\(\backslash\)}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{    class TSubMachine1,\(\backslash\)}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{    class TSubMachine2,\(\backslash\)}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{    class TSubMachine3}}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define TemplateFor\_SimpleFSM\_Args \(\backslash\)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{    TDerivedType,\(\backslash\)}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{    TSubMachine1,\(\backslash\)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{    TSubMachine2,\(\backslash\)}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{    TSubMachine3}}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326 \textcolor{comment}{//macro for AEAOResourceAsAPossession -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define TemplateFor\_RAsAPossession uint16\_t POOLSIZE = 1, \(\backslash\)}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{class ActionRequest1 = AENullActionRequest,\(\backslash\)}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{class ActionRequest2 = AENullActionRequest,\(\backslash\)}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{class ActionRequest3 = AENullActionRequest}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define TemplateFor\_RAsAPossession\_NoDefaults uint16\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{class ActionRequest1,\(\backslash\)}}
+\DoxyCodeLine{336 \textcolor{preprocessor}{class ActionRequest2,\(\backslash\)}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{class ActionRequest3}}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define TemplateFor\_RAsAPossession\_NoDefaults\_friend uint16\_t \_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{340 \textcolor{preprocessor}{class ActionRequest1,\(\backslash\)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{class ActionRequest2,\(\backslash\)}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{class ActionRequest3}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define TemplateARGSFor\_RAsAPossession POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{ActionRequest1,\(\backslash\)}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{ActionRequest2,\(\backslash\)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{ActionRequest3}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{comment}{//macro for AEAOUpdateableAAP}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define TemplateFor\_AEAOUpdateableAAP uint16\_t InputChannelSize = 0, TemplateFor\_RAsAPossession}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define TemplateFor\_AEAOUpdateableAAP\_NoDefaults uint16\_t InputChannelSize, TemplateFor\_RAsAPossession\_NoDefaults}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define TemplateFor\_AEAOUpdateableAAP\_NoDefaults\_friend uint16\_t InputChannelSize, TemplateFor\_RAsAPossession\_NoDefaults\_friend}}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define TemplateARGSFor\_AEAOUpdateableAAP InputChannelSize, TemplateARGSFor\_RAsAPossession}}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 \textcolor{comment}{//macro for AEAOResourceAsAService}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define TemplateFor\_RAsAService uint16\_t POOLSIZE = 1, \(\backslash\)}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{class ActionRequest1 = AENullActionRequest,\(\backslash\)}}
+\DoxyCodeLine{365 \textcolor{preprocessor}{class ActionRequest2 = AENullActionRequest,\(\backslash\)}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{class ActionRequest3 = AENullActionRequest}}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define TemplateFor\_RAsAService\_NoDefaults uint16\_t POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{class ActionRequest1,\(\backslash\)}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{class ActionRequest2,\(\backslash\)}}
+\DoxyCodeLine{371 \textcolor{preprocessor}{class ActionRequest3}}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define TemplateFor\_RAsAService\_NoDefaults\_friend uint16\_t \_POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{class ActionRequest1,\(\backslash\)}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{class ActionRequest2,\(\backslash\)}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{class ActionRequest3}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define TemplateARGSFor\_RAsAService  POOLSIZE, \(\backslash\)}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{ActionRequest1,\(\backslash\)}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{ActionRequest2,\(\backslash\)}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{ActionRequest3}}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{comment}{//macro for AEAOUpdateableAAS}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define TemplateFor\_AEAOUpdateableAAS    TemplateFor\_RAsAService}}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define TemplateFor\_AEAOUpdateableAAS\_NoDefaults     TemplateFor\_RAsAService\_NoDefaults}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define TemplateFor\_AEAOUpdateableAAS\_NoDefaults\_friend      TemplateFor\_RAsAService\_NoDefaults\_friend}}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define TemplateARGSFor\_AEAOUpdateableAAS    TemplateARGSFor\_RAsAService}}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396 \textcolor{comment}{//macro for AEPeripherals}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define TemplateFor\_AEPeripherals \(\backslash\)}}
+\DoxyCodeLine{398 \textcolor{preprocessor}{class DerivedType, uint16\_t NumOfGpioPinsNeeded, class PeripheralHandleTypeDef \(\backslash\)}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{    , Portenum PORT1 = Portenum::PortsMaxNum, PinEnum PIN1 = PinEnum::PINMaxNum\(\backslash\)}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{    , Portenum PORT2 = Portenum::PortsMaxNum, PinEnum PIN2 = PinEnum::PINMaxNum\(\backslash\)}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{    , Portenum PORT3 = Portenum::PortsMaxNum, PinEnum PIN3 = PinEnum::PINMaxNum\(\backslash\)}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{    , Portenum PORT4 = Portenum::PortsMaxNum, PinEnum PIN4 = PinEnum::PINMaxNum\(\backslash\)}}
+\DoxyCodeLine{403 \textcolor{preprocessor}{    , Portenum PORT5 = Portenum::PortsMaxNum, PinEnum PIN5 = PinEnum::PINMaxNum\(\backslash\)}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#define TemplateFor\_AEPeripherals\_NoDefaults \(\backslash\)}}
+\DoxyCodeLine{406 \textcolor{preprocessor}{class DerivedType, uint16\_t NumOfGpioPinsNeeded, class PeripheralHandleTypeDef \(\backslash\)}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{    , Portenum PORT1  , PinEnum PIN1 \(\backslash\)}}
+\DoxyCodeLine{408 \textcolor{preprocessor}{    , Portenum PORT2  , PinEnum PIN2  \(\backslash\)}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{    , Portenum PORT3  , PinEnum PIN3  \(\backslash\)}}
+\DoxyCodeLine{410 \textcolor{preprocessor}{    , Portenum PORT4 , PinEnum PIN4  \(\backslash\)}}
+\DoxyCodeLine{411 \textcolor{preprocessor}{    , Portenum PORT5  , PinEnum PIN5  \(\backslash\)}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define TemplateArgs\_AEPeripherals \(\backslash\)}}
+\DoxyCodeLine{414 \textcolor{preprocessor}{DerivedType, NumOfGpioPinsNeeded, PeripheralHandleTypeDef \(\backslash\)}}
+\DoxyCodeLine{415 \textcolor{preprocessor}{    , PORT1  , PIN1 \(\backslash\)}}
+\DoxyCodeLine{416 \textcolor{preprocessor}{    , PORT2  , PIN2  \(\backslash\)}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{    , PORT3  , PIN3  \(\backslash\)}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{    , PORT4 , PIN4  \(\backslash\)}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{    , PORT5  , PIN5  \(\backslash\)}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{}}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424 \textcolor{comment}{//macro for AEAOResource -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define DeclareActionRequestTemplateArgs \(\backslash\)}}
+\DoxyCodeLine{427 \textcolor{preprocessor}{typedef typename ActionRequest1::ARGTYPE1 Action1\_ARGTYPE1\_t;\(\backslash\)}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{typedef typename ActionRequest2::ARGTYPE1 Action2\_ARGTYPE1\_t;\(\backslash\)}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{typedef typename ActionRequest3::ARGTYPE1 Action3\_ARGTYPE1\_t;\(\backslash\)}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{typedef typename ActionRequest1::ARGTYPE2 Action1\_ARGTYPE2\_t;\(\backslash\)}}
+\DoxyCodeLine{431 \textcolor{preprocessor}{typedef typename ActionRequest2::ARGTYPE2 Action2\_ARGTYPE2\_t;\(\backslash\)}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{typedef typename ActionRequest3::ARGTYPE2 Action3\_ARGTYPE2\_t;\(\backslash\)}}
+\DoxyCodeLine{433 \textcolor{preprocessor}{typedef typename ActionRequest1::ARGTYPE3 Action1\_ARGTYPE3\_t;\(\backslash\)}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{typedef typename ActionRequest2::ARGTYPE3 Action2\_ARGTYPE3\_t;\(\backslash\)}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{typedef typename ActionRequest3::ARGTYPE3 Action3\_ARGTYPE3\_t;\(\backslash\)}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{typedef typename ActionRequest1::ARGTYPE4 Action1\_ARGTYPE4\_t;\(\backslash\)}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{typedef typename ActionRequest2::ARGTYPE4 Action2\_ARGTYPE4\_t;\(\backslash\)}}
+\DoxyCodeLine{438 \textcolor{preprocessor}{typedef typename ActionRequest3::ARGTYPE4 Action3\_ARGTYPE4\_t;\(\backslash\)}}
+\DoxyCodeLine{439 \textcolor{preprocessor}{typedef typename ActionRequest1::ARGTYPE5 Action1\_ARGTYPE5\_t;\(\backslash\)}}
+\DoxyCodeLine{440 \textcolor{preprocessor}{typedef typename ActionRequest2::ARGTYPE5 Action2\_ARGTYPE5\_t;\(\backslash\)}}
+\DoxyCodeLine{441 \textcolor{preprocessor}{typedef typename ActionRequest3::ARGTYPE5 Action3\_ARGTYPE5\_t;\(\backslash\)}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{typedef typename ActionRequest1::RETURNTYPE Action1\_RETURNTYPE\_t;\(\backslash\)}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{typedef typename ActionRequest2::RETURNTYPE Action2\_RETURNTYPE\_t;\(\backslash\)}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{typedef typename ActionRequest3::RETURNTYPE Action3\_RETURNTYPE\_t;\(\backslash\)}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{typedef typename ActionRequest1::CLASSTOPASS Action1\_CLASSTOPASS\_t;\(\backslash\)}}
+\DoxyCodeLine{448 \textcolor{preprocessor}{typedef typename ActionRequest2::CLASSTOPASS Action2\_CLASSTOPASS\_t;\(\backslash\)}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{typedef typename ActionRequest3::CLASSTOPASS Action3\_CLASSTOPASS\_t;}}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451 \textcolor{comment}{//template<class TActionRequestToRun>\(\backslash\)}}
+\DoxyCodeLine{452 \textcolor{comment}{}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define DeclareUtilityRequestFunctions \(\backslash\)}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{template<class  TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{void RunRequest1(uint16\_t AOID, Action1\_ARGTYPE1\_t arg1 = false, Action1\_ARGTYPE2\_t arg2 = false, Action1\_ARGTYPE3\_t arg3 = false, Action1\_ARGTYPE4\_t arg4 = false, Action1\_ARGTYPE5\_t arg5 = false);\(\backslash\)}}
+\DoxyCodeLine{456 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{template<class TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{458 \textcolor{preprocessor}{void RunRequest2(uint16\_t AOID, Action2\_ARGTYPE1\_t arg1 = false, Action2\_ARGTYPE2\_t arg2 = false, Action2\_ARGTYPE3\_t arg3 = false, Action2\_ARGTYPE4\_t arg4 = false, Action2\_ARGTYPE5\_t arg5 = false);\(\backslash\)}}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{template<class TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{void RunRequest3(uint16\_t AOID, Action3\_ARGTYPE1\_t arg1 = false, Action3\_ARGTYPE2\_t arg2 = false, Action3\_ARGTYPE3\_t arg3 = false, Action3\_ARGTYPE4\_t arg4 = false, Action3\_ARGTYPE5\_t arg5 = false);\(\backslash\)}}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{463 \textcolor{preprocessor}{template<class TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{464 \textcolor{preprocessor}{Token* RunRequestWithWait1(uint16\_t AOID, Action1\_ARGTYPE1\_t arg1 = false, Action1\_ARGTYPE2\_t arg2 = false, Action1\_ARGTYPE3\_t arg3 = false, Action1\_ARGTYPE4\_t arg4 = false, Action1\_ARGTYPE5\_t arg5 = false);\(\backslash\)}}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{466 \textcolor{preprocessor}{template<class TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{void DoneWithRequest1(Token* tokenOfRequest);\(\backslash\)}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{template<class TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{Token* RunRequestWithWait2(uint16\_t AOID, Action2\_ARGTYPE1\_t arg1 = false, Action2\_ARGTYPE2\_t arg2 = false, Action2\_ARGTYPE3\_t arg3 = false, Action2\_ARGTYPE4\_t arg4 = false, Action2\_ARGTYPE5\_t arg5 = false); \(\backslash\)}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{template<class TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{473 \textcolor{preprocessor}{void DoneWithRequest2(Token* tokenOfRequest);\(\backslash\)}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{475 \textcolor{preprocessor}{template<class TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{Token* RunRequestWithWait3(uint16\_t AOID, Action3\_ARGTYPE1\_t arg1 = false, Action3\_ARGTYPE2\_t arg2 = false, Action3\_ARGTYPE3\_t arg3 = false, Action3\_ARGTYPE4\_t arg4 = false, Action3\_ARGTYPE5\_t arg5 = false); \(\backslash\)}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{template<class TActionRequestToRun = bool>\(\backslash\)}}
+\DoxyCodeLine{479 \textcolor{preprocessor}{void DoneWithRequest3(Token* tokenOfRequest);}}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481 \textcolor{comment}{//macro for AEAOResource -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define TEMPLATEFOR\_AESPBOUTPUT template<uint32\_t OUTPUTSIZE, uint16\_t NUMOFINPUTSIGNALS  ,bool IsOutputSubscribeAble, uint8\_t NUMOFFILTERS, class TFilter1,class TFilter2,uint8\_t Filter2LinksFrom,class TFilter3,uint8\_t Filter3LinksFrom,class TFilter4,uint8\_t Filter4LinksFrom,class TFilter5, uint8\_t Filter5LinksFrom, \(\backslash\)}}
+\DoxyCodeLine{487 \textcolor{preprocessor}{uint32\_t TheParameterNOTone1, bool isParameterNOToneInputSize1  ,\(\backslash\)}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{uint32\_t TheParameterNOTone2 , bool isParameterNOToneInputSize2  ,\(\backslash\)}}
+\DoxyCodeLine{489 \textcolor{preprocessor}{uint32\_t TheParameterNOTone3 , bool isParameterNOToneInputSize3  ,\(\backslash\)}}
+\DoxyCodeLine{490 \textcolor{preprocessor}{uint32\_t TheParameterNOTone4 , bool isParameterNOToneInputSize4  ,\(\backslash\)}}
+\DoxyCodeLine{491 \textcolor{preprocessor}{uint32\_t TheParameterNOTone5, bool isParameterNOToneInputSize5  ,\(\backslash\)}}
+\DoxyCodeLine{492 \textcolor{preprocessor}{uint32\_t TheParameterNOTone6, bool isParameterNOToneInputSize6  ,\(\backslash\)}}
+\DoxyCodeLine{493 \textcolor{preprocessor}{uint32\_t TheParameterNOTone7, bool isParameterNOToneInputSize7  ,\(\backslash\)}}
+\DoxyCodeLine{494 \textcolor{preprocessor}{uint32\_t TheParameterNOTone8, bool isParameterNOToneInputSize8  ,\(\backslash\)}}
+\DoxyCodeLine{495 \textcolor{preprocessor}{uint32\_t TheParameterNOTone9, bool isParameterNOToneInputSize9  ,\(\backslash\)}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{uint32\_t TheParameterNOTone10, bool isParameterNOToneInputSize10 ,\(\backslash\)}}
+\DoxyCodeLine{497 \textcolor{preprocessor}{uint32\_t TheParameterNOTone11, bool isParameterNOToneInputSize11  ,\(\backslash\)}}
+\DoxyCodeLine{498 \textcolor{preprocessor}{uint32\_t TheParameterNOTone12, bool isParameterNOToneInputSize12 >}}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define TEMPLATEFOR\_AESPBOUTPARAMS OUTPUTSIZE, NUMOFINPUTSIGNALS,IsOutputSubscribeAble,NUMOFFILTERS,  TFilter1, TFilter2,Filter2LinksFrom, TFilter3,Filter3LinksFrom, TFilter4,Filter4LinksFrom, TFilter5,Filter5LinksFrom, \(\backslash\)}}
+\DoxyCodeLine{500 \textcolor{preprocessor}{TheParameterNOTone1, isParameterNOToneInputSize1, \(\backslash\)}}
+\DoxyCodeLine{501 \textcolor{preprocessor}{TheParameterNOTone2, isParameterNOToneInputSize2, \(\backslash\)}}
+\DoxyCodeLine{502 \textcolor{preprocessor}{TheParameterNOTone3, isParameterNOToneInputSize3, \(\backslash\)}}
+\DoxyCodeLine{503 \textcolor{preprocessor}{TheParameterNOTone4, isParameterNOToneInputSize4, \(\backslash\)}}
+\DoxyCodeLine{504 \textcolor{preprocessor}{TheParameterNOTone5, isParameterNOToneInputSize5, \(\backslash\)}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{TheParameterNOTone6, isParameterNOToneInputSize6, \(\backslash\)}}
+\DoxyCodeLine{506 \textcolor{preprocessor}{TheParameterNOTone7, isParameterNOToneInputSize7, \(\backslash\)}}
+\DoxyCodeLine{507 \textcolor{preprocessor}{TheParameterNOTone8, isParameterNOToneInputSize8, \(\backslash\)}}
+\DoxyCodeLine{508 \textcolor{preprocessor}{TheParameterNOTone9, isParameterNOToneInputSize9, \(\backslash\)}}
+\DoxyCodeLine{509 \textcolor{preprocessor}{TheParameterNOTone10, isParameterNOToneInputSize10, \(\backslash\)}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{TheParameterNOTone11, isParameterNOToneInputSize11, \(\backslash\)}}
+\DoxyCodeLine{511 \textcolor{preprocessor}{TheParameterNOTone12, isParameterNOToneInputSize12}}
+\DoxyCodeLine{512 }
+\DoxyCodeLine{513 \textcolor{comment}{//\#endif }}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515 }
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517 \textcolor{preprocessor}{\#define TEMPLATESPB\_Filters uint8\_t NumOfFilters= 0, class TFilter1 = AENullClass, class TFilter2 = AENullClass, uint8\_t Filter2LinksFrom = 0, class TFilter3 = AENullClass, uint8\_t Filter3LinksFrom = 0, class TFilter4 = AENullClass, uint8\_t Filter4LinksFrom = 0, class TFilter5 = AENullClass , uint8\_t Filter5LinksFrom = 0}}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#define TEMPLATESPB\_FiltersFunctionParams uint8\_t NumOfFilters, class TFilter1, class TFilter2, uint8\_t Filter2LinksFrom, class TFilter3, uint8\_t Filter3LinksFrom, class TFilter4, uint8\_t Filter4LinksFrom, class TFilter5, uint8\_t Filter5LinksFrom }}
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#define TEMPLATESPB\_FilterParams NumOfFilters, TFilter1, TFilter2,Filter2LinksFrom, TFilter3, Filter3LinksFrom,TFilter4, Filter4LinksFrom, TFilter5, Filter5LinksFrom}}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521 }
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#define AEPOOLMANAGERTEMPLATE template<class TEvent1 , uint16\_t sizeOfEvent1Pool,class TEvent2 , uint16\_t sizeOfEvent2Pool,class TEvent3 , uint16\_t sizeOfEvent3Pool,class TEvent4 , uint16\_t sizeOfEvent4Pool, class TEvent5 , uint16\_t sizeOfEvent5Pool>}}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define AEPOOLMANAGERTEMPLATE\_ARGS TEvent1, sizeOfEvent1Pool, TEvent2, sizeOfEvent2Pool, TEvent3, sizeOfEvent3Pool, TEvent4 , sizeOfEvent4Pool, TEvent5 , sizeOfEvent5Pool}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527 \textcolor{comment}{//template for clock}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#define TEMPLATEFOR\_AEClock template<uint16\_t NumOfSensorsIWillBeSetTo\_Prescale1 = 0, \(\backslash\)}}
+\DoxyCodeLine{529 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale1 = 0,\(\backslash\)}}
+\DoxyCodeLine{530 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale1 = 0,\(\backslash\)}}
+\DoxyCodeLine{531 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale2 = 0,\(\backslash\)}}
+\DoxyCodeLine{532 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale2 = 0,\(\backslash\)}}
+\DoxyCodeLine{533 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale2 = 0,\(\backslash\)}}
+\DoxyCodeLine{534 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale4 = 0,\(\backslash\)}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale4 = 0,\(\backslash\)}}
+\DoxyCodeLine{536 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale4 = 0,\(\backslash\)}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale8 = 0,\(\backslash\)}}
+\DoxyCodeLine{538 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale8 = 0,\(\backslash\)}}
+\DoxyCodeLine{539 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale8 = 0,\(\backslash\)}}
+\DoxyCodeLine{540 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale16 = 0,\(\backslash\)}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale16 = 0,\(\backslash\)}}
+\DoxyCodeLine{542 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale16 = 0,\(\backslash\)}}
+\DoxyCodeLine{543 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale32 = 0,\(\backslash\)}}
+\DoxyCodeLine{544 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale32 = 0,\(\backslash\)}}
+\DoxyCodeLine{545 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale32 = 0,\(\backslash\)}}
+\DoxyCodeLine{546 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale64 = 0,\(\backslash\)}}
+\DoxyCodeLine{547 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale64 = 0,\(\backslash\)}}
+\DoxyCodeLine{548 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale64 = 0>}}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#define TEMPLATEFORNoDefaults\_AEClock template<uint16\_t NumOfSensorsIWillBeSetTo\_Prescale1, \(\backslash\)}}
+\DoxyCodeLine{551 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale1,\(\backslash\)}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale1,\(\backslash\)}}
+\DoxyCodeLine{553 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale2,\(\backslash\)}}
+\DoxyCodeLine{554 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale2,\(\backslash\)}}
+\DoxyCodeLine{555 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale2,\(\backslash\)}}
+\DoxyCodeLine{556 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale4,\(\backslash\)}}
+\DoxyCodeLine{557 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale4,\(\backslash\)}}
+\DoxyCodeLine{558 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale4,\(\backslash\)}}
+\DoxyCodeLine{559 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale8,\(\backslash\)}}
+\DoxyCodeLine{560 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale8,\(\backslash\)}}
+\DoxyCodeLine{561 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale8,\(\backslash\)}}
+\DoxyCodeLine{562 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale16,\(\backslash\)}}
+\DoxyCodeLine{563 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale16,\(\backslash\)}}
+\DoxyCodeLine{564 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale16,\(\backslash\)}}
+\DoxyCodeLine{565 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale32,\(\backslash\)}}
+\DoxyCodeLine{566 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale32,\(\backslash\)}}
+\DoxyCodeLine{567 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale32,\(\backslash\)}}
+\DoxyCodeLine{568 \textcolor{preprocessor}{uint16\_t NumOfSensorsIWillBeSetTo\_Prescale64,\(\backslash\)}}
+\DoxyCodeLine{569 \textcolor{preprocessor}{uint16\_t NumOfInterpretorsIWillBeSetTo\_Prescale64,\(\backslash\)}}
+\DoxyCodeLine{570 \textcolor{preprocessor}{uint16\_t NumOfTDUsIWillBeSetTo\_Prescale64>}}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{572 \textcolor{preprocessor}{\#define TEMPLATEFORParams\_AEClock NumOfSensorsIWillBeSetTo\_Prescale1, \(\backslash\)}}
+\DoxyCodeLine{573 \textcolor{preprocessor}{ NumOfInterpretorsIWillBeSetTo\_Prescale1,\(\backslash\)}}
+\DoxyCodeLine{574 \textcolor{preprocessor}{ NumOfTDUsIWillBeSetTo\_Prescale1,\(\backslash\)}}
+\DoxyCodeLine{575 \textcolor{preprocessor}{ NumOfSensorsIWillBeSetTo\_Prescale2,\(\backslash\)}}
+\DoxyCodeLine{576 \textcolor{preprocessor}{ NumOfInterpretorsIWillBeSetTo\_Prescale2,\(\backslash\)}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{ NumOfTDUsIWillBeSetTo\_Prescale2,\(\backslash\)}}
+\DoxyCodeLine{578 \textcolor{preprocessor}{ NumOfSensorsIWillBeSetTo\_Prescale4,\(\backslash\)}}
+\DoxyCodeLine{579 \textcolor{preprocessor}{ NumOfInterpretorsIWillBeSetTo\_Prescale4,\(\backslash\)}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{ NumOfTDUsIWillBeSetTo\_Prescale4,\(\backslash\)}}
+\DoxyCodeLine{581 \textcolor{preprocessor}{ NumOfSensorsIWillBeSetTo\_Prescale8,\(\backslash\)}}
+\DoxyCodeLine{582 \textcolor{preprocessor}{ NumOfInterpretorsIWillBeSetTo\_Prescale8,\(\backslash\)}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{ NumOfTDUsIWillBeSetTo\_Prescale8,\(\backslash\)}}
+\DoxyCodeLine{584 \textcolor{preprocessor}{ NumOfSensorsIWillBeSetTo\_Prescale16,\(\backslash\)}}
+\DoxyCodeLine{585 \textcolor{preprocessor}{ NumOfInterpretorsIWillBeSetTo\_Prescale16,\(\backslash\)}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{ NumOfTDUsIWillBeSetTo\_Prescale16,\(\backslash\)}}
+\DoxyCodeLine{587 \textcolor{preprocessor}{ NumOfSensorsIWillBeSetTo\_Prescale32,\(\backslash\)}}
+\DoxyCodeLine{588 \textcolor{preprocessor}{ NumOfInterpretorsIWillBeSetTo\_Prescale32,\(\backslash\)}}
+\DoxyCodeLine{589 \textcolor{preprocessor}{ NumOfTDUsIWillBeSetTo\_Prescale32,\(\backslash\)}}
+\DoxyCodeLine{590 \textcolor{preprocessor}{ NumOfSensorsIWillBeSetTo\_Prescale64,\(\backslash\)}}
+\DoxyCodeLine{591 \textcolor{preprocessor}{ NumOfInterpretorsIWillBeSetTo\_Prescale64,\(\backslash\)}}
+\DoxyCodeLine{592 \textcolor{preprocessor}{ NumOfTDUsIWillBeSetTo\_Prescale64}}
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596 }
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598 }
+\DoxyCodeLine{599 }
+
+\end{DoxyCode}

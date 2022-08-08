@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_integration_test.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,6 +61,11 @@ $(document).ready(function(){initNavTree('_integration_test.html',''); initResiz
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="_main.html">Main</a></li><li class="navelem"><a class="el" href="_modules.html">Modules</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div><div class="header">
   <div class="headertitle"><div class="title">IntegrationTest </div></div>
 </div><!--header-->
@@ -91,23 +75,7 @@ Module's Role</h2>
 <p >AERTOS has it's own module for conducting Integration tests.<br  />
 <br  />
 These are the APIs for integration testing</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#pragma once </span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_AECore_Tests1(testName, thingToAssert, AssertionMessage) </span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_END_AECore_Tests1 </span></div>
-<div class="line"><span class="preprocessor">#if BUILD_TESTS == TRUE</span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_END_TestsAfterTimer_AEHal_Tests1(timeInMilliBeforeEnd) _AEITEST_END_TestsAfterTimer(timeInMilliBeforeEnd)</span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_AEHal_Tests1(testName, thingToAssert, AssertionMessage) _AEITEST(testName, thingToAssert, AssertionMessage) </span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_EndTestsIfFalseAssertion_AEHal_Tests1(testName, thingToAssert, AssertionMessage) _AEITEST_EndTestsIfFalseAssertion(testName, thingToAssert, AssertionMessage) </span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_END_AEHal_Tests1 _AEITEST_END</span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_EXPECT_TEST_TO_RUN_AEHal_Tests1(testName) _AEITEST_EXPECT_TEST_TO_RUN(testName)</span></div>
-<div class="line"><span class="preprocessor">#else</span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_END_TestsAfterTimer_AEHal_Tests1(timeInMilliBeforeEnd) </span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_AEHal_Tests1(testName, thingToAssert, AssertionMessage) </span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_EndTestsIfFalseAssertion_AEHal_Tests1(testName, thingToAssert, AssertionMessage) </span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_END_AEHal_Tests1 </span></div>
-<div class="line"><span class="preprocessor">#define AEITEST_EXPECT_TEST_TO_RUN_AEHal_Tests1(testName) </span></div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-</div><!-- fragment --> <pre class="fragment">&lt;h4&gt;integration test enders: will end the test in various ways&lt;span style="font-family: monospace;"&gt;&lt;/span&gt;&lt;/h4&gt;
+<div class="fragment"></div><!-- fragment --> <pre class="fragment">&lt;h4&gt;integration test enders: will end the test in various ways&lt;span style="font-family: monospace;"&gt;&lt;/span&gt;&lt;/h4&gt;
 the following will end the test after 5 seconds have passed \snippet c:\visualgdb_projects\aertoscopy\src\AE\hal\exeHalTest\ADC_TEST.cpp timed end
 
 &lt;h4&gt;integration test specifics:&lt;/h4&gt;
@@ -118,13 +86,9 @@ expects a test with the name specified to run at a later time. if this test does
 </pre><p> okp  </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="_main.html">Main</a></li><li class="navelem"><a class="el" href="_modules.html">Modules</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

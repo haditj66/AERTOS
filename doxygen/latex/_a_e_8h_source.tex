@@ -1,0 +1,165 @@
+\hypertarget{_a_e_8h_source}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AE.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{comment}{//DONT PUT \#include AEUtils.H HERE. IT WONT WORK!}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{8  }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}AEConfig.h"{}} }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{//TODO: the bottom should not be configured and should maybe be moved to another lcoation?}}
+\DoxyCodeLine{16 \textcolor{comment}{//for concactenating the value of two macros}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define M\_CONC(A, B) M\_CONC\_(A, B)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define M\_CONC\_(A, B) A\#\#B}}
+\DoxyCodeLine{19 \textcolor{comment}{//event names for enums}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define Event1\_Evt M\_CONC(Event1,\_Evt) }}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define Event2\_Evt M\_CONC(Event2,\_Evt) }}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define Event3\_Evt M\_CONC(Event3,\_Evt) }}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define Event4\_Evt M\_CONC(Event4,\_Evt) }}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define Event5\_Evt M\_CONC(Event5,\_Evt) }}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define Event6\_Evt M\_CONC(Event6,\_Evt) }}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//define all signals events used in the project here. -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 \textcolor{keyword}{enum} ProjectEventSignals \{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#if Event1Size > 0}}
+\DoxyCodeLine{32     Event1\_Evt = 0,}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#if Event2Size > 0}}
+\DoxyCodeLine{35     Event2\_Evt,}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if Event3Size > 0}}
+\DoxyCodeLine{38     Event3\_Evt,}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#if Event4Size > 0}}
+\DoxyCodeLine{41     Event4\_Evt,}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#if Event5Size > 0}}
+\DoxyCodeLine{44     Event5\_Evt,}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#if Event6Size > 0}}
+\DoxyCodeLine{47     Event6\_Evt,}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{49     MAX\_NumOfEvents,}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{//place your signals here.}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#if Signal1 != 1000}}
+\DoxyCodeLine{53     Signal1,}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#if Signal2 != 1000}}
+\DoxyCodeLine{56     Signal2,}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#if Signal3 != 1000}}
+\DoxyCodeLine{59     Signal3,}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#if Signal4 != 1000}}
+\DoxyCodeLine{62     Signal4,}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#if Signal5 != 1000}}
+\DoxyCodeLine{65     Signal5,}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#if Signal6 != 1000}}
+\DoxyCodeLine{68     Signal6,}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#if Signal7 != 1000}}
+\DoxyCodeLine{71     Signal7,}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \_MAX\_NumOfAllEvents,}
+\DoxyCodeLine{75     \textcolor{comment}{//the following events are events used ONLY by fsms. they are not stored in the event subscribers buffer as they are always posted}}
+\DoxyCodeLine{76     \textcolor{comment}{// directly to an AOfsm and never published. }}
+\DoxyCodeLine{77     Enter\_Sig,}
+\DoxyCodeLine{78     Exit\_Sig,}
+\DoxyCodeLine{79     Update\_Sig,}
+\DoxyCodeLine{80     ActivateFSM\_Sig,}
+\DoxyCodeLine{81     DeActivateFSM\_Sig}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define NUMOFEVENTS MAX\_NumOfEvents}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define MAX\_NumOfAllEvents \_MAX\_NumOfAllEvents }\textcolor{comment}{//-\/1 it should be minus one however that "{}MAX\_NumOfEvents"{} in the enum adds one more place to the enum. this means that I will have one empty slot in the EventSubscribers[evtId][AOID]  array at the evtId = MAX\_NumOfEvents.}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#ifndef configAE\_USE\_TDUs\_AsService}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define configAE\_USE\_TDUs\_AsService 0}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#ifndef configAE\_USE\_U\_AsService}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define configAE\_USE\_U\_AsService 0}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#ifndef configAE\_USE\_DDSM\_AsService}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define configAE\_USE\_DDSM\_AsService 0}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#ifndef AEconfigUSE\_TRACE\_FACILITY}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define AEconfigUSE\_TRACE\_FACILITY 0}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105   }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#ifndef AEINCLUDE\_eTaskGetState}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define AEINCLUDE\_eTaskGetState 1}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#ifndef MAXNUM\_OF\_SUBSCRIBERS\_To\_A\_SPB}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define MAXNUM\_OF\_SUBSCRIBERS\_To\_A\_SPB 2}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#ifndef MAXNUM\_OF\_AE\_SUBSCRIPTIONS\_To\_SPBs}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define MAXNUM\_OF\_AE\_SUBSCRIPTIONS\_To\_SPBs 3}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#ifndef MAXNUM\_OF\_TOTAL\_SPB\_SUBSCRIPTIONS}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define MAXNUM\_OF\_TOTAL\_SPB\_SUBSCRIPTIONS 5}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#ifndef MaxNumOfAELoops}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define MaxNumOfAELoops 1}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#ifndef MAXSPB\_CHAIN\_POOLSIZE}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define MAXSPB\_CHAIN\_POOLSIZE 4}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#ifndef MaxAELoopsPerClock }}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define MaxAELoopsPerClock 3}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#ifndef MaxNumOfGPIOPinsToUse}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define MaxNumOfGPIOPinsToUse 25}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifndef Event1}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define Event1 AENULLEvent}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define Event1Size 0}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#ifndef Event2}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define Event2 AENULLEvent}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define Event2Size 0}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#ifndef Event3}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define Event3 AENULLEvent}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define Event3Size 0}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#ifndef Event4}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define Event4 AENULLEvent}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define Event4Size 0}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#ifndef Event5}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define Event5 AENULLEvent}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define Event5Size 0}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162  }
+
+\end{DoxyCode}

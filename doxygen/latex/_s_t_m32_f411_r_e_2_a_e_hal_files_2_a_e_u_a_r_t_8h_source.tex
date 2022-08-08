@@ -1,0 +1,179 @@
+\hypertarget{_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_u_a_r_t_8h_source}{}\doxysection{AEUART.\+h}
+\label{_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_u_a_r_t_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AEHalFiles/AEUART.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AEHalFiles/AEUART.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}AEUARTPeripheral.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEUART::TansmitMsg(\textcolor{keywordtype}{char} \textcolor{keyword}{const}*  msg, uint32\_t size) }
+\DoxyCodeLine{12 \{ }
+\DoxyCodeLine{13     \textcolor{keywordflow}{while} (HAL\_UART\_GetState(\_uartHandle) == HAL\_UART\_STATE\_BUSY\_TX)}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15     \} }
+\DoxyCodeLine{16     HAL\_UART\_Transmit\_DMA(\_uartHandle, (uint8\_t*)msg, size);}
+\DoxyCodeLine{17 \} }
+\DoxyCodeLine{18  }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{template}<templateForUART>}
+\DoxyCodeLine{25     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_u_a_r_t_peripheral}{UARTPeripheral<templateargsForUART>::\_InitializePinSelectors}}(CreateTypeSelector\_funcPtr(\&functPtrsToChangeTypeSelectorss)[2])}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         }
+\DoxyCodeLine{28  }
+\DoxyCodeLine{29             StartPinSelectorForPin(1)}
+\DoxyCodeLine{30                 M\_IncludePossiblePin(Portenum::PortA, PinEnum::PIN2)}
+\DoxyCodeLine{31                 M\_IncludePossiblePin(Portenum::PortD, PinEnum::PIN5)}
+\DoxyCodeLine{32             EndPinSelectorForPin}
+\DoxyCodeLine{33             }
+\DoxyCodeLine{34             StartPinSelectorForPin(2)}
+\DoxyCodeLine{35                 M\_IncludePossiblePin(Portenum::PortA, PinEnum::PIN3)}
+\DoxyCodeLine{36                 M\_IncludePossiblePin(Portenum::PortD, PinEnum::PIN6)}
+\DoxyCodeLine{37             EndPinSelectorForPin}
+\DoxyCodeLine{38   }
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40  }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 template<templateForUART>}
+\DoxyCodeLine{44     inline \textcolor{keywordtype}{void} \mbox{\hyperlink{class_u_a_r_t_peripheral}{UARTPeripheral}}<templateargsForUART>::\_Initialize(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2, Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4, Port\_t port5, Pin\_t pin5)}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         }
+\DoxyCodeLine{47         \textcolor{comment}{//make sure baude rate is valid}}
+\DoxyCodeLine{48         \textcolor{keywordtype}{bool} validBaud = (BaudRate == 1200) ||}
+\DoxyCodeLine{49             (BaudRate == 2400) ||}
+\DoxyCodeLine{50             (BaudRate == 4800) ||}
+\DoxyCodeLine{51             (BaudRate == 19200) ||}
+\DoxyCodeLine{52             (BaudRate == 38400) ||}
+\DoxyCodeLine{53             (BaudRate == 57600) ||}
+\DoxyCodeLine{54             (BaudRate == 115200) ||}
+\DoxyCodeLine{55             (BaudRate == 460800) ||}
+\DoxyCodeLine{56             (BaudRate == 921600);}
+\DoxyCodeLine{57         }
+\DoxyCodeLine{58         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(validBaud, \textcolor{stringliteral}{"{}you picked an invalid baud rate"{}});}
+\DoxyCodeLine{59         }
+\DoxyCodeLine{60         UART\_Port = port1;}
+\DoxyCodeLine{61         UART\_Pin =  pin1;}
+\DoxyCodeLine{62         TX\_Port = port2;}
+\DoxyCodeLine{63         TX\_Pin =  pin2;}
+\DoxyCodeLine{64         RX\_Port = port3;}
+\DoxyCodeLine{65         RX\_Pin =  pin3;}
+\DoxyCodeLine{66  }
+\DoxyCodeLine{67         \textcolor{comment}{//initialize the real peripheral here}}
+\DoxyCodeLine{68         }
+\DoxyCodeLine{69         USART\_TypeDef* uartInstance;}
+\DoxyCodeLine{70             }
+\DoxyCodeLine{71         \textcolor{keywordflow}{if} (this-\/>ForWhichPeripheralNumber == 1)}
+\DoxyCodeLine{72         \{}
+\DoxyCodeLine{73             uartInstance = USART1;}
+\DoxyCodeLine{74             \_\_HAL\_RCC\_USART1\_CLK\_ENABLE(); }
+\DoxyCodeLine{75             }
+\DoxyCodeLine{76             HAL\_NVIC\_SetPriority(USART1\_IRQn, 6, 0);}
+\DoxyCodeLine{77             HAL\_NVIC\_EnableIRQ(USART1\_IRQn);}
+\DoxyCodeLine{78         \} }
+\DoxyCodeLine{79         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this-\/>ForWhichPeripheralNumber == 2)}
+\DoxyCodeLine{80         \{}
+\DoxyCodeLine{81             uartInstance = USART2;}
+\DoxyCodeLine{82             \_\_HAL\_RCC\_USART2\_CLK\_ENABLE();}
+\DoxyCodeLine{83             }
+\DoxyCodeLine{84             HAL\_NVIC\_SetPriority(USART2\_IRQn, 6, 0);}
+\DoxyCodeLine{85             HAL\_NVIC\_EnableIRQ(USART2\_IRQn);}
+\DoxyCodeLine{86             }
+\DoxyCodeLine{87         \} }
+\DoxyCodeLine{88         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this-\/>ForWhichPeripheralNumber  == 6)}
+\DoxyCodeLine{89         \{}
+\DoxyCodeLine{90             uartInstance = USART6;}
+\DoxyCodeLine{91             \_\_HAL\_RCC\_USART6\_CLK\_ENABLE();}
+\DoxyCodeLine{92             }
+\DoxyCodeLine{93             HAL\_NVIC\_SetPriority(USART6\_IRQn, 6, 0);}
+\DoxyCodeLine{94             HAL\_NVIC\_EnableIRQ(USART6\_IRQn);}
+\DoxyCodeLine{95         \} }
+\DoxyCodeLine{96         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{97         \{}
+\DoxyCodeLine{98             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}you picked a uart instance that is not supported"{}});}
+\DoxyCodeLine{99         \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101         \textcolor{comment}{//PA2     -\/-\/-\/-\/-\/-\/> USART2\_TX}}
+\DoxyCodeLine{102         \textcolor{comment}{//PA3     -\/-\/-\/-\/-\/-\/> USART2\_RX }}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104         GPIO\_InitTypeDef GPIO\_InitStruct;}
+\DoxyCodeLine{105         GPIO\_InitStruct.Pin = pin1;}
+\DoxyCodeLine{106         GPIO\_InitStruct.Mode = GPIO\_MODE\_AF\_PP;}
+\DoxyCodeLine{107         GPIO\_InitStruct.Pull = GPIO\_PULLUP;}
+\DoxyCodeLine{108         GPIO\_InitStruct.Speed = GPIO\_SPEED\_FREQ\_VERY\_HIGH;}
+\DoxyCodeLine{109         GPIO\_InitStruct.Alternate = GPIO\_AF7\_USART2;}
+\DoxyCodeLine{110         HAL\_GPIO\_Init(port1, \&GPIO\_InitStruct);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         GPIO\_InitStruct.Pin = pin2;}
+\DoxyCodeLine{113         GPIO\_InitStruct.Mode = GPIO\_MODE\_AF\_PP;}
+\DoxyCodeLine{114         GPIO\_InitStruct.Pull = GPIO\_PULLUP;}
+\DoxyCodeLine{115         GPIO\_InitStruct.Speed = GPIO\_SPEED\_FREQ\_VERY\_HIGH;}
+\DoxyCodeLine{116         GPIO\_InitStruct.Alternate = GPIO\_AF7\_USART2;}
+\DoxyCodeLine{117         HAL\_GPIO\_Init(port2, \&GPIO\_InitStruct);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         this-\/>PeripheralHandle\_t.Instance = uartInstance;}
+\DoxyCodeLine{122         this-\/>PeripheralHandle\_t.Init.BaudRate = BaudRate;   \textcolor{comment}{//460800 * 2;    //460800;//UartConsole\_init-\/>BaudRate;//115200;}}
+\DoxyCodeLine{123         this-\/>PeripheralHandle\_t.Init.WordLength = UART\_WORDLENGTH\_8B;}
+\DoxyCodeLine{124         this-\/>PeripheralHandle\_t.Init.StopBits = UART\_STOPBITS\_1;}
+\DoxyCodeLine{125         this-\/>PeripheralHandle\_t.Init.Parity = UART\_PARITY\_NONE;}
+\DoxyCodeLine{126         this-\/>PeripheralHandle\_t.Init.Mode = UART\_MODE\_TX\_RX;}
+\DoxyCodeLine{127         this-\/>PeripheralHandle\_t.Init.HwFlowCtl = UART\_HWCONTROL\_NONE;}
+\DoxyCodeLine{128         this-\/>PeripheralHandle\_t.Init.OverSampling = UART\_OVERSAMPLING\_16;}
+\DoxyCodeLine{129         \textcolor{keywordtype}{int} isUartWorking = HAL\_UART\_Init(\&this-\/>PeripheralHandle\_t);}
+\DoxyCodeLine{130         \textcolor{keywordflow}{if} (isUartWorking != HAL\_OK)}
+\DoxyCodeLine{131         \{}
+\DoxyCodeLine{132             \textcolor{comment}{//\_Error\_Handler(\_\_FILE\_\_, \_\_LINE\_\_);}}
+\DoxyCodeLine{133         \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138         UART\_HandleTypeDef* uardhandle =  \&this-\/>PeripheralHandle\_t;}
+\DoxyCodeLine{139         }
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141         }
+\DoxyCodeLine{142         dmaForUART.SetCustomInitialization([](DMAHandleType\_t* DMAHandle, DMAStreamType\_t* DMAStream, uint32\_t dmaChannel)-\/> \textcolor{keywordtype}{void} \{}
+\DoxyCodeLine{143             }
+\DoxyCodeLine{144             \_\_HAL\_RCC\_DMA1\_CLK\_ENABLE();}
+\DoxyCodeLine{145             DMAHandle-\/>Instance = *DMAStream;}
+\DoxyCodeLine{146             DMAHandle-\/>Init.Channel = dmaChannel;}
+\DoxyCodeLine{147             DMAHandle-\/>Init.Direction = DMA\_MEMORY\_TO\_PERIPH;}
+\DoxyCodeLine{148             DMAHandle-\/>Init.PeriphInc = DMA\_PINC\_DISABLE;}
+\DoxyCodeLine{149             DMAHandle-\/>Init.MemInc = DMA\_MINC\_ENABLE;}
+\DoxyCodeLine{150             DMAHandle-\/>Init.PeriphDataAlignment = DMA\_PDATAALIGN\_BYTE;}
+\DoxyCodeLine{151             DMAHandle-\/>Init.MemDataAlignment = DMA\_MDATAALIGN\_BYTE;}
+\DoxyCodeLine{152             DMAHandle-\/>Init.Mode = DMA\_NORMAL;}
+\DoxyCodeLine{153             DMAHandle-\/>Init.Priority = DMA\_PRIORITY\_MEDIUM;}
+\DoxyCodeLine{154             DMAHandle-\/>Init.FIFOMode = DMA\_FIFOMODE\_DISABLE;}
+\DoxyCodeLine{155             DMAHandle-\/>Init.FIFOThreshold = DMA\_FIFO\_THRESHOLD\_FULL;}
+\DoxyCodeLine{156             DMAHandle-\/>Init.MemBurst = DMA\_MBURST\_INC4;}
+\DoxyCodeLine{157             DMAHandle-\/>Init.PeriphBurst = DMA\_PBURST\_INC4;}
+\DoxyCodeLine{158             \textcolor{comment}{//hdma\_uart2\_TX.XferCpltCallback = \&DMATransferComplete;}}
+\DoxyCodeLine{159             HAL\_DMA\_Init(DMAHandle); }
+\DoxyCodeLine{160         \});}
+\DoxyCodeLine{161         }
+\DoxyCodeLine{162         dmaForUART.Init(\&this-\/>PeripheralHandle\_t, 1, DMA\_StreamEnum::DMAStream\_6, DMACHEnum::DMACH4, DMA\_NORMAL);}
+\DoxyCodeLine{163         \_\_HAL\_LINKDMA(uardhandle, hdmatx, *dmaForUART.GetDMAHandle());  }
+\DoxyCodeLine{164             }
+\DoxyCodeLine{165         }
+\DoxyCodeLine{166         }
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168         \textcolor{comment}{//start recieving}}
+\DoxyCodeLine{169         HAL\_UART\_Receive\_IT(\&this-\/>PeripheralHandle\_t, (uint8\_t*)readBuffer, ReceiveMsgSize);}
+\DoxyCodeLine{170         }
+\DoxyCodeLine{171  }
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173  }
+
+\end{DoxyCode}

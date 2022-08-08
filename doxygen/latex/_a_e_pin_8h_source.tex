@@ -1,0 +1,47 @@
+\hypertarget{_a_e_pin_8h_source}{}\doxysection{AEPin.\+h}
+\label{_a_e_pin_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEPin.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEPin.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2  }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}BoardTypes.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}PinSelector.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_pin}{AEPin}};}
+\DoxyCodeLine{9 \textcolor{keyword}{extern} \mbox{\hyperlink{class_a_e_pin}{AEPin}} UserDefinedAEPins[];}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_pin}{AEPin}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16   \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_a_e_pin}{AEPin}}(PinEnum pinenumType, Pin\_t halPin)}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \_pinenumType = pinenumType;}
+\DoxyCodeLine{20         \_halPin = halPin;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_numPinsCreatedSoFar; i++)}
+\DoxyCodeLine{23         \{}
+\DoxyCodeLine{24             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(UserDefinedAEPins[i].GetPinEnum() != pinenumType, \textcolor{stringliteral}{"{}make sure that the pinenum defined has not been one defined already"{}});}
+\DoxyCodeLine{25         \}}
+\DoxyCodeLine{26         \textcolor{comment}{//      UserDefinedAEPorts[\_numPortsCreatedSoFar] = this;}}
+\DoxyCodeLine{27         \_numPinsCreatedSoFar++;}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     }
+\DoxyCodeLine{32     PinEnum GetPinEnum() \{ \textcolor{keywordflow}{return} \_pinenumType; \}}
+\DoxyCodeLine{33     Pin\_t GetPin() \{ \textcolor{keywordflow}{return} \_halPin; \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{private}: }
+\DoxyCodeLine{36     PinEnum \_pinenumType;}
+\DoxyCodeLine{37     Pin\_t \_halPin; }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keyword}{static} uint32\_t \_numPinsCreatedSoFar;}
+\DoxyCodeLine{40     \textcolor{comment}{//  static AEPort* ALLPorts[15];}}
+\DoxyCodeLine{41 \};}
+
+\end{DoxyCode}

@@ -5,6 +5,9 @@
 
 #include "BoardTypes.h"
 
+//#include  "stm32f4xx_hal.h"
+//#include "AE_Init.h"
+
 #include "AEConfig.h"
 
 #ifdef AESIMULATION

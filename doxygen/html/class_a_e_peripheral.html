@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_a_e_peripheral.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,6 +61,7 @@ $(document).ready(function(){initNavTree('class_a_e_peripheral.html',''); initRe
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -95,681 +75,89 @@ $(document).ready(function(){initNavTree('class_a_e_peripheral.html',''); initRe
   <div class="headertitle"><div class="title">AEPeripheral&lt; TemplateFor_AEPeripherals &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_a_e_peripheral_8h_source.html">AEPeripheral.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae0f9b98723182f07c8fa2f328d9f614e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#ae0f9b98723182f07c8fa2f328d9f614e">AEPeripheral</a> (<a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#ad42ec00c7c0d51bd27af89eae8ab62ce">TemplateArgs_AEPeripherals</a> &gt; const &amp;)=delete</td></tr>
+<tr class="memitem:ae0f9b98723182f07c8fa2f328d9f614e"><td class="memItemLeft" align="right" valign="top"><a id="ae0f9b98723182f07c8fa2f328d9f614e" name="ae0f9b98723182f07c8fa2f328d9f614e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AEPeripheral</b> (<a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; TemplateArgs_AEPeripherals &gt; const &amp;)=delete</td></tr>
 <tr class="separator:ae0f9b98723182f07c8fa2f328d9f614e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8a692605c5d861b47415e8f85a6665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#aaf8a692605c5d861b47415e8f85a6665">operator=</a> (<a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#ad42ec00c7c0d51bd27af89eae8ab62ce">TemplateArgs_AEPeripherals</a> &gt; const &amp;)=delete</td></tr>
+<tr class="memitem:aaf8a692605c5d861b47415e8f85a6665"><td class="memItemLeft" align="right" valign="top"><a id="aaf8a692605c5d861b47415e8f85a6665" name="aaf8a692605c5d861b47415e8f85a6665"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; TemplateArgs_AEPeripherals &gt; const &amp;)=delete</td></tr>
 <tr class="separator:aaf8a692605c5d861b47415e8f85a6665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af7873ff213c9b831487c89195c98b864"><td class="memItemLeft" align="right" valign="top">static DerivedType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#af7873ff213c9b831487c89195c98b864">getInstance</a> ()</td></tr>
+<tr class="memitem:af7873ff213c9b831487c89195c98b864"><td class="memItemLeft" align="right" valign="top"><a id="af7873ff213c9b831487c89195c98b864" name="af7873ff213c9b831487c89195c98b864"></a>
+static DerivedType *&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
 <tr class="separator:af7873ff213c9b831487c89195c98b864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a1a4f15e9b0e631ed86e3495ac5ebfd80"><td class="memItemLeft" align="right" valign="top">PeripheralHandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a1a4f15e9b0e631ed86e3495ac5ebfd80">PeripheralHandle_t</a></td></tr>
+<tr class="memitem:a1a4f15e9b0e631ed86e3495ac5ebfd80"><td class="memItemLeft" align="right" valign="top"><a id="a1a4f15e9b0e631ed86e3495ac5ebfd80" name="a1a4f15e9b0e631ed86e3495ac5ebfd80"></a>
+PeripheralHandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>PeripheralHandle_t</b></td></tr>
 <tr class="separator:a1a4f15e9b0e631ed86e3495ac5ebfd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a843787859da7338c45d4d41e0d803ca0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a843787859da7338c45d4d41e0d803ca0">initializePeripheral</a> ()</td></tr>
+<tr class="memitem:a843787859da7338c45d4d41e0d803ca0"><td class="memItemLeft" align="right" valign="top"><a id="a843787859da7338c45d4d41e0d803ca0" name="a843787859da7338c45d4d41e0d803ca0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>initializePeripheral</b> ()</td></tr>
 <tr class="separator:a843787859da7338c45d4d41e0d803ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08f04ef997156f3fc7c10adf5af15de7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a08f04ef997156f3fc7c10adf5af15de7">_InitializePinSelectors</a> (<a class="el" href="_a_e_peripheral_8h.html#aac44b25878242e6ea69242639d5426cd">CreateTypeSelector_funcPtr</a>(&amp;<a class="el" href="class_a_e_peripheral.html#aa339deca3b734b2aff25e5f5474fd94c">functPtrsToChangeTypeSelectors</a>)[NumOfGpioPinsNeeded])=0</td></tr>
+<tr class="memitem:a08f04ef997156f3fc7c10adf5af15de7"><td class="memItemLeft" align="right" valign="top"><a id="a08f04ef997156f3fc7c10adf5af15de7" name="a08f04ef997156f3fc7c10adf5af15de7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>_InitializePinSelectors</b> (CreateTypeSelector_funcPtr(&amp;functPtrsToChangeTypeSelectors)[NumOfGpioPinsNeeded])=0</td></tr>
 <tr class="separator:a08f04ef997156f3fc7c10adf5af15de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c61b1a927f606e80d81dda07eb8f70e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a1c61b1a927f606e80d81dda07eb8f70e">AEPeripheral</a> ()</td></tr>
-<tr class="separator:a1c61b1a927f606e80d81dda07eb8f70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa81f1289bdfa585aec241299b97dc9c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#afa81f1289bdfa585aec241299b97dc9c">_Initialize</a> (<a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port1, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin1, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port2, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin2, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port3, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin3, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port4, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin4, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port5, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin5)=0</td></tr>
+<tr class="memitem:afa81f1289bdfa585aec241299b97dc9c"><td class="memItemLeft" align="right" valign="top"><a id="afa81f1289bdfa585aec241299b97dc9c" name="afa81f1289bdfa585aec241299b97dc9c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>_Initialize</b> (Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)=0</td></tr>
 <tr class="separator:afa81f1289bdfa585aec241299b97dc9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa436ea03ab769bcbeedac6e797746c18"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#aa436ea03ab769bcbeedac6e797746c18">Pre_Initialize</a> (<a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port1, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin1, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port2, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin2, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port3, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin3, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port4, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin4, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port5, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin5)</td></tr>
+<tr class="memitem:aa436ea03ab769bcbeedac6e797746c18"><td class="memItemLeft" align="right" valign="top"><a id="aa436ea03ab769bcbeedac6e797746c18" name="aa436ea03ab769bcbeedac6e797746c18"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Pre_Initialize</b> (Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)</td></tr>
 <tr class="separator:aa436ea03ab769bcbeedac6e797746c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ad3f47b662716eacb3876f13b1858feb8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#ad3f47b662716eacb3876f13b1858feb8">ForWhichPeripheralNumber</a></td></tr>
+<tr class="memitem:ad3f47b662716eacb3876f13b1858feb8"><td class="memItemLeft" align="right" valign="top"><a id="ad3f47b662716eacb3876f13b1858feb8" name="ad3f47b662716eacb3876f13b1858feb8"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ForWhichPeripheralNumber</b></td></tr>
 <tr class="separator:ad3f47b662716eacb3876f13b1858feb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa339deca3b734b2aff25e5f5474fd94c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_e_peripheral_8h.html#aac44b25878242e6ea69242639d5426cd">CreateTypeSelector_funcPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#aa339deca3b734b2aff25e5f5474fd94c">functPtrsToChangeTypeSelectors</a> [NumOfGpioPinsNeeded]</td></tr>
+<tr class="memitem:aa339deca3b734b2aff25e5f5474fd94c"><td class="memItemLeft" align="right" valign="top"><a id="aa339deca3b734b2aff25e5f5474fd94c" name="aa339deca3b734b2aff25e5f5474fd94c"></a>
+CreateTypeSelector_funcPtr&#160;</td><td class="memItemRight" valign="bottom"><b>functPtrsToChangeTypeSelectors</b> [NumOfGpioPinsNeeded]</td></tr>
 <tr class="separator:aa339deca3b734b2aff25e5f5474fd94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5923ebc283a4ed90dec2402fe8a1366f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a5923ebc283a4ed90dec2402fe8a1366f">GPIOPinSelected1</a></td></tr>
+<tr class="memitem:a5923ebc283a4ed90dec2402fe8a1366f"><td class="memItemLeft" align="right" valign="top"><a id="a5923ebc283a4ed90dec2402fe8a1366f" name="a5923ebc283a4ed90dec2402fe8a1366f"></a>
+<a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GPIOPinSelected1</b></td></tr>
 <tr class="separator:a5923ebc283a4ed90dec2402fe8a1366f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16fc1be8549a8b8bca92b1228a30bc07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a16fc1be8549a8b8bca92b1228a30bc07">GPIOPinSelected2</a></td></tr>
+<tr class="memitem:a16fc1be8549a8b8bca92b1228a30bc07"><td class="memItemLeft" align="right" valign="top"><a id="a16fc1be8549a8b8bca92b1228a30bc07" name="a16fc1be8549a8b8bca92b1228a30bc07"></a>
+<a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GPIOPinSelected2</b></td></tr>
 <tr class="separator:a16fc1be8549a8b8bca92b1228a30bc07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19a26fce3366057928a328ccb46a24d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a19a26fce3366057928a328ccb46a24d7">GPIOPinSelected3</a></td></tr>
+<tr class="memitem:a19a26fce3366057928a328ccb46a24d7"><td class="memItemLeft" align="right" valign="top"><a id="a19a26fce3366057928a328ccb46a24d7" name="a19a26fce3366057928a328ccb46a24d7"></a>
+<a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GPIOPinSelected3</b></td></tr>
 <tr class="separator:a19a26fce3366057928a328ccb46a24d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a815223b5bc28774f7f2751b076ec2511"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a815223b5bc28774f7f2751b076ec2511">GPIOPinSelected4</a></td></tr>
+<tr class="memitem:a815223b5bc28774f7f2751b076ec2511"><td class="memItemLeft" align="right" valign="top"><a id="a815223b5bc28774f7f2751b076ec2511" name="a815223b5bc28774f7f2751b076ec2511"></a>
+<a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GPIOPinSelected4</b></td></tr>
 <tr class="separator:a815223b5bc28774f7f2751b076ec2511"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ebcf19e85d21bf1168cde35d626f166"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a1ebcf19e85d21bf1168cde35d626f166">GPIOPinSelected5</a></td></tr>
+<tr class="memitem:a1ebcf19e85d21bf1168cde35d626f166"><td class="memItemLeft" align="right" valign="top"><a id="a1ebcf19e85d21bf1168cde35d626f166" name="a1ebcf19e85d21bf1168cde35d626f166"></a>
+<a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GPIOPinSelected5</b></td></tr>
 <tr class="separator:a1ebcf19e85d21bf1168cde35d626f166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:a24cca7cae29c875700988eab66be5749"><td class="memItemLeft" align="right" valign="top">static DerivedType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a24cca7cae29c875700988eab66be5749">Instance</a> = nullptr</td></tr>
+<tr class="memitem:a24cca7cae29c875700988eab66be5749"><td class="memItemLeft" align="right" valign="top"><a id="a24cca7cae29c875700988eab66be5749" name="a24cca7cae29c875700988eab66be5749"></a>
+static DerivedType *&#160;</td><td class="memItemRight" valign="bottom"><b>Instance</b> = nullptr</td></tr>
 <tr class="separator:a24cca7cae29c875700988eab66be5749"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a7bc1460eb06fb63c43ae52f96a3380"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#a1a7bc1460eb06fb63c43ae52f96a3380">isAlreadyInitialized</a> = false</td></tr>
+<tr class="memitem:a1a7bc1460eb06fb63c43ae52f96a3380"><td class="memItemLeft" align="right" valign="top"><a id="a1a7bc1460eb06fb63c43ae52f96a3380" name="a1a7bc1460eb06fb63c43ae52f96a3380"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isAlreadyInitialized</b> = false</td></tr>
 <tr class="separator:a1a7bc1460eb06fb63c43ae52f96a3380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:aaa96fbeac3aeb80841b28dd5deb0db09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_peripheral.html#aaa96fbeac3aeb80841b28dd5deb0db09">AE_Init</a> (void)</td></tr>
+<tr class="memitem:aaa96fbeac3aeb80841b28dd5deb0db09"><td class="memItemLeft" align="right" valign="top"><a id="aaa96fbeac3aeb80841b28dd5deb0db09" name="aaa96fbeac3aeb80841b28dd5deb0db09"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AE_Init</b> (void)</td></tr>
 <tr class="separator:aaa96fbeac3aeb80841b28dd5deb0db09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae0f9b98723182f07c8fa2f328d9f614e" name="ae0f9b98723182f07c8fa2f328d9f614e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0f9b98723182f07c8fa2f328d9f614e">&#9670;&nbsp;</a></span>AEPeripheral() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::<a class="el" href="class_a_e_peripheral.html">AEPeripheral</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#ad42ec00c7c0d51bd27af89eae8ab62ce">TemplateArgs_AEPeripherals</a> &gt; const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1c61b1a927f606e80d81dda07eb8f70e" name="a1c61b1a927f606e80d81dda07eb8f70e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c61b1a927f606e80d81dda07eb8f70e">&#9670;&nbsp;</a></span>AEPeripheral() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::<a class="el" href="class_a_e_peripheral.html">AEPeripheral</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="afa81f1289bdfa585aec241299b97dc9c" name="afa81f1289bdfa585aec241299b97dc9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa81f1289bdfa585aec241299b97dc9c">&#9670;&nbsp;</a></span>_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::_Initialize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port4</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin4</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port5</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin5</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_a_d_c_peripheral.html#a4ad841b7b5d59e51f7319a5d91a331ac">ADCPeripheral&lt; templateForADC_def &gt;</a>, <a class="el" href="class_g_p_i_o_input_peripheral.html#a9a121035870dd3d100124097a7da1da6">GPIOInputPeripheral&lt; templateForButton &gt;</a>, <a class="el" href="class_g_p_i_o_peripheral.html#acddc1620a0b9eba564cb9090be9827c7">GPIOPeripheral&lt; templateForGPIO &gt;</a>, and <a class="el" href="class_u_a_r_t_peripheral.html#a2c8ff980fe3404a735c55faf48f416d4">UARTPeripheral&lt; templateForUART &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a08f04ef997156f3fc7c10adf5af15de7" name="a08f04ef997156f3fc7c10adf5af15de7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08f04ef997156f3fc7c10adf5af15de7">&#9670;&nbsp;</a></span>_InitializePinSelectors()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::_InitializePinSelectors </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_a_e_peripheral_8h.html#aac44b25878242e6ea69242639d5426cd">CreateTypeSelector_funcPtr</a>(&amp;)&#160;</td>
-          <td class="paramname"><em>functPtrsToChangeTypeSelectors</em>[NumOfGpioPinsNeeded]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af7873ff213c9b831487c89195c98b864" name="af7873ff213c9b831487c89195c98b864"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7873ff213c9b831487c89195c98b864">&#9670;&nbsp;</a></span>getInstance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">DerivedType * <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt;::getInstance</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a843787859da7338c45d4d41e0d803ca0" name="a843787859da7338c45d4d41e0d803ca0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a843787859da7338c45d4d41e0d803ca0">&#9670;&nbsp;</a></span>initializePeripheral()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::initializePeripheral </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaf8a692605c5d861b47415e8f85a6665" name="aaf8a692605c5d861b47415e8f85a6665"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf8a692605c5d861b47415e8f85a6665">&#9670;&nbsp;</a></span>operator=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#ad42ec00c7c0d51bd27af89eae8ab62ce">TemplateArgs_AEPeripherals</a> &gt; const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa436ea03ab769bcbeedac6e797746c18" name="aa436ea03ab769bcbeedac6e797746c18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa436ea03ab769bcbeedac6e797746c18">&#9670;&nbsp;</a></span>Pre_Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt;::Pre_Initialize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port4</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin4</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>port5</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a>&#160;</td>
-          <td class="paramname"><em>pin5</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_a_d_c_peripheral.html#af3c85b01bc06bf1d0b891680a9bc9e19">ADCPeripheral&lt; templateForADC_def &gt;</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="aaa96fbeac3aeb80841b28dd5deb0db09" name="aaa96fbeac3aeb80841b28dd5deb0db09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa96fbeac3aeb80841b28dd5deb0db09">&#9670;&nbsp;</a></span>AE_Init</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AE_Init </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad3f47b662716eacb3876f13b1858feb8" name="ad3f47b662716eacb3876f13b1858feb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3f47b662716eacb3876f13b1858feb8">&#9670;&nbsp;</a></span>ForWhichPeripheralNumber</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::ForWhichPeripheralNumber</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa339deca3b734b2aff25e5f5474fd94c" name="aa339deca3b734b2aff25e5f5474fd94c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa339deca3b734b2aff25e5f5474fd94c">&#9670;&nbsp;</a></span>functPtrsToChangeTypeSelectors</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_a_e_peripheral_8h.html#aac44b25878242e6ea69242639d5426cd">CreateTypeSelector_funcPtr</a> <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::functPtrsToChangeTypeSelectors[NumOfGpioPinsNeeded]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5923ebc283a4ed90dec2402fe8a1366f" name="a5923ebc283a4ed90dec2402fe8a1366f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5923ebc283a4ed90dec2402fe8a1366f">&#9670;&nbsp;</a></span>GPIOPinSelected1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a> <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::GPIOPinSelected1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a16fc1be8549a8b8bca92b1228a30bc07" name="a16fc1be8549a8b8bca92b1228a30bc07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16fc1be8549a8b8bca92b1228a30bc07">&#9670;&nbsp;</a></span>GPIOPinSelected2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a> <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::GPIOPinSelected2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a19a26fce3366057928a328ccb46a24d7" name="a19a26fce3366057928a328ccb46a24d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19a26fce3366057928a328ccb46a24d7">&#9670;&nbsp;</a></span>GPIOPinSelected3</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a> <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::GPIOPinSelected3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a815223b5bc28774f7f2751b076ec2511" name="a815223b5bc28774f7f2751b076ec2511"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a815223b5bc28774f7f2751b076ec2511">&#9670;&nbsp;</a></span>GPIOPinSelected4</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a> <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::GPIOPinSelected4</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1ebcf19e85d21bf1168cde35d626f166" name="a1ebcf19e85d21bf1168cde35d626f166"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ebcf19e85d21bf1168cde35d626f166">&#9670;&nbsp;</a></span>GPIOPinSelected5</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a> <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::GPIOPinSelected5</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a24cca7cae29c875700988eab66be5749" name="a24cca7cae29c875700988eab66be5749"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24cca7cae29c875700988eab66be5749">&#9670;&nbsp;</a></span>Instance</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">DerivedType * <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt;::Instance = nullptr</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1a7bc1460eb06fb63c43ae52f96a3380" name="a1a7bc1460eb06fb63c43ae52f96a3380"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a7bc1460eb06fb63c43ae52f96a3380">&#9670;&nbsp;</a></span>isAlreadyInitialized</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#a64ee50ec89fad1653dd234201a2eedb3">TemplateFor_AEPeripherals_NoDefaults</a> &gt;::isAlreadyInitialized = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1a4f15e9b0e631ed86e3495ac5ebfd80" name="a1a4f15e9b0e631ed86e3495ac5ebfd80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a4f15e9b0e631ed86e3495ac5ebfd80">&#9670;&nbsp;</a></span>PeripheralHandle_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">PeripheralHandleTypeDef <a class="el" href="class_a_e_peripheral.html">AEPeripheral</a>&lt; <a class="el" href="_a_e_defines_8h.html#addc992aa0a107273ef92bf7d49ae2fc1">TemplateFor_AEPeripherals</a> &gt;::PeripheralHandle_t</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/<a class="el" href="_a_e_peripheral_8h_source.html">AEPeripheral.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_a_e_peripheral.html">AEPeripheral</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

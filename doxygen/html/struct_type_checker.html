@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('struct_type_checker.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,6 +61,7 @@ $(document).ready(function(){initNavTree('struct_type_checker.html',''); initRes
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
@@ -89,423 +69,73 @@ $(document).ready(function(){initNavTree('struct_type_checker.html',''); initRes
   <div class="headertitle"><div class="title">TypeChecker Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_a_e_utils_8h_source.html">AEUtils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9f35acd23ec2a44f19ecb9846018cb7c"><td class="memTemplParams" colspan="2">template&lt;class TTypeToCheck &gt; </td></tr>
-<tr class="memitem:a9f35acd23ec2a44f19ecb9846018cb7c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#a9f35acd23ec2a44f19ecb9846018cb7c">IsAENullActionRequest</a> ()</td></tr>
+<tr class="memitem:a9f35acd23ec2a44f19ecb9846018cb7c"><td class="memTemplParams" colspan="2"><a id="a9f35acd23ec2a44f19ecb9846018cb7c" name="a9f35acd23ec2a44f19ecb9846018cb7c"></a>
+template&lt;class TTypeToCheck &gt; </td></tr>
+<tr class="memitem:a9f35acd23ec2a44f19ecb9846018cb7c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsAENullActionRequest</b> ()</td></tr>
 <tr class="separator:a9f35acd23ec2a44f19ecb9846018cb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb564adc97debc147672c7462ecf55b4"><td class="memTemplParams" colspan="2">template&lt;class TTypeToCheck &gt; </td></tr>
-<tr class="memitem:aeb564adc97debc147672c7462ecf55b4"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#aeb564adc97debc147672c7462ecf55b4">IsAENullFSMUtility</a> ()</td></tr>
+<tr class="memitem:aeb564adc97debc147672c7462ecf55b4"><td class="memTemplParams" colspan="2"><a id="aeb564adc97debc147672c7462ecf55b4" name="aeb564adc97debc147672c7462ecf55b4"></a>
+template&lt;class TTypeToCheck &gt; </td></tr>
+<tr class="memitem:aeb564adc97debc147672c7462ecf55b4"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsAENullFSMUtility</b> ()</td></tr>
 <tr class="separator:aeb564adc97debc147672c7462ecf55b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a880df864d55c3bd3531279e8bd800c"><td class="memTemplParams" colspan="2">template&lt;class TTypetoCheck &gt; </td></tr>
-<tr class="memitem:a9a880df864d55c3bd3531279e8bd800c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#a9a880df864d55c3bd3531279e8bd800c">IsAENull</a> ()</td></tr>
+<tr class="memitem:a9a880df864d55c3bd3531279e8bd800c"><td class="memTemplParams" colspan="2"><a id="a9a880df864d55c3bd3531279e8bd800c" name="a9a880df864d55c3bd3531279e8bd800c"></a>
+template&lt;class TTypetoCheck &gt; </td></tr>
+<tr class="memitem:a9a880df864d55c3bd3531279e8bd800c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsAENull</b> ()</td></tr>
 <tr class="separator:a9a880df864d55c3bd3531279e8bd800c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ebc1d46f168d1aeb0466520f3bdfb3b"><td class="memTemplParams" colspan="2">template&lt;class TTypetoCheck &gt; </td></tr>
-<tr class="memitem:a8ebc1d46f168d1aeb0466520f3bdfb3b"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#a8ebc1d46f168d1aeb0466520f3bdfb3b">Isuint32_tPtr</a> ()</td></tr>
+<tr class="memitem:a8ebc1d46f168d1aeb0466520f3bdfb3b"><td class="memTemplParams" colspan="2"><a id="a8ebc1d46f168d1aeb0466520f3bdfb3b" name="a8ebc1d46f168d1aeb0466520f3bdfb3b"></a>
+template&lt;class TTypetoCheck &gt; </td></tr>
+<tr class="memitem:a8ebc1d46f168d1aeb0466520f3bdfb3b"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Isuint32_tPtr</b> ()</td></tr>
 <tr class="separator:a8ebc1d46f168d1aeb0466520f3bdfb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a327bf43f3ddae6bbc4d14050a23d5185"><td class="memTemplParams" colspan="2">template&lt;class TTypetoCheck &gt; </td></tr>
-<tr class="memitem:a327bf43f3ddae6bbc4d14050a23d5185"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#a327bf43f3ddae6bbc4d14050a23d5185">IsfloatPtr</a> ()</td></tr>
+<tr class="memitem:a327bf43f3ddae6bbc4d14050a23d5185"><td class="memTemplParams" colspan="2"><a id="a327bf43f3ddae6bbc4d14050a23d5185" name="a327bf43f3ddae6bbc4d14050a23d5185"></a>
+template&lt;class TTypetoCheck &gt; </td></tr>
+<tr class="memitem:a327bf43f3ddae6bbc4d14050a23d5185"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsfloatPtr</b> ()</td></tr>
 <tr class="separator:a327bf43f3ddae6bbc4d14050a23d5185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20fa51be81b62f631240a899b24423d4"><td class="memTemplParams" colspan="2">template&lt;class TTypetoCheck &gt; </td></tr>
-<tr class="memitem:a20fa51be81b62f631240a899b24423d4"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#a20fa51be81b62f631240a899b24423d4">IsAEEventNullClass</a> ()</td></tr>
+<tr class="memitem:a20fa51be81b62f631240a899b24423d4"><td class="memTemplParams" colspan="2"><a id="a20fa51be81b62f631240a899b24423d4" name="a20fa51be81b62f631240a899b24423d4"></a>
+template&lt;class TTypetoCheck &gt; </td></tr>
+<tr class="memitem:a20fa51be81b62f631240a899b24423d4"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsAEEventNullClass</b> ()</td></tr>
 <tr class="separator:a20fa51be81b62f631240a899b24423d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95972c5cc9bd18459dcc26d88cde176e"><td class="memTemplParams" colspan="2">template&lt;class TTypetoCheck &gt; </td></tr>
-<tr class="memitem:a95972c5cc9bd18459dcc26d88cde176e"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#a95972c5cc9bd18459dcc26d88cde176e">IsNULLPeripheral</a> ()</td></tr>
+<tr class="memitem:a95972c5cc9bd18459dcc26d88cde176e"><td class="memTemplParams" colspan="2"><a id="a95972c5cc9bd18459dcc26d88cde176e" name="a95972c5cc9bd18459dcc26d88cde176e"></a>
+template&lt;class TTypetoCheck &gt; </td></tr>
+<tr class="memitem:a95972c5cc9bd18459dcc26d88cde176e"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsNULLPeripheral</b> ()</td></tr>
 <tr class="separator:a95972c5cc9bd18459dcc26d88cde176e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe39cd9fad337f3a449866e4be099b7b"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:abe39cd9fad337f3a449866e4be099b7b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#abe39cd9fad337f3a449866e4be099b7b">IsAENullActionRequest</a> ()</td></tr>
+<tr class="memitem:abe39cd9fad337f3a449866e4be099b7b"><td class="memItemLeft" align="right" valign="top"><a id="abe39cd9fad337f3a449866e4be099b7b" name="abe39cd9fad337f3a449866e4be099b7b"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:abe39cd9fad337f3a449866e4be099b7b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsAENullActionRequest</b> ()</td></tr>
 <tr class="separator:abe39cd9fad337f3a449866e4be099b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a5d312910c758aef670349270554a04"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:a4a5d312910c758aef670349270554a04"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#a4a5d312910c758aef670349270554a04">IsAENullFSMUtility</a> ()</td></tr>
+<tr class="memitem:a4a5d312910c758aef670349270554a04"><td class="memItemLeft" align="right" valign="top"><a id="a4a5d312910c758aef670349270554a04" name="a4a5d312910c758aef670349270554a04"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a4a5d312910c758aef670349270554a04"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsAENullFSMUtility</b> ()</td></tr>
 <tr class="separator:a4a5d312910c758aef670349270554a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f120bbe201e32f4789a7640080e33ae"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:a3f120bbe201e32f4789a7640080e33ae"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#a3f120bbe201e32f4789a7640080e33ae">IsAEEventNullClass</a> ()</td></tr>
+<tr class="memitem:a3f120bbe201e32f4789a7640080e33ae"><td class="memItemLeft" align="right" valign="top"><a id="a3f120bbe201e32f4789a7640080e33ae" name="a3f120bbe201e32f4789a7640080e33ae"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a3f120bbe201e32f4789a7640080e33ae"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsAEEventNullClass</b> ()</td></tr>
 <tr class="separator:a3f120bbe201e32f4789a7640080e33ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab344847158e1ebecc8798d8aec9170f9"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:ab344847158e1ebecc8798d8aec9170f9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#ab344847158e1ebecc8798d8aec9170f9">IsAENull</a> ()</td></tr>
+<tr class="memitem:ab344847158e1ebecc8798d8aec9170f9"><td class="memItemLeft" align="right" valign="top"><a id="ab344847158e1ebecc8798d8aec9170f9" name="ab344847158e1ebecc8798d8aec9170f9"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:ab344847158e1ebecc8798d8aec9170f9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsAENull</b> ()</td></tr>
 <tr class="separator:ab344847158e1ebecc8798d8aec9170f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa06fc2401962edbbaf024d217370f3be"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:aa06fc2401962edbbaf024d217370f3be"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#aa06fc2401962edbbaf024d217370f3be">Isuint32_tPtr</a> ()</td></tr>
+<tr class="memitem:aa06fc2401962edbbaf024d217370f3be"><td class="memItemLeft" align="right" valign="top"><a id="aa06fc2401962edbbaf024d217370f3be" name="aa06fc2401962edbbaf024d217370f3be"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:aa06fc2401962edbbaf024d217370f3be"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Isuint32_tPtr</b> ()</td></tr>
 <tr class="separator:aa06fc2401962edbbaf024d217370f3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab24fe1d5c0f17b498a41b491a7eb167"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:aab24fe1d5c0f17b498a41b491a7eb167"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#aab24fe1d5c0f17b498a41b491a7eb167">IsfloatPtr</a> ()</td></tr>
+<tr class="memitem:aab24fe1d5c0f17b498a41b491a7eb167"><td class="memItemLeft" align="right" valign="top"><a id="aab24fe1d5c0f17b498a41b491a7eb167" name="aab24fe1d5c0f17b498a41b491a7eb167"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:aab24fe1d5c0f17b498a41b491a7eb167"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsfloatPtr</b> ()</td></tr>
 <tr class="separator:aab24fe1d5c0f17b498a41b491a7eb167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf64bda3ff65e8ff1bf08fec4a758a75"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:adf64bda3ff65e8ff1bf08fec4a758a75"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_type_checker.html#adf64bda3ff65e8ff1bf08fec4a758a75">IsNULLPeripheral</a> ()</td></tr>
+<tr class="memitem:adf64bda3ff65e8ff1bf08fec4a758a75"><td class="memItemLeft" align="right" valign="top"><a id="adf64bda3ff65e8ff1bf08fec4a758a75" name="adf64bda3ff65e8ff1bf08fec4a758a75"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:adf64bda3ff65e8ff1bf08fec4a758a75"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsNULLPeripheral</b> ()</td></tr>
 <tr class="separator:adf64bda3ff65e8ff1bf08fec4a758a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a20fa51be81b62f631240a899b24423d4" name="a20fa51be81b62f631240a899b24423d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20fa51be81b62f631240a899b24423d4">&#9670;&nbsp;</a></span>IsAEEventNullClass() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TTypetoCheck &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsAEEventNullClass</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3f120bbe201e32f4789a7640080e33ae" name="a3f120bbe201e32f4789a7640080e33ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f120bbe201e32f4789a7640080e33ae">&#9670;&nbsp;</a></span>IsAEEventNullClass() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsAEEventNullClass </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9a880df864d55c3bd3531279e8bd800c" name="a9a880df864d55c3bd3531279e8bd800c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a880df864d55c3bd3531279e8bd800c">&#9670;&nbsp;</a></span>IsAENull() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TTypetoCheck &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsAENull</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab344847158e1ebecc8798d8aec9170f9" name="ab344847158e1ebecc8798d8aec9170f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab344847158e1ebecc8798d8aec9170f9">&#9670;&nbsp;</a></span>IsAENull() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsAENull </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9f35acd23ec2a44f19ecb9846018cb7c" name="a9f35acd23ec2a44f19ecb9846018cb7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f35acd23ec2a44f19ecb9846018cb7c">&#9670;&nbsp;</a></span>IsAENullActionRequest() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TTypetoCheck &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsAENullActionRequest</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abe39cd9fad337f3a449866e4be099b7b" name="abe39cd9fad337f3a449866e4be099b7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe39cd9fad337f3a449866e4be099b7b">&#9670;&nbsp;</a></span>IsAENullActionRequest() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsAENullActionRequest </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aeb564adc97debc147672c7462ecf55b4" name="aeb564adc97debc147672c7462ecf55b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb564adc97debc147672c7462ecf55b4">&#9670;&nbsp;</a></span>IsAENullFSMUtility() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TTypetoCheck &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsAENullFSMUtility</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4a5d312910c758aef670349270554a04" name="a4a5d312910c758aef670349270554a04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a5d312910c758aef670349270554a04">&#9670;&nbsp;</a></span>IsAENullFSMUtility() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsAENullFSMUtility </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a327bf43f3ddae6bbc4d14050a23d5185" name="a327bf43f3ddae6bbc4d14050a23d5185"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a327bf43f3ddae6bbc4d14050a23d5185">&#9670;&nbsp;</a></span>IsfloatPtr() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TTypetoCheck &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsfloatPtr</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aab24fe1d5c0f17b498a41b491a7eb167" name="aab24fe1d5c0f17b498a41b491a7eb167"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab24fe1d5c0f17b498a41b491a7eb167">&#9670;&nbsp;</a></span>IsfloatPtr() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsfloatPtr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a95972c5cc9bd18459dcc26d88cde176e" name="a95972c5cc9bd18459dcc26d88cde176e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95972c5cc9bd18459dcc26d88cde176e">&#9670;&nbsp;</a></span>IsNULLPeripheral() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TTypetoCheck &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsNULLPeripheral</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adf64bda3ff65e8ff1bf08fec4a758a75" name="adf64bda3ff65e8ff1bf08fec4a758a75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf64bda3ff65e8ff1bf08fec4a758a75">&#9670;&nbsp;</a></span>IsNULLPeripheral() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::IsNULLPeripheral </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8ebc1d46f168d1aeb0466520f3bdfb3b" name="a8ebc1d46f168d1aeb0466520f3bdfb3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ebc1d46f168d1aeb0466520f3bdfb3b">&#9670;&nbsp;</a></span>Isuint32_tPtr() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TTypetoCheck &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::Isuint32_tPtr</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa06fc2401962edbbaf024d217370f3be" name="aa06fc2401962edbbaf024d217370f3be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa06fc2401962edbbaf024d217370f3be">&#9670;&nbsp;</a></span>Isuint32_tPtr() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TypeChecker::Isuint32_tPtr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>C:/visualgdb_projects/AERTOSCopy/src/AE/<a class="el" href="_a_e_utils_8h_source.html">AEUtils.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="struct_type_checker.html">TypeChecker</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

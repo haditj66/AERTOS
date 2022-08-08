@@ -1,0 +1,88 @@
+\hypertarget{_a_e___init_8h_source}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AE\+\_\+\+Init.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}AE.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}AEObjects.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7   }
+\DoxyCodeLine{8   }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifdef RTOS\_USED\_\_FREERTOS}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}FreeRTOS.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}task.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}timers.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}queue.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}semphr.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}event\_groups.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef Using\_AEHAL }}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}AllPeripheralObjects.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifdef IARBuild}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifdef Target\_stm32f4 }}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}UARTConsole.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}AESetUpBase.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifdef BoardModelType2}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}ModelType2Setup.h"{}}}
+\DoxyCodeLine{37 \textcolor{keyword}{static} \mbox{\hyperlink{class_model_type2_setup}{ModelType2Setup}} setup;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#elif BoardModelType1}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}ModelType1Setup.h"{}}}
+\DoxyCodeLine{41 \textcolor{keyword}{static} \mbox{\hyperlink{class_model_type1_setup}{ModelType1Setup}} setup;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#elif BoardSeries}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}SeriesSetup.h"{}}}
+\DoxyCodeLine{45 \textcolor{keyword}{static} \mbox{\hyperlink{class_series_setup}{SeriesSetup}} setup;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#elif BoardVendor}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include "{}BoardVendorSetup.h"{}}}
+\DoxyCodeLine{49 \textcolor{keyword}{static} \mbox{\hyperlink{class_board_vendor_setup}{BoardVendorSetup}} setup;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#elif IsPC}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}BoardVendorSetup.h"{}}}
+\DoxyCodeLine{53 \textcolor{keyword}{static} \mbox{\hyperlink{class_board_vendor_setup}{BoardVendorSetup}} setup;}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{60 \textcolor{comment}{//PORTABILITY FUNCTIONS}}
+\DoxyCodeLine{61 \textcolor{comment}{//these are all the functions needed to be implemented by RTOS, BSP, and RTOS-\/specific changes for a BSP}}
+\DoxyCodeLine{62 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{//intialization for the RTOS in use.  }}
+\DoxyCodeLine{67 \textcolor{comment}{//static void RTOSInit();}}
+\DoxyCodeLine{69 \textcolor{comment}{}\textcolor{comment}{//static void BSPInit();}}
+\DoxyCodeLine{71 \textcolor{comment}{}\textcolor{comment}{//static void RTOS\_ToBSP\_SpecificCode();}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{//\$(BuildDir)/build/\$(PlatformName)/\$(ConfigurationName)}}
+\DoxyCodeLine{75 \textcolor{comment}{//\#define CAT\_(a, b) a \#\# \_ \#\# b}}
+\DoxyCodeLine{76 \textcolor{comment}{//\#define CAT(a, b) CAT\_(a, b)}}
+\DoxyCodeLine{77 \textcolor{comment}{//\#define cgenweak static bool CAT(weak, \_\_LINE\_\_) ;}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{//cgenweak}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keywordtype}{void} AE\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} AEConfigureAndStart();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{comment}{//cgenweak}}
+
+\end{DoxyCode}

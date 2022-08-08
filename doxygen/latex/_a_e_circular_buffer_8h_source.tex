@@ -1,0 +1,238 @@
+\hypertarget{_a_e_circular_buffer_8h_source}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AECircular\+Buffer.h}
+\mbox{\hyperlink{_a_e_circular_buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\# pragma once}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}AE.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define CircularBuffMutexTake xSemaphoreTake(MutexForThisCircularBuffer, portMAX\_DELAY);}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define CircularBuffMutexGive xSemaphoreGive(MutexForThisCircularBuffer);}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}: }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer}}(); }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_e_circular_buffer_a14ec3edb1a4f386f4aea73ec53876bcc}{Push}}(ContainerType item, \textcolor{keywordtype}{bool} withFullCheck = \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{30         CircularBuffMutexTake Push\_IMPL(item, withFullCheck);  CircularBuffMutexGive;}
+\DoxyCodeLine{31     \};}
+\DoxyCodeLine{32     ContainerType* Peek();}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} Pop() \{}
+\DoxyCodeLine{34         CircularBuffMutexTake Pop\_IMPL( );  CircularBuffMutexGive}
+\DoxyCodeLine{35     \};}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} Reset() \{}
+\DoxyCodeLine{37         CircularBuffMutexTake Reset\_IMPL();  CircularBuffMutexGive}
+\DoxyCodeLine{38     \};}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} Clear() \{}
+\DoxyCodeLine{40         CircularBuffMutexTake Clear\_IMPL();   CircularBuffMutexGive}
+\DoxyCodeLine{41     \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{bool} isEmpty()\textcolor{keyword}{ const }\{ CircularBuffMutexTake \textcolor{keywordtype}{bool} isEmpt = isEmpty\_IMPL(); CircularBuffMutexGive \textcolor{keywordflow}{return}  isEmpt; \}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{bool} isFull()\textcolor{keyword}{ const }\{ CircularBuffMutexTake \textcolor{keywordtype}{bool} isfull = isFull\_IMPL(); CircularBuffMutexGive  \textcolor{keywordflow}{return} isfull; \}}
+\DoxyCodeLine{45     uint16\_t GetSize()\textcolor{keyword}{ const }\{ CircularBuffMutexTake uint16\_t theSize = GetSize\_IMPL(); CircularBuffMutexGive  \textcolor{keywordflow}{return} theSize; \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     ContainerType \&operator[] (uint16\_t index);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{private}:  }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   }
+\DoxyCodeLine{54     xSemaphoreHandle MutexForThisCircularBuffer;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{bool} full;}
+\DoxyCodeLine{57     uint16\_t size;}
+\DoxyCodeLine{58     uint16\_t head;}
+\DoxyCodeLine{59     uint16\_t tail; }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     ContainerType buffer[(MaxSize == 0) + MaxSize];}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} Push\_IMPL(ContainerType item, \textcolor{keywordtype}{bool} withFullCheck = \textcolor{keyword}{true});}
+\DoxyCodeLine{66     ContainerType* Peek\_IMPL();}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} Pop\_IMPL();}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} Reset\_IMPL();}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} Clear\_IMPL();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{bool} isEmpty\_IMPL()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (size == 0);\}}
+\DoxyCodeLine{72     \textcolor{keywordtype}{bool} isFull\_IMPL()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} full; \}}
+\DoxyCodeLine{73     uint16\_t GetSize\_IMPL()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} size; \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} AdvancePointers();}
+\DoxyCodeLine{76 \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{79 \textcolor{keyword}{inline} \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::AECircularBuffer}}()}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{//create mutex for this}}
+\DoxyCodeLine{83     MutexForThisCircularBuffer = xSemaphoreCreateMutex();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     Reset\_IMPL();}
+\DoxyCodeLine{86 \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{91 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::Push\_IMPL}}(ContainerType item, \textcolor{keywordtype}{bool} withFullCheck )}
+\DoxyCodeLine{92 \{ }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{//if max size is just one then just treat this as a buffer}}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if} (MaxSize == 1)}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97         buffer[0] = item;}
+\DoxyCodeLine{98         full = \textcolor{keyword}{true};}
+\DoxyCodeLine{99         size = 1;}
+\DoxyCodeLine{100         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{101     \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordflow}{if} (withFullCheck == \textcolor{keyword}{false})}
+\DoxyCodeLine{104     \{}
+\DoxyCodeLine{105         \textcolor{keywordflow}{if} ((size > MaxSize))}
+\DoxyCodeLine{106         \{}
+\DoxyCodeLine{107             this-\/>Pop\_IMPL();}
+\DoxyCodeLine{108         \}}
+\DoxyCodeLine{109     \}}
+\DoxyCodeLine{110     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{111     \{}
+\DoxyCodeLine{112         \textcolor{comment}{//assert that the size of this circular buffer is not full }}
+\DoxyCodeLine{113            configASSERT(size <= MaxSize);}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   }
+\DoxyCodeLine{117     buffer[head] = item;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     size++;}
+\DoxyCodeLine{120     AdvancePointers();}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122      }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{128 \textcolor{keyword}{inline} ContainerType* \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::Peek}}()}
+\DoxyCodeLine{129 \{  }
+\DoxyCodeLine{130   CircularBuffMutexTake ContainerType* returnthing = Peek\_IMPL();   CircularBuffMutexGive \textcolor{keywordflow}{return} returnthing;}
+\DoxyCodeLine{131  }
+\DoxyCodeLine{132 \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{135 \textcolor{keyword}{inline} ContainerType* \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::Peek\_IMPL}}()}
+\DoxyCodeLine{136 \{ }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   ContainerType* ContToReturn;}
+\DoxyCodeLine{139     \textcolor{comment}{//if max size is just one }}
+\DoxyCodeLine{140     \textcolor{keywordflow}{if} (MaxSize == 1)}
+\DoxyCodeLine{141     \{ }
+\DoxyCodeLine{142         ContToReturn = \&buffer[0];}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{145         \{}
+\DoxyCodeLine{146           ContToReturn =\&buffer[tail];}
+\DoxyCodeLine{147         \}}
+\DoxyCodeLine{148      }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{keywordflow}{return} ContToReturn;}
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{154 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::Pop\_IMPL}}()}
+\DoxyCodeLine{155 \{ }
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{comment}{//if max size is just one }}
+\DoxyCodeLine{158     \textcolor{keywordflow}{if} (MaxSize == 1)}
+\DoxyCodeLine{159     \{ }
+\DoxyCodeLine{160         size == 0;}
+\DoxyCodeLine{161         full = \textcolor{keyword}{false};}
+\DoxyCodeLine{162         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{163     \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     tail = (tail + 1) \% MaxSize;}
+\DoxyCodeLine{166     size-\/-\/;}
+\DoxyCodeLine{167     full = \textcolor{keyword}{false}; }
+\DoxyCodeLine{168 \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{171 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::Reset\_IMPL}}()}
+\DoxyCodeLine{172 \{ }
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     size = 0;}
+\DoxyCodeLine{175     full = \textcolor{keyword}{false};}
+\DoxyCodeLine{176     head = 0;}
+\DoxyCodeLine{177     tail = 0;}
+\DoxyCodeLine{178      }
+\DoxyCodeLine{179 \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{182 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::Clear\_IMPL}}()}
+\DoxyCodeLine{183 \{ }
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{keywordflow}{while} (size != 0)}
+\DoxyCodeLine{186     \{}
+\DoxyCodeLine{187         Pop\_IMPL();}
+\DoxyCodeLine{188     \}}
+\DoxyCodeLine{189      }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{194 \textcolor{keyword}{inline} ContainerType \& \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::operator[]}}(uint16\_t index)}
+\DoxyCodeLine{195 \{ }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{comment}{//index you gave for circularbuffer not within size}}
+\DoxyCodeLine{198     configASSERT(index < MaxSize);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     \textcolor{comment}{//if this curcular buffer is not full, i want to be able to just get the tail value so to not get an undefined value.}}
+\DoxyCodeLine{201     \textcolor{comment}{//this is a special case of this particular kind of circularbuffer}}
+\DoxyCodeLine{202     \textcolor{keywordflow}{if} (full == \textcolor{keyword}{false})}
+\DoxyCodeLine{203     \{}
+\DoxyCodeLine{204         \textcolor{comment}{//get the last value inputted (head-\/1) only if the index points to a spot not defined yet (index >= head)}}
+\DoxyCodeLine{205         \textcolor{keywordflow}{if} ((index >= head))}
+\DoxyCodeLine{206         \{}
+\DoxyCodeLine{207             \textcolor{keywordflow}{return} buffer[tail];}
+\DoxyCodeLine{208         \} }
+\DoxyCodeLine{209     \}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{keywordflow}{if} ((head -\/ index) <= 0)}
+\DoxyCodeLine{212     \{}
+\DoxyCodeLine{213         \textcolor{keywordflow}{return} buffer[head-\/1 -\/ index + MaxSize];}
+\DoxyCodeLine{214     \}}
+\DoxyCodeLine{215      }
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \textcolor{keywordflow}{return} buffer[head-\/1 -\/ index];}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219     \textcolor{comment}{//return buffer[(tail + index) \% MaxSize];}}
+\DoxyCodeLine{220     \textcolor{comment}{//head+index\%maxsize  expexted   result}}
+\DoxyCodeLine{221     \textcolor{comment}{//11 + 19 \% 20  10  30 \% 20 = 10}}
+\DoxyCodeLine{222     \textcolor{comment}{//19 + 19 \% 20  18  38 \% 20 = 18}}
+\DoxyCodeLine{223     \textcolor{comment}{//15 + 8  \% 20   3  23 \% 20 = 3}}
+\DoxyCodeLine{224     \textcolor{comment}{//13 + 5  \% 20  18  18 \% 20 = 18}}
+\DoxyCodeLine{225     \textcolor{comment}{//13 + 5  \% 20  18  18 \% 20 = 18 }}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229  }
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{keyword}{template}<\textcolor{keyword}{class} ContainerType, u\textcolor{keywordtype}{int}16\_t MaxSize>}
+\DoxyCodeLine{232 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_e_circular_buffer}{AECircularBuffer<ContainerType, MaxSize>::AdvancePointers}}()}
+\DoxyCodeLine{233 \{}
+\DoxyCodeLine{234     \textcolor{keywordflow}{if} (full == \textcolor{keyword}{true})}
+\DoxyCodeLine{235     \{}
+\DoxyCodeLine{236         tail = (tail + 1) \% MaxSize;}
+\DoxyCodeLine{237     \}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     head = (head + 1) \% MaxSize;}
+\DoxyCodeLine{240     full = (head == tail);}
+\DoxyCodeLine{241 \}}
+
+\end{DoxyCode}

@@ -1,13 +1,19 @@
 //generated file: ADC_TEST.cpp
+//**********************************************************************
+//this is an auto-generated file using the template file located in the directory of C:\CodeGenerator\CodeGenerator\bin\Debug\..\..\FileTemplates\Files
+//ONLY WRITE CODE IN THE UserCode_Section BLOCKS
+//If you write code anywhere else,  it will be overwritten. modify the actual template file if needing to modify code outside usersection blocks.
 
 
-#if INTEGRATION_TESTS_FOR_AEHal_Tests1 == ADC_TEST
+#if INTEGRATION_TESTS_FOR_exeHalTest__ADC_TEST
  
 #include "IntegTestPipeline.h"
 
 //UserCode_Sectiona
 #include "AECore.h" 
 #include "AE_Init.h"
+
+
 
 
 
@@ -23,11 +29,11 @@ void RunSelectedIntegrationTest_ADC_TEST()
 AE_Init();  
 	
 	//! [timed end]
-	AEITEST_END_TestsAfterTimer_AEHal_Tests1(5000)
+ 	AEITEST_END_TestsAfterTimer_exeHalTest(5000)
 	//! [timed end]
 		
 	//! [expect to run]
-	AEITEST_EXPECT_TEST_TO_RUN_AEHal_Tests1("ADC1_random test")
+	AEITEST_EXPECT_TEST_TO_RUN_exeHalTest("ADC1_random test")
 	//! [expect to run]
 		
 //	AEITestLogData* scsc = 0;
@@ -42,7 +48,7 @@ AE_Init();
 		{
 			uint16_t adcValue = adc1->GetADCData();
 			//! [integ test assert]
-			AEITEST_AEHal_Tests1("ADC1 test", (adcValue > 1800 && adcValue < 2500), "test adc1 is getting adc value");
+			AEITEST_exeHalTest("ADC1 test", (adcValue > 1800 && adcValue < 2500), "test adc1 is getting adc value");
 			//! [integ test assert]
 			AEPrint("adc1 data is %d \n", adcValue);
 			adcCountToPrint1 = 0;
@@ -54,7 +60,7 @@ AE_Init();
 		if (adcCountToPrint2 > 1000)
 		{
 			uint16_t adcValue = adc2->GetADCData();
-			AEITEST_AEHal_Tests1("ADC2 test", (adcValue > 900 && adcValue < 1500), "test adc2 is getting adc value");
+			AEITEST_exeHalTest("ADC2 test", (adcValue > 900 && adcValue < 1500), "test adc2 is getting adc value");
 			AEPrint("adc2 data is %d \n", adcValue);
 			adcCountToPrint2 = 0;
 		}
@@ -69,7 +75,7 @@ AE_Init();
 		if (adcCountToPrint3 > 1000)
 		{
 			uint16_t adcValue = adc3->GetADCData();
-			AEITEST_AEHal_Tests1("ADC3 test", (adcValue > 1600 && adcValue < 2300), "test adc3 is getting adc value");
+			AEITEST_exeHalTest("ADC3 test", (adcValue > 1600 && adcValue < 2300), "test adc3 is getting adc value");
 			AEPrint("adc3 data is %d \n", adcValue);
 			adcCountToPrint3 = 0;
 		}

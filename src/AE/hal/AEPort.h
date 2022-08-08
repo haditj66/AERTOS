@@ -3,7 +3,15 @@
 #include "PinSelector.h"
 #include "BoardTypes.h"
 
- 
+#include "AEConfig.h"
+
+//todo: find out still why # include "stm32f4xx_hal.h" is needed in the config. dont spend to omuch time. if that's how it'll work than fine!
+
+//#include "stm32f4xx_hal.h"
+//#include "ModelType2Setup.h"  
+//#include "SeriesSetup.h"
+// #include "AE_Init.h"
+
 
 typedef void (*portClockInitializationfuncPtr_t)(void);
 

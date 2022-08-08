@@ -236,26 +236,30 @@ endif()
 
 
 
- create_unittests_for_target(
-  TestsForTarget AECoreLib
-  NameOfTestTarget AECoreTests
-  ForUserConfigNum 2)
+ #TODO. first test out the hal works again and then start moving hal and any exe and unit tests to the 
+ #src/hal  for the hal. and 
+ #src/exe  for the executable targets. (including integration tests.)
+ #in a executable target, will also have unit tests for it. for example
+ #AECoretestexe with the defaultTest running will have unit tests as well. So
+ #src/exe/AECoretests/exe/defaulttest
+ #src/exe/AECoretests/exe/defaulttest/conf
+ #src/exe/AECoretests/exe/someothertest
+ #src/exe/AECoretests/exe/someothertest/conf
+  #src/exe/AECoretests/unittests
 
 
- if(${INTEGRATION_TESTS} STREQUAL  "AECore_Tests1")
- add_subdirectory(exeTest)
- endif()
+ 
 
 
 
-
-
-
- ################################### 
+  ################################### 
  #get AEHal
- ###################################
+ ###################################  
 
 if(${INCLUDE_HAL} STREQUAL  "TRUE")
 add_subdirectory(hal)
 endif()
+
+
+
 

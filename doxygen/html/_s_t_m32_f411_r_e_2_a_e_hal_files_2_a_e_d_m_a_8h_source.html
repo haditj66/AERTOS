@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_d_m_a_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,14 +61,19 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="dir_a73106cba3fc1ee97b18c1f41ce635cc.html">boards</a></li><li class="navelem"><a class="el" href="dir_79e8dbc9668083594ec93e2eb168f5db.html">STM32F411RE</a></li><li class="navelem"><a class="el" href="dir_3429a5d2e583ce013f382a2b5889f979.html">AEHalFiles</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">AEDMA.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_d_m_a_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_a_e_d_m_a_peripheral_8h.html">AEDMAPeripheral.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;AEDMAPeripheral.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
@@ -124,8 +108,8 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        _dMAHandle.Instance = *(_dmaStream-&gt;<a class="code hl_function" href="class_a_e_d_m_a___stream.html#afe24b8e764b62f6faaa924979d1cf501">GetDMAStream</a>());</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        _dMAHandle.Init.Channel = _dmaCH-&gt;<a class="code hl_function" href="class_a_e_d_m_a___channel.html#a784057b4beb93142cbb9f68dbecb1821">GetChannel</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        _dMAHandle.Instance = *(_dmaStream-&gt;GetDMAStream());</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        _dMAHandle.Init.Channel = _dmaCH-&gt;GetChannel();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        _dMAHandle.Init.Direction = DMA_PERIPH_TO_MEMORY;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        _dMAHandle.Init.PeriphBurst = DMA_PINC_DISABLE;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        _dMAHandle.Init.MemInc = DMA_MINC_ENABLE;</div>
@@ -141,17 +125,10 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
-<div class="ttc" id="a_a_e_d_m_a_peripheral_8h_html"><div class="ttname"><a href="_a_e_d_m_a_peripheral_8h.html">AEDMAPeripheral.h</a></div></div>
-<div class="ttc" id="aclass_a_e_d_m_a___channel_html_a784057b4beb93142cbb9f68dbecb1821"><div class="ttname"><a href="class_a_e_d_m_a___channel.html#a784057b4beb93142cbb9f68dbecb1821">AEDMA_Channel::GetChannel</a></div><div class="ttdeci">uint32_t GetChannel() const</div><div class="ttdef"><b>Definition:</b> AEDMAPeripheral.h:87</div></div>
-<div class="ttc" id="aclass_a_e_d_m_a___stream_html_afe24b8e764b62f6faaa924979d1cf501"><div class="ttname"><a href="class_a_e_d_m_a___stream.html#afe24b8e764b62f6faaa924979d1cf501">AEDMA_Stream::GetDMAStream</a></div><div class="ttdeci">DMAStreamType_t * GetDMAStream()</div><div class="ttdef"><b>Definition:</b> AEDMAPeripheral.h:205</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="dir_a73106cba3fc1ee97b18c1f41ce635cc.html">boards</a></li><li class="navelem"><a class="el" href="dir_79e8dbc9668083594ec93e2eb168f5db.html">STM32F411RE</a></li><li class="navelem"><a class="el" href="dir_3429a5d2e583ce013f382a2b5889f979.html">AEHalFiles</a></li><li class="navelem"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_d_m_a_8h.html">AEDMA.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

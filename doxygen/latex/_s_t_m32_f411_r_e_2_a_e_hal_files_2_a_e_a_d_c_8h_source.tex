@@ -1,0 +1,232 @@
+\hypertarget{_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_a_d_c_8h_source}{}\doxysection{AEADC.\+h}
+\label{_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_a_d_c_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AEHalFiles/AEADC.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AEHalFiles/AEADC.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}AEADCPeripheral.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{template}<templateForADC>}
+\DoxyCodeLine{15     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_d_c_peripheral}{ADCPeripheral<templateargsForADC>::\_InitializePinSelectors}}(CreateTypeSelector\_funcPtr(\&functPtrsToChangeTypeSelectorss)[NumOFPinsNeeded])}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{comment}{/*}}
+\DoxyCodeLine{18 \textcolor{comment}{            this-\/>functPtrsToChangeTypeSelectors[0] = []() -\/> void}}
+\DoxyCodeLine{19 \textcolor{comment}{            \{PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortA, PinEnum::PIN2);}}
+\DoxyCodeLine{20 \textcolor{comment}{            PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortD, PinEnum::PIN5); \};}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{            this-\/>functPtrsToChangeTypeSelectors[1] = []() -\/> void}}
+\DoxyCodeLine{23 \textcolor{comment}{            \{PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortA, PinEnum::PIN3);}}
+\DoxyCodeLine{24 \textcolor{comment}{            PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortD, PinEnum::PIN6); \}; }}
+\DoxyCodeLine{25 \textcolor{comment}{            */}}
+\DoxyCodeLine{26         \textcolor{comment}{//UserCode\_Section4}}
+\DoxyCodeLine{27         this-\/>functPtrsToChangeTypeSelectors[0] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{28         \{ }
+\DoxyCodeLine{29             PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortB, PinEnum::PIN0); }
+\DoxyCodeLine{30         \};}
+\DoxyCodeLine{31         this-\/>functPtrsToChangeTypeSelectors[1] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortA, PinEnum::PIN2); }
+\DoxyCodeLine{34         \};}
+\DoxyCodeLine{35         this-\/>functPtrsToChangeTypeSelectors[2] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{36         \{}
+\DoxyCodeLine{37             PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortA, PinEnum::PIN3);}
+\DoxyCodeLine{38         \};}
+\DoxyCodeLine{39         this-\/>functPtrsToChangeTypeSelectors[3] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{40         \{}
+\DoxyCodeLine{41             PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortA, PinEnum::PIN4);}
+\DoxyCodeLine{42         \};}
+\DoxyCodeLine{43         this-\/>functPtrsToChangeTypeSelectors[4] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{44         \{}
+\DoxyCodeLine{45             PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortA, PinEnum::PIN5);}
+\DoxyCodeLine{46         \};}
+\DoxyCodeLine{47         \textcolor{comment}{//UserCode\_Section4\_end}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{template}<templateForADC>}
+\DoxyCodeLine{56     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_d_c_peripheral}{ADCPeripheral<templateargsForADC>::\_Initialize}}(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2, Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4, Port\_t port5, Pin\_t pin5)}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         }
+\DoxyCodeLine{59         \textcolor{comment}{//TODO this should be moved to a preinitialization like the msp\_init()}}
+\DoxyCodeLine{60 \textcolor{comment}{//      ch1\_Port = port1;}}
+\DoxyCodeLine{61 \textcolor{comment}{//      ch1\_Pin =  pin1;}}
+\DoxyCodeLine{62 \textcolor{comment}{//      ch2\_Port = port2;}}
+\DoxyCodeLine{63 \textcolor{comment}{//      ch2\_Pin =  pin2;}}
+\DoxyCodeLine{64 \textcolor{comment}{//      ch3\_Port = port3;}}
+\DoxyCodeLine{65 \textcolor{comment}{//      ch3\_Pin =  pin3;}}
+\DoxyCodeLine{66 \textcolor{comment}{//      ch4\_Port = port4;}}
+\DoxyCodeLine{67 \textcolor{comment}{//      ch4\_Pin =  pin4;}}
+\DoxyCodeLine{68 \textcolor{comment}{//      ch5\_Port = port5;}}
+\DoxyCodeLine{69 \textcolor{comment}{//      ch5\_Pin =  pin5;}}
+\DoxyCodeLine{70   }
+\DoxyCodeLine{71         ADC\_HandleTypeDef* adc\_periph = \&this-\/>PeripheralHandle\_t;}
+\DoxyCodeLine{72         }
+\DoxyCodeLine{73         }
+\DoxyCodeLine{74         }
+\DoxyCodeLine{75         }
+\DoxyCodeLine{76         dmaForADC.Init(adc\_periph,2, DMA\_StreamEnum::DMAStream\_0, DMACHEnum::DMACH0, DMA\_CIRCULAR);}
+\DoxyCodeLine{77         \_\_HAL\_LINKDMA(adc\_periph, DMA\_Handle, *dmaForADC.GetDMAHandle());  }
+\DoxyCodeLine{78         }
+\DoxyCodeLine{79 \textcolor{comment}{//      DMA\_HandleTypeDef* hdma\_adc = dmaForADC.GetDMAHandle();// \&hdma\_adcc;  //this-\/>PeripheralHandle\_t.hdma\_adc;}}
+\DoxyCodeLine{80  }
+\DoxyCodeLine{81 \textcolor{comment}{//                  \_\_HAL\_RCC\_DMA2\_CLK\_ENABLE();}}
+\DoxyCodeLine{82 \textcolor{comment}{//              hdma\_adc-\/>Instance = DMA2\_Stream0;}}
+\DoxyCodeLine{83 \textcolor{comment}{//              hdma\_adc-\/>Init.Channel = DMA\_CHANNEL\_0;}}
+\DoxyCodeLine{84 \textcolor{comment}{//              hdma\_adc-\/>Init.Direction = DMA\_PERIPH\_TO\_MEMORY;}}
+\DoxyCodeLine{85 \textcolor{comment}{//              hdma\_adc-\/>Init.PeriphBurst = DMA\_PINC\_DISABLE;}}
+\DoxyCodeLine{86 \textcolor{comment}{//              hdma\_adc-\/>Init.MemInc = DMA\_MINC\_ENABLE;}}
+\DoxyCodeLine{87 \textcolor{comment}{//              hdma\_adc-\/>Init.PeriphDataAlignment = DMA\_PDATAALIGN\_HALFWORD;}}
+\DoxyCodeLine{88 \textcolor{comment}{//              hdma\_adc-\/>Init.MemDataAlignment = DMA\_MDATAALIGN\_HALFWORD;}}
+\DoxyCodeLine{89 \textcolor{comment}{//              hdma\_adc-\/>Init.Mode = DMA\_CIRCULAR;}}
+\DoxyCodeLine{90 \textcolor{comment}{//              hdma\_adc-\/>Init.Priority = DMA\_PRIORITY\_LOW;}}
+\DoxyCodeLine{91 \textcolor{comment}{//              hdma\_adc-\/>Init.FIFOMode = DMA\_FIFOMODE\_DISABLE;}}
+\DoxyCodeLine{92 \textcolor{comment}{//              HAL\_DMA\_Init(hdma\_adc);}}
+\DoxyCodeLine{93 \textcolor{comment}{//      }}
+\DoxyCodeLine{94 \textcolor{comment}{//              \_\_HAL\_LINKDMA(adc\_periph, DMA\_Handle, *hdma\_adc);}}
+\DoxyCodeLine{95 \textcolor{comment}{//      }}
+\DoxyCodeLine{96 \textcolor{comment}{//              HAL\_NVIC\_SetPriority(DMA2\_Stream0\_IRQn, 5, 0);}}
+\DoxyCodeLine{97 \textcolor{comment}{//              HAL\_NVIC\_EnableIRQ(DMA2\_Stream0\_IRQn);}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         }
+\DoxyCodeLine{101         }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104                 \textcolor{comment}{/* ADC1 interrupt Init */}}
+\DoxyCodeLine{105                 HAL\_NVIC\_SetPriority(ADC\_IRQn, 5, 0);}
+\DoxyCodeLine{106         HAL\_NVIC\_EnableIRQ(ADC\_IRQn);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         ADC\_ChannelConfTypeDef sConfig;}
+\DoxyCodeLine{110         \_\_HAL\_RCC\_ADC1\_CLK\_ENABLE();}
+\DoxyCodeLine{111         }
+\DoxyCodeLine{112         uint8\_t numOfChannelsUsed = 0;}
+\DoxyCodeLine{113         \textcolor{keywordflow}{if} (ADC\_ch1\_Port != PortsMaxNum)}
+\DoxyCodeLine{114         \{ }
+\DoxyCodeLine{115             \textcolor{comment}{//set up the gpios that I will use for the ADC channels in analog mode }}
+\DoxyCodeLine{116             GPIO\_InitTypeDef GPIO\_InitStruct;}
+\DoxyCodeLine{117             GPIO\_InitStruct.Pin = pin1;}
+\DoxyCodeLine{118             GPIO\_InitStruct.Mode = GPIO\_MODE\_ANALOG;}
+\DoxyCodeLine{119             GPIO\_InitStruct.Pull = GPIO\_PULLDOWN;}
+\DoxyCodeLine{120             HAL\_GPIO\_Init(port1, \&GPIO\_InitStruct);}
+\DoxyCodeLine{121           }
+\DoxyCodeLine{122           }
+\DoxyCodeLine{123             numOfChannelsUsed++;}
+\DoxyCodeLine{124         \}}
+\DoxyCodeLine{125         \textcolor{keywordflow}{if} (ADC\_ch2\_Port != PortsMaxNum)}
+\DoxyCodeLine{126         \{ }
+\DoxyCodeLine{127             GPIO\_InitTypeDef GPIO\_InitStruct;}
+\DoxyCodeLine{128             GPIO\_InitStruct.Pin = pin2;}
+\DoxyCodeLine{129             GPIO\_InitStruct.Mode = GPIO\_MODE\_ANALOG;}
+\DoxyCodeLine{130             GPIO\_InitStruct.Pull = GPIO\_PULLDOWN;}
+\DoxyCodeLine{131             HAL\_GPIO\_Init(port2, \&GPIO\_InitStruct);}
+\DoxyCodeLine{132           }
+\DoxyCodeLine{133             numOfChannelsUsed++;}
+\DoxyCodeLine{134         \} }
+\DoxyCodeLine{135         \textcolor{keywordflow}{if} (ADC\_ch3\_Port != PortsMaxNum)}
+\DoxyCodeLine{136         \{ }
+\DoxyCodeLine{137           }
+\DoxyCodeLine{138             GPIO\_InitTypeDef GPIO\_InitStruct;}
+\DoxyCodeLine{139             GPIO\_InitStruct.Pin = pin3;}
+\DoxyCodeLine{140             GPIO\_InitStruct.Mode = GPIO\_MODE\_ANALOG;}
+\DoxyCodeLine{141             GPIO\_InitStruct.Pull = GPIO\_PULLDOWN;}
+\DoxyCodeLine{142             HAL\_GPIO\_Init(port3, \&GPIO\_InitStruct);}
+\DoxyCodeLine{143           }
+\DoxyCodeLine{144             numOfChannelsUsed++;}
+\DoxyCodeLine{145         \}}
+\DoxyCodeLine{146         \textcolor{keywordflow}{if} (ADC\_ch4\_Port != PortsMaxNum)}
+\DoxyCodeLine{147         \{ }
+\DoxyCodeLine{148           }
+\DoxyCodeLine{149             GPIO\_InitTypeDef GPIO\_InitStruct;}
+\DoxyCodeLine{150             GPIO\_InitStruct.Pin = pin4;}
+\DoxyCodeLine{151             GPIO\_InitStruct.Mode = GPIO\_MODE\_ANALOG;}
+\DoxyCodeLine{152             GPIO\_InitStruct.Pull = GPIO\_PULLDOWN;}
+\DoxyCodeLine{153             HAL\_GPIO\_Init(port4, \&GPIO\_InitStruct);}
+\DoxyCodeLine{154         }
+\DoxyCodeLine{155             numOfChannelsUsed++;}
+\DoxyCodeLine{156         \} }
+\DoxyCodeLine{157         \textcolor{keywordflow}{if} (ADC\_ch5\_Port != PortsMaxNum)}
+\DoxyCodeLine{158         \{ }
+\DoxyCodeLine{159           }
+\DoxyCodeLine{160             GPIO\_InitTypeDef GPIO\_InitStruct;}
+\DoxyCodeLine{161             GPIO\_InitStruct.Pin = pin5;}
+\DoxyCodeLine{162             GPIO\_InitStruct.Mode = GPIO\_MODE\_ANALOG;}
+\DoxyCodeLine{163             GPIO\_InitStruct.Pull = GPIO\_PULLDOWN;}
+\DoxyCodeLine{164             HAL\_GPIO\_Init(port5, \&GPIO\_InitStruct);}
+\DoxyCodeLine{165         }
+\DoxyCodeLine{166             numOfChannelsUsed++;}
+\DoxyCodeLine{167         \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169         adc\_periph-\/>Instance = ADC1;}
+\DoxyCodeLine{170         adc\_periph-\/>Init.ClockPrescaler = ADC\_CLOCK\_SYNC\_PCLK\_DIV8;}
+\DoxyCodeLine{171         adc\_periph-\/>Init.Resolution = ADC\_RESOLUTION\_12B;}
+\DoxyCodeLine{172         adc\_periph-\/>Init.ScanConvMode = ENABLE;}
+\DoxyCodeLine{173         adc\_periph-\/>Init.ContinuousConvMode = ENABLE;}
+\DoxyCodeLine{174         adc\_periph-\/>Init.DiscontinuousConvMode = DISABLE;}
+\DoxyCodeLine{175         adc\_periph-\/>Init.DataAlign = ADC\_DATAALIGN\_RIGHT;}
+\DoxyCodeLine{176         adc\_periph-\/>Init.NbrOfConversion = numOfChannelsUsed;}
+\DoxyCodeLine{177         adc\_periph-\/>Init.DMAContinuousRequests = ENABLE;}
+\DoxyCodeLine{178         adc\_periph-\/>Init.EOCSelection = ADC\_EOC\_SEQ\_CONV;}
+\DoxyCodeLine{179         }
+\DoxyCodeLine{180         }
+\DoxyCodeLine{181         HAL\_ADC\_Init(adc\_periph);}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183         \textcolor{comment}{//now to configure the channels.}}
+\DoxyCodeLine{184         \textcolor{keywordflow}{if}(ADC\_ch1\_Port != PortsMaxNum)}
+\DoxyCodeLine{185         \{}
+\DoxyCodeLine{186             sConfig.Channel = ADC\_CHANNEL\_8;}
+\DoxyCodeLine{187             sConfig.Rank = 1;}
+\DoxyCodeLine{188             sConfig.SamplingTime = ADC\_SAMPLETIME\_28CYCLES;}
+\DoxyCodeLine{189             HAL\_ADC\_ConfigChannel(adc\_periph, \&sConfig);}
+\DoxyCodeLine{190         \}}
+\DoxyCodeLine{191         \textcolor{keywordflow}{if} (ADC\_ch2\_Port != PortsMaxNum)}
+\DoxyCodeLine{192         \{}
+\DoxyCodeLine{193             sConfig.Channel = ADC\_CHANNEL\_2;}
+\DoxyCodeLine{194             sConfig.Rank = 2;}
+\DoxyCodeLine{195             sConfig.SamplingTime = ADC\_SAMPLETIME\_28CYCLES;}
+\DoxyCodeLine{196             HAL\_ADC\_ConfigChannel(adc\_periph, \&sConfig); }
+\DoxyCodeLine{197         \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199         \textcolor{keywordflow}{if} (ADC\_ch3\_Port != PortsMaxNum)}
+\DoxyCodeLine{200         \{}
+\DoxyCodeLine{201             sConfig.Channel = ADC\_CHANNEL\_3;}
+\DoxyCodeLine{202             sConfig.Rank = 3;}
+\DoxyCodeLine{203             sConfig.SamplingTime = ADC\_SAMPLETIME\_28CYCLES;}
+\DoxyCodeLine{204             HAL\_ADC\_ConfigChannel(adc\_periph, \&sConfig);}
+\DoxyCodeLine{205         \}}
+\DoxyCodeLine{206         \textcolor{keywordflow}{if} (ADC\_ch4\_Port != PortsMaxNum)}
+\DoxyCodeLine{207         \{ }
+\DoxyCodeLine{208             sConfig.Channel = ADC\_CHANNEL\_4;}
+\DoxyCodeLine{209             sConfig.Rank = 4;}
+\DoxyCodeLine{210             sConfig.SamplingTime = ADC\_SAMPLETIME\_28CYCLES;}
+\DoxyCodeLine{211             HAL\_ADC\_ConfigChannel(adc\_periph, \&sConfig);}
+\DoxyCodeLine{212         \} }
+\DoxyCodeLine{213         \textcolor{keywordflow}{if} (ADC\_ch5\_Port != PortsMaxNum)}
+\DoxyCodeLine{214         \{}
+\DoxyCodeLine{215             sConfig.Channel = ADC\_CHANNEL\_5;}
+\DoxyCodeLine{216             sConfig.Rank = 5;}
+\DoxyCodeLine{217             sConfig.SamplingTime = ADC\_SAMPLETIME\_28CYCLES;}
+\DoxyCodeLine{218             HAL\_ADC\_ConfigChannel(adc\_periph, \&sConfig);}
+\DoxyCodeLine{219         \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222         HAL\_ADC\_Start\_DMA(adc\_periph, (uint32\_t*)(\&ADCdata[0]), numOfChannelsUsed);   \textcolor{comment}{//3}}
+\DoxyCodeLine{223          }
+\DoxyCodeLine{224  }
+\DoxyCodeLine{225     \}}
+\DoxyCodeLine{226  }
+
+\end{DoxyCode}

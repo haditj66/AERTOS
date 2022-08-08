@@ -1,0 +1,165 @@
+\hypertarget{_fast_sine_8h_source}{}\doxysection{Fast\+Sine.\+h}
+\label{_fast_sine_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/HelperFunctions/FastSine.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/HelperFunctions/FastSine.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifdef SWIL\_HWIL\_DRIVEN\_\_SWIL}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cstdint>}                }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SIMULATION}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{8  }
+\DoxyCodeLine{9      }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }AE}
+\DoxyCodeLine{11 \{ }
+\DoxyCodeLine{12     \textcolor{keyword}{const} \textcolor{keywordtype}{float} pi = 3.141592653589793f;}
+\DoxyCodeLine{13     \textcolor{keyword}{const} \textcolor{keywordtype}{float} Two\_pi = pi * 2;}
+\DoxyCodeLine{14     \textcolor{keyword}{const} \textcolor{keywordtype}{float} half\_pi = pi *.5f;}
+\DoxyCodeLine{15     \textcolor{keyword}{const} \textcolor{keywordtype}{float} threequarts\_pi = pi * 1.5f;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22     \textcolor{keyword}{static} \textcolor{keywordtype}{float} sin(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{23     \{   }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{comment}{//from 1.56 -\/ pi/2 err = .0001475}}
+\DoxyCodeLine{26         \textcolor{comment}{//from 1.55 -\/ 1.56 err = .0001392}}
+\DoxyCodeLine{27         \textcolor{comment}{//from 1.54 -\/ 1.55 err = .0001315}}
+\DoxyCodeLine{28         \textcolor{comment}{//from 1.53 -\/ 1.54 err = .0001240}}
+\DoxyCodeLine{29         \textcolor{comment}{//from 1.52 -\/ 1.53 err = .0001170}}
+\DoxyCodeLine{30         \textcolor{comment}{//from 1.5 -\/ 1.52  err = .0001040}}
+\DoxyCodeLine{31         \textcolor{comment}{//from 1.45 -\/ 1.5  err = .00007665}}
+\DoxyCodeLine{32         \textcolor{comment}{//from 1.4 -\/ 1.45  err = .0000559 }}
+\DoxyCodeLine{33         \textcolor{comment}{//from 1.35 -\/ 1.4  err = .00004047}}
+\DoxyCodeLine{34         \textcolor{comment}{//from 1.3 -\/ 1.35  err = .00002879}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{comment}{//from 1.25 -\/ 1.3  err = -\/.0009258}}
+\DoxyCodeLine{38         \textcolor{comment}{//from 1.2 -\/ 1.25  err = -\/.0006970}}
+\DoxyCodeLine{39         \textcolor{comment}{//from 1.15 -\/ 1.2  err = -\/.0005182}}
+\DoxyCodeLine{40         \textcolor{comment}{//from 1.1 -\/ 1.15  err = -\/.0003802}}
+\DoxyCodeLine{41         \textcolor{comment}{//from 1.05 -\/ 1.1  err = -\/.0002750}}
+\DoxyCodeLine{42         \textcolor{comment}{//from 1.0 -\/ 1.05  err = -\/.0001957}}
+\DoxyCodeLine{43         \textcolor{comment}{//from .9 -\/  1.00  err = -\/.00009376}}
+\DoxyCodeLine{44         \textcolor{comment}{//from .7 -\/  .9    err = -\/.00001627}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{comment}{//from .6 -\/  .7    err = .0006}}
+\DoxyCodeLine{48         \textcolor{comment}{//from .5 -\/  .6    err = .0002589}}
+\DoxyCodeLine{49         \textcolor{comment}{//from .4 -\/  .5    err = .000085}}
+\DoxyCodeLine{50         \textcolor{comment}{//from  0 -\/  .4    err = 0}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53                 \textcolor{keywordtype}{float} ans;}
+\DoxyCodeLine{54         \textcolor{keywordtype}{float} err; \textcolor{comment}{//the approimated error from the taylor series}}
+\DoxyCodeLine{55         \textcolor{comment}{//float x\_cubed = x*x*x;}}
+\DoxyCodeLine{56         int8\_t neg = 1;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{comment}{//negative quadrant; }}
+\DoxyCodeLine{59         \textcolor{keywordflow}{if}(x < 0)}
+\DoxyCodeLine{60         \{ }
+\DoxyCodeLine{61             \textcolor{keywordflow}{if} (isnan(x))}
+\DoxyCodeLine{62             \{ }
+\DoxyCodeLine{63                 x = 0;}
+\DoxyCodeLine{64                 \textcolor{comment}{//configASSERT(false)}}
+\DoxyCodeLine{65             \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67             \textcolor{keywordflow}{return} -\/1* AE::sin(abs(x));}
+\DoxyCodeLine{68         \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{comment}{//outside of quadrant }}
+\DoxyCodeLine{71         \textcolor{keywordflow}{if}(x >= Two\_pi)}
+\DoxyCodeLine{72         \{}
+\DoxyCodeLine{73 \textcolor{comment}{//\#pragma warning( disable : 4244)}}
+\DoxyCodeLine{74             uint16\_t div = (float)(x / (Two\_pi));}
+\DoxyCodeLine{75             \textcolor{keywordtype}{float} newX = x -\/ div * (Two\_pi);}
+\DoxyCodeLine{76             \textcolor{keywordflow}{return} AE::sin(newX);}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78         \textcolor{comment}{//quadrant 4}}
+\DoxyCodeLine{79         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(x >= (threequarts\_pi))}
+\DoxyCodeLine{80         \{}
+\DoxyCodeLine{81             neg = -\/1;}
+\DoxyCodeLine{82             x = Two\_pi -\/ x;}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84         \textcolor{comment}{//quadrant 3}}
+\DoxyCodeLine{85         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(x >= (pi))}
+\DoxyCodeLine{86         \{}
+\DoxyCodeLine{87             neg = -\/1;}
+\DoxyCodeLine{88             x = x -\/ pi;}
+\DoxyCodeLine{89         \}}
+\DoxyCodeLine{90         \textcolor{comment}{//quadrant 2}}
+\DoxyCodeLine{91         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(x >= (half\_pi))}
+\DoxyCodeLine{92         \{}
+\DoxyCodeLine{93             x = pi -\/ x;}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99         \textcolor{keywordflow}{if} (x <.7)}
+\DoxyCodeLine{100         \{  }
+\DoxyCodeLine{101             \textcolor{keywordtype}{float} x\_cubed = x * x*x;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103             err = 0;}
+\DoxyCodeLine{104             x <.4 ? 0 :}
+\DoxyCodeLine{105             x <.5 ?.000085 :}
+\DoxyCodeLine{106             x <.6 ?.0002589 :}
+\DoxyCodeLine{107             x <.7 ?.0006 :}
+\DoxyCodeLine{108             0; }
+\DoxyCodeLine{109             ans = x -\/ (x\_cubed / 6) + err;}
+\DoxyCodeLine{110         \}}
+\DoxyCodeLine{111         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x > 1.3) }
+\DoxyCodeLine{112         \{}
+\DoxyCodeLine{113             \textcolor{keywordtype}{float} x\_cubed = x * x*x;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115             err = }
+\DoxyCodeLine{116             x < 1.35 ?.00002879 :}
+\DoxyCodeLine{117             x < 1.4 ?.00004047 :}
+\DoxyCodeLine{118             x < 1.45 ?.0000559 :}
+\DoxyCodeLine{119             x < 1.5 ?.00007665 :}
+\DoxyCodeLine{120             \textcolor{comment}{//x < 1.52 ? .0001040 :}}
+\DoxyCodeLine{121             \textcolor{comment}{//x < 1.53 ? .0001170 :}}
+\DoxyCodeLine{122             \textcolor{comment}{//x < 1.54 ? .0001240 :}}
+\DoxyCodeLine{123             \textcolor{comment}{//x < 1.55 ? .0001315 :}}
+\DoxyCodeLine{124             x < 1.56 ?.0001392 :}
+\DoxyCodeLine{125             x < (half\_pi) ?.0001475 :}
+\DoxyCodeLine{126             0;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128             ans = x -\/ (x\_cubed / 6) + (x\_cubed*x*x / 120) -\/ (x\_cubed*x\_cubed*x / 5040) + err;}
+\DoxyCodeLine{129         \}}
+\DoxyCodeLine{130         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{131         \{}
+\DoxyCodeLine{132             \textcolor{keywordtype}{float} x\_cubed = x * x*x;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134             err = 0;}
+\DoxyCodeLine{135             x <.9 ? -\/.00001627 :}
+\DoxyCodeLine{136             x < 1  ? -\/.00009376 :}
+\DoxyCodeLine{137             x < 1.05 ? -\/.0001957 :}
+\DoxyCodeLine{138             x < 1.1 ? -\/.0002750 :}
+\DoxyCodeLine{139             x < 1.15 ? -\/.0003802 :}
+\DoxyCodeLine{140             x < 1.20 ? -\/.0005182 :}
+\DoxyCodeLine{141             x < 1.25 ? -\/.0006970 :}
+\DoxyCodeLine{142             0;}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144             ans = x -\/ (x\_cubed / 6) + (x\_cubed*x*x / 120) + err;}
+\DoxyCodeLine{145         \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147         ans = ans * neg;}
+\DoxyCodeLine{148         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{keyword}{static} \textcolor{keywordtype}{float} cos(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{154     \{ }
+\DoxyCodeLine{155         \textcolor{keywordflow}{return} sin(half\_pi -\/ x);}
+\DoxyCodeLine{156     \}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160  }
+
+\end{DoxyCode}

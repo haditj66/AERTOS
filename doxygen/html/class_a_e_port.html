@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_a_e_port.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,6 +61,7 @@ $(document).ready(function(){initNavTree('class_a_e_port.html',''); initResizabl
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -90,179 +70,36 @@ $(document).ready(function(){initNavTree('class_a_e_port.html',''); initResizabl
   <div class="headertitle"><div class="title">AEPort Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_a_e_port_8h_source.html">AEPort.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aee01d376ea207b1147a54ba14331307a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_port.html#aee01d376ea207b1147a54ba14331307a">AEPort</a> (<a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a> portenumType, <a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> halPort, <a class="el" href="_a_e_port_8h.html#a64b252fe057e68bac23670efb249711b">portClockInitializationfuncPtr_t</a> portClockInitialization)</td></tr>
+<tr class="memitem:aee01d376ea207b1147a54ba14331307a"><td class="memItemLeft" align="right" valign="top"><a id="aee01d376ea207b1147a54ba14331307a" name="aee01d376ea207b1147a54ba14331307a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AEPort</b> (Portenum portenumType, Port_t halPort, portClockInitializationfuncPtr_t portClockInitialization)</td></tr>
 <tr class="separator:aee01d376ea207b1147a54ba14331307a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae82ca4e65ab164691cba85fb3de3a19f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_port.html#ae82ca4e65ab164691cba85fb3de3a19f">Initialize</a> ()</td></tr>
+<tr class="memitem:ae82ca4e65ab164691cba85fb3de3a19f"><td class="memItemLeft" align="right" valign="top"><a id="ae82ca4e65ab164691cba85fb3de3a19f" name="ae82ca4e65ab164691cba85fb3de3a19f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> ()</td></tr>
 <tr class="separator:ae82ca4e65ab164691cba85fb3de3a19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32a17b2407978e7bcd0efa2c046c336c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_port.html#a32a17b2407978e7bcd0efa2c046c336c">GetPortEnum</a> ()</td></tr>
+<tr class="memitem:a32a17b2407978e7bcd0efa2c046c336c"><td class="memItemLeft" align="right" valign="top"><a id="a32a17b2407978e7bcd0efa2c046c336c" name="a32a17b2407978e7bcd0efa2c046c336c"></a>
+Portenum&#160;</td><td class="memItemRight" valign="bottom"><b>GetPortEnum</b> ()</td></tr>
 <tr class="separator:a32a17b2407978e7bcd0efa2c046c336c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ffb0aa6b9c066a19f57fa2d4c438772"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_port.html#a2ffb0aa6b9c066a19f57fa2d4c438772">GetPort</a> ()</td></tr>
+<tr class="memitem:a2ffb0aa6b9c066a19f57fa2d4c438772"><td class="memItemLeft" align="right" valign="top"><a id="a2ffb0aa6b9c066a19f57fa2d4c438772" name="a2ffb0aa6b9c066a19f57fa2d4c438772"></a>
+Port_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetPort</b> ()</td></tr>
 <tr class="separator:a2ffb0aa6b9c066a19f57fa2d4c438772"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a49927a3792b174ed66d024589a34e9a4"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_port.html#a49927a3792b174ed66d024589a34e9a4">AEPortAndPin</a></td></tr>
+<tr class="memitem:a49927a3792b174ed66d024589a34e9a4"><td class="memItemLeft" align="right" valign="top"><a id="a49927a3792b174ed66d024589a34e9a4" name="a49927a3792b174ed66d024589a34e9a4"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>AEPortAndPin</b></td></tr>
 <tr class="separator:a49927a3792b174ed66d024589a34e9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aee01d376ea207b1147a54ba14331307a" name="aee01d376ea207b1147a54ba14331307a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee01d376ea207b1147a54ba14331307a">&#9670;&nbsp;</a></span>AEPort()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AEPort::AEPort </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a>&#160;</td>
-          <td class="paramname"><em>portenumType</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a>&#160;</td>
-          <td class="paramname"><em>halPort</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_a_e_port_8h.html#a64b252fe057e68bac23670efb249711b">portClockInitializationfuncPtr_t</a>&#160;</td>
-          <td class="paramname"><em>portClockInitialization</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2ffb0aa6b9c066a19f57fa2d4c438772" name="a2ffb0aa6b9c066a19f57fa2d4c438772"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ffb0aa6b9c066a19f57fa2d4c438772">&#9670;&nbsp;</a></span>GetPort()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> AEPort::GetPort </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a32a17b2407978e7bcd0efa2c046c336c" name="a32a17b2407978e7bcd0efa2c046c336c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32a17b2407978e7bcd0efa2c046c336c">&#9670;&nbsp;</a></span>GetPortEnum()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455">Portenum</a> AEPort::GetPortEnum </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae82ca4e65ab164691cba85fb3de3a19f" name="ae82ca4e65ab164691cba85fb3de3a19f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae82ca4e65ab164691cba85fb3de3a19f">&#9670;&nbsp;</a></span>Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AEPort::Initialize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a49927a3792b174ed66d024589a34e9a4" name="a49927a3792b174ed66d024589a34e9a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49927a3792b174ed66d024589a34e9a4">&#9670;&nbsp;</a></span>AEPortAndPin</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="class_a_e_port_and_pin.html">AEPortAndPin</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/<a class="el" href="_a_e_port_8h_source.html">AEPort.h</a></li>
-<li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/<a class="el" href="_a_e_port_8cpp.html">AEPort.cpp</a></li>
+<li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/AEPort.cpp</li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_a_e_port.html">AEPort</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

@@ -5,7 +5,7 @@
 
 #pragma once
 
-#if SWIL_HWIL_DRIVEN == SWIL
+#ifdef SWIL_HWIL_DRIVEN__SWIL
 #include <cstdint>				  
 #endif  
  
@@ -20,7 +20,7 @@
 
 #include "AEDefines.h"
  
-#if RTOS_USED == FREERTOS
+#ifdef RTOS_USED__FREERTOS
 #include "FreeRTOS.h"
 #include "task.h"
 #include "timers.h"
@@ -666,7 +666,7 @@ else \
 //Writing to file 
 //############################### 
  
-#if SWIL_HWIL_DRIVEN == HWIL
+#ifdef SWIL_HWIL_DRIVEN__HWIL
 #include <TestResourceManager.h>	
 
  
@@ -922,7 +922,7 @@ AEPrintTimerDuration(forTimer)\
 inline void _AELogTimer(PerfElapsed_t duration, const char* FileNameToWriteTo) 
 {
 	
-#if SWIL_HWIL_DRIVEN == HWIL
+#ifdef SWIL_HWIL_DRIVEN__HWIL
 	std::string PathtoFile = "PerformanceTimes\\Hardware\\%s\\%s.txt";
 	char PathtoFile1[250]; 
 	AEFormatMsg(PathtoFile1, sizeof(PathtoFile1), PathtoFile.c_str(), FileNameToWriteTo, FileNameToWriteTo);

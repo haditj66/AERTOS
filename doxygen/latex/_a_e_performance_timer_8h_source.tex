@@ -1,0 +1,72 @@
+\hypertarget{_a_e_performance_timer_8h_source}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AEPerformance\+Timer.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}AE.h"{}}}
+\DoxyCodeLine{4  }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifdef TOOLCHAIN\_USED\_\_arm\_non\_eabi\_id }}
+\DoxyCodeLine{8 \textcolor{keyword}{typedef} uint32\_t PerfIntSize\_t;}
+\DoxyCodeLine{9 \textcolor{keyword}{typedef} uint32\_t PerfElapsed\_t;}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef TOOLCHAIN\_USED\_\_mingw}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <sys\(\backslash\)timeb.h>} }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}sysinfoapi.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{15 \textcolor{keyword}{typedef} std::chrono::time\_point<std::chrono::steady\_clock> PerfIntSize\_t;}
+\DoxyCodeLine{16 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} PerfElapsed\_t;}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifdef TOOLCHAIN\_USED\_\_gnu}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} std::chrono::time\_point<std::chrono::steady\_clock> PerfIntSize\_t;}
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} PerfElapsed\_t;}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_performance_timer}{AEPerformanceTimer}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \textcolor{comment}{//only this function will create the instances of this class.}}
+\DoxyCodeLine{27     \textcolor{keyword}{friend} \textcolor{keywordtype}{void} AE\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{28     }
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30      }
+\DoxyCodeLine{31     \textcolor{comment}{//this should not be accessed by the user as it will be used in a macro for entering and reentering}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \_TimerRunningFromStart;}
+\DoxyCodeLine{33     \textcolor{keywordtype}{bool} \_TimerRunningFromReEnter;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     PerfElapsed\_t GetElapsedTimeInNanoSeconds();}
+\DoxyCodeLine{36     }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifdef SWIL\_HWIL\_DRIVEN\_\_HWIL}}
+\DoxyCodeLine{38     uint32\_t GetElapsedTimeCPUCycles();}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40     }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} AEStart\_Timer(); }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} AEStop\_Timer();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \_init() \{\_TimerRunningFromStart = \textcolor{keyword}{false}; \_TimerRunningFromReEnter = \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifdef SWIL\_HWIL\_DRIVEN\_\_SWIL}}
+\DoxyCodeLine{53     std::chrono::time\_point<std::chrono::steady\_clock>  start; }
+\DoxyCodeLine{54     std::chrono::time\_point<std::chrono::steady\_clock>  end;}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{56     }
+\DoxyCodeLine{57     }
+\DoxyCodeLine{58     PerfIntSize\_t EndingPoint;}
+\DoxyCodeLine{59     PerfIntSize\_t StartingPoint; }
+\DoxyCodeLine{60     PerfElapsed\_t ElapsedCycles; }
+\DoxyCodeLine{61     uint32\_t ClckFreq;}
+\DoxyCodeLine{62     }
+\DoxyCodeLine{63     \mbox{\hyperlink{class_a_e_performance_timer}{AEPerformanceTimer}}();}
+\DoxyCodeLine{64     }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+
+\end{DoxyCode}

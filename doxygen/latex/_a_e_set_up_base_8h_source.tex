@@ -1,0 +1,34 @@
+\hypertarget{_a_e_set_up_base_8h_source}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AESet\+Up\+Base.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}AE.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#if RTOS\_USED == FREERTOS}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}FreeRTOS.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}task.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}timers.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}queue.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}semphr.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}event\_groups.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_set_up_base}{AESetUpBase}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_a_e_set_up_base}{AESetUpBase}}() \{\}}
+\DoxyCodeLine{20     ;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RTOSInit() \{\};}
+\DoxyCodeLine{23     \textcolor{comment}{//HAL specific intialization code}}
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BSPInit()\{\};}
+\DoxyCodeLine{25     \textcolor{comment}{//any things needed to be changed in the BSP to satisfy the RTOS being used}}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RTOS\_ToBSP\_SpecificCode()\{\};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{private}:}
+\DoxyCodeLine{29 \};}
+
+\end{DoxyCode}

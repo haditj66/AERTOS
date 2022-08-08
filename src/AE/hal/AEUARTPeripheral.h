@@ -2,7 +2,7 @@
 #include "AEPeripheral.h"
 #include "BoardTypes.h"
 
-#include "AEConfig.h"
+//#include "AEConfig.h"
 
 
 #ifndef USING_AEUART 

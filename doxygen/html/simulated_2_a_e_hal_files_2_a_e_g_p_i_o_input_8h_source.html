@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('simulated_2_a_e_hal_files_2_a_e_g_p_i_o_input_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,15 +61,20 @@ $(document).ready(function(){initNavTree('simulated_2_a_e_hal_files_2_a_e_g_p_i_
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="dir_a73106cba3fc1ee97b18c1f41ce635cc.html">boards</a></li><li class="navelem"><a class="el" href="dir_ee3f1b55ce6c73dc0eea9c3f2c944213.html">simulated</a></li><li class="navelem"><a class="el" href="dir_d189dd5571c136bbfa854a43b41749b9.html">AEHalFiles</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">AEGPIOInput.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="simulated_2_a_e_hal_files_2_a_e_g_p_i_o_input_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_a_e_g_p_i_o_input_peripheral_8h.html">AEGPIOInputPeripheral.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;AEGPIOInputPeripheral.h&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_a_e_g_p_i_o_input.html#a483d0586f7e7e3c4747c5943ab25a5e4">    5</a></span><span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_a_e_g_p_i_o_input.html#a483d0586f7e7e3c4747c5943ab25a5e4">AEGPIOInput::GPIO_ReadPin</a>() {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">inline</span> <span class="keywordtype">bool</span> AEGPIOInput::GPIO_ReadPin() {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
@@ -109,15 +93,15 @@ $(document).ready(function(){initNavTree('simulated_2_a_e_hal_files_2_a_e_g_p_i_
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span> &lt;templateForButton&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_g_p_i_o_input_peripheral.html#aa0df1cbdc6d71d95ac37029b161cb9ac">   24</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_g_p_i_o_input_peripheral.html#aa0df1cbdc6d71d95ac37029b161cb9ac">GPIOInputPeripheral&lt;templateargsForButton&gt;::_InitializePinSelectors</a>(<a class="code hl_typedef" href="_a_e_peripheral_8h.html#aac44b25878242e6ea69242639d5426cd">CreateTypeSelector_funcPtr</a>(&amp;functPtrsToChangeTypeSelectorss)[1])</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="class_g_p_i_o_input_peripheral.html">GPIOInputPeripheral&lt;templateargsForButton&gt;::_InitializePinSelectors</a>(CreateTypeSelector_funcPtr(&amp;functPtrsToChangeTypeSelectorss)[1])</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_define" href="_a_e_peripheral_8h.html#a7da25efa09257820eaba6c9d24545e7b">StartPinSelectorForPin</a>(1)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_define" href="_a_e_peripheral_8h.html#a649702f0c4e163f024c0a2f95fc97d85">M_AnyPinIsPossible</a> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_define" href="_a_e_peripheral_8h.html#a44b3dd3ed3b47353458527acb21618ec">EndPinSelectorForPin</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        StartPinSelectorForPin(1)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        M_AnyPinIsPossible </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        EndPinSelectorForPin</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">template</span> &lt;templateForButton&gt;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_g_p_i_o_input_peripheral.html#a9a121035870dd3d100124097a7da1da6">   32</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_g_p_i_o_input_peripheral.html#a9a121035870dd3d100124097a7da1da6">GPIOInputPeripheral&lt;templateargsForButton&gt;::_Initialize</a>(<a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port1, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin1, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port2, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin2, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port3, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin3, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port4, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin4, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port5, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin5)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>template &lt;templateForButton&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    inline <span class="keywordtype">void</span> <a class="code hl_class" href="class_g_p_i_o_input_peripheral.html">GPIOInputPeripheral</a>&lt;templateargsForButton&gt;::_Initialize(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        buttongpio_Port = port1;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        buttongpio_Pin = pin1; </div>
@@ -125,24 +109,11 @@ $(document).ready(function(){initNavTree('simulated_2_a_e_hal_files_2_a_e_g_p_i_
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="ttc" id="a_a_e_g_p_i_o_input_peripheral_8h_html"><div class="ttname"><a href="_a_e_g_p_i_o_input_peripheral_8h.html">AEGPIOInputPeripheral.h</a></div></div>
-<div class="ttc" id="a_a_e_peripheral_8h_html_a44b3dd3ed3b47353458527acb21618ec"><div class="ttname"><a href="_a_e_peripheral_8h.html#a44b3dd3ed3b47353458527acb21618ec">EndPinSelectorForPin</a></div><div class="ttdeci">#define EndPinSelectorForPin</div><div class="ttdef"><b>Definition:</b> AEPeripheral.h:11</div></div>
-<div class="ttc" id="a_a_e_peripheral_8h_html_a649702f0c4e163f024c0a2f95fc97d85"><div class="ttname"><a href="_a_e_peripheral_8h.html#a649702f0c4e163f024c0a2f95fc97d85">M_AnyPinIsPossible</a></div><div class="ttdeci">#define M_AnyPinIsPossible</div><div class="ttdef"><b>Definition:</b> AEPeripheral.h:9</div></div>
-<div class="ttc" id="a_a_e_peripheral_8h_html_a7da25efa09257820eaba6c9d24545e7b"><div class="ttname"><a href="_a_e_peripheral_8h.html#a7da25efa09257820eaba6c9d24545e7b">StartPinSelectorForPin</a></div><div class="ttdeci">#define StartPinSelectorForPin(forPin)</div><div class="ttdef"><b>Definition:</b> AEPeripheral.h:7</div></div>
-<div class="ttc" id="a_a_e_peripheral_8h_html_aac44b25878242e6ea69242639d5426cd"><div class="ttname"><a href="_a_e_peripheral_8h.html#aac44b25878242e6ea69242639d5426cd">CreateTypeSelector_funcPtr</a></div><div class="ttdeci">void(* CreateTypeSelector_funcPtr)(void)</div><div class="ttdef"><b>Definition:</b> AEPeripheral.h:29</div></div>
-<div class="ttc" id="aclass_a_e_g_p_i_o_input_html_a483d0586f7e7e3c4747c5943ab25a5e4"><div class="ttname"><a href="class_a_e_g_p_i_o_input.html#a483d0586f7e7e3c4747c5943ab25a5e4">AEGPIOInput::GPIO_ReadPin</a></div><div class="ttdeci">bool GPIO_ReadPin()</div><div class="ttdef"><b>Definition:</b> AEGPIOInput.h:5</div></div>
-<div class="ttc" id="aclass_g_p_i_o_input_peripheral_html_a9a121035870dd3d100124097a7da1da6"><div class="ttname"><a href="class_g_p_i_o_input_peripheral.html#a9a121035870dd3d100124097a7da1da6">GPIOInputPeripheral::_Initialize</a></div><div class="ttdeci">void _Initialize(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5) override</div><div class="ttdef"><b>Definition:</b> AEGPIOInput.h:32</div></div>
-<div class="ttc" id="aclass_g_p_i_o_input_peripheral_html_aa0df1cbdc6d71d95ac37029b161cb9ac"><div class="ttname"><a href="class_g_p_i_o_input_peripheral.html#aa0df1cbdc6d71d95ac37029b161cb9ac">GPIOInputPeripheral::_InitializePinSelectors</a></div><div class="ttdeci">void _InitializePinSelectors(CreateTypeSelector_funcPtr(&amp;functPtrsToChangeTypeSelectorss)[1]) override</div><div class="ttdef"><b>Definition:</b> AEGPIOInput.h:24</div></div>
-<div class="ttc" id="asimulated_2_a_e_core_hal_required_files_2_board_types__1_8h_html_ac93c3c98e59ef4eb5c9ab64246c1e7ec"><div class="ttname"><a href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a></div><div class="ttdeci">#define Pin_t</div><div class="ttdef"><b>Definition:</b> BoardTypes_1.h:5</div></div>
-<div class="ttc" id="asimulated_2_a_e_core_hal_required_files_2_board_types__1_8h_html_ae893c60f06f8ced569e6888d0525e146"><div class="ttname"><a href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a></div><div class="ttdeci">#define Port_t</div><div class="ttdef"><b>Definition:</b> BoardTypes_1.h:4</div></div>
+<div class="ttc" id="aclass_g_p_i_o_input_peripheral_html"><div class="ttname"><a href="class_g_p_i_o_input_peripheral.html">GPIOInputPeripheral</a></div><div class="ttdef"><b>Definition:</b> AEGPIOInputPeripheral.h:131</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="dir_a73106cba3fc1ee97b18c1f41ce635cc.html">boards</a></li><li class="navelem"><a class="el" href="dir_ee3f1b55ce6c73dc0eea9c3f2c944213.html">simulated</a></li><li class="navelem"><a class="el" href="dir_d189dd5571c136bbfa854a43b41749b9.html">AEHalFiles</a></li><li class="navelem"><a class="el" href="simulated_2_a_e_hal_files_2_a_e_g_p_i_o_input_8h.html">AEGPIOInput.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

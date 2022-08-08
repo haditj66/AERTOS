@@ -1,0 +1,315 @@
+\hypertarget{_a_e_d_m_a_peripheral_8h_source}{}\doxysection{AEDMAPeripheral.\+h}
+\label{_a_e_d_m_a_peripheral_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEDMAPeripheral.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEDMAPeripheral.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_a_e_utils_8h}{AEUtils.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}BoardTypes.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}AEPeripheral.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef USING\_AEDMA }}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#error you included this file but you did not provide a AEDMA.h file in AEHalFiles directory.}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{enum class} DMA\_StreamEnum }
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     DMAStream\_0 = 0,}
+\DoxyCodeLine{17     DMAStream\_1,}
+\DoxyCodeLine{18     DMAStream\_2,}
+\DoxyCodeLine{19     DMAStream\_3,}
+\DoxyCodeLine{20     DMAStream\_4,}
+\DoxyCodeLine{21     DMAStream\_5,}
+\DoxyCodeLine{22     DMAStream\_6,}
+\DoxyCodeLine{23     DMAStream\_7,}
+\DoxyCodeLine{24     DMAStream\_8,}
+\DoxyCodeLine{25     DMAStream\_9,}
+\DoxyCodeLine{26     DMAStream\_10}
+\DoxyCodeLine{27         }
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{enum class} DMACHEnum }
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32     DMACH0 = 0,}
+\DoxyCodeLine{33     DMACH1,}
+\DoxyCodeLine{34     DMACH2,}
+\DoxyCodeLine{35     DMACH3,}
+\DoxyCodeLine{36     DMACH4,}
+\DoxyCodeLine{37     DMACH5,}
+\DoxyCodeLine{38     DMACH6,}
+\DoxyCodeLine{39     DMACH7,}
+\DoxyCodeLine{40     DMACH8,}
+\DoxyCodeLine{41     DMACH9,}
+\DoxyCodeLine{42     DMACH10, }
+\DoxyCodeLine{43     DMACH11,}
+\DoxyCodeLine{44     DMACH12,}
+\DoxyCodeLine{45     DMACH13,}
+\DoxyCodeLine{46     DMACH14,}
+\DoxyCodeLine{47     DMACH15}
+\DoxyCodeLine{48         }
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_d_m_a___channel}{AEDMA\_Channel}};}
+\DoxyCodeLine{53 \textcolor{keyword}{extern} \mbox{\hyperlink{class_a_e_d_m_a___channel}{AEDMA\_Channel}} UserDefinedAEDMA\_chs[];}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_d_m_a___channel}{AEDMA\_Channel}}}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57 \textcolor{keyword}{public}:}
+\DoxyCodeLine{58     \textcolor{keyword}{static} \mbox{\hyperlink{class_a_e_d_m_a___channel}{AEDMA\_Channel}}* GetDMAChInstance(DMACHEnum indexEnum)}
+\DoxyCodeLine{59     \{}
+\DoxyCodeLine{60         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_numDMACHCreatedSoFar; i++)}
+\DoxyCodeLine{61         \{}
+\DoxyCodeLine{62             \textcolor{keywordflow}{if} (UserDefinedAEDMA\_chs[i].GetEnumType() == indexEnum)}
+\DoxyCodeLine{63             \{}
+\DoxyCodeLine{64                 \textcolor{keywordflow}{return} \&UserDefinedAEDMA\_chs[i];}
+\DoxyCodeLine{65             \} }
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}you attempted to get a dma\_channel with an enum type that was never user defined."{}});}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69     }
+\DoxyCodeLine{70     \mbox{\hyperlink{class_a_e_d_m_a___channel}{AEDMA\_Channel}}(DMACHEnum dMA\_CH, uint32\_t valueOfChannel)}
+\DoxyCodeLine{71     \{}
+\DoxyCodeLine{72         ValueOfChannel = valueOfChannel;}
+\DoxyCodeLine{73         DMA\_CH = dMA\_CH;}
+\DoxyCodeLine{74         }
+\DoxyCodeLine{75         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_numDMACHCreatedSoFar; i++)}
+\DoxyCodeLine{76         \{}
+\DoxyCodeLine{77             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(UserDefinedAEDMA\_chs[i].GetEnumType() != dMA\_CH, \textcolor{stringliteral}{"{}make sure that the channel defined has not been one defined already"{}});}
+\DoxyCodeLine{78             }
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80         \_numDMACHCreatedSoFar++;}
+\DoxyCodeLine{81     \}}
+\DoxyCodeLine{82     }
+\DoxyCodeLine{83     }
+\DoxyCodeLine{84     DMACHEnum GetEnumType()\textcolor{keyword}{ const}}
+\DoxyCodeLine{85 \textcolor{keyword}{    }\{\textcolor{keywordflow}{return} DMA\_CH; \}}
+\DoxyCodeLine{86     }
+\DoxyCodeLine{87     uint32\_t GetChannel()\textcolor{keyword}{ const}}
+\DoxyCodeLine{88 \textcolor{keyword}{    }\{\textcolor{keywordflow}{return} ValueOfChannel; \}}
+\DoxyCodeLine{89     }
+\DoxyCodeLine{90     \mbox{\hyperlink{class_a_e_d_m_a___channel}{AEDMA\_Channel}}* GetChannelInstance();}
+\DoxyCodeLine{91     }
+\DoxyCodeLine{92 \textcolor{keyword}{private}:}
+\DoxyCodeLine{93     uint32\_t ValueOfChannel;}
+\DoxyCodeLine{94     DMACHEnum DMA\_CH;}
+\DoxyCodeLine{95     }
+\DoxyCodeLine{96     \textcolor{keyword}{static} uint32\_t \_numDMACHCreatedSoFar;}
+\DoxyCodeLine{97 \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#if DMA\_Numbers\_Of\_DMA >= 1}}
+\DoxyCodeLine{105 \textcolor{keyword}{extern} DMAHandleType\_t* DMA1HandleForStream0;}
+\DoxyCodeLine{106 \textcolor{keyword}{extern} DMAHandleType\_t* DMA1HandleForStream1;}
+\DoxyCodeLine{107 \textcolor{keyword}{extern} DMAHandleType\_t* DMA1HandleForStream2;}
+\DoxyCodeLine{108 \textcolor{keyword}{extern} DMAHandleType\_t* DMA1HandleForStream3;}
+\DoxyCodeLine{109 \textcolor{keyword}{extern} DMAHandleType\_t* DMA1HandleForStream4;}
+\DoxyCodeLine{110 \textcolor{keyword}{extern} DMAHandleType\_t* DMA1HandleForStream5;}
+\DoxyCodeLine{111 \textcolor{keyword}{extern} DMAHandleType\_t* DMA1HandleForStream6;}
+\DoxyCodeLine{112 \textcolor{keyword}{extern} DMAHandleType\_t* DMA1HandleForStream7;}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#if DMA\_Numbers\_Of\_DMA >= 2}}
+\DoxyCodeLine{116 \textcolor{keyword}{extern} DMAHandleType\_t* DMA2HandleForStream0;}
+\DoxyCodeLine{117 \textcolor{keyword}{extern} DMAHandleType\_t* DMA2HandleForStream1;}
+\DoxyCodeLine{118 \textcolor{keyword}{extern} DMAHandleType\_t* DMA2HandleForStream2;}
+\DoxyCodeLine{119 \textcolor{keyword}{extern} DMAHandleType\_t* DMA2HandleForStream3;}
+\DoxyCodeLine{120 \textcolor{keyword}{extern} DMAHandleType\_t* DMA2HandleForStream4;}
+\DoxyCodeLine{121 \textcolor{keyword}{extern} DMAHandleType\_t* DMA2HandleForStream5;}
+\DoxyCodeLine{122 \textcolor{keyword}{extern} DMAHandleType\_t* DMA2HandleForStream6;}
+\DoxyCodeLine{123 \textcolor{keyword}{extern} DMAHandleType\_t* DMA2HandleForStream7;}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#if DMA\_Numbers\_Of\_DMA >= 3}}
+\DoxyCodeLine{127 \textcolor{keyword}{extern} DMAHandleType\_t* DMA3HandleForStream0;}
+\DoxyCodeLine{128 \textcolor{keyword}{extern} DMAHandleType\_t* DMA3HandleForStream1;}
+\DoxyCodeLine{129 \textcolor{keyword}{extern} DMAHandleType\_t* DMA3HandleForStream2;}
+\DoxyCodeLine{130 \textcolor{keyword}{extern} DMAHandleType\_t* DMA3HandleForStream3;}
+\DoxyCodeLine{131 \textcolor{keyword}{extern} DMAHandleType\_t* DMA3HandleForStream4;}
+\DoxyCodeLine{132 \textcolor{keyword}{extern} DMAHandleType\_t* DMA3HandleForStream5;}
+\DoxyCodeLine{133 \textcolor{keyword}{extern} DMAHandleType\_t* DMA3HandleForStream6;}
+\DoxyCodeLine{134 \textcolor{keyword}{extern} DMAHandleType\_t* DMA3HandleForStream7;}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#if DMA\_Numbers\_Of\_DMA >= 4}}
+\DoxyCodeLine{137 \textcolor{keyword}{extern} DMAHandleType\_t* DMA4HandleForStream0;}
+\DoxyCodeLine{138 \textcolor{keyword}{extern} DMAHandleType\_t* DMA4HandleForStream1;}
+\DoxyCodeLine{139 \textcolor{keyword}{extern} DMAHandleType\_t* DMA4HandleForStream2;}
+\DoxyCodeLine{140 \textcolor{keyword}{extern} DMAHandleType\_t* DMA4HandleForStream3;}
+\DoxyCodeLine{141 \textcolor{keyword}{extern} DMAHandleType\_t* DMA4HandleForStream4;}
+\DoxyCodeLine{142 \textcolor{keyword}{extern} DMAHandleType\_t* DMA4HandleForStream5;}
+\DoxyCodeLine{143 \textcolor{keyword}{extern} DMAHandleType\_t* DMA4HandleForStream6;}
+\DoxyCodeLine{144 \textcolor{keyword}{extern} DMAHandleType\_t* DMA4HandleForStream7;}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keyword}{typedef} void(*InitializationfuncPtr\_t)(void);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_d_m_a}{AEDMA}};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_d_m_a___stream}{AEDMA\_Stream}};}
+\DoxyCodeLine{153 \textcolor{keyword}{extern} \mbox{\hyperlink{class_a_e_d_m_a___stream}{AEDMA\_Stream}} UserDefinedAEDMA\_streams[];}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_d_m_a___stream}{AEDMA\_Stream}}}
+\DoxyCodeLine{157 \{}
+\DoxyCodeLine{158     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_d_m_a}{AEDMA}};}
+\DoxyCodeLine{159 \textcolor{keyword}{public}:}
+\DoxyCodeLine{160     \mbox{\hyperlink{class_a_e_d_m_a___stream}{AEDMA\_Stream}}(uint32\_t forDMA, DMA\_StreamEnum dmaenumType, DMAStreamType\_t haldma, InitializationfuncPtr\_t InitializationFuncptr)}
+\DoxyCodeLine{161     \{}
+\DoxyCodeLine{162         \_forDMA = forDMA;}
+\DoxyCodeLine{163         \_InitializationFuncptr = InitializationFuncptr;}
+\DoxyCodeLine{164         \_hasBeenInitYet = \textcolor{keyword}{false}; }
+\DoxyCodeLine{165         \_dmaenumType = dmaenumType;}
+\DoxyCodeLine{166         \_haldma = haldma; }
+\DoxyCodeLine{167  }
+\DoxyCodeLine{168         }
+\DoxyCodeLine{169         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_numCreatedSoFar; i++)}
+\DoxyCodeLine{170         \{}
+\DoxyCodeLine{171             \textcolor{comment}{//dma match}}
+\DoxyCodeLine{172             \textcolor{keywordflow}{if}(UserDefinedAEDMA\_streams[i].\_forDMA == forDMA)}
+\DoxyCodeLine{173             \{ }
+\DoxyCodeLine{174                 \textcolor{comment}{//stream match}}
+\DoxyCodeLine{175                 \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(UserDefinedAEDMA\_streams[i].GetDMAEnum() != \_dmaenumType, \textcolor{stringliteral}{"{}make sure that the dmaenumType defined has not been one defined already"{}});}
+\DoxyCodeLine{176             \} }
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178         \}}
+\DoxyCodeLine{179  }
+\DoxyCodeLine{180         \textcolor{comment}{//      UserDefinedAEPorts[\_numPortsCreatedSoFar] = this;}}
+\DoxyCodeLine{181         \_numCreatedSoFar++;}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183   }
+\DoxyCodeLine{184     }
+\DoxyCodeLine{185     \textcolor{keyword}{static} \mbox{\hyperlink{class_a_e_d_m_a___stream}{AEDMA\_Stream}}* GetDMAStreamInstance(uint32\_t forDMA, DMA\_StreamEnum indexStreamEnum)}
+\DoxyCodeLine{186     \{ }
+\DoxyCodeLine{187         }
+\DoxyCodeLine{188         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_numCreatedSoFar; i++)}
+\DoxyCodeLine{189         \{}
+\DoxyCodeLine{190             \textcolor{comment}{//dma match}}
+\DoxyCodeLine{191             \textcolor{keywordflow}{if}(UserDefinedAEDMA\_streams[i].\_forDMA == forDMA)}
+\DoxyCodeLine{192             \{ }
+\DoxyCodeLine{193                 \textcolor{comment}{//stream match}}
+\DoxyCodeLine{194                 \textcolor{keywordflow}{if}(UserDefinedAEDMA\_streams[i].GetDMAEnum() == indexStreamEnum)}
+\DoxyCodeLine{195                 \{}
+\DoxyCodeLine{196                     \textcolor{keywordflow}{return} \&UserDefinedAEDMA\_streams[i];}
+\DoxyCodeLine{197                 \} }
+\DoxyCodeLine{198             \} }
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200         \}}
+\DoxyCodeLine{201         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}you attempted to get a dmastream with an enum type that was never user defined."{}});}
+\DoxyCodeLine{202     \}  }
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204     DMA\_StreamEnum GetDMAEnum() \{ \textcolor{keywordflow}{return} \_dmaenumType; \}}
+\DoxyCodeLine{205     DMAStreamType\_t* GetDMAStream() \{ \textcolor{keywordflow}{return} \&\_haldma; \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{keyword}{private}:}
+\DoxyCodeLine{208     }
+\DoxyCodeLine{209     \mbox{\hyperlink{class_a_e_d_m_a}{AEDMA}}* \_parentDMA;}
+\DoxyCodeLine{210     }
+\DoxyCodeLine{211     InitializationfuncPtr\_t \_InitializationFuncptr;}
+\DoxyCodeLine{212     \textcolor{keywordtype}{bool} \_hasBeenInitYet;}
+\DoxyCodeLine{213     DMA\_StreamEnum \_dmaenumType;}
+\DoxyCodeLine{214     uint32\_t \_forDMA;}
+\DoxyCodeLine{215     }
+\DoxyCodeLine{216     DMAStreamType\_t \_haldma; }
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218     \textcolor{keyword}{static} uint32\_t \_numCreatedSoFar;}
+\DoxyCodeLine{219     }
+\DoxyCodeLine{220     \textcolor{keywordtype}{void} Initialize(\mbox{\hyperlink{class_a_e_d_m_a}{AEDMA}}* parentDMA);}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222     }
+\DoxyCodeLine{223     \textcolor{comment}{//  static AEPort* ALLPorts[15];}}
+\DoxyCodeLine{224 \};}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{keyword}{typedef} void(*CustomInitializationfuncPtr\_t)(DMAHandleType\_t* DMAHandle, DMAStreamType\_t* DMAStream, uint32\_t dmaChannel);}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_d_m_a}{AEDMA}}}
+\DoxyCodeLine{234 \{}
+\DoxyCodeLine{235     }
+\DoxyCodeLine{236 \textcolor{comment}{//  template<templateForADC>}}
+\DoxyCodeLine{237 \textcolor{comment}{//  friend class ADCPeripheral;}}
+\DoxyCodeLine{238 \textcolor{comment}{//  template<templateForUART>}}
+\DoxyCodeLine{239 \textcolor{comment}{//  friend class UARTPeripheral;}}
+\DoxyCodeLine{240     }
+\DoxyCodeLine{241 \textcolor{keyword}{public}: }
+\DoxyCodeLine{242         }
+\DoxyCodeLine{243     \mbox{\hyperlink{class_a_e_d_m_a}{AEDMA}}(  ) \{ }
+\DoxyCodeLine{244         \_customInitializationfuncPtr = \textcolor{keyword}{nullptr};  }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \};}
+\DoxyCodeLine{247     }
+\DoxyCodeLine{248     }
+\DoxyCodeLine{249     }
+\DoxyCodeLine{250     uint8\_t GetForNumDMA()}
+\DoxyCodeLine{251     \{\textcolor{keywordflow}{return} \_forDMA;\}}
+\DoxyCodeLine{252      }
+\DoxyCodeLine{253     }
+\DoxyCodeLine{254     \textcolor{keywordtype}{void} SetCustomInitialization(CustomInitializationfuncPtr\_t customInitializationfuncPtr)}
+\DoxyCodeLine{255     \{}
+\DoxyCodeLine{256         \_customInitializationfuncPtr = customInitializationfuncPtr;}
+\DoxyCodeLine{257     \}}
+\DoxyCodeLine{258     }
+\DoxyCodeLine{259     DMAHandleType\_t* GetDMAHandle() \{\textcolor{keywordflow}{return} \&\_dMAHandle;\};}
+\DoxyCodeLine{260     }
+\DoxyCodeLine{261     }
+\DoxyCodeLine{262     }
+\DoxyCodeLine{263     }
+\DoxyCodeLine{264     \textcolor{keyword}{template}<\textcolor{keyword}{class} PeriphOrMemType>}
+\DoxyCodeLine{265         \textcolor{keywordtype}{void} Init(PeriphOrMemType* periphOrMem, uint8\_t forDMA, DMA\_StreamEnum dmaenumType, DMACHEnum dmaCHenum, uint32\_t mode)}
+\DoxyCodeLine{266         \{}
+\DoxyCodeLine{267             }
+\DoxyCodeLine{268 \textcolor{comment}{//          AEAssertRuntime(\_peripheralEnum != PeripheralEnum::None , "{}this dma instance was not preinitialized which should be done by the AEhal somewhere and not the user."{});}}
+\DoxyCodeLine{269             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(forDMA <= DMA\_Numbers\_Of\_DMA, \textcolor{stringliteral}{"{}make sure dma selected is less than number of dmas for this board"{}});}
+\DoxyCodeLine{270             \_forDMA = forDMA;}
+\DoxyCodeLine{271             }
+\DoxyCodeLine{272             \textcolor{comment}{//get the asociated instance of the enums}}
+\DoxyCodeLine{273             \_dmaStream = AEDMA\_Stream::GetDMAStreamInstance(forDMA, dmaenumType); }
+\DoxyCodeLine{274             \_dmaCH = AEDMA\_Channel::GetDMAChInstance(dmaCHenum); }
+\DoxyCodeLine{275             }
+\DoxyCodeLine{276             \_dmaStream-\/>Initialize(\textcolor{keyword}{this});}
+\DoxyCodeLine{277         }
+\DoxyCodeLine{278             \textcolor{keywordflow}{if} (\_customInitializationfuncPtr != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{279             \{}
+\DoxyCodeLine{280                 \_customInitializationfuncPtr(\&\_dMAHandle, \_dmaStream-\/>GetDMAStream(), \_dmaCH-\/>GetChannel());}
+\DoxyCodeLine{281                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{282             \} }
+\DoxyCodeLine{283             }
+\DoxyCodeLine{284             \_Init(periphOrMem, mode);}
+\DoxyCodeLine{285         \}}
+\DoxyCodeLine{286      }
+\DoxyCodeLine{287     }
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \textcolor{keyword}{private}:}
+\DoxyCodeLine{290     }
+\DoxyCodeLine{291  }
+\DoxyCodeLine{292     uint8\_t \_forDMA;}
+\DoxyCodeLine{293      }
+\DoxyCodeLine{294     CustomInitializationfuncPtr\_t \_customInitializationfuncPtr;}
+\DoxyCodeLine{295     }
+\DoxyCodeLine{296     DMAHandleType\_t \_dMAHandle;}
+\DoxyCodeLine{297     }
+\DoxyCodeLine{298     }
+\DoxyCodeLine{299     \textcolor{keyword}{static} uint32\_t \_numCreatedSoFar;}
+\DoxyCodeLine{300     }
+\DoxyCodeLine{301     \mbox{\hyperlink{class_a_e_d_m_a___stream}{AEDMA\_Stream}}* \_dmaStream;}
+\DoxyCodeLine{302     \mbox{\hyperlink{class_a_e_d_m_a___channel}{AEDMA\_Channel}}* \_dmaCH;}
+\DoxyCodeLine{303     }
+\DoxyCodeLine{304  }
+\DoxyCodeLine{305     }
+\DoxyCodeLine{306         \textcolor{comment}{//user defined}}
+\DoxyCodeLine{307     \textcolor{keyword}{template}<\textcolor{keyword}{class} PeriphOrMemType>}
+\DoxyCodeLine{308         \textcolor{keywordtype}{void} \_Init(PeriphOrMemType* periphOrMem, uint32\_t mode);}
+\DoxyCodeLine{309 \};}
+
+\end{DoxyCode}

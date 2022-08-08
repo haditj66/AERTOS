@@ -1,0 +1,722 @@
+\hypertarget{_byte_serializer_8h_source}{}\doxysection{Byte\+Serializer.\+h}
+\label{_byte_serializer_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/HelperFunctions/ByteSerializer.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/HelperFunctions/ByteSerializer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//generated file: ByteSerializer.h}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} GetMax(\textcolor{keyword}{const} \textcolor{keywordtype}{int} a, \textcolor{keyword}{const} \textcolor{keywordtype}{int} b) \{}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return} (a < b) ? b : a;}
+\DoxyCodeLine{13 \}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} GetMax(\textcolor{keyword}{const} \textcolor{keywordtype}{int} a, \textcolor{keyword}{const} \textcolor{keywordtype}{int} b, \textcolor{keyword}{const} \textcolor{keywordtype}{int} c) \{}
+\DoxyCodeLine{16     \textcolor{keywordflow}{return} GetMax(a, GetMax(b, c));}
+\DoxyCodeLine{17 \}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} GetMax(\textcolor{keyword}{const} \textcolor{keywordtype}{int} a, \textcolor{keyword}{const} \textcolor{keywordtype}{int} b, \textcolor{keyword}{const} \textcolor{keywordtype}{int} c, \textcolor{keyword}{const} \textcolor{keywordtype}{int} d) \{}
+\DoxyCodeLine{20     \textcolor{keywordflow}{return} GetMax(a, GetMax(b, c, d));}
+\DoxyCodeLine{21 \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} GetMax(\textcolor{keyword}{const} \textcolor{keywordtype}{int} a, \textcolor{keyword}{const} \textcolor{keywordtype}{int} b, \textcolor{keyword}{const} \textcolor{keywordtype}{int} c, \textcolor{keyword}{const} \textcolor{keywordtype}{int} d, \textcolor{keyword}{const} \textcolor{keywordtype}{int} e) \{}
+\DoxyCodeLine{25     \textcolor{keywordflow}{return} GetMax(a, GetMax(b, c, d, e));}
+\DoxyCodeLine{26 \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28  }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define templateByteSerializer \(\backslash\)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{class arg1\_t}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define templateargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{arg1\_t}}
+\DoxyCodeLine{34  }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define functionargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{arg1\_t* arg1}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{46     \textcolor{keyword}{static}  \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>}}* getInstance();}
+\DoxyCodeLine{47     \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1}}(\mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} operator=(\mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>}}* Instance;}
+\DoxyCodeLine{51      }
+\DoxyCodeLine{52     \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1}}() \{\};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t sizeOfCharData = \textcolor{keyword}{sizeof}(arg1\_t) ;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59  }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeSerializeData(\textcolor{keywordtype}{char}* dataToSerializeFrom, functionargsByteSerializer) \{}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{64          }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66          memcpy((\textcolor{keywordtype}{void}*)arg1, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{67         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77  }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80          }
+\DoxyCodeLine{81     \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{keyword}{static} \textcolor{keywordtype}{void} SerializeData(\textcolor{keywordtype}{char}* dataToSerializeTo, functionargsByteSerializer) \{}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{86         \textcolor{comment}{//arg1 get size of argument1 and serialize it; }}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88          memcpy(dataToSerializeTo+indexOfDataSerialized, arg1, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{89         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99  }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \};}
+\DoxyCodeLine{102      }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \};}
+\DoxyCodeLine{105  }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{109 \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>::getInstance}}() \{}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keywordflow}{if} (Instance == 0)}
+\DoxyCodeLine{112     \{}
+\DoxyCodeLine{113         \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>}} soleInstance;}
+\DoxyCodeLine{114         Instance = \&soleInstance;}
+\DoxyCodeLine{115          }
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117     \textcolor{keywordflow}{return} Instance;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \}}
+\DoxyCodeLine{120  }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{123 \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer1}{ByteSerializer1<templateargsByteSerializer>::Instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128  }
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define templateByteSerializer \(\backslash\)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{class arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{ class arg2\_t}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define templateargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{ arg2\_t}}
+\DoxyCodeLine{136  }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define functionargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{arg1\_t* arg1 ,\(\backslash\)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{ arg2\_t* arg2}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{145 \textcolor{keyword}{class }\mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2}}}
+\DoxyCodeLine{146 \{}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{149     \textcolor{keyword}{static}  \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>}}* getInstance();}
+\DoxyCodeLine{150     \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2}}(\mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{151     \textcolor{keywordtype}{void} operator=(\mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>}}* Instance;}
+\DoxyCodeLine{154      }
+\DoxyCodeLine{155     \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2}}() \{\};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{public}:}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t sizeOfCharData = \textcolor{keyword}{sizeof}(arg1\_t) }
+\DoxyCodeLine{160  + \textcolor{keyword}{sizeof}(arg2\_t) ;}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     }
+\DoxyCodeLine{163  }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeSerializeData(\textcolor{keywordtype}{char}* dataToSerializeFrom, functionargsByteSerializer) \{}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{168          }
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170          memcpy((\textcolor{keywordtype}{void}*)arg1, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{171         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173          memcpy((\textcolor{keywordtype}{void}*)arg2, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{174         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182  }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185          }
+\DoxyCodeLine{186     \};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{keyword}{static} \textcolor{keywordtype}{void} SerializeData(\textcolor{keywordtype}{char}* dataToSerializeTo, functionargsByteSerializer) \{}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{191         \textcolor{comment}{//arg1 get size of argument1 and serialize it; }}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193          memcpy(dataToSerializeTo+indexOfDataSerialized, arg1, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{194         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196          memcpy(dataToSerializeTo+indexOfDataSerialized, arg2, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{197         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205  }
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207     \};}
+\DoxyCodeLine{208      }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 \};}
+\DoxyCodeLine{211  }
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{215 \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>::getInstance}}() \{}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \textcolor{keywordflow}{if} (Instance == 0)}
+\DoxyCodeLine{218     \{}
+\DoxyCodeLine{219         \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>}} soleInstance;}
+\DoxyCodeLine{220         Instance = \&soleInstance;}
+\DoxyCodeLine{221          }
+\DoxyCodeLine{222     \}}
+\DoxyCodeLine{223     \textcolor{keywordflow}{return} Instance;}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \}}
+\DoxyCodeLine{226  }
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{229 \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer2}{ByteSerializer2<templateargsByteSerializer>::Instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234  }
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define templateByteSerializer \(\backslash\)}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{class arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{ class arg2\_t ,\(\backslash\)}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{ class arg3\_t}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#define templateargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{ arg2\_t ,\(\backslash\)}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{ arg3\_t}}
+\DoxyCodeLine{244  }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define functionargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{arg1\_t* arg1 ,\(\backslash\)}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{ arg2\_t* arg2 ,\(\backslash\)}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{ arg3\_t* arg3}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{254 \textcolor{keyword}{class }\mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3}}}
+\DoxyCodeLine{255 \{}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{258     \textcolor{keyword}{static}  \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>}}* getInstance();}
+\DoxyCodeLine{259     \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3}}(\mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{260     \textcolor{keywordtype}{void} operator=(\mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262     \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>}}* Instance;}
+\DoxyCodeLine{263      }
+\DoxyCodeLine{264     \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3}}() \{\};}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{keyword}{public}:}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268     \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t sizeOfCharData = \textcolor{keyword}{sizeof}(arg1\_t) }
+\DoxyCodeLine{269  + \textcolor{keyword}{sizeof}(arg2\_t) }
+\DoxyCodeLine{270  + \textcolor{keyword}{sizeof}(arg3\_t) ;}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272     }
+\DoxyCodeLine{273  }
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeSerializeData(\textcolor{keywordtype}{char}* dataToSerializeFrom, functionargsByteSerializer) \{}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{278          }
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280          memcpy((\textcolor{keywordtype}{void}*)arg1, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{281         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283          memcpy((\textcolor{keywordtype}{void}*)arg2, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{284         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286          memcpy((\textcolor{keywordtype}{void}*)arg3, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg3\_t));}
+\DoxyCodeLine{287         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg3\_t);}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293  }
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296          }
+\DoxyCodeLine{297     \};}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299     \textcolor{keyword}{static} \textcolor{keywordtype}{void} SerializeData(\textcolor{keywordtype}{char}* dataToSerializeTo, functionargsByteSerializer) \{}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{302         \textcolor{comment}{//arg1 get size of argument1 and serialize it; }}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304          memcpy(dataToSerializeTo+indexOfDataSerialized, arg1, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{305         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307          memcpy(dataToSerializeTo+indexOfDataSerialized, arg2, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{308         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310          memcpy(dataToSerializeTo+indexOfDataSerialized, arg3, \textcolor{keyword}{sizeof}(arg3\_t));}
+\DoxyCodeLine{311         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg3\_t);}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317  }
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319     \};}
+\DoxyCodeLine{320      }
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 \};}
+\DoxyCodeLine{323  }
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{327 \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>::getInstance}}() \{}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329     \textcolor{keywordflow}{if} (Instance == 0)}
+\DoxyCodeLine{330     \{}
+\DoxyCodeLine{331         \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>}} soleInstance;}
+\DoxyCodeLine{332         Instance = \&soleInstance;}
+\DoxyCodeLine{333          }
+\DoxyCodeLine{334     \}}
+\DoxyCodeLine{335     \textcolor{keywordflow}{return} Instance;}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 \}}
+\DoxyCodeLine{338  }
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{341 \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer3}{ByteSerializer3<templateargsByteSerializer>::Instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346  }
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define templateByteSerializer \(\backslash\)}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{class arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{ class arg2\_t ,\(\backslash\)}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{ class arg3\_t ,\(\backslash\)}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{ class arg4\_t}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define templateargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{ arg2\_t ,\(\backslash\)}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{ arg3\_t ,\(\backslash\)}}
+\DoxyCodeLine{357 \textcolor{preprocessor}{ arg4\_t}}
+\DoxyCodeLine{358  }
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define functionargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{arg1\_t* arg1 ,\(\backslash\)}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{ arg2\_t* arg2 ,\(\backslash\)}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{ arg3\_t* arg3 ,\(\backslash\)}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{ arg4\_t* arg4}}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{369 \textcolor{keyword}{class }\mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4}}}
+\DoxyCodeLine{370 \{}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{373     \textcolor{keyword}{static}  \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>}}* getInstance();}
+\DoxyCodeLine{374     \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4}}(\mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{375     \textcolor{keywordtype}{void} operator=(\mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377     \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>}}* Instance;}
+\DoxyCodeLine{378      }
+\DoxyCodeLine{379     \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4}}() \{\};}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 \textcolor{keyword}{public}:}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383     \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t sizeOfCharData = \textcolor{keyword}{sizeof}(arg1\_t) }
+\DoxyCodeLine{384  + \textcolor{keyword}{sizeof}(arg2\_t) }
+\DoxyCodeLine{385  + \textcolor{keyword}{sizeof}(arg3\_t) }
+\DoxyCodeLine{386  + \textcolor{keyword}{sizeof}(arg4\_t) ;}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388     }
+\DoxyCodeLine{389  }
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391     \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeSerializeData(\textcolor{keywordtype}{char}* dataToSerializeFrom, functionargsByteSerializer) \{}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{394          }
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396          memcpy((\textcolor{keywordtype}{void}*)arg1, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{397         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399          memcpy((\textcolor{keywordtype}{void}*)arg2, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{400         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402          memcpy((\textcolor{keywordtype}{void}*)arg3, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg3\_t));}
+\DoxyCodeLine{403         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg3\_t);}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405          memcpy((\textcolor{keywordtype}{void}*)arg4, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg4\_t));}
+\DoxyCodeLine{406         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg4\_t);}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410  }
+\DoxyCodeLine{411 }
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413          }
+\DoxyCodeLine{414     \};}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416     \textcolor{keyword}{static} \textcolor{keywordtype}{void} SerializeData(\textcolor{keywordtype}{char}* dataToSerializeTo, functionargsByteSerializer) \{}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{419         \textcolor{comment}{//arg1 get size of argument1 and serialize it; }}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421          memcpy(dataToSerializeTo+indexOfDataSerialized, arg1, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{422         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424          memcpy(dataToSerializeTo+indexOfDataSerialized, arg2, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{425         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427          memcpy(dataToSerializeTo+indexOfDataSerialized, arg3, \textcolor{keyword}{sizeof}(arg3\_t));}
+\DoxyCodeLine{428         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg3\_t);}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430          memcpy(dataToSerializeTo+indexOfDataSerialized, arg4, \textcolor{keyword}{sizeof}(arg4\_t));}
+\DoxyCodeLine{431         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg4\_t);}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435  }
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437     \};}
+\DoxyCodeLine{438      }
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \};}
+\DoxyCodeLine{441  }
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{445 \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>::getInstance}}() \{}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447     \textcolor{keywordflow}{if} (Instance == 0)}
+\DoxyCodeLine{448     \{}
+\DoxyCodeLine{449         \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>}} soleInstance;}
+\DoxyCodeLine{450         Instance = \&soleInstance;}
+\DoxyCodeLine{451          }
+\DoxyCodeLine{452     \}}
+\DoxyCodeLine{453     \textcolor{keywordflow}{return} Instance;}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455 \}}
+\DoxyCodeLine{456  }
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{459 \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer4}{ByteSerializer4<templateargsByteSerializer>::Instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464  }
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define templateByteSerializer \(\backslash\)}}
+\DoxyCodeLine{466 \textcolor{preprocessor}{class arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{ class arg2\_t ,\(\backslash\)}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{ class arg3\_t ,\(\backslash\)}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{ class arg4\_t ,\(\backslash\)}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{ class arg5\_t}}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#define templateargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{473 \textcolor{preprocessor}{arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{ arg2\_t ,\(\backslash\)}}
+\DoxyCodeLine{475 \textcolor{preprocessor}{ arg3\_t ,\(\backslash\)}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{ arg4\_t ,\(\backslash\)}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{ arg5\_t}}
+\DoxyCodeLine{478  }
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define functionargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{481 \textcolor{preprocessor}{arg1\_t* arg1 ,\(\backslash\)}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{ arg2\_t* arg2 ,\(\backslash\)}}
+\DoxyCodeLine{483 \textcolor{preprocessor}{ arg3\_t* arg3 ,\(\backslash\)}}
+\DoxyCodeLine{484 \textcolor{preprocessor}{ arg4\_t* arg4 ,\(\backslash\)}}
+\DoxyCodeLine{485 \textcolor{preprocessor}{ arg5\_t* arg5}}
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{490 \textcolor{keyword}{class }\mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5}}}
+\DoxyCodeLine{491 \{}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{494     \textcolor{keyword}{static}  \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>}}* getInstance();}
+\DoxyCodeLine{495     \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5}}(\mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{496     \textcolor{keywordtype}{void} operator=(\mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498     \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>}}* Instance;}
+\DoxyCodeLine{499      }
+\DoxyCodeLine{500     \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5}}() \{\};}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502 \textcolor{keyword}{public}:}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504     \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t sizeOfCharData = \textcolor{keyword}{sizeof}(arg1\_t) }
+\DoxyCodeLine{505  + \textcolor{keyword}{sizeof}(arg2\_t) }
+\DoxyCodeLine{506  + \textcolor{keyword}{sizeof}(arg3\_t) }
+\DoxyCodeLine{507  + \textcolor{keyword}{sizeof}(arg4\_t) }
+\DoxyCodeLine{508  + \textcolor{keyword}{sizeof}(arg5\_t) ;}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510     }
+\DoxyCodeLine{511  }
+\DoxyCodeLine{512 }
+\DoxyCodeLine{513     \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeSerializeData(\textcolor{keywordtype}{char}* dataToSerializeFrom, functionargsByteSerializer) \{}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{516          }
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518          memcpy((\textcolor{keywordtype}{void}*)arg1, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{519         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521          memcpy((\textcolor{keywordtype}{void}*)arg2, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{522         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{524          memcpy((\textcolor{keywordtype}{void}*)arg3, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg3\_t));}
+\DoxyCodeLine{525         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg3\_t);}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527          memcpy((\textcolor{keywordtype}{void}*)arg4, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg4\_t));}
+\DoxyCodeLine{528         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg4\_t);}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{530          memcpy((\textcolor{keywordtype}{void}*)arg5, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg5\_t));}
+\DoxyCodeLine{531         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg5\_t);}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533  }
+\DoxyCodeLine{534 }
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536          }
+\DoxyCodeLine{537     \};}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{539     \textcolor{keyword}{static} \textcolor{keywordtype}{void} SerializeData(\textcolor{keywordtype}{char}* dataToSerializeTo, functionargsByteSerializer) \{}
+\DoxyCodeLine{540 }
+\DoxyCodeLine{541         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{542         \textcolor{comment}{//arg1 get size of argument1 and serialize it; }}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{544          memcpy(dataToSerializeTo+indexOfDataSerialized, arg1, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{545         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{547          memcpy(dataToSerializeTo+indexOfDataSerialized, arg2, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{548         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550          memcpy(dataToSerializeTo+indexOfDataSerialized, arg3, \textcolor{keyword}{sizeof}(arg3\_t));}
+\DoxyCodeLine{551         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg3\_t);}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553          memcpy(dataToSerializeTo+indexOfDataSerialized, arg4, \textcolor{keyword}{sizeof}(arg4\_t));}
+\DoxyCodeLine{554         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg4\_t);}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556          memcpy(dataToSerializeTo+indexOfDataSerialized, arg5, \textcolor{keyword}{sizeof}(arg5\_t));}
+\DoxyCodeLine{557         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg5\_t);}
+\DoxyCodeLine{558 }
+\DoxyCodeLine{559  }
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561     \};}
+\DoxyCodeLine{562      }
+\DoxyCodeLine{563 }
+\DoxyCodeLine{564 \};}
+\DoxyCodeLine{565  }
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{569 \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>::getInstance}}() \{}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571     \textcolor{keywordflow}{if} (Instance == 0)}
+\DoxyCodeLine{572     \{}
+\DoxyCodeLine{573         \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>}} soleInstance;}
+\DoxyCodeLine{574         Instance = \&soleInstance;}
+\DoxyCodeLine{575          }
+\DoxyCodeLine{576     \}}
+\DoxyCodeLine{577     \textcolor{keywordflow}{return} Instance;}
+\DoxyCodeLine{578 }
+\DoxyCodeLine{579 \}}
+\DoxyCodeLine{580  }
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{583 \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer5}{ByteSerializer5<templateargsByteSerializer>::Instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{584 }
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586 }
+\DoxyCodeLine{587 }
+\DoxyCodeLine{588  }
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#define templateByteSerializer \(\backslash\)}}
+\DoxyCodeLine{590 \textcolor{preprocessor}{class arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{591 \textcolor{preprocessor}{ class arg2\_t ,\(\backslash\)}}
+\DoxyCodeLine{592 \textcolor{preprocessor}{ class arg3\_t ,\(\backslash\)}}
+\DoxyCodeLine{593 \textcolor{preprocessor}{ class arg4\_t ,\(\backslash\)}}
+\DoxyCodeLine{594 \textcolor{preprocessor}{ class arg5\_t ,\(\backslash\)}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{ class arg6\_t}}
+\DoxyCodeLine{596 }
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#define templateargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{598 \textcolor{preprocessor}{arg1\_t ,\(\backslash\)}}
+\DoxyCodeLine{599 \textcolor{preprocessor}{ arg2\_t ,\(\backslash\)}}
+\DoxyCodeLine{600 \textcolor{preprocessor}{ arg3\_t ,\(\backslash\)}}
+\DoxyCodeLine{601 \textcolor{preprocessor}{ arg4\_t ,\(\backslash\)}}
+\DoxyCodeLine{602 \textcolor{preprocessor}{ arg5\_t ,\(\backslash\)}}
+\DoxyCodeLine{603 \textcolor{preprocessor}{ arg6\_t}}
+\DoxyCodeLine{604  }
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#define functionargsByteSerializer \(\backslash\)}}
+\DoxyCodeLine{607 \textcolor{preprocessor}{arg1\_t* arg1 ,\(\backslash\)}}
+\DoxyCodeLine{608 \textcolor{preprocessor}{ arg2\_t* arg2 ,\(\backslash\)}}
+\DoxyCodeLine{609 \textcolor{preprocessor}{ arg3\_t* arg3 ,\(\backslash\)}}
+\DoxyCodeLine{610 \textcolor{preprocessor}{ arg4\_t* arg4 ,\(\backslash\)}}
+\DoxyCodeLine{611 \textcolor{preprocessor}{ arg5\_t* arg5 ,\(\backslash\)}}
+\DoxyCodeLine{612 \textcolor{preprocessor}{ arg6\_t* arg6}}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614 }
+\DoxyCodeLine{615 }
+\DoxyCodeLine{616 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{617 \textcolor{keyword}{class }\mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6}}}
+\DoxyCodeLine{618 \{}
+\DoxyCodeLine{619 }
+\DoxyCodeLine{620 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{621     \textcolor{keyword}{static}  \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>}}* getInstance();}
+\DoxyCodeLine{622     \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6}}(\mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{623     \textcolor{keywordtype}{void} operator=(\mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{624 }
+\DoxyCodeLine{625     \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>}}* Instance;}
+\DoxyCodeLine{626      }
+\DoxyCodeLine{627     \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6}}() \{\};}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629 \textcolor{keyword}{public}:}
+\DoxyCodeLine{630 }
+\DoxyCodeLine{631     \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t sizeOfCharData = \textcolor{keyword}{sizeof}(arg1\_t) }
+\DoxyCodeLine{632  + \textcolor{keyword}{sizeof}(arg2\_t) }
+\DoxyCodeLine{633  + \textcolor{keyword}{sizeof}(arg3\_t) }
+\DoxyCodeLine{634  + \textcolor{keyword}{sizeof}(arg4\_t) }
+\DoxyCodeLine{635  + \textcolor{keyword}{sizeof}(arg5\_t) }
+\DoxyCodeLine{636  + \textcolor{keyword}{sizeof}(arg6\_t) ;}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638     }
+\DoxyCodeLine{639  }
+\DoxyCodeLine{640 }
+\DoxyCodeLine{641     \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeSerializeData(\textcolor{keywordtype}{char}* dataToSerializeFrom, functionargsByteSerializer) \{}
+\DoxyCodeLine{642 }
+\DoxyCodeLine{643         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{644          }
+\DoxyCodeLine{645 }
+\DoxyCodeLine{646          memcpy((\textcolor{keywordtype}{void}*)arg1, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{647         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{648 }
+\DoxyCodeLine{649          memcpy((\textcolor{keywordtype}{void}*)arg2, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{650         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{651 }
+\DoxyCodeLine{652          memcpy((\textcolor{keywordtype}{void}*)arg3, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg3\_t));}
+\DoxyCodeLine{653         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg3\_t);}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655          memcpy((\textcolor{keywordtype}{void}*)arg4, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg4\_t));}
+\DoxyCodeLine{656         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg4\_t);}
+\DoxyCodeLine{657 }
+\DoxyCodeLine{658          memcpy((\textcolor{keywordtype}{void}*)arg5, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg5\_t));}
+\DoxyCodeLine{659         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg5\_t);}
+\DoxyCodeLine{660 }
+\DoxyCodeLine{661          memcpy((\textcolor{keywordtype}{void}*)arg6, dataToSerializeFrom + indexOfDataSerialized, \textcolor{keyword}{sizeof}(arg6\_t));}
+\DoxyCodeLine{662         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg6\_t); }
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664 }
+\DoxyCodeLine{665          }
+\DoxyCodeLine{666     \};}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{668     \textcolor{keyword}{static} \textcolor{keywordtype}{void} SerializeData(\textcolor{keywordtype}{char}* dataToSerializeTo, functionargsByteSerializer) \{}
+\DoxyCodeLine{669 }
+\DoxyCodeLine{670         uint32\_t indexOfDataSerialized = 0;}
+\DoxyCodeLine{671         \textcolor{comment}{//arg1 get size of argument1 and serialize it; }}
+\DoxyCodeLine{672 }
+\DoxyCodeLine{673          memcpy(dataToSerializeTo+indexOfDataSerialized, arg1, \textcolor{keyword}{sizeof}(arg1\_t));}
+\DoxyCodeLine{674         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg1\_t);}
+\DoxyCodeLine{675 }
+\DoxyCodeLine{676          memcpy(dataToSerializeTo+indexOfDataSerialized, arg2, \textcolor{keyword}{sizeof}(arg2\_t));}
+\DoxyCodeLine{677         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg2\_t);}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679          memcpy(dataToSerializeTo+indexOfDataSerialized, arg3, \textcolor{keyword}{sizeof}(arg3\_t));}
+\DoxyCodeLine{680         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg3\_t);}
+\DoxyCodeLine{681 }
+\DoxyCodeLine{682          memcpy(dataToSerializeTo+indexOfDataSerialized, arg4, \textcolor{keyword}{sizeof}(arg4\_t));}
+\DoxyCodeLine{683         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg4\_t);}
+\DoxyCodeLine{684 }
+\DoxyCodeLine{685          memcpy(dataToSerializeTo+indexOfDataSerialized, arg5, \textcolor{keyword}{sizeof}(arg5\_t));}
+\DoxyCodeLine{686         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg5\_t);}
+\DoxyCodeLine{687 }
+\DoxyCodeLine{688          memcpy(dataToSerializeTo+indexOfDataSerialized, arg6, \textcolor{keyword}{sizeof}(arg6\_t));}
+\DoxyCodeLine{689         indexOfDataSerialized += \textcolor{keyword}{sizeof}(arg6\_t); }
+\DoxyCodeLine{690 }
+\DoxyCodeLine{691     \};}
+\DoxyCodeLine{692      }
+\DoxyCodeLine{693 }
+\DoxyCodeLine{694 \};}
+\DoxyCodeLine{695  }
+\DoxyCodeLine{696 }
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{699 \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>::getInstance}}() \{}
+\DoxyCodeLine{700 }
+\DoxyCodeLine{701     \textcolor{keywordflow}{if} (Instance == 0)}
+\DoxyCodeLine{702     \{}
+\DoxyCodeLine{703         \textcolor{keyword}{static} \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>}} soleInstance;}
+\DoxyCodeLine{704         Instance = \&soleInstance;}
+\DoxyCodeLine{705          }
+\DoxyCodeLine{706     \}}
+\DoxyCodeLine{707     \textcolor{keywordflow}{return} Instance;}
+\DoxyCodeLine{708 }
+\DoxyCodeLine{709 \}}
+\DoxyCodeLine{710  }
+\DoxyCodeLine{711 }
+\DoxyCodeLine{712 \textcolor{keyword}{template}<templateByteSerializer>}
+\DoxyCodeLine{713 \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>}}* \mbox{\hyperlink{class_byte_serializer6}{ByteSerializer6<templateargsByteSerializer>::Instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{714 }
+\DoxyCodeLine{715 }
+\DoxyCodeLine{716 }
+
+\end{DoxyCode}

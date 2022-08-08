@@ -1,6 +1,20 @@
 #pragma once
 
 #include "AEPortAndPin.h"
+
+#ifdef BoardModelType2
+#include "ModelType2Setup.h"    
+#elif BoardModelType1
+#include "ModelType1Setup.h"   
+#elif BoardSeries
+#include "SeriesSetup.h"   
+#elif BoardVendor
+#include "BoardVendorSetup.h"   
+#elif IsPC
+#include "BoardVendorSetup.h" 
+#endif
+
+//#include "stm32f4xx_hal.h"
  
 
 //helper macro for the pinselector

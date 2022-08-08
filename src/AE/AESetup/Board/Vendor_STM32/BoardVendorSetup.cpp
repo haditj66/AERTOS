@@ -1,4 +1,8 @@
 //generated file: BoardVendorSetup.cpp
+//**********************************************************************
+//this is an auto-generated file using the template file located in the directory of C:\CodeGenerator\CodeGenerator\bin\Debug\..\..\FileTemplates\Files
+//ONLY WRITE CODE IN THE UserCode_Section BLOCKS
+//If you write code anywhere else,  it will be overwritten. modify the actual template file if needing to modify code outside usersection blocks.
 
 
 // this is for board STM32F411RE for the
@@ -9,24 +13,6 @@
 //UserCode_Sectiona
 #include "AEIntegrationTesting.h"
 
-extern "C"
-{ 
-	//extern TIM_HandleTypeDef htim1;
-
-	void SysTick_Handler(void)
-	{
-		/* USER CODE BEGIN SysTick_IRQn 0 */
-
-		/* USER CODE END SysTick_IRQn 0 */
-		osSystickHandler();
-		HAL_IncTick();
-		HAL_SYSTICK_IRQHandler();
-		/* USER CODE BEGIN SysTick_IRQn 1 */
-
-		/* USER CODE END SysTick_IRQn 1 */
-	}
-
-}
 
 
 
@@ -35,7 +21,7 @@ extern "C" void HardFault_Handler()
 	
 	//if integration testing is on, then signal a failed because
 	//of a hardfault
-#if BUILD_TESTS == TRUE
+#ifdef BUILD_TESTS__TRUE
 	AEITEST_END_HARDFAULT_FUNC();
 #endif
 	for (;;)

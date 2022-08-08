@@ -20,22 +20,21 @@ config runtime assertions: these should be used when in configuration stage of A
 
 </ul>
 
-\subsection  Static assertion \todo implement static asserts.
+\subsection a static assertion
+\todo implement static asserts.
 
 
 
 
-\subsection  runtime assertions  
+\subsection b runtime assertions  
 APIs
-\ref AEAssertRuntime(thingToAssert, AssertionMessage)
- 
- 
- 
- 
-  \ref AECircularBuffer::Push(ContainerType item, bool withFullCheck)
- 
-  For more information, please see @ref abc
 
- For more information, please see @ref abc
+\ref AEAssertRuntime(thingToAssert, AssertionMessage)
+  
+\ref AECircularBuffer::Push(ContainerType item, bool withFullCheck)
+ 
+For more information, please see @ref abc
+
+For more information, please see @ref abc
  
  */

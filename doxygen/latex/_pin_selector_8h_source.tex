@@ -1,0 +1,172 @@
+\hypertarget{_pin_selector_8h_source}{}\doxysection{Pin\+Selector.\+h}
+\label{_pin_selector_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/PinSelector.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/PinSelector.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}cstdint"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_a_e_utils_8h}{AEUtils.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//helper macro for the pinselector}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define StartPinSelectorForPin(forPin) this-\/>functPtrsToChangeTypeSelectors[forPin -\/ 1] = []() -\/> void  \{}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define M\_IncludePossiblePin(portEnum, pinEnum) PinSelector::getInstance()-\/>IncludePossiblePin(portEnum, pinEnum);}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define M\_AnyPinIsPossible PinSelector::getInstance()-\/>AnyPinIsPossible();}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define M\_OnlyThisPinPossible(portEnum, pinEnum)  PinSelector::getInstance()-\/>OnlyThisPinPossible(portEnum, pinEnum);}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define EndPinSelectorForPin \};}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{enum} Portenum : uint8\_t}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     PortA       = 0,}
+\DoxyCodeLine{23     PortB,}
+\DoxyCodeLine{24     PortC,}
+\DoxyCodeLine{25     PortD,}
+\DoxyCodeLine{26     PortE,}
+\DoxyCodeLine{27     PortF,}
+\DoxyCodeLine{28     PortG,}
+\DoxyCodeLine{29     PortH,}
+\DoxyCodeLine{30     PortI,}
+\DoxyCodeLine{31     PortsMaxNum}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \}}
+\DoxyCodeLine{34 ;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{enum} PinEnum : uint16\_t}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     PIN0      = 0,}
+\DoxyCodeLine{41     PIN1,}
+\DoxyCodeLine{42     PIN2,}
+\DoxyCodeLine{43     PIN3,}
+\DoxyCodeLine{44     PIN4,}
+\DoxyCodeLine{45     PIN5,}
+\DoxyCodeLine{46     PIN6,}
+\DoxyCodeLine{47     PIN7,}
+\DoxyCodeLine{48     PIN8,}
+\DoxyCodeLine{49     PIN9,}
+\DoxyCodeLine{50     PIN10,}
+\DoxyCodeLine{51     PIN11,}
+\DoxyCodeLine{52     PIN12,}
+\DoxyCodeLine{53     PIN13,}
+\DoxyCodeLine{54     PIN14,}
+\DoxyCodeLine{55     PIN15,}
+\DoxyCodeLine{56     PINMaxNum}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define MaxNumOfPinPossibilities 20}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{class }\mbox{\hyperlink{class_pin_selector}{PinSelector}}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69     }
+\DoxyCodeLine{70     AEFRIEND\_TEST(\mbox{\hyperlink{class_pin_selector}{PinSelector}}, pin\_validation);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{template} <TemplateFor\_AEPeripherals\_NoDefaults>}
+\DoxyCodeLine{73     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}; }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     }
+\DoxyCodeLine{76         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{public}:}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{//make it a singleton as this will be reset and used again for checking pins}}
+\DoxyCodeLine{81 public :}
+\DoxyCodeLine{82     \textcolor{keyword}{static} \mbox{\hyperlink{class_pin_selector}{PinSelector}}* getInstance();}
+\DoxyCodeLine{83     \mbox{\hyperlink{class_pin_selector}{PinSelector}}(\mbox{\hyperlink{class_pin_selector}{PinSelector}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} operator=(\mbox{\hyperlink{class_pin_selector}{PinSelector}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{85 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     \textcolor{keyword}{static} \mbox{\hyperlink{class_pin_selector}{PinSelector}}* instance;}
+\DoxyCodeLine{87     \mbox{\hyperlink{class_pin_selector}{PinSelector}}() \{ ResetSelector(); \}}
+\DoxyCodeLine{88     ;}
+\DoxyCodeLine{89 \textcolor{keyword}{public}:}
+\DoxyCodeLine{90     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     Portenum ports[MaxNumOfPinPossibilities];}
+\DoxyCodeLine{93     PinEnum pins[MaxNumOfPinPossibilities];}
+\DoxyCodeLine{94      }
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} IncludePossiblePin(Portenum port, PinEnum pin) \{}
+\DoxyCodeLine{96  }
+\DoxyCodeLine{97         \textcolor{comment}{//configASSERT(pinIndex <= NumOfPossiblePins); }}
+\DoxyCodeLine{98         \textcolor{comment}{//assert that you have not selected AnyPinIsPossible()}}
+\DoxyCodeLine{99         configASSERT(isAnyPinPossible == \textcolor{keyword}{false});}
+\DoxyCodeLine{100         ports[pinIndex] = port;}
+\DoxyCodeLine{101         pins[pinIndex] = pin;}
+\DoxyCodeLine{102         pinIndex++;}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104     ;}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} AnyPinIsPossible() \{}
+\DoxyCodeLine{106         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(pinIndex == 0,\textcolor{stringliteral}{"{}assert that no other pin was included as possible or not possible"{}});}
+\DoxyCodeLine{107         isAnyPinPossible = \textcolor{keyword}{true};}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109     ;}
+\DoxyCodeLine{110     \textcolor{comment}{//template<Portenum PORT, PinEnum PINNum>}}
+\DoxyCodeLine{111     \textcolor{comment}{//void ExcludePossiblePin(); }}
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} OnlyThisPinPossible(Portenum port, PinEnum pin) \{ }
+\DoxyCodeLine{113         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(isAnyPinPossible == \textcolor{keyword}{false}, \textcolor{stringliteral}{"{}assert that you have not selected AnyPinIsPossible()"{}}); }
+\DoxyCodeLine{114         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(0 == pinIndex, \textcolor{stringliteral}{"{}to use this, only 1 possible pin should be set"{}});}
+\DoxyCodeLine{115         ports[pinIndex] = port;}
+\DoxyCodeLine{116         pins[pinIndex] = pin;}
+\DoxyCodeLine{117         pinIndex++;}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119     ;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{keywordtype}{bool} CheckIfPinIsValid(Portenum port, PinEnum pin)}
+\DoxyCodeLine{122     \{}
+\DoxyCodeLine{123         \textcolor{comment}{//if pin selector has isAnyPinPossible == true, than all pins are valid}}
+\DoxyCodeLine{124         \textcolor{keywordflow}{if}(isAnyPinPossible == \textcolor{keyword}{true})}
+\DoxyCodeLine{125         \{}
+\DoxyCodeLine{126             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{127         \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129         \textcolor{keywordtype}{bool} isValid = \textcolor{keyword}{false};}
+\DoxyCodeLine{130         \textcolor{keywordflow}{for} (uint16\_t i = 0; i < PinSelector::getInstance()-\/>pinIndex; i++)}
+\DoxyCodeLine{131         \{}
+\DoxyCodeLine{132             \textcolor{comment}{//if both the port and pin are the same as just one valid pin, then it is valid}}
+\DoxyCodeLine{133             \textcolor{keywordflow}{if}((PinSelector::getInstance()-\/>ports[i] == port)}
+\DoxyCodeLine{134                 \&\& (PinSelector::getInstance()-\/>pins[i] == pin))}
+\DoxyCodeLine{135             \{}
+\DoxyCodeLine{136                 isValid = \textcolor{keyword}{true};}
+\DoxyCodeLine{137                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{138             \}}
+\DoxyCodeLine{139         \}}
+\DoxyCodeLine{140         \textcolor{keywordflow}{return} isValid;}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{comment}{//resets all the pins for a new selectors of rules.  }}
+\DoxyCodeLine{146     \textcolor{keywordtype}{void} ResetSelector()}
+\DoxyCodeLine{147     \{}
+\DoxyCodeLine{148         pinIndex = 0;}
+\DoxyCodeLine{149         isAnyPinPossible = \textcolor{keyword}{false};}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151     ;}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keyword}{private}:}
+\DoxyCodeLine{154     uint16\_t pinIndex;}
+\DoxyCodeLine{155     \textcolor{keywordtype}{bool} isAnyPinPossible;}
+\DoxyCodeLine{156 \};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{comment}{//MAKE\_SINGLETON\_PUT\_IN\_CPP(PinSelector)}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 }
+
+\end{DoxyCode}

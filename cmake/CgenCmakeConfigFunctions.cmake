@@ -70,9 +70,15 @@ endfunction()
 
 
 
+
+#*************************************************************
+#start cgen
+#CGEN_DIRECTORY_OF_CACHE: use this to specify the RELATIVE DIRECTORY where all cgen related files such as the cache will be placed. you can set different cgen directory configs for different configurations.
+#						  the base directory is always ${CMAKE_CURRENT_SOURCE_DIR}/CGensaveFiles/cmakeGui/
+#                         the default value, if not specified, for this is the directory  ${PLATFORM}/${CMAKE_BUILD_TYPE}
 macro(Cgen_Start )
     set(options)
-    set(oneValueArgs   )
+    set(oneValueArgs  CGEN_DIRECTORY_OF_CACHE )
     set(multiValueArgs )
     cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 	
@@ -98,20 +104,44 @@ macro(Cgen_Start )
 			set(CGEN_CMAKE_CURRENT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 		set(CGEN_CMAKE_CURRENT_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}) 
 		endif()
-	set(PATH_TO_TESTMACRO_FILE "${CGEN_CMAKE_CURRENT_BINARY_DIR}/CGensaveFiles/IntegrationTestMacros.h") 
-	add_compile_definitions(PATH_TO_TESTMACRO_FILE="${PATH_TO_TESTMACRO_FILE}")
+
 	add_compile_definitions(CGEN_CMAKE_CURRENT_SOURCE_DIR="${CGEN_CMAKE_CURRENT_SOURCE_DIR}")
 	add_compile_definitions(CGEN_CMAKE_CURRENT_BINARY_DIR="${CGEN_CMAKE_CURRENT_BINARY_DIR}")
 	
+
+	message("PLATFORM----------------${PLATFORM}")
+    message("CMAKE_BUILD_TYPE----------------${CMAKE_BUILD_TYPE}")
+
+	    #if this cmake CMAKE_BUILD_TYPE is not defined, make it so that the user MUST define it. 
+    #this is because of the various ways different IDE's might set this variable, causing inconsistent 
+    #behaviour when moving from one ide to another.
+    if(NOT DEFINED CMAKE_BUILD_TYPE)
+        message("PLATFORM----------------${PLATFORM}")
+        message("CMAKE_BUILD_TYPE----------------${CMAKE_BUILD_TYPE}")
+        message( "CGEN_DIRECTORY  -----  ${CMAKE_CURRENT_SOURCE_DIR}/CGensaveFiles/cmakeGui/PLATFORM/CMAKE_BUILD_TYPE" )
+        message(WARNING "HADI: You need to have set the cmake variable CMAKE_BUILD_TYPE. Usually this is \"Debug\". check that if you moved to a 
+            different ide that they two ide's dont set CMAKE_BUILD_TYPE differently")
+    endif()
 	
     # 1.    first check that the cgenCmakeCache.cmake and cgenCmakeConfigNEXT.txt
     #       file exists in location ${CMAKE_SOURCE_DIR}/CGensaveFiles
-    set(CGEN_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/CGensaveFiles/cmakeGui/${PLATFORM}/${CMAKE_BUILD_TYPE}" )
+	if(NOT DEFINED _arg_CGEN_DIRECTORY_OF_CACHE)
+		set(CGEN_DIRECTORY_OF_CACHE_PROJECT_FILES "${PLATFORM}/${CMAKE_BUILD_TYPE}")
+		set(CGEN_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/CGensaveFiles/cmakeGui/${PLATFORM}/${CMAKE_BUILD_TYPE}" )
+	else()
+		set(CGEN_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/CGensaveFiles/cmakeGui/${_arg_CGEN_DIRECTORY_OF_CACHE}" )
+		set(CGEN_DIRECTORY_OF_CACHE_PROJECT_FILES "${_arg_CGEN_DIRECTORY_OF_CACHE}")
+	endif() 
+
 	#set(CGEN_DIRECTORY2 "${CMAKE_CURRENT_BINARY_DIR}/CGensaveFiles" )
     set(CGEN_CACHEFILE "${CGEN_DIRECTORY}/cgenCmakeCache.cmake"  )
     set(CGEN_NEXTFILE "${CGEN_DIRECTORY}/cgenCmakeConfigNEXT.txt"  )
 	set(CGEN_STEP1FILE "${CMAKE_CURRENT_BINARY_DIR}/CGensaveFiles/Dir_Step1.txt"  )
 	 
+	#set(PATH_TO_TESTMACRO_FILE "${CGEN_CMAKE_CURRENT_BINARY_DIR}/CGensaveFiles/IntegrationTestMacros.h") 
+	set(PATH_TO_TESTMACRO_FILE "${CGEN_DIRECTORY}/IntegrationTestMacros.h") 
+	add_compile_definitions(PATH_TO_TESTMACRO_FILE="${PATH_TO_TESTMACRO_FILE}")
+	
     if (NOT EXISTS ${CGEN_DIRECTORY})
         file(MAKE_DIRECTORY ${CGEN_DIRECTORY})
     endif ()
@@ -127,9 +157,12 @@ macro(Cgen_Start )
 	
 	
 	if(DEFINED CODEGENGUI_PATH)
-
+		
+				message("CMAKE_CURRENT_BINARY_DIR----------------${CMAKE_CURRENT_BINARY_DIR}")
+                message("CGEN_STEP1FILE----------------${CGEN_STEP1FILE}")
+		
 		#write to the step1 file the directories that the cgencmagui will need
-		file(WRITE ${CGEN_STEP1FILE} "CMAKE_CURRENT_BINARY_DIR: ${CMAKE_CURRENT_BINARY_DIR}\nCMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}\nPLATFORM: ${PLATFORM}\nCMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
+		file(WRITE ${CGEN_STEP1FILE} "CMAKE_CURRENT_BINARY_DIR: ${CMAKE_CURRENT_BINARY_DIR}\nCMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}\nPLATFORM: ${PLATFORM}\nCMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}\nCGEN_DIRECTORY_OF_CACHE_PROJECT_FILES: ${CGEN_DIRECTORY_OF_CACHE_PROJECT_FILES}")
 		
 			 execute_process(COMMAND  cgen cmakegui
 				WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
@@ -138,6 +171,7 @@ macro(Cgen_Start )
 				)
 	endif ()	
 	
+	    message("CGEN_CACHEFILE----------------${CGEN_CACHEFILE}")
 			
 	#read fromt the options save file cgenCmakeCache.cmake
 	include(${CGEN_CACHEFILE})
@@ -145,66 +179,7 @@ endmacro()
 
 
 
-
-
-
-
-	#############################################
-	#add integration tests to an integration test group.
-	#FOR_TARGET: for what target are these integration tests for
-	#All_TEST_NAMES: description of that option to create.
-	function(IntegrationTest_add_test)
-		set(options)
-		set(oneValueArgs  FOR_TARGET )
-		set(multiValueArgs All_TEST_NAMES)
-		cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
-
-
-		Cgen_Option(
-				NAME INTEGRATION_TESTS_FOR_${INTEGRATION_TESTS}
-				DESCRIPTION "Available tests for ${_arg_FOR_TARGET} "
-				POSSIBLEVALUES ${_arg_All_TEST_NAMES}
-				CONSTRICTS_LATER_OPTIONS
-		)
-
-		#create the test file chosen if it does not exist yet and generate the contents  of IntegTestPipeline.h
-		foreach(TEST_NAME IN LISTS _arg_All_TEST_NAMES)
-
-			if(${INTEGRATION_TESTS_FOR_${INTEGRATION_TESTS}} STREQUAL  ${TEST_NAME})
-
-
-				set(TEST_NAME_EXT ${TEST_NAME}.cpp )
-
-				#generate the test file only if it does not exist yet!.
-				# if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${TEST_NAME_EXT})
-				Generate_File_Using_Cgen(
-						WORKINGDIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-						INPUT_FILE_NAME IntegTestTemplate
-						OUTPUT_FILE_NAME ${TEST_NAME}
-						OUTPUT_FILE_EXTENSION cpp
-				)
-				#endif ()
-
-				target_sources(${_arg_FOR_TARGET} PUBLIC ${TEST_NAME_EXT})
-				
-				Set_Sources_in_SourceGroup(NAMEOFGROUP "TestFile" LISTOFSOURCES  main.cpp ${TEST_NAME_EXT})
-
-				#generate IntegTestPipeline
-				Generate_File_Using_Cgen(
-						WORKINGDIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-						INPUT_FILE_NAME IntegTestPipeline
-						OUTPUT_FILE_NAME IntegTestPipeline
-						OUTPUT_FILE_EXTENSION h
-				)
-
-				target_sources(${_arg_FOR_TARGET} PUBLIC IntegTestPipeline.h)
-
-			endif()
-
-		endforeach()
-
-
-	endfunction()
+ 
 
 
 
@@ -214,6 +189,16 @@ function(Cgen_End )
     set(oneValueArgs   )
     set(multiValueArgs )
     cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+	
+	if(DEFINED BUILD_TESTS)
+		if(${BUILD_TESTS} STREQUAL "TRUE" )		
+			if(DEFINED INTEGRATION_TESTS)
+				if(NOT DEFINED INTEGRATION_TESTS_FOR_${INTEGRATION_TESTS})
+					message(FATAL_ERROR "cgen: you specified that you wanted to build an integration test for integration test ${INTEGRATION_TESTS} \n however you have not created any specific tests for this integration test. To do that you need to do for example like the following  \n   \n set(All_TEST_NAMES ADC_TEST UART_TEST)  \n IntegrationTest_add_test(FOR_TARGET AEHalexe All_TEST_NAMES ${All_TEST_NAMES})")
+				endif()
+			endif()
+		endif()
+	endif()
 	
 	#write a done in the next file signalling that there are no more options to set
 		if(DEFINED CODEGENGUI_PATH) 

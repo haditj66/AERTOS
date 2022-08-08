@@ -1,0 +1,78 @@
+\hypertarget{_free_r_t_o_s_set_up_functions_8h_source}{}\doxysection{Free\+RTOSSet\+Up\+Functions.\+h}
+\label{_free_r_t_o_s_set_up_functions_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{//prv intialize -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef HARDWARE}}
+\DoxyCodeLine{9 \textcolor{comment}{//void  prvInitialiseHeap(void);}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{11  }
+\DoxyCodeLine{12 \textcolor{comment}{//extern void AEPrint(char* msg);}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifdef HARDWARE}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{20 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22     }
+\DoxyCodeLine{23     \textcolor{comment}{//void \_Error\_Handler(char *, int);}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{//\#define Error\_Handler() \_Error\_Handler(\_\_FILE\_\_, \_\_LINE\_\_)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{27 \}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{38 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{/*}}
+\DoxyCodeLine{42 \textcolor{comment}{    * Only the comprehensive demo uses application hook (callback) functions.  See}}
+\DoxyCodeLine{43 \textcolor{comment}{    * http://www.freertos.org/a00016.html for more information.}}
+\DoxyCodeLine{44 \textcolor{comment}{    */}}
+\DoxyCodeLine{45 \textcolor{comment}{//  void vFullDemoTickHookFunction(void);}}
+\DoxyCodeLine{46 \textcolor{comment}{//  void vFullDemoIdleFunction(void);}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     }
+\DoxyCodeLine{50     \textcolor{comment}{/*}}
+\DoxyCodeLine{51 \textcolor{comment}{    * This demo uses heap\_5.c, so start by defining some heap regions.  It is not}}
+\DoxyCodeLine{52 \textcolor{comment}{    * necessary for this demo to use heap\_5, as it could define one large heap}}
+\DoxyCodeLine{53 \textcolor{comment}{    * region.  Heap\_5 is only used for test and example purposes.  See}}
+\DoxyCodeLine{54 \textcolor{comment}{    * http://www.freertos.org/a00111.html for an explanation.}}
+\DoxyCodeLine{55 \textcolor{comment}{    */}}
+\DoxyCodeLine{56     \textcolor{comment}{//static void  prvInitialiseHeap( void );}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{/*}}
+\DoxyCodeLine{59 \textcolor{comment}{    * Prototypes for the standard FreeRTOS application hook (callback) functions}}
+\DoxyCodeLine{60 \textcolor{comment}{    * implemented within this file.  See http://www.freertos.org/a00016.html .}}
+\DoxyCodeLine{61 \textcolor{comment}{    */}}
+\DoxyCodeLine{62     \textcolor{comment}{//void vApplicationMallocFailedHook(void);}}
+\DoxyCodeLine{63 \textcolor{comment}{//  void vApplicationIdleHook(void); }}
+\DoxyCodeLine{64 \textcolor{comment}{//  void vApplicationTickHook(void);}}
+\DoxyCodeLine{65 \textcolor{comment}{//  void vApplicationGetIdleTaskMemory(StaticTask\_t **ppxIdleTaskTCBBuffer, StackType\_t **ppxIdleTaskStackBuffer, uint32\_t *pulIdleTaskStackSize);}}
+\DoxyCodeLine{66 \textcolor{comment}{//  void vApplicationGetTimerTaskMemory(StaticTask\_t **ppxTimerTaskTCBBuffer, StackType\_t **ppxTimerTaskStackBuffer, uint32\_t *pulTimerTaskStackSize);}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{//void AssertCalled(unsigned long ulLine, const char * const pcFileName);}}
+\DoxyCodeLine{69     \textcolor{comment}{//void vApplicationStackOverflowHook(TaskHandle\_t pxTask, char *pcTaskName);}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{71 \}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

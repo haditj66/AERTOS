@@ -1,4 +1,8 @@
 
+
+
+
+
 function(target_link_libraries _target)
     set(_mode "PUBLIC")
     foreach(_arg IN LISTS ARGN)
@@ -42,7 +46,7 @@ foreach(_dep IN LISTS _deps)
     get_target_property(_srcs ${_dep} SOURCES)
     get_target_property(_src_dir ${_dep} SOURCE_DIR)
     foreach(_src IN LISTS _srcs)
-        message("${_src_dir}/${_src}")
+        #message("${_src_dir}/${_src}")
         set(_worklist ${_worklist} "${_src_dir}/${_src}") 
         
     endforeach()
@@ -68,47 +72,6 @@ endforeach()
 endfunction()
  
 
-
-#########################
-#Add a test to Target you choose. The test will be placed 
-#in directory ${TestsForTarget}_Tests with file names ${NameOfTestTarget}.cpp
-#TestsForTarget: the target that these tests are meant for. for example AECoreLib
-#########################
-function(create_unittests_for_target) 
-set(options)
-set(oneValueArgs TestsForTarget NameOfTestTarget ForUserConfigNum )
-set(multiValueArgs LISTOF_EXTRA_SOURCES) 
-cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
-
-if(${BUILD_UNIT_TESTS} STREQUAL "TRUE" )
-if(${TestGroups} STREQUAL  "Test_Group${_arg_ForUserConfigNum}")	 
-
-
- add_bsp_based_executable(NAME ${_arg_NameOfTestTarget}
-	SOURCES
-         ${_arg_LISTOF_EXTRA_SOURCES}
-		 ${SRCS_TO_TEST_CONFIG}
-		"${CMAKE_CURRENT_SOURCE_DIR}/${_arg_TestsForTarget}_Tests/${_arg_NameOfTestTarget}.cpp"  
-		"${CMAKE_SOURCE_DIR}/test/mainUnitTest.cpp"
-	GENERATE_BIN
-	GENERATE_MAP
-	BUILD_UNIT_TESTS)
-#target_include_directories(BSP PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/${_arg_TestsForTarget}_Tests/conf")
-target_include_directories(BSP PUBLIC "${PATH_TO_TEST_CONFIG}")
-target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${PATH_TO_TEST_CONFIG}")
-
-target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
-
-Set_Sources_in_SourceGroup(NAMEOFGROUP "UserAEConf" LISTOFSOURCES  ${SRCS_TO_TEST_CONFIG})
-
-target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  BSP)  
-target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  ${_arg_TestsForTarget})    
-target_compile_definitions(${_arg_NameOfTestTarget} PRIVATE GOOGLE_TESTING)
-
-endif()
-endif()
-
-endfunction()
 
 
 
@@ -199,3 +162,185 @@ function(get_file_extension )
     set(OUT_VAR ${OUT_VAR} PARENT_SCOPE)
 
 endfunction()
+
+
+
+
+
+
+
+
+
+####################################################################################################
+#                           Unit tests helper functions
+####################################################################################################
+
+
+
+
+
+#########################
+#Add a test to Target you choose. The test will be placed 
+#in directory ${TestsForTarget}_Tests with file names ${NameOfTestTarget}.cpp
+#TestsForTarget: the target that these tests are meant for. for example AECoreLib
+#########################
+function(CREATE_TARGET_UNITTESTS) 
+set(options)
+set(oneValueArgs  NameOfTestTarget  LOCATION_OF_TARGET)
+set(multiValueArgs LibrariesToLinkTo LISTOF_EXTRA_SOURCES) 
+cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+if(${BUILD_UNIT_TESTS} STREQUAL "TRUE" )
+
+#no more doing this with ForUserConfigNum. Instead setting files are pulled from the "conf" directory 
+#if(${TestGroups} STREQUAL  "Test_Group${_arg_ForUserConfigNum}")	 
+
+set(FULL_PATH_TO_TARGET ${_arg_LOCATION_OF_TARGET}/${_arg_NameOfTestTarget})
+
+set(USER_CONFIG_FILES
+"${_arg_LOCATION_OF_TARGET}/${_arg_NameOfTestTarget}/conf/UserBSPConfig.cpp" 
+"${_arg_LOCATION_OF_TARGET}/${_arg_NameOfTestTarget}/conf/AEConfig.h" 
+)
+
+ add_bsp_based_executable(NAME ${_arg_NameOfTestTarget}
+	SOURCES
+         ${_arg_LISTOF_EXTRA_SOURCES}
+         #${AESetupFiles}
+         ${USER_CONFIG_FILES}  
+		"${_arg_LOCATION_OF_TARGET}/${_arg_NameOfTestTarget}/${_arg_NameOfTestTarget}.cpp"  
+		"${CMAKE_SOURCE_DIR}/test/mainUnitTest.cpp"
+	GENERATE_BIN
+	GENERATE_MAP
+	BUILD_UNIT_TESTS)
+#target_include_directories(BSP PUBLIC "${_arg_LOCATION_OF_TARGET}/${_arg_TestsForTargets}_Tests/conf")
+target_include_directories(BSP PUBLIC "${FULL_PATH_TO_TARGET}/conf")
+target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${FULL_PATH_TO_TARGET}/conf") 
+target_include_directories(${_arg_NameOfTestTarget}  PUBLIC "${_arg_LOCATION_OF_TARGET}")
+
+Set_Sources_in_SourceGroup(NAMEOFGROUP "UserAEConf" LISTOFSOURCES  ${USER_CONFIG_FILES})
+
+target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  BSP)  
+#link all targets these tests will use.
+foreach(tar ${_arg_LibrariesToLinkTo})
+#target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  ${_arg_TestsForTargets})  
+target_link_libraries(${_arg_NameOfTestTarget} PUBLIC  ${tar})  
+endforeach() 
+target_compile_definitions(${_arg_NameOfTestTarget} PRIVATE GOOGLE_TESTING)
+
+endif()
+#endif()
+
+endfunction()
+
+
+
+
+
+
+
+
+
+ 
+
+include("${CMAKE_SOURCE_DIR}/cmake/AEIntegrationTestsManager.cmake")
+
+####################################################################################################
+#                           integration/exe tests helper functions
+####################################################################################################
+macro(CREATE_TARGET_INTEGRATIONEXE) 
+set(options)
+set(oneValueArgs NAME_OF_TARGET LOCATION_OF_TARGET LIST_OF_TESTS)
+set(multiValueArgs LibrariesToLinkTo) 
+cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN}) 
+
+
+Cgen_Option(
+        NAME INTEGRATION_TESTS
+        DESCRIPTION "choose an integration test to build"
+        POSSIBLEVALUES ${_arg_NAME_OF_TARGET} #AECoreTestEXE AEHal_Tests1
+        CONSTRICTS_LATER_OPTIONS
+)
+
+
+if(${INTEGRATION_TESTS} STREQUAL "${_arg_NAME_OF_TARGET}")
+message("building integration test for target ${_arg_NAME_OF_TARGET}. using specific test of name ${NAME_OF_TARGET}")
+
+set(FULL_PATH_TO_TARGET ${_arg_LOCATION_OF_TARGET}/${_arg_NAME_OF_TARGET})
+
+#get the fsrc files from the include and src directory of this location 
+file(GLOB TARGET_SRCS
+     "${FULL_PATH_TO_TARGET}/src/*.c"
+     "${FULL_PATH_TO_TARGET}/src/*.cpp"
+)
+file(GLOB TARGET_HEADERS
+     "${FULL_PATH_TO_TARGET}/include/*.h"
+     "${FULL_PATH_TO_TARGET}/include/*.hpp"
+)
+
+if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
+
+ add_bsp_based_executable(
+	NAME ${_arg_NAME_OF_TARGET}
+	SOURCES ${FULL_PATH_TO_TARGET}/main.cpp ${SRCS_TO_USER_CONFIG_FILES}
+    ${TARGET_SRCS}
+    ${TARGET_HEADERS}
+	${FULL_PATH_TO_TARGET}/conf/UserBSPConfig.cpp
+    ${FULL_PATH_TO_TARGET}/conf/AEConfig.h
+	GENERATE_BIN
+	GENERATE_MAP) 
+	 
+		#Always do this for BSP targets. I dont really understand why yet you need this
+	target_include_directories(BSP PUBLIC "${FULL_PATH_TO_TARGET}/conf") 
+
+
+else()
+
+	 add_executable( ${_arg_NAME_OF_TARGET} 
+		 main.cpp 
+		${SRCS_TO_USER_CONFIG_FILES}
+		) 
+
+
+		target_include_directories(AECoreLib PUBLIC "${FULL_PATH_TO_TARGET}/conf")
+
+endif()
+	 
+
+foreach(integtest  ${_arg_LIST_OF_TESTS})
+	AEintegrationTest_create_test(
+	TEST_NAME ${integtest} 
+	FOR_USER_CONFIG_GROUP  Test_Group1)  
+
+   AEintegrationTest_add_test(
+   FOR_TARGET ${_arg_NAME_OF_TARGET}  
+   All_TEST_NAMES  ${integtest} )
+endforeach()
+
+	#AEintegrationTest_create_test(
+	#TEST_NAME defaultTest 
+	#FOR_USER_CONFIG_GROUP  Test_Group1)  
+   #AEintegrationTest_add_test(
+   #FOR_TARGET AECoreTestEXE 
+   #All_TEST_NAMES  defaultTest)
+
+
+#target_link_libraries(${_arg_NAME_OF_TARGET}  PUBLIC  AECoreLib)    
+
+#put all libraries this target links to 
+foreach(tar ${_arg_LibrariesToLinkTo}) 
+target_link_libraries(${_arg_NAME_OF_TARGET} PUBLIC  ${tar})  
+endforeach() 
+
+Set_Sources_in_SourceGroup(
+NAMEOFGROUP target_sources
+LISTOFSOURCES ${TARGET_SRCS})
+
+    Set_Sources_in_SourceGroup(
+NAMEOFGROUP target_headers
+LISTOFSOURCES ${TARGET_HEADERS})
+ 
+
+
+endif()
+
+endmacro()

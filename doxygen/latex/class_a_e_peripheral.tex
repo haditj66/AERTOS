@@ -1,0 +1,82 @@
+\hypertarget{class_a_e_peripheral}{}\doxysection{AEPeripheral\texorpdfstring{$<$}{<} Template\+For\+\_\+\+AEPeripherals \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_a_e_peripheral}\index{AEPeripheral$<$ TemplateFor\_AEPeripherals $>$@{AEPeripheral$<$ TemplateFor\_AEPeripherals $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_ae0f9b98723182f07c8fa2f328d9f614e}\label{class_a_e_peripheral_ae0f9b98723182f07c8fa2f328d9f614e}} 
+{\bfseries AEPeripheral} (\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}$<$ Template\+Args\+\_\+\+AEPeripherals $>$ const \&)=delete
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_aaf8a692605c5d861b47415e8f85a6665}\label{class_a_e_peripheral_aaf8a692605c5d861b47415e8f85a6665}} 
+void {\bfseries operator=} (\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}$<$ Template\+Args\+\_\+\+AEPeripherals $>$ const \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_af7873ff213c9b831487c89195c98b864}\label{class_a_e_peripheral_af7873ff213c9b831487c89195c98b864}} 
+static Derived\+Type $\ast$ {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a1a4f15e9b0e631ed86e3495ac5ebfd80}\label{class_a_e_peripheral_a1a4f15e9b0e631ed86e3495ac5ebfd80}} 
+Peripheral\+Handle\+Type\+Def {\bfseries Peripheral\+Handle\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a843787859da7338c45d4d41e0d803ca0}\label{class_a_e_peripheral_a843787859da7338c45d4d41e0d803ca0}} 
+void {\bfseries initialize\+Peripheral} ()
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a08f04ef997156f3fc7c10adf5af15de7}\label{class_a_e_peripheral_a08f04ef997156f3fc7c10adf5af15de7}} 
+virtual void {\bfseries \+\_\+\+Initialize\+Pin\+Selectors} (Create\+Type\+Selector\+\_\+func\+Ptr(\&funct\+Ptrs\+To\+Change\+Type\+Selectors)\mbox{[}Num\+Of\+Gpio\+Pins\+Needed\mbox{]})=0
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_afa81f1289bdfa585aec241299b97dc9c}\label{class_a_e_peripheral_afa81f1289bdfa585aec241299b97dc9c}} 
+virtual void {\bfseries \+\_\+\+Initialize} (Port\+\_\+t port1, Pin\+\_\+t pin1, Port\+\_\+t port2, Pin\+\_\+t pin2, Port\+\_\+t port3, Pin\+\_\+t pin3, Port\+\_\+t port4, Pin\+\_\+t pin4, Port\+\_\+t port5, Pin\+\_\+t pin5)=0
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_aa436ea03ab769bcbeedac6e797746c18}\label{class_a_e_peripheral_aa436ea03ab769bcbeedac6e797746c18}} 
+virtual void {\bfseries Pre\+\_\+\+Initialize} (Port\+\_\+t port1, Pin\+\_\+t pin1, Port\+\_\+t port2, Pin\+\_\+t pin2, Port\+\_\+t port3, Pin\+\_\+t pin3, Port\+\_\+t port4, Pin\+\_\+t pin4, Port\+\_\+t port5, Pin\+\_\+t pin5)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_ad3f47b662716eacb3876f13b1858feb8}\label{class_a_e_peripheral_ad3f47b662716eacb3876f13b1858feb8}} 
+uint8\+\_\+t {\bfseries For\+Which\+Peripheral\+Number}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_aa339deca3b734b2aff25e5f5474fd94c}\label{class_a_e_peripheral_aa339deca3b734b2aff25e5f5474fd94c}} 
+Create\+Type\+Selector\+\_\+func\+Ptr {\bfseries funct\+Ptrs\+To\+Change\+Type\+Selectors} \mbox{[}Num\+Of\+Gpio\+Pins\+Needed\mbox{]}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a5923ebc283a4ed90dec2402fe8a1366f}\label{class_a_e_peripheral_a5923ebc283a4ed90dec2402fe8a1366f}} 
+\mbox{\hyperlink{class_a_e_port_and_pin}{AEPort\+And\+Pin}} {\bfseries GPIOPin\+Selected1}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a16fc1be8549a8b8bca92b1228a30bc07}\label{class_a_e_peripheral_a16fc1be8549a8b8bca92b1228a30bc07}} 
+\mbox{\hyperlink{class_a_e_port_and_pin}{AEPort\+And\+Pin}} {\bfseries GPIOPin\+Selected2}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a19a26fce3366057928a328ccb46a24d7}\label{class_a_e_peripheral_a19a26fce3366057928a328ccb46a24d7}} 
+\mbox{\hyperlink{class_a_e_port_and_pin}{AEPort\+And\+Pin}} {\bfseries GPIOPin\+Selected3}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a815223b5bc28774f7f2751b076ec2511}\label{class_a_e_peripheral_a815223b5bc28774f7f2751b076ec2511}} 
+\mbox{\hyperlink{class_a_e_port_and_pin}{AEPort\+And\+Pin}} {\bfseries GPIOPin\+Selected4}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a1ebcf19e85d21bf1168cde35d626f166}\label{class_a_e_peripheral_a1ebcf19e85d21bf1168cde35d626f166}} 
+\mbox{\hyperlink{class_a_e_port_and_pin}{AEPort\+And\+Pin}} {\bfseries GPIOPin\+Selected5}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a24cca7cae29c875700988eab66be5749}\label{class_a_e_peripheral_a24cca7cae29c875700988eab66be5749}} 
+static Derived\+Type $\ast$ {\bfseries Instance} = nullptr
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_a1a7bc1460eb06fb63c43ae52f96a3380}\label{class_a_e_peripheral_a1a7bc1460eb06fb63c43ae52f96a3380}} 
+static bool {\bfseries is\+Already\+Initialized} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_e_peripheral_aaa96fbeac3aeb80841b28dd5deb0db09}\label{class_a_e_peripheral_aaa96fbeac3aeb80841b28dd5deb0db09}} 
+void {\bfseries AE\+\_\+\+Init} (void)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/hal/AEPeripheral.\+h\end{DoxyCompactItemize}

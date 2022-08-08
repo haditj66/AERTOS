@@ -1,0 +1,71 @@
+\hypertarget{class_g_p_i_o_peripheral}{}\doxysection{GPIOPeripheral\texorpdfstring{$<$}{<} template\+For\+GPIO \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_g_p_i_o_peripheral}\index{GPIOPeripheral$<$ templateForGPIO $>$@{GPIOPeripheral$<$ templateForGPIO $>$}}
+Inheritance diagram for GPIOPeripheral\texorpdfstring{$<$}{<} template\+For\+GPIO \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.911263cm]{class_g_p_i_o_peripheral}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_a34f5080d0c1888e35f374088c4467c79}\label{class_g_p_i_o_peripheral_a34f5080d0c1888e35f374088c4467c79}} 
+Port\+\_\+t {\bfseries Port}
+\item 
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_a517124b33c00b15d9c8206a4defa695a}\label{class_g_p_i_o_peripheral_a517124b33c00b15d9c8206a4defa695a}} 
+Pin\+\_\+t {\bfseries Pin}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_ad772d7f0e1ccaf3f83d48dbcda7484e9}\label{class_g_p_i_o_peripheral_ad772d7f0e1ccaf3f83d48dbcda7484e9}} 
+static bool {\bfseries Is\+Already\+In\+Use} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_aa07d422edb1a106d941fbbe359bee3bc}\label{class_g_p_i_o_peripheral_aa07d422edb1a106d941fbbe359bee3bc}} 
+void {\bfseries \+\_\+\+Initialize\+Pin\+Selectors} (Create\+Type\+Selector\+\_\+func\+Ptr(\&funct\+Ptrs\+To\+Change\+Type\+Selectorss)\mbox{[}1\mbox{]}) override
+\item 
+void \mbox{\hyperlink{class_g_p_i_o_peripheral_acddc1620a0b9eba564cb9090be9827c7}{\+\_\+\+Initialize}} (Port\+\_\+t port1, Pin\+\_\+t pin1, Port\+\_\+t port2, Pin\+\_\+t pin2, Port\+\_\+t port3, Pin\+\_\+t pin3, Port\+\_\+t port4, Pin\+\_\+t pin4, Port\+\_\+t port5, Pin\+\_\+t pin5) override
+\item 
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_ae65d80bcfdad98c03e89eb08176fb344}\label{class_g_p_i_o_peripheral_ae65d80bcfdad98c03e89eb08176fb344}} 
+\mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} $\ast$ {\bfseries Get\+Peripheral\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_a0a59ea12a2299a0d7c8ae5258e3e45b4}\label{class_g_p_i_o_peripheral_a0a59ea12a2299a0d7c8ae5258e3e45b4}} 
+\mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} {\bfseries Gpio\+Instance}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_a07ee1093324e82f7d4cfef60f70d7983}\label{class_g_p_i_o_peripheral_a07ee1093324e82f7d4cfef60f70d7983}} 
+class {\bfseries AEGPIO}
+\item 
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_aaa96fbeac3aeb80841b28dd5deb0db09}\label{class_g_p_i_o_peripheral_aaa96fbeac3aeb80841b28dd5deb0db09}} 
+void {\bfseries AE\+\_\+\+Init} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_p_i_o_peripheral_acddc1620a0b9eba564cb9090be9827c7}\label{class_g_p_i_o_peripheral_acddc1620a0b9eba564cb9090be9827c7}} 
+\index{GPIOPeripheral$<$ templateForGPIO $>$@{GPIOPeripheral$<$ templateForGPIO $>$}!\_Initialize@{\_Initialize}}
+\index{\_Initialize@{\_Initialize}!GPIOPeripheral$<$ templateForGPIO $>$@{GPIOPeripheral$<$ templateForGPIO $>$}}
+\doxysubsubsection{\texorpdfstring{\_Initialize()}{\_Initialize()}}
+{\footnotesize\ttfamily template$<$template\+For\+GPIO $>$ \\
+void \mbox{\hyperlink{class_g_p_i_o_peripheral}{GPIOPeripheral}}$<$ template\+For\+GPIO $>$\+::\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{Port\+\_\+t}]{port1,  }\item[{Pin\+\_\+t}]{pin1,  }\item[{Port\+\_\+t}]{port2,  }\item[{Pin\+\_\+t}]{pin2,  }\item[{Port\+\_\+t}]{port3,  }\item[{Pin\+\_\+t}]{pin3,  }\item[{Port\+\_\+t}]{port4,  }\item[{Pin\+\_\+t}]{pin4,  }\item[{Port\+\_\+t}]{port5,  }\item[{Pin\+\_\+t}]{pin5 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral$<$ GPIOPeripheral$<$ templateargs\+For\+GPIO $>$, 1, GPIO\+\_\+\+Handle, templateargs\+For\+GPIO $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/hal/AEGPIOOutput\+Peripheral.\+h\item 
+C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/hal/boards/simulated/\+AEHal\+Files/AEGPIOOutput.\+h\item 
+C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/hal/boards/\+STM32\+F411\+RE/\+AEHal\+Files/AEGPIOOutput.\+h\end{DoxyCompactItemize}

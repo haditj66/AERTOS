@@ -1,0 +1,1250 @@
+\hypertarget{_a_e_utils_8h_source}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AEUtils.h}
+\mbox{\hyperlink{_a_e_utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifdef SWIL\_HWIL\_DRIVEN\_\_SWIL}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <cstdint>}                }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif  }}
+\DoxyCodeLine{11  }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}AE.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}AEPerformanceTimer.h"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}AEDefines.h"{}}}
+\DoxyCodeLine{22  }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifdef RTOS\_USED\_\_FREERTOS}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}FreeRTOS.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}task.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}timers.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}queue.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}semphr.h"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}event\_groups.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define PoolManager AEPoolManager<Event1, Event1Size, Event2, Event2Size, Event3, Event3Size, Event4, Event4Size, Event5, Event5Size>::getInstance()}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define PublishSubscribeManager AEPublishSubscribeManager::getInstance()}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48  }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{enum} AEPriorities}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     LowestPriority  = AOPRIORITYLOWEST,}
+\DoxyCodeLine{59     MediumPriority  = AOPRIORITYMEDIUM,}
+\DoxyCodeLine{60     HighestPriority = AOPRIORITYHIGHEST -\/ 1 \textcolor{comment}{// -\/1 so to leave room to the actual highest priority that the AE uses}}
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_null_f_s_m_utility}{AENullFSMUtility}}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69 \textcolor{keyword}{public}:}
+\DoxyCodeLine{70     \textcolor{keyword}{template}<\textcolor{keyword}{class} TBla>}
+\DoxyCodeLine{71         \textcolor{keywordtype}{void} SetExclusivePossessor(TBla*) \{\}}
+\DoxyCodeLine{72     ;}
+\DoxyCodeLine{73     uint16\_t GetAO\_ID() \{ \textcolor{keywordflow}{return} 0; \}}
+\DoxyCodeLine{74     ;}
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{class }\mbox{\hyperlink{class_n_u_l_l_peripheral}{NULLPeripheral}}}
+\DoxyCodeLine{79 \{}
+\DoxyCodeLine{80 \textcolor{keyword}{public}:}
+\DoxyCodeLine{81     \textcolor{keyword}{static} \textcolor{keywordtype}{void}* Instance;}
+\DoxyCodeLine{82     \textcolor{keyword}{static} \textcolor{keywordtype}{void}* getInstance() \{ \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr}; \}}
+\DoxyCodeLine{83     ;}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} initializePeripheral() \{\}}
+\DoxyCodeLine{85     ;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_null_class}{AENullClass}} \{}
+\DoxyCodeLine{90 \textcolor{keyword}{public}:\textcolor{keywordtype}{float} operator()(\textcolor{keywordtype}{float} a) \{ \textcolor{keywordflow}{return} 0; \}}
+\DoxyCodeLine{91     ;}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} Initialize(\textcolor{keywordtype}{float} a) \{\}}
+\DoxyCodeLine{93     ;}
+\DoxyCodeLine{94     \textcolor{keywordtype}{float} GetObservation() \{ \textcolor{keywordflow}{return} 1; \}}
+\DoxyCodeLine{95     ;}
+\DoxyCodeLine{96     \textcolor{keywordtype}{float}* GetOutputDataAddress() \{ \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr}; \}}
+\DoxyCodeLine{97     ;}
+\DoxyCodeLine{98 \};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_n_u_l_l_event}{AENULLEvent}}}
+\DoxyCodeLine{101 \{}
+\DoxyCodeLine{102 \textcolor{keyword}{public}:}
+\DoxyCodeLine{103     \textcolor{keywordtype}{bool} EvtId;}
+\DoxyCodeLine{104     \textcolor{keywordtype}{bool} EvtIdStatic;}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#pragma warning( disable : 26495)}}
+\DoxyCodeLine{106     \mbox{\hyperlink{class_a_e_n_u_l_l_event}{AENULLEvent}}() \{\}}
+\DoxyCodeLine{107     ;}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} init(uint16\_t evtId) \{\}}
+\DoxyCodeLine{109     ;}
+\DoxyCodeLine{110 \};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{keyword}{typedef} \textcolor{keywordtype}{bool} AENull;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{comment}{//forward declaration}}
+\DoxyCodeLine{115 \textcolor{keyword}{class }AENullActionRequest;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{template}<\textcolor{keyword}{typename} TypeOfArgToCheck>}
+\DoxyCodeLine{119     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_is_array_checker}{IsArrayChecker}}}
+\DoxyCodeLine{120     \{}
+\DoxyCodeLine{121         \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} IsArgumentArray(TypeOfArgToCheck argToCheck);}
+\DoxyCodeLine{122     \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keyword}{template}<\textcolor{keyword}{typename} TypeOfArgToCheck>}
+\DoxyCodeLine{125     \textcolor{keyword}{inline} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_is_array_checker}{IsArrayChecker< TypeOfArgToCheck>::IsArgumentArray}}(TypeOfArgToCheck argToCheck)}
+\DoxyCodeLine{126     \{}
+\DoxyCodeLine{127         \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(TypeOfArgToCheck) != \textcolor{keyword}{sizeof}(argToCheck);}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypeToCopyFrom>}
+\DoxyCodeLine{131     \textcolor{keyword}{class }\mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy}}}
+\DoxyCodeLine{132     \{}
+\DoxyCodeLine{133     \textcolor{keyword}{public}:}
+\DoxyCodeLine{134         \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEMemcpy(\textcolor{keywordtype}{void}* dest, TTypeToCopyFrom source, uint32\_t size);}
+\DoxyCodeLine{135     \textcolor{keyword}{private}:}
+\DoxyCodeLine{136         \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEMemcpyIMPL1(\textcolor{keywordtype}{void}* dest, TTypeToCopyFrom source, uint32\_t size) \{ memcpy(dest, (\textcolor{keywordtype}{void}*)source, size); \}}
+\DoxyCodeLine{137         ;}
+\DoxyCodeLine{138         \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEMemcpyIMPL2(\textcolor{keywordtype}{void}* dest, TTypeToCopyFrom source, uint32\_t size) \{ memcpy(dest, (\textcolor{keywordtype}{void}*)\&source, size); \}}
+\DoxyCodeLine{139         ;}
+\DoxyCodeLine{140     \};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{comment}{/*}}
+\DoxyCodeLine{143 \textcolor{comment}{template<class TTypeToCopyFrom, uint32\_t N>}}
+\DoxyCodeLine{144 \textcolor{comment}{class ArrayCheckToMemCopy<TTypeToCopyFrom[N]>}}
+\DoxyCodeLine{145 \textcolor{comment}{\{}}
+\DoxyCodeLine{146 \textcolor{comment}{public:}}
+\DoxyCodeLine{147 \textcolor{comment}{    static void AEMemcpy(void* dest, TTypeToCopyFrom source, uint32\_t size) \{ memcpy(dest, source, size); \};}}
+\DoxyCodeLine{148 \textcolor{comment}{private:}}
+\DoxyCodeLine{149 \textcolor{comment}{    static void AEMemcpyIMPL1(void* dest, TTypeToCopyFrom source, uint32\_t size) \{ memcpy(dest, (void*)source, size); \};}}
+\DoxyCodeLine{150 \textcolor{comment}{    static void AEMemcpyIMPL2(void* dest, TTypeToCopyFrom source, uint32\_t size) \{ memcpy(dest, (void*)\&source, size); \};}}
+\DoxyCodeLine{151 \textcolor{comment}{\};}}
+\DoxyCodeLine{152 \textcolor{comment}{*/}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypeToCopyFrom>}
+\DoxyCodeLine{156     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<TTypeToCopyFrom>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, TTypeToCopyFrom source, uint32\_t size) \{}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158         memcpy(dest, source, size);}
+\DoxyCodeLine{159     \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{162     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<const char*>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * source, uint32\_t size)}
+\DoxyCodeLine{163     \{}
+\DoxyCodeLine{164         memcpy(dest, \&source, size);}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{168     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<char*>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, \textcolor{keywordtype}{char}* source, uint32\_t size)}
+\DoxyCodeLine{169     \{}
+\DoxyCodeLine{170         memcpy(dest, \&source, size);}
+\DoxyCodeLine{171     \}}
+\DoxyCodeLine{172 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{173     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<uint8\_t*>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, uint8\_t* source, uint32\_t size)}
+\DoxyCodeLine{174     \{}
+\DoxyCodeLine{175         memcpy(dest, \&source, size);}
+\DoxyCodeLine{176     \}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{179     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<char>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, \textcolor{keywordtype}{char} source, uint32\_t size)}
+\DoxyCodeLine{180     \{}
+\DoxyCodeLine{181         memcpy(dest, \&source, size);}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{comment}{/*}}
+\DoxyCodeLine{187 \textcolor{comment}{template<>}}
+\DoxyCodeLine{188 \textcolor{comment}{inline void ArrayCheckToMemCopy<char>::AEMemcpy(void* dest, char source, uint32\_t size)}}
+\DoxyCodeLine{189 \textcolor{comment}{\{}}
+\DoxyCodeLine{190 \textcolor{comment}{    memcpy(dest, \&source, size);}}
+\DoxyCodeLine{191 \textcolor{comment}{\}*/}}
+\DoxyCodeLine{192 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{193     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<float>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, \textcolor{keywordtype}{float} source, uint32\_t size)}
+\DoxyCodeLine{194     \{}
+\DoxyCodeLine{195         memcpy(dest, \&source, size);}
+\DoxyCodeLine{196     \}}
+\DoxyCodeLine{197 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{198     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<uint32\_t>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, uint32\_t source, uint32\_t size)}
+\DoxyCodeLine{199     \{}
+\DoxyCodeLine{200         memcpy(dest, \&source, size);}
+\DoxyCodeLine{201     \}}
+\DoxyCodeLine{202 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{203     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<uint16\_t>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, uint16\_t source, uint32\_t size)}
+\DoxyCodeLine{204     \{}
+\DoxyCodeLine{205         memcpy(dest, \&source, size);}
+\DoxyCodeLine{206     \}}
+\DoxyCodeLine{207 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{208     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<uint8\_t>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, uint8\_t source, uint32\_t size)}
+\DoxyCodeLine{209     \{}
+\DoxyCodeLine{210         memcpy(dest, \&source, size);}
+\DoxyCodeLine{211     \}}
+\DoxyCodeLine{212 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{213     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<bool>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, \textcolor{keywordtype}{bool} source, uint32\_t size)}
+\DoxyCodeLine{214     \{}
+\DoxyCodeLine{215         memcpy(dest, \&source, size);}
+\DoxyCodeLine{216     \}}
+\DoxyCodeLine{217 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{218     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<double>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, \textcolor{keywordtype}{double} source, uint32\_t size)}
+\DoxyCodeLine{219     \{}
+\DoxyCodeLine{220         memcpy(dest, \&source, size);}
+\DoxyCodeLine{221     \}}
+\DoxyCodeLine{222 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{223     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_check_to_mem_copy}{ArrayCheckToMemCopy<int>::AEMemcpy}}(\textcolor{keywordtype}{void}* dest, \textcolor{keywordtype}{int} source, uint32\_t size)}
+\DoxyCodeLine{224     \{}
+\DoxyCodeLine{225         memcpy(dest, \&source, size);}
+\DoxyCodeLine{226     \}}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{keyword}{template}<\textcolor{keyword}{typename} TTypeToCheck1, \textcolor{keyword}{typename} TTypeToCheck2 >}
+\DoxyCodeLine{231     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_type_checker__is_same}{TypeChecker\_isSame}}}
+\DoxyCodeLine{232     \{}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234         \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} value = \textcolor{keyword}{false};}
+\DoxyCodeLine{235     \};}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{keyword}{template}<\textcolor{keyword}{typename} TTypeToCheck1>}
+\DoxyCodeLine{238     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_type_checker__is_same}{TypeChecker\_isSame}}<TTypeToCheck1, TTypeToCheck1>}
+\DoxyCodeLine{239     \{}
+\DoxyCodeLine{240         \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} value = \textcolor{keyword}{true};}
+\DoxyCodeLine{241     \};}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_type_checker}{TypeChecker}}}
+\DoxyCodeLine{244 \{}
+\DoxyCodeLine{245     \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypeToCheck>}
+\DoxyCodeLine{246         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsAENullActionRequest();}
+\DoxyCodeLine{247     \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypeToCheck>}
+\DoxyCodeLine{248         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsAENullFSMUtility();}
+\DoxyCodeLine{249     \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{250         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsAENull();}
+\DoxyCodeLine{251     \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{252         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} Isuint32\_tPtr();}
+\DoxyCodeLine{253     \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{254         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsfloatPtr();}
+\DoxyCodeLine{255     \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{256         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsAEEventNullClass();}
+\DoxyCodeLine{257     \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{258         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsNULLPeripheral();}
+\DoxyCodeLine{259 \};}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{comment}{//specialization function to check if a template parameter passed was an AENull in order to not use \_\_FUNCTION\_\_ or RTTI}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{264 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsAENullActionRequest<AENullActionRequest>()}
+\DoxyCodeLine{265 \{}
+\DoxyCodeLine{266     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{267 \}}
+\DoxyCodeLine{268 \textcolor{comment}{//if any other type }}
+\DoxyCodeLine{269 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{270 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsAENullActionRequest()}
+\DoxyCodeLine{271 \{}
+\DoxyCodeLine{272     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{273 \}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{276     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsAENullFSMUtility<AENullFSMUtility>()}
+\DoxyCodeLine{277     \{}
+\DoxyCodeLine{278         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{279     \}}
+\DoxyCodeLine{280 \textcolor{comment}{//if any other type }}
+\DoxyCodeLine{281 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{282 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsAENullFSMUtility()}
+\DoxyCodeLine{283 \{}
+\DoxyCodeLine{284     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{285 \}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{288     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsAEEventNullClass<AENULLEvent>()}
+\DoxyCodeLine{289     \{}
+\DoxyCodeLine{290         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292 \textcolor{comment}{//if any other type }}
+\DoxyCodeLine{293 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{294 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsAEEventNullClass()}
+\DoxyCodeLine{295 \{}
+\DoxyCodeLine{296     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{297 \}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{300     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsAENull<AENull>()}
+\DoxyCodeLine{301     \{}
+\DoxyCodeLine{302         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{303     \}}
+\DoxyCodeLine{304 \textcolor{comment}{//if any other type }}
+\DoxyCodeLine{305 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{306 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsAENull()}
+\DoxyCodeLine{307 \{}
+\DoxyCodeLine{308     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{309 \}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{312     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::Isuint32\_tPtr<uint32\_t>()}
+\DoxyCodeLine{313     \{}
+\DoxyCodeLine{314         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{315     \}}
+\DoxyCodeLine{316 \textcolor{comment}{//if any other type }}
+\DoxyCodeLine{317 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{318 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::Isuint32\_tPtr()}
+\DoxyCodeLine{319 \{}
+\DoxyCodeLine{320     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{321 \}}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{324     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsfloatPtr<float>()}
+\DoxyCodeLine{325     \{}
+\DoxyCodeLine{326         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{327     \}}
+\DoxyCodeLine{328 \textcolor{comment}{//if any other type }}
+\DoxyCodeLine{329 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{330 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsfloatPtr()}
+\DoxyCodeLine{331 \{}
+\DoxyCodeLine{332     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{333 \}}
+\DoxyCodeLine{334 }
+\DoxyCodeLine{335 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{336     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsNULLPeripheral<NULLPeripheral>()}
+\DoxyCodeLine{337     \{}
+\DoxyCodeLine{338         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{339     \}}
+\DoxyCodeLine{340 \textcolor{comment}{//if any other type }}
+\DoxyCodeLine{341 \textcolor{keyword}{template}<\textcolor{keyword}{class} TTypetoCheck>}
+\DoxyCodeLine{342 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} TypeChecker::IsNULLPeripheral()}
+\DoxyCodeLine{343 \{}
+\DoxyCodeLine{344     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{345 \}}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{350     \textcolor{keywordtype}{int} numDigits(T number)}
+\DoxyCodeLine{351     \{}
+\DoxyCodeLine{352         \textcolor{keywordtype}{int} digits = 0;}
+\DoxyCodeLine{353         \textcolor{keywordflow}{if} (number < 0) digits = 1;}
+\DoxyCodeLine{354         \textcolor{keywordflow}{while} (number) \{}
+\DoxyCodeLine{355             number /= 10;}
+\DoxyCodeLine{356             digits++;}
+\DoxyCodeLine{357         \}}
+\DoxyCodeLine{358         \textcolor{keywordflow}{return} digits;}
+\DoxyCodeLine{359     \}}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366 \textcolor{comment}{//AEPrint -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \textcolor{keywordtype}{void} AEPrint(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFormat, ...);}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{keywordtype}{void} AEFormatMsg(\textcolor{keywordtype}{char}* formattedBuffer, uint32\_t sizeOfFormat, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* msgToFormat, ...);}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#ifndef  IARBuild}}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409 \textcolor{comment}{/*}}
+\DoxyCodeLine{410 \textcolor{comment}{extern "{}C"{} \{}}
+\DoxyCodeLine{411 \textcolor{comment}{void vAssertCalled(unsigned long ulLine, const char * const pcFileName)}}
+\DoxyCodeLine{412 \textcolor{comment}{\{}}
+\DoxyCodeLine{413 \textcolor{comment}{AEPrint((char*)pcFileName, ulLine);}}
+\DoxyCodeLine{414 \textcolor{comment}{\}}}
+\DoxyCodeLine{415 \textcolor{comment}{\}}}
+\DoxyCodeLine{416 \textcolor{comment}{*/}}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418 }
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//   }}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \textcolor{comment}{//Converts milliseconds to the RTOS's tick}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define AE\_Tick\_To\_Milli(millis)\(\backslash\)}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{( TickType\_t )(millis / (1000/AEconfigTICK\_RATE\_HZ));\(\backslash\)}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{configASSERT((millis / (1000/AEconfigTICK\_RATE\_HZ)) > 0);}}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432 }
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435 \textcolor{comment}{//\#pragma warning( disable : WarningCode)}}
+\DoxyCodeLine{437 \textcolor{comment}{}\textcolor{comment}{//\#pragma warning( pop ) }}
+\DoxyCodeLine{439 \textcolor{comment}{}\textcolor{comment}{//\#define AESUPRESS\_WARNING\_START(WarningCode) \#pragma warning( push )}}
+\DoxyCodeLine{440 \textcolor{comment}{//\#define AESUPRESS\_WARNING\_STOP(WarningCode)}}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{comment}{//state typedefs   -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448 \textcolor{keyword}{enum} AETransitionType \{}
+\DoxyCodeLine{449     TRANSITION = 0,}
+\DoxyCodeLine{450     UNHANDLED,}
+\DoxyCodeLine{451     DEACTIVE,}
+\DoxyCodeLine{452     ACTIVATE}
+\DoxyCodeLine{453 \}}
+\DoxyCodeLine{454 ;}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456 \textcolor{keyword}{enum} AEFSMActiveTypeEnum \{}
+\DoxyCodeLine{457     PAUSE\_TO\_ACTIVATE,}
+\DoxyCodeLine{458     RESET\_TO\_ACTIVATE}
+\DoxyCodeLine{459 \};}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#if NUMOFEVENTS > (256-\/2) }\textcolor{comment}{//the minus 2 is to account for the two enter and exit events}}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define ENTEREVENT\_Id   0xffff}}
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define EXITEVENT\_Id    0xffff -\/ 1}}
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#else  }}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#define ENTEREVENT\_Id   0xff}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define EXITEVENT\_Id    0xff -\/ 1}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471 \textcolor{comment}{//macro to return a state transition}}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define CastToStateFuncPtr(stateToTransitionTo) reinterpret\_cast<TypeOfThisFSM::StateFuncPtr>(stateToTransitionTo);}}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define TRANSITION\_TOSTATE(stateToTransitionTo) \(\backslash\)}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{thisFSM-\/>StateToTransitionTo = CastToStateFuncPtr(stateToTransitionTo)\(\backslash\)}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{transitionType = TRANSITION;}}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#define AE\_EXIT() transitionType = DEACTIVE;}}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#define AE\_CastEvent(TypeToCastTo) ((TypeToCastTo)evt-\/>evt)}}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488 \textcolor{comment}{//macros -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ }}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490  \textcolor{comment}{/*}}
+\DoxyCodeLine{491 \textcolor{comment}{//macro for template}}
+\DoxyCodeLine{492 \textcolor{comment}{\#if MAXNUMBEROF\_FILTERS == 1}}
+\DoxyCodeLine{493 \textcolor{comment}{\#define TEMPLATEFOR\_AESPBOUTPUT \(\backslash\)}}
+\DoxyCodeLine{494 \textcolor{comment}{template<uint32\_t OUTPUTSIZE, uint16\_t NUMOFINPUTSIGNALS, uint8\_t NUMOFFILTERS, class TFilter1, uint32\_t TheParameterNOTone1, bool isParameterNOToneInputSize1, uint32\_t TheParameterNOTone2, bool isParameterNOToneInputSize2, uint32\_t TheParameterNOTone3, bool isParameterNOToneInputSize3>}}
+\DoxyCodeLine{495 \textcolor{comment}{\#define TEMPLATEFOR\_AESPBOUTPARAMS OUTPUTSIZE, NUMOFINPUTSIGNALS, NUMOFFILTERS, TFilter1, TheParameterNOTone1, isParameterNOToneInputSize1, TheParameterNOTone2, isParameterNOToneInputSize2, TheParameterNOTone3, isParameterNOToneInputSize3}}
+\DoxyCodeLine{496 \textcolor{comment}{\#endif}}
+\DoxyCodeLine{497 \textcolor{comment}{\#if MAXNUMBEROF\_FILTERS == 2}}
+\DoxyCodeLine{498 \textcolor{comment}{\#define TEMPLATEFOR\_AESPBOUTPUT \(\backslash\)}}
+\DoxyCodeLine{499 \textcolor{comment}{template<uint32\_t OUTPUTSIZE, uint16\_t NUMOFINPUTSIGNALS, uint8\_t NUMOFFILTERS, class TFilter1,class TFilter2, uint32\_t TheParameterNOTone1, bool isParameterNOToneInputSize1, uint32\_t TheParameterNOTone2, bool isParameterNOToneInputSize2, uint32\_t TheParameterNOTone3, bool isParameterNOToneInputSize3>}}
+\DoxyCodeLine{500 \textcolor{comment}{\#define TEMPLATEFOR\_AESPBOUTPARAMS OUTPUTSIZE, NUMOFINPUTSIGNALS, NUMOFFILTERS, TFilter1, TFilter2, TheParameterNOTone1, isParameterNOToneInputSize1, TheParameterNOTone2, isParameterNOToneInputSize2, TheParameterNOTone3, isParameterNOToneInputSize3}}
+\DoxyCodeLine{501 \textcolor{comment}{\#endif}}
+\DoxyCodeLine{502 \textcolor{comment}{\#if MAXNUMBEROF\_FILTERS == 3}}
+\DoxyCodeLine{503 \textcolor{comment}{\#define TEMPLATEFOR\_AESPBOUTPUT \(\backslash\)}}
+\DoxyCodeLine{504 \textcolor{comment}{template<uint32\_t OUTPUTSIZE, uint16\_t NUMOFINPUTSIGNALS, uint8\_t NUMOFFILTERS, class TFilter1,class TFilter2,class TFilter3, uint32\_t TheParameterNOTone1, bool isParameterNOToneInputSize1, uint32\_t TheParameterNOTone2, bool isParameterNOToneInputSize2, uint32\_t TheParameterNOTone3, bool isParameterNOToneInputSize3>}}
+\DoxyCodeLine{505 \textcolor{comment}{\#define TEMPLATEFOR\_AESPBOUTPARAMS OUTPUTSIZE, NUMOFINPUTSIGNALS, NUMOFFILTERS, TFilter1, TFilter2, TFilter3, TheParameterNOTone1, isParameterNOToneInputSize1, TheParameterNOTone2, isParameterNOToneInputSize2, TheParameterNOTone3, isParameterNOToneInputSize3}}
+\DoxyCodeLine{506 \textcolor{comment}{\#endif}}
+\DoxyCodeLine{507 \textcolor{comment}{\#if MAXNUMBEROF\_FILTERS == 4}}
+\DoxyCodeLine{508 \textcolor{comment}{\#define TEMPLATEFOR\_AESPBOUTPUT \(\backslash\)}}
+\DoxyCodeLine{509 \textcolor{comment}{template<uint32\_t OUTPUTSIZE, uint16\_t NUMOFINPUTSIGNALS, uint8\_t NUMOFFILTERS, class TFilter1,class TFilter2,class TFilter3,class TFilter4, uint32\_t TheParameterNOTone1, bool isParameterNOToneInputSize1, uint32\_t TheParameterNOTone2, bool isParameterNOToneInputSize2, uint32\_t TheParameterNOTone3, bool isParameterNOToneInputSize3>}}
+\DoxyCodeLine{510 \textcolor{comment}{\#define TEMPLATEFOR\_AESPBOUTPARAMS OUTPUTSIZE, NUMOFINPUTSIGNALS, NUMOFFILTERS, TFilter1, TFilter2, TFilter3, TFilter4, TheParameterNOTone1, isParameterNOToneInputSize1, TheParameterNOTone2, isParameterNOToneInputSize2, TheParameterNOTone3, isParameterNOToneInputSize3}}
+\DoxyCodeLine{511 \textcolor{comment}{\#endif}}
+\DoxyCodeLine{512 \textcolor{comment}{\#if MAXNUMBEROF\_FILTERS == 5  */}}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515 }
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519 \textcolor{comment}{//macro for being able to check if a macro is empty -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#define DO\_EXPAND(VAL)  VAL \#\# 1}}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#define EXPAND(VAL)     DO\_EXPAND(VAL)}}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523 \textcolor{comment}{//macro for static pointers -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#define S\_CONC(A, B) S\_CONC\_(A, B)}}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#define S\_CONC\_(A, B) static A * B ; }}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527 \textcolor{comment}{//macro for static pointers -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#define A\_CONC(A, B) S\_CONC\_(A, B)}}
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#define A\_CONC\_(A, B) A B }}
+\DoxyCodeLine{530 }
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534 \textcolor{comment}{//make singleton put this in the header for public:  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#define MAKE\_SINGLETON(className) public: \(\backslash\)}}
+\DoxyCodeLine{536 \textcolor{preprocessor}{static className* getInstance(); \(\backslash\)}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{className(className const\&) = delete; \(\backslash\)}}
+\DoxyCodeLine{538 \textcolor{preprocessor}{void operator=(className const\&) = delete; \(\backslash\)}}
+\DoxyCodeLine{539 \textcolor{preprocessor}{private: \(\backslash\)}}
+\DoxyCodeLine{540 \textcolor{preprocessor}{static className* instance; \(\backslash\)}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{className(); \(\backslash\)}}
+\DoxyCodeLine{542 \textcolor{preprocessor}{public: }}
+\DoxyCodeLine{543 \textcolor{comment}{// for singleton}}
+\DoxyCodeLine{544 \textcolor{comment}{// Don't forget to declare the two in private. You want to make sure they}}
+\DoxyCodeLine{545 \textcolor{comment}{// are unacceptable otherwise you may accidentally get copies of}}
+\DoxyCodeLine{546 \textcolor{comment}{// your singleton appearing.}}
+\DoxyCodeLine{547 \textcolor{comment}{//make singleton put this in the header for public:  }}
+\DoxyCodeLine{548 \textcolor{preprocessor}{\#define MAKE\_SINGLETON\_PUT\_IN\_CPP(className) \(\backslash\)}}
+\DoxyCodeLine{549 \textcolor{preprocessor}{className* className::instance = 0; \(\backslash\)}}
+\DoxyCodeLine{550 \textcolor{preprocessor}{className* className::getInstance() \(\backslash\)}}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{    if (instance == 0) \(\backslash\)}}
+\DoxyCodeLine{553 \textcolor{preprocessor}{    \{ \(\backslash\)}}
+\DoxyCodeLine{554 \textcolor{preprocessor}{        static className soleInstance; \(\backslash\)}}
+\DoxyCodeLine{555 \textcolor{preprocessor}{        instance = \&soleInstance; \(\backslash\)}}
+\DoxyCodeLine{556 \textcolor{preprocessor}{    \} \(\backslash\)}}
+\DoxyCodeLine{557 \textcolor{preprocessor}{    return instance; \(\backslash\)}}
+\DoxyCodeLine{558 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562 }
+\DoxyCodeLine{563 \textcolor{comment}{//macro for properties }}
+\DoxyCodeLine{564 \textcolor{preprocessor}{\#define PropertyGet(type, var) \(\backslash\)}}
+\DoxyCodeLine{565 \textcolor{preprocessor}{private: \(\backslash\)}}
+\DoxyCodeLine{566 \textcolor{preprocessor}{    type \_\#\#var; \(\backslash\)}}
+\DoxyCodeLine{567 \textcolor{preprocessor}{public: \(\backslash\)}}
+\DoxyCodeLine{568 \textcolor{preprocessor}{    type Get\#\#var() const\{ return \_\#\#var; \}}}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#define PropertySet(type, var) \(\backslash\)}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{private: \(\backslash\)}}
+\DoxyCodeLine{572 \textcolor{preprocessor}{    type \_\#\#var; \(\backslash\)}}
+\DoxyCodeLine{573 \textcolor{preprocessor}{public: \(\backslash\)}}
+\DoxyCodeLine{574 \textcolor{preprocessor}{    void Set\#\#var(type val) \{ \_\#\#var = val; \}}}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#define PropertyGetSet(type, var) \(\backslash\)}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{private: \(\backslash\)}}
+\DoxyCodeLine{578 \textcolor{preprocessor}{    type \_\#\#var; \(\backslash\)}}
+\DoxyCodeLine{579 \textcolor{preprocessor}{public: \(\backslash\)}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{    type Get\#\#var() const\{ return \_\#\#var; \}\(\backslash\)}}
+\DoxyCodeLine{581 \textcolor{preprocessor}{    void Set\#\#var(type val) \{ \_\#\#var = val; \}}}
+\DoxyCodeLine{582 }
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#define PropertyGetProtectedSet(type, var) \(\backslash\)}}
+\DoxyCodeLine{584 \textcolor{preprocessor}{protected: \(\backslash\)}}
+\DoxyCodeLine{585 \textcolor{preprocessor}{    type \_\#\#var; \(\backslash\)}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{void Set\#\#var(type val) \{ \_\#\#var = val; \} \(\backslash\)}}
+\DoxyCodeLine{587 \textcolor{preprocessor}{public: \(\backslash\)}}
+\DoxyCodeLine{588 \textcolor{preprocessor}{    type Get\#\#var() const\{ return \_\#\#var; \}}}
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596 \textcolor{keyword}{enum} StyleOfSPB \{}
+\DoxyCodeLine{597     EachSPBTask,  \textcolor{comment}{//each spb has its own task that it will use to execute its refresh}}
+\DoxyCodeLine{598     ChainOfSPBsTask, \textcolor{comment}{// there is one "{}chain task"{} that will run all refreshs}}
+\DoxyCodeLine{599     ChainOfSPBsFromInterrupt \textcolor{comment}{//there are no tasks involved and so everything is run within the interrupt. }}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601 \}}
+\DoxyCodeLine{602 ;}
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606 }
+\DoxyCodeLine{607 }
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609 }
+\DoxyCodeLine{610 }
+\DoxyCodeLine{611 \textcolor{preprocessor}{\#define CREATE\_AND\_SET\_CHANNEL(CHANNEL\_ID, INPUTSIZE, COUNTBUFFER)\(\backslash\)}}
+\DoxyCodeLine{612 \textcolor{preprocessor}{if (INPUTSIZE == 1) \(\backslash\)}}
+\DoxyCodeLine{613 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{    static float signalBuffer\#\#CHANNEL\_ID[COUNTBUFFER]; \(\backslash\)}}
+\DoxyCodeLine{615 \textcolor{preprocessor}{    static InputChannel  InCh\#\#CHANNEL\_ID(CHANNEL\_ID, INPUTSIZE, COUNTBUFFER, signalBuffer\#\#CHANNEL\_ID); \(\backslash\)}}
+\DoxyCodeLine{616 \textcolor{preprocessor}{    ChannelsToSet[CHANNEL\_ID -\/ 1] = \&InCh\#\#CHANNEL\_ID; \(\backslash\)}}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\}\(\backslash\)}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{else if (COUNTBUFFER == 1) \(\backslash\)}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{620 \textcolor{preprocessor}{    static float signalBuffer\#\#CHANNEL\_ID[INPUTSIZE]; \(\backslash\)}}
+\DoxyCodeLine{621 \textcolor{preprocessor}{    static InputChannel  InCh\#\#CHANNEL\_ID(CHANNEL\_ID, INPUTSIZE, COUNTBUFFER, signalBuffer\#\#CHANNEL\_ID); \(\backslash\)}}
+\DoxyCodeLine{622 \textcolor{preprocessor}{    ChannelsToSet[CHANNEL\_ID -\/ 1] = \&InCh\#\#CHANNEL\_ID; \(\backslash\)}}
+\DoxyCodeLine{623 \textcolor{preprocessor}{\} \(\backslash\)}}
+\DoxyCodeLine{624 \textcolor{preprocessor}{else \(\backslash\)}}
+\DoxyCodeLine{625 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{626 \textcolor{preprocessor}{    static float signalBuffer\#\#CHANNEL\_ID[COUNTBUFFER][INPUTSIZE]; \(\backslash\)}}
+\DoxyCodeLine{627 \textcolor{preprocessor}{    static InputChannel  InCh\#\#CHANNEL\_ID(CHANNEL\_ID, INPUTSIZE, COUNTBUFFER, (float**)signalBuffer\#\#CHANNEL\_ID); \(\backslash\)}}
+\DoxyCodeLine{628 \textcolor{preprocessor}{    ChannelsToSet[CHANNEL\_ID -\/ 1] = \&InCh\#\#CHANNEL\_ID; \(\backslash\)}}
+\DoxyCodeLine{629 \textcolor{preprocessor}{\} }}
+\DoxyCodeLine{630 }
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632 }
+\DoxyCodeLine{633 }
+\DoxyCodeLine{634 }
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638 }
+\DoxyCodeLine{639 }
+\DoxyCodeLine{640 }
+\DoxyCodeLine{641 }
+\DoxyCodeLine{642 }
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644 }
+\DoxyCodeLine{645 }
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647 }
+\DoxyCodeLine{648 }
+\DoxyCodeLine{649 }
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651 }
+\DoxyCodeLine{652 }
+\DoxyCodeLine{653 }
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655 }
+\DoxyCodeLine{656 }
+\DoxyCodeLine{657 }
+\DoxyCodeLine{658 }
+\DoxyCodeLine{659 }
+\DoxyCodeLine{660 }
+\DoxyCodeLine{661 }
+\DoxyCodeLine{662 }
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664 }
+\DoxyCodeLine{665 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# }}
+\DoxyCodeLine{666 \textcolor{comment}{//Writing to file }}
+\DoxyCodeLine{667 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# }}
+\DoxyCodeLine{668  }
+\DoxyCodeLine{669 \textcolor{preprocessor}{\#ifdef SWIL\_HWIL\_DRIVEN\_\_HWIL}}
+\DoxyCodeLine{670 \textcolor{preprocessor}{\#include <TestResourceManager.h>}    }
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672  }
+\DoxyCodeLine{673 }
+\DoxyCodeLine{674 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  AEWriteToEndOfFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* FileNameToWriteTo, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* ThingToWrite, uint32\_t SizeOfThingToWrite) }
+\DoxyCodeLine{675 \{}
+\DoxyCodeLine{676     \textcolor{keyword}{auto} hInputs = TRMCreateFile(FileNameToWriteTo, sfmCreateOrAppendWriteOnly);}
+\DoxyCodeLine{677     ssize\_t done = TRMWriteFile(hInputs, ThingToWrite, SizeOfThingToWrite);}
+\DoxyCodeLine{678     TRMCloseFile(hInputs);}
+\DoxyCodeLine{679 \}}
+\DoxyCodeLine{680 }
+\DoxyCodeLine{681 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  AEClearContentsOfFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* FileNameToClear) }
+\DoxyCodeLine{682 \{}
+\DoxyCodeLine{683     \textcolor{keyword}{auto} hInputs = TRMCreateFile(FileNameToClear, sfmCreateOrTruncateWriteOnly);}
+\DoxyCodeLine{684     ssize\_t done = TRMWriteFile(hInputs, \textcolor{stringliteral}{"{}"{}}, 1);}
+\DoxyCodeLine{685     TRMCloseFile(hInputs);}
+\DoxyCodeLine{686 \}}
+\DoxyCodeLine{687  }
+\DoxyCodeLine{688 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{689 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{690 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{691 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  AEWriteToEndOfFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* FileNameToWriteTo, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* ThingToWrite, uint32\_t SizeOfThingToWrite) }
+\DoxyCodeLine{692 \{}
+\DoxyCodeLine{693     std::string PathtoFile = CGEN\_CMAKE\_CURRENT\_SOURCE\_DIR;}
+\DoxyCodeLine{694     \textcolor{comment}{//  std::string PathtoFile = "{}C:\(\backslash\)\(\backslash\)visualgdb\_projects\(\backslash\)\(\backslash\)AERTOSCopy\(\backslash\)\(\backslash\)TestResources\(\backslash\)\(\backslash\)"{};}}
+\DoxyCodeLine{695         PathtoFile.append(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)TestResources\(\backslash\)\(\backslash\)"{}});}
+\DoxyCodeLine{696     PathtoFile.append(FileNameToWriteTo);}
+\DoxyCodeLine{697     FILE* fp = fopen(PathtoFile.c\_str(), \textcolor{stringliteral}{"{}a"{}});}
+\DoxyCodeLine{698     \textcolor{comment}{//if fp=0 then file must not exist}}
+\DoxyCodeLine{699     \textcolor{keywordflow}{if}(fp != 0)}
+\DoxyCodeLine{700     \{}
+\DoxyCodeLine{701         fprintf(fp, \textcolor{stringliteral}{"{}\%s"{}}, ThingToWrite); }
+\DoxyCodeLine{702         fclose(fp);}
+\DoxyCodeLine{703     \}}
+\DoxyCodeLine{704 \}}
+\DoxyCodeLine{705 }
+\DoxyCodeLine{706 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  AEClearContentsOfFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* FileNameToClear) }
+\DoxyCodeLine{707 \{}
+\DoxyCodeLine{708     std::string PathtoFile = CGEN\_CMAKE\_CURRENT\_SOURCE\_DIR;}
+\DoxyCodeLine{709     \textcolor{comment}{//  std::string PathtoFile = "{}C:\(\backslash\)\(\backslash\)visualgdb\_projects\(\backslash\)\(\backslash\)AERTOSCopy\(\backslash\)\(\backslash\)TestResources\(\backslash\)\(\backslash\)"{};}}
+\DoxyCodeLine{710         PathtoFile.append(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)TestResources\(\backslash\)\(\backslash\)"{}});}
+\DoxyCodeLine{711     PathtoFile.append(FileNameToClear);}
+\DoxyCodeLine{712     FILE* fp = fopen(PathtoFile.c\_str(), \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{713     fprintf(fp, \textcolor{stringliteral}{"{}\%s"{}}, \textcolor{stringliteral}{"{}"{}}); }
+\DoxyCodeLine{714     fclose(fp);}
+\DoxyCodeLine{715 \}}
+\DoxyCodeLine{716 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{717 }
+\DoxyCodeLine{718 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{719 \textcolor{comment}{//unit testing friend classes}}
+\DoxyCodeLine{720 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722 \textcolor{preprocessor}{\#ifdef GOOGLE\_TESTING}}
+\DoxyCodeLine{723 \textcolor{preprocessor}{\#include <gtest/gtest.h>}}
+\DoxyCodeLine{724 \textcolor{preprocessor}{\#define AEFRIEND\_TEST(groupName, testName) FRIEND\_TEST(groupName, testName)}}
+\DoxyCodeLine{725 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{726 \textcolor{preprocessor}{\#define AEFRIEND\_TEST(groupName, testName)}}
+\DoxyCodeLine{727 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{728 }
+\DoxyCodeLine{729 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{730 \textcolor{comment}{//Assert}}
+\DoxyCodeLine{731 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{732 }
+\DoxyCodeLine{733 \textcolor{comment}{//get the type of assert to use}}
+\DoxyCodeLine{734 \textcolor{preprocessor}{\#if GOOGLE\_TESTING }}
+\DoxyCodeLine{735 }
+\DoxyCodeLine{736 \textcolor{keyword}{class }AssertTestCheck}
+\DoxyCodeLine{737 \{}
+\DoxyCodeLine{738 \textcolor{keyword}{public}:}
+\DoxyCodeLine{739     AssertTestCheck(std::string assertName, \textcolor{keywordtype}{bool} isToCheckPass)}
+\DoxyCodeLine{740         : AssertName(assertName)}
+\DoxyCodeLine{741         , IsToCheckPass(isToCheckPass) \{\}}
+\DoxyCodeLine{742     std::string AssertName; }
+\DoxyCodeLine{743     \textcolor{keywordtype}{bool} IsToCheckPass;}
+\DoxyCodeLine{744 \}}
+\DoxyCodeLine{745 ;}
+\DoxyCodeLine{746 }
+\DoxyCodeLine{747 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{748 \textcolor{keyword}{static} std::vector<AssertTestCheck*> UniqueIdsOfTestingAsserts;}
+\DoxyCodeLine{749 \textcolor{comment}{//use the GoogleTest assert}}
+\DoxyCodeLine{750  }
+\DoxyCodeLine{751  }
+\DoxyCodeLine{752 }
+\DoxyCodeLine{753 \textcolor{preprocessor}{\#define TheAssertToUse(predicate) EXPECT\_TRUE(predicate)}}
+\DoxyCodeLine{754 }
+\DoxyCodeLine{755 \textcolor{preprocessor}{\#define AE\_Expect\_Assert\_To\_Fail(AssertionMessage) UniqueIdsOfTestingAsserts.push\_back(new AssertTestCheck(AssertionMessage, false));}}
+\DoxyCodeLine{756 \textcolor{preprocessor}{\#define AE\_Expect\_Assert\_To\_Pass(AssertionMessage) UniqueIdsOfTestingAsserts.push\_back(new AssertTestCheck(AssertionMessage, true));}}
+\DoxyCodeLine{757 \textcolor{preprocessor}{\#define AE\_Clear\_Expectations\_Of\_Asserts UniqueIdsOfTestingAsserts.clear();}}
+\DoxyCodeLine{758  }
+\DoxyCodeLine{759 }
+\DoxyCodeLine{760 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{761 }
+\DoxyCodeLine{762 \textcolor{comment}{//use the freeRTOS assert}}
+\DoxyCodeLine{763 }
+\DoxyCodeLine{764 }
+\DoxyCodeLine{765 }
+\DoxyCodeLine{766 }
+\DoxyCodeLine{767 }
+\DoxyCodeLine{768 }
+\DoxyCodeLine{769 \textcolor{comment}{//}}
+\DoxyCodeLine{770 \textcolor{comment}{//\#define \_AEweaks(ret, funcName) ret funcName\#\#r}}
+\DoxyCodeLine{771 \textcolor{comment}{//}}
+\DoxyCodeLine{772 \textcolor{comment}{//\#if  AEPLATFORM == VSGDBCmakeNinja\_armnoneabiid}}
+\DoxyCodeLine{773 \textcolor{comment}{//\#define \_AEweak(ret, funcName) \_\_weak ret funcName}}
+\DoxyCodeLine{774 \textcolor{comment}{//}}
+\DoxyCodeLine{775 \textcolor{comment}{//\#elif AEPLATFORM == VSGDBCmakeNinja\_mingw}}
+\DoxyCodeLine{776 \textcolor{comment}{//\#define \_AEweak(ret, funcName) ret funcName}}
+\DoxyCodeLine{777 \textcolor{comment}{//}}
+\DoxyCodeLine{778 \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{779 \textcolor{comment}{//}}
+\DoxyCodeLine{780 \textcolor{comment}{//typedef void (*RuntimeAssertfnc\_t)(void);}}
+\DoxyCodeLine{781 \textcolor{comment}{//static RuntimeAssertfnc\_t fncr = NULL;}}
+\DoxyCodeLine{782 \textcolor{comment}{//void RuntimeAssertr()}}
+\DoxyCodeLine{783 \textcolor{comment}{//\{}}
+\DoxyCodeLine{784 \textcolor{comment}{//  if (fncr != nullptr)}}
+\DoxyCodeLine{785 \textcolor{comment}{//  \{}}
+\DoxyCodeLine{786 \textcolor{comment}{//      fncr();}}
+\DoxyCodeLine{787 \textcolor{comment}{//  \}}}
+\DoxyCodeLine{788 \textcolor{comment}{//\}}}
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790   }
+\DoxyCodeLine{791 }
+\DoxyCodeLine{792  }
+\DoxyCodeLine{793 \textcolor{comment}{//\_AEweaks(void, RuntimeAssert)()}}
+\DoxyCodeLine{794 \textcolor{comment}{//\{}}
+\DoxyCodeLine{795 \textcolor{comment}{//\}}}
+\DoxyCodeLine{796 \textcolor{comment}{//}}
+\DoxyCodeLine{797 \textcolor{comment}{//void RuntimeAssert()}}
+\DoxyCodeLine{798 \textcolor{comment}{//\{}}
+\DoxyCodeLine{799 \textcolor{comment}{//  //implementation}}
+\DoxyCodeLine{800 \textcolor{comment}{//\}}}
+\DoxyCodeLine{801 }
+\DoxyCodeLine{802 }
+\DoxyCodeLine{803 }
+\DoxyCodeLine{804 }
+\DoxyCodeLine{805 }
+\DoxyCodeLine{806 }
+\DoxyCodeLine{808 \textcolor{preprocessor}{\#define TheAssertToUse(predicate) configASSERT(predicate)}}
+\DoxyCodeLine{809 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{810 }
+\DoxyCodeLine{811 }
+\DoxyCodeLine{813 \textcolor{preprocessor}{\#define AEAssertRuntime(thingToAssert, AssertionMessage)\(\backslash\)}}
+\DoxyCodeLine{814 \textcolor{preprocessor}{if(thingToAssert == false)\{\(\backslash\)}}
+\DoxyCodeLine{815 \textcolor{preprocessor}{AEPrint(AssertionMessage);\(\backslash\)}}
+\DoxyCodeLine{816 \textcolor{preprocessor}{TheAssertToUse(thingToAssert); \}}}
+\DoxyCodeLine{817      }
+\DoxyCodeLine{818 }
+\DoxyCodeLine{819 \textcolor{preprocessor}{\#define AEAssertRuntimeNoMsg(thingToAssert) AEAssertRuntime(thingToAssert, "{}"{}})}
+\DoxyCodeLine{820 }
+\DoxyCodeLine{821 \textcolor{preprocessor}{\#if GOOGLE\_TESTING}}
+\DoxyCodeLine{822 }
+\DoxyCodeLine{825 \textcolor{preprocessor}{\#define AEAssertRuntimeWithAssertCodeToTest(thingToAssert, uniqueNameOfAssert, AssertionMessage) \(\backslash\)}}
+\DoxyCodeLine{826 \textcolor{preprocessor}{for (size\_t i = 0; i < UniqueIdsOfTestingAsserts.size(); i++)\(\backslash\)}}
+\DoxyCodeLine{827 \textcolor{preprocessor}{\{\(\backslash\)}}
+\DoxyCodeLine{828 \textcolor{preprocessor}{    if (UniqueIdsOfTestingAsserts[i]-\/>AssertName == uniqueNameOfAssert)\(\backslash\)}}
+\DoxyCodeLine{829 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{830 \textcolor{preprocessor}{        EXPECT\_TRUE(UniqueIdsOfTestingAsserts[i]-\/>IsToCheckPass == thingToAssert);\(\backslash\)}}
+\DoxyCodeLine{831 \textcolor{preprocessor}{        break;\(\backslash\)}}
+\DoxyCodeLine{832 \textcolor{preprocessor}{    \}\(\backslash\)}}
+\DoxyCodeLine{833 \textcolor{preprocessor}{    AEAssertRuntime(false, "{}assert name not found."{}})\(\backslash\)}
+\DoxyCodeLine{834 \}}
+\DoxyCodeLine{835 }
+\DoxyCodeLine{836 \textcolor{comment}{//if(thingToAssert == false)\{UniqueIdsOfTestingAsserts.push\_back(uniqueNameOfAssert); \}}}
+\DoxyCodeLine{837 }
+\DoxyCodeLine{838 \textcolor{comment}{//inline static bool AEHasAssertFailed(std::string uniqueNameOfAssert)}}
+\DoxyCodeLine{839 \textcolor{comment}{//\{ }}
+\DoxyCodeLine{840 \textcolor{comment}{//  for (size\_t i = 0; i < UniqueIdsOfTestingAsserts.size(); i++)}}
+\DoxyCodeLine{841 \textcolor{comment}{//  \{}}
+\DoxyCodeLine{842 \textcolor{comment}{//      if (UniqueIdsOfTestingAsserts[i] == uniqueNameOfAssert)\{return true;\}}}
+\DoxyCodeLine{843 \textcolor{comment}{//  \}}}
+\DoxyCodeLine{844 \textcolor{comment}{//  return false; }}
+\DoxyCodeLine{845 \textcolor{comment}{//\}}}
+\DoxyCodeLine{846 }
+\DoxyCodeLine{847 \textcolor{comment}{//inline static void AEResetAssertCodes() \{ UniqueIdsOfTestingAsserts.clear();\}}}
+\DoxyCodeLine{848 }
+\DoxyCodeLine{849 \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{851 \textcolor{preprocessor}{\#define AEAssertRuntimeWithAssertCodeToTest(thingToAssert, uniqueNameOfAssert, AssertionMessage) AEAssertRuntime(thingToAssert, AssertionMessage)}}
+\DoxyCodeLine{852 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{853 }
+\DoxyCodeLine{854 \textcolor{comment}{//TODO: get static asserts}}
+\DoxyCodeLine{855 \textcolor{preprocessor}{\#define AEAssertStatic}}
+\DoxyCodeLine{856 }
+\DoxyCodeLine{857  }
+\DoxyCodeLine{858 }
+\DoxyCodeLine{859 }
+\DoxyCodeLine{860 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# }}
+\DoxyCodeLine{861 \textcolor{comment}{//performance timers}}
+\DoxyCodeLine{862 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# }}
+\DoxyCodeLine{863 }
+\DoxyCodeLine{864 \textcolor{keyword}{extern} \mbox{\hyperlink{class_a_e_performance_timer}{AEPerformanceTimer}}* AEPerfTimer1;}
+\DoxyCodeLine{865 \textcolor{keyword}{extern} \mbox{\hyperlink{class_a_e_performance_timer}{AEPerformanceTimer}}* AEPerfTimer2;}
+\DoxyCodeLine{866 \textcolor{keyword}{extern} \mbox{\hyperlink{class_a_e_performance_timer}{AEPerformanceTimer}}* AEPerfTimer3; }
+\DoxyCodeLine{867      }
+\DoxyCodeLine{868 }
+\DoxyCodeLine{869 \textcolor{preprocessor}{\#define PRIV\_AEStartTimer(forTimer) \(\backslash\)}}
+\DoxyCodeLine{870 \textcolor{preprocessor}{AEPerfTimer\#\#forTimer-\/>AEStart\_Timer();}}
+\DoxyCodeLine{871 }
+\DoxyCodeLine{872 \textcolor{preprocessor}{\#define PRIV\_AEStopTimer(forTimer) \(\backslash\)}}
+\DoxyCodeLine{873 \textcolor{preprocessor}{AEPerfTimer\#\#forTimer-\/>AEStop\_Timer();}}
+\DoxyCodeLine{874 }
+\DoxyCodeLine{875 }
+\DoxyCodeLine{876 }
+\DoxyCodeLine{877 }
+\DoxyCodeLine{878 }
+\DoxyCodeLine{879 }
+\DoxyCodeLine{880 }
+\DoxyCodeLine{881 \textcolor{preprocessor}{\#define AEStartTimer(forTimer)\(\backslash\)}}
+\DoxyCodeLine{882 \textcolor{preprocessor}{AEAssertRuntime(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart == false ,"{}you already ran AEStartTimer and then tried to run it again for timer \#\#forTimer"{}})\(\backslash\)}
+\DoxyCodeLine{883 AEAssertRuntime(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter == false, "{}you cant mix calling AETimerForEnteringAndReEntering and AEStartTimer for timer \#\#forTimer"{})\(\backslash\)}
+\DoxyCodeLine{884 AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart = true; \(\backslash\)}
+\DoxyCodeLine{885 PRIV\_AEStartTimer(forTimer)}
+\DoxyCodeLine{886 }
+\DoxyCodeLine{887 \textcolor{preprocessor}{\#define AEStopTimer(forTimer)\(\backslash\)}}
+\DoxyCodeLine{888 \textcolor{preprocessor}{AEAssertRuntime(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart == true ,"{}you never ran AEStartTimer and then tried to run AEStopTimer for timer \#\#forTimer"{}})\(\backslash\)}
+\DoxyCodeLine{889 AEAssertRuntime(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter == false ,"{}you cant mix calling AETimerForEnteringAndReEntering and AEStopTimer for timer \#\#forTimer"{})\(\backslash\)}
+\DoxyCodeLine{890 AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart = false;\(\backslash\)}
+\DoxyCodeLine{891 PRIV\_AEStopTimer(forTimer)}
+\DoxyCodeLine{892 }
+\DoxyCodeLine{893 }
+\DoxyCodeLine{894 \textcolor{preprocessor}{\#define AEPrintTimerDuration(forTimer)\(\backslash\)}}
+\DoxyCodeLine{895 \textcolor{preprocessor}{AEPrint("{}timer \%d took: \%d \(\backslash\)n"{}}, forTimer, AEPerfTimer\#\#forTimer-\/>GetElapsedTimeInNanoSeconds()); \textcolor{comment}{//(uint32\_t)(1000000000f*}}
+\DoxyCodeLine{896 }
+\DoxyCodeLine{897 \textcolor{preprocessor}{\#define AEGetTimerDuration(forTimer)\(\backslash\)}}
+\DoxyCodeLine{898 \textcolor{preprocessor}{AEPerfTimer\#\#forTimer-\/>GetElapsedTimeInNanoSeconds()}}
+\DoxyCodeLine{899 }
+\DoxyCodeLine{900 \textcolor{preprocessor}{\#define AEPrintAllTimerDuration \(\backslash\)}}
+\DoxyCodeLine{901 \textcolor{preprocessor}{AEPrintTimerDuration(1)\(\backslash\)}}
+\DoxyCodeLine{902 \textcolor{preprocessor}{AEPrintTimerDuration(2)\(\backslash\)}}
+\DoxyCodeLine{903 \textcolor{preprocessor}{AEPrintTimerDuration(3)}}
+\DoxyCodeLine{904 }
+\DoxyCodeLine{905 }
+\DoxyCodeLine{906 \textcolor{preprocessor}{\#define AETimerForEnteringAndReEntering\_AndPrint(forTimer)\(\backslash\)}}
+\DoxyCodeLine{907 \textcolor{preprocessor}{AEAssertRuntime(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart == false,"{}you already ran AEStartTimer and then tried to call AETimerForEnteringAndReEntering. You should only use this macro for reentering starting and stopping the timer"{}})\(\backslash\)}
+\DoxyCodeLine{908 if(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter == false)\{ AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter = true; PRIV\_AEStartTimer(forTimer); \}\(\backslash\)}
+\DoxyCodeLine{909 else\{PRIV\_AEStopTimer(forTimer); AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter = false;\(\backslash\)}
+\DoxyCodeLine{910 AEPrintTimerDuration(forTimer)\(\backslash\)}
+\DoxyCodeLine{911 \} }
+\DoxyCodeLine{912 }
+\DoxyCodeLine{913 }
+\DoxyCodeLine{914  }
+\DoxyCodeLine{915 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# }}
+\DoxyCodeLine{916 \textcolor{comment}{//logging times}}
+\DoxyCodeLine{917 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# }}
+\DoxyCodeLine{918 }
+\DoxyCodeLine{919 }
+\DoxyCodeLine{920 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{921 }
+\DoxyCodeLine{922 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \_AELogTimer(PerfElapsed\_t duration, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* FileNameToWriteTo) }
+\DoxyCodeLine{923 \{}
+\DoxyCodeLine{924     }
+\DoxyCodeLine{925 \textcolor{preprocessor}{\#ifdef SWIL\_HWIL\_DRIVEN\_\_HWIL}}
+\DoxyCodeLine{926     std::string PathtoFile = \textcolor{stringliteral}{"{}PerformanceTimes\(\backslash\)\(\backslash\)Hardware\(\backslash\)\(\backslash\)\%s\(\backslash\)\(\backslash\)\%s.txt"{}};}
+\DoxyCodeLine{927     \textcolor{keywordtype}{char} PathtoFile1[250]; }
+\DoxyCodeLine{928     AEFormatMsg(PathtoFile1, \textcolor{keyword}{sizeof}(PathtoFile1), PathtoFile.c\_str(), FileNameToWriteTo, FileNameToWriteTo);}
+\DoxyCodeLine{929     PathtoFile = PathtoFile1;}
+\DoxyCodeLine{930 \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{931     std::string PathtoFile = \textcolor{stringliteral}{"{}PerformanceTimes\(\backslash\)\(\backslash\)Simulation\(\backslash\)\(\backslash\)\%s\(\backslash\)\(\backslash\)\%s.txt"{}};}
+\DoxyCodeLine{932     \textcolor{keywordtype}{char} PathtoFile1[250]; }
+\DoxyCodeLine{933     AEFormatMsg(PathtoFile1, \textcolor{keyword}{sizeof}(PathtoFile1), PathtoFile.c\_str(), FileNameToWriteTo, FileNameToWriteTo);}
+\DoxyCodeLine{934     PathtoFile = PathtoFile1;}
+\DoxyCodeLine{935 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{936     std::string PathtoFileMain = \textcolor{stringliteral}{"{}PerformanceTimes\(\backslash\)\(\backslash\)MostRecentTimes.txt"{}};}
+\DoxyCodeLine{937     }
+\DoxyCodeLine{938     \textcolor{keywordtype}{char} formatedMsg[100];}
+\DoxyCodeLine{939     \textcolor{keywordtype}{char} formatedMsg2[150]; }
+\DoxyCodeLine{940     AEFormatMsg(formatedMsg, \textcolor{keyword}{sizeof}(formatedMsg), \textcolor{stringliteral}{"{}\(\backslash\)n\%d"{}}, duration);}
+\DoxyCodeLine{941     AEFormatMsg(formatedMsg2, \textcolor{keyword}{sizeof}(formatedMsg2), \textcolor{stringliteral}{"{}\(\backslash\)n\%s :: \%d "{}}, FileNameToWriteTo, duration);}
+\DoxyCodeLine{942     \textcolor{comment}{//  std::filesystem::create\_directory}}
+\DoxyCodeLine{943     std::string formatedmsgStr = formatedMsg;}
+\DoxyCodeLine{944     std::string formatedmsgStr2 = formatedMsg2;}
+\DoxyCodeLine{945     }
+\DoxyCodeLine{946     AEWriteToEndOfFile(PathtoFile.c\_str(), formatedmsgStr.c\_str(), formatedmsgStr.length());}
+\DoxyCodeLine{947     AEWriteToEndOfFile(PathtoFileMain.c\_str(), formatedmsgStr2.c\_str(), formatedmsgStr2.length());}
+\DoxyCodeLine{948     }
+\DoxyCodeLine{949     }
+\DoxyCodeLine{950 \}}
+\DoxyCodeLine{951 }
+\DoxyCodeLine{952 \textcolor{preprocessor}{\#define AELogTimer(forTimer, FileNameToWriteTo ) \_AELogTimer(AEGetTimerDuration(forTimer), FileNameToWriteTo)}}
+\DoxyCodeLine{953 }
+\DoxyCodeLine{954 }
+\DoxyCodeLine{955 }
+\DoxyCodeLine{956 }
+\DoxyCodeLine{957 }
+\DoxyCodeLine{958 }
+\DoxyCodeLine{959 }
+\DoxyCodeLine{960 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# }}
+\DoxyCodeLine{961 \textcolor{comment}{//helper functions }}
+\DoxyCodeLine{962 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# }}
+\DoxyCodeLine{963 }
+\DoxyCodeLine{964  }
+\DoxyCodeLine{965 \textcolor{comment}{//example AE\_GET\_LAST\_BITS of a variable with bits 00101101 AE\_GET\_LAST\_BITS(var, 4)  will give 00001101}}
+\DoxyCodeLine{966 \textcolor{preprocessor}{\#define AE\_GET\_LAST\_BITS(VarToGetBits, ThisManyBitsFromLast) ((VarToGetBits) \& ((1<<(ThisManyBitsFromLast))-\/1))}}
+\DoxyCodeLine{967 \textcolor{preprocessor}{\#define AE\_GET\_MID\_BITS(VarToGetBits,FromBit,ToBit) AE\_GET\_LAST\_BITS((VarToGetBits)>>(FromBit),((ToBit)-\/(FromBit)))}}
+\DoxyCodeLine{968 }
+\DoxyCodeLine{969 }
+\DoxyCodeLine{970 }
+\DoxyCodeLine{971 }
+\DoxyCodeLine{972 \textcolor{keyword}{static} \textcolor{keywordtype}{float} AE\_Map(\textcolor{keywordtype}{float} valueToMap, \textcolor{keywordtype}{float} lowerBoundOfMapFROM, \textcolor{keywordtype}{float} UpperBoundOfMapFROM, \textcolor{keywordtype}{float} lowerBoundOfMapTO, \textcolor{keywordtype}{float} UpperBoundOfMapTO)}
+\DoxyCodeLine{973 \{}
+\DoxyCodeLine{974     \textcolor{keywordflow}{if} (valueToMap < lowerBoundOfMapFROM)}
+\DoxyCodeLine{975     \{}
+\DoxyCodeLine{976         \textcolor{keywordflow}{return} lowerBoundOfMapTO;}
+\DoxyCodeLine{977     \}}
+\DoxyCodeLine{978 }
+\DoxyCodeLine{979     \textcolor{keywordflow}{if} (valueToMap > UpperBoundOfMapFROM)}
+\DoxyCodeLine{980     \{}
+\DoxyCodeLine{981         \textcolor{keywordflow}{return} UpperBoundOfMapTO;}
+\DoxyCodeLine{982     \}}
+\DoxyCodeLine{983 }
+\DoxyCodeLine{984     \textcolor{keywordtype}{float} mappedValue = (((UpperBoundOfMapTO -\/ lowerBoundOfMapTO) / (UpperBoundOfMapFROM -\/ lowerBoundOfMapFROM))}
+\DoxyCodeLine{985         * (valueToMap -\/ lowerBoundOfMapFROM)) + lowerBoundOfMapTO;}
+\DoxyCodeLine{986 }
+\DoxyCodeLine{987     \textcolor{keywordflow}{return} mappedValue;}
+\DoxyCodeLine{988 \}}
+\DoxyCodeLine{989 }
+\DoxyCodeLine{990 }
+\DoxyCodeLine{991 }
+\DoxyCodeLine{992 }
+\DoxyCodeLine{993 }
+\DoxyCodeLine{994 }
+\DoxyCodeLine{995 }
+\DoxyCodeLine{996 }
+\DoxyCodeLine{997 }
+\DoxyCodeLine{998 }
+\DoxyCodeLine{999 }
+\DoxyCodeLine{1000 }
+\DoxyCodeLine{1001 }
+\DoxyCodeLine{1002 }
+\DoxyCodeLine{1003 }
+\DoxyCodeLine{1004 }
+\DoxyCodeLine{1005  }
+\DoxyCodeLine{1006 }
+\DoxyCodeLine{1007 }
+\DoxyCodeLine{1008 }
+\DoxyCodeLine{1009 }
+\DoxyCodeLine{1010 }
+\DoxyCodeLine{1011 }
+\DoxyCodeLine{1012 }
+\DoxyCodeLine{1013 }
+\DoxyCodeLine{1014 \textcolor{comment}{//\#include "{}AEmemcpy.h"{}}}
+\DoxyCodeLine{1015 \textcolor{comment}{/*}}
+\DoxyCodeLine{1016 \textcolor{comment}{}}
+\DoxyCodeLine{1017 \textcolor{comment}{static void AEmemcpyManyFromBottomUp1(void* dst, void* src, uint32\_t size)}}
+\DoxyCodeLine{1018 \textcolor{comment}{\{}}
+\DoxyCodeLine{1019 \textcolor{comment}{    // copy by the largest it is divisible by}}
+\DoxyCodeLine{1020 \textcolor{comment}{    uint32\_t remainder;}}
+\DoxyCodeLine{1021 \textcolor{comment}{    uint32\_t timesToCopy;}}
+\DoxyCodeLine{1022 \textcolor{comment}{}}
+\DoxyCodeLine{1023 \textcolor{comment}{}}
+\DoxyCodeLine{1024 \textcolor{comment}{    if (size < 10)}}
+\DoxyCodeLine{1025 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1026 \textcolor{comment}{        memcpy(dst, src, size);}}
+\DoxyCodeLine{1027 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1028 \textcolor{comment}{    else if (size <= 100)}}
+\DoxyCodeLine{1029 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1030 \textcolor{comment}{        char *destp = (char *)dst;}}
+\DoxyCodeLine{1031 \textcolor{comment}{        char *srcp = (char *)src;}}
+\DoxyCodeLine{1032 \textcolor{comment}{}}
+\DoxyCodeLine{1033 \textcolor{comment}{        remainder = size \% 10;}}
+\DoxyCodeLine{1034 \textcolor{comment}{        timesToCopy = size / 10;}}
+\DoxyCodeLine{1035 \textcolor{comment}{}}
+\DoxyCodeLine{1036 \textcolor{comment}{        //copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1037 \textcolor{comment}{        //up to 100 }}
+\DoxyCodeLine{1038 \textcolor{comment}{        for (uint32\_t i = 0; i < timesToCopy; i++)}}
+\DoxyCodeLine{1039 \textcolor{comment}{        \{}}
+\DoxyCodeLine{1040 \textcolor{comment}{            memcpy(destp + (i * 10), srcp + (i * 10), 10);}}
+\DoxyCodeLine{1041 \textcolor{comment}{        \}}}
+\DoxyCodeLine{1042 \textcolor{comment}{}}
+\DoxyCodeLine{1043 \textcolor{comment}{        memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder);}}
+\DoxyCodeLine{1044 \textcolor{comment}{}}
+\DoxyCodeLine{1045 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1046 \textcolor{comment}{    else}}
+\DoxyCodeLine{1047 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1048 \textcolor{comment}{        for (uint32\_t i = 1000; i < 1000000000; i = i* 10)}}
+\DoxyCodeLine{1049 \textcolor{comment}{        \{}}
+\DoxyCodeLine{1050 \textcolor{comment}{            if (size <= i)}}
+\DoxyCodeLine{1051 \textcolor{comment}{            \{ }}
+\DoxyCodeLine{1052 \textcolor{comment}{                char *destp = (char *)dst;}}
+\DoxyCodeLine{1053 \textcolor{comment}{                char *srcp = (char *)src; }}
+\DoxyCodeLine{1054 \textcolor{comment}{}}
+\DoxyCodeLine{1055 \textcolor{comment}{                //copy 100 elments first}}
+\DoxyCodeLine{1056 \textcolor{comment}{                for (uint32\_t i = 0; i < 10; i++)}}
+\DoxyCodeLine{1057 \textcolor{comment}{                \{}}
+\DoxyCodeLine{1058 \textcolor{comment}{                    memcpy(destp + (i * 10), srcp + (i * 10), 10);}}
+\DoxyCodeLine{1059 \textcolor{comment}{                \}}}
+\DoxyCodeLine{1060 \textcolor{comment}{                size = size -\/ 100;}}
+\DoxyCodeLine{1061 \textcolor{comment}{}}
+\DoxyCodeLine{1062 \textcolor{comment}{                uint32\_t incrmentby = (i / 10);}}
+\DoxyCodeLine{1063 \textcolor{comment}{                remainder = size \% incrmentby;}}
+\DoxyCodeLine{1064 \textcolor{comment}{                timesToCopy = size / incrmentby;}}
+\DoxyCodeLine{1065 \textcolor{comment}{}}
+\DoxyCodeLine{1066 \textcolor{comment}{                for (uint32\_t i = 0; i < timesToCopy; i++)}}
+\DoxyCodeLine{1067 \textcolor{comment}{                \{}}
+\DoxyCodeLine{1068 \textcolor{comment}{                    memcpy(destp + ((i * incrmentby)+ 100), (srcp + (i * incrmentby)+ 100), incrmentby);}}
+\DoxyCodeLine{1069 \textcolor{comment}{                \}}}
+\DoxyCodeLine{1070 \textcolor{comment}{}}
+\DoxyCodeLine{1071 \textcolor{comment}{                memcpy(destp + ((timesToCopy * incrmentby)+ 100), srcp + ((timesToCopy * incrmentby)+ 100), remainder);}}
+\DoxyCodeLine{1072 \textcolor{comment}{}}
+\DoxyCodeLine{1073 \textcolor{comment}{                break;}}
+\DoxyCodeLine{1074 \textcolor{comment}{            \}}}
+\DoxyCodeLine{1075 \textcolor{comment}{        \}}}
+\DoxyCodeLine{1076 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1077 \textcolor{comment}{}}
+\DoxyCodeLine{1078 \textcolor{comment}{}}
+\DoxyCodeLine{1079 \textcolor{comment}{\}}}
+\DoxyCodeLine{1080 \textcolor{comment}{}}
+\DoxyCodeLine{1081 \textcolor{comment}{}}
+\DoxyCodeLine{1082 \textcolor{comment}{}}
+\DoxyCodeLine{1083 \textcolor{comment}{}}
+\DoxyCodeLine{1084 \textcolor{comment}{}}
+\DoxyCodeLine{1085 \textcolor{comment}{static void AEmemcpyManyFromBottomUp2(void* dst, void* src}}
+\DoxyCodeLine{1086 \textcolor{comment}{    , void* dst2, void* src2, uint32\_t sizeForAllVars)}}
+\DoxyCodeLine{1087 \textcolor{comment}{\{}}
+\DoxyCodeLine{1088 \textcolor{comment}{}}
+\DoxyCodeLine{1089 \textcolor{comment}{    //for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{1090 \textcolor{comment}{    uint32\_t size = sizeForAllVars;}}
+\DoxyCodeLine{1091 \textcolor{comment}{}}
+\DoxyCodeLine{1092 \textcolor{comment}{    // copy by the largest it is divisible by}}
+\DoxyCodeLine{1093 \textcolor{comment}{    uint32\_t remainder;}}
+\DoxyCodeLine{1094 \textcolor{comment}{    uint32\_t timesToCopy;}}
+\DoxyCodeLine{1095 \textcolor{comment}{}}
+\DoxyCodeLine{1096 \textcolor{comment}{}}
+\DoxyCodeLine{1097 \textcolor{comment}{    if (size < 10)}}
+\DoxyCodeLine{1098 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1099 \textcolor{comment}{        memcpy(dst, src, size);}}
+\DoxyCodeLine{1100 \textcolor{comment}{        memcpy(dst2, src2, size);}}
+\DoxyCodeLine{1101 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1102 \textcolor{comment}{    else if (size <= 100)}}
+\DoxyCodeLine{1103 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1104 \textcolor{comment}{        char *destp = (char *)dst;}}
+\DoxyCodeLine{1105 \textcolor{comment}{        char *srcp = (char *)src;}}
+\DoxyCodeLine{1106 \textcolor{comment}{        char *destp2 = (char *)dst2;}}
+\DoxyCodeLine{1107 \textcolor{comment}{        char *srcp2 = (char *)src2;}}
+\DoxyCodeLine{1108 \textcolor{comment}{}}
+\DoxyCodeLine{1109 \textcolor{comment}{        remainder = size \% 10;}}
+\DoxyCodeLine{1110 \textcolor{comment}{        timesToCopy = size / 10;}}
+\DoxyCodeLine{1111 \textcolor{comment}{}}
+\DoxyCodeLine{1112 \textcolor{comment}{        //copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1113 \textcolor{comment}{        //up to 100 }}
+\DoxyCodeLine{1114 \textcolor{comment}{        for (uint32\_t i = 0; i < timesToCopy; i++)}}
+\DoxyCodeLine{1115 \textcolor{comment}{        \{}}
+\DoxyCodeLine{1116 \textcolor{comment}{            memcpy(destp + (i * 10), srcp + (i * 10), 10);}}
+\DoxyCodeLine{1117 \textcolor{comment}{            memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}}
+\DoxyCodeLine{1118 \textcolor{comment}{        \}}}
+\DoxyCodeLine{1119 \textcolor{comment}{}}
+\DoxyCodeLine{1120 \textcolor{comment}{        memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder);}}
+\DoxyCodeLine{1121 \textcolor{comment}{        memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder);}}
+\DoxyCodeLine{1122 \textcolor{comment}{}}
+\DoxyCodeLine{1123 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1124 \textcolor{comment}{    else}}
+\DoxyCodeLine{1125 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1126 \textcolor{comment}{        for (uint32\_t i = 1000; i < 1000000000; i = i * 10)}}
+\DoxyCodeLine{1127 \textcolor{comment}{        \{}}
+\DoxyCodeLine{1128 \textcolor{comment}{            if (size <= i)}}
+\DoxyCodeLine{1129 \textcolor{comment}{            \{}}
+\DoxyCodeLine{1130 \textcolor{comment}{                char *destp = (char *)dst;}}
+\DoxyCodeLine{1131 \textcolor{comment}{                char *srcp = (char *)src;}}
+\DoxyCodeLine{1132 \textcolor{comment}{                char *destp2 = (char *)dst2;}}
+\DoxyCodeLine{1133 \textcolor{comment}{                char *srcp2 = (char *)src2;}}
+\DoxyCodeLine{1134 \textcolor{comment}{}}
+\DoxyCodeLine{1135 \textcolor{comment}{                //copy 100 elments first}}
+\DoxyCodeLine{1136 \textcolor{comment}{                for (uint32\_t i = 0; i < 10; i++)}}
+\DoxyCodeLine{1137 \textcolor{comment}{                \{}}
+\DoxyCodeLine{1138 \textcolor{comment}{                    memcpy(destp + (i * 10), srcp + (i * 10), 10);}}
+\DoxyCodeLine{1139 \textcolor{comment}{                    memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}}
+\DoxyCodeLine{1140 \textcolor{comment}{                \}}}
+\DoxyCodeLine{1141 \textcolor{comment}{                size = size -\/ 100;}}
+\DoxyCodeLine{1142 \textcolor{comment}{}}
+\DoxyCodeLine{1143 \textcolor{comment}{                uint32\_t incrmentby = (i / 10);}}
+\DoxyCodeLine{1144 \textcolor{comment}{                remainder = size \% incrmentby;}}
+\DoxyCodeLine{1145 \textcolor{comment}{                timesToCopy = size / incrmentby;}}
+\DoxyCodeLine{1146 \textcolor{comment}{}}
+\DoxyCodeLine{1147 \textcolor{comment}{                for (uint32\_t i = 0; i < timesToCopy; i++)}}
+\DoxyCodeLine{1148 \textcolor{comment}{                \{}}
+\DoxyCodeLine{1149 \textcolor{comment}{                    memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby);}}
+\DoxyCodeLine{1150 \textcolor{comment}{                    memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby);}}
+\DoxyCodeLine{1151 \textcolor{comment}{                \}}}
+\DoxyCodeLine{1152 \textcolor{comment}{}}
+\DoxyCodeLine{1153 \textcolor{comment}{                memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}}
+\DoxyCodeLine{1154 \textcolor{comment}{                memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}}
+\DoxyCodeLine{1155 \textcolor{comment}{}}
+\DoxyCodeLine{1156 \textcolor{comment}{                break;}}
+\DoxyCodeLine{1157 \textcolor{comment}{            \}}}
+\DoxyCodeLine{1158 \textcolor{comment}{        \}}}
+\DoxyCodeLine{1159 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1160 \textcolor{comment}{}}
+\DoxyCodeLine{1161 \textcolor{comment}{}}
+\DoxyCodeLine{1162 \textcolor{comment}{\}}}
+\DoxyCodeLine{1163 \textcolor{comment}{}}
+\DoxyCodeLine{1164 \textcolor{comment}{}}
+\DoxyCodeLine{1165 \textcolor{comment}{}}
+\DoxyCodeLine{1166 \textcolor{comment}{}}
+\DoxyCodeLine{1167 \textcolor{comment}{}}
+\DoxyCodeLine{1168 \textcolor{comment}{static void AEmemcpyManyFromBottomUp3(void* dst, void* src}}
+\DoxyCodeLine{1169 \textcolor{comment}{    , void* dst2, void* src2}}
+\DoxyCodeLine{1170 \textcolor{comment}{    , void* dst3, void* src3, uint32\_t sizeForAllVars)}}
+\DoxyCodeLine{1171 \textcolor{comment}{\{}}
+\DoxyCodeLine{1172 \textcolor{comment}{}}
+\DoxyCodeLine{1173 \textcolor{comment}{    //for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{1174 \textcolor{comment}{    uint32\_t size = sizeForAllVars;}}
+\DoxyCodeLine{1175 \textcolor{comment}{}}
+\DoxyCodeLine{1176 \textcolor{comment}{    // copy by the largest it is divisible by}}
+\DoxyCodeLine{1177 \textcolor{comment}{    uint32\_t remainder;}}
+\DoxyCodeLine{1178 \textcolor{comment}{    uint32\_t timesToCopy;}}
+\DoxyCodeLine{1179 \textcolor{comment}{}}
+\DoxyCodeLine{1180 \textcolor{comment}{}}
+\DoxyCodeLine{1181 \textcolor{comment}{    if (size < 10)}}
+\DoxyCodeLine{1182 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1183 \textcolor{comment}{        memcpy(dst, src, size);}}
+\DoxyCodeLine{1184 \textcolor{comment}{        memcpy(dst2, src2, size);}}
+\DoxyCodeLine{1185 \textcolor{comment}{        memcpy(dst3, src3, size);}}
+\DoxyCodeLine{1186 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1187 \textcolor{comment}{    else if (size <= 100)}}
+\DoxyCodeLine{1188 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1189 \textcolor{comment}{        char *destp = (char *)dst;}}
+\DoxyCodeLine{1190 \textcolor{comment}{        char *srcp = (char *)src;}}
+\DoxyCodeLine{1191 \textcolor{comment}{        char *destp2 = (char *)dst2;}}
+\DoxyCodeLine{1192 \textcolor{comment}{        char *srcp2 = (char *)src2;}}
+\DoxyCodeLine{1193 \textcolor{comment}{        char *destp3 = (char *)dst3;}}
+\DoxyCodeLine{1194 \textcolor{comment}{        char *srcp3 = (char *)src3;}}
+\DoxyCodeLine{1195 \textcolor{comment}{}}
+\DoxyCodeLine{1196 \textcolor{comment}{        remainder = size \% 10;}}
+\DoxyCodeLine{1197 \textcolor{comment}{        timesToCopy = size / 10;}}
+\DoxyCodeLine{1198 \textcolor{comment}{}}
+\DoxyCodeLine{1199 \textcolor{comment}{        //copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1200 \textcolor{comment}{        //up to 100 }}
+\DoxyCodeLine{1201 \textcolor{comment}{        for (uint32\_t i = 0; i < timesToCopy; i++)}}
+\DoxyCodeLine{1202 \textcolor{comment}{        \{}}
+\DoxyCodeLine{1203 \textcolor{comment}{            memcpy(destp + (i * 10), srcp + (i * 10), 10);}}
+\DoxyCodeLine{1204 \textcolor{comment}{            memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}}
+\DoxyCodeLine{1205 \textcolor{comment}{            memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}}
+\DoxyCodeLine{1206 \textcolor{comment}{        \}}}
+\DoxyCodeLine{1207 \textcolor{comment}{}}
+\DoxyCodeLine{1208 \textcolor{comment}{        memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder);}}
+\DoxyCodeLine{1209 \textcolor{comment}{        memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder);}}
+\DoxyCodeLine{1210 \textcolor{comment}{        memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder);}}
+\DoxyCodeLine{1211 \textcolor{comment}{}}
+\DoxyCodeLine{1212 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1213 \textcolor{comment}{    else}}
+\DoxyCodeLine{1214 \textcolor{comment}{    \{}}
+\DoxyCodeLine{1215 \textcolor{comment}{        for (uint32\_t i = 1000; i < 1000000000; i = i * 10)}}
+\DoxyCodeLine{1216 \textcolor{comment}{        \{}}
+\DoxyCodeLine{1217 \textcolor{comment}{            if (size <= i)}}
+\DoxyCodeLine{1218 \textcolor{comment}{            \{}}
+\DoxyCodeLine{1219 \textcolor{comment}{                char *destp = (char *)dst;}}
+\DoxyCodeLine{1220 \textcolor{comment}{                char *srcp = (char *)src;}}
+\DoxyCodeLine{1221 \textcolor{comment}{                char *destp2 = (char *)dst2;}}
+\DoxyCodeLine{1222 \textcolor{comment}{                char *srcp2 = (char *)src2;}}
+\DoxyCodeLine{1223 \textcolor{comment}{                char *destp3 = (char *)dst3;}}
+\DoxyCodeLine{1224 \textcolor{comment}{                char *srcp3 = (char *)src3;}}
+\DoxyCodeLine{1225 \textcolor{comment}{}}
+\DoxyCodeLine{1226 \textcolor{comment}{                //copy 100 elments first}}
+\DoxyCodeLine{1227 \textcolor{comment}{                for (uint32\_t i = 0; i < 10; i++)}}
+\DoxyCodeLine{1228 \textcolor{comment}{                \{}}
+\DoxyCodeLine{1229 \textcolor{comment}{                    memcpy(destp + (i * 10), srcp + (i * 10), 10);}}
+\DoxyCodeLine{1230 \textcolor{comment}{                    memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}}
+\DoxyCodeLine{1231 \textcolor{comment}{                    memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}}
+\DoxyCodeLine{1232 \textcolor{comment}{                \}}}
+\DoxyCodeLine{1233 \textcolor{comment}{                size = size -\/ 100;}}
+\DoxyCodeLine{1234 \textcolor{comment}{}}
+\DoxyCodeLine{1235 \textcolor{comment}{                uint32\_t incrmentby = (i / 10);}}
+\DoxyCodeLine{1236 \textcolor{comment}{                remainder = size \% incrmentby;}}
+\DoxyCodeLine{1237 \textcolor{comment}{                timesToCopy = size / incrmentby;}}
+\DoxyCodeLine{1238 \textcolor{comment}{}}
+\DoxyCodeLine{1239 \textcolor{comment}{                for (uint32\_t i = 0; i < timesToCopy; i++)}}
+\DoxyCodeLine{1240 \textcolor{comment}{                \{}}
+\DoxyCodeLine{1241 \textcolor{comment}{                    memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby);}}
+\DoxyCodeLine{1242 \textcolor{comment}{                    memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby);}}
+\DoxyCodeLine{1243 \textcolor{comment}{                    memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby);}}
+\DoxyCodeLine{1244 \textcolor{comment}{                \}}}
+\DoxyCodeLine{1245 \textcolor{comment}{}}
+\DoxyCodeLine{1246 \textcolor{comment}{                memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}}
+\DoxyCodeLine{1247 \textcolor{comment}{                memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}}
+\DoxyCodeLine{1248 \textcolor{comment}{                memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}}
+\DoxyCodeLine{1249 \textcolor{comment}{}}
+\DoxyCodeLine{1250 \textcolor{comment}{                break;}}
+\DoxyCodeLine{1251 \textcolor{comment}{            \}}}
+\DoxyCodeLine{1252 \textcolor{comment}{        \}}}
+\DoxyCodeLine{1253 \textcolor{comment}{    \}}}
+\DoxyCodeLine{1254 \textcolor{comment}{}}
+\DoxyCodeLine{1255 \textcolor{comment}{}}
+\DoxyCodeLine{1256 \textcolor{comment}{\}*/}}
+
+\end{DoxyCode}

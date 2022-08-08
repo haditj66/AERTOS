@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_a_e_d_m_a___channel.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,6 +61,7 @@ $(document).ready(function(){initNavTree('class_a_e_d_m_a___channel.html',''); i
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -90,168 +70,36 @@ $(document).ready(function(){initNavTree('class_a_e_d_m_a___channel.html',''); i
   <div class="headertitle"><div class="title">AEDMA_Channel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_a_e_d_m_a_peripheral_8h_source.html">AEDMAPeripheral.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adcd3d0945f9f32a9033143fbf4dc1a2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_d_m_a___channel.html#adcd3d0945f9f32a9033143fbf4dc1a2d">AEDMA_Channel</a> (<a class="el" href="_a_e_d_m_a_peripheral_8h.html#a2a1bacf97cb961549d18d14ce71b7174">DMACHEnum</a> dMA_CH, uint32_t valueOfChannel)</td></tr>
+<tr class="memitem:adcd3d0945f9f32a9033143fbf4dc1a2d"><td class="memItemLeft" align="right" valign="top"><a id="adcd3d0945f9f32a9033143fbf4dc1a2d" name="adcd3d0945f9f32a9033143fbf4dc1a2d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AEDMA_Channel</b> (DMACHEnum dMA_CH, uint32_t valueOfChannel)</td></tr>
 <tr class="separator:adcd3d0945f9f32a9033143fbf4dc1a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fdfb609e36ad4edeae0988750c8a495"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_e_d_m_a_peripheral_8h.html#a2a1bacf97cb961549d18d14ce71b7174">DMACHEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_d_m_a___channel.html#a3fdfb609e36ad4edeae0988750c8a495">GetEnumType</a> () const</td></tr>
+<tr class="memitem:a3fdfb609e36ad4edeae0988750c8a495"><td class="memItemLeft" align="right" valign="top"><a id="a3fdfb609e36ad4edeae0988750c8a495" name="a3fdfb609e36ad4edeae0988750c8a495"></a>
+DMACHEnum&#160;</td><td class="memItemRight" valign="bottom"><b>GetEnumType</b> () const</td></tr>
 <tr class="separator:a3fdfb609e36ad4edeae0988750c8a495"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a784057b4beb93142cbb9f68dbecb1821"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_d_m_a___channel.html#a784057b4beb93142cbb9f68dbecb1821">GetChannel</a> () const</td></tr>
+<tr class="memitem:a784057b4beb93142cbb9f68dbecb1821"><td class="memItemLeft" align="right" valign="top"><a id="a784057b4beb93142cbb9f68dbecb1821" name="a784057b4beb93142cbb9f68dbecb1821"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetChannel</b> () const</td></tr>
 <tr class="separator:a784057b4beb93142cbb9f68dbecb1821"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fa1a45bccae04aec9cbf926c79853b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_e_d_m_a___channel.html">AEDMA_Channel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_d_m_a___channel.html#a0fa1a45bccae04aec9cbf926c79853b0">GetChannelInstance</a> ()</td></tr>
+<tr class="memitem:a0fa1a45bccae04aec9cbf926c79853b0"><td class="memItemLeft" align="right" valign="top"><a id="a0fa1a45bccae04aec9cbf926c79853b0" name="a0fa1a45bccae04aec9cbf926c79853b0"></a>
+<a class="el" href="class_a_e_d_m_a___channel.html">AEDMA_Channel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetChannelInstance</b> ()</td></tr>
 <tr class="separator:a0fa1a45bccae04aec9cbf926c79853b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1272b86efb26a126290a9e21066cd3d0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_a_e_d_m_a___channel.html">AEDMA_Channel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_e_d_m_a___channel.html#a1272b86efb26a126290a9e21066cd3d0">GetDMAChInstance</a> (<a class="el" href="_a_e_d_m_a_peripheral_8h.html#a2a1bacf97cb961549d18d14ce71b7174">DMACHEnum</a> indexEnum)</td></tr>
+<tr class="memitem:a1272b86efb26a126290a9e21066cd3d0"><td class="memItemLeft" align="right" valign="top"><a id="a1272b86efb26a126290a9e21066cd3d0" name="a1272b86efb26a126290a9e21066cd3d0"></a>
+static <a class="el" href="class_a_e_d_m_a___channel.html">AEDMA_Channel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetDMAChInstance</b> (DMACHEnum indexEnum)</td></tr>
 <tr class="separator:a1272b86efb26a126290a9e21066cd3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adcd3d0945f9f32a9033143fbf4dc1a2d" name="adcd3d0945f9f32a9033143fbf4dc1a2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcd3d0945f9f32a9033143fbf4dc1a2d">&#9670;&nbsp;</a></span>AEDMA_Channel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AEDMA_Channel::AEDMA_Channel </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_a_e_d_m_a_peripheral_8h.html#a2a1bacf97cb961549d18d14ce71b7174">DMACHEnum</a>&#160;</td>
-          <td class="paramname"><em>dMA_CH</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>valueOfChannel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a784057b4beb93142cbb9f68dbecb1821" name="a784057b4beb93142cbb9f68dbecb1821"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a784057b4beb93142cbb9f68dbecb1821">&#9670;&nbsp;</a></span>GetChannel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t AEDMA_Channel::GetChannel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0fa1a45bccae04aec9cbf926c79853b0" name="a0fa1a45bccae04aec9cbf926c79853b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fa1a45bccae04aec9cbf926c79853b0">&#9670;&nbsp;</a></span>GetChannelInstance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_e_d_m_a___channel.html">AEDMA_Channel</a> * AEDMA_Channel::GetChannelInstance </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1272b86efb26a126290a9e21066cd3d0" name="a1272b86efb26a126290a9e21066cd3d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1272b86efb26a126290a9e21066cd3d0">&#9670;&nbsp;</a></span>GetDMAChInstance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="class_a_e_d_m_a___channel.html">AEDMA_Channel</a> * AEDMA_Channel::GetDMAChInstance </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_a_e_d_m_a_peripheral_8h.html#a2a1bacf97cb961549d18d14ce71b7174">DMACHEnum</a>&#160;</td>
-          <td class="paramname"><em>indexEnum</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3fdfb609e36ad4edeae0988750c8a495" name="a3fdfb609e36ad4edeae0988750c8a495"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fdfb609e36ad4edeae0988750c8a495">&#9670;&nbsp;</a></span>GetEnumType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_a_e_d_m_a_peripheral_8h.html#a2a1bacf97cb961549d18d14ce71b7174">DMACHEnum</a> AEDMA_Channel::GetEnumType </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/<a class="el" href="_a_e_d_m_a_peripheral_8h_source.html">AEDMAPeripheral.h</a></li>
-<li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/<a class="el" href="_a_e_d_m_a_peripheral_8cpp.html">AEDMAPeripheral.cpp</a></li>
+<li>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/AEDMAPeripheral.cpp</li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_a_e_d_m_a___channel.html">AEDMA_Channel</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

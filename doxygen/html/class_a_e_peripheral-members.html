@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_a_e_peripheral.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,6 +61,7 @@ $(document).ready(function(){initNavTree('class_a_e_peripheral.html',''); initRe
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">AEPeripheral&lt; TemplateFor_AEPeripherals &gt; Member List</div></div>
 </div><!--header-->
@@ -89,32 +69,29 @@ $(document).ready(function(){initNavTree('class_a_e_peripheral.html',''); initRe
 
 <p>This is the complete list of members for <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#afa81f1289bdfa585aec241299b97dc9c">_Initialize</a>(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)=0</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a08f04ef997156f3fc7c10adf5af15de7">_InitializePinSelectors</a>(CreateTypeSelector_funcPtr(&amp;functPtrsToChangeTypeSelectors)[NumOfGpioPinsNeeded])=0</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#aaa96fbeac3aeb80841b28dd5deb0db09">AE_Init</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#ae0f9b98723182f07c8fa2f328d9f614e">AEPeripheral</a>(AEPeripheral&lt; TemplateArgs_AEPeripherals &gt; const &amp;)=delete</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a1c61b1a927f606e80d81dda07eb8f70e">AEPeripheral</a>()</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#ad3f47b662716eacb3876f13b1858feb8">ForWhichPeripheralNumber</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#aa339deca3b734b2aff25e5f5474fd94c">functPtrsToChangeTypeSelectors</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#af7873ff213c9b831487c89195c98b864">getInstance</a>()</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a5923ebc283a4ed90dec2402fe8a1366f">GPIOPinSelected1</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a16fc1be8549a8b8bca92b1228a30bc07">GPIOPinSelected2</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a19a26fce3366057928a328ccb46a24d7">GPIOPinSelected3</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a815223b5bc28774f7f2751b076ec2511">GPIOPinSelected4</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a1ebcf19e85d21bf1168cde35d626f166">GPIOPinSelected5</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a843787859da7338c45d4d41e0d803ca0">initializePeripheral</a>()</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a24cca7cae29c875700988eab66be5749">Instance</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a1a7bc1460eb06fb63c43ae52f96a3380">isAlreadyInitialized</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#aaf8a692605c5d861b47415e8f85a6665">operator=</a>(AEPeripheral&lt; TemplateArgs_AEPeripherals &gt; const &amp;)=delete</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_a_e_peripheral.html#a1a4f15e9b0e631ed86e3495ac5ebfd80">PeripheralHandle_t</a></td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_e_peripheral.html#aa436ea03ab769bcbeedac6e797746c18">Pre_Initialize</a>(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_Initialize</b>(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)=0 (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_InitializePinSelectors</b>(CreateTypeSelector_funcPtr(&amp;functPtrsToChangeTypeSelectors)[NumOfGpioPinsNeeded])=0 (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>AE_Init</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>AEPeripheral</b>(AEPeripheral&lt; TemplateArgs_AEPeripherals &gt; const &amp;)=delete (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>AEPeripheral</b>() (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ForWhichPeripheralNumber</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>functPtrsToChangeTypeSelectors</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>getInstance</b>() (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GPIOPinSelected1</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GPIOPinSelected2</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GPIOPinSelected3</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GPIOPinSelected4</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GPIOPinSelected5</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>initializePeripheral</b>() (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Instance</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>isAlreadyInitialized</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator=</b>(AEPeripheral&lt; TemplateArgs_AEPeripherals &gt; const &amp;)=delete (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>PeripheralHandle_t</b> (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Pre_Initialize</b>(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5) (defined in <a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a>)</td><td class="entry"><a class="el" href="class_a_e_peripheral.html">AEPeripheral&lt; TemplateFor_AEPeripherals &gt;</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

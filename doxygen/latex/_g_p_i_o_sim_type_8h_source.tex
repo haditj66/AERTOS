@@ -1,0 +1,34 @@
+\hypertarget{_g_p_i_o_sim_type_8h_source}{}\doxysection{GPIOSim\+Type.\+h}
+\label{_g_p_i_o_sim_type_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/simulated/AEHalFiles/GPIOSimType.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/simulated/AEHalFiles/GPIOSimType.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{keyword}{class }\mbox{\hyperlink{class_g_p_i_o_sim_type}{GPIOSimType}}}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5 \textcolor{keyword}{public}:}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7     \mbox{\hyperlink{class_g_p_i_o_sim_type}{GPIOSimType}}() \{ \_stateOfGpio = \textcolor{keyword}{false}; \};}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keywordtype}{void}  GPIO\_SetHigh() \{}
+\DoxyCodeLine{10         \_stateOfGpio = \textcolor{keyword}{true};}
+\DoxyCodeLine{11     \}}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void}   GPIO\_SetLow() \{}
+\DoxyCodeLine{13         \_stateOfGpio = \textcolor{keyword}{false}; }
+\DoxyCodeLine{14     \}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{bool}  GPIO\_ReadPin() \{ }
+\DoxyCodeLine{17         \textcolor{keywordflow}{return} \_stateOfGpio;}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{void}  GPIO\_TogglePin() \{ }
+\DoxyCodeLine{21         \_stateOfGpio = !\_stateOfGpio;}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23      }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} \_stateOfGpio;}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28  }
+
+\end{DoxyCode}

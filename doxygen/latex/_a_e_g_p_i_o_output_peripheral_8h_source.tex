@@ -1,0 +1,215 @@
+\hypertarget{_a_e_g_p_i_o_output_peripheral_8h_source}{}\doxysection{AEGPIOOutput\+Peripheral.\+h}
+\label{_a_e_g_p_i_o_output_peripheral_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEGPIOOutputPeripheral.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEGPIOOutputPeripheral.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}FreeRTOS.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}AEPeripheral.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}BoardTypes.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}AEConfig.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifdef AESIMULATION}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}SimulatedProperty.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef USING\_AEGPIOOutput }}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#error you included this file but you did not provide a AEGPIOOutput.h file in AEHalFiles directory.}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} \{}
+\DoxyCodeLine{20   AEFRIEND\_TEST(\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}, simple\_init);}
+\DoxyCodeLine{21  }
+\DoxyCodeLine{22   }
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \textcolor{keywordtype}{void} GPIO\_SetHigh();}
+\DoxyCodeLine{25   \textcolor{keywordtype}{void} GPIO\_SetLow();}
+\DoxyCodeLine{26   \textcolor{keywordtype}{void} GPIO\_TogglePin();}
+\DoxyCodeLine{27   \textcolor{keywordtype}{bool} GPIO\_ReadPin();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29  \textcolor{keywordtype}{void} Init(Port\_t port, Pin\_t pin, GPIO\_Handle* gPIO\_Handle\_inst ) \{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     GPIO\_Handle\_inst = gPIO\_Handle\_inst;}
+\DoxyCodeLine{32     Port = port;}
+\DoxyCodeLine{33     Pin = pin;}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35   \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}}() \{}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{private}:}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifdef AESIMULATION}}
+\DoxyCodeLine{43   SimulatedProperty *PropertiesIEffect[4];}
+\DoxyCodeLine{44   uint8\_t PropertiesIEffectSoFarIndex;}
+\DoxyCodeLine{45   uint8\_t IAmSetToPropertyGPIONum;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} AddSimulatedProperty(SimulatedProperty *simulatedPropertytoAdd) \{}
+\DoxyCodeLine{48     PropertiesIEffect[PropertiesIEffectSoFarIndex] = simulatedPropertytoAdd;}
+\DoxyCodeLine{49     PropertiesIEffectSoFarIndex++;}
+\DoxyCodeLine{50   \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   UpdateAllPropertiesIEffect() \{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < PropertiesIEffectSoFarIndex; i++) \{}
+\DoxyCodeLine{54       \textcolor{comment}{// update the proper gpio value of the property}}
+\DoxyCodeLine{55       \textcolor{keywordflow}{if} (IAmSetToPropertyGPIONum == 1) \{}
+\DoxyCodeLine{56         PropertiesIEffect[i]-\/>isGPIOSetHigh1 = this-\/>AE\_GPIO\_GetCurrentState();}
+\DoxyCodeLine{57       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (IAmSetToPropertyGPIONum == 2) \{}
+\DoxyCodeLine{58         PropertiesIEffect[i]-\/>isGPIOSetHigh2 = this-\/>AE\_GPIO\_GetCurrentState();}
+\DoxyCodeLine{59       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (IAmSetToPropertyGPIONum == 3) \{}
+\DoxyCodeLine{60         PropertiesIEffect[i]-\/>isGPIOSetHigh3 = this-\/>AE\_GPIO\_GetCurrentState();}
+\DoxyCodeLine{61       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (IAmSetToPropertyGPIONum == 4) \{}
+\DoxyCodeLine{62         PropertiesIEffect[i]-\/>isGPIOSetHigh4 = this-\/>AE\_GPIO\_GetCurrentState();}
+\DoxyCodeLine{63       \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65       PropertiesIEffect[i].\_UpdatePropWithinSimulation();}
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67   \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} AddSimulatedProperty(SimulatedProperty *simulatedPropertytoAdd,}
+\DoxyCodeLine{70                             uint8\_t GpiosthatEffectMe) \{}
+\DoxyCodeLine{71     IAmSetToPropertyGPIONum = GpiosthatEffectMe;}
+\DoxyCodeLine{72     PropertiesIEffect[PropertiesIEffectSoFarIndex] = simulatedPropertytoAdd;}
+\DoxyCodeLine{73     PropertiesIEffectSoFarIndex++;}
+\DoxyCodeLine{74   \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 GPIO\_Handle* GPIO\_Handle\_inst;}
+\DoxyCodeLine{79   Port\_t Port;}
+\DoxyCodeLine{80   Pin\_t Pin;}
+\DoxyCodeLine{81 \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define templateForGPIO Portenum Gpio\_port, PinEnum Gpio\_pin}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define templateargsForGPIO Gpio\_port, Gpio\_pin}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{template} <templateForGPIO>}
+\DoxyCodeLine{103 \textcolor{keyword}{class }\mbox{\hyperlink{class_g_p_i_o_peripheral}{GPIOPeripheral}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}<GPIOPeripheral<templateargsForGPIO>, 1, GPIO\_Handle, templateargsForGPIO>}
+\DoxyCodeLine{104 \{}
+\DoxyCodeLine{105     \textcolor{keyword}{friend} \textcolor{keyword}{class }AEGPIO;}
+\DoxyCodeLine{106     \textcolor{keyword}{friend} \textcolor{keywordtype}{void} AE\_Init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{107     AEFRIEND\_TEST(\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}}, simple\_init);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keyword}{public}:}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{111     Port\_t Port;}
+\DoxyCodeLine{112     Pin\_t Pin;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsAlreadyInUse;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{117     \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} GpioInstance;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// Inherited via HardwarePeripheral}}
+\DoxyCodeLine{120     \textcolor{keywordtype}{void} \_InitializePinSelectors(CreateTypeSelector\_funcPtr (}
+\DoxyCodeLine{121         \&functPtrsToChangeTypeSelectorss)[1]) \textcolor{keyword}{override};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// Inherited via HardwarePeripheral}}
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} \_Initialize(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2,}
+\DoxyCodeLine{125                      Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4,}
+\DoxyCodeLine{126                      Port\_t port5, Pin\_t pin5) \textcolor{keyword}{override};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}}* GetPeripheralInstance() \{ GpioInstance.Init(Port, Pin, \&this-\/>PeripheralHandle\_t); \textcolor{keywordflow}{return} \&GpioInstance;\}}
+\DoxyCodeLine{129 \};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{keyword}{template} <templateForGPIO>}
+\DoxyCodeLine{133     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_g_p_i_o_peripheral}{GPIOPeripheral<templateargsForGPIO>::IsAlreadyInUse}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#ifdef GPIOPERIPHERAL1}}
+\DoxyCodeLine{143 \textcolor{keyword}{extern} GPIOPERIPHERAL1 *GPIOPERIPHERAL1\_Instance;}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define GPIOPERIPHERAL1\_INITIALIZE  GPIOPERIPHERAL1\_Instance = GPIOPERIPHERAL1::getInstance(); GPIOPERIPHERAL1\_Instance-\/>initializePeripheral(); GPIOPERIPHERAL1\_Name = GPIOPERIPHERAL1\_Instance-\/>GetPeripheralInstance();}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#ifndef GPIOPERIPHERAL1\_Name}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#error You need to define GPIOPERIPHERAL1\_Name}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{148 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} *GPIOPERIPHERAL1\_Name;}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#ifdef GPIOPERIPHERAL2}}
+\DoxyCodeLine{153 \textcolor{keyword}{extern} GPIOPERIPHERAL2 *GPIOPERIPHERAL2\_Instance;}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define GPIOPERIPHERAL2\_INITIALIZE  GPIOPERIPHERAL2\_Instance = GPIOPERIPHERAL2::getInstance(); GPIOPERIPHERAL2\_Instance-\/>initializePeripheral(); GPIOPERIPHERAL2\_Name = GPIOPERIPHERAL2\_Instance-\/>GetPeripheralInstance();}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#ifndef GPIOPERIPHERAL2\_Name}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#error You need to define GPIOPERIPHERAL2\_Name}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{158 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} *GPIOPERIPHERAL2\_Name;}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#ifdef GPIOPERIPHERAL3}}
+\DoxyCodeLine{163 \textcolor{keyword}{extern} GPIOPERIPHERAL3 *GPIOPERIPHERAL3\_Instance;}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define GPIOPERIPHERAL3\_INITIALIZE  GPIOPERIPHERAL3\_Instance = GPIOPERIPHERAL3::getInstance(); GPIOPERIPHERAL3\_Instance-\/>initializePeripheral(); GPIOPERIPHERAL3\_Name = GPIOPERIPHERAL3\_Instance-\/>GetPeripheralInstance();}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#ifndef GPIOPERIPHERAL3\_Name}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#error You need to define GPIOPERIPHERAL3\_Name}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{168 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} *GPIOPERIPHERAL3\_Name;}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#ifdef GPIOPERIPHERAL4}}
+\DoxyCodeLine{174 \textcolor{keyword}{extern} GPIOPERIPHERAL4 *GPIOPERIPHERAL4\_Instance;}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define GPIOPERIPHERAL4\_INITIALIZE  GPIOPERIPHERAL4\_Instance = GPIOPERIPHERAL4::getInstance(); GPIOPERIPHERAL4\_Instance-\/>initializePeripheral(); GPIOPERIPHERAL4\_Name = GPIOPERIPHERAL4\_Instance-\/>GetPeripheralInstance();}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#ifndef GPIOPERIPHERAL4\_Name}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#error You need to define GPIOPERIPHERAL4\_Name}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{179 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} *GPIOPERIPHERAL4\_Name;}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#ifdef GPIOPERIPHERAL5}}
+\DoxyCodeLine{185 \textcolor{keyword}{extern} GPIOPERIPHERAL5 *GPIOPERIPHERAL5\_Instance;}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define GPIOPERIPHERAL5\_INITIALIZE  GPIOPERIPHERAL5\_Instance = GPIOPERIPHERAL5::getInstance(); GPIOPERIPHERAL5\_Instance-\/>initializePeripheral(); GPIOPERIPHERAL5\_Name = GPIOPERIPHERAL5\_Instance-\/>GetPeripheralInstance();}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#ifndef GPIOPERIPHERAL5\_Name}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#error You need to define GPIOPERIPHERAL5\_Name}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{190 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} *GPIOPERIPHERAL5\_Name;}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#ifdef GPIOPERIPHERAL6}}
+\DoxyCodeLine{195 \textcolor{keyword}{extern} GPIOPERIPHERAL6 *GPIOPERIPHERAL6\_Instance;}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define GPIOPERIPHERAL6\_INITIALIZE  GPIOPERIPHERAL6\_Instance = GPIOPERIPHERAL6::getInstance(); GPIOPERIPHERAL6\_Instance-\/>initializePeripheral(); GPIOPERIPHERAL6\_Name = GPIOPERIPHERAL6\_Instance-\/>GetPeripheralInstance();}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#ifndef GPIOPERIPHERAL6\_Name}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#error You need to define GPIOPERIPHERAL6\_Name}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{200 \textcolor{keyword}{extern}  \mbox{\hyperlink{class_a_e_g_p_i_o_output}{AEGPIOOutput}} *GPIOPERIPHERAL6\_Name;}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205  }
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+
+\end{DoxyCode}

@@ -1,0 +1,67 @@
+\hypertarget{_a_e_port_8h_source}{}\doxysection{AEPort.\+h}
+\label{_a_e_port_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEPort.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEPort.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}PinSelector.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}BoardTypes.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{typedef} void (*portClockInitializationfuncPtr\_t)(void);}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_port}{AEPort}};}
+\DoxyCodeLine{11 \textcolor{keyword}{extern} \mbox{\hyperlink{class_a_e_port}{AEPort}} UserDefinedAEPorts[];}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_port}{AEPort}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     }
+\DoxyCodeLine{19     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}};}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_a_e_port}{AEPort}}(Portenum portenumType, Port\_t halPort, portClockInitializationfuncPtr\_t portClockInitialization)}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \_hasPortBeenInitYet = \textcolor{keyword}{false};}
+\DoxyCodeLine{24         \_portenumType = portenumType;}
+\DoxyCodeLine{25         \_halPort = halPort;}
+\DoxyCodeLine{26         \_portClockInitialization = portClockInitialization;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         }
+\DoxyCodeLine{29         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_numPortsCreatedSoFar; i++)}
+\DoxyCodeLine{30         \{}
+\DoxyCodeLine{31             \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(UserDefinedAEPorts[i].GetPortEnum() != portenumType, \textcolor{stringliteral}{"{}make sure that the portenum defined has not been one defined already"{}});}
+\DoxyCodeLine{32             }
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34 \textcolor{comment}{//      UserDefinedAEPorts[\_numPortsCreatedSoFar] = this;}}
+\DoxyCodeLine{35         \_numPortsCreatedSoFar++;}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} Initialize()}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40         \textcolor{keywordflow}{if} (\_hasPortBeenInitYet == \textcolor{keyword}{false})}
+\DoxyCodeLine{41         \{}
+\DoxyCodeLine{42             \_portClockInitialization(); }
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44         }
+\DoxyCodeLine{45         \_hasPortBeenInitYet = \textcolor{keyword}{true};}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     Portenum GetPortEnum() \{ \textcolor{keywordflow}{return} \_portenumType; \}}
+\DoxyCodeLine{48     Port\_t GetPort() \{ \textcolor{keywordflow}{return} \_halPort; \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51     \textcolor{keywordtype}{bool} \_hasPortBeenInitYet;}
+\DoxyCodeLine{52     Portenum \_portenumType;}
+\DoxyCodeLine{53     Port\_t \_halPort;}
+\DoxyCodeLine{54     portClockInitializationfuncPtr\_t \_portClockInitialization;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keyword}{static} uint32\_t \_numPortsCreatedSoFar;}
+\DoxyCodeLine{57 \textcolor{comment}{//  static AEPort* ALLPorts[15];}}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+
+\end{DoxyCode}

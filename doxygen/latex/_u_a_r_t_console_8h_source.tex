@@ -1,0 +1,55 @@
+\hypertarget{_u_a_r_t_console_8h_source}{}\doxysection{UARTConsole.\+h}
+\label{_u_a_r_t_console_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/board\_files/UARTConsole.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/board\_files/UARTConsole.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MBCS}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{comment}{// this library uses uart2 and PA2 and PA3 as TX and RX-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef UARTConsole\_h}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define UARTConsole\_h}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}AEConfig.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef Target\_RealUART}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{14  \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{ \#include "{}stm32f4xx\_hal.h"{}} }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19    }
+\DoxyCodeLine{20    }
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   uint32\_t BaudRate;        }
+\DoxyCodeLine{24 \}\mbox{\hyperlink{struct_u_a_r_t_console___init_type_def}{UARTConsole\_InitTypeDef}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \_\_weak \textcolor{keywordtype}{void} UartRxCommand1Callback(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{27 \_\_weak \textcolor{keywordtype}{void} UartRxCommand2Callback(\textcolor{keywordtype}{void}); }
+\DoxyCodeLine{28 \_\_weak \textcolor{keywordtype}{void} UartRxCommand3Callback(\textcolor{keywordtype}{void}); }
+\DoxyCodeLine{29 \_\_weak \textcolor{keywordtype}{void} UartRxCommand4Callback(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{30 \_\_weak \textcolor{keywordtype}{void} UartRxCommand5Callback(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keywordtype}{void} Init\_UARTConsole(\mbox{\hyperlink{struct_u_a_r_t_console___init_type_def}{UARTConsole\_InitTypeDef}}* UartConsole\_init);}
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} TransmitMsg(\textcolor{keywordtype}{char} \textcolor{keyword}{const}* s, \textcolor{keywordtype}{int} num);}
+\DoxyCodeLine{35 \textcolor{keywordtype}{char}* ReceiveMsg(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{40 \}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_STM32F4xx\_HAL\_UART\_H }}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

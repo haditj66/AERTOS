@@ -1,0 +1,63 @@
+\hypertarget{_vendor___p_c_2_board_vendor_setup_8h_source}{}\doxysection{Board\+Vendor\+Setup.\+h}
+\label{_vendor___p_c_2_board_vendor_setup_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/AESetup/Board/Vendor\_PC/BoardVendorSetup.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/AESetup/Board/Vendor\_PC/BoardVendorSetup.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//generated file: BoardVendorSetup.h}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{// this is for board X64 for the }}
+\DoxyCodeLine{7 \textcolor{comment}{// PC part of it}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}AESetUpBase.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{//includes}}
+\DoxyCodeLine{12 \textcolor{comment}{//UserCode\_Sectiona}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#if RTOS\_USED == FREERTOS}}
+\DoxyCodeLine{14 \textcolor{keyword}{extern}  \textcolor{keywordtype}{void} prvInitialiseHeap();}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 \textcolor{comment}{//UserCode\_Sectiona\_end}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_board_vendor_setup}{BoardVendorSetup}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_a_e_set_up_base}{AESetUpBase}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_board_vendor_setup}{BoardVendorSetup}}() \{\}; }
+\DoxyCodeLine{23     }
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} RTOSInit()\{}
+\DoxyCodeLine{25     AESetUpBase::RTOSInit();}
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27     \textcolor{comment}{//UserCode\_Sectionb}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#if RTOS\_USED == FREERTOS}}
+\DoxyCodeLine{29 prvInitialiseHeap();}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 \textcolor{comment}{//UserCode\_Sectionb\_end}}
+\DoxyCodeLine{32     }
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} BSPInit()\{}
+\DoxyCodeLine{36     AESetUpBase::BSPInit();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{//UserCode\_Sectionc}}
+\DoxyCodeLine{39 \textcolor{comment}{//UserCode\_Sectionc\_end}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//any things needed to be changed in the BSP to satisfy the RTOS being used}}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} RTOS\_ToBSP\_SpecificCode()\{}
+\DoxyCodeLine{46     AESetUpBase::RTOS\_ToBSP\_SpecificCode();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{comment}{//UserCode\_Sectiond}}
+\DoxyCodeLine{49 \textcolor{comment}{//UserCode\_Sectiond\_end}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{private}: }
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{//UserCode\_Sectione}}
+\DoxyCodeLine{57 \textcolor{comment}{//UserCode\_Sectione\_end}}
+
+\end{DoxyCode}

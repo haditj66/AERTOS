@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -52,22 +48,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_a_e_circular_buffer_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -91,11 +71,11 @@ $(document).ready(function(){initNavTree('_a_e_circular_buffer_8h_source.html','
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_a_e_8h.html">AE.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;AE.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">   12</a></span><span class="preprocessor">#define CircularBuffMutexTake xSemaphoreTake(MutexForThisCircularBuffer, portMAX_DELAY);</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">   13</a></span><span class="preprocessor">#define CircularBuffMutexGive xSemaphoreGive(MutexForThisCircularBuffer);</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define CircularBuffMutexTake xSemaphoreTake(MutexForThisCircularBuffer, portMAX_DELAY);</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define CircularBuffMutexGive xSemaphoreGive(MutexForThisCircularBuffer);</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> ContainerType, u<span class="keywordtype">int</span>16_t MaxSize&gt;</div>
@@ -103,30 +83,30 @@ $(document).ready(function(){initNavTree('_a_e_circular_buffer_8h_source.html','
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>: </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_a_e_circular_buffer.html#a1ac062aa66059c32f8be3989e7435bb0">AECircularBuffer</a>(); </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_a_e_circular_buffer.html">AECircularBuffer</a>(); </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#a14ec3edb1a4f386f4aea73ec53876bcc">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_e_circular_buffer.html#a14ec3edb1a4f386f4aea73ec53876bcc">Push</a>(ContainerType item, <span class="keywordtype">bool</span> withFullCheck = <span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_define" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a> Push_IMPL(item, withFullCheck);  <a class="code hl_define" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        CircularBuffMutexTake Push_IMPL(item, withFullCheck);  CircularBuffMutexGive;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    };</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    ContainerType* <a class="code hl_function" href="class_a_e_circular_buffer.html#a5aa9649a395b1f56816f0e9b2b5b2913">Peek</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#ae9726ff1b3d9d01cef2c2170323155b4">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_e_circular_buffer.html#ae9726ff1b3d9d01cef2c2170323155b4">Pop</a>() {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_define" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a> Pop_IMPL( );  <a class="code hl_define" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    ContainerType* Peek();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> Pop() {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        CircularBuffMutexTake Pop_IMPL( );  CircularBuffMutexGive</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#a45307cc95b75fca6c93dc612e42ab54f">   36</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_e_circular_buffer.html#a45307cc95b75fca6c93dc612e42ab54f">Reset</a>() {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_define" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a> Reset_IMPL();  <a class="code hl_define" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> Reset() {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        CircularBuffMutexTake Reset_IMPL();  CircularBuffMutexGive</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#ab7492859bb241bfbac9511de70ec7801">   39</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_e_circular_buffer.html#ab7492859bb241bfbac9511de70ec7801">Clear</a>() {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_define" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a> Clear_IMPL();   <a class="code hl_define" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> Clear() {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        CircularBuffMutexTake Clear_IMPL();   CircularBuffMutexGive</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    };</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#ace008c09265aac31a23352f617c58d5f">   43</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_a_e_circular_buffer.html#ace008c09265aac31a23352f617c58d5f">isEmpty</a>()<span class="keyword"> const </span>{ <a class="code hl_define" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a> <span class="keywordtype">bool</span> isEmpt = isEmpty_IMPL(); <a class="code hl_define" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a> <span class="keywordflow">return</span>  isEmpt; }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#a12ade9bea6ed4e4866b071b837fdeb8e">   44</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_a_e_circular_buffer.html#a12ade9bea6ed4e4866b071b837fdeb8e">isFull</a>()<span class="keyword"> const </span>{ <a class="code hl_define" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a> <span class="keywordtype">bool</span> isfull = isFull_IMPL(); <a class="code hl_define" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a>  <span class="keywordflow">return</span> isfull; }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#acd13381f5dc727f9e73999ee89637e10">   45</a></span>    uint16_t <a class="code hl_function" href="class_a_e_circular_buffer.html#acd13381f5dc727f9e73999ee89637e10">GetSize</a>()<span class="keyword"> const </span>{ <a class="code hl_define" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a> uint16_t theSize = GetSize_IMPL(); <a class="code hl_define" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a>  <span class="keywordflow">return</span> theSize; };</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">bool</span> isEmpty()<span class="keyword"> const </span>{ CircularBuffMutexTake <span class="keywordtype">bool</span> isEmpt = isEmpty_IMPL(); CircularBuffMutexGive <span class="keywordflow">return</span>  isEmpt; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">bool</span> isFull()<span class="keyword"> const </span>{ CircularBuffMutexTake <span class="keywordtype">bool</span> isfull = isFull_IMPL(); CircularBuffMutexGive  <span class="keywordflow">return</span> isfull; }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    uint16_t GetSize()<span class="keyword"> const </span>{ CircularBuffMutexTake uint16_t theSize = GetSize_IMPL(); CircularBuffMutexGive  <span class="keywordflow">return</span> theSize; };</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    ContainerType &amp;<a class="code hl_function" href="class_a_e_circular_buffer.html#a6955560629ad76be5e605d530342aa4e">operator[] </a>(uint16_t index);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    ContainerType &amp;operator[] (uint16_t index);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">private</span>:  </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
@@ -156,7 +136,7 @@ $(document).ready(function(){initNavTree('_a_e_circular_buffer_8h_source.html','
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> ContainerType, u<span class="keywordtype">int</span>16_t MaxSize&gt;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#a1ac062aa66059c32f8be3989e7435bb0">   79</a></span><span class="keyword">inline</span> <a class="code hl_function" href="class_a_e_circular_buffer.html#a1ac062aa66059c32f8be3989e7435bb0">AECircularBuffer&lt;ContainerType, MaxSize&gt;::AECircularBuffer</a>()</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">inline</span> <a class="code hl_class" href="class_a_e_circular_buffer.html">AECircularBuffer&lt;ContainerType, MaxSize&gt;::AECircularBuffer</a>()</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">//create mutex for this</span></div>
@@ -190,7 +170,7 @@ $(document).ready(function(){initNavTree('_a_e_circular_buffer_8h_source.html','
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="comment">//assert that the size of this circular buffer is not full </span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>           <a class="code hl_define" href="_free_r_t_o_s_config_8h.html#a228c70cd48927d6ab730ed1a6dfbe35f">configASSERT</a>(size &lt;= MaxSize);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>           configASSERT(size &lt;= MaxSize);</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  </div>
@@ -205,9 +185,9 @@ $(document).ready(function(){initNavTree('_a_e_circular_buffer_8h_source.html','
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> ContainerType, u<span class="keywordtype">int</span>16_t MaxSize&gt;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#a5aa9649a395b1f56816f0e9b2b5b2913">  128</a></span><span class="keyword">inline</span> ContainerType* <a class="code hl_function" href="class_a_e_circular_buffer.html#a5aa9649a395b1f56816f0e9b2b5b2913">AECircularBuffer&lt;ContainerType, MaxSize&gt;::Peek</a>()</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">inline</span> ContainerType* <a class="code hl_class" href="class_a_e_circular_buffer.html">AECircularBuffer&lt;ContainerType, MaxSize&gt;::Peek</a>()</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>{  </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <a class="code hl_define" href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a> ContainerType* returnthing = Peek_IMPL();   <a class="code hl_define" href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a> <span class="keywordflow">return</span> returnthing;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  CircularBuffMutexTake ContainerType* returnthing = Peek_IMPL();   CircularBuffMutexGive <span class="keywordflow">return</span> returnthing;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
@@ -271,11 +251,11 @@ $(document).ready(function(){initNavTree('_a_e_circular_buffer_8h_source.html','
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>}</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> ContainerType, u<span class="keywordtype">int</span>16_t MaxSize&gt;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="class_a_e_circular_buffer.html#a6955560629ad76be5e605d530342aa4e">  194</a></span><span class="keyword">inline</span> ContainerType &amp; <a class="code hl_function" href="class_a_e_circular_buffer.html#a6955560629ad76be5e605d530342aa4e">AECircularBuffer&lt;ContainerType, MaxSize&gt;::operator[]</a>(uint16_t index)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">inline</span> ContainerType &amp; <a class="code hl_class" href="class_a_e_circular_buffer.html">AECircularBuffer&lt;ContainerType, MaxSize&gt;::operator[]</a>(uint16_t index)</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>{ </div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="comment">//index you gave for circularbuffer not within size</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <a class="code hl_define" href="_free_r_t_o_s_config_8h.html#a228c70cd48927d6ab730ed1a6dfbe35f">configASSERT</a>(index &lt; MaxSize);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    configASSERT(index &lt; MaxSize);</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="comment">//if this curcular buffer is not full, i want to be able to just get the tail value so to not get an undefined value.</span></div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="comment">//this is a special case of this particular kind of circularbuffer</span></div>
@@ -319,29 +299,12 @@ $(document).ready(function(){initNavTree('_a_e_circular_buffer_8h_source.html','
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    head = (head + 1) % MaxSize;</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    full = (head == tail);</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>}</div>
-<div class="ttc" id="a_a_e_8h_html"><div class="ttname"><a href="_a_e_8h.html">AE.h</a></div></div>
-<div class="ttc" id="a_a_e_circular_buffer_8h_html_a82bc6f24c1fbf83abf1d1e242e198a25"><div class="ttname"><a href="_a_e_circular_buffer_8h.html#a82bc6f24c1fbf83abf1d1e242e198a25">CircularBuffMutexGive</a></div><div class="ttdeci">#define CircularBuffMutexGive</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:13</div></div>
-<div class="ttc" id="a_a_e_circular_buffer_8h_html_aee939bee1d30e89fd17a633f5e09ce20"><div class="ttname"><a href="_a_e_circular_buffer_8h.html#aee939bee1d30e89fd17a633f5e09ce20">CircularBuffMutexTake</a></div><div class="ttdeci">#define CircularBuffMutexTake</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:12</div></div>
-<div class="ttc" id="a_free_r_t_o_s_config_8h_html_a228c70cd48927d6ab730ed1a6dfbe35f"><div class="ttname"><a href="_free_r_t_o_s_config_8h.html#a228c70cd48927d6ab730ed1a6dfbe35f">configASSERT</a></div><div class="ttdeci">#define configASSERT(x)</div><div class="ttdef"><b>Definition:</b> FreeRTOSConfig.h:225</div></div>
 <div class="ttc" id="aclass_a_e_circular_buffer_html"><div class="ttname"><a href="class_a_e_circular_buffer.html">AECircularBuffer</a></div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:18</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_a12ade9bea6ed4e4866b071b837fdeb8e"><div class="ttname"><a href="class_a_e_circular_buffer.html#a12ade9bea6ed4e4866b071b837fdeb8e">AECircularBuffer::isFull</a></div><div class="ttdeci">bool isFull() const</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:44</div></div>
 <div class="ttc" id="aclass_a_e_circular_buffer_html_a14ec3edb1a4f386f4aea73ec53876bcc"><div class="ttname"><a href="class_a_e_circular_buffer.html#a14ec3edb1a4f386f4aea73ec53876bcc">AECircularBuffer::Push</a></div><div class="ttdeci">void Push(ContainerType item, bool withFullCheck=true)</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:29</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_a1ac062aa66059c32f8be3989e7435bb0"><div class="ttname"><a href="class_a_e_circular_buffer.html#a1ac062aa66059c32f8be3989e7435bb0">AECircularBuffer::AECircularBuffer</a></div><div class="ttdeci">AECircularBuffer()</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:79</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_a45307cc95b75fca6c93dc612e42ab54f"><div class="ttname"><a href="class_a_e_circular_buffer.html#a45307cc95b75fca6c93dc612e42ab54f">AECircularBuffer::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:36</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_a5aa9649a395b1f56816f0e9b2b5b2913"><div class="ttname"><a href="class_a_e_circular_buffer.html#a5aa9649a395b1f56816f0e9b2b5b2913">AECircularBuffer::Peek</a></div><div class="ttdeci">ContainerType * Peek()</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:128</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_a6955560629ad76be5e605d530342aa4e"><div class="ttname"><a href="class_a_e_circular_buffer.html#a6955560629ad76be5e605d530342aa4e">AECircularBuffer::operator[]</a></div><div class="ttdeci">ContainerType &amp; operator[](uint16_t index)</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:194</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_ab7492859bb241bfbac9511de70ec7801"><div class="ttname"><a href="class_a_e_circular_buffer.html#ab7492859bb241bfbac9511de70ec7801">AECircularBuffer::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:39</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_acd13381f5dc727f9e73999ee89637e10"><div class="ttname"><a href="class_a_e_circular_buffer.html#acd13381f5dc727f9e73999ee89637e10">AECircularBuffer::GetSize</a></div><div class="ttdeci">uint16_t GetSize() const</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:45</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_ace008c09265aac31a23352f617c58d5f"><div class="ttname"><a href="class_a_e_circular_buffer.html#ace008c09265aac31a23352f617c58d5f">AECircularBuffer::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:43</div></div>
-<div class="ttc" id="aclass_a_e_circular_buffer_html_ae9726ff1b3d9d01cef2c2170323155b4"><div class="ttname"><a href="class_a_e_circular_buffer.html#ae9726ff1b3d9d01cef2c2170323155b4">AECircularBuffer::Pop</a></div><div class="ttdeci">void Pop()</div><div class="ttdef"><b>Definition:</b> AECircularBuffer.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="_a_e_circular_buffer_8h.html">AECircularBuffer.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

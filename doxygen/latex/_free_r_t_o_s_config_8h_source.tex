@@ -1,0 +1,249 @@
+\hypertarget{_free_r_t_o_s_config_8h_source}{}\doxysection{Free\+RTOSConfig.\+h}
+\label{_free_r_t_o_s_config_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles/FreeRTOSConfig.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/FreeRTOSConfigFiles/FreeRTOSConfig.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{    FreeRTOS V8.1.2 -\/ Copyright (C) 2014 Real Time Engineers Ltd. }}
+\DoxyCodeLine{3 \textcolor{comment}{    All rights reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{    VISIT http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{    ***************************************************************************}}
+\DoxyCodeLine{8 \textcolor{comment}{     *                                                                       *}}
+\DoxyCodeLine{9 \textcolor{comment}{     *    FreeRTOS provides completely free yet professionally developed,    *}}
+\DoxyCodeLine{10 \textcolor{comment}{     *    robust, strictly quality controlled, supported, and cross          *}}
+\DoxyCodeLine{11 \textcolor{comment}{     *    platform software that has become a de facto standard.             *}}
+\DoxyCodeLine{12 \textcolor{comment}{     *                                                                       *}}
+\DoxyCodeLine{13 \textcolor{comment}{     *    Help yourself get started quickly and support the FreeRTOS         *}}
+\DoxyCodeLine{14 \textcolor{comment}{     *    project by purchasing a FreeRTOS tutorial book, reference          *}}
+\DoxyCodeLine{15 \textcolor{comment}{     *    manual, or both from: http://www.FreeRTOS.org/Documentation        *}}
+\DoxyCodeLine{16 \textcolor{comment}{     *                                                                       *}}
+\DoxyCodeLine{17 \textcolor{comment}{     *    Thank you!                                                         *}}
+\DoxyCodeLine{18 \textcolor{comment}{     *                                                                       *}}
+\DoxyCodeLine{19 \textcolor{comment}{    ***************************************************************************}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{    This file is part of the FreeRTOS distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{    FreeRTOS is free software; you can redistribute it and/or modify it under}}
+\DoxyCodeLine{24 \textcolor{comment}{    the terms of the GNU General Public License (version 2) as published by the}}
+\DoxyCodeLine{25 \textcolor{comment}{    Free Software Foundation >>!AND MODIFIED BY!<< the FreeRTOS exception.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{    >>! NOTE: The modification to the GPL is included to allow you to distribute}}
+\DoxyCodeLine{28 \textcolor{comment}{    >>! a combined work that includes FreeRTOS without being obliged to provide}}
+\DoxyCodeLine{29 \textcolor{comment}{    >>! the source code for proprietary components outside of the FreeRTOS}}
+\DoxyCodeLine{30 \textcolor{comment}{    >>! kernel.}}
+\DoxyCodeLine{31 \textcolor{comment}{}}
+\DoxyCodeLine{32 \textcolor{comment}{    FreeRTOS is distributed in the hope that it will be useful, but WITHOUT ANY}}
+\DoxyCodeLine{33 \textcolor{comment}{    WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS}}
+\DoxyCodeLine{34 \textcolor{comment}{    FOR A PARTICULAR PURPOSE.  Full license text is available from the following}}
+\DoxyCodeLine{35 \textcolor{comment}{    link: http://www.freertos.org/a00114.html}}
+\DoxyCodeLine{36 \textcolor{comment}{}}
+\DoxyCodeLine{37 \textcolor{comment}{    1 tab == 4 spaces!}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{    ***************************************************************************}}
+\DoxyCodeLine{40 \textcolor{comment}{     *                                                                       *}}
+\DoxyCodeLine{41 \textcolor{comment}{     *    Having a problem?  Start by reading the FAQ "{}My application does   *}}
+\DoxyCodeLine{42 \textcolor{comment}{     *    not run, what could be wrong?"{}                                     *}}
+\DoxyCodeLine{43 \textcolor{comment}{     *                                                                       *}}
+\DoxyCodeLine{44 \textcolor{comment}{     *    http://www.FreeRTOS.org/FAQHelp.html                               *}}
+\DoxyCodeLine{45 \textcolor{comment}{     *                                                                       *}}
+\DoxyCodeLine{46 \textcolor{comment}{    ***************************************************************************}}
+\DoxyCodeLine{47 \textcolor{comment}{}}
+\DoxyCodeLine{48 \textcolor{comment}{    http://www.FreeRTOS.org -\/ Documentation, books, training, latest versions,}}
+\DoxyCodeLine{49 \textcolor{comment}{    license and Real Time Engineers Ltd. contact details.}}
+\DoxyCodeLine{50 \textcolor{comment}{}}
+\DoxyCodeLine{51 \textcolor{comment}{    http://www.FreeRTOS.org/plus -\/ A selection of FreeRTOS ecosystem products,}}
+\DoxyCodeLine{52 \textcolor{comment}{    including FreeRTOS+Trace -\/ an indispensable productivity tool, a DOS}}
+\DoxyCodeLine{53 \textcolor{comment}{    compatible FAT file system, and our tiny thread aware UDP/IP stack.}}
+\DoxyCodeLine{54 \textcolor{comment}{}}
+\DoxyCodeLine{55 \textcolor{comment}{    http://www.OpenRTOS.com -\/ Real Time Engineers ltd license FreeRTOS to High}}
+\DoxyCodeLine{56 \textcolor{comment}{    Integrity Systems to sell under the OpenRTOS brand.  Low cost OpenRTOS}}
+\DoxyCodeLine{57 \textcolor{comment}{    licenses offer ticketed support, indemnification and middleware.}}
+\DoxyCodeLine{58 \textcolor{comment}{}}
+\DoxyCodeLine{59 \textcolor{comment}{    http://www.SafeRTOS.com -\/ High Integrity Systems also provide a safety}}
+\DoxyCodeLine{60 \textcolor{comment}{    engineered and independently SIL3 certified version for use in safety and}}
+\DoxyCodeLine{61 \textcolor{comment}{    mission critical applications that require provable dependability.}}
+\DoxyCodeLine{62 \textcolor{comment}{}}
+\DoxyCodeLine{63 \textcolor{comment}{    1 tab == 4 spaces!}}
+\DoxyCodeLine{64 \textcolor{comment}{*/}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#ifndef FREERTOS\_CONFIG\_H}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define FREERTOS\_CONFIG\_H}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{71 \textcolor{comment}{ * Application specific definitions.}}
+\DoxyCodeLine{72 \textcolor{comment}{ *}}
+\DoxyCodeLine{73 \textcolor{comment}{ * These definitions should be adjusted for your particular hardware and}}
+\DoxyCodeLine{74 \textcolor{comment}{ * application requirements.}}
+\DoxyCodeLine{75 \textcolor{comment}{ *}}
+\DoxyCodeLine{76 \textcolor{comment}{ * THESE PARAMETERS ARE DESCRIBED WITHIN THE 'CONFIGURATION' SECTION OF THE}}
+\DoxyCodeLine{77 \textcolor{comment}{ * FreeRTOS API DOCUMENTATION AVAILABLE ON THE FreeRTOS.org WEB SITE.}}
+\DoxyCodeLine{78 \textcolor{comment}{ *}}
+\DoxyCodeLine{79 \textcolor{comment}{ * See http://www.freertos.org/a00110.html.}}
+\DoxyCodeLine{80 \textcolor{comment}{ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#include "{}AE.h"{}}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{comment}{/* Ensure stdint is only used by the compiler, and not the assembler. */}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#if defined(\_\_ICCARM\_\_) || defined(\_\_CC\_ARM) || defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{90     \textcolor{comment}{//\#include "{}main.h"{} }}
+\DoxyCodeLine{91     \textcolor{keyword}{extern} uint32\_t SystemCoreClock;}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#ifdef SWIL\_HWIL\_DRIVEN\_\_HWIL}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define configAPPLICATION\_ALLOCATED\_HEAP 0}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define configAPPLICATION\_ALLOCATED\_HEAP 1}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define configENABLE\_TRUSTZONE                   0}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define configRUN\_FREERTOS\_SECURE\_ONLY           0}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define configENABLE\_FPU                         1}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define configENABLE\_MPU                         0 }}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define configUSE\_PREEMPTION                    1}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define configUSE\_PORT\_OPTIMISED\_TASK\_SELECTION 1}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define configUSE\_IDLE\_HOOK                     0 }}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define configUSE\_MALLOC\_FAILED\_HOOK            0}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define configUSE\_APPLICATION\_TASK\_TAG          0}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define configUSE\_DAEMON\_TASK\_STARTUP\_HOOK      0 }}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define configUSE\_TICK\_HOOK                     0}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define configCPU\_CLOCK\_HZ                       ( SystemCoreClock )}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define configTICK\_RATE\_HZ                      ((TickType\_t)AEconfigTICK\_RATE\_HZ)  }\textcolor{comment}{// In this non-\/real time simulated environment the tick frequency has to be at least a multiple of the Win32 tick frequency, and therefore very slow. }}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define configMINIMAL\_STACK\_SIZE                ( ( unsigned short ) AEconfigMINIMAL\_STACK\_SIZE ) }\textcolor{comment}{//In this simulated case, the stack only has to hold one small structure as the real stack is part of the win32 thread. }}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define configTOTAL\_HEAP\_SIZE                   ( ( size\_t ) AEconfigTOTAL\_HEAP\_SIZE)}\textcolor{comment}{//( 52 * 1024  ) )}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define configMAX\_TASK\_NAME\_LEN                 ( 28 )}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define configUSE\_TRACE\_FACILITY                AEconfigUSE\_TRACE\_FACILITY}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define configUSE\_16\_BIT\_TICKS                  0}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define configIDLE\_SHOULD\_YIELD                 1}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define configUSE\_MUTEXES                       1}}
+\DoxyCodeLine{123 \textcolor{comment}{//\#define configCHECK\_FOR\_STACK\_OVERFLOW            0}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define configUSE\_RECURSIVE\_MUTEXES             1}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define configQUEUE\_REGISTRY\_SIZE               20}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define configUSE\_COUNTING\_SEMAPHORES           1}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define configUSE\_PORT\_OPTIMISED\_TASK\_SELECTION  1}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define configCHECK\_FOR\_STACK\_OVERFLOW           1}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define configUSE\_TRACE\_FACILITY                AEconfigUSE\_TRACE\_FACILITY }}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{comment}{//\#define configUSE\_ALTERNATIVE\_API             0}}
+\DoxyCodeLine{133 \textcolor{comment}{//\#define configUSE\_QUEUE\_SETS                  1}}
+\DoxyCodeLine{134 \textcolor{comment}{//\#define configUSE\_TASK\_NOTIFICATIONS          1}}
+\DoxyCodeLine{135 \textcolor{comment}{//\#define configSUPPORT\_STATIC\_ALLOCATION           1}}
+\DoxyCodeLine{136    }
+\DoxyCodeLine{137  }
+\DoxyCodeLine{138      }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{comment}{// Software timer related configuration options. }}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define configUSE\_TIMERS                        1}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define configTIMER\_TASK\_PRIORITY               ( AOPRIORITYHIGHEST)}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define configTIMER\_QUEUE\_LENGTH                50}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define configTIMER\_TASK\_STACK\_DEPTH            ( AEconfigTIMER\_TASK\_STACK\_DEPTH )}}
+\DoxyCodeLine{145     }
+\DoxyCodeLine{146     }
+\DoxyCodeLine{147     }
+\DoxyCodeLine{148     }
+\DoxyCodeLine{149 \textcolor{comment}{//the plus one because AOPRIORITYHIGHEST is the highest a AO can be, things like AEPublishSubscribeManager needs to be +1 the AOPRIORITYHIGHEST}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define configMAX\_PRIORITIES                    (AOPRIORITYHIGHEST +1) }}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{comment}{// Run time stats gathering configuration options. }}
+\DoxyCodeLine{153 \textcolor{comment}{//unsigned long ulGetRunTimeCounterValue( void ); // Prototype of function that returns run time counter. }}
+\DoxyCodeLine{154 \textcolor{comment}{//void vConfigureTimerForRunTimeStats( void );  // Prototype of function that initialises the run time counter. }}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define configGENERATE\_RUN\_TIME\_STATS           0}}
+\DoxyCodeLine{156 \textcolor{comment}{//\#define portCONFIGURE\_TIMER\_FOR\_RUN\_TIME\_STATS() vConfigureTimerForRunTimeStats()}}
+\DoxyCodeLine{157 \textcolor{comment}{//\#define portGET\_RUN\_TIME\_COUNTER\_VALUE() ulGetRunTimeCounterValue()}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{comment}{// Co-\/routine related configuration options. }}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define configUSE\_CO\_ROUTINES                   0}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define configMAX\_CO\_ROUTINE\_PRIORITIES         ( 2 )}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{comment}{// This demo makes use of one or more example stats formatting functions.  These}}
+\DoxyCodeLine{164 \textcolor{comment}{//format the raw data provided by the uxTaskGetSystemState() function in to human}}
+\DoxyCodeLine{165 \textcolor{comment}{//readable ASCII form.  See the notes in the implementation of vTaskList() within}}
+\DoxyCodeLine{166 \textcolor{comment}{//FreeRTOS/Source/tasks.c for limitations. }}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define configUSE\_STATS\_FORMATTING\_FUNCTIONS    1}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{comment}{// Set the following definitions to 1 to include the API function, or zero}}
+\DoxyCodeLine{170 \textcolor{comment}{//to exclude the API function.  In most cases the linker will remove unused}}
+\DoxyCodeLine{171 \textcolor{comment}{//functions anyway. }}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define INCLUDE\_vTaskPrioritySet                1}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define INCLUDE\_uxTaskPriorityGet               1}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define INCLUDE\_vTaskDelete                     1}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define INCLUDE\_vTaskCleanUpResources           0}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define INCLUDE\_vTaskSuspend                    1}}
+\DoxyCodeLine{177 \textcolor{comment}{//\#define INCLUDE\_vTaskDelayUntil                   1}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define INCLUDE\_vTaskDelay                      1}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define INCLUDE\_uxTaskGetStackHighWaterMark     1}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define INCLUDE\_xTaskGetSchedulerState          1}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define INCLUDE\_xTimerGetTimerDaemonTaskHandle  1}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define INCLUDE\_xTaskGetIdleTaskHandle          1}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define INCLUDE\_xTaskGetHandle                  1}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define INCLUDE\_eTaskGetState                   AEINCLUDE\_eTaskGetState}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define INCLUDE\_xSemaphoreGetMutexHolder        1}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define INCLUDE\_xTimerPendFunctionCall          1}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define INCLUDE\_xTaskAbortDelay                 1}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189  }
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define INCLUDE\_vTaskDelayUntil             0   }}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#include "{}FreeRTOSConfigFiles/BoardSpecificFreeRTOSDefines.h"{}}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{comment}{/* The lowest interrupt priority that can be used in a call to a "{}set priority"{}}}
+\DoxyCodeLine{200 \textcolor{comment}{function. */}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define configLIBRARY\_LOWEST\_INTERRUPT\_PRIORITY   15}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{comment}{/* The highest interrupt priority that can be used by any interrupt service}}
+\DoxyCodeLine{204 \textcolor{comment}{routine that makes calls to interrupt safe FreeRTOS API functions.  DO NOT CALL}}
+\DoxyCodeLine{205 \textcolor{comment}{INTERRUPT SAFE FREERTOS API FUNCTIONS FROM ANY INTERRUPT THAT HAS A HIGHER}}
+\DoxyCodeLine{206 \textcolor{comment}{PRIORITY THAN THIS! (higher priorities are lower numeric values. */}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define configLIBRARY\_MAX\_SYSCALL\_INTERRUPT\_PRIORITY 5}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{comment}{/* Interrupt priorities used by the kernel port layer itself.  These are generic}}
+\DoxyCodeLine{210 \textcolor{comment}{to all Cortex-\/M ports, and do not rely on any particular library functions. */}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define configKERNEL\_INTERRUPT\_PRIORITY         ( configLIBRARY\_LOWEST\_INTERRUPT\_PRIORITY << (8 -\/ configPRIO\_BITS) )}}
+\DoxyCodeLine{212 \textcolor{comment}{/* !!!! configMAX\_SYSCALL\_INTERRUPT\_PRIORITY must not be set to zero !!!!}}
+\DoxyCodeLine{213 \textcolor{comment}{See http://www.FreeRTOS.org/RTOS-\/Cortex-\/M3-\/M4.html. */}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#define configMAX\_SYSCALL\_INTERRUPT\_PRIORITY    ( configLIBRARY\_MAX\_SYSCALL\_INTERRUPT\_PRIORITY << (8 -\/ configPRIO\_BITS) )}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{comment}{// It is a good idea to define configASSERT() while developing.  configASSERT()}}
+\DoxyCodeLine{221 \textcolor{comment}{//uses the same semantics as the standard C assert() macro. }}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{keyword}{extern}  \textcolor{keywordtype}{void} vAssertCalled(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulLine, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \textcolor{keyword}{const} pcFileName); }
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define configASSERT( x ) if( ( x ) == 0 ) vAssertCalled( \_\_LINE\_\_, \_\_FILE\_\_ )}}
+\DoxyCodeLine{226 \textcolor{comment}{//\#define configASSERT( x ) if( ( x ) == 0 ) \{ taskDISABLE\_INTERRUPTS(); for( ;; ); \}   }}
+\DoxyCodeLine{227     }
+\DoxyCodeLine{228 \textcolor{comment}{/* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS}}
+\DoxyCodeLine{229 \textcolor{comment}{standard names. */}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define vPortSVCHandler SVC\_Handler}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define xPortPendSVHandler PendSV\_Handler}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#define configINCLUDE\_MESSAGE\_BUFFER\_AMP\_DEMO   0}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#if ( configINCLUDE\_MESSAGE\_BUFFER\_AMP\_DEMO == 1 )}}
+\DoxyCodeLine{235 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} vGenerateCoreBInterrupt(\textcolor{keywordtype}{void} * xUpdatedMessageBuffer);}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define sbSEND\_COMPLETED( pxStreamBuffer ) vGenerateCoreBInterrupt( pxStreamBuffer )}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// configINCLUDE\_MESSAGE\_BUFFER\_AMP\_DEMO }}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{comment}{// Include the FreeRTOS+Trace FreeRTOS trace macro definitions. }}
+\DoxyCodeLine{240 \textcolor{comment}{//\#include "{}trcRecorder.h"{}}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* FREERTOS\_CONFIG\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{243 }
+
+\end{DoxyCode}

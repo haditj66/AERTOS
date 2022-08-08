@@ -1,0 +1,133 @@
+\hypertarget{_a_e_port_and_pin_8h_source}{}\doxysection{AEPort\+And\+Pin.\+h}
+\label{_a_e_port_and_pin_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEPortAndPin.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/AEPortAndPin.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}cstdint"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_a_e_utils_8h}{AEUtils.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}AEPort.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}AEPin.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11  }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     AEFRIEND\_TEST(AEGPIO, simple\_init);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keyword}{template} <TemplateFor\_AEPeripherals\_NoDefaults>}
+\DoxyCodeLine{19     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_peripheral}{AEPeripheral}};  }
+\DoxyCodeLine{20     }
+\DoxyCodeLine{21   \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \_Init(Portenum PORT, PinEnum PINNum)}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24  }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(\_isInitialized == \textcolor{keyword}{false}, \textcolor{stringliteral}{"{}you attempted to initialize this AEPortAndPin twice."{}})}
+\DoxyCodeLine{27             \_isInitialized = \textcolor{keyword}{true};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{comment}{//get the AEPort from the given port enum}}
+\DoxyCodeLine{30         \_port = \textcolor{keyword}{nullptr}; }
+\DoxyCodeLine{31         }
+\DoxyCodeLine{32         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < AEPort::\_numPortsCreatedSoFar ; i++) }
+\DoxyCodeLine{33         \{}
+\DoxyCodeLine{34             \textcolor{keywordflow}{if} (UserDefinedAEPorts[i].GetPortEnum() == PORT)}
+\DoxyCodeLine{35             \{}
+\DoxyCodeLine{36                 \_port = \&UserDefinedAEPorts[i];}
+\DoxyCodeLine{37                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{38             \}}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(\_port != \textcolor{keyword}{nullptr}, \textcolor{stringliteral}{"{}you have selected a port that is not available to you from your user defined ports."{}});}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \textcolor{comment}{//get the AEPin next}}
+\DoxyCodeLine{43         \_pin = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{44         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < AEPin::\_numPinsCreatedSoFar; i++)}
+\DoxyCodeLine{45         \{}
+\DoxyCodeLine{46             \textcolor{keywordflow}{if} (UserDefinedAEPins[i].GetPinEnum() == PINNum)}
+\DoxyCodeLine{47             \{}
+\DoxyCodeLine{48                 \_pin = \&UserDefinedAEPins[i];}
+\DoxyCodeLine{49                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{50             \}}
+\DoxyCodeLine{51         \}}
+\DoxyCodeLine{52         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(\_pin != \textcolor{keyword}{nullptr}, \textcolor{stringliteral}{"{}you have selected a pin that is not available to you from your user defined pins."{}});}
+\DoxyCodeLine{53         }
+\DoxyCodeLine{54         }
+\DoxyCodeLine{55         \textcolor{comment}{//make sure that this port/pin combination has never been used before in any other hardware peripheral. This will make sure that}}
+\DoxyCodeLine{56         \textcolor{comment}{//the same pin does not get used for two different peripherals.}}
+\DoxyCodeLine{57         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_numPortsAndPinsCreatedSoFar; i++)}
+\DoxyCodeLine{58         \{}
+\DoxyCodeLine{59             \textcolor{keywordflow}{if} ((ALLPortsAndPins[i]-\/>GetThePortenum() == PORT) \&\& (ALLPortsAndPins[i]-\/>GetThePinenum() == PINNum))}
+\DoxyCodeLine{60             \{}
+\DoxyCodeLine{61                 \mbox{\hyperlink{_a_e_utils_8h_aee5fb15ba7d0d41da3d16b6861de79da}{AEAssertRuntimeWithAssertCodeToTest}}(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}GPIOPinReused"{}}, \textcolor{stringliteral}{"{}this port and pin combo has already been used for something else."{}})}
+\DoxyCodeLine{62             \}}
+\DoxyCodeLine{63         \}}
+\DoxyCodeLine{64         }
+\DoxyCodeLine{65         \_port-\/>Initialize();}
+\DoxyCodeLine{66         }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         ALLPortsAndPins[\_numPortsAndPinsCreatedSoFar] = \textcolor{keyword}{this};}
+\DoxyCodeLine{69         \_numPortsAndPinsCreatedSoFar++;}
+\DoxyCodeLine{70         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(\_numPortsAndPinsCreatedSoFar <= MaxNumOfGPIOPinsToUse, \textcolor{stringliteral}{"{}you exceeded the max number of gpio pins. change the MaxNumOfGPIOPinsToUse in AEConfig"{}})}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{bool} \_isInitialized;}
+\DoxyCodeLine{74     \textcolor{keyword}{static} uint32\_t \_numPortsAndPinsCreatedSoFar;}
+\DoxyCodeLine{75     \textcolor{keyword}{static} \mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}}* ALLPortsAndPins[MaxNumOfGPIOPinsToUse];}
+\DoxyCodeLine{76     \textcolor{comment}{//  static AEPortAndPin *instance;}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \mbox{\hyperlink{class_a_e_port_and_pin}{AEPortAndPin}}()}
+\DoxyCodeLine{79     \{  }
+\DoxyCodeLine{80           \textcolor{comment}{//set port and pins to default values}}
+\DoxyCodeLine{81           \_port = \&UserDefinedAEPorts[Portenum::PortsMaxNum];}
+\DoxyCodeLine{82           \_pin = \&UserDefinedAEPins[PinEnum::PINMaxNum];}
+\DoxyCodeLine{83         \_isInitialized = \textcolor{keyword}{false};}
+\DoxyCodeLine{84     \};}
+\DoxyCodeLine{85     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   public :}
+\DoxyCodeLine{88     }
+\DoxyCodeLine{89     \textcolor{keywordtype}{bool} isInitialized()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_isInitialized;\}}
+\DoxyCodeLine{90     Port\_t GetThePort()}
+\DoxyCodeLine{91     \{}
+\DoxyCodeLine{92         \textcolor{keywordflow}{return} \_port-\/>\_halPort; \textcolor{comment}{// Ports[(uint8\_t)thePORT];}}
+\DoxyCodeLine{93     \};}
+\DoxyCodeLine{94     Pin\_t GetThePin()}
+\DoxyCodeLine{95     \{}
+\DoxyCodeLine{96         \textcolor{keywordflow}{return} \_pin-\/>\_halPin; \textcolor{comment}{//Pins[(uint8\_t)thePIN];}}
+\DoxyCodeLine{97     \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     Portenum GetThePortenum()}
+\DoxyCodeLine{100     \{}
+\DoxyCodeLine{101         \textcolor{keywordflow}{return} \_port-\/>GetPortEnum();}
+\DoxyCodeLine{102     \};}
+\DoxyCodeLine{103     PinEnum GetThePinenum()}
+\DoxyCodeLine{104     \{}
+\DoxyCodeLine{105         \textcolor{keywordflow}{return} \_pin-\/>GetPinEnum();}
+\DoxyCodeLine{106     \};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     uint8\_t GetThePortID()}
+\DoxyCodeLine{109     \{}
+\DoxyCodeLine{110         \textcolor{keywordflow}{return} (uint8\_t)\_port-\/>GetPortEnum();}
+\DoxyCodeLine{111     \};}
+\DoxyCodeLine{112     uint8\_t GetThePinID()}
+\DoxyCodeLine{113     \{}
+\DoxyCodeLine{114         \textcolor{keywordflow}{return} (uint8\_t)\_pin-\/>GetPinEnum();}
+\DoxyCodeLine{115     \};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{120     \mbox{\hyperlink{class_a_e_port}{AEPort}}* \_port;}
+\DoxyCodeLine{121     \mbox{\hyperlink{class_a_e_pin}{AEPin}}* \_pin;}
+\DoxyCodeLine{122   }
+\DoxyCodeLine{123     }
+\DoxyCodeLine{124 \};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128  }
+
+\end{DoxyCode}

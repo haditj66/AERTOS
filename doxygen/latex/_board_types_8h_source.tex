@@ -1,0 +1,75 @@
+\hypertarget{_board_types_8h_source}{}\doxysection{Board\+Types.\+h}
+\label{_board_types_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/BoardTypes.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/BoardTypes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}BoardTypes\_1.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef Port\_t}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#error you need to define the Port\_t type for this board in BoardTypes\_1.h . this is the port type of a gpio pin.}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !1}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef Pin\_t}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#error you need to define the Pin\_t type for this board in BoardTypes\_1.h . this is the pin type of a gpio pin.}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef DMAStreamType\_t}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#error you need to define DMAStreamType\_t type for this board in BoardTypes\_1.h . this is the DMAStream type}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !1}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef DMAHandleType\_t}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#error you need to define DMAHandleType\_t type for this board in BoardTypes\_1.h . this is the DMAStream type}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !1}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef DMA\_Numbers\_Of\_DMA}}
+\DoxyCodeLine{22 DMA\_Numbers\_Of\_DMA 2}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !1}}
+\DoxyCodeLine{24  }
+\DoxyCodeLine{25  }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifdef USING\_AEGPIOOutput }}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef GPIO\_Handle}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#error you need to define GPIO\_Handle type for this board in BoardTypes\_1.h since you are using AEGPIOOutput }}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif  }}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifdef USING\_AEGPIOInput}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#ifndef GPIOInput\_Handle}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#error you need to define GPIOInput\_Handle type for this board in BoardTypes\_1.h since you are using GPIOInput\_Handle }}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif   }}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifdef USING\_AEADC}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifndef ADC\_Handle}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#error you need to define ADC\_Handle type for this board in BoardTypes\_1.h since you are using adc }}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif   }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{44     }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifdef USING\_AEUART}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef UART\_Handle}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#error you need to define UART\_Handle type for this board in BoardTypes\_1.h since you are using UART}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif   }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{50     }
+\DoxyCodeLine{51     }
+\DoxyCodeLine{52     }
+\DoxyCodeLine{53     }
+\DoxyCodeLine{54     }
+\DoxyCodeLine{55     }
+\DoxyCodeLine{56     }
+\DoxyCodeLine{57     }
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59     }
+\DoxyCodeLine{60     }
+\DoxyCodeLine{61     }
+\DoxyCodeLine{62     }
+\DoxyCodeLine{63 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{64 \textcolor{comment}{//define types}}
+\DoxyCodeLine{65 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{66     }
+\DoxyCodeLine{67 \textcolor{comment}{//adc}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{//uart}}
+
+\end{DoxyCode}

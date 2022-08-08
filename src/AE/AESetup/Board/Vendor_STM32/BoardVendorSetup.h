@@ -1,4 +1,8 @@
 //generated file: BoardVendorSetup.h
+//**********************************************************************
+//this is an auto-generated file using the template file located in the directory of C:\CodeGenerator\CodeGenerator\bin\Debug\..\..\FileTemplates\Files
+//ONLY WRITE CODE IN THE UserCode_Section BLOCKS
+//If you write code anywhere else,  it will be overwritten. modify the actual template file if needing to modify code outside usersection blocks.
 
 
 #pragma once
@@ -11,7 +15,7 @@
 //includes
 //UserCode_Sectiona
 #include "cmsis_os.h"
-#include "UARTConsole.h"
+#include "UARTConsole.h" 
 
 //the clock should be implemented in AEConfig
 extern void SystemClock_Config(void);
@@ -35,9 +39,7 @@ public:
 	AESetUpBase::BSPInit();
 
 	//UserCode_Sectionc
-HAL_Init();
-	
-	SystemClock_Config();  
+SystemClock_Config();  
 		
 #ifndef Target_RealUART
 		//	UARTConsole_InitTypeDef uARTConsole_InitTypeDef;
@@ -55,7 +57,6 @@ HAL_Init();
 	AESetUpBase::RTOS_ToBSP_SpecificCode();
 
 	//UserCode_Sectiond
-NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
 //UserCode_Sectiond_end
 
 	}

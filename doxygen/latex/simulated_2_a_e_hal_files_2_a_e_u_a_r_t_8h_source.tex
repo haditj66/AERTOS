@@ -1,0 +1,63 @@
+\hypertarget{simulated_2_a_e_hal_files_2_a_e_u_a_r_t_8h_source}{}\doxysection{AEUART.\+h}
+\label{simulated_2_a_e_hal_files_2_a_e_u_a_r_t_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/simulated/AEHalFiles/AEUART.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/simulated/AEHalFiles/AEUART.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}AEUARTPeripheral.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEUART::TansmitMsg(\textcolor{keywordtype}{char} \textcolor{keyword}{const}*  msg, uint32\_t size) }
+\DoxyCodeLine{12 \{ }
+\DoxyCodeLine{13     AEPrint(\textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}}, msg);}
+\DoxyCodeLine{14 \} }
+\DoxyCodeLine{15  }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{template}<templateForUART>}
+\DoxyCodeLine{22     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_u_a_r_t_peripheral}{UARTPeripheral<templateargsForUART>::\_InitializePinSelectors}}(CreateTypeSelector\_funcPtr(\&functPtrsToChangeTypeSelectorss)[2])}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         }
+\DoxyCodeLine{25  }
+\DoxyCodeLine{26             StartPinSelectorForPin(1)}
+\DoxyCodeLine{27                 M\_AnyPinIsPossible}
+\DoxyCodeLine{28             EndPinSelectorForPin}
+\DoxyCodeLine{29             }
+\DoxyCodeLine{30             StartPinSelectorForPin(2)}
+\DoxyCodeLine{31                 M\_AnyPinIsPossible}
+\DoxyCodeLine{32             EndPinSelectorForPin}
+\DoxyCodeLine{33   }
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35  }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 template<templateForUART>}
+\DoxyCodeLine{39     inline \textcolor{keywordtype}{void} \mbox{\hyperlink{class_u_a_r_t_peripheral}{UARTPeripheral}}<templateargsForUART>::\_Initialize(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2, Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4, Port\_t port5, Pin\_t pin5)}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         }
+\DoxyCodeLine{42         \textcolor{comment}{//make sure baude rate is valid}}
+\DoxyCodeLine{43         \textcolor{keywordtype}{bool} validBaud = (BaudRate == 1200) ||}
+\DoxyCodeLine{44             (BaudRate == 2400) ||}
+\DoxyCodeLine{45             (BaudRate == 4800) ||}
+\DoxyCodeLine{46             (BaudRate == 19200) ||}
+\DoxyCodeLine{47             (BaudRate == 38400) ||}
+\DoxyCodeLine{48             (BaudRate == 57600) ||}
+\DoxyCodeLine{49             (BaudRate == 115200) ||}
+\DoxyCodeLine{50             (BaudRate == 460800) ||}
+\DoxyCodeLine{51             (BaudRate == 921600);}
+\DoxyCodeLine{52         }
+\DoxyCodeLine{53         \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(validBaud, \textcolor{stringliteral}{"{}you picked an invalid baud rate"{}});}
+\DoxyCodeLine{54          }
+\DoxyCodeLine{55  }
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57  }
+
+\end{DoxyCode}

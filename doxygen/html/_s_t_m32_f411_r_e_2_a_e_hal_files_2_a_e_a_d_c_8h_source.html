@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_a_d_c_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,13 +61,18 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="dir_a73106cba3fc1ee97b18c1f41ce635cc.html">boards</a></li><li class="navelem"><a class="el" href="dir_79e8dbc9668083594ec93e2eb168f5db.html">STM32F411RE</a></li><li class="navelem"><a class="el" href="dir_3429a5d2e583ce013f382a2b5889f979.html">AEHalFiles</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">AEADC.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_a_d_c_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_a_e_a_d_c_peripheral_8h.html">AEADCPeripheral.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;AEADCPeripheral.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
@@ -100,7 +84,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;templateForADC&gt;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_d_c_peripheral.html#a1633856774a1803dd5fff1cbbd1b1ebb">ADCPeripheral&lt;templateargsForADC&gt;::_InitializePinSelectors</a>(<a class="code hl_typedef" href="_a_e_peripheral_8h.html#aac44b25878242e6ea69242639d5426cd">CreateTypeSelector_funcPtr</a>(&amp;functPtrsToChangeTypeSelectorss)[<a class="code hl_define" href="_a_e_a_d_c_peripheral_8h.html#ae0fe2f99e8c23a180a06ab372c88cd32">NumOFPinsNeeded</a>])</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="class_a_d_c_peripheral.html">ADCPeripheral&lt;templateargsForADC&gt;::_InitializePinSelectors</a>(CreateTypeSelector_funcPtr(&amp;functPtrsToChangeTypeSelectorss)[NumOFPinsNeeded])</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="comment">/*</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">            this-&gt;functPtrsToChangeTypeSelectors[0] = []() -&gt; void</span></div>
@@ -114,23 +98,23 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">//UserCode_Section4</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        this-&gt;functPtrsToChangeTypeSelectors[0] = []() -&gt; <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        { </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <a class="code hl_function" href="class_pin_selector.html#a9bdc89c3be419499fec6021f91885f48">PinSelector::getInstance</a>()-&gt;<a class="code hl_function" href="class_pin_selector.html#ae6986beae754180cdf71caeec79f6edd">IncludePossiblePin</a>(<a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455a6196d78f61fc4e54bd299cf9944421bd">Portenum::PortB</a>, <a class="code hl_enumvalue" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98a302dbba83d47666da4b37e5a223105ec">PinEnum::PIN0</a>); </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            PinSelector::getInstance()-&gt;IncludePossiblePin(Portenum::PortB, PinEnum::PIN0); </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        };</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        this-&gt;functPtrsToChangeTypeSelectors[1] = []() -&gt; <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_function" href="class_pin_selector.html#a9bdc89c3be419499fec6021f91885f48">PinSelector::getInstance</a>()-&gt;<a class="code hl_function" href="class_pin_selector.html#ae6986beae754180cdf71caeec79f6edd">IncludePossiblePin</a>(<a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455a14a06735f7c30f2eece0bf8b5f86cf3b">Portenum::PortA</a>, <a class="code hl_enumvalue" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98ae90c5a59f509ccf2ff2fab0a52a3774f">PinEnum::PIN2</a>); </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            PinSelector::getInstance()-&gt;IncludePossiblePin(Portenum::PortA, PinEnum::PIN2); </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        };</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        this-&gt;functPtrsToChangeTypeSelectors[2] = []() -&gt; <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_function" href="class_pin_selector.html#a9bdc89c3be419499fec6021f91885f48">PinSelector::getInstance</a>()-&gt;<a class="code hl_function" href="class_pin_selector.html#ae6986beae754180cdf71caeec79f6edd">IncludePossiblePin</a>(<a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455a14a06735f7c30f2eece0bf8b5f86cf3b">Portenum::PortA</a>, <a class="code hl_enumvalue" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98ace918dad9ed9de15eb1362c94b28feb4">PinEnum::PIN3</a>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            PinSelector::getInstance()-&gt;IncludePossiblePin(Portenum::PortA, PinEnum::PIN3);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        };</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        this-&gt;functPtrsToChangeTypeSelectors[3] = []() -&gt; <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_function" href="class_pin_selector.html#a9bdc89c3be419499fec6021f91885f48">PinSelector::getInstance</a>()-&gt;<a class="code hl_function" href="class_pin_selector.html#ae6986beae754180cdf71caeec79f6edd">IncludePossiblePin</a>(<a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455a14a06735f7c30f2eece0bf8b5f86cf3b">Portenum::PortA</a>, <a class="code hl_enumvalue" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98a4a438ef04f4b0baa53c26cb6046c0973">PinEnum::PIN4</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            PinSelector::getInstance()-&gt;IncludePossiblePin(Portenum::PortA, PinEnum::PIN4);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        };</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        this-&gt;functPtrsToChangeTypeSelectors[4] = []() -&gt; <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_function" href="class_pin_selector.html#a9bdc89c3be419499fec6021f91885f48">PinSelector::getInstance</a>()-&gt;<a class="code hl_function" href="class_pin_selector.html#ae6986beae754180cdf71caeec79f6edd">IncludePossiblePin</a>(<a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455a14a06735f7c30f2eece0bf8b5f86cf3b">Portenum::PortA</a>, <a class="code hl_enumvalue" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98aa2df961455bde47244aa7318d1c1bd51">PinEnum::PIN5</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            PinSelector::getInstance()-&gt;IncludePossiblePin(Portenum::PortA, PinEnum::PIN5);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        };</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="comment">//UserCode_Section4_end</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
@@ -141,7 +125,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span>&lt;templateForADC&gt;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_a_d_c_peripheral.html#a4ad841b7b5d59e51f7319a5d91a331ac">ADCPeripheral&lt;templateargsForADC&gt;::_Initialize</a>(<a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port1, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin1, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port2, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin2, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port3, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin3, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port4, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin4, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a> port5, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> pin5)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="class_a_d_c_peripheral.html">ADCPeripheral&lt;templateargsForADC&gt;::_Initialize</a>(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="comment">//TODO this should be moved to a preinitialization like the msp_init()</span></div>
@@ -161,7 +145,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        dmaForADC.Init(adc_periph,2, <a class="code hl_enumvalue" href="_a_e_d_m_a_peripheral_8h.html#af261c29b7033f48a5e77c431e647f2f9a336148a41a1fa8f967d49ad85132b94c">DMA_StreamEnum::DMAStream_0</a>, <a class="code hl_enumvalue" href="_a_e_d_m_a_peripheral_8h.html#a2a1bacf97cb961549d18d14ce71b7174aef832c794cb54756fa2257e9244ba3a9">DMACHEnum::DMACH0</a>, DMA_CIRCULAR);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        dmaForADC.Init(adc_periph,2, DMA_StreamEnum::DMAStream_0, DMACHEnum::DMACH0, DMA_CIRCULAR);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        __HAL_LINKDMA(adc_periph, DMA_Handle, *dmaForADC.GetDMAHandle());  </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">//      DMA_HandleTypeDef* hdma_adc = dmaForADC.GetDMAHandle();// &amp;hdma_adcc;  //this-&gt;PeripheralHandle_t.hdma_adc;</span></div>
@@ -198,7 +182,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        __HAL_RCC_ADC1_CLK_ENABLE();</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        uint8_t numOfChannelsUsed = 0;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">if</span> (ADC_ch1_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">if</span> (ADC_ch1_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        { </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="comment">//set up the gpios that I will use for the ADC channels in analog mode </span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            GPIO_InitTypeDef GPIO_InitStruct;</div>
@@ -210,7 +194,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>          </div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            numOfChannelsUsed++;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        }</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">if</span> (ADC_ch2_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">if</span> (ADC_ch2_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        { </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            GPIO_InitTypeDef GPIO_InitStruct;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            GPIO_InitStruct.Pin = pin2;</div>
@@ -220,7 +204,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>          </div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            numOfChannelsUsed++;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        } </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">if</span> (ADC_ch3_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">if</span> (ADC_ch3_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        { </div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>          </div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            GPIO_InitTypeDef GPIO_InitStruct;</div>
@@ -231,7 +215,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>          </div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            numOfChannelsUsed++;</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        }</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">if</span> (ADC_ch4_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">if</span> (ADC_ch4_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        { </div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>          </div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            GPIO_InitTypeDef GPIO_InitStruct;</div>
@@ -242,7 +226,7 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        </div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            numOfChannelsUsed++;</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        } </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">if</span> (ADC_ch5_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">if</span> (ADC_ch5_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        { </div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>          </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            GPIO_InitTypeDef GPIO_InitStruct;</div>
@@ -269,14 +253,14 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        HAL_ADC_Init(adc_periph);</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="comment">//now to configure the channels.</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">if</span>(ADC_ch1_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">if</span>(ADC_ch1_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        {</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            sConfig.Channel = ADC_CHANNEL_8;</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            sConfig.Rank = 1;</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            sConfig.SamplingTime = ADC_SAMPLETIME_28CYCLES;</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            HAL_ADC_ConfigChannel(adc_periph, &amp;sConfig);</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        }</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">if</span> (ADC_ch2_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">if</span> (ADC_ch2_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        {</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            sConfig.Channel = ADC_CHANNEL_2;</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            sConfig.Rank = 2;</div>
@@ -284,21 +268,21 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            HAL_ADC_ConfigChannel(adc_periph, &amp;sConfig); </div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        }</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordflow">if</span> (ADC_ch3_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordflow">if</span> (ADC_ch3_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        {</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            sConfig.Channel = ADC_CHANNEL_3;</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            sConfig.Rank = 3;</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            sConfig.SamplingTime = ADC_SAMPLETIME_28CYCLES;</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            HAL_ADC_ConfigChannel(adc_periph, &amp;sConfig);</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">if</span> (ADC_ch4_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">if</span> (ADC_ch4_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        { </div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            sConfig.Channel = ADC_CHANNEL_4;</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            sConfig.Rank = 4;</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            sConfig.SamplingTime = ADC_SAMPLETIME_28CYCLES;</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            HAL_ADC_ConfigChannel(adc_periph, &amp;sConfig);</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        } </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">if</span> (ADC_ch5_Port != <a class="code hl_enumvalue" href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a>)</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">if</span> (ADC_ch5_Port != PortsMaxNum)</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        {</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            sConfig.Channel = ADC_CHANNEL_5;</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            sConfig.Rank = 5;</div>
@@ -312,33 +296,11 @@ $(document).ready(function(){initNavTree('_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="ttc" id="a_a_e_a_d_c_peripheral_8h_html"><div class="ttname"><a href="_a_e_a_d_c_peripheral_8h.html">AEADCPeripheral.h</a></div></div>
-<div class="ttc" id="a_a_e_a_d_c_peripheral_8h_html_ae0fe2f99e8c23a180a06ab372c88cd32"><div class="ttname"><a href="_a_e_a_d_c_peripheral_8h.html#ae0fe2f99e8c23a180a06ab372c88cd32">NumOFPinsNeeded</a></div><div class="ttdeci">#define NumOFPinsNeeded</div><div class="ttdef"><b>Definition:</b> AEADCPeripheral.h:60</div></div>
-<div class="ttc" id="a_a_e_d_m_a_peripheral_8h_html_a2a1bacf97cb961549d18d14ce71b7174aef832c794cb54756fa2257e9244ba3a9"><div class="ttname"><a href="_a_e_d_m_a_peripheral_8h.html#a2a1bacf97cb961549d18d14ce71b7174aef832c794cb54756fa2257e9244ba3a9">DMACHEnum::DMACH0</a></div><div class="ttdeci">@ DMACH0</div></div>
-<div class="ttc" id="a_a_e_d_m_a_peripheral_8h_html_af261c29b7033f48a5e77c431e647f2f9a336148a41a1fa8f967d49ad85132b94c"><div class="ttname"><a href="_a_e_d_m_a_peripheral_8h.html#af261c29b7033f48a5e77c431e647f2f9a336148a41a1fa8f967d49ad85132b94c">DMA_StreamEnum::DMAStream_0</a></div><div class="ttdeci">@ DMAStream_0</div></div>
-<div class="ttc" id="a_a_e_peripheral_8h_html_aac44b25878242e6ea69242639d5426cd"><div class="ttname"><a href="_a_e_peripheral_8h.html#aac44b25878242e6ea69242639d5426cd">CreateTypeSelector_funcPtr</a></div><div class="ttdeci">void(* CreateTypeSelector_funcPtr)(void)</div><div class="ttdef"><b>Definition:</b> AEPeripheral.h:29</div></div>
-<div class="ttc" id="a_pin_selector_8h_html_a881b4bff3785b7333d3252e5f7792455a14a06735f7c30f2eece0bf8b5f86cf3b"><div class="ttname"><a href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455a14a06735f7c30f2eece0bf8b5f86cf3b">PortA</a></div><div class="ttdeci">@ PortA</div><div class="ttdef"><b>Definition:</b> PinSelector.h:22</div></div>
-<div class="ttc" id="a_pin_selector_8h_html_a881b4bff3785b7333d3252e5f7792455a6196d78f61fc4e54bd299cf9944421bd"><div class="ttname"><a href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455a6196d78f61fc4e54bd299cf9944421bd">PortB</a></div><div class="ttdeci">@ PortB</div><div class="ttdef"><b>Definition:</b> PinSelector.h:23</div></div>
-<div class="ttc" id="a_pin_selector_8h_html_a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa"><div class="ttname"><a href="_pin_selector_8h.html#a881b4bff3785b7333d3252e5f7792455ad2ea1dd7a7bdc702017e91dc554ab2fa">PortsMaxNum</a></div><div class="ttdeci">@ PortsMaxNum</div><div class="ttdef"><b>Definition:</b> PinSelector.h:31</div></div>
-<div class="ttc" id="a_pin_selector_8h_html_aec451a302f0a704099dec2ba603cfe98a302dbba83d47666da4b37e5a223105ec"><div class="ttname"><a href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98a302dbba83d47666da4b37e5a223105ec">PIN0</a></div><div class="ttdeci">@ PIN0</div><div class="ttdef"><b>Definition:</b> PinSelector.h:40</div></div>
-<div class="ttc" id="a_pin_selector_8h_html_aec451a302f0a704099dec2ba603cfe98a4a438ef04f4b0baa53c26cb6046c0973"><div class="ttname"><a href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98a4a438ef04f4b0baa53c26cb6046c0973">PIN4</a></div><div class="ttdeci">@ PIN4</div><div class="ttdef"><b>Definition:</b> PinSelector.h:44</div></div>
-<div class="ttc" id="a_pin_selector_8h_html_aec451a302f0a704099dec2ba603cfe98aa2df961455bde47244aa7318d1c1bd51"><div class="ttname"><a href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98aa2df961455bde47244aa7318d1c1bd51">PIN5</a></div><div class="ttdeci">@ PIN5</div><div class="ttdef"><b>Definition:</b> PinSelector.h:45</div></div>
-<div class="ttc" id="a_pin_selector_8h_html_aec451a302f0a704099dec2ba603cfe98ace918dad9ed9de15eb1362c94b28feb4"><div class="ttname"><a href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98ace918dad9ed9de15eb1362c94b28feb4">PIN3</a></div><div class="ttdeci">@ PIN3</div><div class="ttdef"><b>Definition:</b> PinSelector.h:43</div></div>
-<div class="ttc" id="a_pin_selector_8h_html_aec451a302f0a704099dec2ba603cfe98ae90c5a59f509ccf2ff2fab0a52a3774f"><div class="ttname"><a href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98ae90c5a59f509ccf2ff2fab0a52a3774f">PIN2</a></div><div class="ttdeci">@ PIN2</div><div class="ttdef"><b>Definition:</b> PinSelector.h:42</div></div>
-<div class="ttc" id="aclass_a_d_c_peripheral_html_a1633856774a1803dd5fff1cbbd1b1ebb"><div class="ttname"><a href="class_a_d_c_peripheral.html#a1633856774a1803dd5fff1cbbd1b1ebb">ADCPeripheral::_InitializePinSelectors</a></div><div class="ttdeci">void _InitializePinSelectors(CreateTypeSelector_funcPtr(&amp;functPtrsToChangeTypeSelectorss)[NumOFPinsNeeded]) override</div><div class="ttdef"><b>Definition:</b> AEADC.h:15</div></div>
-<div class="ttc" id="aclass_a_d_c_peripheral_html_a4ad841b7b5d59e51f7319a5d91a331ac"><div class="ttname"><a href="class_a_d_c_peripheral.html#a4ad841b7b5d59e51f7319a5d91a331ac">ADCPeripheral::_Initialize</a></div><div class="ttdeci">void _Initialize(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5) override</div><div class="ttdef"><b>Definition:</b> AEADC.h:56</div></div>
-<div class="ttc" id="aclass_pin_selector_html_a9bdc89c3be419499fec6021f91885f48"><div class="ttname"><a href="class_pin_selector.html#a9bdc89c3be419499fec6021f91885f48">PinSelector::getInstance</a></div><div class="ttdeci">static PinSelector * getInstance()</div><div class="ttdef"><b>Definition:</b> PinSelector.cpp:4</div></div>
-<div class="ttc" id="aclass_pin_selector_html_ae6986beae754180cdf71caeec79f6edd"><div class="ttname"><a href="class_pin_selector.html#ae6986beae754180cdf71caeec79f6edd">PinSelector::IncludePossiblePin</a></div><div class="ttdeci">void IncludePossiblePin(Portenum port, PinEnum pin)</div><div class="ttdef"><b>Definition:</b> PinSelector.h:95</div></div>
-<div class="ttc" id="asimulated_2_a_e_core_hal_required_files_2_board_types__1_8h_html_ac93c3c98e59ef4eb5c9ab64246c1e7ec"><div class="ttname"><a href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a></div><div class="ttdeci">#define Pin_t</div><div class="ttdef"><b>Definition:</b> BoardTypes_1.h:5</div></div>
-<div class="ttc" id="asimulated_2_a_e_core_hal_required_files_2_board_types__1_8h_html_ae893c60f06f8ced569e6888d0525e146"><div class="ttname"><a href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ae893c60f06f8ced569e6888d0525e146">Port_t</a></div><div class="ttdeci">#define Port_t</div><div class="ttdef"><b>Definition:</b> BoardTypes_1.h:4</div></div>
+<div class="ttc" id="aclass_a_d_c_peripheral_html"><div class="ttname"><a href="class_a_d_c_peripheral.html">ADCPeripheral</a></div><div class="ttdef"><b>Definition:</b> AEADCPeripheral.h:78</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="dir_a73106cba3fc1ee97b18c1f41ce635cc.html">boards</a></li><li class="navelem"><a class="el" href="dir_79e8dbc9668083594ec93e2eb168f5db.html">STM32F411RE</a></li><li class="navelem"><a class="el" href="dir_3429a5d2e583ce013f382a2b5889f979.html">AEHalFiles</a></li><li class="navelem"><a class="el" href="_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_a_d_c_8h.html">AEADC.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>

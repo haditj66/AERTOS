@@ -1,0 +1,58 @@
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{Modules}{Modules}} 
+\end{DoxyItemize}\hypertarget{Modules}{}\doxysection{Modules}\label{Modules}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{IntegrationTest}{Integration\+Test}}
+\item \mbox{\hyperlink{Utilites}{Utilites}} 
+\end{DoxyItemize}\hypertarget{IntegrationTest}{}\doxysubsection{Integration\+Test}\label{IntegrationTest}
+\hypertarget{_integration_test_autotoc_md0}{}\doxyparagraph{Module\textquotesingle{}s Role}\label{_integration_test_autotoc_md0}
+AERTOS has it\textquotesingle{}s own module for conducting Integration tests.~\newline
+~\newline
+These are the APIs for integration testing
+
+
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \begin{DoxyVerb}<h4>integration test enders: will end the test in various ways<span style="font-family: monospace;"></span></h4>
+the following will end the test after 5 seconds have passed \snippet c:\visualgdb_projects\aertoscopy\src\AE\hal\exeHalTest\ADC_TEST.cpp timed end
+
+<h4>integration test specifics:</h4>
+expects a test with the name specified to run at a later time. if this test does not run, the test will fail. \snippet c:\visualgdb_projects\aertoscopy\src\AE\hal\exeHalTest\ADC_TEST.cpp expect to run
+
+
+\code
+\end{DoxyVerb}
+ okp  \hypertarget{Utilites}{}\doxysubsection{Utilites}\label{Utilites}
+\hypertarget{_utilites_Assertions}{}\doxysubsubsection{Assertions}\label{_utilites_Assertions}
+There are three types of assertions. static, runtime and config runtime assertions. ~\newline
+ 
+\begin{DoxyItemize}
+\item Static assertion\+: \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]implement static asserts. \end{DoxyRefDesc}
+
+
+
+\item runtime assertions\+: these should be used during execution of the AE program.
+
+
+
+
+\item config runtime assertions\+: these should be used when in configuration stage of AE for your own application level configurations. 
+
+
+\end{DoxyItemize}\hypertarget{_utilites_a}{}\doxyparagraph{static assertion}\label{_utilites_a}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]implement static asserts.\end{DoxyRefDesc}
+\hypertarget{_utilites_b}{}\doxyparagraph{runtime assertions  $<$br$>$}\label{_utilites_b}
+APIs
+
+\mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssert\+Runtime(thing\+To\+Assert, Assertion\+Message)}}
+
+\mbox{\hyperlink{class_a_e_circular_buffer_a14ec3edb1a4f386f4aea73ec53876bcc}{AECircular\+Buffer\+::\+Push(\+Container\+Type item, bool with\+Full\+Check)}}
+
+For more information, please see abc
+
+For more information, please see abc 

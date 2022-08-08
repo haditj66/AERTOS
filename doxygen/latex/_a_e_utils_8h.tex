@@ -1,0 +1,428 @@
+\hypertarget{_a_e_utils_8h}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AEUtils.h File Reference}
+\label{_a_e_utils_8h}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/AEUtils.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/AEUtils.h}}
+{\ttfamily \#include \char`\"{}AE.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}AEPerformance\+Timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}AEDefines.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_a_e_null_f_s_m_utility}{AENull\+FSMUtility}}
+\item 
+class \mbox{\hyperlink{class_n_u_l_l_peripheral}{NULLPeripheral}}
+\item 
+class \mbox{\hyperlink{class_a_e_null_class}{AENull\+Class}}
+\item 
+class \mbox{\hyperlink{class_a_e_n_u_l_l_event}{AENULLEvent}}
+\item 
+struct \mbox{\hyperlink{struct_is_array_checker}{Is\+Array\+Checker$<$ Type\+Of\+Arg\+To\+Check $>$}}
+\item 
+class \mbox{\hyperlink{class_array_check_to_mem_copy}{Array\+Check\+To\+Mem\+Copy$<$ TType\+To\+Copy\+From $>$}}
+\item 
+struct \mbox{\hyperlink{struct_type_checker__is_same}{Type\+Checker\+\_\+is\+Same$<$ TType\+To\+Check1, TType\+To\+Check2 $>$}}
+\item 
+struct \mbox{\hyperlink{struct_type_checker__is_same_3_01_t_type_to_check1_00_01_t_type_to_check1_01_4}{Type\+Checker\+\_\+is\+Same$<$ TType\+To\+Check1, TType\+To\+Check1 $>$}}
+\item 
+struct \mbox{\hyperlink{struct_type_checker}{Type\+Checker}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a867111db558fbc4539935c3038a190c3}\label{_a_e_utils_8h_a867111db558fbc4539935c3038a190c3}} 
+\#define {\bfseries Pool\+Manager}~AEPool\+Manager$<$Event1, Event1\+Size, Event2, Event2\+Size, Event3, Event3\+Size, Event4, Event4\+Size, Event5, Event5\+Size$>$\+::get\+Instance()
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a351b5b6f5f0ee0b7b5abdf013b42824d}\label{_a_e_utils_8h_a351b5b6f5f0ee0b7b5abdf013b42824d}} 
+\#define {\bfseries Publish\+Subscribe\+Manager}~AEPublish\+Subscribe\+Manager\+::get\+Instance()
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a95e4a474fd28decd16c4465b0fc86d21}{AE\+\_\+\+Tick\+\_\+\+To\+\_\+\+Milli}}(millis)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a2707bdb76df82f7005461cb2809b5844}\label{_a_e_utils_8h_a2707bdb76df82f7005461cb2809b5844}} 
+\#define {\bfseries ENTEREVENT\+\_\+\+Id}~0xff
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_aa62e9dfb05c579b5bbcaab7a478c13ad}\label{_a_e_utils_8h_aa62e9dfb05c579b5bbcaab7a478c13ad}} 
+\#define {\bfseries EXITEVENT\+\_\+\+Id}~0xff -\/ 1
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a6a1bf413fcd8671efb7a01003ed65d07}\label{_a_e_utils_8h_a6a1bf413fcd8671efb7a01003ed65d07}} 
+\#define {\bfseries Cast\+To\+State\+Func\+Ptr}(state\+To\+Transition\+To)~reinterpret\+\_\+cast$<$Type\+Of\+This\+FSM\+::\+State\+Func\+Ptr$>$(state\+To\+Transition\+To);
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a4b403641b89bd24b408bb8cdffb84bc7}{TRANSITION\+\_\+\+TOSTATE}}(state\+To\+Transition\+To)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_aed10b49463bae0fa0202c0ff603f709d}\label{_a_e_utils_8h_aed10b49463bae0fa0202c0ff603f709d}} 
+\#define {\bfseries AE\+\_\+\+EXIT}()~transition\+Type = DEACTIVE;
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a4a417b65b7017c24f2d2e512ddd94236}\label{_a_e_utils_8h_a4a417b65b7017c24f2d2e512ddd94236}} 
+\#define {\bfseries AE\+\_\+\+Cast\+Event}(Type\+To\+Cast\+To)~((Type\+To\+Cast\+To)evt-\/$>$evt)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_ac67d56a22930fb32f533fbb1a9729890}\label{_a_e_utils_8h_ac67d56a22930fb32f533fbb1a9729890}} 
+\#define {\bfseries DO\+\_\+\+EXPAND}(VAL)~VAL \#\# 1
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_afd6dc610405342de091109cfb184eb69}\label{_a_e_utils_8h_afd6dc610405342de091109cfb184eb69}} 
+\#define {\bfseries EXPAND}(VAL)~DO\+\_\+\+EXPAND(VAL)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a679423aa43d418febee853c2c64fbd8e}\label{_a_e_utils_8h_a679423aa43d418febee853c2c64fbd8e}} 
+\#define {\bfseries S\+\_\+\+CONC}(A,  B)~S\+\_\+\+CONC\+\_\+(A, B)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_afae4a8b3f6efd74c57dba4c9f8c12ef0}\label{_a_e_utils_8h_afae4a8b3f6efd74c57dba4c9f8c12ef0}} 
+\#define {\bfseries S\+\_\+\+CONC\+\_\+}(A,  B)~static A $\ast$ B ;
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a746684210326b5bdd441f19fba002e02}\label{_a_e_utils_8h_a746684210326b5bdd441f19fba002e02}} 
+\#define {\bfseries A\+\_\+\+CONC}(A,  B)~S\+\_\+\+CONC\+\_\+(A, B)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_ad6a435235511f782dc200e822fd29414}\label{_a_e_utils_8h_ad6a435235511f782dc200e822fd29414}} 
+\#define {\bfseries A\+\_\+\+CONC\+\_\+}(A,  B)~A B
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_aff16ec24800fdb71a7525351a40db139}{MAKE\+\_\+\+SINGLETON}}(class\+Name)
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a824bbba64e49e1e84606306f67611fb3}{MAKE\+\_\+\+SINGLETON\+\_\+\+PUT\+\_\+\+IN\+\_\+\+CPP}}(class\+Name)
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_aca4767473a5dadfd11aa424ce4fc909f}{Property\+Get}}(type,  var)
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a06cdc4fb366fcea655acca9ef8c9df4a}{Property\+Set}}(type,  var)
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a770b39d9ca4af0ae91ce14621702f5f1}{Property\+Get\+Set}}(type,  var)
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a3c2f108f01521223502c1fbac103c3fe}{Property\+Get\+Protected\+Set}}(type,  var)
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_af96700bae6153a0549defd61f43a9a1b}{CREATE\+\_\+\+AND\+\_\+\+SET\+\_\+\+CHANNEL}}(CHANNEL\+\_\+\+ID,  INPUTSIZE,  COUNTBUFFER)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_aa68ce86b7f7200cb8074e4c28e587072}\label{_a_e_utils_8h_aa68ce86b7f7200cb8074e4c28e587072}} 
+\#define {\bfseries AEFRIEND\+\_\+\+TEST}(group\+Name,  test\+Name)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a970596eb744dd008c300cedc78d42a1d}\label{_a_e_utils_8h_a970596eb744dd008c300cedc78d42a1d}} 
+\#define {\bfseries The\+Assert\+To\+Use}(predicate)~config\+ASSERT(predicate)
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssert\+Runtime}}(thing\+To\+Assert,  Assertion\+Message)
+\begin{DoxyCompactList}\small\item\em this will assert the predicate. if fails, will print assert command. test code\+: asvasf343 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_a_e_utils_8h_ab27c8391aa88863bb2ed2a950984811a}\label{_a_e_utils_8h_ab27c8391aa88863bb2ed2a950984811a}} 
+\#define {\bfseries AEAssert\+Runtime\+No\+Msg}(thing\+To\+Assert)~\mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssert\+Runtime}}(thing\+To\+Assert, \char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_aee5fb15ba7d0d41da3d16b6861de79da}\label{_a_e_utils_8h_aee5fb15ba7d0d41da3d16b6861de79da}} 
+\#define {\bfseries AEAssert\+Runtime\+With\+Assert\+Code\+To\+Test}(thing\+To\+Assert,  unique\+Name\+Of\+Assert,  Assertion\+Message)~\mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssert\+Runtime}}(thing\+To\+Assert, Assertion\+Message)
+\begin{DoxyCompactList}\small\item\em Use this for testing when you want to later test that this assert passed or failed with a unit test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a3fa3350e864698c233c0bd38d4725cf6}\label{_a_e_utils_8h_a3fa3350e864698c233c0bd38d4725cf6}} 
+\#define {\bfseries AEAssert\+Static}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_ac29d3295defcec4fbe0bb51d6bcdedcd}\label{_a_e_utils_8h_ac29d3295defcec4fbe0bb51d6bcdedcd}} 
+\#define {\bfseries PRIV\+\_\+\+AEStart\+Timer}(for\+Timer)~AEPerf\+Timer\#\#for\+Timer-\/$>$AEStart\+\_\+\+Timer();
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a378c51c21cf4d71705076eddbec03153}\label{_a_e_utils_8h_a378c51c21cf4d71705076eddbec03153}} 
+\#define {\bfseries PRIV\+\_\+\+AEStop\+Timer}(for\+Timer)~AEPerf\+Timer\#\#for\+Timer-\/$>$AEStop\+\_\+\+Timer();
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a824a068c853c370ab261b23816504c8d}{AEStart\+Timer}}(for\+Timer)
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a8ac92f366a42b6bc3df5e19a65817911}{AEStop\+Timer}}(for\+Timer)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a06ad386af077ef3a1c714d3f702e91e4}\label{_a_e_utils_8h_a06ad386af077ef3a1c714d3f702e91e4}} 
+\#define {\bfseries AEPrint\+Timer\+Duration}(for\+Timer)~AEPrint(\char`\"{}timer \%d took\+: \%d \textbackslash{}n\char`\"{}, for\+Timer, AEPerf\+Timer\#\#for\+Timer-\/$>$Get\+Elapsed\+Time\+In\+Nano\+Seconds());
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a0001c487b077a8515ac1fbde16cbe87c}\label{_a_e_utils_8h_a0001c487b077a8515ac1fbde16cbe87c}} 
+\#define {\bfseries AEGet\+Timer\+Duration}(for\+Timer)~AEPerf\+Timer\#\#for\+Timer-\/$>$Get\+Elapsed\+Time\+In\+Nano\+Seconds()
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_a026babcecb469d707b8db52e4c43a9c3}{AEPrint\+All\+Timer\+Duration}}
+\item 
+\#define \mbox{\hyperlink{_a_e_utils_8h_acde9881e17cf7f9feaf517673e258a9c}{AETimer\+For\+Entering\+And\+Re\+Entering\+\_\+\+And\+Print}}(for\+Timer)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a752593998b939b811f716861a4a7f901}\label{_a_e_utils_8h_a752593998b939b811f716861a4a7f901}} 
+\#define {\bfseries AELog\+Timer}(for\+Timer,  File\+Name\+To\+Write\+To)~\+\_\+\+AELog\+Timer(AEGet\+Timer\+Duration(for\+Timer), File\+Name\+To\+Write\+To)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_ab716212ce19b09cde0048df1a2cf7fa6}\label{_a_e_utils_8h_ab716212ce19b09cde0048df1a2cf7fa6}} 
+\#define {\bfseries AE\+\_\+\+GET\+\_\+\+LAST\+\_\+\+BITS}(Var\+To\+Get\+Bits,  This\+Many\+Bits\+From\+Last)~((Var\+To\+Get\+Bits) \& ((1$<$$<$(This\+Many\+Bits\+From\+Last))-\/1))
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_ac63832882dcca385e1a2ff84267f14b1}\label{_a_e_utils_8h_ac63832882dcca385e1a2ff84267f14b1}} 
+\#define {\bfseries AE\+\_\+\+GET\+\_\+\+MID\+\_\+\+BITS}(Var\+To\+Get\+Bits,  From\+Bit,  To\+Bit)~AE\+\_\+\+GET\+\_\+\+LAST\+\_\+\+BITS((Var\+To\+Get\+Bits)$>$$>$(From\+Bit),((To\+Bit)-\/(From\+Bit)))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a2029c55b9805d1ddb3916444dc0a3b49}\label{_a_e_utils_8h_a2029c55b9805d1ddb3916444dc0a3b49}} 
+typedef bool {\bfseries AENull}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a1f645eee5f8e8d3ef2b71d25e0bf1dac}\label{_a_e_utils_8h_a1f645eee5f8e8d3ef2b71d25e0bf1dac}} 
+enum {\bfseries AEPriorities} \{ {\bfseries Lowest\+Priority} = AOPRIORITYLOWEST
+, {\bfseries Medium\+Priority} = AOPRIORITYMEDIUM
+, {\bfseries Highest\+Priority} = AOPRIORITYHIGHEST -\/ 1
+ \}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_ab4d2618aef76a3430205350907f1d2c8}\label{_a_e_utils_8h_ab4d2618aef76a3430205350907f1d2c8}} 
+enum {\bfseries AETransition\+Type} \{ {\bfseries TRANSITION} = 0
+, {\bfseries UNHANDLED}
+, {\bfseries DEACTIVE}
+, {\bfseries ACTIVATE}
+ \}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a370752cae6f8f26977a82f3d510c80ee}\label{_a_e_utils_8h_a370752cae6f8f26977a82f3d510c80ee}} 
+enum {\bfseries AEFSMActive\+Type\+Enum} \{ {\bfseries PAUSE\+\_\+\+TO\+\_\+\+ACTIVATE}
+, {\bfseries RESET\+\_\+\+TO\+\_\+\+ACTIVATE}
+ \}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a958975e0455c91e0f474ee476c4d7271}\label{_a_e_utils_8h_a958975e0455c91e0f474ee476c4d7271}} 
+enum {\bfseries Style\+Of\+SPB} \{ {\bfseries Each\+SPBTask}
+, {\bfseries Chain\+Of\+SPBs\+Task}
+, {\bfseries Chain\+Of\+SPBs\+From\+Interrupt}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_abecfa95d5bb3319cae2475657c9f4aa3}\label{_a_e_utils_8h_abecfa95d5bb3319cae2475657c9f4aa3}} 
+{\footnotesize template$<$class T $>$ }\\int {\bfseries num\+Digits} (T number)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a094588d2e406c89d903b44f7bda3c54e}\label{_a_e_utils_8h_a094588d2e406c89d903b44f7bda3c54e}} 
+void {\bfseries AEPrint} (const char $\ast$p\+Format,...)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_ab8d0d9794eadc2dc3f3c0f4587635534}\label{_a_e_utils_8h_ab8d0d9794eadc2dc3f3c0f4587635534}} 
+void {\bfseries AEFormat\+Msg} (char $\ast$formatted\+Buffer, uint32\+\_\+t size\+Of\+Format, const char $\ast$msg\+To\+Format,...)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a7f130823fe3c766c25a651dff140997d}\label{_a_e_utils_8h_a7f130823fe3c766c25a651dff140997d}} 
+void {\bfseries AEWrite\+To\+End\+Of\+File} (const char $\ast$File\+Name\+To\+Write\+To, const void $\ast$Thing\+To\+Write, uint32\+\_\+t Size\+Of\+Thing\+To\+Write)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a97051ced6019e80c7cc3c03b684d1f27}\label{_a_e_utils_8h_a97051ced6019e80c7cc3c03b684d1f27}} 
+void {\bfseries AEClear\+Contents\+Of\+File} (const char $\ast$File\+Name\+To\+Clear)
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a18714a3e8bac50d7e9a9175d3604bb81}\label{_a_e_utils_8h_a18714a3e8bac50d7e9a9175d3604bb81}} 
+void {\bfseries \+\_\+\+AELog\+Timer} (Perf\+Elapsed\+\_\+t duration, const char $\ast$File\+Name\+To\+Write\+To)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a1d0f32bfef6f77eb5c583c1a2507a9a4}\label{_a_e_utils_8h_a1d0f32bfef6f77eb5c583c1a2507a9a4}} 
+\mbox{\hyperlink{class_a_e_performance_timer}{AEPerformance\+Timer}} $\ast$ {\bfseries AEPerf\+Timer1}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a55355de81fe67434d3724e88378d8bdc}\label{_a_e_utils_8h_a55355de81fe67434d3724e88378d8bdc}} 
+\mbox{\hyperlink{class_a_e_performance_timer}{AEPerformance\+Timer}} $\ast$ {\bfseries AEPerf\+Timer2}
+\item 
+\mbox{\Hypertarget{_a_e_utils_8h_a2a4e19c98b0b1da698870a17586df74f}\label{_a_e_utils_8h_a2a4e19c98b0b1da698870a17586df74f}} 
+\mbox{\hyperlink{class_a_e_performance_timer}{AEPerformance\+Timer}} $\ast$ {\bfseries AEPerf\+Timer3}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collection of utility functions for AE A more elaborated file description. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_a_e_utils_8h_a95e4a474fd28decd16c4465b0fc86d21}\label{_a_e_utils_8h_a95e4a474fd28decd16c4465b0fc86d21}} 
+\index{AEUtils.h@{AEUtils.h}!AE\_Tick\_To\_Milli@{AE\_Tick\_To\_Milli}}
+\index{AE\_Tick\_To\_Milli@{AE\_Tick\_To\_Milli}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{AE\_Tick\_To\_Milli}{AE\_Tick\_To\_Milli}}
+{\footnotesize\ttfamily \#define AE\+\_\+\+Tick\+\_\+\+To\+\_\+\+Milli(\begin{DoxyParamCaption}\item[{}]{millis }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{( TickType\_t )(millis / (1000/AEconfigTICK\_RATE\_HZ));\(\backslash\)}
+\DoxyCodeLine{configASSERT((millis / (1000/AEconfigTICK\_RATE\_HZ)) > 0);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}\label{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}} 
+\index{AEUtils.h@{AEUtils.h}!AEAssertRuntime@{AEAssertRuntime}}
+\index{AEAssertRuntime@{AEAssertRuntime}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{AEAssertRuntime}{AEAssertRuntime}}
+{\footnotesize\ttfamily \#define AEAssert\+Runtime(\begin{DoxyParamCaption}\item[{}]{thing\+To\+Assert,  }\item[{}]{Assertion\+Message }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(thingToAssert == \textcolor{keyword}{false})\{\(\backslash\)}
+\DoxyCodeLine{AEPrint(AssertionMessage);\(\backslash\)}
+\DoxyCodeLine{TheAssertToUse(thingToAssert); \}}
+
+\end{DoxyCode}
+
+
+this will assert the predicate. if fails, will print assert command. test code\+: asvasf343 
+
+\mbox{\Hypertarget{_a_e_utils_8h_a026babcecb469d707b8db52e4c43a9c3}\label{_a_e_utils_8h_a026babcecb469d707b8db52e4c43a9c3}} 
+\index{AEUtils.h@{AEUtils.h}!AEPrintAllTimerDuration@{AEPrintAllTimerDuration}}
+\index{AEPrintAllTimerDuration@{AEPrintAllTimerDuration}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{AEPrintAllTimerDuration}{AEPrintAllTimerDuration}}
+{\footnotesize\ttfamily \#define AEPrint\+All\+Timer\+Duration}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AEPrintTimerDuration(1)\(\backslash\)}
+\DoxyCodeLine{AEPrintTimerDuration(2)\(\backslash\)}
+\DoxyCodeLine{AEPrintTimerDuration(3)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_a824a068c853c370ab261b23816504c8d}\label{_a_e_utils_8h_a824a068c853c370ab261b23816504c8d}} 
+\index{AEUtils.h@{AEUtils.h}!AEStartTimer@{AEStartTimer}}
+\index{AEStartTimer@{AEStartTimer}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{AEStartTimer}{AEStartTimer}}
+{\footnotesize\ttfamily \#define AEStart\+Timer(\begin{DoxyParamCaption}\item[{}]{for\+Timer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart == \textcolor{keyword}{false} ,\textcolor{stringliteral}{"{}you already ran AEStartTimer and then tried to run it again for timer \#\#forTimer"{}})\(\backslash\)}
+\DoxyCodeLine{AEAssertRuntime(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter == \textcolor{keyword}{false}, \textcolor{stringliteral}{"{}you cant mix calling AETimerForEnteringAndReEntering and AEStartTimer for timer \#\#forTimer"{}})\(\backslash\)}
+\DoxyCodeLine{AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart = \textcolor{keyword}{true}; \(\backslash\)}
+\DoxyCodeLine{PRIV\_AEStartTimer(forTimer)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_a8ac92f366a42b6bc3df5e19a65817911}\label{_a_e_utils_8h_a8ac92f366a42b6bc3df5e19a65817911}} 
+\index{AEUtils.h@{AEUtils.h}!AEStopTimer@{AEStopTimer}}
+\index{AEStopTimer@{AEStopTimer}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{AEStopTimer}{AEStopTimer}}
+{\footnotesize\ttfamily \#define AEStop\+Timer(\begin{DoxyParamCaption}\item[{}]{for\+Timer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart == \textcolor{keyword}{true} ,\textcolor{stringliteral}{"{}you never ran AEStartTimer and then tried to run AEStopTimer for timer \#\#forTimer"{}})\(\backslash\)}
+\DoxyCodeLine{AEAssertRuntime(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter == \textcolor{keyword}{false} ,\textcolor{stringliteral}{"{}you cant mix calling AETimerForEnteringAndReEntering and AEStopTimer for timer \#\#forTimer"{}})\(\backslash\)}
+\DoxyCodeLine{AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart = \textcolor{keyword}{false};\(\backslash\)}
+\DoxyCodeLine{PRIV\_AEStopTimer(forTimer)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_acde9881e17cf7f9feaf517673e258a9c}\label{_a_e_utils_8h_acde9881e17cf7f9feaf517673e258a9c}} 
+\index{AEUtils.h@{AEUtils.h}!AETimerForEnteringAndReEntering\_AndPrint@{AETimerForEnteringAndReEntering\_AndPrint}}
+\index{AETimerForEnteringAndReEntering\_AndPrint@{AETimerForEnteringAndReEntering\_AndPrint}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{AETimerForEnteringAndReEntering\_AndPrint}{AETimerForEnteringAndReEntering\_AndPrint}}
+{\footnotesize\ttfamily \#define AETimer\+For\+Entering\+And\+Re\+Entering\+\_\+\+And\+Print(\begin{DoxyParamCaption}\item[{}]{for\+Timer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_a_e_utils_8h_a9e2e1fbe1c4de456d98706dbe8b36950}{AEAssertRuntime}}(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromStart == \textcolor{keyword}{false},\textcolor{stringliteral}{"{}you already ran AEStartTimer and then tried to call AETimerForEnteringAndReEntering. You should only use this macro for reentering starting and stopping the timer"{}})\(\backslash\)}
+\DoxyCodeLine{if(AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter == \textcolor{keyword}{false})\{ AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter = \textcolor{keyword}{true}; PRIV\_AEStartTimer(forTimer); \}\(\backslash\)}
+\DoxyCodeLine{else\{PRIV\_AEStopTimer(forTimer); AEPerfTimer\#\#forTimer-\/>\_TimerRunningFromReEnter = \textcolor{keyword}{false};\(\backslash\)}
+\DoxyCodeLine{AEPrintTimerDuration(forTimer)\(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_af96700bae6153a0549defd61f43a9a1b}\label{_a_e_utils_8h_af96700bae6153a0549defd61f43a9a1b}} 
+\index{AEUtils.h@{AEUtils.h}!CREATE\_AND\_SET\_CHANNEL@{CREATE\_AND\_SET\_CHANNEL}}
+\index{CREATE\_AND\_SET\_CHANNEL@{CREATE\_AND\_SET\_CHANNEL}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{CREATE\_AND\_SET\_CHANNEL}{CREATE\_AND\_SET\_CHANNEL}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+AND\+\_\+\+SET\+\_\+\+CHANNEL(\begin{DoxyParamCaption}\item[{}]{CHANNEL\+\_\+\+ID,  }\item[{}]{INPUTSIZE,  }\item[{}]{COUNTBUFFER }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (INPUTSIZE == 1) \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{    static \textcolor{keywordtype}{float} signalBuffer\#\#CHANNEL\_ID[COUNTBUFFER]; \(\backslash\)}
+\DoxyCodeLine{    static InputChannel  InCh\#\#CHANNEL\_ID(CHANNEL\_ID, INPUTSIZE, COUNTBUFFER, signalBuffer\#\#CHANNEL\_ID); \(\backslash\)}
+\DoxyCodeLine{    ChannelsToSet[CHANNEL\_ID -\/ 1] = \&InCh\#\#CHANNEL\_ID; \(\backslash\)}
+\DoxyCodeLine{\}\(\backslash\)}
+\DoxyCodeLine{else \textcolor{keywordflow}{if} (COUNTBUFFER == 1) \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{    static \textcolor{keywordtype}{float} signalBuffer\#\#CHANNEL\_ID[INPUTSIZE]; \(\backslash\)}
+\DoxyCodeLine{    static InputChannel  InCh\#\#CHANNEL\_ID(CHANNEL\_ID, INPUTSIZE, COUNTBUFFER, signalBuffer\#\#CHANNEL\_ID); \(\backslash\)}
+\DoxyCodeLine{    ChannelsToSet[CHANNEL\_ID -\/ 1] = \&InCh\#\#CHANNEL\_ID; \(\backslash\)}
+\DoxyCodeLine{\} \(\backslash\)}
+\DoxyCodeLine{else \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{    static \textcolor{keywordtype}{float} signalBuffer\#\#CHANNEL\_ID[COUNTBUFFER][INPUTSIZE]; \(\backslash\)}
+\DoxyCodeLine{    static InputChannel  InCh\#\#CHANNEL\_ID(CHANNEL\_ID, INPUTSIZE, COUNTBUFFER, (\textcolor{keywordtype}{float}**)signalBuffer\#\#CHANNEL\_ID); \(\backslash\)}
+\DoxyCodeLine{    ChannelsToSet[CHANNEL\_ID -\/ 1] = \&InCh\#\#CHANNEL\_ID; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_aff16ec24800fdb71a7525351a40db139}\label{_a_e_utils_8h_aff16ec24800fdb71a7525351a40db139}} 
+\index{AEUtils.h@{AEUtils.h}!MAKE\_SINGLETON@{MAKE\_SINGLETON}}
+\index{MAKE\_SINGLETON@{MAKE\_SINGLETON}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{MAKE\_SINGLETON}{MAKE\_SINGLETON}}
+{\footnotesize\ttfamily \#define MAKE\+\_\+\+SINGLETON(\begin{DoxyParamCaption}\item[{}]{class\+Name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}: \(\backslash\)}
+\DoxyCodeLine{static className* getInstance(); \(\backslash\)}
+\DoxyCodeLine{className(className \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete}; \(\backslash\)}
+\DoxyCodeLine{void operator=(className \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete}; \(\backslash\)}
+\DoxyCodeLine{private: \(\backslash\)}
+\DoxyCodeLine{static className* instance; \(\backslash\)}
+\DoxyCodeLine{className(); \(\backslash\)}
+\DoxyCodeLine{public:}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_a824bbba64e49e1e84606306f67611fb3}\label{_a_e_utils_8h_a824bbba64e49e1e84606306f67611fb3}} 
+\index{AEUtils.h@{AEUtils.h}!MAKE\_SINGLETON\_PUT\_IN\_CPP@{MAKE\_SINGLETON\_PUT\_IN\_CPP}}
+\index{MAKE\_SINGLETON\_PUT\_IN\_CPP@{MAKE\_SINGLETON\_PUT\_IN\_CPP}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{MAKE\_SINGLETON\_PUT\_IN\_CPP}{MAKE\_SINGLETON\_PUT\_IN\_CPP}}
+{\footnotesize\ttfamily \#define MAKE\+\_\+\+SINGLETON\+\_\+\+PUT\+\_\+\+IN\+\_\+\+CPP(\begin{DoxyParamCaption}\item[{}]{class\+Name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{className* className::instance = 0; \(\backslash\)}
+\DoxyCodeLine{className* className::getInstance() \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{    if (instance == 0) \(\backslash\)}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        static className soleInstance; \(\backslash\)}
+\DoxyCodeLine{        instance = \&soleInstance; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    return instance; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_aca4767473a5dadfd11aa424ce4fc909f}\label{_a_e_utils_8h_aca4767473a5dadfd11aa424ce4fc909f}} 
+\index{AEUtils.h@{AEUtils.h}!PropertyGet@{PropertyGet}}
+\index{PropertyGet@{PropertyGet}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{PropertyGet}{PropertyGet}}
+{\footnotesize\ttfamily \#define Property\+Get(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{var }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{private}: \(\backslash\)}
+\DoxyCodeLine{    type \_\#\#var; \(\backslash\)}
+\DoxyCodeLine{public: \(\backslash\)}
+\DoxyCodeLine{    type Get\#\#var()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} \_\#\#var; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_a3c2f108f01521223502c1fbac103c3fe}\label{_a_e_utils_8h_a3c2f108f01521223502c1fbac103c3fe}} 
+\index{AEUtils.h@{AEUtils.h}!PropertyGetProtectedSet@{PropertyGetProtectedSet}}
+\index{PropertyGetProtectedSet@{PropertyGetProtectedSet}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{PropertyGetProtectedSet}{PropertyGetProtectedSet}}
+{\footnotesize\ttfamily \#define Property\+Get\+Protected\+Set(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{var }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{protected}: \(\backslash\)}
+\DoxyCodeLine{    type \_\#\#var; \(\backslash\)}
+\DoxyCodeLine{void Set\#\#var(type val) \{ \_\#\#var = val; \} \(\backslash\)}
+\DoxyCodeLine{public: \(\backslash\)}
+\DoxyCodeLine{    type Get\#\#var()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} \_\#\#var; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_a770b39d9ca4af0ae91ce14621702f5f1}\label{_a_e_utils_8h_a770b39d9ca4af0ae91ce14621702f5f1}} 
+\index{AEUtils.h@{AEUtils.h}!PropertyGetSet@{PropertyGetSet}}
+\index{PropertyGetSet@{PropertyGetSet}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{PropertyGetSet}{PropertyGetSet}}
+{\footnotesize\ttfamily \#define Property\+Get\+Set(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{var }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{private}: \(\backslash\)}
+\DoxyCodeLine{    type \_\#\#var; \(\backslash\)}
+\DoxyCodeLine{public: \(\backslash\)}
+\DoxyCodeLine{    type Get\#\#var()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} \_\#\#var; \}\(\backslash\)}
+\DoxyCodeLine{    void Set\#\#var(type val) \{ \_\#\#var = val; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_a06cdc4fb366fcea655acca9ef8c9df4a}\label{_a_e_utils_8h_a06cdc4fb366fcea655acca9ef8c9df4a}} 
+\index{AEUtils.h@{AEUtils.h}!PropertySet@{PropertySet}}
+\index{PropertySet@{PropertySet}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{PropertySet}{PropertySet}}
+{\footnotesize\ttfamily \#define Property\+Set(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{var }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{private}: \(\backslash\)}
+\DoxyCodeLine{    type \_\#\#var; \(\backslash\)}
+\DoxyCodeLine{public: \(\backslash\)}
+\DoxyCodeLine{    void Set\#\#var(type val) \{ \_\#\#var = val; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_a_e_utils_8h_a4b403641b89bd24b408bb8cdffb84bc7}\label{_a_e_utils_8h_a4b403641b89bd24b408bb8cdffb84bc7}} 
+\index{AEUtils.h@{AEUtils.h}!TRANSITION\_TOSTATE@{TRANSITION\_TOSTATE}}
+\index{TRANSITION\_TOSTATE@{TRANSITION\_TOSTATE}!AEUtils.h@{AEUtils.h}}
+\doxysubsubsection{\texorpdfstring{TRANSITION\_TOSTATE}{TRANSITION\_TOSTATE}}
+{\footnotesize\ttfamily \#define TRANSITION\+\_\+\+TOSTATE(\begin{DoxyParamCaption}\item[{}]{state\+To\+Transition\+To }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{thisFSM-\/>StateToTransitionTo = CastToStateFuncPtr(stateToTransitionTo)\(\backslash\)}
+\DoxyCodeLine{transitionType = TRANSITION;}
+
+\end{DoxyCode}

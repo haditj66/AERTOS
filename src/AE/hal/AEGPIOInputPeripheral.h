@@ -7,6 +7,10 @@
 
 #include "AEConfig.h"
 
+//#include "stm32f4xx_hal.h"
+
+//#include "AE_Init.h"
+
 #ifdef AESIMULATION
 #include "SimulatedProperty.h" 
 #endif

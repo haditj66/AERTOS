@@ -1,0 +1,65 @@
+\hypertarget{_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_g_p_i_o_output_8h_source}{}\doxysection{AEGPIOOutput.\+h}
+\label{_s_t_m32_f411_r_e_2_a_e_hal_files_2_a_e_g_p_i_o_output_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AEHalFiles/AEGPIOOutput.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AEHalFiles/AEGPIOOutput.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}AEGPIOOutputPeripheral.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEGPIOOutput::GPIO\_SetHigh() \{}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6   Port-\/>BSRR = Pin; }
+\DoxyCodeLine{7 \textcolor{comment}{//  HAL\_GPIO\_WritePin(Port, Pin, GPIO\_PIN\_SET);}}
+\DoxyCodeLine{8 \}}
+\DoxyCodeLine{9 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEGPIOOutput::GPIO\_SetLow() \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11   Port-\/>BSRR = (uint32\_t)Pin << 16U;}
+\DoxyCodeLine{12 \textcolor{comment}{//  HAL\_GPIO\_WritePin(Port, Pin, GPIO\_PIN\_RESET);}}
+\DoxyCodeLine{13  }
+\DoxyCodeLine{14 \}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} AEGPIOOutput::GPIO\_ReadPin() \{}
+\DoxyCodeLine{17  }
+\DoxyCodeLine{18   \textcolor{keywordflow}{return} HAL\_GPIO\_ReadPin(Port, Pin); }
+\DoxyCodeLine{19  }
+\DoxyCodeLine{20 \}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEGPIOOutput::GPIO\_TogglePin() \{ \textcolor{keywordflow}{return} HAL\_GPIO\_TogglePin(Port, Pin); \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{template} <templateForGPIO>}
+\DoxyCodeLine{37 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_p_i_o_peripheral}{GPIOPeripheral<templateargsForGPIO>::\_InitializePinSelectors}}(CreateTypeSelector\_funcPtr (\&functPtrsToChangeTypeSelectorss)[1])}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39     StartPinSelectorForPin(1)}
+\DoxyCodeLine{40     M\_AnyPinIsPossible }
+\DoxyCodeLine{41     EndPinSelectorForPin}
+\DoxyCodeLine{42 \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 template <templateForGPIO>}
+\DoxyCodeLine{45 inline \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_p_i_o_peripheral}{GPIOPeripheral}}<templateargsForGPIO>::\_Initialize(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2, Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4, Port\_t port5, Pin\_t pin5)}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     Port = port1;}
+\DoxyCodeLine{48     Pin = pin1;}
+\DoxyCodeLine{49     IsAlreadyInUse = \textcolor{keyword}{true};}
+\DoxyCodeLine{50   }
+\DoxyCodeLine{51     GPIO\_InitTypeDef gpio\_init\_structure;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     gpio\_init\_structure.Pin = pin1;}
+\DoxyCodeLine{54     gpio\_init\_structure.Mode = GPIO\_MODE\_OUTPUT\_PP;}
+\DoxyCodeLine{55     gpio\_init\_structure.Speed = GPIO\_SPEED\_HIGH;}
+\DoxyCodeLine{56     gpio\_init\_structure.Pull = GPIO\_NOPULL;}
+\DoxyCodeLine{57     HAL\_GPIO\_Init(port1, \&gpio\_init\_structure); }
+\DoxyCodeLine{58 \}}
+\DoxyCodeLine{59  }
+
+\end{DoxyCode}

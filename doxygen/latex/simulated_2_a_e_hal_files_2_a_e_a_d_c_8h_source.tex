@@ -1,0 +1,69 @@
+\hypertarget{simulated_2_a_e_hal_files_2_a_e_a_d_c_8h_source}{}\doxysection{AEADC.\+h}
+\label{simulated_2_a_e_hal_files_2_a_e_a_d_c_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/simulated/AEHalFiles/AEADC.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/simulated/AEHalFiles/AEADC.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}AEADCPeripheral.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{template}<templateForADC>}
+\DoxyCodeLine{15     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_d_c_peripheral}{ADCPeripheral<templateargsForADC>::\_InitializePinSelectors}}(CreateTypeSelector\_funcPtr(\&functPtrsToChangeTypeSelectorss)[NumOFPinsNeeded])}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{comment}{/*}}
+\DoxyCodeLine{18 \textcolor{comment}{            this-\/>functPtrsToChangeTypeSelectors[0] = []() -\/> void}}
+\DoxyCodeLine{19 \textcolor{comment}{            \{PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortA, PinEnum::PIN2);}}
+\DoxyCodeLine{20 \textcolor{comment}{            PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortD, PinEnum::PIN5); \};}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{            this-\/>functPtrsToChangeTypeSelectors[1] = []() -\/> void}}
+\DoxyCodeLine{23 \textcolor{comment}{            \{PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortA, PinEnum::PIN3);}}
+\DoxyCodeLine{24 \textcolor{comment}{            PinSelector::getInstance()-\/>IncludePossiblePin(Portenum::PortD, PinEnum::PIN6); \}; }}
+\DoxyCodeLine{25 \textcolor{comment}{            */}}
+\DoxyCodeLine{26         \textcolor{comment}{//UserCode\_Section4}}
+\DoxyCodeLine{27         this-\/>functPtrsToChangeTypeSelectors[0] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{28         \{ }
+\DoxyCodeLine{29             PinSelector::getInstance()-\/>AnyPinIsPossible(); }
+\DoxyCodeLine{30         \};}
+\DoxyCodeLine{31         this-\/>functPtrsToChangeTypeSelectors[1] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             PinSelector::getInstance()-\/>AnyPinIsPossible();}
+\DoxyCodeLine{34         \};}
+\DoxyCodeLine{35         this-\/>functPtrsToChangeTypeSelectors[2] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{36         \{}
+\DoxyCodeLine{37             PinSelector::getInstance()-\/>AnyPinIsPossible();}
+\DoxyCodeLine{38         \};}
+\DoxyCodeLine{39         this-\/>functPtrsToChangeTypeSelectors[3] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{40         \{}
+\DoxyCodeLine{41             PinSelector::getInstance()-\/>AnyPinIsPossible();}
+\DoxyCodeLine{42         \};}
+\DoxyCodeLine{43         this-\/>functPtrsToChangeTypeSelectors[4] = []() -\/> \textcolor{keywordtype}{void}}
+\DoxyCodeLine{44         \{}
+\DoxyCodeLine{45             PinSelector::getInstance()-\/>AnyPinIsPossible();}
+\DoxyCodeLine{46         \};}
+\DoxyCodeLine{47         \textcolor{comment}{//UserCode\_Section4\_end}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{template}<templateForADC>}
+\DoxyCodeLine{56     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_d_c_peripheral}{ADCPeripheral<templateargsForADC>::\_Initialize}}(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2, Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4, Port\_t port5, Pin\_t pin5)}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         }
+\DoxyCodeLine{59         }
+\DoxyCodeLine{60          }
+\DoxyCodeLine{61  }
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63  }
+
+\end{DoxyCode}

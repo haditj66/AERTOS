@@ -7,7 +7,7 @@
   
   
 
-#if RTOS_USED == FREERTOS
+#ifdef RTOS_USED__FREERTOS
 #include "FreeRTOS.h"
 #include "task.h"
 #include "timers.h"
@@ -33,19 +33,19 @@
 
 
 #ifdef BoardModelType2
-#include "ModelType2Setup.h"
+#include "ModelType2Setup.h"  
 static ModelType2Setup setup;
 
 #elif BoardModelType1
-#include "ModelType1Setup.h"
+#include "ModelType1Setup.h" 
 static ModelType1Setup setup;
 
 #elif BoardSeries
-#include "SeriesSetup.h"
+#include "SeriesSetup.h" 
 static SeriesSetup setup;
 
 #elif BoardVendor
-#include "BoardVendorSetup.h"
+#include "BoardVendorSetup.h" 
 static BoardVendorSetup setup;
 
 #elif IsPC

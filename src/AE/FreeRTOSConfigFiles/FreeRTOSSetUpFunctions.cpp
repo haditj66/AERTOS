@@ -9,7 +9,7 @@
 
 
 
-#if SWIL_HWIL_DRIVEN == SWIL
+#ifdef SWIL_HWIL_DRIVEN__SWIL
 	
 #define mainREGION_1_SIZE	8201
 #define mainREGION_2_SIZE	29905
@@ -193,7 +193,7 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, signed char *pcTaskName)
 		(void)pcFileName; 
 		
 		
-#if SWIL_HWIL_DRIVEN == SWIL
+#ifdef SWIL_HWIL_DRIVEN__SWIL
 		printf("ASSERT! Line %ld, file %s, GetLastError() %ld\r\n", ulLine, pcFileName, GetLastError());
 #else
 		AEPrint((char*)"config assertion failed at line %d \n", ulLine); 

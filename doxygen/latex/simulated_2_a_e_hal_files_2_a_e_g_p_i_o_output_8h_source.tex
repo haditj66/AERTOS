@@ -1,0 +1,49 @@
+\hypertarget{simulated_2_a_e_hal_files_2_a_e_g_p_i_o_output_8h_source}{}\doxysection{AEGPIOOutput.\+h}
+\label{simulated_2_a_e_hal_files_2_a_e_g_p_i_o_output_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/simulated/AEHalFiles/AEGPIOOutput.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/simulated/AEHalFiles/AEGPIOOutput.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}AEGPIOOutputPeripheral.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEGPIOOutput::GPIO\_SetHigh() \{}
+\DoxyCodeLine{5     GPIO\_Handle\_inst-\/>GPIO\_SetHigh();}
+\DoxyCodeLine{6 \}}
+\DoxyCodeLine{7 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEGPIOOutput::GPIO\_SetLow() \{}
+\DoxyCodeLine{8  }
+\DoxyCodeLine{9     GPIO\_Handle\_inst-\/>GPIO\_SetLow();}
+\DoxyCodeLine{10 \}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} AEGPIOOutput::GPIO\_ReadPin() \{}
+\DoxyCodeLine{13   }
+\DoxyCodeLine{14     \textcolor{keywordflow}{return} GPIO\_Handle\_inst-\/>GPIO\_ReadPin();;}
+\DoxyCodeLine{15 \}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEGPIOOutput::GPIO\_TogglePin() \{ GPIO\_Handle\_inst-\/>GPIO\_TogglePin(); \}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{template} <templateForGPIO>}
+\DoxyCodeLine{27     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_p_i_o_peripheral}{GPIOPeripheral<templateargsForGPIO>::\_InitializePinSelectors}}(CreateTypeSelector\_funcPtr(\&functPtrsToChangeTypeSelectorss)[1])}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         StartPinSelectorForPin(1)}
+\DoxyCodeLine{30         M\_AnyPinIsPossible }
+\DoxyCodeLine{31         EndPinSelectorForPin}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 template <templateForGPIO>}
+\DoxyCodeLine{35     inline \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_p_i_o_peripheral}{GPIOPeripheral}}<templateargsForGPIO>::\_Initialize(Port\_t port1, Pin\_t pin1, Port\_t port2, Pin\_t pin2, Port\_t port3, Pin\_t pin3, Port\_t port4, Pin\_t pin4, Port\_t port5, Pin\_t pin5)}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         Port = port1;}
+\DoxyCodeLine{38         Pin = pin1;}
+\DoxyCodeLine{39         IsAlreadyInUse = \textcolor{keyword}{true};}
+\DoxyCodeLine{40    }
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+
+\end{DoxyCode}

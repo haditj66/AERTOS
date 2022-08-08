@@ -1,0 +1,73 @@
+\hypertarget{_vendor___s_t_m32_2_board_vendor_setup_8h_source}{}\doxysection{Board\+Vendor\+Setup.\+h}
+\label{_vendor___s_t_m32_2_board_vendor_setup_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/AESetup/Board/Vendor\_STM32/BoardVendorSetup.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/AESetup/Board/Vendor\_STM32/BoardVendorSetup.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//generated file: BoardVendorSetup.h}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{// this is for board STM32F411RE for the }}
+\DoxyCodeLine{7 \textcolor{comment}{// STM32 part of it}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}AESetUpBase.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{//includes}}
+\DoxyCodeLine{12 \textcolor{comment}{//UserCode\_Sectiona}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}cmsis\_os.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}UARTConsole.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//the clock should be implemented in AEConfig}}
+\DoxyCodeLine{17 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} SystemClock\_Config(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{18 \textcolor{comment}{//UserCode\_Sectiona\_end}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_board_vendor_setup}{BoardVendorSetup}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_a_e_set_up_base}{AESetUpBase}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_board_vendor_setup}{BoardVendorSetup}}() \{\}; }
+\DoxyCodeLine{25     }
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} RTOSInit()\{}
+\DoxyCodeLine{27     AESetUpBase::RTOSInit();}
+\DoxyCodeLine{28     }
+\DoxyCodeLine{29     \textcolor{comment}{//UserCode\_Sectionb}}
+\DoxyCodeLine{30 \textcolor{comment}{//UserCode\_Sectionb\_end}}
+\DoxyCodeLine{31     }
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33     }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} BSPInit()\{}
+\DoxyCodeLine{35     AESetUpBase::BSPInit();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{//UserCode\_Sectionc}}
+\DoxyCodeLine{38 HAL\_Init();}
+\DoxyCodeLine{39     }
+\DoxyCodeLine{40     SystemClock\_Config();  }
+\DoxyCodeLine{41         }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifndef Target\_RealUART}}
+\DoxyCodeLine{43         \textcolor{comment}{//  UARTConsole\_InitTypeDef uARTConsole\_InitTypeDef;}}
+\DoxyCodeLine{44         \textcolor{comment}{//  uARTConsole\_InitTypeDef.BaudRate = 115200;}}
+\DoxyCodeLine{45         \textcolor{comment}{//  Init\_UARTConsole(\&uARTConsole\_InitTypeDef);}}
+\DoxyCodeLine{46         \textcolor{comment}{//  TransmitMsg("{}hi from uart console"{}, 0);}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{48 \textcolor{comment}{//UserCode\_Sectionc\_end}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{comment}{//any things needed to be changed in the BSP to satisfy the RTOS being used}}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} RTOS\_ToBSP\_SpecificCode()\{}
+\DoxyCodeLine{55     AESetUpBase::RTOS\_ToBSP\_SpecificCode();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{//UserCode\_Sectiond}}
+\DoxyCodeLine{58 NVIC\_SetPriorityGrouping(NVIC\_PRIORITYGROUP\_4);}
+\DoxyCodeLine{59 \textcolor{comment}{//UserCode\_Sectiond\_end}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{private}: }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{//UserCode\_Sectione}}
+\DoxyCodeLine{67 \textcolor{comment}{//UserCode\_Sectione\_end}}
+
+\end{DoxyCode}

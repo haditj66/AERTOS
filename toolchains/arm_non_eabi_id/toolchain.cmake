@@ -44,7 +44,10 @@ function (visualgdb_toolchain_compute_flags)
     set(_ldflags "${_ldflags}" PARENT_SCOPE)
 endfunction() #visualgdb_toolchain_compute_flags
 
-set(SYSPROG_PATH "C:/VisualGDBAllFiles/Sysprogs")
+#set(SYSPROG_PATH "C:/VisualGDBAllFiles/Sysprogs")
+#set(SYSPROG_PATH "C:/SysGCC")
+#set(SYSPROG_PATH "C:/Users/Hadi/AppData/Local")
+set(SYSPROG_PATH "C:/Program Files (x86)/Sysprogs")
 
 set (VISUALGDB_COMPONENT_LISTS_DIR "C:/Users/Hadi/AppData/Local/VisualGDB")
 include ("${SYSPROG_PATH}/VisualGDB/CMake/embedded/root.cmake")

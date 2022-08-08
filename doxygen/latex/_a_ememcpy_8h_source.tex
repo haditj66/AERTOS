@@ -1,0 +1,2061 @@
+\hypertarget{_a_ememcpy_8h_source}{}\doxysection{AEmemcpy.\+h}
+\label{_a_ememcpy_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/HelperFunctions/AEmemcpy.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/HelperFunctions/AEmemcpy.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//generated file: AEmemcpy.h}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11  }
+\DoxyCodeLine{12 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp1(}
+\DoxyCodeLine{13 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src}
+\DoxyCodeLine{14     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{18     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{21     uint32\_t remainder;}
+\DoxyCodeLine{22     uint32\_t timesToCopy;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         memcpy(dst, src, size);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32  }
+\DoxyCodeLine{33  }
+\DoxyCodeLine{34  }
+\DoxyCodeLine{35  }
+\DoxyCodeLine{36  }
+\DoxyCodeLine{37  }
+\DoxyCodeLine{38  }
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54  }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         remainder = size \% 10;}
+\DoxyCodeLine{57         timesToCopy = size / 10;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{60         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{61         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{62         \{}
+\DoxyCodeLine{63          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{64      }
+\DoxyCodeLine{65      }
+\DoxyCodeLine{66      }
+\DoxyCodeLine{67      }
+\DoxyCodeLine{68      }
+\DoxyCodeLine{69      }
+\DoxyCodeLine{70      }
+\DoxyCodeLine{71      }
+\DoxyCodeLine{72  }
+\DoxyCodeLine{73  }
+\DoxyCodeLine{74  }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{79  }
+\DoxyCodeLine{80  }
+\DoxyCodeLine{81  }
+\DoxyCodeLine{82  }
+\DoxyCodeLine{83  }
+\DoxyCodeLine{84  }
+\DoxyCodeLine{85  }
+\DoxyCodeLine{86  }
+\DoxyCodeLine{87  }
+\DoxyCodeLine{88  }
+\DoxyCodeLine{89  }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{96         \{}
+\DoxyCodeLine{97             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{98             \{}
+\DoxyCodeLine{99                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{115                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{116                 \{}
+\DoxyCodeLine{117                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{118             }
+\DoxyCodeLine{119             }
+\DoxyCodeLine{120             }
+\DoxyCodeLine{121             }
+\DoxyCodeLine{122              }
+\DoxyCodeLine{123              }
+\DoxyCodeLine{124              }
+\DoxyCodeLine{125              }
+\DoxyCodeLine{126          }
+\DoxyCodeLine{127          }
+\DoxyCodeLine{128          }
+\DoxyCodeLine{129                 \}}
+\DoxyCodeLine{130                 size = size -\/ 100;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{133                 remainder = size \% incrmentby;}
+\DoxyCodeLine{134                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{137                 \{}
+\DoxyCodeLine{138                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{139              }
+\DoxyCodeLine{140              }
+\DoxyCodeLine{141              }
+\DoxyCodeLine{142              }
+\DoxyCodeLine{143              }
+\DoxyCodeLine{144              }
+\DoxyCodeLine{145              }
+\DoxyCodeLine{146              }
+\DoxyCodeLine{147          }
+\DoxyCodeLine{148          }
+\DoxyCodeLine{149          }
+\DoxyCodeLine{150  }
+\DoxyCodeLine{151                 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{154         }
+\DoxyCodeLine{155         }
+\DoxyCodeLine{156         }
+\DoxyCodeLine{157         }
+\DoxyCodeLine{158          }
+\DoxyCodeLine{159          }
+\DoxyCodeLine{160          }
+\DoxyCodeLine{161          }
+\DoxyCodeLine{162      }
+\DoxyCodeLine{163      }
+\DoxyCodeLine{164      }
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{167             \}}
+\DoxyCodeLine{168         \}}
+\DoxyCodeLine{169     \}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176  }
+\DoxyCodeLine{177 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp2(}
+\DoxyCodeLine{178 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{179 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2}
+\DoxyCodeLine{180     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{181 \{}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{184     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{187     uint32\_t remainder;}
+\DoxyCodeLine{188     uint32\_t timesToCopy;}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{192     \{}
+\DoxyCodeLine{193         memcpy(dst, src, size);}
+\DoxyCodeLine{194         memcpy(dst2, src2, size);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198  }
+\DoxyCodeLine{199  }
+\DoxyCodeLine{200  }
+\DoxyCodeLine{201  }
+\DoxyCodeLine{202  }
+\DoxyCodeLine{203  }
+\DoxyCodeLine{204  }
+\DoxyCodeLine{205     \}}
+\DoxyCodeLine{206     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{207     \{}
+\DoxyCodeLine{208         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{209         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220  }
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222         remainder = size \% 10;}
+\DoxyCodeLine{223         timesToCopy = size / 10;}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{226         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{227         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{228         \{}
+\DoxyCodeLine{229          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{230          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{231      }
+\DoxyCodeLine{232      }
+\DoxyCodeLine{233      }
+\DoxyCodeLine{234      }
+\DoxyCodeLine{235      }
+\DoxyCodeLine{236      }
+\DoxyCodeLine{237      }
+\DoxyCodeLine{238  }
+\DoxyCodeLine{239  }
+\DoxyCodeLine{240  }
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242         \}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{245         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{246  }
+\DoxyCodeLine{247  }
+\DoxyCodeLine{248  }
+\DoxyCodeLine{249  }
+\DoxyCodeLine{250  }
+\DoxyCodeLine{251  }
+\DoxyCodeLine{252  }
+\DoxyCodeLine{253  }
+\DoxyCodeLine{254  }
+\DoxyCodeLine{255  }
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \}}
+\DoxyCodeLine{259     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{260     \{}
+\DoxyCodeLine{261         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{262         \{}
+\DoxyCodeLine{263             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{264             \{}
+\DoxyCodeLine{265                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{266         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{281                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{282                 \{}
+\DoxyCodeLine{283                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{284                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{285             }
+\DoxyCodeLine{286             }
+\DoxyCodeLine{287             }
+\DoxyCodeLine{288              }
+\DoxyCodeLine{289              }
+\DoxyCodeLine{290              }
+\DoxyCodeLine{291              }
+\DoxyCodeLine{292          }
+\DoxyCodeLine{293          }
+\DoxyCodeLine{294          }
+\DoxyCodeLine{295                 \}}
+\DoxyCodeLine{296                 size = size -\/ 100;}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{299                 remainder = size \% incrmentby;}
+\DoxyCodeLine{300                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{303                 \{}
+\DoxyCodeLine{304                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{305                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{306              }
+\DoxyCodeLine{307              }
+\DoxyCodeLine{308              }
+\DoxyCodeLine{309              }
+\DoxyCodeLine{310              }
+\DoxyCodeLine{311              }
+\DoxyCodeLine{312              }
+\DoxyCodeLine{313          }
+\DoxyCodeLine{314          }
+\DoxyCodeLine{315          }
+\DoxyCodeLine{316  }
+\DoxyCodeLine{317                 \}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{320                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{321         }
+\DoxyCodeLine{322         }
+\DoxyCodeLine{323         }
+\DoxyCodeLine{324          }
+\DoxyCodeLine{325          }
+\DoxyCodeLine{326          }
+\DoxyCodeLine{327          }
+\DoxyCodeLine{328      }
+\DoxyCodeLine{329      }
+\DoxyCodeLine{330      }
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{333             \}}
+\DoxyCodeLine{334         \}}
+\DoxyCodeLine{335     \}}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338 \}}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342  }
+\DoxyCodeLine{343 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp3(}
+\DoxyCodeLine{344 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{345 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{346 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3}
+\DoxyCodeLine{347     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{348 \{}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{351     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{354     uint32\_t remainder;}
+\DoxyCodeLine{355     uint32\_t timesToCopy;}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{359     \{}
+\DoxyCodeLine{360         memcpy(dst, src, size);}
+\DoxyCodeLine{361         memcpy(dst2, src2, size);}
+\DoxyCodeLine{362         memcpy(dst3, src3, size);}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365  }
+\DoxyCodeLine{366  }
+\DoxyCodeLine{367  }
+\DoxyCodeLine{368  }
+\DoxyCodeLine{369  }
+\DoxyCodeLine{370  }
+\DoxyCodeLine{371  }
+\DoxyCodeLine{372     \}}
+\DoxyCodeLine{373     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{374     \{}
+\DoxyCodeLine{375         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{376         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{377         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387  }
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389         remainder = size \% 10;}
+\DoxyCodeLine{390         timesToCopy = size / 10;}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{393         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{394         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{395         \{}
+\DoxyCodeLine{396          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{397          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{398          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{399      }
+\DoxyCodeLine{400      }
+\DoxyCodeLine{401      }
+\DoxyCodeLine{402      }
+\DoxyCodeLine{403      }
+\DoxyCodeLine{404      }
+\DoxyCodeLine{405  }
+\DoxyCodeLine{406  }
+\DoxyCodeLine{407  }
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409         \}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{412         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{413         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{414  }
+\DoxyCodeLine{415  }
+\DoxyCodeLine{416  }
+\DoxyCodeLine{417  }
+\DoxyCodeLine{418  }
+\DoxyCodeLine{419  }
+\DoxyCodeLine{420  }
+\DoxyCodeLine{421  }
+\DoxyCodeLine{422  }
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425     \}}
+\DoxyCodeLine{426     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{427     \{}
+\DoxyCodeLine{428         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{429         \{}
+\DoxyCodeLine{430             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{431             \{}
+\DoxyCodeLine{432                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{433         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{434         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{448                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{449                 \{}
+\DoxyCodeLine{450                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{451                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{452                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{453             }
+\DoxyCodeLine{454             }
+\DoxyCodeLine{455              }
+\DoxyCodeLine{456              }
+\DoxyCodeLine{457              }
+\DoxyCodeLine{458              }
+\DoxyCodeLine{459          }
+\DoxyCodeLine{460          }
+\DoxyCodeLine{461          }
+\DoxyCodeLine{462                 \}}
+\DoxyCodeLine{463                 size = size -\/ 100;}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{466                 remainder = size \% incrmentby;}
+\DoxyCodeLine{467                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{470                 \{}
+\DoxyCodeLine{471                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{472                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{473                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{474              }
+\DoxyCodeLine{475              }
+\DoxyCodeLine{476              }
+\DoxyCodeLine{477              }
+\DoxyCodeLine{478              }
+\DoxyCodeLine{479              }
+\DoxyCodeLine{480          }
+\DoxyCodeLine{481          }
+\DoxyCodeLine{482          }
+\DoxyCodeLine{483  }
+\DoxyCodeLine{484                 \}}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{487                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{488                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{489         }
+\DoxyCodeLine{490         }
+\DoxyCodeLine{491          }
+\DoxyCodeLine{492          }
+\DoxyCodeLine{493          }
+\DoxyCodeLine{494          }
+\DoxyCodeLine{495      }
+\DoxyCodeLine{496      }
+\DoxyCodeLine{497      }
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{500             \}}
+\DoxyCodeLine{501         \}}
+\DoxyCodeLine{502     \}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505 \}}
+\DoxyCodeLine{506 }
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508 }
+\DoxyCodeLine{509  }
+\DoxyCodeLine{510 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp4(}
+\DoxyCodeLine{511 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{512 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{513 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{514 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4}
+\DoxyCodeLine{515     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{516 \{}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{519     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{522     uint32\_t remainder;}
+\DoxyCodeLine{523     uint32\_t timesToCopy;}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{527     \{}
+\DoxyCodeLine{528         memcpy(dst, src, size);}
+\DoxyCodeLine{529         memcpy(dst2, src2, size);}
+\DoxyCodeLine{530         memcpy(dst3, src3, size);}
+\DoxyCodeLine{531         memcpy(dst4, src4, size);}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533  }
+\DoxyCodeLine{534  }
+\DoxyCodeLine{535  }
+\DoxyCodeLine{536  }
+\DoxyCodeLine{537  }
+\DoxyCodeLine{538  }
+\DoxyCodeLine{539  }
+\DoxyCodeLine{540     \}}
+\DoxyCodeLine{541     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{542     \{}
+\DoxyCodeLine{543         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{544         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{545         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{546         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 }
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555  }
+\DoxyCodeLine{556 }
+\DoxyCodeLine{557         remainder = size \% 10;}
+\DoxyCodeLine{558         timesToCopy = size / 10;}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{561         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{562         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{563         \{}
+\DoxyCodeLine{564          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{565          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{566          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{567          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{568      }
+\DoxyCodeLine{569      }
+\DoxyCodeLine{570      }
+\DoxyCodeLine{571      }
+\DoxyCodeLine{572      }
+\DoxyCodeLine{573  }
+\DoxyCodeLine{574  }
+\DoxyCodeLine{575  }
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577         \}}
+\DoxyCodeLine{578 }
+\DoxyCodeLine{579         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{580         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{581         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{582         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{583  }
+\DoxyCodeLine{584  }
+\DoxyCodeLine{585  }
+\DoxyCodeLine{586  }
+\DoxyCodeLine{587  }
+\DoxyCodeLine{588  }
+\DoxyCodeLine{589  }
+\DoxyCodeLine{590  }
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593     \}}
+\DoxyCodeLine{594     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{595     \{}
+\DoxyCodeLine{596         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{597         \{}
+\DoxyCodeLine{598             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{599             \{}
+\DoxyCodeLine{600                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{601         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{602         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{603         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606 }
+\DoxyCodeLine{607 }
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609 }
+\DoxyCodeLine{610 }
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612 }
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614 }
+\DoxyCodeLine{615                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{616                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{617                 \{}
+\DoxyCodeLine{618                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{619                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{620                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{621                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{622             }
+\DoxyCodeLine{623              }
+\DoxyCodeLine{624              }
+\DoxyCodeLine{625              }
+\DoxyCodeLine{626              }
+\DoxyCodeLine{627          }
+\DoxyCodeLine{628          }
+\DoxyCodeLine{629          }
+\DoxyCodeLine{630                 \}}
+\DoxyCodeLine{631                 size = size -\/ 100;}
+\DoxyCodeLine{632 }
+\DoxyCodeLine{633                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{634                 remainder = size \% incrmentby;}
+\DoxyCodeLine{635                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{638                 \{}
+\DoxyCodeLine{639                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{640                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{641                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{642                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{643              }
+\DoxyCodeLine{644              }
+\DoxyCodeLine{645              }
+\DoxyCodeLine{646              }
+\DoxyCodeLine{647              }
+\DoxyCodeLine{648          }
+\DoxyCodeLine{649          }
+\DoxyCodeLine{650          }
+\DoxyCodeLine{651  }
+\DoxyCodeLine{652                 \}}
+\DoxyCodeLine{653 }
+\DoxyCodeLine{654                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{655                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{656                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{657                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{658         }
+\DoxyCodeLine{659          }
+\DoxyCodeLine{660          }
+\DoxyCodeLine{661          }
+\DoxyCodeLine{662          }
+\DoxyCodeLine{663      }
+\DoxyCodeLine{664      }
+\DoxyCodeLine{665      }
+\DoxyCodeLine{666 }
+\DoxyCodeLine{667                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{668             \}}
+\DoxyCodeLine{669         \}}
+\DoxyCodeLine{670     \}}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672 }
+\DoxyCodeLine{673 \}}
+\DoxyCodeLine{674 }
+\DoxyCodeLine{675 }
+\DoxyCodeLine{676 }
+\DoxyCodeLine{677  }
+\DoxyCodeLine{678 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp5(}
+\DoxyCodeLine{679 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{680 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{681 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{682 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4  }
+\DoxyCodeLine{683 ,\textcolor{keywordtype}{void}* dst5, \textcolor{keywordtype}{void}* src5}
+\DoxyCodeLine{684     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{685 \{}
+\DoxyCodeLine{686 }
+\DoxyCodeLine{687     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{688     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{689 }
+\DoxyCodeLine{690     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{691     uint32\_t remainder;}
+\DoxyCodeLine{692     uint32\_t timesToCopy;}
+\DoxyCodeLine{693 }
+\DoxyCodeLine{694 }
+\DoxyCodeLine{695     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{696     \{}
+\DoxyCodeLine{697         memcpy(dst, src, size);}
+\DoxyCodeLine{698         memcpy(dst2, src2, size);}
+\DoxyCodeLine{699         memcpy(dst3, src3, size);}
+\DoxyCodeLine{700         memcpy(dst4, src4, size);}
+\DoxyCodeLine{701         memcpy(dst5, src5, size);}
+\DoxyCodeLine{702  }
+\DoxyCodeLine{703  }
+\DoxyCodeLine{704  }
+\DoxyCodeLine{705  }
+\DoxyCodeLine{706  }
+\DoxyCodeLine{707  }
+\DoxyCodeLine{708  }
+\DoxyCodeLine{709     \}}
+\DoxyCodeLine{710     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{711     \{}
+\DoxyCodeLine{712         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{713         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{714         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{715         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{716         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{717 }
+\DoxyCodeLine{718 }
+\DoxyCodeLine{719 }
+\DoxyCodeLine{720 }
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722 }
+\DoxyCodeLine{723 }
+\DoxyCodeLine{724  }
+\DoxyCodeLine{725 }
+\DoxyCodeLine{726         remainder = size \% 10;}
+\DoxyCodeLine{727         timesToCopy = size / 10;}
+\DoxyCodeLine{728 }
+\DoxyCodeLine{729         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{730         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{731         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{732         \{}
+\DoxyCodeLine{733          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{734          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{735          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{736          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{737          memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10); }
+\DoxyCodeLine{738      }
+\DoxyCodeLine{739      }
+\DoxyCodeLine{740      }
+\DoxyCodeLine{741      }
+\DoxyCodeLine{742  }
+\DoxyCodeLine{743  }
+\DoxyCodeLine{744  }
+\DoxyCodeLine{745 }
+\DoxyCodeLine{746         \}}
+\DoxyCodeLine{747 }
+\DoxyCodeLine{748         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{749         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{750         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{751         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{752         memcpy(destp5 + (timesToCopy * 10), srcp5 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{753  }
+\DoxyCodeLine{754  }
+\DoxyCodeLine{755  }
+\DoxyCodeLine{756  }
+\DoxyCodeLine{757  }
+\DoxyCodeLine{758  }
+\DoxyCodeLine{759  }
+\DoxyCodeLine{760 }
+\DoxyCodeLine{761 }
+\DoxyCodeLine{762     \}}
+\DoxyCodeLine{763     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{764     \{}
+\DoxyCodeLine{765         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{766         \{}
+\DoxyCodeLine{767             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{768             \{}
+\DoxyCodeLine{769                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{770         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{771         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{772         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{773         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{774 }
+\DoxyCodeLine{775 }
+\DoxyCodeLine{776 }
+\DoxyCodeLine{777 }
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779 }
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781 }
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783 }
+\DoxyCodeLine{784                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{785                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{786                 \{}
+\DoxyCodeLine{787                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{788                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{789                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{790                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{791                     memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10);}
+\DoxyCodeLine{792              }
+\DoxyCodeLine{793              }
+\DoxyCodeLine{794              }
+\DoxyCodeLine{795              }
+\DoxyCodeLine{796          }
+\DoxyCodeLine{797          }
+\DoxyCodeLine{798          }
+\DoxyCodeLine{799                 \}}
+\DoxyCodeLine{800                 size = size -\/ 100;}
+\DoxyCodeLine{801 }
+\DoxyCodeLine{802                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{803                 remainder = size \% incrmentby;}
+\DoxyCodeLine{804                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{805 }
+\DoxyCodeLine{806                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{807                 \{}
+\DoxyCodeLine{808                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{809                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{810                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{811                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{812                     memcpy(destp5 + ((i * incrmentby) + 100), (srcp5 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{813              }
+\DoxyCodeLine{814              }
+\DoxyCodeLine{815              }
+\DoxyCodeLine{816              }
+\DoxyCodeLine{817          }
+\DoxyCodeLine{818          }
+\DoxyCodeLine{819          }
+\DoxyCodeLine{820  }
+\DoxyCodeLine{821                 \}}
+\DoxyCodeLine{822 }
+\DoxyCodeLine{823                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{824                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{825                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{826                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{827                 memcpy(destp5 + ((timesToCopy * incrmentby) + 100), srcp5 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{828          }
+\DoxyCodeLine{829          }
+\DoxyCodeLine{830          }
+\DoxyCodeLine{831          }
+\DoxyCodeLine{832      }
+\DoxyCodeLine{833      }
+\DoxyCodeLine{834      }
+\DoxyCodeLine{835 }
+\DoxyCodeLine{836                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{837             \}}
+\DoxyCodeLine{838         \}}
+\DoxyCodeLine{839     \}}
+\DoxyCodeLine{840 }
+\DoxyCodeLine{841 }
+\DoxyCodeLine{842 \}}
+\DoxyCodeLine{843 }
+\DoxyCodeLine{844 }
+\DoxyCodeLine{845 }
+\DoxyCodeLine{846  }
+\DoxyCodeLine{847 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp6(}
+\DoxyCodeLine{848 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{849 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{850 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{851 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4  }
+\DoxyCodeLine{852 ,\textcolor{keywordtype}{void}* dst5, \textcolor{keywordtype}{void}* src5  }
+\DoxyCodeLine{853 ,\textcolor{keywordtype}{void}* dst6, \textcolor{keywordtype}{void}* src6}
+\DoxyCodeLine{854     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{855 \{}
+\DoxyCodeLine{856 }
+\DoxyCodeLine{857     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{858     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{859 }
+\DoxyCodeLine{860     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{861     uint32\_t remainder;}
+\DoxyCodeLine{862     uint32\_t timesToCopy;}
+\DoxyCodeLine{863 }
+\DoxyCodeLine{864 }
+\DoxyCodeLine{865     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{866     \{}
+\DoxyCodeLine{867         memcpy(dst, src, size);}
+\DoxyCodeLine{868         memcpy(dst2, src2, size);}
+\DoxyCodeLine{869         memcpy(dst3, src3, size);}
+\DoxyCodeLine{870         memcpy(dst4, src4, size);}
+\DoxyCodeLine{871         memcpy(dst5, src5, size);}
+\DoxyCodeLine{872         memcpy(dst6, src6, size); }
+\DoxyCodeLine{873  }
+\DoxyCodeLine{874  }
+\DoxyCodeLine{875  }
+\DoxyCodeLine{876  }
+\DoxyCodeLine{877  }
+\DoxyCodeLine{878  }
+\DoxyCodeLine{879     \}}
+\DoxyCodeLine{880     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{881     \{}
+\DoxyCodeLine{882         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{883         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{884         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{885         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{886         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{887         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{888 }
+\DoxyCodeLine{889 }
+\DoxyCodeLine{890 }
+\DoxyCodeLine{891 }
+\DoxyCodeLine{892 }
+\DoxyCodeLine{893 }
+\DoxyCodeLine{894  }
+\DoxyCodeLine{895 }
+\DoxyCodeLine{896         remainder = size \% 10;}
+\DoxyCodeLine{897         timesToCopy = size / 10;}
+\DoxyCodeLine{898 }
+\DoxyCodeLine{899         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{900         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{901         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{902         \{}
+\DoxyCodeLine{903          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{904          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{905          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{906          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{907          memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10); }
+\DoxyCodeLine{908          memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{909      }
+\DoxyCodeLine{910      }
+\DoxyCodeLine{911      }
+\DoxyCodeLine{912  }
+\DoxyCodeLine{913  }
+\DoxyCodeLine{914  }
+\DoxyCodeLine{915 }
+\DoxyCodeLine{916         \}}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{918         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{919         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{920         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{921         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{922         memcpy(destp5 + (timesToCopy * 10), srcp5 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{923         memcpy(destp6 + (timesToCopy * 10), srcp6 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{924  }
+\DoxyCodeLine{925  }
+\DoxyCodeLine{926  }
+\DoxyCodeLine{927  }
+\DoxyCodeLine{928  }
+\DoxyCodeLine{929  }
+\DoxyCodeLine{930 }
+\DoxyCodeLine{931 }
+\DoxyCodeLine{932     \}}
+\DoxyCodeLine{933     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{934     \{}
+\DoxyCodeLine{935         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{936         \{}
+\DoxyCodeLine{937             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{938             \{}
+\DoxyCodeLine{939                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{940         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{941         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{942         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{943         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{944         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{945 }
+\DoxyCodeLine{946 }
+\DoxyCodeLine{947 }
+\DoxyCodeLine{948 }
+\DoxyCodeLine{949 }
+\DoxyCodeLine{950 }
+\DoxyCodeLine{951 }
+\DoxyCodeLine{952 }
+\DoxyCodeLine{953 }
+\DoxyCodeLine{954                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{955                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{956                 \{}
+\DoxyCodeLine{957                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{958                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{959                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{960                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{961                     memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10);}
+\DoxyCodeLine{962                     memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{963              }
+\DoxyCodeLine{964              }
+\DoxyCodeLine{965              }
+\DoxyCodeLine{966          }
+\DoxyCodeLine{967          }
+\DoxyCodeLine{968          }
+\DoxyCodeLine{969                 \}}
+\DoxyCodeLine{970                 size = size -\/ 100;}
+\DoxyCodeLine{971 }
+\DoxyCodeLine{972                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{973                 remainder = size \% incrmentby;}
+\DoxyCodeLine{974                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{975 }
+\DoxyCodeLine{976                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{977                 \{}
+\DoxyCodeLine{978                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{979                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{980                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{981                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{982                     memcpy(destp5 + ((i * incrmentby) + 100), (srcp5 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{983                     memcpy(destp6 + ((i * incrmentby) + 100), (srcp6 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{984              }
+\DoxyCodeLine{985              }
+\DoxyCodeLine{986              }
+\DoxyCodeLine{987          }
+\DoxyCodeLine{988          }
+\DoxyCodeLine{989          }
+\DoxyCodeLine{990  }
+\DoxyCodeLine{991                 \}}
+\DoxyCodeLine{992 }
+\DoxyCodeLine{993                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{994                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{995                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{996                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{997                 memcpy(destp5 + ((timesToCopy * incrmentby) + 100), srcp5 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{998                 memcpy(destp6 + ((timesToCopy * incrmentby) + 100), srcp6 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{999          }
+\DoxyCodeLine{1000          }
+\DoxyCodeLine{1001          }
+\DoxyCodeLine{1002      }
+\DoxyCodeLine{1003      }
+\DoxyCodeLine{1004      }
+\DoxyCodeLine{1005 }
+\DoxyCodeLine{1006                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1007             \}}
+\DoxyCodeLine{1008         \}}
+\DoxyCodeLine{1009     \}}
+\DoxyCodeLine{1010 }
+\DoxyCodeLine{1011 }
+\DoxyCodeLine{1012 \}}
+\DoxyCodeLine{1013 }
+\DoxyCodeLine{1014 }
+\DoxyCodeLine{1015 }
+\DoxyCodeLine{1016  }
+\DoxyCodeLine{1017 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp7(}
+\DoxyCodeLine{1018 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{1019 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{1020 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{1021 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4  }
+\DoxyCodeLine{1022 ,\textcolor{keywordtype}{void}* dst5, \textcolor{keywordtype}{void}* src5  }
+\DoxyCodeLine{1023 ,\textcolor{keywordtype}{void}* dst6, \textcolor{keywordtype}{void}* src6   }
+\DoxyCodeLine{1024 ,\textcolor{keywordtype}{void}* dst7, \textcolor{keywordtype}{void}* src7}
+\DoxyCodeLine{1025     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{1026 \{}
+\DoxyCodeLine{1027 }
+\DoxyCodeLine{1028     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{1029     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{1030 }
+\DoxyCodeLine{1031     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{1032     uint32\_t remainder;}
+\DoxyCodeLine{1033     uint32\_t timesToCopy;}
+\DoxyCodeLine{1034 }
+\DoxyCodeLine{1035 }
+\DoxyCodeLine{1036     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{1037     \{}
+\DoxyCodeLine{1038         memcpy(dst, src, size);}
+\DoxyCodeLine{1039         memcpy(dst2, src2, size);}
+\DoxyCodeLine{1040         memcpy(dst3, src3, size);}
+\DoxyCodeLine{1041         memcpy(dst4, src4, size);}
+\DoxyCodeLine{1042         memcpy(dst5, src5, size);}
+\DoxyCodeLine{1043         memcpy(dst6, src6, size); }
+\DoxyCodeLine{1044         memcpy(dst7, src7, size); }
+\DoxyCodeLine{1045  }
+\DoxyCodeLine{1046  }
+\DoxyCodeLine{1047  }
+\DoxyCodeLine{1048  }
+\DoxyCodeLine{1049  }
+\DoxyCodeLine{1050     \}}
+\DoxyCodeLine{1051     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{1052     \{}
+\DoxyCodeLine{1053         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1054         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1055         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1056         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1057         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1058         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1059         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1060 }
+\DoxyCodeLine{1061 }
+\DoxyCodeLine{1062 }
+\DoxyCodeLine{1063 }
+\DoxyCodeLine{1064 }
+\DoxyCodeLine{1065  }
+\DoxyCodeLine{1066 }
+\DoxyCodeLine{1067         remainder = size \% 10;}
+\DoxyCodeLine{1068         timesToCopy = size / 10;}
+\DoxyCodeLine{1069 }
+\DoxyCodeLine{1070         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1071         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{1072         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1073         \{}
+\DoxyCodeLine{1074          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{1075          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{1076          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{1077          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{1078          memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10); }
+\DoxyCodeLine{1079          memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1080          memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1081      }
+\DoxyCodeLine{1082      }
+\DoxyCodeLine{1083  }
+\DoxyCodeLine{1084  }
+\DoxyCodeLine{1085  }
+\DoxyCodeLine{1086 }
+\DoxyCodeLine{1087         \}}
+\DoxyCodeLine{1088 }
+\DoxyCodeLine{1089         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1090         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1091         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1092         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1093         memcpy(destp5 + (timesToCopy * 10), srcp5 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1094         memcpy(destp6 + (timesToCopy * 10), srcp6 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1095         memcpy(destp7 + (timesToCopy * 10), srcp7 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1096  }
+\DoxyCodeLine{1097  }
+\DoxyCodeLine{1098  }
+\DoxyCodeLine{1099  }
+\DoxyCodeLine{1100  }
+\DoxyCodeLine{1101 }
+\DoxyCodeLine{1102 }
+\DoxyCodeLine{1103     \}}
+\DoxyCodeLine{1104     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1105     \{}
+\DoxyCodeLine{1106         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{1107         \{}
+\DoxyCodeLine{1108             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{1109             \{}
+\DoxyCodeLine{1110                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1111         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1112         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1113         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1114         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1115         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1116         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1117 }
+\DoxyCodeLine{1118 }
+\DoxyCodeLine{1119 }
+\DoxyCodeLine{1120 }
+\DoxyCodeLine{1121 }
+\DoxyCodeLine{1122 }
+\DoxyCodeLine{1123 }
+\DoxyCodeLine{1124 }
+\DoxyCodeLine{1125                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{1126                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{1127                 \{}
+\DoxyCodeLine{1128                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{1129                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{1130                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{1131                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{1132                     memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10);}
+\DoxyCodeLine{1133                     memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1134                     memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1135              }
+\DoxyCodeLine{1136              }
+\DoxyCodeLine{1137          }
+\DoxyCodeLine{1138          }
+\DoxyCodeLine{1139          }
+\DoxyCodeLine{1140                 \}}
+\DoxyCodeLine{1141                 size = size -\/ 100;}
+\DoxyCodeLine{1142 }
+\DoxyCodeLine{1143                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{1144                 remainder = size \% incrmentby;}
+\DoxyCodeLine{1145                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{1146 }
+\DoxyCodeLine{1147                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1148                 \{}
+\DoxyCodeLine{1149                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1150                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1151                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1152                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1153                     memcpy(destp5 + ((i * incrmentby) + 100), (srcp5 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1154                     memcpy(destp6 + ((i * incrmentby) + 100), (srcp6 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1155                     memcpy(destp7 + ((i * incrmentby) + 100), (srcp7 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1156              }
+\DoxyCodeLine{1157              }
+\DoxyCodeLine{1158          }
+\DoxyCodeLine{1159          }
+\DoxyCodeLine{1160          }
+\DoxyCodeLine{1161  }
+\DoxyCodeLine{1162                 \}}
+\DoxyCodeLine{1163 }
+\DoxyCodeLine{1164                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1165                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1166                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1167                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1168                 memcpy(destp5 + ((timesToCopy * incrmentby) + 100), srcp5 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1169                 memcpy(destp6 + ((timesToCopy * incrmentby) + 100), srcp6 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1170                 memcpy(destp7 + ((timesToCopy * incrmentby) + 100), srcp7 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1171          }
+\DoxyCodeLine{1172          }
+\DoxyCodeLine{1173      }
+\DoxyCodeLine{1174      }
+\DoxyCodeLine{1175      }
+\DoxyCodeLine{1176 }
+\DoxyCodeLine{1177                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1178             \}}
+\DoxyCodeLine{1179         \}}
+\DoxyCodeLine{1180     \}}
+\DoxyCodeLine{1181 }
+\DoxyCodeLine{1182 }
+\DoxyCodeLine{1183 \}}
+\DoxyCodeLine{1184 }
+\DoxyCodeLine{1185 }
+\DoxyCodeLine{1186 }
+\DoxyCodeLine{1187  }
+\DoxyCodeLine{1188 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp8(}
+\DoxyCodeLine{1189 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{1190 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{1191 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{1192 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4  }
+\DoxyCodeLine{1193 ,\textcolor{keywordtype}{void}* dst5, \textcolor{keywordtype}{void}* src5  }
+\DoxyCodeLine{1194 ,\textcolor{keywordtype}{void}* dst6, \textcolor{keywordtype}{void}* src6   }
+\DoxyCodeLine{1195 ,\textcolor{keywordtype}{void}* dst7, \textcolor{keywordtype}{void}* src7   }
+\DoxyCodeLine{1196 ,\textcolor{keywordtype}{void}* dst8, \textcolor{keywordtype}{void}* src8}
+\DoxyCodeLine{1197     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{1198 \{}
+\DoxyCodeLine{1199 }
+\DoxyCodeLine{1200     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{1201     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{1202 }
+\DoxyCodeLine{1203     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{1204     uint32\_t remainder;}
+\DoxyCodeLine{1205     uint32\_t timesToCopy;}
+\DoxyCodeLine{1206 }
+\DoxyCodeLine{1207 }
+\DoxyCodeLine{1208     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{1209     \{}
+\DoxyCodeLine{1210         memcpy(dst, src, size);}
+\DoxyCodeLine{1211         memcpy(dst2, src2, size);}
+\DoxyCodeLine{1212         memcpy(dst3, src3, size);}
+\DoxyCodeLine{1213         memcpy(dst4, src4, size);}
+\DoxyCodeLine{1214         memcpy(dst5, src5, size);}
+\DoxyCodeLine{1215         memcpy(dst6, src6, size); }
+\DoxyCodeLine{1216         memcpy(dst7, src7, size); }
+\DoxyCodeLine{1217         memcpy(dst8, src8, size); }
+\DoxyCodeLine{1218  }
+\DoxyCodeLine{1219  }
+\DoxyCodeLine{1220  }
+\DoxyCodeLine{1221  }
+\DoxyCodeLine{1222     \}}
+\DoxyCodeLine{1223     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{1224     \{}
+\DoxyCodeLine{1225         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1226         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1227         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1228         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1229         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1230         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1231         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1232         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1233 }
+\DoxyCodeLine{1234 }
+\DoxyCodeLine{1235 }
+\DoxyCodeLine{1236 }
+\DoxyCodeLine{1237  }
+\DoxyCodeLine{1238 }
+\DoxyCodeLine{1239         remainder = size \% 10;}
+\DoxyCodeLine{1240         timesToCopy = size / 10;}
+\DoxyCodeLine{1241 }
+\DoxyCodeLine{1242         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1243         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{1244         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1245         \{}
+\DoxyCodeLine{1246          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{1247          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{1248          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{1249          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{1250          memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10); }
+\DoxyCodeLine{1251          memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1252          memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1253          memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1254      }
+\DoxyCodeLine{1255  }
+\DoxyCodeLine{1256  }
+\DoxyCodeLine{1257  }
+\DoxyCodeLine{1258 }
+\DoxyCodeLine{1259         \}}
+\DoxyCodeLine{1260 }
+\DoxyCodeLine{1261         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1262         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1263         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1264         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1265         memcpy(destp5 + (timesToCopy * 10), srcp5 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1266         memcpy(destp6 + (timesToCopy * 10), srcp6 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1267         memcpy(destp7 + (timesToCopy * 10), srcp7 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1268         memcpy(destp8 + (timesToCopy * 10), srcp8 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1269  }
+\DoxyCodeLine{1270  }
+\DoxyCodeLine{1271  }
+\DoxyCodeLine{1272  }
+\DoxyCodeLine{1273 }
+\DoxyCodeLine{1274 }
+\DoxyCodeLine{1275     \}}
+\DoxyCodeLine{1276     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1277     \{}
+\DoxyCodeLine{1278         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{1279         \{}
+\DoxyCodeLine{1280             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{1281             \{}
+\DoxyCodeLine{1282                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1283         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1284         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1285         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1286         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1287         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1288         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1289         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1290 }
+\DoxyCodeLine{1291 }
+\DoxyCodeLine{1292 }
+\DoxyCodeLine{1293 }
+\DoxyCodeLine{1294 }
+\DoxyCodeLine{1295 }
+\DoxyCodeLine{1296 }
+\DoxyCodeLine{1297                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{1298                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{1299                 \{}
+\DoxyCodeLine{1300                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{1301                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{1302                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{1303                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{1304                     memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10);}
+\DoxyCodeLine{1305                     memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1306                     memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1307                     memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1308              }
+\DoxyCodeLine{1309          }
+\DoxyCodeLine{1310          }
+\DoxyCodeLine{1311          }
+\DoxyCodeLine{1312                 \}}
+\DoxyCodeLine{1313                 size = size -\/ 100;}
+\DoxyCodeLine{1314 }
+\DoxyCodeLine{1315                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{1316                 remainder = size \% incrmentby;}
+\DoxyCodeLine{1317                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{1318 }
+\DoxyCodeLine{1319                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1320                 \{}
+\DoxyCodeLine{1321                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1322                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1323                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1324                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1325                     memcpy(destp5 + ((i * incrmentby) + 100), (srcp5 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1326                     memcpy(destp6 + ((i * incrmentby) + 100), (srcp6 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1327                     memcpy(destp7 + ((i * incrmentby) + 100), (srcp7 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1328                     memcpy(destp8 + ((i * incrmentby) + 100), (srcp8 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1329              }
+\DoxyCodeLine{1330          }
+\DoxyCodeLine{1331          }
+\DoxyCodeLine{1332          }
+\DoxyCodeLine{1333  }
+\DoxyCodeLine{1334                 \}}
+\DoxyCodeLine{1335 }
+\DoxyCodeLine{1336                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1337                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1338                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1339                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1340                 memcpy(destp5 + ((timesToCopy * incrmentby) + 100), srcp5 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1341                 memcpy(destp6 + ((timesToCopy * incrmentby) + 100), srcp6 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1342                 memcpy(destp7 + ((timesToCopy * incrmentby) + 100), srcp7 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1343                 memcpy(destp8 + ((timesToCopy * incrmentby) + 100), srcp8 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1344          }
+\DoxyCodeLine{1345      }
+\DoxyCodeLine{1346      }
+\DoxyCodeLine{1347      }
+\DoxyCodeLine{1348 }
+\DoxyCodeLine{1349                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1350             \}}
+\DoxyCodeLine{1351         \}}
+\DoxyCodeLine{1352     \}}
+\DoxyCodeLine{1353 }
+\DoxyCodeLine{1354 }
+\DoxyCodeLine{1355 \}}
+\DoxyCodeLine{1356 }
+\DoxyCodeLine{1357 }
+\DoxyCodeLine{1358 }
+\DoxyCodeLine{1359  }
+\DoxyCodeLine{1360 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp9(}
+\DoxyCodeLine{1361 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{1362 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{1363 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{1364 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4  }
+\DoxyCodeLine{1365 ,\textcolor{keywordtype}{void}* dst5, \textcolor{keywordtype}{void}* src5  }
+\DoxyCodeLine{1366 ,\textcolor{keywordtype}{void}* dst6, \textcolor{keywordtype}{void}* src6   }
+\DoxyCodeLine{1367 ,\textcolor{keywordtype}{void}* dst7, \textcolor{keywordtype}{void}* src7   }
+\DoxyCodeLine{1368 ,\textcolor{keywordtype}{void}* dst8, \textcolor{keywordtype}{void}* src8   }
+\DoxyCodeLine{1369 ,\textcolor{keywordtype}{void}* dst9, \textcolor{keywordtype}{void}* src9}
+\DoxyCodeLine{1370     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{1371 \{}
+\DoxyCodeLine{1372 }
+\DoxyCodeLine{1373     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{1374     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{1375 }
+\DoxyCodeLine{1376     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{1377     uint32\_t remainder;}
+\DoxyCodeLine{1378     uint32\_t timesToCopy;}
+\DoxyCodeLine{1379 }
+\DoxyCodeLine{1380 }
+\DoxyCodeLine{1381     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{1382     \{}
+\DoxyCodeLine{1383         memcpy(dst, src, size);}
+\DoxyCodeLine{1384         memcpy(dst2, src2, size);}
+\DoxyCodeLine{1385         memcpy(dst3, src3, size);}
+\DoxyCodeLine{1386         memcpy(dst4, src4, size);}
+\DoxyCodeLine{1387         memcpy(dst5, src5, size);}
+\DoxyCodeLine{1388         memcpy(dst6, src6, size); }
+\DoxyCodeLine{1389         memcpy(dst7, src7, size); }
+\DoxyCodeLine{1390         memcpy(dst8, src8, size); }
+\DoxyCodeLine{1391         memcpy(dst9, src9, size); }
+\DoxyCodeLine{1392  }
+\DoxyCodeLine{1393  }
+\DoxyCodeLine{1394  }
+\DoxyCodeLine{1395     \}}
+\DoxyCodeLine{1396     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{1397     \{}
+\DoxyCodeLine{1398         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1399         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1400         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1401         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1402         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1403         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1404         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1405         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1406         \textcolor{keywordtype}{char} *destp9 = (\textcolor{keywordtype}{char} *)dst9; \textcolor{keywordtype}{char} *srcp9 = (\textcolor{keywordtype}{char} *)src9;}
+\DoxyCodeLine{1407 }
+\DoxyCodeLine{1408 }
+\DoxyCodeLine{1409 }
+\DoxyCodeLine{1410  }
+\DoxyCodeLine{1411 }
+\DoxyCodeLine{1412         remainder = size \% 10;}
+\DoxyCodeLine{1413         timesToCopy = size / 10;}
+\DoxyCodeLine{1414 }
+\DoxyCodeLine{1415         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1416         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{1417         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1418         \{}
+\DoxyCodeLine{1419          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{1420          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{1421          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{1422          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{1423          memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10); }
+\DoxyCodeLine{1424          memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1425          memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1426          memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1427          memcpy(destp9 + (i * 10), srcp9 + (i * 10), 10); }
+\DoxyCodeLine{1428  }
+\DoxyCodeLine{1429  }
+\DoxyCodeLine{1430  }
+\DoxyCodeLine{1431 }
+\DoxyCodeLine{1432         \}}
+\DoxyCodeLine{1433 }
+\DoxyCodeLine{1434         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1435         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1436         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1437         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1438         memcpy(destp5 + (timesToCopy * 10), srcp5 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1439         memcpy(destp6 + (timesToCopy * 10), srcp6 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1440         memcpy(destp7 + (timesToCopy * 10), srcp7 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1441         memcpy(destp8 + (timesToCopy * 10), srcp8 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1442         memcpy(destp9 + (timesToCopy * 10), srcp9 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1443  }
+\DoxyCodeLine{1444  }
+\DoxyCodeLine{1445  }
+\DoxyCodeLine{1446 }
+\DoxyCodeLine{1447 }
+\DoxyCodeLine{1448     \}}
+\DoxyCodeLine{1449     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1450     \{}
+\DoxyCodeLine{1451         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{1452         \{}
+\DoxyCodeLine{1453             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{1454             \{}
+\DoxyCodeLine{1455                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1456         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1457         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1458         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1459         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1460         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1461         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1462         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1463         \textcolor{keywordtype}{char} *destp9 = (\textcolor{keywordtype}{char} *)dst9; \textcolor{keywordtype}{char} *srcp9 = (\textcolor{keywordtype}{char} *)src9;}
+\DoxyCodeLine{1464 }
+\DoxyCodeLine{1465 }
+\DoxyCodeLine{1466 }
+\DoxyCodeLine{1467 }
+\DoxyCodeLine{1468 }
+\DoxyCodeLine{1469 }
+\DoxyCodeLine{1470                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{1471                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{1472                 \{}
+\DoxyCodeLine{1473                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{1474                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{1475                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{1476                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{1477                     memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10);}
+\DoxyCodeLine{1478                     memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1479                     memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1480                     memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1481                     memcpy(destp9 + (i * 10), srcp9 + (i * 10), 10); }
+\DoxyCodeLine{1482          }
+\DoxyCodeLine{1483          }
+\DoxyCodeLine{1484          }
+\DoxyCodeLine{1485                 \}}
+\DoxyCodeLine{1486                 size = size -\/ 100;}
+\DoxyCodeLine{1487 }
+\DoxyCodeLine{1488                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{1489                 remainder = size \% incrmentby;}
+\DoxyCodeLine{1490                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{1491 }
+\DoxyCodeLine{1492                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1493                 \{}
+\DoxyCodeLine{1494                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1495                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1496                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1497                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1498                     memcpy(destp5 + ((i * incrmentby) + 100), (srcp5 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1499                     memcpy(destp6 + ((i * incrmentby) + 100), (srcp6 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1500                     memcpy(destp7 + ((i * incrmentby) + 100), (srcp7 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1501                     memcpy(destp8 + ((i * incrmentby) + 100), (srcp8 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1502                     memcpy(destp9 + ((i * incrmentby) + 100), (srcp9 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1503          }
+\DoxyCodeLine{1504          }
+\DoxyCodeLine{1505          }
+\DoxyCodeLine{1506  }
+\DoxyCodeLine{1507                 \}}
+\DoxyCodeLine{1508 }
+\DoxyCodeLine{1509                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1510                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1511                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1512                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1513                 memcpy(destp5 + ((timesToCopy * incrmentby) + 100), srcp5 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1514                 memcpy(destp6 + ((timesToCopy * incrmentby) + 100), srcp6 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1515                 memcpy(destp7 + ((timesToCopy * incrmentby) + 100), srcp7 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1516                 memcpy(destp8 + ((timesToCopy * incrmentby) + 100), srcp8 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1517                 memcpy(destp9 + ((timesToCopy * incrmentby) + 100), srcp9 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1518      }
+\DoxyCodeLine{1519      }
+\DoxyCodeLine{1520      }
+\DoxyCodeLine{1521 }
+\DoxyCodeLine{1522                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1523             \}}
+\DoxyCodeLine{1524         \}}
+\DoxyCodeLine{1525     \}}
+\DoxyCodeLine{1526 }
+\DoxyCodeLine{1527 }
+\DoxyCodeLine{1528 \}}
+\DoxyCodeLine{1529 }
+\DoxyCodeLine{1530 }
+\DoxyCodeLine{1531 }
+\DoxyCodeLine{1532  }
+\DoxyCodeLine{1533 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp10(}
+\DoxyCodeLine{1534 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{1535 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{1536 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{1537 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4  }
+\DoxyCodeLine{1538 ,\textcolor{keywordtype}{void}* dst5, \textcolor{keywordtype}{void}* src5  }
+\DoxyCodeLine{1539 ,\textcolor{keywordtype}{void}* dst6, \textcolor{keywordtype}{void}* src6   }
+\DoxyCodeLine{1540 ,\textcolor{keywordtype}{void}* dst7, \textcolor{keywordtype}{void}* src7   }
+\DoxyCodeLine{1541 ,\textcolor{keywordtype}{void}* dst8, \textcolor{keywordtype}{void}* src8   }
+\DoxyCodeLine{1542 ,\textcolor{keywordtype}{void}* dst9, \textcolor{keywordtype}{void}* src9   }
+\DoxyCodeLine{1543 ,\textcolor{keywordtype}{void}* dst10, \textcolor{keywordtype}{void}* src10  }
+\DoxyCodeLine{1544     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{1545 \{}
+\DoxyCodeLine{1546 }
+\DoxyCodeLine{1547     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{1548     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{1549 }
+\DoxyCodeLine{1550     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{1551     uint32\_t remainder;}
+\DoxyCodeLine{1552     uint32\_t timesToCopy;}
+\DoxyCodeLine{1553 }
+\DoxyCodeLine{1554 }
+\DoxyCodeLine{1555     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{1556     \{}
+\DoxyCodeLine{1557         memcpy(dst, src, size);}
+\DoxyCodeLine{1558         memcpy(dst2, src2, size);}
+\DoxyCodeLine{1559         memcpy(dst3, src3, size);}
+\DoxyCodeLine{1560         memcpy(dst4, src4, size);}
+\DoxyCodeLine{1561         memcpy(dst5, src5, size);}
+\DoxyCodeLine{1562         memcpy(dst6, src6, size); }
+\DoxyCodeLine{1563         memcpy(dst7, src7, size); }
+\DoxyCodeLine{1564         memcpy(dst8, src8, size); }
+\DoxyCodeLine{1565         memcpy(dst9, src9, size); }
+\DoxyCodeLine{1566         memcpy(dst10, src10, size); }
+\DoxyCodeLine{1567  }
+\DoxyCodeLine{1568  }
+\DoxyCodeLine{1569     \}}
+\DoxyCodeLine{1570     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{1571     \{}
+\DoxyCodeLine{1572         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1573         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1574         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1575         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1576         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1577         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1578         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1579         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1580         \textcolor{keywordtype}{char} *destp9 = (\textcolor{keywordtype}{char} *)dst9; \textcolor{keywordtype}{char} *srcp9 = (\textcolor{keywordtype}{char} *)src9;}
+\DoxyCodeLine{1581         \textcolor{keywordtype}{char} *destp10 = (\textcolor{keywordtype}{char} *)dst10; \textcolor{keywordtype}{char} *srcp10 = (\textcolor{keywordtype}{char} *)src10;}
+\DoxyCodeLine{1582 }
+\DoxyCodeLine{1583 }
+\DoxyCodeLine{1584  }
+\DoxyCodeLine{1585 }
+\DoxyCodeLine{1586         remainder = size \% 10;}
+\DoxyCodeLine{1587         timesToCopy = size / 10;}
+\DoxyCodeLine{1588 }
+\DoxyCodeLine{1589         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1590         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{1591         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1592         \{}
+\DoxyCodeLine{1593          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{1594          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{1595          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{1596          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{1597          memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10); }
+\DoxyCodeLine{1598          memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1599          memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1600          memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1601          memcpy(destp9 + (i * 10), srcp9 + (i * 10), 10); }
+\DoxyCodeLine{1602          memcpy(destp10 + (i * 10), srcp10 + (i * 10), 10); }
+\DoxyCodeLine{1603  }
+\DoxyCodeLine{1604  }
+\DoxyCodeLine{1605 }
+\DoxyCodeLine{1606         \}}
+\DoxyCodeLine{1607 }
+\DoxyCodeLine{1608         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1609         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1610         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1611         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1612         memcpy(destp5 + (timesToCopy * 10), srcp5 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1613         memcpy(destp6 + (timesToCopy * 10), srcp6 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1614         memcpy(destp7 + (timesToCopy * 10), srcp7 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1615         memcpy(destp8 + (timesToCopy * 10), srcp8 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1616         memcpy(destp9 + (timesToCopy * 10), srcp9 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1617         memcpy(destp10 + (timesToCopy * 10), srcp10 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1618  }
+\DoxyCodeLine{1619  }
+\DoxyCodeLine{1620 }
+\DoxyCodeLine{1621 }
+\DoxyCodeLine{1622     \}}
+\DoxyCodeLine{1623     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1624     \{}
+\DoxyCodeLine{1625         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{1626         \{}
+\DoxyCodeLine{1627             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{1628             \{}
+\DoxyCodeLine{1629                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1630         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1631         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1632         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1633         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1634         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1635         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1636         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1637         \textcolor{keywordtype}{char} *destp9 = (\textcolor{keywordtype}{char} *)dst9; \textcolor{keywordtype}{char} *srcp9 = (\textcolor{keywordtype}{char} *)src9;}
+\DoxyCodeLine{1638         \textcolor{keywordtype}{char} *destp10 = (\textcolor{keywordtype}{char} *)dst10; \textcolor{keywordtype}{char} *srcp10 = (\textcolor{keywordtype}{char} *)src10;}
+\DoxyCodeLine{1639 }
+\DoxyCodeLine{1640 }
+\DoxyCodeLine{1641 }
+\DoxyCodeLine{1642 }
+\DoxyCodeLine{1643 }
+\DoxyCodeLine{1644                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{1645                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{1646                 \{}
+\DoxyCodeLine{1647                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{1648                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{1649                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{1650                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{1651                     memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10);}
+\DoxyCodeLine{1652                     memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1653                     memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1654                     memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1655                     memcpy(destp9 + (i * 10), srcp9 + (i * 10), 10); }
+\DoxyCodeLine{1656                     memcpy(destp10 + (i * 10), srcp10 + (i * 10), 10); }
+\DoxyCodeLine{1657          }
+\DoxyCodeLine{1658          }
+\DoxyCodeLine{1659                 \}}
+\DoxyCodeLine{1660                 size = size -\/ 100;}
+\DoxyCodeLine{1661 }
+\DoxyCodeLine{1662                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{1663                 remainder = size \% incrmentby;}
+\DoxyCodeLine{1664                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{1665 }
+\DoxyCodeLine{1666                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1667                 \{}
+\DoxyCodeLine{1668                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1669                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1670                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1671                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1672                     memcpy(destp5 + ((i * incrmentby) + 100), (srcp5 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1673                     memcpy(destp6 + ((i * incrmentby) + 100), (srcp6 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1674                     memcpy(destp7 + ((i * incrmentby) + 100), (srcp7 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1675                     memcpy(destp8 + ((i * incrmentby) + 100), (srcp8 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1676                     memcpy(destp9 + ((i * incrmentby) + 100), (srcp9 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1677                     memcpy(destp10 + ((i * incrmentby) + 100), (srcp10 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1678          }
+\DoxyCodeLine{1679          }
+\DoxyCodeLine{1680  }
+\DoxyCodeLine{1681                 \}}
+\DoxyCodeLine{1682 }
+\DoxyCodeLine{1683                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1684                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1685                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1686                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1687                 memcpy(destp5 + ((timesToCopy * incrmentby) + 100), srcp5 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1688                 memcpy(destp6 + ((timesToCopy * incrmentby) + 100), srcp6 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1689                 memcpy(destp7 + ((timesToCopy * incrmentby) + 100), srcp7 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1690                 memcpy(destp8 + ((timesToCopy * incrmentby) + 100), srcp8 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1691                 memcpy(destp9 + ((timesToCopy * incrmentby) + 100), srcp9 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1692                 memcpy(destp10 + ((timesToCopy * incrmentby) + 100), srcp10 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1693      }
+\DoxyCodeLine{1694      }
+\DoxyCodeLine{1695 }
+\DoxyCodeLine{1696                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1697             \}}
+\DoxyCodeLine{1698         \}}
+\DoxyCodeLine{1699     \}}
+\DoxyCodeLine{1700 }
+\DoxyCodeLine{1701 }
+\DoxyCodeLine{1702 \}}
+\DoxyCodeLine{1703 }
+\DoxyCodeLine{1704 }
+\DoxyCodeLine{1705 }
+\DoxyCodeLine{1706  }
+\DoxyCodeLine{1707 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp11(}
+\DoxyCodeLine{1708 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{1709 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{1710 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{1711 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4  }
+\DoxyCodeLine{1712 ,\textcolor{keywordtype}{void}* dst5, \textcolor{keywordtype}{void}* src5  }
+\DoxyCodeLine{1713 ,\textcolor{keywordtype}{void}* dst6, \textcolor{keywordtype}{void}* src6   }
+\DoxyCodeLine{1714 ,\textcolor{keywordtype}{void}* dst7, \textcolor{keywordtype}{void}* src7   }
+\DoxyCodeLine{1715 ,\textcolor{keywordtype}{void}* dst8, \textcolor{keywordtype}{void}* src8   }
+\DoxyCodeLine{1716 ,\textcolor{keywordtype}{void}* dst9, \textcolor{keywordtype}{void}* src9   }
+\DoxyCodeLine{1717 ,\textcolor{keywordtype}{void}* dst10, \textcolor{keywordtype}{void}* src10    }
+\DoxyCodeLine{1718 ,\textcolor{keywordtype}{void}* dst11, \textcolor{keywordtype}{void}* src11   }
+\DoxyCodeLine{1719     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{1720 \{}
+\DoxyCodeLine{1721 }
+\DoxyCodeLine{1722     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{1723     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{1724 }
+\DoxyCodeLine{1725     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{1726     uint32\_t remainder;}
+\DoxyCodeLine{1727     uint32\_t timesToCopy;}
+\DoxyCodeLine{1728 }
+\DoxyCodeLine{1729 }
+\DoxyCodeLine{1730     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{1731     \{}
+\DoxyCodeLine{1732         memcpy(dst, src, size);}
+\DoxyCodeLine{1733         memcpy(dst2, src2, size);}
+\DoxyCodeLine{1734         memcpy(dst3, src3, size);}
+\DoxyCodeLine{1735         memcpy(dst4, src4, size);}
+\DoxyCodeLine{1736         memcpy(dst5, src5, size);}
+\DoxyCodeLine{1737         memcpy(dst6, src6, size); }
+\DoxyCodeLine{1738         memcpy(dst7, src7, size); }
+\DoxyCodeLine{1739         memcpy(dst8, src8, size); }
+\DoxyCodeLine{1740         memcpy(dst9, src9, size); }
+\DoxyCodeLine{1741         memcpy(dst10, src10, size); }
+\DoxyCodeLine{1742         memcpy(dst11, src11, size); }
+\DoxyCodeLine{1743  }
+\DoxyCodeLine{1744     \}}
+\DoxyCodeLine{1745     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{1746     \{}
+\DoxyCodeLine{1747         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1748         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1749         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1750         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1751         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1752         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1753         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1754         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1755         \textcolor{keywordtype}{char} *destp9 = (\textcolor{keywordtype}{char} *)dst9; \textcolor{keywordtype}{char} *srcp9 = (\textcolor{keywordtype}{char} *)src9;}
+\DoxyCodeLine{1756         \textcolor{keywordtype}{char} *destp10 = (\textcolor{keywordtype}{char} *)dst10; \textcolor{keywordtype}{char} *srcp10 = (\textcolor{keywordtype}{char} *)src10;}
+\DoxyCodeLine{1757         \textcolor{keywordtype}{char} *destp11 = (\textcolor{keywordtype}{char} *)dst11; \textcolor{keywordtype}{char} *srcp11 = (\textcolor{keywordtype}{char} *)src11;}
+\DoxyCodeLine{1758 }
+\DoxyCodeLine{1759  }
+\DoxyCodeLine{1760 }
+\DoxyCodeLine{1761         remainder = size \% 10;}
+\DoxyCodeLine{1762         timesToCopy = size / 10;}
+\DoxyCodeLine{1763 }
+\DoxyCodeLine{1764         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1765         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{1766         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1767         \{}
+\DoxyCodeLine{1768          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{1769          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{1770          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{1771          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{1772          memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10); }
+\DoxyCodeLine{1773          memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1774          memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1775          memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1776          memcpy(destp9 + (i * 10), srcp9 + (i * 10), 10); }
+\DoxyCodeLine{1777          memcpy(destp10 + (i * 10), srcp10 + (i * 10), 10); }
+\DoxyCodeLine{1778          memcpy(destp11 + (i * 10), srcp11 + (i * 10), 10); }
+\DoxyCodeLine{1779  }
+\DoxyCodeLine{1780 }
+\DoxyCodeLine{1781         \}}
+\DoxyCodeLine{1782 }
+\DoxyCodeLine{1783         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1784         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1785         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1786         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1787         memcpy(destp5 + (timesToCopy * 10), srcp5 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1788         memcpy(destp6 + (timesToCopy * 10), srcp6 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1789         memcpy(destp7 + (timesToCopy * 10), srcp7 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1790         memcpy(destp8 + (timesToCopy * 10), srcp8 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1791         memcpy(destp9 + (timesToCopy * 10), srcp9 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1792         memcpy(destp10 + (timesToCopy * 10), srcp10 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1793         memcpy(destp11 + (timesToCopy * 10), srcp11 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1794  }
+\DoxyCodeLine{1795 }
+\DoxyCodeLine{1796 }
+\DoxyCodeLine{1797     \}}
+\DoxyCodeLine{1798     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1799     \{}
+\DoxyCodeLine{1800         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{1801         \{}
+\DoxyCodeLine{1802             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{1803             \{}
+\DoxyCodeLine{1804                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1805         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1806         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1807         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1808         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1809         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1810         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1811         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1812         \textcolor{keywordtype}{char} *destp9 = (\textcolor{keywordtype}{char} *)dst9; \textcolor{keywordtype}{char} *srcp9 = (\textcolor{keywordtype}{char} *)src9;}
+\DoxyCodeLine{1813         \textcolor{keywordtype}{char} *destp10 = (\textcolor{keywordtype}{char} *)dst10; \textcolor{keywordtype}{char} *srcp10 = (\textcolor{keywordtype}{char} *)src10;}
+\DoxyCodeLine{1814         \textcolor{keywordtype}{char} *destp11 = (\textcolor{keywordtype}{char} *)dst11; \textcolor{keywordtype}{char} *srcp11 = (\textcolor{keywordtype}{char} *)src11;}
+\DoxyCodeLine{1815 }
+\DoxyCodeLine{1816 }
+\DoxyCodeLine{1817 }
+\DoxyCodeLine{1818 }
+\DoxyCodeLine{1819                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{1820                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{1821                 \{}
+\DoxyCodeLine{1822                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{1823                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{1824                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{1825                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{1826                     memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10);}
+\DoxyCodeLine{1827                     memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1828                     memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1829                     memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1830                     memcpy(destp9 + (i * 10), srcp9 + (i * 10), 10); }
+\DoxyCodeLine{1831                     memcpy(destp10 + (i * 10), srcp10 + (i * 10), 10); }
+\DoxyCodeLine{1832                     memcpy(destp11 + (i * 10), srcp11 + (i * 10), 10); }
+\DoxyCodeLine{1833          }
+\DoxyCodeLine{1834                 \}}
+\DoxyCodeLine{1835                 size = size -\/ 100;}
+\DoxyCodeLine{1836 }
+\DoxyCodeLine{1837                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{1838                 remainder = size \% incrmentby;}
+\DoxyCodeLine{1839                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{1840 }
+\DoxyCodeLine{1841                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1842                 \{}
+\DoxyCodeLine{1843                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1844                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1845                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1846                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1847                     memcpy(destp5 + ((i * incrmentby) + 100), (srcp5 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1848                     memcpy(destp6 + ((i * incrmentby) + 100), (srcp6 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1849                     memcpy(destp7 + ((i * incrmentby) + 100), (srcp7 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1850                     memcpy(destp8 + ((i * incrmentby) + 100), (srcp8 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1851                     memcpy(destp9 + ((i * incrmentby) + 100), (srcp9 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1852                     memcpy(destp10 + ((i * incrmentby) + 100), (srcp10 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1853                     memcpy(destp11 + ((i * incrmentby) + 100), (srcp11 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{1854          }
+\DoxyCodeLine{1855  }
+\DoxyCodeLine{1856                 \}}
+\DoxyCodeLine{1857 }
+\DoxyCodeLine{1858                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1859                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1860                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1861                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1862                 memcpy(destp5 + ((timesToCopy * incrmentby) + 100), srcp5 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{1863                 memcpy(destp6 + ((timesToCopy * incrmentby) + 100), srcp6 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1864                 memcpy(destp7 + ((timesToCopy * incrmentby) + 100), srcp7 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1865                 memcpy(destp8 + ((timesToCopy * incrmentby) + 100), srcp8 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1866                 memcpy(destp9 + ((timesToCopy * incrmentby) + 100), srcp9 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1867                 memcpy(destp10 + ((timesToCopy * incrmentby) + 100), srcp10 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1868                 memcpy(destp11 + ((timesToCopy * incrmentby) + 100), srcp11 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{1869      }
+\DoxyCodeLine{1870 }
+\DoxyCodeLine{1871                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{1872             \}}
+\DoxyCodeLine{1873         \}}
+\DoxyCodeLine{1874     \}}
+\DoxyCodeLine{1875 }
+\DoxyCodeLine{1876 }
+\DoxyCodeLine{1877 \}}
+\DoxyCodeLine{1878 }
+\DoxyCodeLine{1879 }
+\DoxyCodeLine{1880 }
+\DoxyCodeLine{1881  }
+\DoxyCodeLine{1882 \textcolor{keyword}{static} \textcolor{keywordtype}{void} AEmemcpyManyFromBottomUp12(}
+\DoxyCodeLine{1883 \textcolor{keywordtype}{void}* dst, \textcolor{keywordtype}{void}* src  }
+\DoxyCodeLine{1884 ,\textcolor{keywordtype}{void}* dst2, \textcolor{keywordtype}{void}* src2  }
+\DoxyCodeLine{1885 ,\textcolor{keywordtype}{void}* dst3, \textcolor{keywordtype}{void}* src3  }
+\DoxyCodeLine{1886 ,\textcolor{keywordtype}{void}* dst4, \textcolor{keywordtype}{void}* src4  }
+\DoxyCodeLine{1887 ,\textcolor{keywordtype}{void}* dst5, \textcolor{keywordtype}{void}* src5  }
+\DoxyCodeLine{1888 ,\textcolor{keywordtype}{void}* dst6, \textcolor{keywordtype}{void}* src6   }
+\DoxyCodeLine{1889 ,\textcolor{keywordtype}{void}* dst7, \textcolor{keywordtype}{void}* src7   }
+\DoxyCodeLine{1890 ,\textcolor{keywordtype}{void}* dst8, \textcolor{keywordtype}{void}* src8   }
+\DoxyCodeLine{1891 ,\textcolor{keywordtype}{void}* dst9, \textcolor{keywordtype}{void}* src9   }
+\DoxyCodeLine{1892 ,\textcolor{keywordtype}{void}* dst10, \textcolor{keywordtype}{void}* src10    }
+\DoxyCodeLine{1893 ,\textcolor{keywordtype}{void}* dst11, \textcolor{keywordtype}{void}* src11    }
+\DoxyCodeLine{1894 ,\textcolor{keywordtype}{void}* dst12, \textcolor{keywordtype}{void}* src12    }
+\DoxyCodeLine{1895     ,uint32\_t sizeForAllVars)}
+\DoxyCodeLine{1896 \{}
+\DoxyCodeLine{1897 }
+\DoxyCodeLine{1898     \textcolor{comment}{//for now the sizes can only be the same for all vars}}
+\DoxyCodeLine{1899     uint32\_t size = sizeForAllVars;}
+\DoxyCodeLine{1900 }
+\DoxyCodeLine{1901     \textcolor{comment}{// copy by the largest it is divisible by}}
+\DoxyCodeLine{1902     uint32\_t remainder;}
+\DoxyCodeLine{1903     uint32\_t timesToCopy;}
+\DoxyCodeLine{1904 }
+\DoxyCodeLine{1905 }
+\DoxyCodeLine{1906     \textcolor{keywordflow}{if} (size < 10)}
+\DoxyCodeLine{1907     \{}
+\DoxyCodeLine{1908         memcpy(dst, src, size);}
+\DoxyCodeLine{1909         memcpy(dst2, src2, size);}
+\DoxyCodeLine{1910         memcpy(dst3, src3, size);}
+\DoxyCodeLine{1911         memcpy(dst4, src4, size);}
+\DoxyCodeLine{1912         memcpy(dst5, src5, size);}
+\DoxyCodeLine{1913         memcpy(dst6, src6, size); }
+\DoxyCodeLine{1914         memcpy(dst7, src7, size); }
+\DoxyCodeLine{1915         memcpy(dst8, src8, size); }
+\DoxyCodeLine{1916         memcpy(dst9, src9, size); }
+\DoxyCodeLine{1917         memcpy(dst10, src10, size); }
+\DoxyCodeLine{1918         memcpy(dst11, src11, size); }
+\DoxyCodeLine{1919         memcpy(dst12, src12, size); }
+\DoxyCodeLine{1920     \}}
+\DoxyCodeLine{1921     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (size <= 100)}
+\DoxyCodeLine{1922     \{}
+\DoxyCodeLine{1923         \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1924         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1925         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1926         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1927         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1928         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1929         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1930         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1931         \textcolor{keywordtype}{char} *destp9 = (\textcolor{keywordtype}{char} *)dst9; \textcolor{keywordtype}{char} *srcp9 = (\textcolor{keywordtype}{char} *)src9;}
+\DoxyCodeLine{1932         \textcolor{keywordtype}{char} *destp10 = (\textcolor{keywordtype}{char} *)dst10; \textcolor{keywordtype}{char} *srcp10 = (\textcolor{keywordtype}{char} *)src10;}
+\DoxyCodeLine{1933         \textcolor{keywordtype}{char} *destp11 = (\textcolor{keywordtype}{char} *)dst11; \textcolor{keywordtype}{char} *srcp11 = (\textcolor{keywordtype}{char} *)src11;}
+\DoxyCodeLine{1934         \textcolor{keywordtype}{char} *destp12 = (\textcolor{keywordtype}{char} *)dst12; \textcolor{keywordtype}{char} *srcp12 = (\textcolor{keywordtype}{char} *)src12;}
+\DoxyCodeLine{1935  }
+\DoxyCodeLine{1936 }
+\DoxyCodeLine{1937         remainder = size \% 10;}
+\DoxyCodeLine{1938         timesToCopy = size / 10;}
+\DoxyCodeLine{1939 }
+\DoxyCodeLine{1940         \textcolor{comment}{//copy elements in increments but always start with an increment of 10}}
+\DoxyCodeLine{1941         \textcolor{comment}{//up to 100 }}
+\DoxyCodeLine{1942         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{1943         \{}
+\DoxyCodeLine{1944          memcpy(destp + (i * 10), srcp + (i * 10), 10); }
+\DoxyCodeLine{1945          memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10); }
+\DoxyCodeLine{1946          memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10); }
+\DoxyCodeLine{1947          memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10); }
+\DoxyCodeLine{1948          memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10); }
+\DoxyCodeLine{1949          memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{1950          memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{1951          memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{1952          memcpy(destp9 + (i * 10), srcp9 + (i * 10), 10); }
+\DoxyCodeLine{1953          memcpy(destp10 + (i * 10), srcp10 + (i * 10), 10); }
+\DoxyCodeLine{1954          memcpy(destp11 + (i * 10), srcp11 + (i * 10), 10); }
+\DoxyCodeLine{1955          memcpy(destp12 + (i * 10), srcp12 + (i * 10), 10); }
+\DoxyCodeLine{1956 }
+\DoxyCodeLine{1957         \}}
+\DoxyCodeLine{1958 }
+\DoxyCodeLine{1959         memcpy(destp + (timesToCopy * 10), srcp + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1960         memcpy(destp2 + (timesToCopy * 10), srcp2 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1961         memcpy(destp3 + (timesToCopy * 10), srcp3 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1962         memcpy(destp4 + (timesToCopy * 10), srcp4 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1963         memcpy(destp5 + (timesToCopy * 10), srcp5 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1964         memcpy(destp6 + (timesToCopy * 10), srcp6 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1965         memcpy(destp7 + (timesToCopy * 10), srcp7 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1966         memcpy(destp8 + (timesToCopy * 10), srcp8 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1967         memcpy(destp9 + (timesToCopy * 10), srcp9 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1968         memcpy(destp10 + (timesToCopy * 10), srcp10 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1969         memcpy(destp11 + (timesToCopy * 10), srcp11 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1970         memcpy(destp12 + (timesToCopy * 10), srcp12 + (timesToCopy * 10), remainder); }
+\DoxyCodeLine{1971 }
+\DoxyCodeLine{1972 }
+\DoxyCodeLine{1973     \}}
+\DoxyCodeLine{1974     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1975     \{}
+\DoxyCodeLine{1976         \textcolor{keywordflow}{for} (uint32\_t i = 1000; i < 1000000000; i = i * 10)}
+\DoxyCodeLine{1977         \{}
+\DoxyCodeLine{1978             \textcolor{keywordflow}{if} (size <= i)}
+\DoxyCodeLine{1979             \{}
+\DoxyCodeLine{1980                     \textcolor{keywordtype}{char} *destp = (\textcolor{keywordtype}{char} *)dst; \textcolor{keywordtype}{char} *srcp = (\textcolor{keywordtype}{char} *)src;}
+\DoxyCodeLine{1981         \textcolor{keywordtype}{char} *destp2 = (\textcolor{keywordtype}{char} *)dst2; \textcolor{keywordtype}{char} *srcp2 = (\textcolor{keywordtype}{char} *)src2;}
+\DoxyCodeLine{1982         \textcolor{keywordtype}{char} *destp3 = (\textcolor{keywordtype}{char} *)dst3; \textcolor{keywordtype}{char} *srcp3 = (\textcolor{keywordtype}{char} *)src3;}
+\DoxyCodeLine{1983         \textcolor{keywordtype}{char} *destp4 = (\textcolor{keywordtype}{char} *)dst4; \textcolor{keywordtype}{char} *srcp4 = (\textcolor{keywordtype}{char} *)src4;}
+\DoxyCodeLine{1984         \textcolor{keywordtype}{char} *destp5 = (\textcolor{keywordtype}{char} *)dst5; \textcolor{keywordtype}{char} *srcp5 = (\textcolor{keywordtype}{char} *)src5;}
+\DoxyCodeLine{1985         \textcolor{keywordtype}{char} *destp6 = (\textcolor{keywordtype}{char} *)dst6; \textcolor{keywordtype}{char} *srcp6 = (\textcolor{keywordtype}{char} *)src6;}
+\DoxyCodeLine{1986         \textcolor{keywordtype}{char} *destp7 = (\textcolor{keywordtype}{char} *)dst7; \textcolor{keywordtype}{char} *srcp7 = (\textcolor{keywordtype}{char} *)src7;}
+\DoxyCodeLine{1987         \textcolor{keywordtype}{char} *destp8 = (\textcolor{keywordtype}{char} *)dst8; \textcolor{keywordtype}{char} *srcp8 = (\textcolor{keywordtype}{char} *)src8;}
+\DoxyCodeLine{1988         \textcolor{keywordtype}{char} *destp9 = (\textcolor{keywordtype}{char} *)dst9; \textcolor{keywordtype}{char} *srcp9 = (\textcolor{keywordtype}{char} *)src9;}
+\DoxyCodeLine{1989         \textcolor{keywordtype}{char} *destp10 = (\textcolor{keywordtype}{char} *)dst10; \textcolor{keywordtype}{char} *srcp10 = (\textcolor{keywordtype}{char} *)src10;}
+\DoxyCodeLine{1990         \textcolor{keywordtype}{char} *destp11 = (\textcolor{keywordtype}{char} *)dst11; \textcolor{keywordtype}{char} *srcp11 = (\textcolor{keywordtype}{char} *)src11;}
+\DoxyCodeLine{1991         \textcolor{keywordtype}{char} *destp12 = (\textcolor{keywordtype}{char} *)dst12; \textcolor{keywordtype}{char} *srcp12 = (\textcolor{keywordtype}{char} *)src12;}
+\DoxyCodeLine{1992 }
+\DoxyCodeLine{1993 }
+\DoxyCodeLine{1994 }
+\DoxyCodeLine{1995                 \textcolor{comment}{//copy 100 elments first}}
+\DoxyCodeLine{1996                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < 10; i++)}
+\DoxyCodeLine{1997                 \{}
+\DoxyCodeLine{1998                     memcpy(destp + (i * 10), srcp + (i * 10), 10);}
+\DoxyCodeLine{1999                     memcpy(destp2 + (i * 10), srcp2 + (i * 10), 10);}
+\DoxyCodeLine{2000                     memcpy(destp3 + (i * 10), srcp3 + (i * 10), 10);}
+\DoxyCodeLine{2001                     memcpy(destp4 + (i * 10), srcp4 + (i * 10), 10);}
+\DoxyCodeLine{2002                     memcpy(destp5 + (i * 10), srcp5 + (i * 10), 10);}
+\DoxyCodeLine{2003                     memcpy(destp6 + (i * 10), srcp6 + (i * 10), 10); }
+\DoxyCodeLine{2004                     memcpy(destp7 + (i * 10), srcp7 + (i * 10), 10); }
+\DoxyCodeLine{2005                     memcpy(destp8 + (i * 10), srcp8 + (i * 10), 10); }
+\DoxyCodeLine{2006                     memcpy(destp9 + (i * 10), srcp9 + (i * 10), 10); }
+\DoxyCodeLine{2007                     memcpy(destp10 + (i * 10), srcp10 + (i * 10), 10); }
+\DoxyCodeLine{2008                     memcpy(destp11 + (i * 10), srcp11 + (i * 10), 10); }
+\DoxyCodeLine{2009                     memcpy(destp12 + (i * 10), srcp12 + (i * 10), 10); }
+\DoxyCodeLine{2010                 \}}
+\DoxyCodeLine{2011                 size = size -\/ 100;}
+\DoxyCodeLine{2012 }
+\DoxyCodeLine{2013                 uint32\_t incrmentby = (i / 10);}
+\DoxyCodeLine{2014                 remainder = size \% incrmentby;}
+\DoxyCodeLine{2015                 timesToCopy = size / incrmentby;}
+\DoxyCodeLine{2016 }
+\DoxyCodeLine{2017                 \textcolor{keywordflow}{for} (uint32\_t i = 0; i < timesToCopy; i++)}
+\DoxyCodeLine{2018                 \{}
+\DoxyCodeLine{2019                     memcpy(destp + ((i * incrmentby) + 100), (srcp + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2020                     memcpy(destp2 + ((i * incrmentby) + 100), (srcp2 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2021                     memcpy(destp3 + ((i * incrmentby) + 100), (srcp3 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2022                     memcpy(destp4 + ((i * incrmentby) + 100), (srcp4 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2023                     memcpy(destp5 + ((i * incrmentby) + 100), (srcp5 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2024                     memcpy(destp6 + ((i * incrmentby) + 100), (srcp6 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2025                     memcpy(destp7 + ((i * incrmentby) + 100), (srcp7 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2026                     memcpy(destp8 + ((i * incrmentby) + 100), (srcp8 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2027                     memcpy(destp9 + ((i * incrmentby) + 100), (srcp9 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2028                     memcpy(destp10 + ((i * incrmentby) + 100), (srcp10 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2029                     memcpy(destp11 + ((i * incrmentby) + 100), (srcp11 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2030                     memcpy(destp12 + ((i * incrmentby) + 100), (srcp12 + (i * incrmentby) + 100), incrmentby); }
+\DoxyCodeLine{2031  }
+\DoxyCodeLine{2032                 \}}
+\DoxyCodeLine{2033 }
+\DoxyCodeLine{2034                 memcpy(destp + ((timesToCopy * incrmentby) + 100), srcp + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{2035                 memcpy(destp2 + ((timesToCopy * incrmentby) + 100), srcp2 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{2036                 memcpy(destp3 + ((timesToCopy * incrmentby) + 100), srcp3 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{2037                 memcpy(destp4 + ((timesToCopy * incrmentby) + 100), srcp4 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{2038                 memcpy(destp5 + ((timesToCopy * incrmentby) + 100), srcp5 + ((timesToCopy * incrmentby) + 100), remainder);}
+\DoxyCodeLine{2039                 memcpy(destp6 + ((timesToCopy * incrmentby) + 100), srcp6 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{2040                 memcpy(destp7 + ((timesToCopy * incrmentby) + 100), srcp7 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{2041                 memcpy(destp8 + ((timesToCopy * incrmentby) + 100), srcp8 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{2042                 memcpy(destp9 + ((timesToCopy * incrmentby) + 100), srcp9 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{2043                 memcpy(destp10 + ((timesToCopy * incrmentby) + 100), srcp10 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{2044                 memcpy(destp11 + ((timesToCopy * incrmentby) + 100), srcp11 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{2045                 memcpy(destp12 + ((timesToCopy * incrmentby) + 100), srcp12 + ((timesToCopy * incrmentby) + 100), remainder); }
+\DoxyCodeLine{2046 }
+\DoxyCodeLine{2047                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{2048             \}}
+\DoxyCodeLine{2049         \}}
+\DoxyCodeLine{2050     \}}
+\DoxyCodeLine{2051 }
+\DoxyCodeLine{2052 }
+\DoxyCodeLine{2053 \}}
+\DoxyCodeLine{2054 }
+\DoxyCodeLine{2055 }
+
+\end{DoxyCode}

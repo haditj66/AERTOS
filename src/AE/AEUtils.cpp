@@ -26,7 +26,7 @@ void* NULLPeripheral::Instance = nullptr;
  
 
 
-#if (PRINT_METHOD == PRINT_UART_NON_AE)
+#ifdef PRINT_METHOD__PRINT_UART_NON_AE
 //this should be implemented in yourself 
 extern void _AEPrint(char* msg);
 
@@ -37,7 +37,7 @@ static  void _AEPrint(char* msg);
 
 
 
-#if (PRINT_METHOD == PRINT_SEMIHOSTING)
+#ifdef PRINT_METHOD__PRINT_SEMIHOSTING)
 static void _AEPrint(char* msg)
 { 
 	printf(msg);
@@ -45,7 +45,7 @@ static void _AEPrint(char* msg)
 
 #endif
 
-#if (PRINT_METHOD == PRINT_UART_AE)
+#ifdef PRINT_METHOD__PRINT_UART_AE
 
 void _AEPrint(char* msg)
 {
@@ -57,7 +57,7 @@ void _AEPrint(char* msg)
 
  
 
-#if (PRINT_METHOD == PRINT_NONE)
+#ifdef PRINT_METHOD__PRINT_NONE
 
 
 void _AEPrint(char* msg)
@@ -70,7 +70,7 @@ void _AEPrint(char* msg)
 
 
 
-#if (PRINT_METHOD == NORMAL_PRINTF_WINDOWS)
+#ifdef PRINT_METHOD__NORMAL_PRINTF_WINDOWS
 void _AEPrint(char* msg)
 { 
 	printf(msg);
@@ -79,7 +79,7 @@ void _AEPrint(char* msg)
 
 #endif
 
-#if (PRINT_METHOD == NORMAL_PRINTF_LINUX)
+#ifdef PRINT_METHOD__NORMAL_PRINTF_LINUX
 
 #include "iostream"
 void _AEPrint(char* msg)

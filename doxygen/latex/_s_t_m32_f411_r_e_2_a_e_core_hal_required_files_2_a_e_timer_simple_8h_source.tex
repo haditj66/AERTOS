@@ -1,0 +1,58 @@
+\hypertarget{_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_a_e_timer_simple_8h_source}{}\doxysection{AETimer\+Simple.\+h}
+\label{_s_t_m32_f411_r_e_2_a_e_core_hal_required_files_2_a_e_timer_simple_8h_source}\index{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles/AETimerSimple.h@{C:/visualgdb\_projects/AERTOSCopy/src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles/AETimerSimple.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//generated file: AETimerSimple.h}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{//includes}}
+\DoxyCodeLine{8 \textcolor{comment}{//UserCode\_Sectiona}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}AECore.h"{}}}
+\DoxyCodeLine{11 \textcolor{comment}{//UserCode\_Sectiona\_end}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef RTOS\_USED\_\_FREERTOS}}
+\DoxyCodeLine{14 \textcolor{keyword}{typedef}  TimerHandle\_t uint8\_t;}
+\DoxyCodeLine{15 \textcolor{keyword}{typedef} void (*TimerSimpleCallback\_t)( TimerHandle\_t xTimer );}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{17 \textcolor{keyword}{typedef} TimerCallbackFunction\_t TimerSimpleCallback\_t;}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_timer_simple}{AETimerSimple}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_a_e_timer_simple}{AETimerSimple}}(uint32\_t periodOfTimerTicksInMilli, \textcolor{keywordtype}{bool} autoReload,TimerSimpleCallback\_t timerSimpleCallback);}
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} StartTimer();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} StopTimer();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} PauseTimer();}
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} IsTimerActive();}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} ChangePeriod(uint32\_t newPeriod);}
+\DoxyCodeLine{32     uint32\_t GetPeriodOfTimer() \textcolor{keyword}{const};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{//UserCode\_Sectionc}}
+\DoxyCodeLine{35 \textcolor{comment}{//UserCode\_Sectionc\_end}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{private}:}
+\DoxyCodeLine{39     TimerSimpleCallback\_t TimerSimpleCallback;}
+\DoxyCodeLine{40     uint32\_t PeriodOfTimerTicksInMilli;}
+\DoxyCodeLine{41     \textcolor{keywordtype}{bool} AutoReload;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{//UserCode\_Sectiond}}
+\DoxyCodeLine{46 \textcolor{keywordtype}{bool} UpdateTimePaused;}
+\DoxyCodeLine{47 TimerHandle\_t xTimerForThisSimpleTimer;}
+\DoxyCodeLine{48 \textcolor{comment}{//UserCode\_Sectiond\_end}}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{//UserCode\_Sectione}}
+\DoxyCodeLine{52 \textcolor{comment}{//UserCode\_Sectione\_end}}
+
+\end{DoxyCode}

@@ -1,0 +1,311 @@
+\hypertarget{_a_e_integration_testing_8h_source}{}\doxysection{C\+:/visualgdb\+\_\+projects/\+AERTOSCopy/src/\+AE/\+AEIntegration\+Testing.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_a_e_utils_8h}{AEUtils.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}iostream"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}vector"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define gROUPNAME\_STRING(s) \#s}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GROUPNAME\_STRING(s) gROUPNAME\_STRING(s)}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{static} \textcolor{keywordtype}{char} \textcolor{keyword}{const} * \textcolor{keyword}{const} TestGroupName = GROUPNAME\_STRING(INTEGRATION\_TESTS);}
+\DoxyCodeLine{14     }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define \_AEITEST(testName, thingToAssert, AssertionMessage) AEITEST\_Func(testName, thingToAssert,  AssertionMessage,  \_\_LINE\_\_, \_\_FILE\_\_);}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define \_AEITEST\_EndTestsIfFalseAssertion(testName, thingToAssert, AssertionMessage) AEITEST\_Func(testName, thingToAssert,  AssertionMessage,  \_\_LINE\_\_, \_\_FILE\_\_, true);}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define \_AEITEST\_EXPECT\_TEST\_TO\_RUN(testName) AEITEST\_EXPECT\_TEST\_TO\_RUN\_FUNC(testName) ;}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define \_AEITEST\_END\_TestsAfterTimer(timeInMilliBeforeEnd) AEITEST\_END\_TestsAfterTimer\_FUNC(timeInMilliBeforeEnd);}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define \_AEITEST\_END AEITEST\_END\_FUNC();}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{//\#define AEITEST(testName, thingToAssert, AssertionMessage) \_AEITEST(testName, thingToAssert, AssertionMessage) }}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//\#define PATH\_TO\_TESTMACRO\_FILE "{}/CGensaveFiles/IntegrationTestMacros.h"{}}}
+\DoxyCodeLine{27 \textcolor{comment}{//\#define FULLPATHTEST CGEN\_CMAKE\_CURRENT\_BINARY\_DIR }}
+\DoxyCodeLine{28 \textcolor{comment}{//\#define FULLPATHTEST2 GROUPNAME\_STRING(FULLPATHTEST PATH\_TO\_TESTMACRO\_FILE)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include PATH\_TO\_TESTMACRO\_FILE  }}
+\DoxyCodeLine{30 \textcolor{comment}{//"{}build/VSGDBCmakeNinja\_armnoneabiid/Debug"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} void(*AEITestFunction\_t)(\textcolor{keywordtype}{char} \textcolor{keyword}{const} * \textcolor{keyword}{const} testName, \textcolor{keywordtype}{bool} thingToAssert, std::string AssertionMessage, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulLine, std::string pcFileName);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{enum} LogStatus}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     PASSED,}
+\DoxyCodeLine{38     FAILED,}
+\DoxyCodeLine{39     FINISHED,}
+\DoxyCodeLine{40     EXCEPTION}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     \mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}()}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         ID = 0xffffffff;}
+\DoxyCodeLine{51         NumOfTimesFailed = 0;}
+\DoxyCodeLine{52         NumOfTimesPassed = 0;}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54     }
+\DoxyCodeLine{55     uint32\_t ID;}
+\DoxyCodeLine{56     uint32\_t NumOfTimesFailed;}
+\DoxyCodeLine{57     uint32\_t NumOfTimesPassed; }
+\DoxyCodeLine{58     std::string testName;}
+\DoxyCodeLine{59     LogStatus status;}
+\DoxyCodeLine{60     std::string AssertionMessage;}
+\DoxyCodeLine{61     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulLine;}
+\DoxyCodeLine{62     std::string pcFileName;}
+\DoxyCodeLine{63     }
+\DoxyCodeLine{64     }
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{static} std::vector<AEITestLogData*> TestLogsArgs;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} LogAEITest(\mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}* testData)\textcolor{comment}{//(std::string testName, LogStatus status, std::string AssertionMessage, unsigned long ulLine, std::string pcFileName)}}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75     std::string statusStr = \textcolor{stringliteral}{"{}NA"{}};}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} (testData-\/>status == LogStatus::PASSED)}
+\DoxyCodeLine{77     \{}
+\DoxyCodeLine{78         statusStr = \textcolor{stringliteral}{"{}PASSED"{}};}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80     \textcolor{keywordflow}{if} (testData-\/>status == LogStatus::FAILED)}
+\DoxyCodeLine{81     \{}
+\DoxyCodeLine{82         statusStr = \textcolor{stringliteral}{"{}FAILED"{}};}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84     \textcolor{keywordflow}{if} (testData-\/>status == LogStatus::FINISHED)}
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86         statusStr = \textcolor{stringliteral}{"{}FINISHED"{}};}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88     \textcolor{keywordflow}{if} (testData-\/>status == LogStatus::EXCEPTION)}
+\DoxyCodeLine{89     \{}
+\DoxyCodeLine{90         statusStr = \textcolor{stringliteral}{"{}EXCEPTION"{}};}
+\DoxyCodeLine{91     \}}
+\DoxyCodeLine{92     }
+\DoxyCodeLine{93     std::string testLogMsg = \textcolor{stringliteral}{"{}TESTGROUPNAME: "{}};}
+\DoxyCodeLine{94     testLogMsg.append(INTEGRATION\_TEST\_CHOSEN);}
+\DoxyCodeLine{95     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}); }
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97     testLogMsg.append(\textcolor{stringliteral}{"{}TESTSPECIFIC: "{}});}
+\DoxyCodeLine{98     testLogMsg.append(INTEGRATION\_TEST\_CHOSEN\_SPECIFIC);}
+\DoxyCodeLine{99     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}); }
+\DoxyCodeLine{100  }
+\DoxyCodeLine{101     testLogMsg.append(\textcolor{stringliteral}{"{}TESTNAME: "{}});}
+\DoxyCodeLine{102     testLogMsg.append(testData-\/>testName);}
+\DoxyCodeLine{103     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}); }
+\DoxyCodeLine{104     }
+\DoxyCodeLine{105     testLogMsg.append(\textcolor{stringliteral}{"{}STATUS: "{}});}
+\DoxyCodeLine{106     testLogMsg.append(statusStr);}
+\DoxyCodeLine{107     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}); }
+\DoxyCodeLine{108     }
+\DoxyCodeLine{109     testLogMsg.append(\textcolor{stringliteral}{"{}FILE: "{}});}
+\DoxyCodeLine{110     testLogMsg.append(testData-\/>pcFileName);}
+\DoxyCodeLine{111     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}); }
+\DoxyCodeLine{112     }
+\DoxyCodeLine{113     \textcolor{keywordtype}{char} msgFormatted[50];}
+\DoxyCodeLine{114     snprintf(msgFormatted, \textcolor{keyword}{sizeof}(\textcolor{stringliteral}{"{}LINE: \%d\(\backslash\)n"{}}), \textcolor{stringliteral}{"{}LINE: \%d\(\backslash\)n"{}}, testData-\/>ulLine);}
+\DoxyCodeLine{115     testLogMsg.append(msgFormatted); }
+\DoxyCodeLine{116     }
+\DoxyCodeLine{117     testLogMsg.append(\textcolor{stringliteral}{"{}MESSAGE: "{}}); }
+\DoxyCodeLine{118     testLogMsg.append(testData-\/>AssertionMessage); }
+\DoxyCodeLine{119     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}); }
+\DoxyCodeLine{120     }
+\DoxyCodeLine{121     testLogMsg.append(\textcolor{stringliteral}{"{}NumOfPasses: "{}}); }
+\DoxyCodeLine{122     testLogMsg.append(std::to\_string(testData-\/>NumOfTimesPassed)); }
+\DoxyCodeLine{123     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}); }
+\DoxyCodeLine{124     }
+\DoxyCodeLine{125     testLogMsg.append(\textcolor{stringliteral}{"{}NumOfFails: "{}}); }
+\DoxyCodeLine{126     testLogMsg.append(std::to\_string(testData-\/>NumOfTimesFailed)); }
+\DoxyCodeLine{127     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}); }
+\DoxyCodeLine{128     }
+\DoxyCodeLine{129     testLogMsg.append(\textcolor{stringliteral}{"{}OPTIONS: "{}});}
+\DoxyCodeLine{130     testLogMsg.append(CGEN\_ALLOPTIONS);}
+\DoxyCodeLine{131     testLogMsg.append(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});  }
+\DoxyCodeLine{132     }
+\DoxyCodeLine{133               }
+\DoxyCodeLine{134     std::string PathtoFile = \textcolor{stringliteral}{"{}IntegrationTestResults\(\backslash\)\(\backslash\)IntegrationResults.txt"{}};}
+\DoxyCodeLine{135     }
+\DoxyCodeLine{136     }
+\DoxyCodeLine{137     AEWriteToEndOfFile(PathtoFile.c\_str(), testLogMsg.c\_str(), testLogMsg.length());}
+\DoxyCodeLine{138 \}}
+\DoxyCodeLine{139  }
+\DoxyCodeLine{140 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} LogAEITest(std::string testName, LogStatus status, std::string AssertionMessage, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulLine, std::string pcFileName)}
+\DoxyCodeLine{141 \{}
+\DoxyCodeLine{142     \mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}} testLogData;}
+\DoxyCodeLine{143     testLogData.AssertionMessage = AssertionMessage;}
+\DoxyCodeLine{144     testLogData.pcFileName = pcFileName;}
+\DoxyCodeLine{145     testLogData.status = status;}
+\DoxyCodeLine{146     testLogData.testName = testName;}
+\DoxyCodeLine{147     testLogData.ulLine = ulLine;}
+\DoxyCodeLine{148     LogAEITest(\&testLogData);}
+\DoxyCodeLine{149 \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \_AEITEST\_END\_FUNC()}
+\DoxyCodeLine{156 \{ }
+\DoxyCodeLine{157     }
+\DoxyCodeLine{158     \textcolor{comment}{//iterate through all saved logs and write them to the file}}
+\DoxyCodeLine{159     \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}* ele : TestLogsArgs)}
+\DoxyCodeLine{160     \{ }
+\DoxyCodeLine{161         LogAEITest(ele);}
+\DoxyCodeLine{162     \}}
+\DoxyCodeLine{163      }
+\DoxyCodeLine{164   }
+\DoxyCodeLine{165     \textcolor{comment}{//vTaskEndScheduler();}}
+\DoxyCodeLine{166     exit(EXIT\_SUCCESS); }
+\DoxyCodeLine{167 \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEITEST\_END\_FUNC()}
+\DoxyCodeLine{171 \{}
+\DoxyCodeLine{172   }
+\DoxyCodeLine{173     }
+\DoxyCodeLine{174     LogAEITest(\textcolor{stringliteral}{"{}FINISH\_TEST\_GROUP"{}}, LogStatus::FINISHED, \textcolor{stringliteral}{"{}done test group"{}}, 0, \textcolor{stringliteral}{"{}None"{}});}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{176     \_AEITEST\_END\_FUNC();}
+\DoxyCodeLine{177 \}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{keyword}{static} \textcolor{keywordtype}{char} \textcolor{keyword}{const} * \textcolor{keyword}{const} hardfaultmsg = }
+\DoxyCodeLine{182     \textcolor{stringliteral}{"{}TESTGROUPNAME: "{}} INTEGRATION\_TEST\_CHOSEN \textcolor{stringliteral}{"{}\(\backslash\)nTESTSPECIFIC: "{}} INTEGRATION\_TEST\_CHOSEN\_SPECIFIC \textcolor{stringliteral}{"{}\(\backslash\)nSTATUS: EXCEPTION\(\backslash\)nFILE: None\(\backslash\)nLINE: 0\(\backslash\)nMESSAGE: hardfault has occured\(\backslash\)nNumOfPasses: 0\(\backslash\)nNumOfFails: 0\(\backslash\)nOPTIONS: "{}} CGEN\_ALLOPTIONS \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{183 \textcolor{comment}{//end integration tests as a hardfault has happened}}
+\DoxyCodeLine{184 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEITEST\_END\_HARDFAULT\_FUNC()}
+\DoxyCodeLine{185 \{}
+\DoxyCodeLine{186     \textcolor{comment}{//std::string PathtoFile = "{}IntegrationTestResults\(\backslash\)\(\backslash\)IntegrationResults.txt"{};}}
+\DoxyCodeLine{187     }
+\DoxyCodeLine{188     }
+\DoxyCodeLine{189     AEWriteToEndOfFile(\textcolor{stringliteral}{"{}IntegrationTestResults\(\backslash\)\(\backslash\)IntegrationResults.txt"{}}, hardfaultmsg, strlen(hardfaultmsg));    \textcolor{comment}{//, "{}HARDFAULT:"{} CGEN\_ALLOPTIONS "{}\(\backslash\)n"{}, strlen(CGEN\_ALLOPTIONS)+11);}}
+\DoxyCodeLine{190     \textcolor{comment}{//LogAEITest("{}FINISH\_TEST\_GROUP"{}, LogStatus::EXCEPTION, "{}a hard fault occured during this test group"{}, 0, "{}None"{});}}
+\DoxyCodeLine{191     }
+\DoxyCodeLine{192     \_AEITEST\_END\_FUNC();}
+\DoxyCodeLine{193 \}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{keywordtype}{void} AEITEST\_END\_TestsAfterTimer\_FUNC(uint32\_t timeInMilliBeforeEnd);}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEITEST\_EXPECT\_TEST\_TO\_RUN\_FUNC(std::string testName) }
+\DoxyCodeLine{203 \{ }
+\DoxyCodeLine{204     }
+\DoxyCodeLine{205     \textcolor{keywordtype}{int} ID = std::hash<std::string> \{\}(testName);}
+\DoxyCodeLine{206     \mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}* testLogData;   \textcolor{comment}{// = new AEITestLogData();}}
+\DoxyCodeLine{207     }
+\DoxyCodeLine{208     }
+\DoxyCodeLine{209     \textcolor{comment}{//check if this test has been executed already}}
+\DoxyCodeLine{210     \textcolor{keywordtype}{bool} testFound = \textcolor{keyword}{false};}
+\DoxyCodeLine{211     \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}* ele : TestLogsArgs)}
+\DoxyCodeLine{212     \{ }
+\DoxyCodeLine{213         \textcolor{keywordflow}{if} (ele-\/>ID == ID)}
+\DoxyCodeLine{214         \{ }
+\DoxyCodeLine{215             testLogData = ele;}
+\DoxyCodeLine{216             testFound = \textcolor{keyword}{true};}
+\DoxyCodeLine{217             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{218         \}}
+\DoxyCodeLine{219     \}}
+\DoxyCodeLine{220     \textcolor{keywordflow}{if} (testFound == \textcolor{keyword}{false})}
+\DoxyCodeLine{221     \{ }
+\DoxyCodeLine{222         testLogData = \textcolor{keyword}{new} \mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}();}
+\DoxyCodeLine{223         }
+\DoxyCodeLine{224         testLogData-\/>AssertionMessage = \textcolor{stringliteral}{"{}This test never ran."{}};}
+\DoxyCodeLine{225         testLogData-\/>pcFileName = \textcolor{stringliteral}{"{}"{}}; }
+\DoxyCodeLine{226         testLogData-\/>testName = testName;}
+\DoxyCodeLine{227         testLogData-\/>ulLine = 0;}
+\DoxyCodeLine{228         testLogData-\/>status = LogStatus::FAILED;}
+\DoxyCodeLine{229         testLogData-\/>ID = ID;}
+\DoxyCodeLine{230     }
+\DoxyCodeLine{231     }
+\DoxyCodeLine{232         TestLogsArgs.push\_back(testLogData);}
+\DoxyCodeLine{233     \}}
+\DoxyCodeLine{234 \}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 }
+\DoxyCodeLine{242 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEITEST\_Func(std::string testName, \textcolor{keywordtype}{bool} thingToAssert, std::string AssertionMessage, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulLine, std::string pcFileName, \textcolor{keywordtype}{bool} endTestIfFailed = \textcolor{keyword}{false})}
+\DoxyCodeLine{243 \{ }
+\DoxyCodeLine{244     }
+\DoxyCodeLine{245     \textcolor{keywordtype}{int} ID = std::hash<std::string> \{ \}(testName);}
+\DoxyCodeLine{246     \mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}* testLogData;\textcolor{comment}{// = new AEITestLogData();}}
+\DoxyCodeLine{247     }
+\DoxyCodeLine{248     }
+\DoxyCodeLine{249     \textcolor{comment}{//check if this test has been executed already}}
+\DoxyCodeLine{250     \textcolor{keywordtype}{bool} testFound = \textcolor{keyword}{false};}
+\DoxyCodeLine{251     \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}* ele : TestLogsArgs)}
+\DoxyCodeLine{252     \{ }
+\DoxyCodeLine{253         \textcolor{keywordflow}{if} (ele-\/>ID == ID)}
+\DoxyCodeLine{254         \{ }
+\DoxyCodeLine{255             testLogData = ele;}
+\DoxyCodeLine{256             testFound = \textcolor{keyword}{true};}
+\DoxyCodeLine{257         \}}
+\DoxyCodeLine{258     \}}
+\DoxyCodeLine{259     \textcolor{keywordflow}{if} (testFound == \textcolor{keyword}{false})}
+\DoxyCodeLine{260     \{ }
+\DoxyCodeLine{261         testLogData = \textcolor{keyword}{new} \mbox{\hyperlink{class_a_e_i_test_log_data}{AEITestLogData}}();}
+\DoxyCodeLine{262         }
+\DoxyCodeLine{263         testLogData-\/>AssertionMessage = AssertionMessage;}
+\DoxyCodeLine{264         testLogData-\/>pcFileName = pcFileName; }
+\DoxyCodeLine{265         testLogData-\/>testName = testName;}
+\DoxyCodeLine{266         testLogData-\/>ulLine = ulLine;}
+\DoxyCodeLine{267         testLogData-\/>ID = ID;}
+\DoxyCodeLine{268     }
+\DoxyCodeLine{269     }
+\DoxyCodeLine{270         TestLogsArgs.push\_back(testLogData);}
+\DoxyCodeLine{271     }
+\DoxyCodeLine{272     \}}
+\DoxyCodeLine{273     }
+\DoxyCodeLine{274     \textcolor{comment}{//save the args to log it later so to not have to write to the file too often and to avoid race conditions of writing to the file. }}
+\DoxyCodeLine{275     \textcolor{keywordflow}{if}(thingToAssert == \textcolor{keyword}{false})}
+\DoxyCodeLine{276     \{testLogData-\/>NumOfTimesFailed += 1;\}}
+\DoxyCodeLine{277     \textcolor{keywordflow}{else}    }
+\DoxyCodeLine{278     \{testLogData-\/>NumOfTimesPassed += 1; \}}
+\DoxyCodeLine{279     LogStatus status;}
+\DoxyCodeLine{280     testLogData-\/>status = testLogData-\/>NumOfTimesFailed > 0 ? LogStatus::FAILED : LogStatus::PASSED;}
+\DoxyCodeLine{281      }
+\DoxyCodeLine{282     }
+\DoxyCodeLine{283     }
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285     \textcolor{keywordflow}{if} (endTestIfFailed == \textcolor{keyword}{true})}
+\DoxyCodeLine{286     \{}
+\DoxyCodeLine{287         \textcolor{keywordflow}{if} (testLogData-\/>NumOfTimesFailed > 0)}
+\DoxyCodeLine{288         \{}
+\DoxyCodeLine{289             AEITEST\_END\_FUNC();}
+\DoxyCodeLine{290         \}}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292     }
+\DoxyCodeLine{293   }
+\DoxyCodeLine{294     }
+\DoxyCodeLine{295      }
+\DoxyCodeLine{296 \}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AEITEST\_LogOnlyIfFalse\_Func(std::string testName, \textcolor{keywordtype}{bool} thingToAssert, std::string AssertionMessage, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulLine, std::string pcFileName, \textcolor{keywordtype}{bool} endTestIfFailed = \textcolor{keyword}{false})}
+\DoxyCodeLine{302 \{}
+\DoxyCodeLine{303     \textcolor{keywordflow}{if} (thingToAssert == \textcolor{keyword}{false})}
+\DoxyCodeLine{304     \{}
+\DoxyCodeLine{305         AEITEST\_Func(testName, thingToAssert, AssertionMessage, ulLine, pcFileName, endTestIfFailed);}
+\DoxyCodeLine{306     \}}
+\DoxyCodeLine{307         }
+\DoxyCodeLine{308 \}}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310  }
+\DoxyCodeLine{311 }
+
+\end{DoxyCode}

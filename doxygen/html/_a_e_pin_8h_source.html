@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,23 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_a_e_pin_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,34 +61,39 @@ $(document).ready(function(){initNavTree('_a_e_pin_8h_source.html',''); initResi
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">AEPin.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_e_pin_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_board_types_8h.html">BoardTypes.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_pin_selector_8h.html">PinSelector.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;BoardTypes.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;PinSelector.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="class_a_e_pin.html">AEPin</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">extern</span> <a class="code hl_class" href="class_a_e_pin.html">AEPin</a> <a class="code hl_variable" href="_a_e_pin_8h.html#a98040efece37fdda51b8658117751e3d">UserDefinedAEPins</a>[];</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">extern</span> <a class="code hl_class" href="class_a_e_pin.html">AEPin</a> UserDefinedAEPins[];</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_a_e_pin.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_a_e_pin.html">AEPin</a></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_a_e_pin.html#a49927a3792b174ed66d024589a34e9a4">   14</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_a_e_port_and_pin.html">AEPortAndPin</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_a_e_port_and_pin.html">AEPortAndPin</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_a_e_pin.html#abefd6c13e4fb8b6c6af09ad87e49a294">   17</a></span>    <a class="code hl_function" href="class_a_e_pin.html#abefd6c13e4fb8b6c6af09ad87e49a294">AEPin</a>(<a class="code hl_enumeration" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a> pinenumType, <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> halPin)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_a_e_pin.html">AEPin</a>(PinEnum pinenumType, Pin_t halPin)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        _pinenumType = pinenumType;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        _halPin = halPin;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _numPinsCreatedSoFar; i++)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_define" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(<a class="code hl_variable" href="_a_e_pin_8h.html#a98040efece37fdda51b8658117751e3d">UserDefinedAEPins</a>[i].<a class="code hl_function" href="class_a_e_pin.html#a01a4b8200f1db243b8bba487c93db2c2">GetPinEnum</a>() != pinenumType, <span class="stringliteral">&quot;make sure that the pinenum defined has not been one defined already&quot;</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_define" href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a>(UserDefinedAEPins[i].GetPinEnum() != pinenumType, <span class="stringliteral">&quot;make sure that the pinenum defined has not been one defined already&quot;</span>);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">//      UserDefinedAEPorts[_numPortsCreatedSoFar] = this;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        _numPinsCreatedSoFar++;</div>
@@ -117,35 +101,23 @@ $(document).ready(function(){initNavTree('_a_e_pin_8h_source.html',''); initResi
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_a_e_pin.html#a01a4b8200f1db243b8bba487c93db2c2">   32</a></span>    <a class="code hl_enumeration" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a> <a class="code hl_function" href="class_a_e_pin.html#a01a4b8200f1db243b8bba487c93db2c2">GetPinEnum</a>() { <span class="keywordflow">return</span> _pinenumType; }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_a_e_pin.html#af909983a0f3d9433aeaf24cfb893a401">   33</a></span>    <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> <a class="code hl_function" href="class_a_e_pin.html#af909983a0f3d9433aeaf24cfb893a401">GetPin</a>() { <span class="keywordflow">return</span> _halPin; }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    PinEnum GetPinEnum() { <span class="keywordflow">return</span> _pinenumType; }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Pin_t GetPin() { <span class="keywordflow">return</span> _halPin; }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">private</span>: </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_enumeration" href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a> _pinenumType;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_define" href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a> _halPin; </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    PinEnum _pinenumType;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    Pin_t _halPin; </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">static</span> uint32_t _numPinsCreatedSoFar;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">//  static AEPort* ALLPorts[15];</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
-<div class="ttc" id="a_a_e_pin_8h_html_a98040efece37fdda51b8658117751e3d"><div class="ttname"><a href="_a_e_pin_8h.html#a98040efece37fdda51b8658117751e3d">UserDefinedAEPins</a></div><div class="ttdeci">AEPin UserDefinedAEPins[]</div><div class="ttdef"><b>Definition:</b> UserDefinedInstances.cpp:20</div></div>
-<div class="ttc" id="a_a_e_utils_8h_html_a9e2e1fbe1c4de456d98706dbe8b36950"><div class="ttname"><a href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a></div><div class="ttdeci">#define AEAssertRuntime(thingToAssert, AssertionMessage)</div><div class="ttdoc">this will assert the predicate. if fails, will print assert command. test code: asvasf343</div><div class="ttdef"><b>Definition:</b> AEUtils.h:771</div></div>
-<div class="ttc" id="a_board_types_8h_html"><div class="ttname"><a href="_board_types_8h.html">BoardTypes.h</a></div></div>
-<div class="ttc" id="a_pin_selector_8h_html"><div class="ttname"><a href="_pin_selector_8h.html">PinSelector.h</a></div></div>
-<div class="ttc" id="a_pin_selector_8h_html_aec451a302f0a704099dec2ba603cfe98"><div class="ttname"><a href="_pin_selector_8h.html#aec451a302f0a704099dec2ba603cfe98">PinEnum</a></div><div class="ttdeci">PinEnum</div><div class="ttdef"><b>Definition:</b> PinSelector.h:39</div></div>
+<div class="ttc" id="a_a_e_utils_8h_html_a9e2e1fbe1c4de456d98706dbe8b36950"><div class="ttname"><a href="_a_e_utils_8h.html#a9e2e1fbe1c4de456d98706dbe8b36950">AEAssertRuntime</a></div><div class="ttdeci">#define AEAssertRuntime(thingToAssert, AssertionMessage)</div><div class="ttdoc">this will assert the predicate. if fails, will print assert command. test code: asvasf343</div><div class="ttdef"><b>Definition:</b> AEUtils.h:813</div></div>
 <div class="ttc" id="aclass_a_e_pin_html"><div class="ttname"><a href="class_a_e_pin.html">AEPin</a></div><div class="ttdef"><b>Definition:</b> AEPin.h:12</div></div>
-<div class="ttc" id="aclass_a_e_pin_html_a01a4b8200f1db243b8bba487c93db2c2"><div class="ttname"><a href="class_a_e_pin.html#a01a4b8200f1db243b8bba487c93db2c2">AEPin::GetPinEnum</a></div><div class="ttdeci">PinEnum GetPinEnum()</div><div class="ttdef"><b>Definition:</b> AEPin.h:32</div></div>
-<div class="ttc" id="aclass_a_e_pin_html_abefd6c13e4fb8b6c6af09ad87e49a294"><div class="ttname"><a href="class_a_e_pin.html#abefd6c13e4fb8b6c6af09ad87e49a294">AEPin::AEPin</a></div><div class="ttdeci">AEPin(PinEnum pinenumType, Pin_t halPin)</div><div class="ttdef"><b>Definition:</b> AEPin.h:17</div></div>
-<div class="ttc" id="aclass_a_e_pin_html_af909983a0f3d9433aeaf24cfb893a401"><div class="ttname"><a href="class_a_e_pin.html#af909983a0f3d9433aeaf24cfb893a401">AEPin::GetPin</a></div><div class="ttdeci">Pin_t GetPin()</div><div class="ttdef"><b>Definition:</b> AEPin.h:33</div></div>
 <div class="ttc" id="aclass_a_e_port_and_pin_html"><div class="ttname"><a href="class_a_e_port_and_pin.html">AEPortAndPin</a></div><div class="ttdoc">this class is meant to check for valid port and pins combo as well as to transition between enum port...</div><div class="ttdef"><b>Definition:</b> AEPortAndPin.h:14</div></div>
-<div class="ttc" id="asimulated_2_a_e_core_hal_required_files_2_board_types__1_8h_html_ac93c3c98e59ef4eb5c9ab64246c1e7ec"><div class="ttname"><a href="simulated_2_a_e_core_hal_required_files_2_board_types__1_8h.html#ac93c3c98e59ef4eb5c9ab64246c1e7ec">Pin_t</a></div><div class="ttdeci">#define Pin_t</div><div class="ttdef"><b>Definition:</b> BoardTypes_1.h:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_52c912f73dac9c4c0e442232e1b2bd80.html">hal</a></li><li class="navelem"><a class="el" href="_a_e_pin_8h.html">AEPin.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
 </body>
 </html>
