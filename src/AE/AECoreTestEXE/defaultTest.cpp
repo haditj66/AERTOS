@@ -34,7 +34,9 @@ static void LED_Thread1(void const *argument);
 static void LED_Thread2(void const *argument);
 #endif
 
-
+//Chack that the other AELoop test runs usnig SWIL and then copy the tests for the SPB over. Then build and bring in any files
+//	it says it needs for it. I wont be able ot refactor until ALL tests are ported over working as I dont know what
+//	I'll be breaking until then. so get all tests over QUICKLY!!
 
 
 DECLARE_ALL_AO_PTR
@@ -185,7 +187,7 @@ static void LED_Thread1(void const *argument)
 #else
 	for (;;)
 	{
-		AEITEST_AECore_Tests1("FirstThread", true, "has entered this for loop")
+		AEITEST_AECoreTestEXE("FirstThread", true, "has entered this for loop")
 			
 		//vTaskSuspend(LEDThread2Handle);
 		//TickType_t ticks = 2000 / portTICK_PERIOD_MS; 

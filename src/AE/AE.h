@@ -4,8 +4,7 @@
 
 //DONT PUT #include AEUtils.H HERE. IT WONT WORK!
 
-//! [Adding a resource]
- 
+//! [Adding a resource] 
 #include "AEConfig.h" 
 
 //! [Adding a resource]
@@ -23,7 +22,6 @@
 #define Event4_Evt M_CONC(Event4,_Evt) 
 #define Event5_Evt M_CONC(Event5,_Evt) 
 #define Event6_Evt M_CONC(Event6,_Evt) 
-
 
 //define all signals events used in the project here. ----------------------------
 enum ProjectEventSignals {
@@ -83,6 +81,21 @@ enum ProjectEventSignals {
 };
 
 #define NUMOFEVENTS MAX_NumOfEvents
+
+//#if NUMOFEVENTS > (256-2) //the minus 2 is to account for the two enter and exit events
+//
+//#define ENTEREVENT_Id	0xffff
+//#define EXITEVENT_Id	0xffff - 1
+//#else  
+//#define ENTEREVENT_Id	0xff
+//#define EXITEVENT_Id	0xff - 1
+//#endif
+
+//#if NUMOFEVENTS > (256-2) 
+//#error HADI: AE does not support more than 256 events. f you want more than this many events, look at the AEDefines and change the NUMOFEVENTS there.
+//#endif
+
+
 #define MAX_NumOfAllEvents _MAX_NumOfAllEvents //-1 it should be minus one however that "MAX_NumOfEvents" in the enum adds one more place to the enum. this means that I will have one empty slot in the EventSubscribers[evtId][AOID]  array at the evtId = MAX_NumOfEvents.
 
 

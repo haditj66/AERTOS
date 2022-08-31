@@ -13,7 +13,7 @@
 
 
 
-#if (PRINT_METHOD == PRINT_UART_NON_AE)
+#if (PRINT_METHOD__PRINT_UART_NON_AE)
 
 #include "UARTConsole.h"
 #include <stdio.h>

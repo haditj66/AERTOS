@@ -1,8 +1,15 @@
 #pragma once 
+ 
+ 
 
-#include "stm32f4xx_hal.h"
 
-#define blabla
+
+//TODO: time to start bringing in files from the original aertos!! start with what is the most basic need feature.
+//bring everything in one at a time and leave out things that were never really needed!! SImplify things as you bring things in.
+//NEVER add new feature as you bring things in!!!!!!
+	
+#define DontCheckForHardDeadlinesInSPBsForEverySetInput
+ 
 
 //#define TESTWITH_AO_PublishSubscribe
 
@@ -115,6 +122,7 @@
 #define Signal6 1000 //value for a null signal
 #define Signal7 1000 //value for a null signal
 
+ 
 
 #ifdef TEST_FSM_ACTIVATION
 #define AOInclude1 UUartDriver
@@ -131,15 +139,14 @@
 #define TypeOfAO1_4
 #define InstanceNameOfAO1_4
 #endif
-
-#ifdef TESTWITH_HOLTERMONITOR 
+ 
 
 
 //sensors and clocks configurations
-#define ClockType1 AEClock<1, 0, 2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
-#define ClockName1 clock_C1
-#define ClockType2 
-#define ClockName2
+#define ClockType1 AEClock<AEObservorSensorDUMMY, AEObservorInterpretorBaseDUMMY,1,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+#define ClockName1 clockForAccelerometer
+#define ClockType2 AEClock<AEObservorSensor, AEObservorInterpretorBaseDUMMY,3,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+#define ClockName2 clockForSPBTest
 #define ClockType3 
 #define ClockName3
 #define ClockType4 
@@ -149,9 +156,9 @@
 #define ClockType6 
 #define ClockName6
 
-#define SensorName1 SensorEKG
-#define SensorName2
-#define SensorName3 
+#define SensorName1 sensor1
+#define SensorName2 sensor2
+#define SensorName3 sensor3
 #define SensorName4
 #define SensorName5
 #define SensorName6
@@ -160,6 +167,39 @@
 #define SensorName9
 #define SensorName10
 
+
+
+#if INTEGRATION_TESTS_FOR_AECoreTestEXE__testSPB
+#define AOInclude1 AverageSPB
+#define TemplateToAO1 template<uint32_t ChannelCountBuffer, bool IsOutputSubscribeAble, TEMPLATESPB_Filters>
+#define ClassNameOfAO1 AverageSPB
+#define TypeOfAO1_1 AverageSPB<10, false>
+#define InstanceNameOfAO1_1 averageSPB
+#define TypeOfAO1_2 AverageSPB<10, false>
+#define InstanceNameOfAO1_2 averageSPB2
+#define TypeOfAO1_3 AverageSPB<10, false>
+#define InstanceNameOfAO1_3 averageSPB3 
+#define TypeOfAO1_4
+#define InstanceNameOfAO1_4
+
+#define AOInclude2 AdderSPB
+#define TemplateToAO2 template< bool IsOutputSubscribeAble = false, TEMPLATESPB_Filters>
+#define ClassNameOfAO2 AdderSPB
+#define TypeOfAO2_1 AdderSPB<>
+#define InstanceNameOfAO2_1 adderSPB
+#define TypeOfAO2_2
+#define InstanceNameOfAO2_2
+#define TypeOfAO2_2
+#define InstanceNameOfAO2_2
+#define TypeOfAO2_3
+#define InstanceNameOfAO2_3
+#define TypeOfAO2_4
+#define InstanceNameOfAO2_4
+
+#endif
+
+
+#ifdef sdqwd
 
 //AO configurations
 #define AOInclude1 UUartDriver
@@ -246,10 +286,8 @@
 #define TypeOfAO6_4
 #define InstanceNameOfAO6_4
 
-
-
-#endif //TESTWITH_HOLTERMONITOR
-
+ 
+#endif
 
  
 //enabling hardware peripherals 

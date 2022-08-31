@@ -15,10 +15,10 @@
   <Build xsi:type="com.visualgdb.build.cmake">
     <BuildLogMode xsi:nil="true" />
     <ToolchainID>
-      <ID>com.visualgdb.arm-eabi</ID>
+      <ID>com.sysprogs.gnuarm.arm-eabi</ID>
       <Version>
-        <GCC>10.3.1</GCC>
-        <GDB>10.2.90</GDB>
+        <GCC>6.3.1</GCC>
+        <GDB>8.0</GDB>
         <Revision>1</Revision>
       </Version>
     </ToolchainID>

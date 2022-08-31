@@ -92,19 +92,16 @@ Cgen_Option(
   
 
  set(AECoreLib_SRCs  ${AECoreLib_SRCs}  
- AE.h 
   #AEConfig.h
   AEDefines.h
  AEUtils.cpp 
  AEUtils.h 
- AEObjects.h
- AE_Init.h
- AE_Init.cpp
+ #AEObjects.h
  AESet.h 
  AECircularBuffer.h
- AEIntegrationTesting.h
- AEIntegrationTesting.cpp
- AECore.h
+ #PeripheralImplementations.h
+ #PeripheralImplementations.cpp
+
  )
  set(HelperFunctions  
   "HelperFunctions/AEmemcpy.h"  
@@ -112,6 +109,88 @@ Cgen_Option(
  "HelperFunctions/FastSine.h" )
 
 
+    set(AECoreLib_Managers
+ AEPublishSubscribeManager.h
+ AEPublishSubscribeManager.cpp
+ AEPoolManager.h
+ AEPoolManager.cpp
+   )
+
+   set(AECoreLib_Integrationtesting
+    AEIntegrationTesting.h
+ AEIntegrationTesting.cpp
+   )
+
+  set(AECoreLib_AE 
+   AE.h 
+ AE_Init.h
+ AE_Init.cpp
+ AECore.h
+ AEAO.h
+ AEAO.cpp)
+
+ set(AECoreLib_Clocks 
+ AEClock.h 
+ AEClock.cpp)
+
+  set(AECoreLib_EVENTS 
+   QueueArgStructures.h
+ QueueArgStructures.cpp 
+ AEEventBase.h
+ AEEventBase.cpp
+ EventsForProject.cpp)
+
+   set(AECoreLib_LOOPS
+ AELoopObject.h
+ AELoopObject.cpp
+ AELoop.h
+ AELoop.cpp)
+
+
+set(AECoreLib_SPBS
+ AESPBObservor.h
+ AESPBObservor.cpp
+ AESPBObservorOutputType.h
+ SPBDataSubscription.h
+ SPBDataSubscription.cpp
+ InputChannel.h
+ InputChannel.cpp
+ InputChannelOutputType.h
+ TaskPoolForSPBChain.h
+ )
+
+ set(AECoreLib_Observors
+AEObservorBase.h
+AEObservorBase.cpp
+AEObservorSensor.h
+AEObservorSensor.cpp
+AEObservorTypes.h
+AEObservorSensorFilterOut.h
+ )
+
+  set(AECoreLib_Links
+  AELinkSignalFlow.h
+  AELinkSignalFlow.cpp
+  AELinkDeterministic.h
+  AELinkDeterministic.cpp
+  AELinkBase.h
+  AELinkBase.cpp
+ )
+
+
+   set(AECoreLib_Interpretors
+AEObservorInterpretorOutputType.h
+AEObservorInterpretorBase.h
+AEObservorInterpretorBase.cpp
+AEObservorInterpretor.h
+ )
+
+    set(AECoreLib_Filters
+ AEFilter.h
+ AEMultiChannelFilter.h
+ AEMultiChannelFilter.cpp
+ AEMultiChannelFilterCHANNELSELECT.h
+ )
 
 
 
@@ -181,15 +260,29 @@ endforeach()
 
 if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
  
+ 
  	 add_bsp_based_library(NAME AECoreLib
 	SOURCES
         ${AESetupFiles}
-		${AECoreLib_SRCs}
+		
 		${USER_CONFIG_FILES}
 		${BOARD_SPECIFIC_FILES}
 		${REQUIRED_Hal_FILES}
 		${HelperFunctions}
 		${NeededHAl}
+
+		${AECoreLib_LOOPS}
+		${AECoreLib_AE}
+		${AECoreLib_Integrationtesting}
+		${AECoreLib_Managers}
+		${AECoreLib_SRCs}
+		${AECoreLib_Clocks}
+		${AECoreLib_EVENTS}
+		${AECoreLib_SPBS}
+		${AECoreLib_Observors}
+		${AECoreLib_Interpretors}
+		${AECoreLib_Filters}
+		${AECoreLib_Links}
 		) 
 	#Always do this for BSP targets. I dont really understand why yet you need this
 	target_include_directories(BSP PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")  
@@ -199,17 +292,43 @@ if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 
  add_library(AECoreLib
         ${AESetupFiles}
-		${AECoreLib_SRCs}
+		
 		${USER_CONFIG_FILES}
 		${BOARD_SPECIFIC_FILES}
 		${REQUIRED_Hal_FILES}
 		${HelperFunctions}
-		${NeededHAl})
+		${NeededHAl}
+
+		${AECoreLib_LOOPS}
+		${AECoreLib_AE}
+		${AECoreLib_Integrationtesting}
+		${AECoreLib_Managers}
+		${AECoreLib_SRCs}
+		${AECoreLib_Clocks}
+		${AECoreLib_EVENTS}
+		${AECoreLib_SPBS}
+		${AECoreLib_Observors}
+		${AECoreLib_Interpretors}
+		${AECoreLib_Filters}
+		${AECoreLib_Links}
+		)
 
  endif()
 
 Set_Sources_in_SourceGroup(NAMEOFGROUP "HelperFunctions" LISTOFSOURCES  ${HelperFunctions})
 Set_Sources_in_SourceGroup(NAMEOFGROUP "SetupFiles" LISTOFSOURCES  ${AESetupFiles})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEClocks" LISTOFSOURCES  ${AECoreLib_Clocks})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEEvents" LISTOFSOURCES  ${AECoreLib_EVENTS})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AELoops" LISTOFSOURCES  ${AECoreLib_LOOPS})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AE" LISTOFSOURCES  ${AECoreLib_AE})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEIntegrationTesting" LISTOFSOURCES  ${AECoreLib_Integrationtesting})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEManagers" LISTOFSOURCES  ${AECoreLib_Managers})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AESPBS" LISTOFSOURCES  ${AECoreLib_SPBS})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEObservors" LISTOFSOURCES  ${AECoreLib_Observors})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEInterpretors" LISTOFSOURCES  ${AECoreLib_Interpretors})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEFilters" LISTOFSOURCES  ${AECoreLib_Filters})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AELinks" LISTOFSOURCES  ${AECoreLib_Links})
+
 target_sources(AECoreLib PUBLIC ${AESetupFiles})
 
 #set(PATH_TO_GeneratorFiles "${CMAKE_CURRENT_SOURCE_DIR}/GeneratedFiles")

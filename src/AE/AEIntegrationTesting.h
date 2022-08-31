@@ -170,6 +170,15 @@ inline void _AEITEST_END_FUNC()
 inline void AEITEST_END_FUNC()
 {
   
+	//log timer tests that need logging. only done for integration testing.
+#ifndef GOOGLE_TESTING 
+	for (uint32_t i = 0; i < logpathToFile.size(); i++)
+	{
+		AEWriteToEndOfFile(logpathToFile[i].c_str(), logthingToWrite[i].c_str(), logthingToWriteSize[i]);
+	}  
+#endif
+	
+	
 	
 	LogAEITest("FINISH_TEST_GROUP", LogStatus::FINISHED, "done test group", 0, "None");
 	

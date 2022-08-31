@@ -75,60 +75,6 @@ endfunction()
 
 
 
- 
-
-
-#########################
-#generate a cgen macro file given a .in file located in the GeneratedFiles folder
-#INPUT_FILE_NAME: the .in file name in the GeneratedFiles folder that will be used to generate the file
-#OUTPUT_FILE_NAME: the name of the file outputted. (just name without extension not including path )
-#OUTPUT_FILE_EXTENSION: extension of output file
-#WORKINGDIRECTORY the directory to put the generated file
-
-#########################
-function(Generate_File_Using_Cgen )
-    set(options)
-    set(oneValueArgs WORKINGDIRECTORY INPUT_FILE_NAME OUTPUT_FILE_NAME OUTPUT_FILE_EXTENSION)
-    set(multiValueArgs)
-    cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
-
-     
-    #if generated file does not exist yet, create it
-    #if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}")
-        #file(WRITE "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}" "newfile")
-        #ctest_sleep(5)
-    #endif()
-     
-    #first make sure the input file even exists. if not, dont do anything
-    if (NOT EXISTS ${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in) 
-        message(WARNING "HADI: the input file ${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in  did not exist when
-                attempting to cgen generate macro.")
-        return()
-    endif ()
-
-    #generate the file
-    configure_file(${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in
-            ${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.cgenM @ONLY)
-
-
-    #run cgen macro in this directory to generate the cmake generated file
-    execute_process(COMMAND  cgen macro
-            WORKING_DIRECTORY ${_arg_WORKINGDIRECTORY}
-            OUTPUT_VARIABLE outVar 
-            ERROR_VARIABLE errorVar)
-             
-if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}")
-                execute_process(COMMAND  cgen macro
-            WORKING_DIRECTORY ${_arg_WORKINGDIRECTORY}
-            OUTPUT_VARIABLE outVar
-            ERROR_VARIABLE errorVar)
-
-    endif()
-
-
-
-endfunction()
-
 
 
 #########################
@@ -249,8 +195,8 @@ include("${CMAKE_SOURCE_DIR}/cmake/AEIntegrationTestsManager.cmake")
 ####################################################################################################
 macro(CREATE_TARGET_INTEGRATIONEXE) 
 set(options)
-set(oneValueArgs NAME_OF_TARGET LOCATION_OF_TARGET LIST_OF_TESTS)
-set(multiValueArgs LibrariesToLinkTo) 
+set(oneValueArgs NAME_OF_TARGET LOCATION_OF_TARGET )
+set(multiValueArgs LibrariesToLinkTo LIST_OF_TESTS) 
 cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN}) 
 
 
@@ -277,15 +223,24 @@ file(GLOB TARGET_HEADERS
      "${FULL_PATH_TO_TARGET}/include/*.hpp"
 )
 
+_CREATE_AEOBJECTS_FILE()
+
+
 if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
+
+set(EXE_USER_CONFIG_FILES 	
+    ${FULL_PATH_TO_TARGET}/conf/UserBSPConfig.cpp
+    ${FULL_PATH_TO_TARGET}/conf/AEConfig.h 
+    ${FULL_PATH_TO_TARGET}/conf/EventsForProject.h 
+    ) 
 
  add_bsp_based_executable(
 	NAME ${_arg_NAME_OF_TARGET}
 	SOURCES ${FULL_PATH_TO_TARGET}/main.cpp ${SRCS_TO_USER_CONFIG_FILES}
+    ${FULL_PATH_TO_TARGET}/AEObjects.h
     ${TARGET_SRCS}
     ${TARGET_HEADERS}
-	${FULL_PATH_TO_TARGET}/conf/UserBSPConfig.cpp
-    ${FULL_PATH_TO_TARGET}/conf/AEConfig.h
+    ${EXE_USER_CONFIG_FILES}
 	GENERATE_BIN
 	GENERATE_MAP) 
 	 
@@ -304,6 +259,8 @@ else()
 		target_include_directories(AECoreLib PUBLIC "${FULL_PATH_TO_TARGET}/conf")
 
 endif()
+
+target_include_directories(${_arg_NAME_OF_TARGET} PUBLIC "${FULL_PATH_TO_TARGET}/include")
 	 
 
 foreach(integtest  ${_arg_LIST_OF_TESTS})
@@ -313,7 +270,7 @@ foreach(integtest  ${_arg_LIST_OF_TESTS})
 
    AEintegrationTest_add_test(
    FOR_TARGET ${_arg_NAME_OF_TARGET}  
-   All_TEST_NAMES  ${integtest} )
+   All_TEST_NAMES  ${_arg_LIST_OF_TESTS} )
 endforeach()
 
 	#AEintegrationTest_create_test(
@@ -331,6 +288,11 @@ foreach(tar ${_arg_LibrariesToLinkTo})
 target_link_libraries(${_arg_NAME_OF_TARGET} PUBLIC  ${tar})  
 endforeach() 
 
+
+Set_Sources_in_SourceGroup(
+NAMEOFGROUP user_config_files
+LISTOFSOURCES ${EXE_USER_CONFIG_FILES})
+
 Set_Sources_in_SourceGroup(
 NAMEOFGROUP target_sources
 LISTOFSOURCES ${TARGET_SRCS})
@@ -344,3 +306,262 @@ LISTOFSOURCES ${TARGET_HEADERS})
 endif()
 
 endmacro()
+
+
+
+
+
+macro(_CREATE_AEOBJECTS_FILE) 
+Generate_File_Using_Cgen_IN(
+INPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/GeneratedFiles
+OUTPUT_DIRECTORY ${FULL_PATH_TO_TARGET}
+INPUT_FILE_NAME AEObjects
+OUTPUT_FILE_NAME AEObjects
+OUTPUT_FILE_EXTENSION .h
+    )
+endmacro()
+
+
+
+
+
+
+
+
+
+
+#########################
+#generate a cgen macro file given a .in file located in the GeneratedFiles folder
+#INPUT_FILE_NAME: the .in file name in the GeneratedFiles folder that will be used to generate the file
+#OUTPUT_FILE_NAME: the name of the file outputted. (just name without extension not including path )
+#OUTPUT_FILE_EXTENSION: extension of output file
+#WORKINGDIRECTORY the directory to put the generated file
+
+#########################
+function(Generate_File_Using_Cgen )
+    set(options)
+    set(oneValueArgs WORKINGDIRECTORY INPUT_FILE_NAME OUTPUT_FILE_NAME OUTPUT_FILE_EXTENSION)
+    set(multiValueArgs)
+    cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+     
+    #if generated file does not exist yet, create it
+    #if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}")
+        #file(WRITE "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}" "newfile")
+        #ctest_sleep(5)
+    #endif()
+     
+    #first make sure the input file even exists. if not, dont do anything
+    if (NOT EXISTS ${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in) 
+        message(WARNING "HADI: the input file ${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in  did not exist when
+                attempting to cgen generate macro.")
+        return()
+    endif ()
+
+    #generate the file
+    configure_file(${CMAKE_SOURCE_DIR}/GeneratedFiles/${_arg_INPUT_FILE_NAME}.cgenM.in
+            ${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.cgenM @ONLY)
+
+
+    #run cgen macro in this directory to generate the cmake generated file
+    execute_process(COMMAND  cgen macro
+            WORKING_DIRECTORY ${_arg_WORKINGDIRECTORY}
+            OUTPUT_VARIABLE outVar 
+            ERROR_VARIABLE errorVar)
+             
+if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}")
+                execute_process(COMMAND  cgen macro
+            WORKING_DIRECTORY ${_arg_WORKINGDIRECTORY}
+            OUTPUT_VARIABLE outVar
+            ERROR_VARIABLE errorVar)
+
+    endif()
+
+
+
+endfunction()
+
+
+
+#########################
+#generate a cgen macro file given a .in file located in the GeneratedFiles folder
+#INPUT_FILE_NAME: the .in file name in the GeneratedFiles folder that will be used to generate the file
+#OUTPUT_FILE_NAME: the name of the file outputted. (just name without extension not including path )
+#OUTPUT_FILE_EXTENSION: extension of output file
+#OUTPUT_DIRECTORY the directory to put the generated file 
+#INPUT_DIRECTORY the directory that your inpur cgen file is in. make sure that the file is of extension .cgenM.in
+function(Generate_File_Using_Cgen_IN)
+    set(options)
+    set(oneValueArgs INPUT_DIRECTORY OUTPUT_DIRECTORY INPUT_FILE_NAME OUTPUT_FILE_NAME OUTPUT_FILE_EXTENSION
+        Macro1 Macro2 Macro3 Macro4 Macro5 Macro6 Macro7 Macro8 Macro9 Macro10
+        Macro11 Macro12 Macro13 Macro14 Macro15 Macro16 Macro17 Macro18 Macro19 Macro20
+        Macro21 Macro22 Macro23 Macro24 Macro25 Macro26 Macro27 Macro28 Macro29 Macro30
+        Macro31 Macro32 Macro33 Macro34 Macro35 Macro36 Macro37 Macro38 Macro39 Macro40
+        Macro41 Macro42 Macro43 Macro44 Macro45 Macro46 Macro47 Macro48 Macro49 Macro50
+        LoopIncrement1 LoopIncrement2 LoopIncrement3 LoopIncrement4 LoopIncrement5
+        LoopIncrement6 LoopIncrement7 LoopIncrement8 LoopIncrement9 LoopIncrement10
+        )
+    set(multiValueArgs)
+    cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+     
+    #if generated file does not exist yet, create it
+    #if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}")
+        #file(WRITE "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_EXTENSION}" "newfile")
+        #ctest_sleep(5)
+    #endif()
+    message("_arg_OUTPUT_FILE_EXTENSION    ${_arg_OUTPUT_FILE_EXTENSION}")
+     
+
+    if(${_arg_OUTPUT_FILE_EXTENSION} STREQUAL "xml")
+        set(COMMENT_CGEN "<!--")
+        set(COMMENT_CGEN_END "-->")
+    elseif(${_arg_OUTPUT_FILE_EXTENSION} STREQUAL "cmake")
+        set(COMMENT_CGEN "#")
+        set(COMMENT_CGEN_END "")
+    else()
+        set(COMMENT_CGEN "//")
+        set(COMMENT_CGEN_END "")
+    endif()
+
+    #first make sure the input file even exists. if not, dont do anything
+    if (NOT EXISTS ${_arg_INPUT_DIRECTORY}/${_arg_INPUT_FILE_NAME}.in)
+        message(WARNING "HADI: the input file ${_arg_INPUT_DIRECTORY}/${_arg_INPUT_FILE_NAME}.in  did not exist when
+                attempting to cgen generate macro.")
+        return()
+    endif ()
+
+    #take the file and append the required header stuff for cgen. You'll then need to generate an intermediary file
+    # so to not disturb the original configure .in file.
+    File(READ ${_arg_INPUT_DIRECTORY}/${_arg_INPUT_FILE_NAME}.in CONTENTS_OF_FILE)
+    set(CONTENTS_OF_FILE1
+"##Macro1 @_arg_Macro1@
+##Macro2 @_arg_Macro2@
+##Macro3 @_arg_Macro3@
+##Macro4 @_arg_Macro4@
+##Macro5 @_arg_Macro5@
+##Macro6 @_arg_Macro6@
+##Macro7 @_arg_Macro7@
+##Macro8 @_arg_Macro8@
+##Macro9 @_arg_Macro9@
+##Macro10 @_arg_Macro10@
+##Macro11 @_arg_Macro11@
+##Macro12 @_arg_Macro12@
+##Macro13 @_arg_Macro13@
+##Macro14 @_arg_Macro14@
+##Macro15 @_arg_Macro15@
+##Macro16 @_arg_Macro16@
+##Macro17 @_arg_Macro17@
+##Macro18 @_arg_Macro18@
+##Macro19 @_arg_Macro19@
+##Macro20 @_arg_Macro20@
+##Macro21 @_arg_Macro21@
+##Macro22 @_arg_Macro22@
+##Macro23 @_arg_Macro23@
+##Macro24 @_arg_Macro24@
+##Macro25 @_arg_Macro25@
+##Macro26 @_arg_Macro26@
+##Macro27 @_arg_Macro27@
+##Macro28 @_arg_Macro28@
+##Macro29 @_arg_Macro29@
+##Macro30 @_arg_Macro30@
+##Macro31 @_arg_Macro31@
+##Macro32 @_arg_Macro32@
+##Macro33 @_arg_Macro33@
+##Macro34 @_arg_Macro34@
+##Macro35 @_arg_Macro35@
+##Macro36 @_arg_Macro36@
+##Macro37 @_arg_Macro37@
+##Macro38 @_arg_Macro38@
+##Macro39 @_arg_Macro39@
+##Macro40 @_arg_Macro40@
+##Macro41 @_arg_Macro41@
+##Macro42 @_arg_Macro42@
+##Macro43 @_arg_Macro43@
+##Macro44 @_arg_Macro44@
+##Macro45 @_arg_Macro45@
+##Macro46 @_arg_Macro46@
+##Macro47 @_arg_Macro47@
+##Macro48 @_arg_Macro48@
+##Macro49 @_arg_Macro49@
+##Macro50 @_arg_Macro50@
+##LoopIncrement1 @_arg_LoopIncrement1@
+##LoopIncrement2 @_arg_LoopIncrement2@
+##LoopIncrement3 @_arg_LoopIncrement3@
+##LoopIncrement4 @_arg_LoopIncrement4@
+##LoopIncrement5 @_arg_LoopIncrement5@
+##LoopIncrement6 @_arg_LoopIncrement6@
+##LoopIncrement7 @_arg_LoopIncrement7@
+##LoopIncrement8 @_arg_LoopIncrement8@
+##LoopIncrement9 @_arg_LoopIncrement9@
+##LoopIncrement10 @_arg_LoopIncrement10@
+##ToFile @_arg_OUTPUT_FILE_NAME@@_arg_OUTPUT_FILE_EXTENSION@")
+set(CONTENTS_OF_FILE "${CONTENTS_OF_FILE1}\n${CONTENTS_OF_FILE}")
+
+
+    File(WRITE ${_arg_INPUT_DIRECTORY}/${_arg_INPUT_FILE_NAME}.cgenM.in "${CONTENTS_OF_FILE}")
+
+    #generate the file
+    configure_file(${_arg_INPUT_DIRECTORY}/${_arg_INPUT_FILE_NAME}.cgenM.in
+            ${_arg_OUTPUT_DIRECTORY}/${_arg_OUTPUT_FILE_NAME}.cgenM @ONLY)
+
+
+
+set(USERNAME $ENV{USER})
+set(errorVar)
+    message("running cgen macro at directory ${_arg_OUTPUT_DIRECTORY}")
+
+	if (WIN32)
+	    execute_process(COMMAND cgen macro
+            WORKING_DIRECTORY ${_arg_OUTPUT_DIRECTORY}
+            OUTPUT_VARIABLE outVar 
+            ERROR_VARIABLE errorVar)
+			
+			message("outVar: ${outVar}")
+			message("errorVar: ${errorVar}")
+	else()
+		    execute_process(COMMAND  cgen macro
+            WORKING_DIRECTORY ${_arg_OUTPUT_DIRECTORY}
+            OUTPUT_VARIABLE outVar 
+            ERROR_VARIABLE errorVar)
+			
+			message("outVar: ${outVar}")
+			message("errorVar: ${errorVar}") 
+	endif()
+
+    #run cgen macro in this directory to generate the cmake generated file
+
+             
+if(NOT EXISTS "${_arg_OUTPUT_DIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${_arg_OUTPUT_FILE_EXTENSION}")
+
+	 if (WIN32)
+	     execute_process(COMMAND  cgen macro
+             WORKING_DIRECTORY ${_arg_OUTPUT_DIRECTORY}
+             OUTPUT_VARIABLE outVar 
+             ERROR_VARIABLE errorVar)
+			
+			 message("outVar: ${outVar}")
+			 message("errorVar: ${errorVar}")
+	 else()
+		     execute_process(COMMAND  cgen macro
+             WORKING_DIRECTORY ${_arg_OUTPUT_DIRECTORY}
+             OUTPUT_VARIABLE outVar 
+             ERROR_VARIABLE errorVar)
+			
+			 message("outVar: ${outVar}")
+			 message("errorVar: ${errorVar}") 
+	 endif()
+
+endif()
+
+
+  if(errorVar STREQUAL "")
+   else()
+   message(FATAL_ERROR "HADI: cgen gave an error!: it is for file ${_arg_OUTPUT_DIRECTORY}/${_arg_OUTPUT_FILE_NAME} \n of error message ${errorVar}")
+   endif()
+
+    #remove that cgen file so that it does not get called again with every execution of cgen in that directory
+    file(REMOVE  ${_arg_OUTPUT_DIRECTORY}/${_arg_OUTPUT_FILE_NAME}.cgenM)
+
+
+endfunction()

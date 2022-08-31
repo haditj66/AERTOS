@@ -7,6 +7,7 @@
 cmake_minimum_required(VERSION 3.15)
   
 
+
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --save-temps")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --save-temps")
@@ -205,7 +206,12 @@ Cgen_Option(
         CONSTRICTS_LATER_OPTIONS
 )
 
-
+Cgen_Option(
+        NAME BUILD_TESTS
+        DESCRIPTION "if True the integration functions located IntegrationTestMacros.h will be turned on. if false, will not do anything"
+        POSSIBLEVALUES TRUE FALSE
+        CONSTRICTS_LATER_OPTIONS
+)
 
 Cgen_Option(
         NAME BUILD_UNIT_TESTS
@@ -214,17 +220,32 @@ Cgen_Option(
         CONSTRICTS_LATER_OPTIONS
 )
 
-Cgen_Option(
-        NAME BUILD_TESTS
-        DESCRIPTION "to build INTEGRATION any tests or not"
-        POSSIBLEVALUES TRUE FALSE
-        CONSTRICTS_LATER_OPTIONS
-)
+
+if(${TOOLCHAIN_USED} STREQUAL "arm_non_eabi_id")
+
+##for now always have this set to 
+set(ARM_COMPILER_VENDOR SysGCC_ARM)
+    Cgen_Option(
+            NAME ARM_COMPILER_VENDOR
+            DESCRIPTION "There are different vendors that have implemented the arm-none-eabi-gcc compiler. Choose the one you want to use."
+            POSSIBLEVALUES GNU_ARM IAR_ARM SysGCC_ARM
+            CONSTRICTS_LATER_OPTIONS
+    )
+
+        Cgen_Option(
+            NAME ARM_OPTIMIZATION_SETTINGS
+            DESCRIPTION "compiler optimization options. Go here for explanations. https://developer.arm.com/documentation/100748/0607/fnb1472741490155"
+            POSSIBLEVALUES level0 level1 level2 level3 levelfast
+            CONSTRICTS_LATER_OPTIONS
+    )
+
+    
+endif()
 
 
 #write the proper toolchain file to its build location since VSGDB auto generates the toolchain file. I want to write over it.
 if(NOT ${OS_USED} STREQUAL "UBUNTU")
-SET(CMAKE_TOOLCHAIN_FILE "C:/visualgdb_projects/AERTOSCopy/toolchains/${TOOLCHAIN_USED}/toolchain.cmake" )
+SET(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/toolchains/${TOOLCHAIN_USED}/toolchain.cmake" )
 
 
     if (NOT EXISTS "${CMAKE_TOOLCHAIN_FILE}")
@@ -247,7 +268,42 @@ project(AERTOS LANGUAGES C CXX ASM)
  project(AERTOS LANGUAGES C CXX ASM)
   endif()
 
+
+  if(${TOOLCHAIN_USED} STREQUAL "arm_non_eabi_id") 
+      #NEVERMIND ABUOT THE FOLLOWING. JUST Set(CMAKE_C_COMPILER) here
+      #i need to change the CMakeCCompiler.cmake and the CMakeCXXCompiler.cmake in the binary folder the  Set(CMAKE_C_COMPILER)
+      if(${ARM_COMPILER_VENDOR} STREQUAL "SysGCC_ARM")   
+        set(CMAKE_C_COMPILER "C:/SysGCC/arm-eabi/bin/arm-none-eabi-gcc.exe") 
+        set(CMAKE_CXX_COMPILER "C:/SysGCC/arm-eabi/bin/arm-none-eabi-g++.exe")
+      elseif(${ARM_COMPILER_VENDOR} STREQUAL "GNU_ARM")
+        set(CMAKE_CXX_COMPILER "C:/Program Files (x86)/GNU Tools ARM Embedded/6 2017-q2-update/bin/arm-none-eabi-g++.exe")
+        set(CMAKE_C_COMPILER "C:/Program Files (x86)/GNU Tools ARM Embedded/6 2017-q2-update/bin/arm-none-eabi-gcc.exe")
+
+      elseif(${ARM_COMPILER_VENDOR} STREQUAL "IAR_ARM")
+      message(FATAL_ERROR "you need to specify the path for this")
+      endif()
+
+
+      #set compile options for compiler speed
+      #go here for compile options speed setting meanings
+      #https://developer.arm.com/documentation/100748/0607/fnb1472741490155
+      if(${ARM_OPTIMIZATION_SETTINGS} STREQUAL          "level0")  
+       add_compile_options(  -O0)
+       elseif(${ARM_OPTIMIZATION_SETTINGS} STREQUAL     "level1")
+        add_compile_options(  -O1)
+        elseif(${ARM_OPTIMIZATION_SETTINGS} STREQUAL    "level2")
+         add_compile_options(  -O2)
+        elseif(${ARM_OPTIMIZATION_SETTINGS} STREQUAL    "level3")
+         add_compile_options(  -O3)
+        elseif(${ARM_OPTIMIZATION_SETTINGS} STREQUAL    "levelfast")
+         add_compile_options(  -Ofast)
+        endif()
+      
+
+  endif()
+
 include("cmake/MyCmakeHelpers.cmake")
+
 
   
 
@@ -466,14 +522,11 @@ endif()
 
 
 
-
-if(${BUILD_TESTS} STREQUAL "TRUE" )
- #add_subdirectory("test")
- endif()
+ 
+ #add_subdirectory("test") 
 
 
  add_subdirectory("src/AE")
-
 
 
   
@@ -482,32 +535,34 @@ if(${BUILD_TESTS} STREQUAL "TRUE" )
  #CREATE_TARGET_UNITTESTS(
   #NameOfTestTarget AECoreTests
   #LibrariesToLinkTo AECoreLib
-  #LOCATION_OF_TARGET "C:/visualgdb_projects/AERTOSCopy/src/AE"
+  #LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE"
  #)
 
+
+ if(INCLUDE_HAL STREQUAL "TRUE")
   CREATE_TARGET_UNITTESTS(
  NameOfTestTarget AEHalTests
  LibrariesToLinkTo AECoreLib AEHalLib  
- LOCATION_OF_TARGET "C:/visualgdb_projects/AERTOSCopy/src/AE/hal"
+ LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE/hal"
   )   
- 
+ endif()
 
 
  CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET exeHalTest
- LOCATION_OF_TARGET "C:/visualgdb_projects/AERTOSCopy/src/AE/hal"
+ LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE/hal"
  LibrariesToLinkTo AECoreLib AEHalLib  
  LIST_OF_TESTS ADC_TEST UART_TEST
  ) 
  #target_link_libraries(exeHalTest PUBLIC  AEHalLib)     
 
  CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET AECoreTestEXE
- LOCATION_OF_TARGET "C:/visualgdb_projects/AERTOSCopy/src/AE"
+ LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE"
  LibrariesToLinkTo AECoreLib 
- LIST_OF_TESTS defaultTest
+ LIST_OF_TESTS defaultTest testAELoop testSPB testFilters
  ) 
 
-
-
+ #get_target_property(MAIN_CFLAGS AECoreTestEXE COMPILE_OPTIONS)
+ #message("-- Target compiler flags are: ${MAIN_CFLAGS}")
   
 
 

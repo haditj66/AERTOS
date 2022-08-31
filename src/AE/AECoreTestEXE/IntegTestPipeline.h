@@ -7,9 +7,9 @@
 
 #pragma once
 
-void RunSelectedIntegrationTest_defaultTest();
+void RunSelectedIntegrationTest_testFilters();
 
 static void RunSelectedIntegrationTest()
 {
-    RunSelectedIntegrationTest_defaultTest();
+    RunSelectedIntegrationTest_testFilters();
 }

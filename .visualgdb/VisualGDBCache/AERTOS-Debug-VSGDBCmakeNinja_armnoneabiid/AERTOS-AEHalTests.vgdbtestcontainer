@@ -71,14 +71,13 @@
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/CMakeLists.txt</string>
         <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/AETimerSimpleh.cgenM.in</string>
         <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/AETimerSimplecpp.cgenM.in</string>
-        <string>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/CMakeLists.txt</string>
       </AllCMakeFiles>
       <ExtraDependencies />
       <Install>false</Install>
       <HasUnitTests>false</HasUnitTests>
       <Extension xsi:type="EmbeddedCMakeExtension">
         <StartupTargetReference>
-          <Name>exeHalTest</Name>
+          <Name>AECoreTestEXE</Name>
           <Location>
             <RawFilePath>C:/visualgdb_projects/AERTOSCopy/cmake/MyCmakeHelpers.cmake</RawFilePath>
             <LineNumber>282</LineNumber>
@@ -100,7 +99,6 @@
         </TestFWReference>
         <AllReferencedLibraries>
           <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/src/AE/libAECoreLib.a</string>
-          <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/src/AE/hal/libAEHalLib.a</string>
           <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/BSP.dir/5a3635d2199b4fb9632a69d2a7189a50/STM32F4xxxx/StartupFiles/startup_stm32f411xe.c.obj</string>
           <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/5a3635d2199b4fb9632a69d2a7189a50/FreeRTOS/Source/croutine.c.obj</string>
           <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/027e43ff491c8b9152964f406da55de9/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj</string>
@@ -115,7 +113,7 @@
       <Entries>
         <KeyValue>
           <Key>SelectedCMakeTarget</Key>
-          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/exeHalTest</Value>
+          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/AECoreTestEXE</Value>
         </KeyValue>
         <KeyValue>
           <Key>SelectedCMakeTargetArgs</Key>
@@ -141,7 +139,6 @@
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.hal.dir/027e43ff491c8b9152964f406da55de9/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj</string>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.ll.dir/e042b736c7df28b5c0e4cf0c397b0e22/Src/stm32f4xx_ll_adc.c.obj</string>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/CMakeFiles/BSP_EFP_Profiler.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/FastSemihosting.cpp.obj</string>
-      <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/src/AE/hal/libAEHalLib.a</string>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/src/AE/libAECoreLib.a</string>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_armnoneabiid/Debug/AEHalTests</string>
     </ExtraLibrariesForLDLibraryPath>

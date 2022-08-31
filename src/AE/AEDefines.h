@@ -2,12 +2,13 @@
 
 
 #include "cstdint"
+ 
 
 
-
-
-
-
+//############################################
+//EVENTS
+//############################################ 
+//############################################
 
 //macro for action requests -------------------------
 
@@ -397,10 +398,10 @@ ActionRequest3
 #define TemplateFor_AEPeripherals \
 class DerivedType, uint16_t NumOfGpioPinsNeeded, class PeripheralHandleTypeDef \
 	, Portenum PORT1 = Portenum::PortsMaxNum, PinEnum PIN1 = PinEnum::PINMaxNum\
-	, Portenum PORT2 = Portenum::PortsMaxNum, PinEnum PIN2 = PinEnum::PINMaxNum\
-	, Portenum PORT3 = Portenum::PortsMaxNum, PinEnum PIN3 = PinEnum::PINMaxNum\
-	, Portenum PORT4 = Portenum::PortsMaxNum, PinEnum PIN4 = PinEnum::PINMaxNum\
-	, Portenum PORT5 = Portenum::PortsMaxNum, PinEnum PIN5 = PinEnum::PINMaxNum\
+, Portenum PORT2 = Portenum::PortsMaxNum, PinEnum PIN2 = PinEnum::PINMaxNum\
+, Portenum PORT3 = Portenum::PortsMaxNum, PinEnum PIN3 = PinEnum::PINMaxNum\
+, Portenum PORT4 = Portenum::PortsMaxNum, PinEnum PIN4 = PinEnum::PINMaxNum\
+, Portenum PORT5 = Portenum::PortsMaxNum, PinEnum PIN5 = PinEnum::PINMaxNum\
 
 #define TemplateFor_AEPeripherals_NoDefaults \
 class DerivedType, uint16_t NumOfGpioPinsNeeded, class PeripheralHandleTypeDef \
@@ -525,7 +526,22 @@ TheParameterNOTone12, isParameterNOToneInputSize12
 
 
 //template for clock
-#define TEMPLATEFOR_AEClock template<uint16_t NumOfSensorsIWillBeSetTo_Prescale1 = 0, \
+class AEObservorSensorDUMMY
+{ 
+public:
+	void Update() {}
+};
+
+class AEObservorInterpretorBaseDUMMY
+{
+public:
+	void UpdateObservationIfNeededForClock(){}
+};
+	
+#define TEMPLATEFOR_AEClock template<\
+class TAEObservorSensor = AEObservorSensorDUMMY, \
+class TAEObservorInterpretorBase = AEObservorInterpretorBaseDUMMY, \
+uint16_t NumOfSensorsIWillBeSetTo_Prescale1 = 0, \
 uint16_t NumOfInterpretorsIWillBeSetTo_Prescale1 = 0,\
 uint16_t NumOfTDUsIWillBeSetTo_Prescale1 = 0,\
 uint16_t NumOfSensorsIWillBeSetTo_Prescale2 = 0,\
@@ -547,7 +563,10 @@ uint16_t NumOfSensorsIWillBeSetTo_Prescale64 = 0,\
 uint16_t NumOfInterpretorsIWillBeSetTo_Prescale64 = 0,\
 uint16_t NumOfTDUsIWillBeSetTo_Prescale64 = 0>
 
-#define TEMPLATEFORNoDefaults_AEClock template<uint16_t NumOfSensorsIWillBeSetTo_Prescale1, \
+#define TEMPLATEFORNoDefaults_AEClock template<\
+class TAEObservorSensor, \
+class TAEObservorInterpretorBase, \
+uint16_t NumOfSensorsIWillBeSetTo_Prescale1, \
 uint16_t NumOfInterpretorsIWillBeSetTo_Prescale1,\
 uint16_t NumOfTDUsIWillBeSetTo_Prescale1,\
 uint16_t NumOfSensorsIWillBeSetTo_Prescale2,\
@@ -569,7 +588,10 @@ uint16_t NumOfSensorsIWillBeSetTo_Prescale64,\
 uint16_t NumOfInterpretorsIWillBeSetTo_Prescale64,\
 uint16_t NumOfTDUsIWillBeSetTo_Prescale64>
 
-#define TEMPLATEFORParams_AEClock NumOfSensorsIWillBeSetTo_Prescale1, \
+#define TEMPLATEFORParams_AEClock \
+ TAEObservorSensor, \
+ TAEObservorInterpretorBase, \
+ NumOfSensorsIWillBeSetTo_Prescale1, \
  NumOfInterpretorsIWillBeSetTo_Prescale1,\
  NumOfTDUsIWillBeSetTo_Prescale1,\
  NumOfSensorsIWillBeSetTo_Prescale2,\

@@ -21,6 +21,8 @@ typedef std::chrono::time_point<std::chrono::steady_clock> PerfIntSize_t;
 typedef long PerfElapsed_t;
 #endif
 
+
+
 class AEPerformanceTimer
 {
 	//only this function will create the instances of this class.
@@ -47,6 +49,16 @@ public:
 	
 	
 private:
+	
+#ifdef SWIL_HWIL_DRIVEN__HWIL
+	//this is needed when in microcontrollers as the cycles needs to be multiplied
+	//by some factor to get to the actual time. what this corrction factor is might
+	//vary between MCUs, clock speed, and who knows what else. Look at "testSPB" 
+	//integration test for an example of me testing gpio timing to the performance timer.
+	static const float TimerCorrection;
+#endif
+	
+		
 	void _init() {_TimerRunningFromStart = false; _TimerRunningFromReEnter = false; }
 	
 #ifdef SWIL_HWIL_DRIVEN__SWIL

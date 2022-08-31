@@ -89,6 +89,7 @@ public:
 class AENullClass {
 public:float operator()(float a) { return 0; }
 	;
+	float FilterOutputValue;
 	void Initialize(float a) {}
 	;
 	float GetObservation() { return 1; }
@@ -459,14 +460,7 @@ enum AEFSMActiveTypeEnum {
 };
 
 
-#if NUMOFEVENTS > (256-2) //the minus 2 is to account for the two enter and exit events
 
-#define ENTEREVENT_Id	0xffff
-#define EXITEVENT_Id	0xffff - 1
-#else  
-#define ENTEREVENT_Id	0xff
-#define EXITEVENT_Id	0xff - 1
-#endif
 
 //macro to return a state transition
 
@@ -801,7 +795,14 @@ static std::vector<AssertTestCheck*> UniqueIdsOfTestingAsserts;
 
 
 
+#if NUMOFEVENTS > (256-2) //the minus 2 is to account for the two enter and exit events
 
+#define ENTEREVENT_Id	0xffff
+#define EXITEVENT_Id	0xffff - 1
+#else  
+#define ENTEREVENT_Id	0xff
+#define EXITEVENT_Id	0xff - 1
+#endif
 
 
 /// \def assert the the predicate. test code: sdve46ydv
@@ -861,6 +862,7 @@ for (size_t i = 0; i < UniqueIdsOfTestingAsserts.size(); i++)\
 //performance timers
 //############################### 
 
+  
 extern AEPerformanceTimer* AEPerfTimer1;
 extern AEPerformanceTimer* AEPerfTimer2;
 extern AEPerformanceTimer* AEPerfTimer3; 
@@ -918,9 +920,30 @@ AEPrintTimerDuration(forTimer)\
 
 
 #include <string>
+#include <vector>
+
+static std::vector<std::string> logFilesToLogSoFar;
+static std::vector<std::string> logpathToFile;
+static std::vector<std::string> logthingToWrite;
+static std::vector<uint32_t> logthingToWriteSize;
 
 inline void _AELogTimer(PerfElapsed_t duration, const char* FileNameToWriteTo) 
 {
+	//first if you are not google testing, I need to check if the file i am writing to has already beed processed
+#ifndef GOOGLE_TESTING
+	for (std::string  fi : logFilesToLogSoFar)
+	{
+		if (fi == FileNameToWriteTo)
+		{
+			//do nothing as already processed file.
+			return; 
+		}
+	}
+	logFilesToLogSoFar.push_back(FileNameToWriteTo);
+	
+#endif
+	
+
 	
 #ifdef SWIL_HWIL_DRIVEN__HWIL
 	std::string PathtoFile = "PerformanceTimes\\Hardware\\%s\\%s.txt";
@@ -943,9 +966,16 @@ inline void _AELogTimer(PerfElapsed_t duration, const char* FileNameToWriteTo)
 	std::string formatedmsgStr = formatedMsg;
 	std::string formatedmsgStr2 = formatedMsg2;
 	
-	AEWriteToEndOfFile(PathtoFile.c_str(), formatedmsgStr.c_str(), formatedmsgStr.length());
-	AEWriteToEndOfFile(PathtoFileMain.c_str(), formatedmsgStr2.c_str(), formatedmsgStr2.length());
 	
+
+	
+	//only write if unit testing, otherwise log to the file happens after integration testing ends. 
+#ifdef GOOGLE_TESTING
+	AEWriteToEndOfFile(PathtoFile.c_str(), formatedmsgStr.c_str(), formatedmsgStr.length());
+	AEWriteToEndOfFile(PathtoFileMain.c_str(), formatedmsgStr2.c_str(), formatedmsgStr2.length()); #else	logpathToFile.push_back(PathtoFile);
+	logthingToWrite.push_back(formatedmsgStr);
+	logthingToWriteSize.push_back(formatedmsgStr.length());  
+#endif
 	
 }
 

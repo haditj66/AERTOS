@@ -98,7 +98,7 @@ include("${CODEGENGUI_PATH}/CgenCmakeConfigFunctions.cmake")
 
 			#check that an instance of that test was create using the AEintegrationTest_create_test()
 	 		if(DEFINED AEI_INST_${TEST_NAME}_TEST_NAME )
-			 message(ERROR "HADI: you did not create an instance of the test class ${TEST_NAME} using the AEintegrationTest_create_test() function")
+			# message(ERROR "HADI: you did not create an instance of the test class ${TEST_NAME} using the AEintegrationTest_create_test() function")
 			endif() 
 
 			if(${INTEGRATION_TESTS_FOR_${INTEGRATION_TESTS}} STREQUAL  ${TEST_NAME})

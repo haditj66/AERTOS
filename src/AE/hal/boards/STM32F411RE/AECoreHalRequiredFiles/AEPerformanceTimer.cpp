@@ -5,6 +5,10 @@
 static bool AEPerfInitAlready = false;
 static float FrequencyInNano = 0;
 
+#ifdef SWIL_HWIL_DRIVEN__HWIL
+ const float AEPerformanceTimer::TimerCorrection = 4;
+#endif
+
 AEPerformanceTimer::AEPerformanceTimer()
 {
 	if (AEPerfInitAlready  == false) { 
@@ -33,11 +37,11 @@ void AEPerformanceTimer::AEStop_Timer()
 	//check for if DWT->CYCCNT wrapped around
 	if(EndingPoint < StartingPoint)
 	{
-		ElapsedCycles = EndingPoint + (0xffffffff - StartingPoint);
+		ElapsedCycles = (EndingPoint + (0xffffffff - StartingPoint))*TimerCorrection;
 	}
 	else
 	{
-		ElapsedCycles = EndingPoint - StartingPoint;
+		ElapsedCycles = (EndingPoint - StartingPoint)*TimerCorrection;
 	} 
 } 
 	
