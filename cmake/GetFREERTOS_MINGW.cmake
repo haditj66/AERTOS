@@ -2,8 +2,7 @@
 		set(FREERTOSROOT "C:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32")
 		set(_framework_libraries "")
  
-        set(_sources
-            "${FREERTOSROOT}/FreeRTOS/License/license.txt"
+        set(_sources 
             "${FREERTOSROOT}/FreeRTOS/Source/croutine.c"
             "${FREERTOSROOT}/FreeRTOS/Source/event_groups.c"
             "${FREERTOSROOT}/FreeRTOS/Source/list.c"

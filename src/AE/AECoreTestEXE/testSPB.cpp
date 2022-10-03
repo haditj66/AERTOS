@@ -130,7 +130,7 @@ static void clockTimer1(TimerHandle_t xTimerHandle)
 	sensordata3[0] = sensordata3[0] > 9 ? 1 : (sensordata3[0] + 1);
 	
 	if (sensordata1[0] == 10)
-	{   
+	{  
 		//char* bb = new char[2800];
 		//char* bb2 = new char[2800];
 		//memset(bb, 2, 2800);

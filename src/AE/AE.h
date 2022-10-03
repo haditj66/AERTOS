@@ -133,7 +133,7 @@ enum ProjectEventSignals {
 #endif
 
 #ifndef MaxNumOfAELoops
-#define MaxNumOfAELoops 1
+#define MaxNumOfAELoops 2
 #endif 
 
 #ifndef MAXSPB_CHAIN_POOLSIZE

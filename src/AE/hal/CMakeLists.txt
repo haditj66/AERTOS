@@ -17,7 +17,7 @@ set(AEHALDefinitions)
 #get hal files that exist.  
 ############################# 
 
-set(Possible_Hal_Files AEGPIOOutput.h AEGPIOInput.h AEDMA.h AEADC.h AEUART.h) 
+set(Possible_Hal_Files AEGPIOOutput.h AEGPIOInput.h AEDMA.h AEADC.h AEUART.h AEI2C.h) 
 set(Peripheral_Hal_Files )
 set(User_Peripheral_Hal_Files )
 
@@ -35,7 +35,7 @@ foreach(reqFile IN LISTS Possible_Hal_Files)
 
 if(NOT EXISTS "${PATH_TO_Hal_FILES}/${reqFile}") 
  message(INFO " ${reqFile} does not exist in ${PATH_TO_REQUIRED_Hal_FILES} " 
- "you need to define this file for porting purposes for this board.")
+ "you need to define this file for porting purposes for this board if you want to use this peripheral.")
  else()
  #remove extension so to get the  ${MYFILE_WITHOUT_EXT}Peripheral.h file associated with the hal file
  string(REGEX REPLACE "\\.[^.]*$" "" MYFILE_WITHOUT_EXT ${reqFile})

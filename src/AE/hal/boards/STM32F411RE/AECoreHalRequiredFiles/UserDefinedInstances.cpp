@@ -35,8 +35,8 @@ AEPin UserDefinedAEPins[] = {
 
  
 AEDMA_Stream UserDefinedAEDMA_streams[] = { 
-	AEDMA_Stream(2, DMA_StreamEnum::DMAStream_0, DMA2_Stream0, []()->void{ HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0); HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn); __HAL_RCC_DMA2_CLK_ENABLE(); }),
-	AEDMA_Stream(1, DMA_StreamEnum::DMAStream_6, DMA1_Stream6, []()->void{ HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0); HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn); __HAL_RCC_DMA1_CLK_ENABLE(); })
+	AEDMA_Stream(2, DMA_StreamEnum::DMAStream_0, DMA2_Stream0, []()->void{ HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 6, 0); HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn); __HAL_RCC_DMA2_CLK_ENABLE(); }),
+	AEDMA_Stream(1, DMA_StreamEnum::DMAStream_6, DMA1_Stream6, []()->void{ HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 6, 0); HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn); __HAL_RCC_DMA1_CLK_ENABLE(); })
 		
 };  
 AEDMA_Channel UserDefinedAEDMA_chs[]

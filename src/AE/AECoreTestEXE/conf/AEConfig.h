@@ -9,6 +9,7 @@
 //NEVER add new feature as you bring things in!!!!!!
 	
 #define DontCheckForHardDeadlinesInSPBsForEverySetInput
+#define AEDontCheckForCorrectActionRequestTemplate
  
 
 //#define TESTWITH_AO_PublishSubscribe
@@ -74,6 +75,8 @@
 
 #define MAXNUMBEROF_FILTERS 5
 #define MAXNUMBEROF_FILTERS_From_A_Sensor 2
+
+#define MaxNumOfAELoops 2
 
 #define MAXNUMBEROFINPUTSIGNALS_TO_A_SPB 10
 #define MAXNUMBEROFOUTPUTSIGNALS_TO_A_SPB 4
@@ -147,8 +150,8 @@
 #define ClockName1 clockForAccelerometer
 #define ClockType2 AEClock<AEObservorSensor, AEObservorInterpretorBaseDUMMY,3,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
 #define ClockName2 clockForSPBTest
-#define ClockType3 
-#define ClockName3
+#define ClockType3 AEClock<AEObservorSensorDUMMY, AEObservorInterpretorBaseDUMMY,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>
+#define ClockName3 clockForTDU
 #define ClockType4 
 #define ClockName4
 #define ClockType5 
@@ -168,6 +171,52 @@
 #define SensorName10
 
 
+
+#if INTEGRATION_TESTS_FOR_AECoreTestEXE__testTDU
+#define AOInclude1 UUartDriver
+#define TemplateToAO1 
+#define ClassNameOfAO1 UUartDriverTDU
+#define TypeOfAO1_1 UUartDriverTDU
+#define InstanceNameOfAO1_1 uartDriverTDU
+#define TypeOfAO1_2
+#define InstanceNameOfAO1_2
+#define TypeOfAO1_2
+#define InstanceNameOfAO1_2
+#define TypeOfAO1_3
+#define InstanceNameOfAO1_3
+#define TypeOfAO1_4
+#define InstanceNameOfAO1_4
+#endif
+
+#if INTEGRATION_TESTS_FOR_AECoreTestEXE__testActionRequest
+#define AOInclude1 UUartDriver
+#define TemplateToAO1 
+#define ClassNameOfAO1 UUartDriver
+#define TypeOfAO1_1 UUartDriver
+#define InstanceNameOfAO1_1 uartDriver
+#define TypeOfAO1_2
+#define InstanceNameOfAO1_2
+#define TypeOfAO1_2
+#define InstanceNameOfAO1_2
+#define TypeOfAO1_3
+#define InstanceNameOfAO1_3
+#define TypeOfAO1_4
+#define InstanceNameOfAO1_4
+#endif
+
+#if INTEGRATION_TESTS_FOR_AECoreTestEXE__testFilters
+#define AOInclude1 ThreeDimensionalVector
+#define TemplateToAO1 template<TEMPLATESPB_Filters>
+#define ClassNameOfAO1 ThreeDimensionalVector
+#define TypeOfAO1_1 ThreeDimensionalVector<0>
+#define InstanceNameOfAO1_1 velocitySPB
+#define TypeOfAO1_2 ThreeDimensionalVector<0>
+#define InstanceNameOfAO1_2 accelerationSPB
+#define TypeOfAO1_3  
+#define InstanceNameOfAO1_3  
+#define TypeOfAO1_4
+#define InstanceNameOfAO1_4
+#endif
 
 #if INTEGRATION_TESTS_FOR_AECoreTestEXE__testSPB
 #define AOInclude1 AverageSPB

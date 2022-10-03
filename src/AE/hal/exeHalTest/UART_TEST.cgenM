@@ -21,7 +21,7 @@
 
 ##ToFile UART_TEST.cpp
 
-#if INTEGRATION_TESTS_FOR_AEHal_Tests1 == UART_TEST
+#if INTEGRATION_TESTS_FOR_exeHalTest__UART_TEST
  
 #include "IntegTestPipeline.h"
 

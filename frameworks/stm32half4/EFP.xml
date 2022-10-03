@@ -1,0 +1,1293 @@
+<?xml version="1.0"?>
+<EmbeddedFrameworkPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PackageID>com.sysprogs.arm.stm32.STM32F4_hal</PackageID>
+  <PackageDescription>STM32F4 HAL Library</PackageDescription>
+  <PackageVersion>1.0</PackageVersion>
+  <IsStandAlone>true</IsStandAlone>
+  <Frameworks>
+    <EmbeddedFramework>
+      <ID>com.sysprogs.arm.stm32.STM32F4_hal</ID>
+      <ClassID>com.sysprogs.arm.stm32.hal</ClassID>
+      <UserFriendlyName>STM32F4 HAL Library</UserFriendlyName>
+      <AdditionalSourceFiles>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dfsdm.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpsmbus.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpsmbus_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smbus.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/Legacy/stm32f4xx_hal_can_legacy.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/Legacy/stm32f4xx_hal_eth_legacy.c</string>
+      </AdditionalSourceFiles>
+      <AdditionalHeaderFiles>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dfsdm.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpsmbus.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpsmbus_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_mmc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smbus.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/Legacy/stm32f4xx_hal_can_legacy.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/Legacy/stm32f4xx_hal_eth_legacy.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/cmsis_armcc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/cmsis_armclang.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/cmsis_compiler.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/cmsis_gcc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/cmsis_iccarm.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/cmsis_version.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_armv8mbl.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_armv8mml.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_cm0.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_cm0plus.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_cm1.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_cm23.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_cm3.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_cm33.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_cm4.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_cm7.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_sc000.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/core_sc300.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/mpu_armv7.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/mpu_armv8.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include/tz_context.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Device/ST/STM32F4xx/Include/stm32f4xx.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Device/ST/STM32F4xx/Include/system_stm32f4xx.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/cmsis_armcc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/cmsis_armclang.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/cmsis_compiler.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/cmsis_gcc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/cmsis_iccarm.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/cmsis_version.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_armv8mbl.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_armv8mml.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_cm0.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_cm0plus.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_cm1.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_cm23.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_cm3.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_cm33.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_cm4.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_cm7.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_sc000.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/core_sc300.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/mpu_armv7.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/mpu_armv8.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include/tz_context.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/RTOS/Template/cmsis_os.h</string>
+      </AdditionalHeaderFiles>
+      <AdditionalIncludeDirs>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/Legacy</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Device/ST/STM32F4xx/Include</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/RTOS2/Include</string>
+      </AdditionalIncludeDirs>
+      <AdditionalPreprocessorMacros>
+        <string>$$com.sysprogs.stm32.hal_device_family$$</string>
+        <string>USE_HAL_DRIVER</string>
+      </AdditionalPreprocessorMacros>
+      <AdditionalLibraries />
+      <ConfigurableProperties>
+        <PropertyGroups>
+          <PropertyGroup>
+            <Properties>
+              <PropertyEntry xsi:type="Enumerated">
+                <Name>HAL Driver Sources for CAN ,ETH</Name>
+                <UniqueID>com.sysprogs.stm32.legacy_hal_src</UniqueID>
+                <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                <SuggestionList>
+                  <Suggestion>
+                    <UserFriendlyName>Default</UserFriendlyName>
+                    <InternalValue />
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>Legacy</UserFriendlyName>
+                    <InternalValue>1</InternalValue>
+                  </Suggestion>
+                </SuggestionList>
+                <DefaultEntryIndex>0</DefaultEntryIndex>
+                <AllowFreeEntry>false</AllowFreeEntry>
+              </PropertyEntry>
+            </Properties>
+            <CollapsedByDefault>false</CollapsedByDefault>
+          </PropertyGroup>
+        </PropertyGroups>
+      </ConfigurableProperties>
+      <RequiredFrameworks>
+        <string>com.sysprogs.arm.stm32.STM32F4_ll</string>
+      </RequiredFrameworks>
+      <IncompatibleFrameworks>
+        <string>com.sysprogs.arm.stm32.STM32F4_stdperiph</string>
+      </IncompatibleFrameworks>
+      <MCUFilterRegex>^STM32F4.*</MCUFilterRegex>
+      <DefaultEnabled>true</DefaultEnabled>
+      <ProjectFolderName>HAL</ProjectFolderName>
+      <ConfigurationFileTemplates>
+        <ConfigurationFileTemplate>
+          <SourcePath>$$SYS:BSP_ROOT$$/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf_template.h</SourcePath>
+          <TargetFileName>stm32f4xx_hal_conf.h</TargetFileName>
+          <ExpandMacros>false</ExpandMacros>
+          <UserFriendlyName>STM32 HAL Configuration</UserFriendlyName>
+          <PropertyClasses>
+            <ConfigurationFilePropertyClass>
+              <NormalRegex>#define ([^ ]+)( *)$</NormalRegex>
+              <UndefRegex>^/\* *#define ([^ ]+)( *)\*/$</UndefRegex>
+              <NameIndex>1</NameIndex>
+              <ValueIndex>3</ValueIndex>
+              <IndentIndex>0</IndentIndex>
+              <Template>#define {name}{g2: }</Template>
+              <UndefTemplate>/* #define {name} */</UndefTemplate>
+              <Properties>
+                <string>HAL_MODULE_ENABLED</string>
+                <string>HAL_ADC_MODULE_ENABLED</string>
+                <string>HAL_CAN_MODULE_ENABLED</string>
+                <string>HAL_CAN_LEGACY_MODULE_ENABLED</string>
+                <string>HAL_CRC_MODULE_ENABLED</string>
+                <string>HAL_CEC_MODULE_ENABLED</string>
+                <string>HAL_CRYP_MODULE_ENABLED</string>
+                <string>HAL_DAC_MODULE_ENABLED</string>
+                <string>HAL_DCMI_MODULE_ENABLED</string>
+                <string>HAL_DMA_MODULE_ENABLED</string>
+                <string>HAL_DMA2D_MODULE_ENABLED</string>
+                <string>HAL_ETH_MODULE_ENABLED</string>
+                <string>HAL_FLASH_MODULE_ENABLED</string>
+                <string>HAL_NAND_MODULE_ENABLED</string>
+                <string>HAL_NOR_MODULE_ENABLED</string>
+                <string>HAL_PCCARD_MODULE_ENABLED</string>
+                <string>HAL_SRAM_MODULE_ENABLED</string>
+                <string>HAL_SDRAM_MODULE_ENABLED</string>
+                <string>HAL_HASH_MODULE_ENABLED</string>
+                <string>HAL_GPIO_MODULE_ENABLED</string>
+                <string>HAL_EXTI_MODULE_ENABLED</string>
+                <string>HAL_I2C_MODULE_ENABLED</string>
+                <string>HAL_SMBUS_MODULE_ENABLED</string>
+                <string>HAL_I2S_MODULE_ENABLED</string>
+                <string>HAL_IWDG_MODULE_ENABLED</string>
+                <string>HAL_LTDC_MODULE_ENABLED</string>
+                <string>HAL_DSI_MODULE_ENABLED</string>
+                <string>HAL_PWR_MODULE_ENABLED</string>
+                <string>HAL_QSPI_MODULE_ENABLED</string>
+                <string>HAL_RCC_MODULE_ENABLED</string>
+                <string>HAL_RNG_MODULE_ENABLED</string>
+                <string>HAL_RTC_MODULE_ENABLED</string>
+                <string>HAL_SAI_MODULE_ENABLED</string>
+                <string>HAL_SD_MODULE_ENABLED</string>
+                <string>HAL_SPI_MODULE_ENABLED</string>
+                <string>HAL_TIM_MODULE_ENABLED</string>
+                <string>HAL_UART_MODULE_ENABLED</string>
+                <string>HAL_USART_MODULE_ENABLED</string>
+                <string>HAL_IRDA_MODULE_ENABLED</string>
+                <string>HAL_SMARTCARD_MODULE_ENABLED</string>
+                <string>HAL_WWDG_MODULE_ENABLED</string>
+                <string>HAL_CORTEX_MODULE_ENABLED</string>
+                <string>HAL_PCD_MODULE_ENABLED</string>
+                <string>HAL_HCD_MODULE_ENABLED</string>
+                <string>HAL_FMPI2C_MODULE_ENABLED</string>
+                <string>HAL_FMPSMBUS_MODULE_ENABLED</string>
+                <string>HAL_SPDIFRX_MODULE_ENABLED</string>
+                <string>HAL_DFSDM_MODULE_ENABLED</string>
+                <string>HAL_LPTIM_MODULE_ENABLED</string>
+                <string>HAL_MMC_MODULE_ENABLED</string>
+              </Properties>
+            </ConfigurationFilePropertyClass>
+            <ConfigurationFilePropertyClass>
+              <NormalRegex>^( *)(#define)([ 	]+)([^ 	]+)([ 	]+)(\(?)(|\([a-zA-Z0-9_]+\))(0x[0-9a-fA-F]+|[0-9]+)(U|u|)(\)?)(| */\*!&lt;.*\*/)$</NormalRegex>
+              <NameIndex>4</NameIndex>
+              <ValueIndex>8</ValueIndex>
+              <IndentIndex>0</IndentIndex>
+              <Template>{g1}#define{g3: }{name}{g5: }{g6}{g7}{value}{g9}{g10}{g11}</Template>
+              <Properties>
+                <string>HSE_VALUE</string>
+                <string>HSE_STARTUP_TIMEOUT</string>
+                <string>HSI_VALUE</string>
+                <string>LSI_VALUE</string>
+                <string>LSE_VALUE</string>
+                <string>LSE_STARTUP_TIMEOUT</string>
+                <string>EXTERNAL_CLOCK_VALUE</string>
+                <string>VDD_VALUE</string>
+                <string>TICK_INT_PRIORITY</string>
+                <string>USE_RTOS</string>
+                <string>PREFETCH_ENABLE</string>
+                <string>INSTRUCTION_CACHE_ENABLE</string>
+                <string>DATA_CACHE_ENABLE</string>
+                <string>MAC_ADDR0</string>
+                <string>MAC_ADDR1</string>
+                <string>MAC_ADDR2</string>
+                <string>MAC_ADDR3</string>
+                <string>MAC_ADDR4</string>
+                <string>MAC_ADDR5</string>
+                <string>DP83848_PHY_ADDRESS</string>
+                <string>PHY_RESET_DELAY</string>
+                <string>PHY_CONFIG_DELAY</string>
+                <string>PHY_READ_TO</string>
+                <string>PHY_WRITE_TO</string>
+                <string>PHY_BCR</string>
+                <string>PHY_BSR</string>
+                <string>PHY_RESET</string>
+                <string>PHY_LOOPBACK</string>
+                <string>PHY_FULLDUPLEX_100M</string>
+                <string>PHY_HALFDUPLEX_100M</string>
+                <string>PHY_FULLDUPLEX_10M</string>
+                <string>PHY_HALFDUPLEX_10M</string>
+                <string>PHY_AUTONEGOTIATION</string>
+                <string>PHY_RESTART_AUTONEGOTIATION</string>
+                <string>PHY_POWERDOWN</string>
+                <string>PHY_ISOLATE</string>
+                <string>PHY_AUTONEGO_COMPLETE</string>
+                <string>PHY_LINKED_STATUS</string>
+                <string>PHY_JABBER_DETECTION</string>
+                <string>PHY_SR</string>
+                <string>PHY_MICR</string>
+                <string>PHY_MISR</string>
+                <string>PHY_LINK_STATUS</string>
+                <string>PHY_SPEED_STATUS</string>
+                <string>PHY_DUPLEX_STATUS</string>
+                <string>PHY_MICR_INT_EN</string>
+                <string>PHY_MICR_INT_OE</string>
+                <string>PHY_MISR_LINK_INT_EN</string>
+                <string>PHY_LINK_INTERRUPT</string>
+                <string>USE_SPI_CRC</string>
+                <string>assert_param(expr)</string>
+              </Properties>
+            </ConfigurationFilePropertyClass>
+          </PropertyClasses>
+          <PropertyList>
+            <PropertyGroups>
+              <PropertyGroup>
+                <Name>Module Selection</Name>
+                <Properties>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the HAL framework</Name>
+                    <UniqueID>HAL_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the ADC module</Name>
+                    <UniqueID>HAL_ADC_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the CAN module</Name>
+                    <UniqueID>HAL_CAN_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the CAN_LEGACY module</Name>
+                    <UniqueID>HAL_CAN_LEGACY_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the CRC module</Name>
+                    <UniqueID>HAL_CRC_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the CEC module</Name>
+                    <UniqueID>HAL_CEC_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the CRYP module</Name>
+                    <UniqueID>HAL_CRYP_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the DAC module</Name>
+                    <UniqueID>HAL_DAC_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the DCMI module</Name>
+                    <UniqueID>HAL_DCMI_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the DMA module</Name>
+                    <UniqueID>HAL_DMA_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the DMA2D module</Name>
+                    <UniqueID>HAL_DMA2D_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the ETH module</Name>
+                    <UniqueID>HAL_ETH_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the FLASH module</Name>
+                    <UniqueID>HAL_FLASH_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the NAND module</Name>
+                    <UniqueID>HAL_NAND_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the NOR module</Name>
+                    <UniqueID>HAL_NOR_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the PCCARD module</Name>
+                    <UniqueID>HAL_PCCARD_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the SRAM module</Name>
+                    <UniqueID>HAL_SRAM_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the SDRAM module</Name>
+                    <UniqueID>HAL_SDRAM_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the HASH module</Name>
+                    <UniqueID>HAL_HASH_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the GPIO module</Name>
+                    <UniqueID>HAL_GPIO_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the EXTI module</Name>
+                    <UniqueID>HAL_EXTI_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the I2C module</Name>
+                    <UniqueID>HAL_I2C_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the SMBUS module</Name>
+                    <UniqueID>HAL_SMBUS_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the I2S module</Name>
+                    <UniqueID>HAL_I2S_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the IWDG module</Name>
+                    <UniqueID>HAL_IWDG_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the LTDC module</Name>
+                    <UniqueID>HAL_LTDC_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the DSI module</Name>
+                    <UniqueID>HAL_DSI_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the PWR module</Name>
+                    <UniqueID>HAL_PWR_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the QSPI module</Name>
+                    <UniqueID>HAL_QSPI_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the RCC module</Name>
+                    <UniqueID>HAL_RCC_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the RNG module</Name>
+                    <UniqueID>HAL_RNG_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the RTC module</Name>
+                    <UniqueID>HAL_RTC_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the SAI module</Name>
+                    <UniqueID>HAL_SAI_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the SD module</Name>
+                    <UniqueID>HAL_SD_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the SPI module</Name>
+                    <UniqueID>HAL_SPI_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the TIM module</Name>
+                    <UniqueID>HAL_TIM_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the UART module</Name>
+                    <UniqueID>HAL_UART_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the USART module</Name>
+                    <UniqueID>HAL_USART_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the IRDA module</Name>
+                    <UniqueID>HAL_IRDA_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the SMARTCARD module</Name>
+                    <UniqueID>HAL_SMARTCARD_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the WWDG module</Name>
+                    <UniqueID>HAL_WWDG_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the CORTEX module</Name>
+                    <UniqueID>HAL_CORTEX_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the PCD module</Name>
+                    <UniqueID>HAL_PCD_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the HCD module</Name>
+                    <UniqueID>HAL_HCD_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the FMPI2C module</Name>
+                    <UniqueID>HAL_FMPI2C_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the FMPSMBUS module</Name>
+                    <UniqueID>HAL_FMPSMBUS_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the SPDIFRX module</Name>
+                    <UniqueID>HAL_SPDIFRX_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the DFSDM module</Name>
+                    <UniqueID>HAL_DFSDM_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the LPTIM module</Name>
+                    <UniqueID>HAL_LPTIM_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>Enable the MMC module</Name>
+                    <UniqueID>HAL_MMC_MODULE_ENABLED</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>true</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse />
+                  </PropertyEntry>
+                </Properties>
+                <CollapsedByDefault>false</CollapsedByDefault>
+              </PropertyGroup>
+              <PropertyGroup>
+                <Name>HSE/HSI Values adaptation</Name>
+                <Properties>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Value of the External oscillator in Hz (HSE_VALUE)</Name>
+                    <UniqueID>HSE_VALUE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>25000000</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Time out for HSE start up, in ms (HSE_STARTUP_TIMEOUT)</Name>
+                    <UniqueID>HSE_STARTUP_TIMEOUT</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>100</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Value of the Internal oscillator in Hz (HSI_VALUE)</Name>
+                    <UniqueID>HSI_VALUE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>16000000</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>LSI Typical Value in Hz (LSI_VALUE)</Name>
+                    <UniqueID>LSI_VALUE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>32000</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Value of the External Low Speed oscillator in Hz (LSE_VALUE)</Name>
+                    <UniqueID>LSE_VALUE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>32768</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Time out for LSE start up, in ms (LSE_STARTUP_TIMEOUT)</Name>
+                    <UniqueID>LSE_STARTUP_TIMEOUT</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>5000</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Value of the External oscillator in Hz (EXTERNAL_CLOCK_VALUE)</Name>
+                    <UniqueID>EXTERNAL_CLOCK_VALUE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>12288000</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                </Properties>
+                <CollapsedByDefault>false</CollapsedByDefault>
+              </PropertyGroup>
+              <PropertyGroup>
+                <Name>System Configuration</Name>
+                <Properties>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Value of VDD in mv (VDD_VALUE)</Name>
+                    <UniqueID>VDD_VALUE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>3300</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>tick interrupt priority (TICK_INT_PRIORITY)</Name>
+                    <UniqueID>TICK_INT_PRIORITY</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>15</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_RTOS</Name>
+                    <UniqueID>USE_RTOS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PREFETCH_ENABLE</Name>
+                    <UniqueID>PREFETCH_ENABLE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>1</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>INSTRUCTION_CACHE_ENABLE</Name>
+                    <UniqueID>INSTRUCTION_CACHE_ENABLE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>1</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>DATA_CACHE_ENABLE</Name>
+                    <UniqueID>DATA_CACHE_ENABLE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>1</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                </Properties>
+                <CollapsedByDefault>false</CollapsedByDefault>
+              </PropertyGroup>
+              <PropertyGroup>
+                <Name>Ethernet peripheral configuration</Name>
+                <Properties>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>MAC_ADDR0</Name>
+                    <UniqueID>MAC_ADDR0</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>2</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>MAC_ADDR1</Name>
+                    <UniqueID>MAC_ADDR1</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>0</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>MAC_ADDR2</Name>
+                    <UniqueID>MAC_ADDR2</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>0</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>MAC_ADDR3</Name>
+                    <UniqueID>MAC_ADDR3</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>0</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>MAC_ADDR4</Name>
+                    <UniqueID>MAC_ADDR4</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>0</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>MAC_ADDR5</Name>
+                    <UniqueID>MAC_ADDR5</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>0</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>DP83848_PHY_ADDRESS</Name>
+                    <UniqueID>DP83848_PHY_ADDRESS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>1</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY_RESET_DELAY</Name>
+                    <UniqueID>PHY_RESET_DELAY</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>255</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY_CONFIG_DELAY</Name>
+                    <UniqueID>PHY_CONFIG_DELAY</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>4095</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY_READ_TO</Name>
+                    <UniqueID>PHY_READ_TO</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>65535</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY_WRITE_TO</Name>
+                    <UniqueID>PHY_WRITE_TO</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>65535</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Transceiver Basic Control Register (PHY_BCR)</Name>
+                    <UniqueID>PHY_BCR</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>0</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Transceiver Basic Status Register (PHY_BSR)</Name>
+                    <UniqueID>PHY_BSR</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>1</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY Reset (PHY_RESET)</Name>
+                    <UniqueID>PHY_RESET</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>32768</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Select loop-back mode (PHY_LOOPBACK)</Name>
+                    <UniqueID>PHY_LOOPBACK</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>16384</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Set the full-duplex mode at 100 Mb/s (PHY_FULLDUPLEX_100M)</Name>
+                    <UniqueID>PHY_FULLDUPLEX_100M</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>8448</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Set the half-duplex mode at 100 Mb/s (PHY_HALFDUPLEX_100M)</Name>
+                    <UniqueID>PHY_HALFDUPLEX_100M</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>8192</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Set the full-duplex mode at 10 Mb/s (PHY_FULLDUPLEX_10M)</Name>
+                    <UniqueID>PHY_FULLDUPLEX_10M</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>256</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Set the half-duplex mode at 10 Mb/s (PHY_HALFDUPLEX_10M)</Name>
+                    <UniqueID>PHY_HALFDUPLEX_10M</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>0</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Enable auto-negotiation function (PHY_AUTONEGOTIATION)</Name>
+                    <UniqueID>PHY_AUTONEGOTIATION</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>4096</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Restart auto-negotiation function (PHY_RESTART_AUTONEGOTIATION)</Name>
+                    <UniqueID>PHY_RESTART_AUTONEGOTIATION</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>512</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Select the power down mode (PHY_POWERDOWN)</Name>
+                    <UniqueID>PHY_POWERDOWN</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>2048</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Isolate PHY from MII (PHY_ISOLATE)</Name>
+                    <UniqueID>PHY_ISOLATE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>1024</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Auto-Negotiation process completed (PHY_AUTONEGO_COMPLETE)</Name>
+                    <UniqueID>PHY_AUTONEGO_COMPLETE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>32</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Valid link established (PHY_LINKED_STATUS)</Name>
+                    <UniqueID>PHY_LINKED_STATUS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>4</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Jabber condition detected (PHY_JABBER_DETECTION)</Name>
+                    <UniqueID>PHY_JABBER_DETECTION</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>2</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY status register Offset (PHY_SR)</Name>
+                    <UniqueID>PHY_SR</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>16</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>MII Interrupt Control Register (PHY_MICR)</Name>
+                    <UniqueID>PHY_MICR</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>17</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>MII Interrupt Status and Misc. Control Register (PHY_MISR)</Name>
+                    <UniqueID>PHY_MISR</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>18</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY Link mask (PHY_LINK_STATUS)</Name>
+                    <UniqueID>PHY_LINK_STATUS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>1</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY Speed mask (PHY_SPEED_STATUS)</Name>
+                    <UniqueID>PHY_SPEED_STATUS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>2</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY Duplex mask (PHY_DUPLEX_STATUS)</Name>
+                    <UniqueID>PHY_DUPLEX_STATUS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>4</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY Enable interrupts (PHY_MICR_INT_EN)</Name>
+                    <UniqueID>PHY_MICR_INT_EN</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>2</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY Enable output interrupt events (PHY_MICR_INT_OE)</Name>
+                    <UniqueID>PHY_MICR_INT_OE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>1</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>Enable Interrupt on change of link status (PHY_MISR_LINK_INT_EN)</Name>
+                    <UniqueID>PHY_MISR_LINK_INT_EN</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>32</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Integral">
+                    <Name>PHY link status interrupt mask (PHY_LINK_INTERRUPT)</Name>
+                    <UniqueID>PHY_LINK_INTERRUPT</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>8192</DefaultValue>
+                    <MinValue>-2147483648</MinValue>
+                    <MaxValue>2147483647</MaxValue>
+                    <Increment>1</Increment>
+                  </PropertyEntry>
+                </Properties>
+                <CollapsedByDefault>false</CollapsedByDefault>
+              </PropertyGroup>
+            </PropertyGroups>
+          </PropertyList>
+        </ConfigurationFileTemplate>
+      </ConfigurationFileTemplates>
+    </EmbeddedFramework>
+  </Frameworks>
+  <FileConditions>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Not">
+        <Argument xsi:type="Equals">
+          <Expression>$$com.sysprogs.stm32.legacy_hal_src$$</Expression>
+          <ExpectedValue>1</ExpectedValue>
+          <IgnoreCase>false</IgnoreCase>
+        </Argument>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Not">
+        <Argument xsi:type="Equals">
+          <Expression>$$com.sysprogs.stm32.legacy_hal_src$$</Expression>
+          <ExpectedValue>1</ExpectedValue>
+          <IgnoreCase>false</IgnoreCase>
+        </Argument>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.stm32.legacy_hal_src$$</Expression>
+        <ExpectedValue>1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/Legacy/stm32f4xx_hal_can_legacy.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.stm32.legacy_hal_src$$</Expression>
+        <ExpectedValue>1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/Legacy/stm32f4xx_hal_eth_legacy.c</FilePath>
+    </FileCondition>
+  </FileConditions>
+</EmbeddedFrameworkPackage>

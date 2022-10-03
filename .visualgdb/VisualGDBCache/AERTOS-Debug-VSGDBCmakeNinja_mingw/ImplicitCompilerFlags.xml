@@ -6,7 +6,7 @@
     <Entry>
       <Key>
         <IsCXX>true</IsCXX>
-        <Arguments> </Arguments>
+        <Arguments> -Wl,-verbose,</Arguments>
       </Key>
       <Specs>
         <RawIncludeDirs>
@@ -1522,7 +1522,7 @@
     <Entry>
       <Key>
         <IsCXX>false</IsCXX>
-        <Arguments> </Arguments>
+        <Arguments> -Wl,-verbose,</Arguments>
       </Key>
       <Specs>
         <RawIncludeDirs>

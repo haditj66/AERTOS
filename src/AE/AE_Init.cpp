@@ -3,6 +3,8 @@
 
 #include "AEPerformanceTimer.h"
 
+//#include "FreeRTOS.h"
+#include "task.h"
 
 AEPerformanceTimer* AEPerfTimer1;
 AEPerformanceTimer* AEPerfTimer2;

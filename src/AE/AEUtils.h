@@ -653,9 +653,6 @@ else \
 
 
 
-
-
-
 //############################### 
 //Writing to file 
 //############################### 
@@ -922,10 +919,10 @@ AEPrintTimerDuration(forTimer)\
 #include <string>
 #include <vector>
 
-static std::vector<std::string> logFilesToLogSoFar;
-static std::vector<std::string> logpathToFile;
-static std::vector<std::string> logthingToWrite;
-static std::vector<uint32_t> logthingToWriteSize;
+extern std::vector<std::string> logFilesToLogSoFar;
+extern std::vector<std::string> logpathToFile;
+extern std::vector<std::string> logthingToWrite;
+extern std::vector<uint32_t> logthingToWriteSize;
 
 inline void _AELogTimer(PerfElapsed_t duration, const char* FileNameToWriteTo) 
 {
@@ -1021,16 +1018,26 @@ static float AE_Map(float valueToMap, float lowerBoundOfMapFROM, float UpperBoun
 
 
 
+ //------------------ comparisons
+#include <math.h>
+static bool AE_FloatApproximatelyEqual(float a, float b, float epsilon)
+{
+	return fabs(a - b) <= ((fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * epsilon);
+}
 
 
 
 
-
-
-
-
-
-
+//this will end the program based on which device it is running on.
+static void AEEndProgram()
+{
+#if AERTOS_ENVIRONMENT__RTOS_PC
+	AEPrint("Application END");
+	for (;;) {};
+#else
+	exit(EXIT_SUCCESS); 
+#endif
+}
 
  
 

@@ -293,6 +293,12 @@
 #define UARTPERIPHERAL2 UARTPeripheral<115200, 2, PortD, PIN5, PortD, PIN6>// PortA, PIN3>////460800 * 2
 #define UARTPERIPHERAL2_Name uart1
 
+//i2c
+#define aehal
+#ifdef aehal
+#define I2CPERIPHERAL1 I2CPeripheral<1,PortB, PIN6, PortB, PIN7, 10000>//40000
+#define I2CPERIPHERAL1_Name i2c1
+#endif
 
  
 //enabling hardware peripherals 

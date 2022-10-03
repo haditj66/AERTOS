@@ -3,7 +3,7 @@
 #include "AE.h"
  
 #include "AEIntegrationTesting.h" 
-
+#include "AEFilter.h"
 
 #ifdef RTOS_USED__FREERTOS
 #include "FreeRTOS.h"

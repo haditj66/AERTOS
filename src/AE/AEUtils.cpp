@@ -7,7 +7,10 @@
 
 
 
-
+  std::vector<std::string> logpathToFile;
+  std::vector<std::string> logFilesToLogSoFar; 
+  std::vector<std::string> logthingToWrite;
+  std::vector<uint32_t> logthingToWriteSize;
 
 void AEFormatMsg(char* formattedBuffer, uint32_t sizeOfFormatBuffer, const char* msgToFormat, ...)
 {

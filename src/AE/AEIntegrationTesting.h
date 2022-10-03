@@ -12,8 +12,8 @@
 
 static char const * const TestGroupName = GROUPNAME_STRING(INTEGRATION_TESTS);
 	
-#define _AEITEST(testName, thingToAssert, AssertionMessage) AEITEST_Func(testName, thingToAssert,  AssertionMessage,  __LINE__, __FILE__);
-#define _AEITEST_EndTestsIfFalseAssertion(testName, thingToAssert, AssertionMessage) AEITEST_Func(testName, thingToAssert,  AssertionMessage,  __LINE__, __FILE__, true);
+#define _AEITEST(testName, thingToAssert, AssertionMessage, ignoreFirstRunsNum, passedOnlyAfterThisManyPasses) AEITEST_Func(testName, thingToAssert, AssertionMessage, ignoreFirstRunsNum, passedOnlyAfterThisManyPasses, __LINE__, __FILE__);
+#define _AEITEST_EndTestsIfFalseAssertion(testName, thingToAssert, AssertionMessage) AEITEST_Func(testName, thingToAssert,  AssertionMessage, 1, __LINE__, __FILE__, true);
 
 #define _AEITEST_EXPECT_TEST_TO_RUN(testName) AEITEST_EXPECT_TEST_TO_RUN_FUNC(testName) ;
 
@@ -53,11 +53,13 @@ public:
 	}
 	
 	uint32_t ID;
+	uint32_t NumOfTimesRun;
 	uint32_t NumOfTimesFailed;
 	uint32_t NumOfTimesPassed; 
 	std::string testName;
 	LogStatus status;
 	std::string AssertionMessage;
+	std::string OriginalAssertionMessage;
 	unsigned long ulLine;
 	std::string pcFileName;
 	
@@ -90,8 +92,21 @@ inline void LogAEITest(AEITestLogData* testData)//(std::string testName, LogStat
 		statusStr = "EXCEPTION";
 	}
 	
-	std::string testLogMsg = "TESTGROUPNAME: ";
-	testLogMsg.append(INTEGRATION_TEST_CHOSEN);
+
+	std::string testLogMsg = "";
+	if (testData->status == LogStatus::FINISHED)
+	{
+		testLogMsg.append("\n");  
+		testLogMsg = "#####################################################################################";
+		testLogMsg.append("\n");  
+		testLogMsg.append("TESTGROUPNAME: ");  
+		testLogMsg.append(INTEGRATION_TEST_CHOSEN);  
+	}
+	else
+	{
+		testLogMsg = "TESTGROUPNAME: ";
+		testLogMsg.append(INTEGRATION_TEST_CHOSEN);  
+	}\
 	testLogMsg.append("\n"); 
 	
 	testLogMsg.append("TESTSPECIFIC: ");
@@ -163,7 +178,7 @@ inline void _AEITEST_END_FUNC()
 	 
   
 	//vTaskEndScheduler();
-	exit(EXIT_SUCCESS); 
+	AEEndProgram();
 }
 
 
@@ -211,6 +226,9 @@ void AEITEST_END_TestsAfterTimer_FUNC(uint32_t timeInMilliBeforeEnd);
 inline void AEITEST_EXPECT_TEST_TO_RUN_FUNC(std::string testName) 
 { 
 	
+	//the name needs to be changed testName_EXPECTED
+	testName = testName + "_EXPECTED";
+	
 	int ID = std::hash<std::string> {}(testName);
 	AEITestLogData* testLogData;   // = new AEITestLogData();
 	
@@ -248,10 +266,11 @@ inline void AEITEST_EXPECT_TEST_TO_RUN_FUNC(std::string testName)
  … test function that runs or somethign.…
 
 */
-inline void AEITEST_Func(std::string testName, bool thingToAssert, std::string AssertionMessage, unsigned long ulLine, std::string pcFileName, bool endTestIfFailed = false)
+inline void AEITEST_Func(std::string testName, bool thingToAssert, std::string AssertionMessage, uint32_t ignoreFirstRunsNum, uint32_t passedOnlyAfterThisManyPasses, unsigned long ulLine, std::string pcFileName, bool endTestIfFailed = false)
 { 
 	
 	int ID = std::hash<std::string> { }(testName);
+	int ID_EXPECTED = std::hash<std::string> {}(testName + "_EXPECTED");
 	AEITestLogData* testLogData;// = new AEITestLogData();
 	
 	
@@ -259,25 +278,47 @@ inline void AEITEST_Func(std::string testName, bool thingToAssert, std::string A
 	bool testFound = false;
 	for(AEITestLogData* ele : TestLogsArgs)
 	{ 
+		//if the ID matches the ID_EXPECTED, than it means that there is an expected test for this current test, simply put that test to true
+		if (ele->ID == ID_EXPECTED)
+		{
+			ele->AssertionMessage = "test has run";
+			ele->status = LogStatus::PASSED;
+			ele->NumOfTimesPassed = 1;
+		}
+		
 		if (ele->ID == ID)
 		{ 
 			testLogData = ele;
 			testFound = true;
-		}
+			break;
+		} 
+
 	}
 	if (testFound == false)
 	{ 
 		testLogData = new AEITestLogData();
 		
 		testLogData->AssertionMessage = AssertionMessage;
+		testLogData->OriginalAssertionMessage = AssertionMessage;
 		testLogData->pcFileName = pcFileName; 
 		testLogData->testName = testName;
 		testLogData->ulLine = ulLine;
+		testLogData->NumOfTimesFailed = 0;
+		testLogData->NumOfTimesPassed = 0;
+		testLogData->NumOfTimesRun = 0;
+		testLogData->status = LogStatus::FAILED;
 		testLogData->ID = ID;
 	
 	
 		TestLogsArgs.push_back(testLogData);
 	
+	}
+	
+	//ignore the first runs here.
+	testLogData->NumOfTimesRun++;
+	if (ignoreFirstRunsNum >= testLogData->NumOfTimesRun) 
+	{
+		return;
 	}
 	
 	//save the args to log it later so to not have to write to the file too often and to avoid race conditions of writing to the file. 
@@ -286,7 +327,28 @@ inline void AEITEST_Func(std::string testName, bool thingToAssert, std::string A
 	else	
 	{testLogData->NumOfTimesPassed += 1; }
 	LogStatus status;
-	testLogData->status = testLogData->NumOfTimesFailed > 0 ? LogStatus::FAILED : LogStatus::PASSED;
+	//only set it to passed if passedOnlyAfterThisManyPasses has been surpassed
+	if (testLogData->NumOfTimesPassed >= passedOnlyAfterThisManyPasses)
+	{
+		if (passedOnlyAfterThisManyPasses > 1)
+		{
+			testLogData->AssertionMessage = testLogData->OriginalAssertionMessage;
+		} 
+		testLogData->status  = LogStatus::PASSED;
+	}
+	else
+	{
+		if (passedOnlyAfterThisManyPasses > 1)
+		{
+			testLogData->AssertionMessage = "Failed because it did not pass the amounts of passes needed to be a full pass.";
+		} 
+		testLogData->status  = LogStatus::FAILED;
+		
+	}
+	testLogData->status =  testLogData->NumOfTimesPassed >= passedOnlyAfterThisManyPasses ? LogStatus::PASSED : LogStatus::FAILED;
+	//if even one fail, then set status to failed
+	testLogData->status = testLogData->NumOfTimesFailed > 0 ? LogStatus::FAILED : testLogData->status;
+	 
 	 
 	
 	
@@ -311,7 +373,7 @@ inline void AEITEST_LogOnlyIfFalse_Func(std::string testName, bool thingToAssert
 {
 	if (thingToAssert == false)
 	{
-		AEITEST_Func(testName, thingToAssert, AssertionMessage, ulLine, pcFileName, endTestIfFailed);
+		AEITEST_Func(testName, thingToAssert, AssertionMessage,0,1, ulLine,  pcFileName, endTestIfFailed);
 	}
 		
 }

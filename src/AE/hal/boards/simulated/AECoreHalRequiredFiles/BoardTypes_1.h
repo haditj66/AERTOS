@@ -17,3 +17,6 @@
 
 //uart
 #define UART_Handle char
+
+//i2c
+#define I2C_Handle char

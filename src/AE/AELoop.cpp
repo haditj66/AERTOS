@@ -74,10 +74,10 @@ AELoop * AELoop::GetFromPool(uint32_t frequencyOfClock, AEPriorities priorityOfT
 AELoop * AELoop::GetFromPoolNoInitYet()
 {
 	AELoop* loop = &Pool[numOfAELoopsSoFar];
-
+ 
+	numOfAELoopsSoFar++;
 	//make sure the number of AEloops createddoes not exceed the MaxNumOfAELoops
 	configASSERT(numOfAELoopsSoFar <= MaxNumOfAELoops);
-	numOfAELoopsSoFar++;
 	return loop;
 }
 

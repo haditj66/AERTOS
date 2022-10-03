@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<EmbeddedFrameworkPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PackageID>com.sysprogs.arm.stm32.STM32F4_ll</PackageID>
+  <PackageDescription>STM32F4 Low-level Driver Library</PackageDescription>
+  <PackageVersion>1.0</PackageVersion>
+  <IsStandAlone>true</IsStandAlone>
+  <Frameworks>
+    <EmbeddedFramework>
+      <ID>com.sysprogs.arm.stm32.STM32F4_ll</ID>
+      <ClassID>com.sysprogs.arm.stm32.ll</ClassID>
+      <UserFriendlyName>STM32F4 Low-level Driver Library</UserFriendlyName>
+      <AdditionalSourceFiles>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_crc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dac.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma2d.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_exti.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmpi2c.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_i2c.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_lptim.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_pwr.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rcc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rng.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rtc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_spi.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usart.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_utils.c</string>
+      </AdditionalSourceFiles>
+      <AdditionalHeaderFiles>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_cortex.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_crc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dac.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma2d.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmpi2c.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_iwdg.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_lptim.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rng.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rtc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_wwdg.h</string>
+      </AdditionalHeaderFiles>
+      <AdditionalIncludeDirs>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc/Legacy</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/STM32F4xx_HAL_Driver/Inc</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Device/ST/STM32F4xx/Include</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Core/Include</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_HAL/Include</string>
+      </AdditionalIncludeDirs>
+      <AdditionalPreprocessorMacros>
+        <string>$$com.sysprogs.stm32.hal_device_family$$</string>
+        <string>$$com.sysprogs.bspoptions.stm32.ll_driver$$</string>
+      </AdditionalPreprocessorMacros>
+      <AdditionalLibraries />
+      <ConfigurableProperties>
+        <PropertyGroups>
+          <PropertyGroup>
+            <Name>Low-level Driver Library</Name>
+            <UniqueID>com.sysprogs.bspoptions.stm32.ll_</UniqueID>
+            <Properties>
+              <PropertyEntry xsi:type="Boolean">
+                <Name>Enable Advanced Low-Level Driver Functions</Name>
+                <UniqueID>driver</UniqueID>
+                <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                <DefaultValue>false</DefaultValue>
+                <ValueForTrue>USE_FULL_LL_DRIVER</ValueForTrue>
+              </PropertyEntry>
+            </Properties>
+            <CollapsedByDefault>false</CollapsedByDefault>
+          </PropertyGroup>
+        </PropertyGroups>
+      </ConfigurableProperties>
+      <IncompatibleFrameworks>
+        <string>com.sysprogs.arm.stm32.STM32F4_stdperiph</string>
+      </IncompatibleFrameworks>
+      <MCUFilterRegex>^STM32F4.*</MCUFilterRegex>
+      <DefaultEnabled>true</DefaultEnabled>
+      <ProjectFolderName>LL</ProjectFolderName>
+    </EmbeddedFramework>
+  </Frameworks>
+  <FileConditions />
+</EmbeddedFrameworkPackage>

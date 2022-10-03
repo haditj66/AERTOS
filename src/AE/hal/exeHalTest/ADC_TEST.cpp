@@ -12,7 +12,7 @@
 //UserCode_Sectiona
 #include "AECore.h" 
 #include "AE_Init.h"
-
+#include "AELoopObject.h"
 
 
 
@@ -20,6 +20,10 @@
 uint32_t adcCountToPrint1 = 0;
 uint32_t adcCountToPrint2 = 0;
 uint32_t adcCountToPrint3 = 0;
+
+ 
+
+void loopfunc1(void* ptr);
 //UserCode_Sectiona_end
 
 void RunSelectedIntegrationTest_ADC_TEST()
@@ -28,19 +32,10 @@ void RunSelectedIntegrationTest_ADC_TEST()
 //UserCode_Sectionb
 AE_Init();  
 	
-	//! [timed end]
- 	AEITEST_END_TestsAfterTimer_exeHalTest(5000)
-	//! [timed end]
-		
-	//! [expect to run]
-	AEITEST_EXPECT_TEST_TO_RUN_exeHalTest("ADC1_random test")
-	//! [expect to run]
-		
-//	AEITestLogData* scsc = 0;
-//	scsc->ID = 90;
-//	auto svvs = scsc->pcFileName;
-//	auto svvss = scsc->ID;
-		 
+	AEITEST_END_TestsAfterTimer_exeHalTest(5000) 
+		  
+	 AEITEST_EXPECT_TEST_TO_RUN_exeHalTest("ADC1 test")  
+	 
 		
 	adc1->SetADC_ConvCpltCallback_t([]()->void {
 		adcCountToPrint1++;
@@ -80,7 +75,8 @@ AE_Init();
 			adcCountToPrint3 = 0;
 		}
 	});
-		
+	
+ 
 		
 	/* Start scheduler */ 
 	AEConfigureAndStart();
@@ -90,6 +86,12 @@ AE_Init();
 
 
 //UserCode_Sectionc
+void loopfunc1(void* ptr)
+{
+	
+	 
+	
+}
 //UserCode_Sectionc_end
 
 #endif

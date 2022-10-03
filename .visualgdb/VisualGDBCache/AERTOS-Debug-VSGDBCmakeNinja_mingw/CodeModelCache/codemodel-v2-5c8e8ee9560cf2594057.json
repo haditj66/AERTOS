@@ -1,0 +1,140 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "src/AE",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/AE",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src/AE/hal",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/AE/hal",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "DEBUG",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "AERTOS",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "AECoreLib::@dbae314adb83077d4c0f",
+					"jsonFile" : "target-AECoreLib-DEBUG-b7e3d704b0e4b5fd78ef.json",
+					"name" : "AECoreLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "AEHalLib::@f3e1d49ac31996c899d3",
+					"jsonFile" : "target-AEHalLib-DEBUG-c2d04ac75d967815dd82.json",
+					"name" : "AEHalLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP-DEBUG-be11b358a6340d35ac05.json",
+					"name" : "BSP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FreeRTOS::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FreeRTOS-DEBUG-41879e2bdfa2e1e23bd8.json",
+					"name" : "FreeRTOS",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TESTFW::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TESTFW-DEBUG-c3b475ae1a2e74a8e359.json",
+					"name" : "TESTFW",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exeHalTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-exeHalTest-DEBUG-5df63b5776331aac3b41.json",
+					"name" : "exeHalTest",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug",
+		"source" : "C:/visualgdb_projects/AERTOSCopy"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

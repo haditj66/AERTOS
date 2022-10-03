@@ -11,6 +11,9 @@
 inline void AEUART::TansmitMsg(char const*  msg, uint32_t size) 
 { 
 	AEPrint("%s\n", msg);
+	
+	//fire the fake interrupt?
+	_TxCpltCallback_t();
 } 
  
 

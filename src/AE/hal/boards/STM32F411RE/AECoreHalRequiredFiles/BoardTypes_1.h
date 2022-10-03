@@ -20,3 +20,6 @@
 
 //uart
 #define UART_Handle UART_HandleTypeDef
+
+//I2C
+#define I2C_Handle I2C_HandleTypeDef

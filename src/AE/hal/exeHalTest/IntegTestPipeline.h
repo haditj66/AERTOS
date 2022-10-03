@@ -7,9 +7,9 @@
 
 #pragma once
 
-void RunSelectedIntegrationTest_ADC_TEST();
+void RunSelectedIntegrationTest_I2C_TEST();
 
 static void RunSelectedIntegrationTest()
 {
-    RunSelectedIntegrationTest_ADC_TEST();
+    RunSelectedIntegrationTest_I2C_TEST();
 }

@@ -12,8 +12,10 @@
       <AllCMakeFiles>
         <string>C:/visualgdb_projects/AERTOSCopy/CMakeLists.txt</string>
         <string>C:/visualgdb_projects/AERTOSCopy/cmake/CgenCmakeConfigFunctions.cmake</string>
-        <string>C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/FromGuiOrProject.cmake</string>
+        <string>C:/CodeGenerator/CgenCmakeGui/FromGuiOrProject.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/CGensaveFiles/cmakeGui/VSGDBCmakeNinja_mingw/DEBUG/cgenCmakeCache.cmake</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/cmake/AEIntegrationTestsManager.cmake</string>
+        <string>C:/CodeGenerator/CgenCmakeGui/CgenCmakeConfigFunctions.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/3.20.3-dirty/CMakeSystem.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/toolchains/mingw/toolchain.cmake</string>
         <string>C:/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/root.cmake</string>
@@ -59,29 +61,33 @@
         <string>C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.20/Modules/Platform/Windows-GNU-ASM.cmake</string>
         <string>C:/Users/Hadi/AppData/Local/VisualGDB/CMake/share/cmake-3.20/Modules/Platform/Windows-GNU.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/cmake/MyCmakeHelpers.cmake</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/cmake/AEIntegrationTestsManager.cmake</string>
+        <string>C:/CodeGenerator/CgenCmakeGui/CgenCmakeConfigFunctions.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/cmake/GetBoardMetaTypes.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/SetupFile.cgenM.in</string>
         <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/SetupFilecpp.cgenM.in</string>
         <string>C:/VisualGDBAllFiles/VisualGDB/FindBSP.cmake</string>
         <string>C:/Users/Hadi/AppData/Local/VisualGDB/TestFrameworks/com.sysprogs.unittest.googletest/framework.cmake</string>
         <string>C:/visualgdb_projects/AERTOSCopy/cmake/GetFREERTOS_MINGW.cmake</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/AEObjects.cgenM.in</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/IntegTestTemplate.cgenM.in</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/IntegTestPipeline.cgenM.in</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/IntegTestTemplate.cgenM.in</string>
+        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/IntegTestPipeline.cgenM.in</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/CMakeLists.txt</string>
         <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/AETimerSimpleh.cgenM.in</string>
         <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/AETimerSimplecpp.cgenM.in</string>
         <string>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/CMakeLists.txt</string>
-        <string>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/exeHalTest/CMakeLists.txt</string>
-        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/IntegTestTemplate.cgenM.in</string>
-        <string>C:/visualgdb_projects/AERTOSCopy/GeneratedFiles/IntegTestPipeline.cgenM.in</string>
       </AllCMakeFiles>
       <ExtraDependencies />
       <Install>false</Install>
       <HasUnitTests>false</HasUnitTests>
       <Extension xsi:type="EmbeddedCMakeExtension">
         <StartupTargetReference>
-          <Name>AEHalexe</Name>
+          <Name>exeHalTest</Name>
           <Location>
-            <RawFilePath>C:/visualgdb_projects/AERTOSCopy/src/AE/hal/exeHalTest/CMakeLists.txt</RawFilePath>
-            <LineNumber>15</LineNumber>
+            <RawFilePath>C:/visualgdb_projects/AERTOSCopy/cmake/MyCmakeHelpers.cmake</RawFilePath>
+            <LineNumber>237</LineNumber>
             <StatementName>add_bsp_based_executable</StatementName>
           </Location>
         </StartupTargetReference>
@@ -89,40 +95,37 @@
           <Name>BSP</Name>
           <Location>
             <RawFilePath>C:/visualgdb_projects/AERTOSCopy/CMakeLists.txt</RawFilePath>
-            <LineNumber>285</LineNumber>
+            <LineNumber>396</LineNumber>
             <StatementName>find_bsp</StatementName>
           </Location>
         </BSPReference>
         <TestFWReference>
-          <Name>TESTFW</Name>
           <Location>
-            <RawFilePath>C:/visualgdb_projects/AERTOSCopy/CMakeLists.txt</RawFilePath>
-            <LineNumber>299</LineNumber>
-            <StatementName>find_test_framework</StatementName>
+            <LineNumber>0</LineNumber>
           </Location>
         </TestFWReference>
         <AllReferencedLibraries>
-          <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/libAEHalLib.a</string>
           <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/libAECoreLib.a</string>
+          <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/libAEHalLib.a</string>
           <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/BSP.dir/C_/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/dummy.c.obj</string>
-          <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/TESTFW.dir/C_/Users/Hadi/AppData/Local/VisualGDB/TestFrameworks/com.sysprogs.unittest.googletest/src/gtest-death-test.cc.obj</string>
         </AllReferencedLibraries>
       </Extension>
     </ProjectSpecificInfo>
     <ConfigurationNameOverride>Debug</ConfigurationNameOverride>
     <ExplicitPlatformName>VSGDBCmakeNinja_mingw</ExplicitPlatformName>
+    <BypassCustomBuildSteps>false</BypassCustomBuildSteps>
     <ExtraProjectVariables>
       <Entries>
         <KeyValue>
           <Key>SelectedCMakeTarget</Key>
-          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/exeHalTest/AEHalexe.exe</Value>
+          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/exeHalTest.exe</Value>
         </KeyValue>
         <KeyValue>
           <Key>SelectedCMakeTargetArgs</Key>
         </KeyValue>
         <KeyValue>
           <Key>SelectedCMakeTargetLaunchDir</Key>
-          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/exeHalTest</Value>
+          <Value>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug</Value>
         </KeyValue>
       </Entries>
     </ExtraProjectVariables>
@@ -135,16 +138,14 @@
     <FirstDependentArtifactIsPrimaryTarget>false</FirstDependentArtifactIsPrimaryTarget>
     <ExtraLibrariesForLDLibraryPath>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/BSP.dir/C_/VisualGDBAllFiles/Sysprogs/VisualGDB/CMake/embedded/dummy.c.obj</string>
-      <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/BSP_com.sysprogs.arm.stm32.freertos.dir/C_/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/FreeRTOS/Source/croutine.c.obj</string>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/libAEHalLib.a</string>
-      <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/AEHalTests.exe</string>
       <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/libAECoreLib.a</string>
-      <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/CMakeFiles/TESTFW.dir/C_/Users/Hadi/AppData/Local/VisualGDB/TestFrameworks/com.sysprogs.unittest.googletest/src/gtest-death-test.cc.obj</string>
+      <string>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/AEHalTests.exe</string>
     </ExtraLibrariesForLDLibraryPath>
     <CodeCoverageForMainProjectQueried>false</CodeCoverageForMainProjectQueried>
   </ExtendedInfo>
   <Target>
-    <RawPath>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/src/AE/hal/AEHalTests.exe</RawPath>
+    <RawPath>C:/visualgdb_projects/AERTOSCopy/build/VSGDBCmakeNinja_mingw/Debug/AEHalTests.exe</RawPath>
     <ShortName>AEHalTests</ShortName>
     <TestFramework>
       <ID>com.sysprogs.unittest.googletest</ID>

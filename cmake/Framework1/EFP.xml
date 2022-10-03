@@ -1,0 +1,1058 @@
+<?xml version="1.0"?>
+<EmbeddedFrameworkPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PackageID>com.sysprogs.arm.stm32.freertos</PackageID>
+  <PackageDescription>FreeRTOS</PackageDescription>
+  <PackageVersion>1.0</PackageVersion>
+  <IsStandAlone>true</IsStandAlone>
+  <Frameworks>
+    <EmbeddedFramework>
+      <ID>com.sysprogs.arm.stm32.freertos</ID>
+      <UserFriendlyName>FreeRTOS</UserFriendlyName>
+      <AdditionalSourceFiles>
+        <string>$$SYS:FRAMEWORK_ROOT$$/croutine.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/event_groups.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/History.txt</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/list.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/queue.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/readme.txt</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/stream_buffer.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/st_readme.txt</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/tasks.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/timers.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS/cmsis_os.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/cmsis_os2.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM0/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/non_secure/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/non_secure/portasm.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_context.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_context_port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_heap.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_init.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23_NTZ/non_secure/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23_NTZ/non_secure/portasm.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM3/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/non_secure/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/non_secure/portasm.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_context.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_context_port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_heap.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_init.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33_NTZ/non_secure/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM3_MPU/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM4F/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM4_MPU/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7/ReadMe.txt</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7/r0p1/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7_MPU/ReadMe.txt</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7_MPU/r0p1/port.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_1.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_2.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_3.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_4.c</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_5.c</string>
+      </AdditionalSourceFiles>
+      <AdditionalHeaderFiles>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS/cmsis_os.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/cmsis_os.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/cmsis_os2.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/freertos_mpool.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/freertos_os2.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/atomic.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/croutine.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/deprecated_definitions.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/event_groups.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/FreeRTOS.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/list.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/message_buffer.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/mpu_prototypes.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/mpu_wrappers.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/portable.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/projdefs.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/queue.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/semphr.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/StackMacros.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/stack_macros.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/stream_buffer.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/task.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include/timers.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM0/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/non_secure/portasm.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/non_secure/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_context.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_heap.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_init.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_port_macros.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23_NTZ/non_secure/portasm.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23_NTZ/non_secure/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM3/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/non_secure/portasm.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/non_secure/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_context.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_heap.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_init.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_port_macros.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM3_MPU/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM4F/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM4_MPU/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7/r0p1/portmacro.h</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7_MPU/r0p1/portmacro.h</string>
+      </AdditionalHeaderFiles>
+      <AdditionalIncludeDirs>
+        <string>$$SYS:FRAMEWORK_ROOT$$/$$com.sysprogs.bspoptions.stm32.freertos.cmsis$$</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/include</string>
+        <string>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</string>
+      </AdditionalIncludeDirs>
+      <AdditionalPreprocessorMacros>
+        <string>USE_FREERTOS</string>
+      </AdditionalPreprocessorMacros>
+      <AdditionalLibraries />
+      <AdditionalSystemVars>
+        <SysVarEntry>
+          <Key>com.sysprogs.rtos_type</Key>
+          <Value>com.sysprogs.freertos</Value>
+        </SysVarEntry>
+      </AdditionalSystemVars>
+      <ConfigurableProperties>
+        <PropertyGroups>
+          <PropertyGroup>
+            <Name>FreeRTOS</Name>
+            <UniqueID>com.sysprogs.bspoptions.stm32.freertos.</UniqueID>
+            <Properties>
+              <PropertyEntry xsi:type="Enumerated">
+                <Name>Heap Implementation</Name>
+                <UniqueID>heap</UniqueID>
+                <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                <SuggestionList>
+                  <Suggestion>
+                    <UserFriendlyName>Heap1 - no support for freeing</UserFriendlyName>
+                    <InternalValue>heap_1</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>Heap2 - no block consolidation</UserFriendlyName>
+                    <InternalValue>heap_2</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>Heap3 - use newlib malloc()/free()</UserFriendlyName>
+                    <InternalValue>heap_3</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>Heap4 - contiguous heap area</UserFriendlyName>
+                    <InternalValue>heap_4</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>Heap5 - scattered heap area</UserFriendlyName>
+                    <InternalValue>heap_5</InternalValue>
+                  </Suggestion>
+                </SuggestionList>
+                <DefaultEntryIndex>3</DefaultEntryIndex>
+                <AllowFreeEntry>false</AllowFreeEntry>
+              </PropertyEntry>
+              <PropertyEntry xsi:type="Enumerated">
+                <Name>CPU Core support</Name>
+                <UniqueID>portcore</UniqueID>
+                <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                <SuggestionList>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M0</UserFriendlyName>
+                    <InternalValue>CM0</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M23 (no TrustZone)</UserFriendlyName>
+                    <InternalValue>CM23_NTZ/non_secure</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M23 (TrustZone - non-secure partition)</UserFriendlyName>
+                    <InternalValue>CM23/non_secure</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M23 (TrustZone - secure partition)</UserFriendlyName>
+                    <InternalValue>CM23/secure</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M3 or M4 with Software FP</UserFriendlyName>
+                    <InternalValue>CM3</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M33 (no TrustZone)</UserFriendlyName>
+                    <InternalValue>CM33_NTZ/non_secure</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M33 (TrustZone - non-secure partition)</UserFriendlyName>
+                    <InternalValue>CM33/non_secure</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M33 (TrustZone - secure partitione)</UserFriendlyName>
+                    <InternalValue>CM33/secure</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M3 with MPU</UserFriendlyName>
+                    <InternalValue>CM3_MPU</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M4 with MPU</UserFriendlyName>
+                    <InternalValue>CM4_MPU</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M4 with Hardware FP</UserFriendlyName>
+                    <InternalValue>CM4F</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M7</UserFriendlyName>
+                    <InternalValue>CM7/r0p1</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>ARM Cortex M7 with MPU</UserFriendlyName>
+                    <InternalValue>CM7_MPU/r0p1</InternalValue>
+                  </Suggestion>
+                </SuggestionList>
+                <DefaultEntryIndex>4</DefaultEntryIndex>
+                <DefaultEntryValue>$$com.sysprogs.freertos.default_port$$</DefaultEntryValue>
+                <AllowFreeEntry>false</AllowFreeEntry>
+              </PropertyEntry>
+              <PropertyEntry xsi:type="Enumerated">
+                <Name>CMSIS RTOS Interface Version</Name>
+                <UniqueID>cmsis</UniqueID>
+                <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                <SuggestionList>
+                  <Suggestion>
+                    <UserFriendlyName>v1</UserFriendlyName>
+                    <InternalValue>CMSIS_RTOS</InternalValue>
+                  </Suggestion>
+                  <Suggestion>
+                    <UserFriendlyName>v2</UserFriendlyName>
+                    <InternalValue>CMSIS_RTOS_V2</InternalValue>
+                  </Suggestion>
+                </SuggestionList>
+                <DefaultEntryIndex>0</DefaultEntryIndex>
+                <AllowFreeEntry>false</AllowFreeEntry>
+              </PropertyEntry>
+            </Properties>
+            <CollapsedByDefault>false</CollapsedByDefault>
+          </PropertyGroup>
+        </PropertyGroups>
+      </ConfigurableProperties>
+      <RequiredFrameworks>
+        <string>com.sysprogs.arm.stm32.hal</string>
+      </RequiredFrameworks>
+      <DefaultEnabled>false</DefaultEnabled>
+      <ProjectFolderName>FreeRTOS</ProjectFolderName>
+      <ConfigurationFileTemplates>
+        <ConfigurationFileTemplate>
+          <SourcePath>$$SYS:BSP_ROOT$$/FreeRTOS/Source/include/FreeRTOSConfig_template.h</SourcePath>
+          <TargetFileName>FreeRTOSConfig.h</TargetFileName>
+          <ExpandMacros>false</ExpandMacros>
+          <UserFriendlyName>FreeRTOS Configuration</UserFriendlyName>
+          <PropertyClasses>
+            <ConfigurationFilePropertyClass>
+              <NormalRegex>^( *)(#define)([ 	]+)([^ 	]+)([ 	]+)(\(?)( *\( *[a-zA-Z0-9_]+ *\) *|)([( ]*)([a-zA-Z0-9_]+|[a-zA-Z0-9_][^()]+[a-zA-Z0-9_])([ )]*)(\)?)(| */\*.*\*/)$</NormalRegex>
+              <NameIndex>4</NameIndex>
+              <ValueIndex>9</ValueIndex>
+              <IndentIndex>0</IndentIndex>
+              <Template>{g1}#define{g3: }{name}{g5: }{g6}{g7}{g8}{value}{g10}{g11}{g12}</Template>
+              <Properties>
+                <string>configUSE_PREEMPTION</string>
+                <string>configUSE_IDLE_HOOK</string>
+                <string>configUSE_TICK_HOOK</string>
+                <string>configMAX_PRIORITIES</string>
+                <string>configSUPPORT_STATIC_ALLOCATION</string>
+                <string>configCPU_CLOCK_HZ</string>
+                <string>configTICK_RATE_HZ</string>
+                <string>configMINIMAL_STACK_SIZE</string>
+                <string>configTOTAL_HEAP_SIZE</string>
+                <string>configMAX_TASK_NAME_LEN</string>
+                <string>configUSE_TRACE_FACILITY</string>
+                <string>configUSE_16_BIT_TICKS</string>
+                <string>configIDLE_SHOULD_YIELD</string>
+                <string>configUSE_MUTEXES</string>
+                <string>configQUEUE_REGISTRY_SIZE</string>
+                <string>configCHECK_FOR_STACK_OVERFLOW</string>
+                <string>configUSE_RECURSIVE_MUTEXES</string>
+                <string>configUSE_MALLOC_FAILED_HOOK</string>
+                <string>configUSE_APPLICATION_TASK_TAG</string>
+                <string>configUSE_COUNTING_SEMAPHORES</string>
+                <string>configGENERATE_RUN_TIME_STATS</string>
+                <string>configUSE_CO_ROUTINES</string>
+                <string>configMAX_CO_ROUTINE_PRIORITIES</string>
+                <string>configUSE_TIMERS</string>
+                <string>configTIMER_TASK_PRIORITY</string>
+                <string>configTIMER_QUEUE_LENGTH</string>
+                <string>configTIMER_TASK_STACK_DEPTH</string>
+                <string>INCLUDE_vTaskPrioritySet</string>
+                <string>INCLUDE_uxTaskPriorityGet</string>
+                <string>INCLUDE_vTaskDelete</string>
+                <string>INCLUDE_vTaskCleanUpResources</string>
+                <string>INCLUDE_vTaskSuspend</string>
+                <string>INCLUDE_vTaskDelayUntil</string>
+                <string>INCLUDE_vTaskDelay</string>
+                <string>INCLUDE_xTaskGetSchedulerState</string>
+                <string>configUSE_PORT_OPTIMISED_TASK_SELECTION</string>
+                <string>configPRIO_BITS</string>
+                <string>configLIBRARY_LOWEST_INTERRUPT_PRIORITY</string>
+                <string>configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</string>
+              </Properties>
+            </ConfigurationFilePropertyClass>
+          </PropertyClasses>
+          <PropertyList>
+            <PropertyGroups>
+              <PropertyGroup>
+                <Name>FreeRTOS Configuration</Name>
+                <Properties>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_PREEMPTION</Name>
+                    <UniqueID>configUSE_PREEMPTION</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_IDLE_HOOK</Name>
+                    <UniqueID>configUSE_IDLE_HOOK</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_TICK_HOOK</Name>
+                    <UniqueID>configUSE_TICK_HOOK</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>MAX_PRIORITIES</Name>
+                    <UniqueID>configMAX_PRIORITIES</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>SUPPORT_STATIC_ALLOCATION</Name>
+                    <UniqueID>configSUPPORT_STATIC_ALLOCATION</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>CPU_CLOCK_HZ</Name>
+                    <UniqueID>configCPU_CLOCK_HZ</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>TICK_RATE_HZ</Name>
+                    <UniqueID>configTICK_RATE_HZ</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>MINIMAL_STACK_SIZE</Name>
+                    <UniqueID>configMINIMAL_STACK_SIZE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>TOTAL_HEAP_SIZE</Name>
+                    <UniqueID>configTOTAL_HEAP_SIZE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>MAX_TASK_NAME_LEN</Name>
+                    <UniqueID>configMAX_TASK_NAME_LEN</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_TRACE_FACILITY</Name>
+                    <UniqueID>configUSE_TRACE_FACILITY</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_16_BIT_TICKS</Name>
+                    <UniqueID>configUSE_16_BIT_TICKS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>IDLE_SHOULD_YIELD</Name>
+                    <UniqueID>configIDLE_SHOULD_YIELD</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_MUTEXES</Name>
+                    <UniqueID>configUSE_MUTEXES</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>QUEUE_REGISTRY_SIZE</Name>
+                    <UniqueID>configQUEUE_REGISTRY_SIZE</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>CHECK_FOR_STACK_OVERFLOW</Name>
+                    <UniqueID>configCHECK_FOR_STACK_OVERFLOW</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_RECURSIVE_MUTEXES</Name>
+                    <UniqueID>configUSE_RECURSIVE_MUTEXES</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_MALLOC_FAILED_HOOK</Name>
+                    <UniqueID>configUSE_MALLOC_FAILED_HOOK</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_APPLICATION_TASK_TAG</Name>
+                    <UniqueID>configUSE_APPLICATION_TASK_TAG</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_COUNTING_SEMAPHORES</Name>
+                    <UniqueID>configUSE_COUNTING_SEMAPHORES</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>GENERATE_RUN_TIME_STATS</Name>
+                    <UniqueID>configGENERATE_RUN_TIME_STATS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_CO_ROUTINES</Name>
+                    <UniqueID>configUSE_CO_ROUTINES</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>MAX_CO_ROUTINE_PRIORITIES</Name>
+                    <UniqueID>configMAX_CO_ROUTINE_PRIORITIES</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_TIMERS</Name>
+                    <UniqueID>configUSE_TIMERS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>TIMER_TASK_PRIORITY</Name>
+                    <UniqueID>configTIMER_TASK_PRIORITY</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>TIMER_QUEUE_LENGTH</Name>
+                    <UniqueID>configTIMER_QUEUE_LENGTH</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>TIMER_TASK_STACK_DEPTH</Name>
+                    <UniqueID>configTIMER_TASK_STACK_DEPTH</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>USE_PORT_OPTIMISED_TASK_SELECTION</Name>
+                    <UniqueID>configUSE_PORT_OPTIMISED_TASK_SELECTION</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>PRIO_BITS</Name>
+                    <UniqueID>configPRIO_BITS</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>LIBRARY_LOWEST_INTERRUPT_PRIORITY</Name>
+                    <UniqueID>configLIBRARY_LOWEST_INTERRUPT_PRIORITY</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="String">
+                    <Name>LIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</Name>
+                    <UniqueID>configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                  </PropertyEntry>
+                </Properties>
+                <CollapsedByDefault>false</CollapsedByDefault>
+              </PropertyGroup>
+              <PropertyGroup>
+                <Name>Optional FreeRTOS Functions</Name>
+                <Properties>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>vTaskPrioritySet</Name>
+                    <UniqueID>INCLUDE_vTaskPrioritySet</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>uxTaskPriorityGet</Name>
+                    <UniqueID>INCLUDE_uxTaskPriorityGet</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>vTaskDelete</Name>
+                    <UniqueID>INCLUDE_vTaskDelete</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>vTaskCleanUpResources</Name>
+                    <UniqueID>INCLUDE_vTaskCleanUpResources</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>vTaskSuspend</Name>
+                    <UniqueID>INCLUDE_vTaskSuspend</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>vTaskDelayUntil</Name>
+                    <UniqueID>INCLUDE_vTaskDelayUntil</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>vTaskDelay</Name>
+                    <UniqueID>INCLUDE_vTaskDelay</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                  <PropertyEntry xsi:type="Boolean">
+                    <Name>xTaskGetSchedulerState</Name>
+                    <UniqueID>INCLUDE_xTaskGetSchedulerState</UniqueID>
+                    <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+                    <DefaultValue>false</DefaultValue>
+                    <ValueForTrue>1</ValueForTrue>
+                    <ValueForFalse>0</ValueForFalse>
+                  </PropertyEntry>
+                </Properties>
+                <CollapsedByDefault>false</CollapsedByDefault>
+              </PropertyGroup>
+            </PropertyGroups>
+          </PropertyList>
+        </ConfigurationFileTemplate>
+      </ConfigurationFileTemplates>
+    </EmbeddedFramework>
+  </Frameworks>
+  <FileConditions>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.cmsis$$</Expression>
+        <ExpectedValue>CMSIS_RTOS</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS/cmsis_os.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.cmsis$$</Expression>
+        <ExpectedValue>CMSIS_RTOS</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS/cmsis_os.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.cmsis$$</Expression>
+        <ExpectedValue>CMSIS_RTOS_V2</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/cmsis_os.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.cmsis$$</Expression>
+        <ExpectedValue>CMSIS_RTOS_V2</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/cmsis_os2.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.cmsis$$</Expression>
+        <ExpectedValue>CMSIS_RTOS_V2</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/cmsis_os2.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.cmsis$$</Expression>
+        <ExpectedValue>CMSIS_RTOS_V2</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/freertos_mpool.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.cmsis$$</Expression>
+        <ExpectedValue>CMSIS_RTOS_V2</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/CMSIS_RTOS_V2/freertos_os2.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM0</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM0/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM0</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM0/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/non_secure/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/non_secure/portasm.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/non_secure/portasm.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/non_secure/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_context.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_context.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_context_port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_heap.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_heap.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_init.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_init.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23/secure/secure_port_macros.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23_NTZ/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23_NTZ/non_secure/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23_NTZ/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23_NTZ/non_secure/portasm.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23_NTZ/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23_NTZ/non_secure/portasm.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM23_NTZ/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM23_NTZ/non_secure/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM3</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM3/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM3</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM3/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/non_secure/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/non_secure/portasm.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/non_secure/portasm.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/non_secure/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_context.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_context.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_context_port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_heap.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_heap.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_init.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_init.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33/secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33/secure/secure_port_macros.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33_NTZ/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33_NTZ/non_secure/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33_NTZ/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33_NTZ/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM33_NTZ/non_secure</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM3_MPU</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM3_MPU/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM3_MPU</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM3_MPU/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM4F</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM4F/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM4F</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM4F/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM4_MPU</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM4_MPU/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM4_MPU</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM4_MPU/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM7/r0p1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7/ReadMe.txt</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM7/r0p1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7/r0p1/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM7/r0p1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7/r0p1/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM7_MPU/r0p1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7_MPU/ReadMe.txt</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM7_MPU/r0p1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7_MPU/r0p1/port.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.portcore$$</Expression>
+        <ExpectedValue>CM7_MPU/r0p1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/GCC/ARM_CM7_MPU/r0p1/portmacro.h</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.heap$$</Expression>
+        <ExpectedValue>heap_1</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_1.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.heap$$</Expression>
+        <ExpectedValue>heap_2</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_2.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.heap$$</Expression>
+        <ExpectedValue>heap_3</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_3.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.heap$$</Expression>
+        <ExpectedValue>heap_4</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_4.c</FilePath>
+    </FileCondition>
+    <FileCondition>
+      <ConditionToInclude xsi:type="Equals">
+        <Expression>$$com.sysprogs.bspoptions.stm32.freertos.heap$$</Expression>
+        <ExpectedValue>heap_5</ExpectedValue>
+        <IgnoreCase>false</IgnoreCase>
+      </ConditionToInclude>
+      <FilePath>$$SYS:FRAMEWORK_ROOT$$/portable/MemMang/heap_5.c</FilePath>
+    </FileCondition>
+  </FileConditions>
+</EmbeddedFrameworkPackage>

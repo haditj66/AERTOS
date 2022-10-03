@@ -94,8 +94,7 @@ Cgen_Option(
  set(AECoreLib_SRCs  ${AECoreLib_SRCs}  
   #AEConfig.h
   AEDefines.h
- AEUtils.cpp 
- AEUtils.h 
+
  #AEObjects.h
  AESet.h 
  AECircularBuffer.h
@@ -127,7 +126,12 @@ Cgen_Option(
  AE_Init.cpp
  AECore.h
  AEAO.h
- AEAO.cpp)
+ AEAO.cpp
+ AEAOUpdateableAAS.h
+ InlineISubscribeable.h
+  AEUtils.cpp 
+ AEUtils.h 
+ )
 
  set(AECoreLib_Clocks 
  AEClock.h 
@@ -190,6 +194,23 @@ AEObservorInterpretor.h
  AEMultiChannelFilter.h
  AEMultiChannelFilter.cpp
  AEMultiChannelFilterCHANNELSELECT.h
+ )
+
+     set(AECoreLib_Utilities
+ActionRequestObjectArg.h
+AEAOResourceAsService.h
+AEUtilityAsService.h
+ )  
+ 
+ set(AECoreLib_TDU
+AE_TDUAsService.h
+ActionRequestObjectArgTDU.h
+ActionRequestObjectArgTDU.cpp
+ )
+
+set(AECoreLib_FSM
+ AESimpleFSM.h
+ AESimpleFSM.cpp
  )
 
 
@@ -283,6 +304,9 @@ if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 		${AECoreLib_Interpretors}
 		${AECoreLib_Filters}
 		${AECoreLib_Links}
+		${AECoreLib_Utilities}
+		${AECoreLib_TDU}
+		${AECoreLib_FSM}
 		) 
 	#Always do this for BSP targets. I dont really understand why yet you need this
 	target_include_directories(BSP PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")  
@@ -311,6 +335,9 @@ if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 		${AECoreLib_Interpretors}
 		${AECoreLib_Filters}
 		${AECoreLib_Links}
+		${AECoreLib_Utilities}
+		${AECoreLib_TDU}
+		${AECoreLib_FSM}
 		)
 
  endif()
@@ -328,6 +355,9 @@ Set_Sources_in_SourceGroup(NAMEOFGROUP "AEObservors" LISTOFSOURCES  ${AECoreLib_
 Set_Sources_in_SourceGroup(NAMEOFGROUP "AEInterpretors" LISTOFSOURCES  ${AECoreLib_Interpretors})
 Set_Sources_in_SourceGroup(NAMEOFGROUP "AEFilters" LISTOFSOURCES  ${AECoreLib_Filters})
 Set_Sources_in_SourceGroup(NAMEOFGROUP "AELinks" LISTOFSOURCES  ${AECoreLib_Links})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEUtilities" LISTOFSOURCES  ${AECoreLib_Utilities})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AETDU" LISTOFSOURCES  ${AECoreLib_TDU})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "AEFSM" LISTOFSOURCES  ${AECoreLib_FSM})
 
 target_sources(AECoreLib PUBLIC ${AESetupFiles})
 
@@ -338,16 +368,36 @@ target_sources(AECoreLib PUBLIC ${AESetupFiles})
 #target_sources(AECoreLib PUBLIC ${GeneratorFiles})
 
 
+
 target_include_directories(AECoreLib PUBLIC ${AECoreLib_IncludePaths}) 
 target_include_directories(AECoreLib PUBLIC ${PATH_TO_BOARD_SPECIFIC_FILES})  
 target_include_directories(AECoreLib PUBLIC ${PATH_TO_REQUIRED_Hal_FILES}) 
 target_include_directories(AECoreLib PUBLIC ${AESetupFiles_PATHS})
 
+#target_link_libraries(AECoreLib PUBLIC    FreeRTOS)
 
+
+if(${BOARD_USED} STREQUAL "STM32F411RE" )
+		target_link_libraries(AECoreLib PUBLIC    stm32half4) 
+		#target_link_libraries(stm32half4 PUBLIC    stm32f4ll) 
+		target_link_libraries(FreeRTOS PUBLIC    stm32f4ll) 
+		#target_link_libraries(AECoreLib PUBLIC    stm32f4ll)   
+        
+endif()
 
 
 if(${RTOS_USED} STREQUAL "FREERTOS" )
-        target_link_libraries(AECoreLib PRIVATE    BSP_com.sysprogs.arm.stm32.freertos)
+ 
+		if(${BOARD_USED} STREQUAL "X64" )
+		target_link_libraries(AECoreLib PUBLIC    BSP) 
+		target_link_libraries(AECoreLib PUBLIC    FreeRTOS) 
+		else()
+        #target_link_libraries(AECoreLib PRIVATE    BSP_com.sysprogs.arm.stm32.freertos) 
+		target_link_libraries(AECoreLib PUBLIC    FreeRTOS) 
+		target_include_directories(AECoreLib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1/include")  
+		endif()
+
+		 
 endif()
   
  

@@ -1,6 +1,8 @@
 #pragma once 
 
+#ifdef BOARD_USED__STM32F411RE 
 #include "stm32f4xx_hal.h"
+#endif
 
 //todo: figure out why this was needed here. This shouldnt have been  needed here.
 

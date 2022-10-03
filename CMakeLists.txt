@@ -8,6 +8,8 @@ cmake_minimum_required(VERSION 3.15)
   
 
 
+
+
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --save-temps")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --save-temps")
@@ -20,6 +22,11 @@ set(USER_SECTIONS_SO_FAR 0)
 
 
 #set(_arg_WITH_VALUE "some stuff ")
+
+ add_compile_options(-Wl,-verbose, -lC:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32)
+
+    add_compile_definitions(aehal)  
+
 
 set(_arg_WITH_VALUE "some stuff ##UserCode")
  
@@ -168,7 +175,9 @@ Cgen_Option(
         DESCRIPTION "is an RTOS used"
         POSSIBLEVALUES FREERTOS NONE
         CONSTRICTS_LATER_OPTIONS
-)
+) 
+
+
  
 Cgen_Option(
         NAME OS_USED
@@ -386,27 +395,47 @@ endif()
 if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 find_bsp(
 	ID com.sysprogs.arm.stm32
-	VERSION 2021.02
+	VERSION 2022.08
 	MCU STM32F411RE
-	FRAMEWORKS
-		com.sysprogs.arm.stm32.freertos
-		com.sysprogs.arm.stm32.hal
-		com.sysprogs.arm.stm32.ll
-		com.sysprogs.embedded.semihosting_and_profiler
+	FRAMEWORKS com.sysprogs.embedded.semihosting_and_profiler
 	HWREGISTER_LIST_FILE STM32F4xxxx/DeviceDefinitions/stm32f411xe.xml
-	FWCONFIGURATION com.sysprogs.bspoptions.stm32.freertos.portcore=CM4F
-	FWCONFIGURATION com.sysprogs.bspoptions.stm32.freertos.heap=${FreeRTOS_HEAP_TYPE}
 	CONFIGURATION "com.sysprogs.toolchainoptions.arm.libctype=--specs=nano.specs -u _printf_float")
 
 find_test_framework(ID com.sysprogs.unittest.googletest) 
 set(IsFindTestFrameworkRan TRUE)
+
+
 endif()
 
 
+
+
  ###################################
- #variables
- #declaring all CompileDefines, Sources, and IncludePaths that all subdirectories will inherit from
+ # adding all 3rd party frameworks
  ###################################   
+ 
+#if is it BOARD_USED is STM32F411RE, then import all stm32f4 hal files
+if(${BOARD_USED} STREQUAL "STM32F411RE" )
+            import_framework(NAME stm32half4 PATH "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/stm32half4")
+
+            
+             add_compile_definitions(STM32F411xE) #this is needed in the stm32 library to select the stm32f4xx_hal.h file.
+            import_framework(NAME stm32f4ll PATH  "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/stm32f4ll")
+            get_target_property(stm32f4ll_INCLUDES_DIRS stm32f4ll INTERFACE_INCLUDE_DIRECTORIES)
+            include_directories(${stm32f4ll_INCLUDES_DIRS})
+
+            #include_directories(  "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/STM32F4xx_HAL_Driver/Inc")
+            #include_directories(  "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/STM32F4xx_HAL_Driver/Inc/Legacy")
+            #include_directories( "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/CMSIS_HAL/Device/ST/STM32F4xx/Include")
+            #include_directories(  "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/CMSIS_HAL/Core/Include")
+            #include_directories( "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/CMSIS_HAL/Include")
+			#include_directories( "${CMAKE_SOURCE_DIR}/src/AE/hal/boards/STM32F411RE/board_files") 
+            
+endif()
+
+
+
+
 
   #RTOS vars -----------
  set(RTOS_Defines)
@@ -462,19 +491,51 @@ message("PLATFORM -----------------${PLATFORM}")
 if(${RTOS_USED} STREQUAL "FREERTOS" )
     if(${SWIL_HWIL_DRIVEN} STREQUAL "SWIL" )
 
+
+                #set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.portcore CM4F)#look at line of the freertos framework.cmake file
+            #add_compile_definitions(USE_FREERTOS) #this is needed for visualgdb 
+            ##import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1")
+            #import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/FreeRTOS")
+            #get_target_property(FreeRTOS_DIRS FreeRTOS INTERFACE_INCLUDE_DIRECTORIES)
+            #include_directories(${FreeRTOS_DIRS})
+
+
         set(FREERTOS_EXTRA_SRCS #"${CMAKE_SOURCE_DIR}/src/AE/FreeRTOSConfig.h"
                 #"${CMAKE_SOURCE_DIR}/src/AE/FreeRTOSConfigFiles/BoardSpecificFreeRTOSDefines.h"
                 #"${CMAKE_SOURCE_DIR}/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.h"
                 #"${CMAKE_SOURCE_DIR}/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp"
                 )
-        set(FREERTOS_EXTRA_INCLUDES
+        set(FREERTOS_EXTRA_INCLUDES 
                 #"${CMAKE_SOURCE_DIR}"
                 #"${CMAKE_SOURCE_DIR}/src/AE"
                 #"${CMAKE_SOURCE_DIR}/FreeRTOSConfigFiles"
                 )
 
-        include("cmake/GetFREERTOS_MINGW.cmake")
+        #include("cmake/GetFREERTOS_MINGW.cmake")
 
+                    set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.portcore MSVC)#look at line of the freertos framework.cmake file
+                    set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.heap heap_5)
+                    set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.cmsis NONE)
+            add_compile_definitions(USE_FREERTOS) #this is needed for visualgdb 
+            #import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1")
+            import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/FreeRTOS")
+            get_target_property(FreeRTOS_DIRS FreeRTOS INTERFACE_INCLUDE_DIRECTORIES)
+            include_directories(${FreeRTOS_DIRS})
+            include_directories("${CMAKE_CURRENT_SOURCE_DIR}/frameworks/FreeRTOS")
+
+
+    else() #if it is HWIL i will use the standalone version of freertos. TODO: might want to also set the heap version you want to use. I think heap4?
+      
+            set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.portcore CM4F)#look at line of the freertos framework.cmake file
+            set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.cmsis CMSIS_RTOS)
+            add_compile_definitions(USE_FREERTOS) #this is needed for visualgdb 
+            #import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1")
+            import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/FreeRTOS")
+            get_target_property(FreeRTOS_DIRS FreeRTOS INTERFACE_INCLUDE_DIRECTORIES)
+            include_directories(${FreeRTOS_DIRS})
+            #include_directories("${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1/include")
+            #include_directories("${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1/portable/MemMang")
+            #include_directories("${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1/portable/GCC/ARM_CM4F")
 
     endif ()
 
@@ -539,7 +600,10 @@ endif()
  #)
 
 
+
  if(INCLUDE_HAL STREQUAL "TRUE")
+
+
   CREATE_TARGET_UNITTESTS(
  NameOfTestTarget AEHalTests
  LibrariesToLinkTo AECoreLib AEHalLib  
@@ -550,15 +614,15 @@ endif()
 
  CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET exeHalTest
  LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE/hal"
- LibrariesToLinkTo AECoreLib AEHalLib  
- LIST_OF_TESTS ADC_TEST UART_TEST
+ LibrariesToLinkTo AECoreLib AEHalLib   
+ LIST_OF_TESTS ADC_TEST UART_TEST I2C_TEST
  ) 
  #target_link_libraries(exeHalTest PUBLIC  AEHalLib)     
 
  CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET AECoreTestEXE
  LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE"
  LibrariesToLinkTo AECoreLib 
- LIST_OF_TESTS defaultTest testAELoop testSPB testFilters
+ LIST_OF_TESTS defaultTest testAELoop testSPB testFilters testActionRequest testTDU testFSM
  ) 
 
  #get_target_property(MAIN_CFLAGS AECoreTestEXE COMPILE_OPTIONS)
