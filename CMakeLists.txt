@@ -16,7 +16,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --save-temps")
 
 
 set(NAME_OF_THIS_MP_GROUP "somepub")
-set(USER_SECTIONS_POSSIBLE
+set(USER_SECTIONS_POSSIBLE 
         za zb zc zd ze zf zg zh zi zj zk zl zm zn zo zp zq zr zs zt zu zv zw zx zy zz )
 set(USER_SECTIONS_SO_FAR 0)
 
@@ -26,7 +26,7 @@ set(USER_SECTIONS_SO_FAR 0)
  add_compile_options(-Wl,-verbose, -lC:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32)
 
     add_compile_definitions(aehal)  
-
+     
 
 set(_arg_WITH_VALUE "some stuff ##UserCode")
  
@@ -146,7 +146,8 @@ AEintegrationTest_initialize(LOCATION_OF_USER_CONFIG_FILES "${CMAKE_SOURCE_DIR}/
 
 
 
-
+ set(AEPLATFORM ${PLATFORM})
+ add_compile_definitions(AEPLATFORM__${AEPLATFORM})
 Cgen_Option(
         NAME AEPLATFORM
         DESCRIPTION "what platform is this for (this is chosen by IDE command line -D variable)"

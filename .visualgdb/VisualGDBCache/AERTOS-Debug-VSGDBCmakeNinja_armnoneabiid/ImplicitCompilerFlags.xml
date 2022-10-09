@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ImplicitFlagCache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GCC>C:\SysGCC\arm-eabi\bin\arm-none-eabi-gcc.exe</GCC>
-  <GXX>C:\SysGCC\arm-eabi\bin\arm-none-eabi-g++.exe</GXX>
+  <GCC>c:\sysgcc\arm-eabi\bin\arm-none-eabi-gcc.exe</GCC>
+  <GXX>c:\sysgcc\arm-eabi\bin\arm-none-eabi-g++.exe</GXX>
   <CachedFlags>
     <Entry>
       <Key>

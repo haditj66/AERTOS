@@ -15,7 +15,9 @@ endfunction() #visualgdb_toolchain_load_default_configuration
 function (visualgdb_toolchain_compute_flags)
 endfunction() #visualgdb_toolchain_compute_flags
 
-set(SYSPROG_PATH "C:/VisualGDBAllFiles/Sysprogs") #"C:/Program Files (x86)/Sysprogs")
+#set(SYSPROG_PATH "C:/VisualGDBAllFiles/Sysprogs") #"C:/Program Files (x86)/Sysprogs")
+set(SYSPROG_PATH "C:/Program Files (x86)/Sysprogs") #)
 
-set (VISUALGDB_COMPONENT_LISTS_DIR "C:/VisualGDBAllFiles/VisualGDB")#"C:/Users/Hadi/AppData/Local/VisualGDB")
+#set (VISUALGDB_COMPONENT_LISTS_DIR "C:/VisualGDBAllFiles/VisualGDB")#"C:/Users/Hadi/AppData/Local/VisualGDB")
+set (VISUALGDB_COMPONENT_LISTS_DIR "C:/Users/Hadi/AppData/Local/VisualGDB")#"C:/Users/Hadi/AppData/Local/VisualGDB")
 include ("${SYSPROG_PATH}/VisualGDB/CMake/embedded/root.cmake")

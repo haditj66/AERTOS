@@ -6,7 +6,9 @@
  
 cmake_minimum_required(VERSION 3.15)
   
- add_compile_options(  -Ofast)
+
+
+
 
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --save-temps")
 
@@ -14,12 +16,17 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --save-temps")
 
 
 set(NAME_OF_THIS_MP_GROUP "somepub")
-set(USER_SECTIONS_POSSIBLE
+set(USER_SECTIONS_POSSIBLE 
         za zb zc zd ze zf zg zh zi zj zk zl zm zn zo zp zq zr zs zt zu zv zw zx zy zz )
 set(USER_SECTIONS_SO_FAR 0)
 
 
 #set(_arg_WITH_VALUE "some stuff ")
+
+ add_compile_options(-Wl,-verbose, -lC:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32)
+
+    add_compile_definitions(aehal)  
+     
 
 set(_arg_WITH_VALUE "some stuff ##UserCode")
  
@@ -139,7 +146,8 @@ AEintegrationTest_initialize(LOCATION_OF_USER_CONFIG_FILES "${CMAKE_SOURCE_DIR}/
 
 
 
-
+ set(AEPLATFORM ${PLATFORM})
+ add_compile_definitions(AEPLATFORM__${AEPLATFORM})
 Cgen_Option(
         NAME AEPLATFORM
         DESCRIPTION "what platform is this for (this is chosen by IDE command line -D variable)"
@@ -168,7 +176,9 @@ Cgen_Option(
         DESCRIPTION "is an RTOS used"
         POSSIBLEVALUES FREERTOS NONE
         CONSTRICTS_LATER_OPTIONS
-)
+) 
+
+
  
 Cgen_Option(
         NAME OS_USED
@@ -206,7 +216,12 @@ Cgen_Option(
         CONSTRICTS_LATER_OPTIONS
 )
 
-
+Cgen_Option(
+        NAME BUILD_TESTS
+        DESCRIPTION "if True the integration functions located IntegrationTestMacros.h will be turned on. if false, will not do anything"
+        POSSIBLEVALUES TRUE FALSE
+        CONSTRICTS_LATER_OPTIONS
+)
 
 Cgen_Option(
         NAME BUILD_UNIT_TESTS
@@ -215,12 +230,27 @@ Cgen_Option(
         CONSTRICTS_LATER_OPTIONS
 )
 
-Cgen_Option(
-        NAME BUILD_TESTS
-        DESCRIPTION "to build INTEGRATION any tests or not"
-        POSSIBLEVALUES TRUE FALSE
-        CONSTRICTS_LATER_OPTIONS
-)
+
+if(${TOOLCHAIN_USED} STREQUAL "arm_non_eabi_id")
+
+##for now always have this set to 
+set(ARM_COMPILER_VENDOR SysGCC_ARM)
+    Cgen_Option(
+            NAME ARM_COMPILER_VENDOR
+            DESCRIPTION "There are different vendors that have implemented the arm-none-eabi-gcc compiler. Choose the one you want to use."
+            POSSIBLEVALUES GNU_ARM IAR_ARM SysGCC_ARM
+            CONSTRICTS_LATER_OPTIONS
+    )
+
+        Cgen_Option(
+            NAME ARM_OPTIMIZATION_SETTINGS
+            DESCRIPTION "compiler optimization options. Go here for explanations. https://developer.arm.com/documentation/100748/0607/fnb1472741490155"
+            POSSIBLEVALUES level0 level1 level2 level3 levelfast
+            CONSTRICTS_LATER_OPTIONS
+    )
+
+    
+endif()
 
 
 #write the proper toolchain file to its build location since VSGDB auto generates the toolchain file. I want to write over it.
@@ -248,7 +278,42 @@ project(AERTOS LANGUAGES C CXX ASM)
  project(AERTOS LANGUAGES C CXX ASM)
   endif()
 
+
+  if(${TOOLCHAIN_USED} STREQUAL "arm_non_eabi_id") 
+      #NEVERMIND ABUOT THE FOLLOWING. JUST Set(CMAKE_C_COMPILER) here
+      #i need to change the CMakeCCompiler.cmake and the CMakeCXXCompiler.cmake in the binary folder the  Set(CMAKE_C_COMPILER)
+      if(${ARM_COMPILER_VENDOR} STREQUAL "SysGCC_ARM")   
+        set(CMAKE_C_COMPILER "C:/SysGCC/arm-eabi/bin/arm-none-eabi-gcc.exe") 
+        set(CMAKE_CXX_COMPILER "C:/SysGCC/arm-eabi/bin/arm-none-eabi-g++.exe")
+      elseif(${ARM_COMPILER_VENDOR} STREQUAL "GNU_ARM")
+        set(CMAKE_CXX_COMPILER "C:/Program Files (x86)/GNU Tools ARM Embedded/6 2017-q2-update/bin/arm-none-eabi-g++.exe")
+        set(CMAKE_C_COMPILER "C:/Program Files (x86)/GNU Tools ARM Embedded/6 2017-q2-update/bin/arm-none-eabi-gcc.exe")
+
+      elseif(${ARM_COMPILER_VENDOR} STREQUAL "IAR_ARM")
+      message(FATAL_ERROR "you need to specify the path for this")
+      endif()
+
+
+      #set compile options for compiler speed
+      #go here for compile options speed setting meanings
+      #https://developer.arm.com/documentation/100748/0607/fnb1472741490155
+      if(${ARM_OPTIMIZATION_SETTINGS} STREQUAL          "level0")  
+       add_compile_options(  -O0)
+       elseif(${ARM_OPTIMIZATION_SETTINGS} STREQUAL     "level1")
+        add_compile_options(  -O1)
+        elseif(${ARM_OPTIMIZATION_SETTINGS} STREQUAL    "level2")
+         add_compile_options(  -O2)
+        elseif(${ARM_OPTIMIZATION_SETTINGS} STREQUAL    "level3")
+         add_compile_options(  -O3)
+        elseif(${ARM_OPTIMIZATION_SETTINGS} STREQUAL    "levelfast")
+         add_compile_options(  -Ofast)
+        endif()
+      
+
+  endif()
+
 include("cmake/MyCmakeHelpers.cmake")
+
 
   
 
@@ -331,27 +396,47 @@ endif()
 if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 find_bsp(
 	ID com.sysprogs.arm.stm32
-	VERSION 1.0
+	VERSION 2022.08
 	MCU STM32F411RE
-	FRAMEWORKS
-		com.sysprogs.arm.stm32.freertos
-		com.sysprogs.arm.stm32.hal
-		com.sysprogs.arm.stm32.ll
-		com.sysprogs.embedded.semihosting_and_profiler
+	FRAMEWORKS com.sysprogs.embedded.semihosting_and_profiler
 	HWREGISTER_LIST_FILE STM32F4xxxx/DeviceDefinitions/stm32f411xe.xml
-	FWCONFIGURATION com.sysprogs.bspoptions.stm32.freertos.portcore=CM4F
-	FWCONFIGURATION com.sysprogs.bspoptions.stm32.freertos.heap=${FreeRTOS_HEAP_TYPE}
 	CONFIGURATION "com.sysprogs.toolchainoptions.arm.libctype=--specs=nano.specs -u _printf_float")
 
 find_test_framework(ID com.sysprogs.unittest.googletest) 
 set(IsFindTestFrameworkRan TRUE)
+
+
 endif()
 
 
+
+
  ###################################
- #variables
- #declaring all CompileDefines, Sources, and IncludePaths that all subdirectories will inherit from
+ # adding all 3rd party frameworks
  ###################################   
+ 
+#if is it BOARD_USED is STM32F411RE, then import all stm32f4 hal files
+if(${BOARD_USED} STREQUAL "STM32F411RE" )
+            import_framework(NAME stm32half4 PATH "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/stm32half4")
+
+            
+             add_compile_definitions(STM32F411xE) #this is needed in the stm32 library to select the stm32f4xx_hal.h file.
+            import_framework(NAME stm32f4ll PATH  "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/stm32f4ll")
+            get_target_property(stm32f4ll_INCLUDES_DIRS stm32f4ll INTERFACE_INCLUDE_DIRECTORIES)
+            include_directories(${stm32f4ll_INCLUDES_DIRS})
+
+            #include_directories(  "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/STM32F4xx_HAL_Driver/Inc")
+            #include_directories(  "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/STM32F4xx_HAL_Driver/Inc/Legacy")
+            #include_directories( "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/CMSIS_HAL/Device/ST/STM32F4xx/Include")
+            #include_directories(  "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/CMSIS_HAL/Core/Include")
+            #include_directories( "${CMAKE_SOURCE_DIR}/frameworks/stm32f4ll/CMSIS_HAL/Include")
+			#include_directories( "${CMAKE_SOURCE_DIR}/src/AE/hal/boards/STM32F411RE/board_files") 
+            
+endif()
+
+
+
+
 
   #RTOS vars -----------
  set(RTOS_Defines)
@@ -407,19 +492,51 @@ message("PLATFORM -----------------${PLATFORM}")
 if(${RTOS_USED} STREQUAL "FREERTOS" )
     if(${SWIL_HWIL_DRIVEN} STREQUAL "SWIL" )
 
+
+                #set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.portcore CM4F)#look at line of the freertos framework.cmake file
+            #add_compile_definitions(USE_FREERTOS) #this is needed for visualgdb 
+            ##import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1")
+            #import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/FreeRTOS")
+            #get_target_property(FreeRTOS_DIRS FreeRTOS INTERFACE_INCLUDE_DIRECTORIES)
+            #include_directories(${FreeRTOS_DIRS})
+
+
         set(FREERTOS_EXTRA_SRCS #"${CMAKE_SOURCE_DIR}/src/AE/FreeRTOSConfig.h"
                 #"${CMAKE_SOURCE_DIR}/src/AE/FreeRTOSConfigFiles/BoardSpecificFreeRTOSDefines.h"
                 #"${CMAKE_SOURCE_DIR}/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.h"
                 #"${CMAKE_SOURCE_DIR}/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp"
                 )
-        set(FREERTOS_EXTRA_INCLUDES
+        set(FREERTOS_EXTRA_INCLUDES 
                 #"${CMAKE_SOURCE_DIR}"
                 #"${CMAKE_SOURCE_DIR}/src/AE"
                 #"${CMAKE_SOURCE_DIR}/FreeRTOSConfigFiles"
                 )
 
-        include("cmake/GetFREERTOS_MINGW.cmake")
+        #include("cmake/GetFREERTOS_MINGW.cmake")
 
+                    set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.portcore MSVC)#look at line of the freertos framework.cmake file
+                    set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.heap heap_5)
+                    set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.cmsis NONE)
+            add_compile_definitions(USE_FREERTOS) #this is needed for visualgdb 
+            #import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1")
+            import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/FreeRTOS")
+            get_target_property(FreeRTOS_DIRS FreeRTOS INTERFACE_INCLUDE_DIRECTORIES)
+            include_directories(${FreeRTOS_DIRS})
+            include_directories("${CMAKE_CURRENT_SOURCE_DIR}/frameworks/FreeRTOS")
+
+
+    else() #if it is HWIL i will use the standalone version of freertos. TODO: might want to also set the heap version you want to use. I think heap4?
+      
+            set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.portcore CM4F)#look at line of the freertos framework.cmake file
+            set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.cmsis CMSIS_RTOS)
+            add_compile_definitions(USE_FREERTOS) #this is needed for visualgdb 
+            #import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1")
+            import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/FreeRTOS")
+            get_target_property(FreeRTOS_DIRS FreeRTOS INTERFACE_INCLUDE_DIRECTORIES)
+            include_directories(${FreeRTOS_DIRS})
+            #include_directories("${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1/include")
+            #include_directories("${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1/portable/MemMang")
+            #include_directories("${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1/portable/GCC/ARM_CM4F")
 
     endif ()
 
@@ -467,10 +584,8 @@ endif()
 
 
 
-
-if(${BUILD_TESTS} STREQUAL "TRUE" )
- #add_subdirectory("test")
- endif()
+ 
+ #add_subdirectory("test") 
 
 
  add_subdirectory("src/AE")
@@ -486,7 +601,10 @@ if(${BUILD_TESTS} STREQUAL "TRUE" )
  #)
 
 
+
  if(INCLUDE_HAL STREQUAL "TRUE")
+
+
   CREATE_TARGET_UNITTESTS(
  NameOfTestTarget AEHalTests
  LibrariesToLinkTo AECoreLib AEHalLib  
@@ -497,19 +615,19 @@ if(${BUILD_TESTS} STREQUAL "TRUE" )
 
  CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET exeHalTest
  LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE/hal"
- LibrariesToLinkTo AECoreLib AEHalLib  
- LIST_OF_TESTS ADC_TEST UART_TEST
+ LibrariesToLinkTo AECoreLib AEHalLib   
+ LIST_OF_TESTS ADC_TEST UART_TEST I2C_TEST
  ) 
  #target_link_libraries(exeHalTest PUBLIC  AEHalLib)     
 
  CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET AECoreTestEXE
  LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE"
  LibrariesToLinkTo AECoreLib 
- LIST_OF_TESTS defaultTest testAELoop testSPB
+ LIST_OF_TESTS defaultTest testAELoop testSPB testFilters testActionRequest testTDU testFSM
  ) 
 
- get_target_property(MAIN_CFLAGS AECoreTestEXE COMPILE_OPTIONS)
- message("-- Target compiler flags are: ${MAIN_CFLAGS}")
+ #get_target_property(MAIN_CFLAGS AECoreTestEXE COMPILE_OPTIONS)
+ #message("-- Target compiler flags are: ${MAIN_CFLAGS}")
   
 
 

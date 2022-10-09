@@ -23,9 +23,9 @@
 
 #pragma once
 
-void RunSelectedIntegrationTest_I2C_TEST();
+void RunSelectedIntegrationTest_ADC_TEST();
 
 static void RunSelectedIntegrationTest()
 {
-    RunSelectedIntegrationTest_I2C_TEST();
+    RunSelectedIntegrationTest_ADC_TEST();
 }
