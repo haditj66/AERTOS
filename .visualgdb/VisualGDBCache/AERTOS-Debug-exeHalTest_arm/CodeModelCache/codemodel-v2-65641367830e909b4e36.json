@@ -1,0 +1,95 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "DEBUG",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AERTOS",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AERTOS::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AERTOS-DEBUG-56be761fe09e7e90e286.json",
+					"name" : "AERTOS",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AERTOS-bin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AERTOS-bin-DEBUG-3aa6de25b39d35360e8b.json",
+					"name" : "AERTOS-bin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP-DEBUG-b96be9dadb89b7b3fea1.json",
+					"name" : "BSP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_stm32.STM32F4_hal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_stm32.STM32F4_hal-DEBUG-465be0b3b8cb4265aeb8.json",
+					"name" : "BSP_stm32.STM32F4_hal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_stm32.STM32F4_ll::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_stm32.STM32F4_ll-DEBUG-2a7e5777d7012df16898.json",
+					"name" : "BSP_stm32.STM32F4_ll",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/AERTOS/AERTOS/AERTOS/build/exeHalTest_arm/Debug",
+		"source" : "C:/AERTOS/AERTOS/AERTOS"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

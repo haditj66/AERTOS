@@ -1,9 +1,0 @@
-C:\Users\Hadi\AppData\Local\VisualGDB\CMake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug C:\VisualGDBAllFiles\VisualGDB\CMake\bin\cmake.exe ../../.. -G Ninja -DCMAKE_BUILD_TYPE=DEBUG -DTOOLCHAIN_ROOT=C:/VisualGDBAllFiles/SysGCC/mingw32 -DCMAKE_MAKE_PROGRAM=C:/VisualGDBAllFiles/Sysprogs/VisualGDB/ninja.exe -DCMAKE_TOOLCHAIN_FILE=C:\visualgdb_projects\AERTOSCopy/build/Simulation/Debug/toolchain.cmake -DPLATFORM=Simulation C:\visualgdb_projects\AERTOSCopy
-CMake Error at C:/Users/Hadi/OneDrive/Documents/VisualStudioprojects/Projects/cSharp/CodeGenerator/CodeGenerator/CgenCmakeGui/CgenCmakeConfigFunctions.cmake:53 (message):
-  cgen: AERTOS_ENVIRONMENT needs to be set now
-Call Stack (most recent call first):
-  CMakeLists.txt:85 (Cgen_Option)
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/visualgdb_projects/AERTOSCopy/cmake-build-vgdb/CMakeFiles/CMakeOutput.log".

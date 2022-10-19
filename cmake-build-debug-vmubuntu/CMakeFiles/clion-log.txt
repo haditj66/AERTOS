@@ -1,8 +1,0 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DUSING_LINUX=1 -G "CodeBlocks - Unix Makefiles" /tmp/tmp.Wi47S6lgtZ
-_BSP_MCU -----------------
- _BSP_BSP_CONFIGURATION_com.sysprogs.bspoptions.arm.core ----------------- 
-CMAKE_BUILD_TYPE -----------------Debug
-PLATFORM -----------------
--- Configuring done
--- Generating done
--- Build files have been written to: /tmp/tmp.Wi47S6lgtZ/cmake-build-debug-vmubuntu

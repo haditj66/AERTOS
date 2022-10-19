@@ -1,0 +1,10 @@
+AERTOS_BASE_DIR: C:/AERTOSCopy
+CGEN_CMAKE_SETTINGS_FILE: C:/AERTOSCopy/CGensaveFiles/cmakeGui/VSGDBCmakeNinja_armnoneabiid/DEBUG
+CGEN_PROJECT_DIRECTORY: C:/AERTOSCopy/src/AE/hal/exeHalTest
+CGEN_ORIGINAL_PROJECT_DIRECTORY: C:/AERTOSCopy/src/AE/hal/exeHalTest/CGensaveFiles/cmakeGui/VSGDBCmakeNinja_armnoneabiid/DEBUG
+CGEN_DIRECTORY: C:/AERTOSCopy/src/AE/hal/exeHalTest/CGensaveFiles/cmakeGui/VSGDBCmakeNinja_armnoneabiid/DEBUG
+CMAKE_CURRENT_BINARY_DIR: C:/AERTOSCopy/src/AE/hal/exeHalTest/build
+CMAKE_CURRENT_SOURCE_DIR: C:/AERTOSCopy
+PLATFORM: VSGDBCmakeNinja_armnoneabiid
+CMAKE_BUILD_TYPE: DEBUG
+CGEN_DIRECTORY_OF_CACHE_PROJECT_FILES: VSGDBCmakeNinja_armnoneabiid/DEBUG

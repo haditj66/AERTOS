@@ -1,0 +1,11 @@
+
+
+NAME INTEGRATION_TESTS_FOR_AECoreTestEXE
+DESCRIPTION Available tests for AECoreTestEXE 
+POSSIBLEVALUES defaultTest testAELoop testSPB testFilters testActionRequest testTDU testFSM
+CONSTRICTS_LATER_OPTIONS 
+
+NAME INTEGRATION_TESTS
+DESCRIPTION choose an integration test directory to build
+POSSIBLEVALUES AECoreTestEXE
+CONSTRICTS_LATER_OPTIONS 

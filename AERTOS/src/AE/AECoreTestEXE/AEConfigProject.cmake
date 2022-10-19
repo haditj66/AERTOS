@@ -1,0 +1,22 @@
+
+
+Cgen_Start(CGEN_PROJECT_DIRECTORY "${INTEGRATION_TARGET_DIRECTORY}")
+
+
+Cgen_Option(
+        NAME INTEGRATION_TESTS
+        DESCRIPTION "choose an integration test directory to build"
+        POSSIBLEVALUES ${INTEGRATION_TARGET_NAME}  #AECoreTestEXE AEHal_Tests1
+        CONSTRICTS_LATER_OPTIONS
+)
+
+
+CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET ${INTEGRATION_TARGET_NAME}
+LOCATION_OF_TARGET "${INTEGRATION_TARGET_DIRECTORY}"
+LibrariesToLinkTo AECoreLib 
+LIST_OF_TESTS defaultTest testAELoop testSPB testFilters testActionRequest testTDU testFSM
+) 
+
+
+
+ CGEN_END()

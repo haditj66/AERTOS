@@ -1,54 +1,42 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "AERTOS", "AERTOS.vgdbcmake", "{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}"
+Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "AERTOS", "AERTOS\AERTOS.vgdbcmake", "{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|VSGDBCmakeNinja_armnoneabiid = Debug|VSGDBCmakeNinja_armnoneabiid
-		MinSizeRel|VSGDBCmakeNinja_armnoneabiid = MinSizeRel|VSGDBCmakeNinja_armnoneabiid
-		Release|VSGDBCmakeNinja_armnoneabiid = Release|VSGDBCmakeNinja_armnoneabiid
-		RelWithDebInfo|VSGDBCmakeNinja_armnoneabiid = RelWithDebInfo|VSGDBCmakeNinja_armnoneabiid
-		Debug|VSGDBCmakeNinja_mingw = Debug|VSGDBCmakeNinja_mingw
-		MinSizeRel|VSGDBCmakeNinja_mingw = MinSizeRel|VSGDBCmakeNinja_mingw
-		Release|VSGDBCmakeNinja_mingw = Release|VSGDBCmakeNinja_mingw
-		RelWithDebInfo|VSGDBCmakeNinja_mingw = RelWithDebInfo|VSGDBCmakeNinja_mingw
-		Debug|CmakeUnixMakefiles_gnu = Debug|CmakeUnixMakefiles_gnu
-		MinSizeRel|CmakeUnixMakefiles_gnu = MinSizeRel|CmakeUnixMakefiles_gnu
-		Release|CmakeUnixMakefiles_gnu = Release|CmakeUnixMakefiles_gnu
-		RelWithDebInfo|CmakeUnixMakefiles_gnu = RelWithDebInfo|CmakeUnixMakefiles_gnu
+		Debug|exeHalTest_arm = Debug|exeHalTest_arm
+		MinSizeRel|exeHalTest_arm = MinSizeRel|exeHalTest_arm
+		Release|exeHalTest_arm = Release|exeHalTest_arm
+		RelWithDebInfo|exeHalTest_arm = RelWithDebInfo|exeHalTest_arm
+		Debug|exeHalTest_mingw = Debug|exeHalTest_mingw
+		MinSizeRel|exeHalTest_mingw = MinSizeRel|exeHalTest_mingw
+		Release|exeHalTest_mingw = Release|exeHalTest_mingw
+		RelWithDebInfo|exeHalTest_mingw = RelWithDebInfo|exeHalTest_mingw
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|VSGDBCmakeNinja_armnoneabiid.ActiveCfg = Debug|VSGDBCmakeNinja_armnoneabiid
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|VSGDBCmakeNinja_armnoneabiid.Build.0 = Debug|VSGDBCmakeNinja_armnoneabiid
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|VSGDBCmakeNinja_armnoneabiid.ActiveCfg = MinSizeRel|VSGDBCmakeNinja_armnoneabiid
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|VSGDBCmakeNinja_armnoneabiid.Build.0 = MinSizeRel|VSGDBCmakeNinja_armnoneabiid
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|VSGDBCmakeNinja_armnoneabiid.ActiveCfg = Release|VSGDBCmakeNinja_armnoneabiid
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|VSGDBCmakeNinja_armnoneabiid.Build.0 = Release|VSGDBCmakeNinja_armnoneabiid
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|VSGDBCmakeNinja_armnoneabiid.ActiveCfg = RelWithDebInfo|VSGDBCmakeNinja_armnoneabiid
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|VSGDBCmakeNinja_armnoneabiid.Build.0 = RelWithDebInfo|VSGDBCmakeNinja_armnoneabiid
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|VSGDBCmakeNinja_mingw.ActiveCfg = Debug|VSGDBCmakeNinja_mingw
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|VSGDBCmakeNinja_mingw.Build.0 = Debug|VSGDBCmakeNinja_mingw
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|VSGDBCmakeNinja_mingw.ActiveCfg = MinSizeRel|VSGDBCmakeNinja_mingw
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|VSGDBCmakeNinja_mingw.Build.0 = MinSizeRel|VSGDBCmakeNinja_mingw
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|VSGDBCmakeNinja_mingw.ActiveCfg = Release|VSGDBCmakeNinja_mingw
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|VSGDBCmakeNinja_mingw.Build.0 = Release|VSGDBCmakeNinja_mingw
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|VSGDBCmakeNinja_mingw.ActiveCfg = RelWithDebInfo|VSGDBCmakeNinja_mingw
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|VSGDBCmakeNinja_mingw.Build.0 = RelWithDebInfo|VSGDBCmakeNinja_mingw
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|CmakeUnixMakefiles_gnu.ActiveCfg = Debug|CmakeUnixMakefiles_gnu
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Debug|CmakeUnixMakefiles_gnu.Build.0 = Debug|CmakeUnixMakefiles_gnu
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|CmakeUnixMakefiles_gnu.ActiveCfg = MinSizeRel|CmakeUnixMakefiles_gnu
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.MinSizeRel|CmakeUnixMakefiles_gnu.Build.0 = MinSizeRel|CmakeUnixMakefiles_gnu
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|CmakeUnixMakefiles_gnu.ActiveCfg = Release|CmakeUnixMakefiles_gnu
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.Release|CmakeUnixMakefiles_gnu.Build.0 = Release|CmakeUnixMakefiles_gnu
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|CmakeUnixMakefiles_gnu.ActiveCfg = RelWithDebInfo|CmakeUnixMakefiles_gnu
-		{D6DC7FE2-2735-4EA8-95F3-BC507F1AD2D9}.RelWithDebInfo|CmakeUnixMakefiles_gnu.Build.0 = RelWithDebInfo|CmakeUnixMakefiles_gnu
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.Debug|exeHalTest_arm.ActiveCfg = Debug|exeHalTest_arm
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.Debug|exeHalTest_arm.Build.0 = Debug|exeHalTest_arm
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.MinSizeRel|exeHalTest_arm.ActiveCfg = MinSizeRel|exeHalTest_arm
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.MinSizeRel|exeHalTest_arm.Build.0 = MinSizeRel|exeHalTest_arm
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.Release|exeHalTest_arm.ActiveCfg = Release|exeHalTest_arm
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.Release|exeHalTest_arm.Build.0 = Release|exeHalTest_arm
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.RelWithDebInfo|exeHalTest_arm.ActiveCfg = RelWithDebInfo|exeHalTest_arm
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.RelWithDebInfo|exeHalTest_arm.Build.0 = RelWithDebInfo|exeHalTest_arm
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.Debug|exeHalTest_mingw.ActiveCfg = Debug|exeHalTest_mingw
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.Debug|exeHalTest_mingw.Build.0 = Debug|exeHalTest_mingw
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.MinSizeRel|exeHalTest_mingw.ActiveCfg = MinSizeRel|exeHalTest_mingw
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.MinSizeRel|exeHalTest_mingw.Build.0 = MinSizeRel|exeHalTest_mingw
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.Release|exeHalTest_mingw.ActiveCfg = Release|exeHalTest_mingw
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.Release|exeHalTest_mingw.Build.0 = Release|exeHalTest_mingw
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.RelWithDebInfo|exeHalTest_mingw.ActiveCfg = RelWithDebInfo|exeHalTest_mingw
+		{33F59B55-CD83-4F8B-B70B-5D6DAD3F72D8}.RelWithDebInfo|exeHalTest_mingw.Build.0 = RelWithDebInfo|exeHalTest_mingw
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E5BCF290-C203-4033-9DCA-01515FDD4F06}
+		SolutionGuid = {6D21C84C-332D-422A-A95F-B5B71DF31441}
 	EndGlobalSection
 EndGlobal
