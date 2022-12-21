@@ -1,0 +1,1209 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "libCGENTest_lib.a"
+		}
+	],
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_bsp_based_library",
+			"CREATE_TARGET_INTEGRATIONEXE",
+			"include",
+			"_target_link_libraries",
+			"target_link_libraries",
+			"add_compile_options",
+			"add_compile_definitions",
+			"Cgen_Start",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"C:/Program Files (x86)/Sysprogs/VisualGDB/CMake/embedded/root.cmake",
+			"cmake/MyCmakeHelpers.cmake",
+			"C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/AEConfigProject.cmake",
+			"CMakeLists.txt",
+			"C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/CGensaveFiles/cmakeGui/CGENTest_mingw/DEBUG/cgenCmakeCache_CAERTOSAERTOS.cmake",
+			"C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/CGensaveFiles/cmakeGui/CGENTest_mingw/DEBUG/cgenCmakeCache.cmake",
+			"cmake/CgenCmakeConfigFunctions.cmake",
+			"AETarget.cmake",
+			"cmake/GetBoardMetaTypes.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 698,
+				"parent" : 0
+			},
+			{
+				"file" : 2,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 30,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 247,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 304,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 213,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 309,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 10
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 26,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 107,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 109,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 115,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 3,
+				"line" : 138,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 6,
+				"line" : 207,
+				"parent" : 16
+			},
+			{
+				"file" : 5,
+				"parent" : 17
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 1,
+				"parent" : 18
+			},
+			{
+				"file" : 4,
+				"parent" : 19
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 2,
+				"parent" : 20
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 4,
+				"parent" : 20
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 145,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 81,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 9,
+				"parent" : 20
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 111,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 110,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 8,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 129,
+				"parent" : 0
+			},
+			{
+				"file" : 7,
+				"parent" : 29
+			},
+			{
+				"command" : 7,
+				"file" : 7,
+				"line" : 11,
+				"parent" : 30
+			},
+			{
+				"command" : 7,
+				"file" : 7,
+				"line" : 8,
+				"parent" : 30
+			},
+			{
+				"command" : 7,
+				"file" : 7,
+				"line" : 9,
+				"parent" : 30
+			},
+			{
+				"command" : 7,
+				"file" : 7,
+				"line" : 12,
+				"parent" : 30
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 377,
+				"parent" : 0
+			},
+			{
+				"file" : 8,
+				"parent" : 35
+			},
+			{
+				"command" : 7,
+				"file" : 8,
+				"line" : 65,
+				"parent" : 36
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 111,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 186,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 6,
+				"parent" : 20
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 117,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 119,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 113,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 105,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 565,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 28,
+				"parent" : 0
+			},
+			{
+				"command" : 9,
+				"file" : 3,
+				"line" : 569,
+				"parent" : 0
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 287,
+				"parent" : 3
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 288,
+				"parent" : 3
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 289,
+				"parent" : 3
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " --save-temps -g3 -O0"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wl,-verbose,"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-lC:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-fdata-sections"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 13,
+					"define" : "AEPLATFORM__VSGDBCmakeNinja_mingw"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "AERTOS_ENVIRONMENT__RTOS_PC"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "BOARD_USED__"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "BUILD_TESTS__TRUE"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "BUILD_UNIT_TESTS__FALSE"
+				},
+				{
+					"backtrace" : 23,
+					"define" : "Build_System__VSGDBCmake_Ninja"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "CGEN_ALLOPTIONS=\"\""
+				},
+				{
+					"backtrace" : 25,
+					"define" : "CGEN_ALLOPTIONS=\"@BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE \""
+				},
+				{
+					"backtrace" : 26,
+					"define" : "CGEN_CMAKE_CURRENT_BINARY_DIR=\"C:/AERTOS/AERTOS/build/AE_mingw/Debug_testActionRequest\""
+				},
+				{
+					"backtrace" : 27,
+					"define" : "CGEN_CMAKE_CURRENT_SOURCE_DIR=\"C:/AERTOS/AERTOS\""
+				},
+				{
+					"backtrace" : 28,
+					"define" : "INCLUDE_HAL__TRUE"
+				},
+				{
+					"backtrace" : 31,
+					"define" : "INTEGRATION_TESTS_FOR_CGENTest__defaultTest"
+				},
+				{
+					"backtrace" : 32,
+					"define" : "INTEGRATION_TESTS__CGENTest"
+				},
+				{
+					"backtrace" : 33,
+					"define" : "INTEGRATION_TEST_CHOSEN=\"CGENTest\""
+				},
+				{
+					"backtrace" : 34,
+					"define" : "INTEGRATION_TEST_CHOSEN_SPECIFIC=\"defaultTest\""
+				},
+				{
+					"backtrace" : 37,
+					"define" : "IsPC"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "OS_USED__WINDOWS"
+				},
+				{
+					"backtrace" : 39,
+					"define" : "PATH_TO_TESTMACRO_FILE=\"C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/CGensaveFiles/cmakeGui/CGENTest_mingw/DEBUG/IntegrationTestMacros.h\""
+				},
+				{
+					"backtrace" : 40,
+					"define" : "PRINT_METHOD__PRINT_SEMIHOSTING"
+				},
+				{
+					"backtrace" : 41,
+					"define" : "RTOS_USED__FREERTOS"
+				},
+				{
+					"backtrace" : 9,
+					"define" : "SIMULATION"
+				},
+				{
+					"backtrace" : 42,
+					"define" : "SIM_REAL__REALITY"
+				},
+				{
+					"backtrace" : 43,
+					"define" : "SWIL_HWIL_DRIVEN__SWIL"
+				},
+				{
+					"backtrace" : 44,
+					"define" : "TOOLCHAIN_USED__mingw"
+				},
+				{
+					"backtrace" : 45,
+					"define" : "USE_FREERTOS"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEADC"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEDMA"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEGPIOInput"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEGPIOOutput"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEI2C"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEPWM"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AESPI"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEUART"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "Using_AEHAL"
+				},
+				{
+					"backtrace" : 46,
+					"define" : "aehal"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/NONE"
+				},
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/include"
+				},
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS"
+				},
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/portable/GCC/ARM_MSVC"
+				},
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/portable/MSVC-MingW"
+				},
+				{
+					"backtrace" : 48,
+					"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include"
+				},
+				{
+					"backtrace" : 49,
+					"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest"
+				},
+				{
+					"backtrace" : 50,
+					"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/conf"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/simulated/board_files"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/FreeRTOSConfigFiles"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/simulated/AEHalFiles"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/AERTOS/AERTOS/src/AE/HelperFunctions"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/AERTOS/AERTOS/src/AE/exeTest"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_PC"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				16
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " --save-temps -g3 -O0"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wl,-verbose,"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-lC:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-fdata-sections"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 13,
+					"define" : "AEPLATFORM__VSGDBCmakeNinja_mingw"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "AERTOS_ENVIRONMENT__RTOS_PC"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "BOARD_USED__"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "BUILD_TESTS__TRUE"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "BUILD_UNIT_TESTS__FALSE"
+				},
+				{
+					"backtrace" : 23,
+					"define" : "Build_System__VSGDBCmake_Ninja"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "CGEN_ALLOPTIONS=\"\""
+				},
+				{
+					"backtrace" : 25,
+					"define" : "CGEN_ALLOPTIONS=\"@BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE \""
+				},
+				{
+					"backtrace" : 26,
+					"define" : "CGEN_CMAKE_CURRENT_BINARY_DIR=\"C:/AERTOS/AERTOS/build/AE_mingw/Debug_testActionRequest\""
+				},
+				{
+					"backtrace" : 27,
+					"define" : "CGEN_CMAKE_CURRENT_SOURCE_DIR=\"C:/AERTOS/AERTOS\""
+				},
+				{
+					"backtrace" : 28,
+					"define" : "INCLUDE_HAL__TRUE"
+				},
+				{
+					"backtrace" : 31,
+					"define" : "INTEGRATION_TESTS_FOR_CGENTest__defaultTest"
+				},
+				{
+					"backtrace" : 32,
+					"define" : "INTEGRATION_TESTS__CGENTest"
+				},
+				{
+					"backtrace" : 33,
+					"define" : "INTEGRATION_TEST_CHOSEN=\"CGENTest\""
+				},
+				{
+					"backtrace" : 34,
+					"define" : "INTEGRATION_TEST_CHOSEN_SPECIFIC=\"defaultTest\""
+				},
+				{
+					"backtrace" : 37,
+					"define" : "IsPC"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "OS_USED__WINDOWS"
+				},
+				{
+					"backtrace" : 39,
+					"define" : "PATH_TO_TESTMACRO_FILE=\"C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/CGensaveFiles/cmakeGui/CGENTest_mingw/DEBUG/IntegrationTestMacros.h\""
+				},
+				{
+					"backtrace" : 40,
+					"define" : "PRINT_METHOD__PRINT_SEMIHOSTING"
+				},
+				{
+					"backtrace" : 41,
+					"define" : "RTOS_USED__FREERTOS"
+				},
+				{
+					"backtrace" : 9,
+					"define" : "SIMULATION"
+				},
+				{
+					"backtrace" : 42,
+					"define" : "SIM_REAL__REALITY"
+				},
+				{
+					"backtrace" : 43,
+					"define" : "SWIL_HWIL_DRIVEN__SWIL"
+				},
+				{
+					"backtrace" : 44,
+					"define" : "TOOLCHAIN_USED__mingw"
+				},
+				{
+					"backtrace" : 45,
+					"define" : "USE_FREERTOS"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEADC"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEDMA"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEGPIOInput"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEGPIOOutput"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEI2C"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEPWM"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AESPI"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "USING_AEUART"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "Using_AEHAL"
+				},
+				{
+					"backtrace" : 46,
+					"define" : "aehal"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/NONE"
+				},
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/include"
+				},
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS"
+				},
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/portable/GCC/ARM_MSVC"
+				},
+				{
+					"backtrace" : 47,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/portable/MSVC-MingW"
+				},
+				{
+					"backtrace" : 48,
+					"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include"
+				},
+				{
+					"backtrace" : 49,
+					"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest"
+				},
+				{
+					"backtrace" : 50,
+					"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/conf"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/simulated/board_files"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/FreeRTOSConfigFiles"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/simulated/AECoreHalRequiredFiles"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/simulated/AEHalFiles"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/AERTOS/AERTOS/src/AE/HelperFunctions"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/AERTOS/AERTOS/src/AE/exeTest"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_PC"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				29,
+				31,
+				33,
+				39,
+				41
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 7,
+			"id" : "FreeRTOS::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "BSP::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "AEHalLib::@f3e1d49ac31996c899d3"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "AECoreLib::@dbae314adb83077d4c0f"
+		}
+	],
+	"id" : "CGENTest_lib::@6890427a1f51a3e7e1df",
+	"name" : "CGENTest_lib",
+	"nameOnDisk" : "libCGENTest_lib.a",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "target_headers",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				16,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				29,
+				31,
+				33,
+				39,
+				41
+			]
+		},
+		{
+			"name" : "GeneratorInputFiles",
+			"sourceIndexes" : 
+			[
+				17,
+				18
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				25,
+				26,
+				27,
+				28,
+				30,
+				32,
+				34,
+				35,
+				36,
+				37,
+				38,
+				40,
+				42,
+				43,
+				44,
+				45,
+				46
+			]
+		},
+		{
+			"name" : "Object Libraries",
+			"sourceIndexes" : 
+			[
+				47
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AdderSPB.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AverageSPB.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/BlindsUITOPFSM.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/ConfiguringFSM.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/DerivativeFilter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/NormalOperationFSM.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/UARTDriver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/UARTDriverTDU.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/UARTDriverTDU_ServiceGen.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/UARTDriver_ServiceGen.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/UUartDriver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/UUartDriverTDU.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/UUartDriverTDU_ServiceGen.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/UUartDriver_ServiceGen.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Program Files (x86)/Sysprogs/VisualGDB/CMake/embedded/dummy.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 7,
+			"path" : "src/AE/AESetup/Board/Vendor_PC/BoardVendorSetup.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 7,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/AESetup/Board/Vendor_PC/BoardVendorSetup.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/boards/simulated/AECoreHalRequiredFiles/UserDefinedInstances.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/PinSelector.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/AEPortAndPin.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/AEPort.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/AEPin.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/AllPeripheralObjects.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEADC.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEDMA.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEGPIOInput.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEGPIOOutput.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEI2C.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEI2C.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEPWM.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEPWM.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AESPI.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AESPI.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/AEUART.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/boards/simulated/AEHalFiles/GPIOSimType.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/AEGPIOOutputPeripheral.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/AEGPIOInputPeripheral.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/AEGPIOInputPeripheral.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/AEDMAPeripheral.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/AEDMAPeripheral.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/AEADCPeripheral.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/AEUARTPeripheral.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/AEI2CPeripheral.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/AESPIPeripheral.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 11,
+			"path" : "src/AE/hal/AEPWMPeripheral.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 9,
+			"isGenerated" : true,
+			"path" : "build/AE_mingw/Debug_testActionRequest/CMakeFiles/BSP.dir/C_/Program_Files_(x86)/Sysprogs/VisualGDB/CMake/embedded/dummy.c.obj",
+			"sourceGroupIndex" : 4
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

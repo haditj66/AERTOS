@@ -10,6 +10,17 @@
 *.userosscache
 *.sln.docstates
 
+#ignore build directory
+AERTOS/build/AE_STM32F411RE/Debug/
+AERTOS/build/AE_mingw/Debug/
+AERTOS/build/AE_STM32F411RE/
+AERTOS/build/AE_mingw/
+AERTOS/build/AE_STM32F411RE/Debug_testActionRequest/src/AE
+AERTOS/build/AE_STM32F411RE/Debug_testActionRequest/src/AE
+AERTOS/build/exeHalTest_arm/Debug_PWMTest/src/AE/
+
+
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

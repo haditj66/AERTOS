@@ -17,7 +17,7 @@ set(AEHALDefinitions)
 #get hal files that exist.  
 ############################# 
 
-set(Possible_Hal_Files AEGPIOOutput.h AEGPIOInput.h AEDMA.h AEADC.h AEUART.h AEI2C.h AESPI.h) 
+set(Possible_Hal_Files AEGPIOOutput.h AEGPIOInput.h AEDMA.h AEADC.h AEUART.h AEI2C.h AESPI.h AEPWM.h) 
 set(Peripheral_Hal_Files )
 set(User_Peripheral_Hal_Files )
 

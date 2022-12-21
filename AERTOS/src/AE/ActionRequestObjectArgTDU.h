@@ -16,8 +16,8 @@
 
 typedef void(*CallBackForWaitForEvt_t)(void*, AEEventDiscriminator_t*);
 typedef void(*CallBackForWaitTimeOut_t)(void*);
-
-
+ 
+	
 template<TemplateForActionArgTDU1>
 class ActionRequestObjectArgTDU1 : public ActionRequestObjectArg1<TemplateForActionArgTDU_Args1>
 {
@@ -25,6 +25,14 @@ class ActionRequestObjectArgTDU1 : public ActionRequestObjectArg1<TemplateForAct
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOUpdateable;
+	
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
 	friend class AEAOResourceAsAPossession;
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
@@ -41,13 +49,33 @@ public:
 	ActionRequestObjectArgTDU1() {
 		IsWaitingForEvent = false;
 	};
+	
+	
+	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
+	template <uint16_t Tevt>
+		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
 
-	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
-	virtual void RequestImpl(ARG1 Argument1) = 0;
+	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
+	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
+	template <uint16_t Tevt>
+		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
+
+	
+
+	//this is the function that ets the parameters for the initiation of the actionrequest to start updating. 
+//protected:	typedef void(*SetServiceReqFunc)(ForwardDeclaredTDU* p, ARG1 Argument1);
+	typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1);
+//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
+public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }		
+protected:
+
+	
+	//virtual void RequestImpl(ARG1 Argument1) = 0;
 	//this is the function that will continueally by called while updating.
-	virtual bool Update() = 0;
+	//virtual bool Update() = 0;
 
 
+	
 protected:
 	 
 
@@ -60,14 +88,6 @@ protected:
 	void PostEvtToRequestingAO(AEEventBase * const evtToPost);
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
-	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
-	template <uint16_t Tevt>
-	bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
-
-	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
-	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
-	template <uint16_t Tevt>
-	bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 
 	virtual void CancelCleanUp();
 
@@ -181,6 +201,14 @@ class ActionRequestObjectArgTDU2 : public ActionRequestObjectArg2<TemplateForAct
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOUpdateable;
+	
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
 	friend class AEAOResourceAsAPossession;
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
@@ -201,9 +229,23 @@ public:
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
 	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2) = 0;
 	//this is the function that will continueally by called while updating.
-	virtual bool Update() = 0;
+	//virtual bool Update() = 0;
+protected: typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1, ARG2 Argument2);
+	//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
+public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }		
 
 
+	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
+	template <uint16_t Tevt>
+		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+
+	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
+	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
+	template <uint16_t Tevt>
+		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
+
+	
+	
 protected:
 	 
 
@@ -216,14 +258,6 @@ protected:
 	void PostEvtToRequestingAO(AEEventBase * const evtToPost);
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
-	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
-	template <uint16_t Tevt>
-	bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
-
-	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
-	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
-	template <uint16_t Tevt>
-	bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 
 	virtual void CancelCleanUp();
 
@@ -339,6 +373,14 @@ class ActionRequestObjectArgTDU3 : public ActionRequestObjectArg3<TemplateForAct
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOUpdateable;
+	
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
 	friend class AEAOResourceAsAPossession;
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
@@ -359,9 +401,23 @@ public:
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
 	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3) = 0;
 	//this is the function that will continueally by called while updating.
-	virtual bool Update() = 0;
+	//virtual bool Update() = 0;
+protected: typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1, ARG2 Argument22, ARG3 Argument3);
+	//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
+public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }		
 
 
+	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
+	template <uint16_t Tevt>
+		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+
+	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
+	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
+	template <uint16_t Tevt>
+		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
+
+	
+	
 protected:
 	 
 	bool IsWaitingForEvent;
@@ -373,14 +429,6 @@ protected:
 	void PostEvtToRequestingAO(AEEventBase * const evtToPost);
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
-	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
-	template <uint16_t Tevt>
-	bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
-
-	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
-	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
-	template <uint16_t Tevt>
-	bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 
 	virtual void CancelCleanUp();
 
@@ -494,6 +542,14 @@ class ActionRequestObjectArgTDU4 : public ActionRequestObjectArg4<TemplateForAct
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOUpdateable;
+	
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
 	friend class AEAOResourceAsAPossession;
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
@@ -514,7 +570,19 @@ public:
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
 	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4) = 0;
 	//this is the function that will continueally by called while updating.
-	virtual bool Update() = 0;
+	//virtual bool Update() = 0;
+protected: typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1, ARG2 Argument22, ARG3 Argument3, ARG4 Argument4);
+	//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
+public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }	
+
+	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
+	template <uint16_t Tevt>
+		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+
+	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
+	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
+	template <uint16_t Tevt>
+		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 
 
 protected:
@@ -529,14 +597,6 @@ protected:
 	void PostEvtToRequestingAO(AEEventBase * const evtToPost);
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
-	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
-	template <uint16_t Tevt>
-	bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
-
-	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
-	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
-	template <uint16_t Tevt>
-	bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 
 	virtual void CancelCleanUp();
 
@@ -650,6 +710,14 @@ class ActionRequestObjectArgTDU5 : public ActionRequestObjectArg5<TemplateForAct
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOUpdateable;
+	
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
 	friend class AEAOResourceAsAPossession;
 	template<TemplateFor_RAsAPossession_NoDefaults_friend>
@@ -670,9 +738,22 @@ public:
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
 	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5) = 0;
 	//this is the function that will continueally by called while updating.
-	virtual bool Update() = 0;
+	//virtual bool Update() = 0;
+protected: typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1, ARG2 Argument22, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5);
+	//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
+public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }	
 
 
+	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
+	template <uint16_t Tevt>
+		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+
+	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
+	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
+	template <uint16_t Tevt>
+		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
+
+	
 protected:
 	 
 
@@ -685,14 +766,6 @@ protected:
 	void PostEvtToRequestingAO(AEEventBase * const evtToPost);
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
-	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
-	template <uint16_t Tevt>
-	bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
-
-	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
-	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
-	template <uint16_t Tevt>
-	bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 
 	virtual void CancelCleanUp();
 

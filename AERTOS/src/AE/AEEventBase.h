@@ -36,6 +36,11 @@ class AEEventBase
 	friend class AETDUAsPossession;
 	template<TemplateFor_AEAOUpdateableAAS_NoDefaults_friend>
 	friend class AETDUAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
 
 public:
 

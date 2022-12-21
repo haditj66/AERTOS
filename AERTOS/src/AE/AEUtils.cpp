@@ -73,7 +73,7 @@ void _AEPrint(char* msg)
 
 
 
-#ifdef PRINT_METHOD__NORMAL_PRINTF_WINDOWS
+#ifdef PRINT_METHOD__NORMAL_PRINTF//_PRINTF_WINDOWS
 void _AEPrint(char* msg)
 { 
 	printf(msg);

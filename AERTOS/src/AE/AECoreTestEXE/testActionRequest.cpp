@@ -43,6 +43,7 @@ AE_Init();
 	
 	static UUartDriver uartDriver_L; //3000
 	uartDriver = &uartDriver_L;
+	uartDriver->Init(AEPriorities::MediumPriority);
 	
 	AEAO::ConfigureAndStart();
 //UserCode_Sectionb_end

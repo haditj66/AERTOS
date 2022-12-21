@@ -135,6 +135,30 @@ extern UIHolterMonitorFSM* FSMHolterUI;
 #include QUOTE(H_CONC_(AnyOtherNeededIncludes4))
 #endif
 
+#if (defined(AnyOtherNeededIncludes5) && (EXPAND(AnyOtherNeededIncludes5) == 0))  
+#include QUOTE(H_CONC_(AnyOtherNeededIncludes5))
+#endif
+
+#if (defined(AnyOtherNeededIncludes6) && (EXPAND(AnyOtherNeededIncludes6) == 0))  
+#include QUOTE(H_CONC_(AnyOtherNeededIncludes6))
+#endif
+
+#if (defined(AnyOtherNeededIncludes7) && (EXPAND(AnyOtherNeededIncludes7) == 0))  
+#include QUOTE(H_CONC_(AnyOtherNeededIncludes7))
+#endif
+
+#if (defined(AnyOtherNeededIncludes8) && (EXPAND(AnyOtherNeededIncludes8) == 0))  
+#include QUOTE(H_CONC_(AnyOtherNeededIncludes8))
+#endif
+
+#if (defined(AnyOtherNeededIncludes9) && (EXPAND(AnyOtherNeededIncludes9) == 0))  
+#include QUOTE(H_CONC_(AnyOtherNeededIncludes9))
+#endif
+
+#if (defined(AnyOtherNeededIncludes10) && (EXPAND(AnyOtherNeededIncludes10) == 0))  
+#include QUOTE(H_CONC_(AnyOtherNeededIncludes10))
+#endif
+
 
 class AEObservorSensor;
 TEMPLATEFORNoDefaults_AEClock

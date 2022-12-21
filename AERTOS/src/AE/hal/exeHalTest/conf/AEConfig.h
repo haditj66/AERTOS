@@ -300,18 +300,11 @@
 #define I2CPERIPHERAL1_Name i2c1
 #endif
 
- 
-//enabling hardware peripherals 
-#ifdef IARBuild
-//#define Target_RealUART
-//#define Target_RealI2C
-#define Target_RealSPI
-#define Target_RealADC
-#define Target_RealGPIO
-#define Target_RealButton
-#define Target_RealPWM
-#endif
+#define SPIPERIPHERAL1 SPIPeripheral<1, false, PortA, PIN5, PortA, PIN6, PortA, PIN7, PortA, PIN4>  
+#define SPIPERIPHERAL1_Name spi1
 
+#define PWMPERIPHERAL1 PWMPeripheral<1,PortD, PIN13> 
+#define PWMPERIPHERAL1_Name pwm1
 
 
 //#define UARTPERIPHERAL2 UARTPeripheral<2,PortD, PIN5, PortA, PIN3>//<2,PortA, PIN2, PortA, PIN3>

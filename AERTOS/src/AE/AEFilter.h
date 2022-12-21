@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include "AECircularBuffer.h"
+#include "AEUtils.h"
 
 template<class TFilterDerived, uint16_t PastDataBufferSize = 1>
 class Filter

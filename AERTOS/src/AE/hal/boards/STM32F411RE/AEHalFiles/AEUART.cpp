@@ -56,7 +56,8 @@ extern "C" {
 		}
 #endif
 		 
-		foruart->_RxCpltCallback_t(UARTPERIPHERAL2_Name->_ReadBuffer, UARTPERIPHERAL2_Name->_ReceiveMsgSize);
+//		foruart->_RxCpltCallback_t(UARTPERIPHERAL2_Name->_ReadBuffer, UARTPERIPHERAL2_Name->_ReceiveMsgSize);
+		foruart->_RxCpltCallback_t(foruart->_ReadBuffer, foruart->_ReceiveMsgSize);
 		
 		HAL_UART_Receive_IT(foruart->_uartHandle, (uint8_t*)foruart->_ReadBuffer, foruart->_ReceiveMsgSize);
 

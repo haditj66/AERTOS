@@ -13,20 +13,8 @@
 #include "AECore.h" 
 #include "AE_Init.h"
 #include "AELoopObject.h"
+#include "AEObjects.h"
  
-
-//Hadi: 
-//  -DONE move the aehal define to a place where it makes more sense in the cmake file. also, 
-//	-DONE time to make the stm32f4 hal into a standalone library considering you changed the i2c files.
-//	-DONE Make tests to capture this nightmare of a peripheral!
-//	-  DONE you didnt test AEHAL exe tests with the PC version! first fill in the implementatoin for AEI2C.h and AEI2C.cpp then go through the two hal tests and make sure they work for pc.
-//	-DONE move this test to a proper test called I2C_TEST (just copy this contents over to the other main). give back this adc test it's code!
-//	-DONE then git commit everything and maybe tag it as a working point!
-//	- DONE migrate this project over to the new computer!
-//	- DONE change the build folder to make it dependent on the integration exe target location (as well as the cgencmakecache.cmake file).
-//	-start on the spi peripheral.	
-//	-Time to refactor everything down! First things first is to turn TDU and action requests into AOs (MAKE THIS AS QUICK AS POSSIBLE!! 1 WEEK MAX!).
-
 
   uint32_t adcCountToPrint1 = 0;
 uint32_t adcCountToPrint2 = 0;
@@ -297,6 +285,8 @@ void msp_init()
 }
 
 #endif
+
+DECLARE_ALL_AO_PTR
 //UserCode_Sectiona_end
 
 void RunSelectedIntegrationTest_I2C_TEST()

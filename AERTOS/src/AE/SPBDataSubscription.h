@@ -46,7 +46,7 @@ class SPBDataSubscription
 	friend class AESPBObservor;
 
 	friend class AELoop;
-
+	
 	friend class AELoopObject;
 
 	template<TemplateFor_SimpleFSM_NoDefaults>
@@ -54,6 +54,12 @@ class SPBDataSubscription
 
 	template<TemplateFor_RAsAService_NoDefaults>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	
 	template<TemplateFor_RAsAPossession_NoDefaults>
 	friend class AEUtilityAsPossession;
 	template<TemplateFor_AEAOUpdateableAAP_NoDefaults>

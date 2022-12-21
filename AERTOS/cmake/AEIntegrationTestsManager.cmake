@@ -113,12 +113,12 @@ include("${CODEGENGUI_PATH}/CgenCmakeConfigFunctions.cmake")
 
 				#generate the test file only if it does not exist yet!.
 				# if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${TEST_NAME_EXT})
-				Generate_File_Using_Cgen(
-						WORKINGDIRECTORY ${FULL_PATH_TO_TARGET}
-						INPUT_FILE_NAME IntegTestTemplate
-						OUTPUT_FILE_NAME ${TEST_NAME}
-						OUTPUT_FILE_EXTENSION cpp
-				)
+				#Generate_File_Using_Cgen(
+						#WORKINGDIRECTORY ${FULL_PATH_TO_TARGET}
+						#INPUT_FILE_NAME IntegTestTemplate
+						#OUTPUT_FILE_NAME ${TEST_NAME}
+						#OUTPUT_FILE_EXTENSION cpp
+				#)
 				#endif ()
 
 				target_sources(${_arg_FOR_TARGET} PUBLIC ${FULL_PATH_TO_TARGET}/${TEST_NAME_EXT})

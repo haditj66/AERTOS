@@ -20,3 +20,9 @@
 
 //i2c
 #define I2C_Handle char
+
+//spi
+#define SPI_Handle char
+
+//pwm
+#define PWM_Handle char

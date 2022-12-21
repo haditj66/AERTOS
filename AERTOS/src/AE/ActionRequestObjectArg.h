@@ -15,39 +15,7 @@
 //#include "MCUTypeDefs.h"
 
 
-class AENullActionRequest {
-public:
-	bool TypeIdOfthisClass;
-	bool _frequencyIUpdateAt;
-	bool Input;
-	bool ClassForActionRequest;
 
-	bool AOID_OfCurrentRequestingAO;
-	bool AOID_OfResource;
-
-	bool IsWaitingForEvent;
-	bool EvtWaitingFor;
-	bool BinarySemaphoreForEventListening_ptr;
-	//bool QueueExecuteForEvtOfTDU_ptr;
-
-	typedef AENull ARGTYPE1;
-	typedef AENull RETURNTYPE;
-	typedef AENull ARGTYPE2;
-	typedef AENull ARGTYPE3;
-	typedef AENull ARGTYPE4;
-	typedef AENull ARGTYPE5;
-	typedef bool CLASSTOPASS;
-
-	bool ActionRequestId;
-	void Request(uint16_t) {};
-	bool Update() { return true; };
-	void ActionRequestComplete(uint16_t) {};
-	void InitializeAnyClassTobeUsed(void*) {};
-	template<class TutilityResource>
-	void Init(TutilityResource*  utilityResource) {};
-	AENullActionRequest() { ActionRequestId = false; };
-	void CancelCleanUp() {};
-};
 
 
 
@@ -85,8 +53,59 @@ public:
 
 };
 
+class AENullActionRequest {
+public:
+	bool TypeIdOfthisClass;
+	bool _frequencyIUpdateAt;
+	bool Input;
+	bool ClassForActionRequest;
+
+	bool AOID_OfCurrentRequestingAO;
+	bool AOID_OfResource;
+
+	bool IsWaitingForEvent;
+	bool EvtWaitingFor;
+	bool BinarySemaphoreForEventListening_ptr;
+	//bool QueueExecuteForEvtOfTDU_ptr;
+
+	typedef AENull ARGTYPE1;
+	typedef AENull RETURNTYPE;
+	typedef AENull ARGTYPE2;
+	typedef AENull ARGTYPE3;
+	typedef AENull ARGTYPE4;
+	typedef AENull ARGTYPE5;
+	typedef bool CLASSTOPASS;
+	
+	Token* Wait(QueueClassForActionRequest, ARGTYPE1 arg1, ARGTYPE2 arg2, ARGTYPE3 arg3, ARGTYPE4 arg4, ARGTYPE5 arg5)
+	{
+		return nullptr;
+	}
+
+	bool ActionRequestId;
+	void Request(uint16_t) {}
+	;
+	bool Update(int id) { return true; }
+	;
+	void ActionRequestComplete(uint16_t) {}
+	;
+	void InitializeAnyClassTobeUsed(void*) {}
+	;
+	template<class TutilityResource>
+		void Init(TutilityResource*  utilityResource) {}
+	;
+	AENullActionRequest() { ActionRequestId = false; }
+	;
+	void CancelCleanUp() {}
+	;
+};
+
+
+
 static uint16_t indexForTypeIdOfthisClass = 0;
 //UserCode_Section0_end
+
+
+  
 
 
 template<TemplateForActionArg1>
@@ -96,6 +115,12 @@ class ActionRequestObjectArg1
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+	friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AETDUAsService;
 
@@ -128,6 +153,8 @@ protected:
 	};
 
 public:
+	
+	char* ServiceName;
 
 	uint16_t TypeIdOfthisClass;
 
@@ -203,6 +230,12 @@ public:
 
 	};
 
+	
+	///this is set as a way to set the return arg without having to do it through the 
+/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
+///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
+	void SetReturnArg(RETURNTYPE returnValueToSet);
+	
 
 protected:
 
@@ -262,7 +295,8 @@ protected:
 
 		//retrieve the actionargument object from the pool and run the override implementation function.
 		//UserCode_Section3_Loop1_Iteration1
-		RequestImpl(argPool[idOfArgument].arg1);
+		//RequestImpl(argPool[idOfArgument].arg1);
+		SetServiceReqFuncPTR(ClassForActionRequest, argPool[idOfArgument].arg1); 
 		//UserCode_Section3_Loop1_Iteration1_end 
 
 				//note that I can not set the argPool[idOfArgument].isavailable to true yet because if i did,
@@ -272,14 +306,24 @@ protected:
 
 
 
-	///this is set as a way to set the return arg without having to do it through the 
-	/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
-	///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
-	void SetReturnArg(RETURNTYPE returnValueToSet);
+
 
 	//this is the function that will be oveeriden and implemented.  
 	//UserCode_Section4_Loop1_Iteration1
-	virtual void RequestImpl(ARG1 Argument1) = 0;
+	typedef bool(*UpdateFunc)(ForwardDeclaredUtility* p, ARG1 Argument1);
+	typedef void(*SetServiceReqFunc)(ForwardDeclaredUtility* p, ARG1 Argument1);
+	SetServiceReqFunc SetServiceReqFuncPTR;
+public: void SetServiceFunc(SetServiceReqFunc s) {SetServiceReqFuncPTR = s; }
+protected:	UpdateFunc _Update;
+	bool Update(uint16_t idOfArgument) {
+
+		return _Update(ClassForActionRequest, argPool[idOfArgument].arg1); 
+ 
+	} 
+	//this is the function that will be oveeriden and implemented.  
+	//UserCode_Section4_Loop1_Iteration1
+	
+	//virtual void RequestImpl(ARG1 Argument1) = 0;
 	//UserCode_Section4_Loop1_Iteration1_end 
 
 
@@ -435,6 +479,12 @@ class ActionRequestObjectArg2
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AETDUAsService;
 
@@ -467,6 +517,8 @@ protected:
 
 public:
 
+	char* ServiceName;
+	
 	uint16_t TypeIdOfthisClass;
 
 	//UserCode_Section1_Loop1_Iteration2
@@ -550,6 +602,11 @@ public:
 		argPool[tokenOfRequest->Id].IsAvailable = true;
 
 	};
+	
+	///this is set as a way to set the return arg without having to do it through the 
+/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
+///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
+	void SetReturnArg(RETURNTYPE returnValueToSet); 
 
 
 protected:
@@ -610,7 +667,8 @@ protected:
 
 		//retrieve the actionargument object from the pool and run the override implementation function.
 		//UserCode_Section3_Loop1_Iteration2
-		RequestImpl(argPool[idOfArgument].arg1, argPool[idOfArgument].arg2);
+		//RequestImpl(argPool[idOfArgument].arg1, argPool[idOfArgument].arg2); 
+		SetServiceReqFuncPTR(ClassForActionRequest, argPool[idOfArgument].arg1, argPool[idOfArgument].arg2); 
 		//UserCode_Section3_Loop1_Iteration2_end 
 
 				//note that I can not set the argPool[idOfArgument].isavailable to true yet because if i did,
@@ -620,14 +678,22 @@ protected:
 
 
 
-	///this is set as a way to set the return arg without having to do it through the 
-	/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
-	///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
-	void SetReturnArg(RETURNTYPE returnValueToSet);
+
 
 	//this is the function that will be oveeriden and implemented.  
-	//UserCode_Section4_Loop1_Iteration2
-	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2) = 0;
+	//UserCode_Section4_Loop1_Iteration1
+	typedef bool(*UpdateFunc)(ForwardDeclaredUtility* p, ARG1 Argument1, ARG2 Argument2);
+	typedef void(*SetServiceReqFunc)(ForwardDeclaredUtility* p, ARG1 Argument1, ARG2 Argument2);
+	SetServiceReqFunc SetServiceReqFuncPTR;
+public: void SetServiceFunc(SetServiceReqFunc s) {SetServiceReqFuncPTR = s; }
+protected:	UpdateFunc _Update;
+	bool Update(uint16_t idOfArgument) {
+
+		return _Update(ClassForActionRequest, argPool[idOfArgument].arg1, argPool[idOfArgument].arg2); 
+ 
+	} 
+	
+	//virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2) = 0;
 	//UserCode_Section4_Loop1_Iteration2_end 
 
 
@@ -787,6 +853,13 @@ class ActionRequestObjectArg3
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	
+	
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AETDUAsService;
 
@@ -820,6 +893,8 @@ protected:
 
 public:
 
+	char* ServiceName;
+	
 	uint16_t TypeIdOfthisClass;
 
 	//UserCode_Section1_Loop1_Iteration3
@@ -911,6 +986,11 @@ public:
 		argPool[tokenOfRequest->Id].IsAvailable = true;
 
 	};
+	
+	///this is set as a way to set the return arg without having to do it through the 
+/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
+///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
+	void SetReturnArg(RETURNTYPE returnValueToSet);
 
 
 protected:
@@ -971,7 +1051,8 @@ protected:
 
 		//retrieve the actionargument object from the pool and run the override implementation function.
 		//UserCode_Section3_Loop1_Iteration3
-		RequestImpl(argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3);
+//		RequestImpl(argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3);
+		SetServiceReqFuncPTR(ClassForActionRequest, argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3); 
 		//UserCode_Section3_Loop1_Iteration3_end 
 
 				//note that I can not set the argPool[idOfArgument].isavailable to true yet because if i did,
@@ -981,14 +1062,25 @@ protected:
 
 
 
-	///this is set as a way to set the return arg without having to do it through the 
-	/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
-	///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
-	void SetReturnArg(RETURNTYPE returnValueToSet);
+
 
 	//this is the function that will be oveeriden and implemented.  
 	//UserCode_Section4_Loop1_Iteration3
-	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3) = 0;
+	
+		//this is the function that will be oveeriden and implemented.  
+	//UserCode_Section4_Loop1_Iteration1
+	typedef bool(*UpdateFunc)(ForwardDeclaredUtility* p, ARG1 Argument1, ARG2 Argument2, ARG3 Argument3);
+	typedef void(*SetServiceReqFunc)(ForwardDeclaredUtility* p, ARG1 Argument1, ARG2 Argument2, ARG3 Argument3);
+	SetServiceReqFunc SetServiceReqFuncPTR;
+public: void SetServiceFunc(SetServiceReqFunc s) {SetServiceReqFuncPTR = s; }
+	
+protected:	UpdateFunc _Update;
+	bool Update(uint16_t idOfArgument) {
+
+		return _Update(ClassForActionRequest, argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3); 
+ 
+	} 
+	//virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3) = 0;
 	//UserCode_Section4_Loop1_Iteration3_end 
 
 
@@ -1166,6 +1258,12 @@ class ActionRequestObjectArg4
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AETDUAsService;
 
@@ -1199,6 +1297,8 @@ protected:
 	};
 
 public:
+	
+	char* ServiceName;
 
 	uint16_t TypeIdOfthisClass;
 
@@ -1306,6 +1406,11 @@ public:
 	};
 
 
+	///this is set as a way to set the return arg without having to do it through the 
+/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
+///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
+	void SetReturnArg(RETURNTYPE returnValueToSet);
+	
 protected:
 
 	uint16_t AOID_OfResource;
@@ -1364,7 +1469,8 @@ protected:
 
 		//retrieve the actionargument object from the pool and run the override implementation function.
 		//UserCode_Section3_Loop1_Iteration4
-		RequestImpl(argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3, argPool[idOfArgument].arg4);
+//		RequestImpl(argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3, argPool[idOfArgument].arg4);
+		SetServiceReqFuncPTR(ClassForActionRequest, argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3, argPool[idOfArgument].arg4); 
 		//UserCode_Section3_Loop1_Iteration4_end 
 
 				//note that I can not set the argPool[idOfArgument].isavailable to true yet because if i did,
@@ -1374,14 +1480,25 @@ protected:
 
 
 
-	///this is set as a way to set the return arg without having to do it through the 
-	/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
-	///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
-	void SetReturnArg(RETURNTYPE returnValueToSet);
+
 
 	//this is the function that will be oveeriden and implemented.  
 	//UserCode_Section4_Loop1_Iteration4
-	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4) = 0;
+		//this is the function that will be oveeriden and implemented.  
+	//UserCode_Section4_Loop1_Iteration1
+	typedef bool(*UpdateFunc)(ForwardDeclaredUtility* p, ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4);
+	typedef void(*SetServiceReqFunc)(ForwardDeclaredUtility* p, ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4);
+	SetServiceReqFunc SetServiceReqFuncPTR;
+public: void SetServiceFunc(SetServiceReqFunc s) {SetServiceReqFuncPTR = s; }
+	;
+protected:	UpdateFunc _Update;
+	bool Update(uint16_t idOfArgument) {
+
+		return _Update(ClassForActionRequest, argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3, argPool[idOfArgument].arg4); 
+ 
+	} 
+	
+//	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4) = 0;
 	//UserCode_Section4_Loop1_Iteration4_end 
 
 
@@ -1564,6 +1681,12 @@ class ActionRequestObjectArg5
 	friend class AEAOResourceAsService;
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AEUtilityAsService;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEService;
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOResourceService;
+	
 	template<TemplateFor_RAsAService_NoDefaults_friend>
 	friend class AETDUAsService;
 
@@ -1598,6 +1721,8 @@ protected:
 	};
 
 public:
+	
+	char* ServiceName;
 
 	uint16_t TypeIdOfthisClass;
 
@@ -1713,6 +1838,12 @@ public:
 	};
 
 
+	
+	///this is set as a way to set the return arg without having to do it through the 
+	/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
+	///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
+	void SetReturnArg(RETURNTYPE returnValueToSet);
+	
 protected:
 
 	uint16_t AOID_OfResource;
@@ -1771,24 +1902,38 @@ protected:
 
 		//retrieve the actionargument object from the pool and run the override implementation function.
 		//UserCode_Section3_Loop1_Iteration5
-		RequestImpl(argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3, argPool[idOfArgument].arg4, argPool[idOfArgument].arg5);
+//		RequestImpl(argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3, argPool[idOfArgument].arg4, argPool[idOfArgument].arg5);
+		SetServiceReqFuncPTR(ClassForActionRequest, argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3, argPool[idOfArgument].arg4, argPool[idOfArgument].arg5);
 		//UserCode_Section3_Loop1_Iteration5_end 
 
 				//note that I can not set the argPool[idOfArgument].isavailable to true yet because if i did,
 				//there is the possibility that that argPool[idOfArgument] might get taken up again and changed. 
 
 	};
+	
 
 
 
-	///this is set as a way to set the return arg without having to do it through the 
-	/// return of the "virtual RETURNARG RequestImpl(ARG1 Argument1) = 0;"  function.
-	///it needs to be the same for tdus and U so that they dont have to share the same interface of RequestImpl having a RequestImpl return type.
-	void SetReturnArg(RETURNTYPE returnValueToSet);
+
 
 	//this is the function that will be oveeriden and implemented.  
 	//UserCode_Section4_Loop1_Iteration5
-	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5) = 0;
+	typedef bool(*UpdateFunc)(ForwardDeclaredUtility* p, ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5);
+	typedef void(*SetServiceReqFunc)(ForwardDeclaredUtility* p, ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5);
+	SetServiceReqFunc SetServiceReqFuncPTR;
+public: void SetServiceFunc(SetServiceReqFunc s) {SetServiceReqFuncPTR = s; }
+	;
+protected:
+//protected:	typedef void(*UpdateFunc)(ForwardDeclaredUtility* p); //this is the function that will continueally by called while updating.
+//protected:	SetServiceReqFunc _RequestImpl;
+protected:	UpdateFunc _Update;
+	bool Update(uint16_t idOfArgument) {
+
+		return _Update(ClassForActionRequest, argPool[idOfArgument].arg1, argPool[idOfArgument].arg2, argPool[idOfArgument].arg3, argPool[idOfArgument].arg4, argPool[idOfArgument].arg5);
+ 
+	} 
+	
+//	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5) = 0;
 	//UserCode_Section4_Loop1_Iteration5_end 
 
 

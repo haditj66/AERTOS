@@ -6,57 +6,45 @@
  
 cmake_minimum_required(VERSION 3.15)
   
-
-
-
-macro(Target_Directory_Chooser)
-		set(options)
-		set(oneValueArgs TARGET_NAME )
-		set(multiValueArgs )
-		cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
-
-        if(${_arg_TARGET_NAME} STREQUAL "exeHalTest")
-        set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/hal/exeHalTest")
-        elseif(${_arg_TARGET_NAME} STREQUAL "AECoreTestEXE")
-        set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/AECoreTestEXE")
-        endif()
-
-endmacro()
+ 
 
 
 
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --save-temps")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --save-temps")
-
-
-set(NAME_OF_THIS_MP_GROUP "somepub")
-set(USER_SECTIONS_POSSIBLE 
-        za zb zc zd ze zf zg zh zi zj zk zl zm zn zo zp zq zr zs zt zu zv zw zx zy zz )
-set(USER_SECTIONS_SO_FAR 0)
-
-
-#set(_arg_WITH_VALUE "some stuff ")
-
+#
+#
+#set(NAME_OF_THIS_MP_GROUP "somepub")
+#set(USER_SECTIONS_POSSIBLE 
+        #za zb zc zd ze zf zg zh zi zj zk zl zm zn zo zp zq zr zs zt zu zv zw zx zy zz )
+#set(USER_SECTIONS_SO_FAR 0)
+#
+#
+##set(_arg_WITH_VALUE "some stuff ")
+#
  add_compile_options(-Wl,-verbose, -lC:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32)
-
+#
     add_compile_definitions(aehal)  
-     
+     #
+#
+#set(_arg_WITH_VALUE "some stuff ##UserCode")
+ #
+#string(FIND "${_arg_WITH_VALUE}" "##UserCode" isFound)
+#
+#if(${isFound} STREQUAL "-1")
+#else()
+ ##increment and unique name
+ #MATH(EXPR USER_SECTIONS_SO_FAR "${${NAME_OF_NODE}_ALL_SO_FAR}+1")
+ #list(GET USER_SECTIONS_POSSIBLE ${USER_SECTIONS_SO_FAR} APPENDCODE)
+#
+ #set(NAME_FOR_USER_SECTION "${NAME_OF_THIS_MP_GROUP}${APPENDCODE}")
+#
+#endif()
+ #string(REPLACE "##UserCode" "##UserCode_${NAME_FOR_USER_SECTION}" _arg_WITH_VALUE ${_arg_WITH_VALUE}) 
 
-set(_arg_WITH_VALUE "some stuff ##UserCode")
- 
-string(FIND "${_arg_WITH_VALUE}" "##UserCode" isFound)
 
-if(${isFound} STREQUAL "-1")
-else()
- #increment and unique name
- MATH(EXPR USER_SECTIONS_SO_FAR "${${NAME_OF_NODE}_ALL_SO_FAR}+1")
- list(GET USER_SECTIONS_POSSIBLE ${USER_SECTIONS_SO_FAR} APPENDCODE)
 
- set(NAME_FOR_USER_SECTION "${NAME_OF_THIS_MP_GROUP}${APPENDCODE}")
-
-endif()
- string(REPLACE "##UserCode" "##UserCode_${NAME_FOR_USER_SECTION}" _arg_WITH_VALUE ${_arg_WITH_VALUE}) 
 
 ###################################
 #User Options
@@ -89,18 +77,46 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
  string(REGEX MATCH "_(.*)" PLAT_TOOLCHAIN ${PLATFORM})
    string(REPLACE "_" "" PLAT_TOOLCHAIN ${PLAT_TOOLCHAIN})
- if(${PLAT_TOOLCHAIN} STREQUAL "arm" )
+
+ add_compile_definitions(CGEN_ALLOPTIONS="")
+ if(${PLAT_TOOLCHAIN} STREQUAL "STM32F411RE" )
 
      set(TOOLCHAIN_USED arm_non_eabi_id)
     add_compile_definitions(TOOLCHAIN_USED__${TOOLCHAIN_USED})
     set(AEPLATFORM VSGDBCmakeNinja_armnoneabiid)
+    add_compile_definitions(AEPLATFORM__${AEPLATFORM})
+    set(AERTOS_ENVIRONMENT RTOS_MICRO)
+    add_compile_definitions(AERTOS_ENVIRONMENT__${AERTOS_ENVIRONMENT})
+    set(OS_USED NONE)
+    add_compile_definitions(OS_USED__${OS_USED})
+    set(SWIL_HWIL_DRIVEN HWIL)
+    add_compile_definitions(SWIL_HWIL_DRIVEN__${SWIL_HWIL_DRIVEN}) 
+    set(BOARD_USED STM32F411RE)
+    add_compile_definitions(BOARD_USED__${BOARD_USED})
+    set(RTOS_USED FREERTOS)
+add_compile_definitions(RTOS_USED__${RTOS_USED}) 
+set(SIM_REAL REALITY)
+add_compile_definitions(SIM_REAL__${SIM_REAL})
+    
 
 elseif(${PLAT_TOOLCHAIN} STREQUAL "mingw" )
 
     set(TOOLCHAIN_USED mingw)
     add_compile_definitions(TOOLCHAIN_USED__${TOOLCHAIN_USED})
     set(AEPLATFORM VSGDBCmakeNinja_mingw)
-
+    add_compile_definitions(AEPLATFORM__${AEPLATFORM})
+    set(AERTOS_ENVIRONMENT RTOS_PC)
+    add_compile_definitions(AERTOS_ENVIRONMENT__${AERTOS_ENVIRONMENT})
+    set(OS_USED WINDOWS)
+    add_compile_definitions(OS_USED__${OS_USED})
+    set(SWIL_HWIL_DRIVEN SWIL)
+    add_compile_definitions(SWIL_HWIL_DRIVEN__${SWIL_HWIL_DRIVEN})
+    set(BOARD_USED X64)
+    add_compile_definitions(BOARD_USED__${BOARD_USED})
+    set(RTOS_USED FREERTOS)
+add_compile_definitions(RTOS_USED__${RTOS_USED}) 
+set(SIM_REAL REALITY)
+add_compile_definitions(SIM_REAL__${SIM_REAL})
 endif() 
 
  
@@ -110,8 +126,12 @@ add_compile_definitions(AEPLATFORM__${AEPLATFORM})
 string(REGEX MATCH "(.*)_" INTEGRATION_TARGET_NAME ${PLATFORM})  
 string(REPLACE "_" "" INTEGRATION_TARGET_NAME ${INTEGRATION_TARGET_NAME})
 
+include("${CMAKE_CURRENT_LIST_DIR}/AETarget.cmake")
+set(INTEGRATION_TARGET_NAME ${INTEGRATION_TESTS})
+set(PLATFORM ${INTEGRATION_TARGET_NAME}_${PLAT_TOOLCHAIN})
 
-Target_Directory_Chooser(TARGET_NAME ${INTEGRATION_TARGET_NAME})
+
+#Target_Directory_Chooser(TARGET_NAME ${INTEGRATION_TARGET_NAME})
 string(REPLACE "\\" "/" INTEGRATION_TARGET_DIRECTORY ${INTEGRATION_TARGET_DIRECTORY})
 
 #set(CMAKE_CURRENT_BINARY_DIR "${INTEGRATION_TARGET_DIRECTORY}/build") # C:/AERTOS/src/AE/hal/exeHalTest" )
@@ -126,6 +146,19 @@ add_compile_definitions(Build_System__${Build_System})
 
 
 Cgen_Start(CGEN_PROJECT_DIRECTORY "C:/AERTOS/AERTOS")
+
+
+######################################################
+#write build info to cgen AEbuildinfo.txt
+######################################################
+set(AEBUILD_INFO_DIR "${CODEGENGUI_PATH}/AEbuildinfo.txt")
+file(WRITE "${AEBUILD_INFO_DIR}"  "")
+file(APPEND "${AEBUILD_INFO_DIR}" "VISUALGDB_DIR==C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe\n") 
+file(APPEND "${AEBUILD_INFO_DIR}" "PLAT_TOOLCHAIN==${PLAT_TOOLCHAIN}\n") 
+file(APPEND "${AEBUILD_INFO_DIR}" "BuildTarget==AECoreLib\n") 
+
+
+
 
 #pick the location you want to run an integration test
 
@@ -531,7 +564,7 @@ if(${RTOS_USED} STREQUAL "FREERTOS" )
         #include("cmake/GetFREERTOS_MINGW.cmake")
 
                     set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.portcore MSVC)#look at line of the freertos framework.cmake file
-                    set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.heap heap_5)
+                    set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.heap heap_4)
                     set(BSP_CONFIGURATION_com.sysprogs.bspoptions.stm32.freertos.cmsis NONE)
             add_compile_definitions(USE_FREERTOS) #this is needed for visualgdb 
             #import_framework(NAME FreeRTOS PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Framework1")
@@ -618,15 +651,15 @@ endif()
 
 
 
- if(INCLUDE_HAL STREQUAL "TRUE")
-
-
-  CREATE_TARGET_UNITTESTS(
- NameOfTestTarget AEHalTests
- LibrariesToLinkTo AECoreLib AEHalLib  
- LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE/hal"
-  )   
- endif()
+ #if(INCLUDE_HAL STREQUAL "TRUE")
+#
+#
+  #CREATE_TARGET_UNITTESTS(
+ #NameOfTestTarget AEHalTests
+ #LibrariesToLinkTo AECoreLib AEHalLib  
+ #LOCATION_OF_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/src/AE/hal"
+  #)   
+ #endif()
 
  
  #CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET exeHalTest
@@ -653,7 +686,28 @@ endif()
 Cgen_End_Session()
 
 
+#set(_arg_ONLY_CREATE_LIBRARY 0)
+#MATH(EXPR _arg_ONLY_CREATE_LIBRARY "${_arg_ONLY_CREATE_LIBRARY}+1")
+#
+#if(${_arg_ONLY_CREATE_LIBRARY} STREQUAL 0)
+#message("asvasv")
+#endif()
+#MATH(EXPR _arg_ONLY_CREATE_LIBRARY "${_arg_ONLY_CREATE_LIBRARY}-1")
+#
+#if(${_arg_ONLY_CREATE_LIBRARY} STREQUAL 0)
+#message("asvasv")
+#endif()
+
+if(${INCLUDE_HAL} STREQUAL "TRUE")
+file(APPEND "${AEBUILD_INFO_DIR}" "BuildTarget==AEHalLib\n") 
+endif()
+
+set(_arg_ONLY_CREATE_LIBRARY 0)
  include("${INTEGRATION_TARGET_DIRECTORY}/AEConfigProject.cmake")
+
+
+message("generate the build file that will build all targets in proper order")
+Generate_AEBuildFile()
 
 
  #Cgen_Start(CGEN_PROJECT_DIRECTORY "C:/test")

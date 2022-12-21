@@ -1,0 +1,32 @@
+
+if(((${_arg_ONLY_CREATE_LIBRARY} STREQUAL 0 )))
+Cgen_Start(CGEN_PROJECT_DIRECTORY "${INTEGRATION_TARGET_DIRECTORY}")
+
+
+
+Cgen_Option(
+        NAME INTEGRATION_TESTS
+        DESCRIPTION "choose an integration test directory to build"
+        POSSIBLEVALUES ${INTEGRATION_TARGET_NAME}   
+        CONSTRICTS_LATER_OPTIONS
+)
+
+endif()
+
+
+if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/AEConfigProjectUser.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/AEConfigProjectUser.cmake")
+endif()
+
+CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET ${INTEGRATION_TARGET_NAME}
+LOCATION_OF_TARGET ${INTEGRATION_TARGET_DIRECTORY}
+LibrariesToLinkTo AECoreLib 
+LIST_OF_TESTS SPBSamples 
+) 
+
+
+
+
+if(((${_arg_ONLY_CREATE_LIBRARY} STREQUAL 0  )))
+ CGEN_END()
+ endif()

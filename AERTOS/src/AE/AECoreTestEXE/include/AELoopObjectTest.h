@@ -191,14 +191,16 @@ protected:
 	
 #if INTEGRATION_TESTS_FOR_AECoreTestEXE__testActionRequest
 		AEStartTimer(1); 
-		uartDriver->RunRequest1<ActionRequestForUARTTransmit>(this->GetAO_ID(), "hello from uuart service\n"); 
+		uartDriver->Transmit(this->GetAO_ID(), "hello from uuart service\n"); 
 #endif
 		
 #if INTEGRATION_TESTS_FOR_AECoreTestEXE__testTDU
 		AEStartTimer(1); 
-		Token* t = uartDriverTDU->RunRequestWithWait1<ActionRequestForUARTTransmitTDU>(this->GetAO_ID(), "hello from uuart TDU service\n"); 
-		auto ret = uartDriverTDU->WaitForRequestToFinish1<ActionRequestForUARTTransmitTDU>(t);
-		uartDriverTDU->DoneWithRequest1(t);
+		
+		//Token* t = uartDriverTDU->RunRequestWithWait4(this->GetAO_ID(), "hello from uuart TDU service\n"); 
+		Token* t = uartDriverTDU->TransmitTDU_WithWait(this->GetAO_ID(), "hello from uuart TDU service\n"); 
+		auto ret = uartDriverTDU->TransmitTDU_WaitForRequestToFinish(t); 
+		uartDriverTDU->TransmitTDU_DoneWithRequest(t);
 		
 #endif
 		

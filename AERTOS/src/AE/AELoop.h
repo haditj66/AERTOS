@@ -11,7 +11,7 @@
 //class AELoopObject;
 
 typedef void(*LoopUpdateFunc_t)(void*);
- 
+  
 class AELoopObject;
 
 class AELoop //: public AEAO
@@ -19,7 +19,8 @@ class AELoop //: public AEAO
 	TEMPLATEFORNoDefaults_AEClock
 	friend class AEClock;
 
-	friend class AELoopObject;
+	
+	friend class AELoopObject; 
 	friend class AELoop;
 
 	friend void  TimerFunc1(TimerHandle_t xTimerHandle);

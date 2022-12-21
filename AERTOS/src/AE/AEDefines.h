@@ -380,6 +380,40 @@ class ActionRequest3
 ActionRequest1,\
 ActionRequest2,\
 ActionRequest3
+	
+//macro for AEAOResourceService
+#define TemplateFor_Service uint16_t POOLSIZE = 1, \
+class ActionRequest1 = AENullActionRequest,\
+class ActionRequest2 = AENullActionRequest,\
+class ActionRequest3 = AENullActionRequest,\
+class ActionRequest4 = AENullActionRequest,\
+class ActionRequest5 = AENullActionRequest,\
+class ActionRequest6 = AENullActionRequest
+	
+
+#define TemplateFor_Service_NoDefaults uint16_t POOLSIZE, \
+class ActionRequest1,\
+class ActionRequest2,\
+class ActionRequest3,\
+class ActionRequest4,\
+class ActionRequest5,\
+class ActionRequest6
+
+#define TemplateFor_Service_NoDefaults_friend uint16_t _POOLSIZE, \
+class ActionRequest1,\
+class ActionRequest2,\
+class ActionRequest3,\
+class ActionRequest4,\
+class ActionRequest5,\
+class ActionRequest6
+
+#define TemplateARGSFor_Service  POOLSIZE, \
+ActionRequest1,\
+ActionRequest2,\
+ActionRequest3,\
+ActionRequest4,\
+ActionRequest5,\
+ActionRequest6
 
 
 //macro for AEAOUpdateableAAS
@@ -449,6 +483,54 @@ typedef typename ActionRequest1::CLASSTOPASS Action1_CLASSTOPASS_t;\
 typedef typename ActionRequest2::CLASSTOPASS Action2_CLASSTOPASS_t;\
 typedef typename ActionRequest3::CLASSTOPASS Action3_CLASSTOPASS_t;
 
+
+#define DeclareActionRequestTemplateArgs2 \
+typedef typename ActionRequest1::ARGTYPE1 Action1_ARGTYPE1_t;\
+typedef typename ActionRequest2::ARGTYPE1 Action2_ARGTYPE1_t;\
+typedef typename ActionRequest3::ARGTYPE1 Action3_ARGTYPE1_t;\
+typedef typename ActionRequest1::ARGTYPE2 Action1_ARGTYPE2_t;\
+typedef typename ActionRequest2::ARGTYPE2 Action2_ARGTYPE2_t;\
+typedef typename ActionRequest3::ARGTYPE2 Action3_ARGTYPE2_t;\
+typedef typename ActionRequest1::ARGTYPE3 Action1_ARGTYPE3_t;\
+typedef typename ActionRequest2::ARGTYPE3 Action2_ARGTYPE3_t;\
+typedef typename ActionRequest3::ARGTYPE3 Action3_ARGTYPE3_t;\
+typedef typename ActionRequest1::ARGTYPE4 Action1_ARGTYPE4_t;\
+typedef typename ActionRequest2::ARGTYPE4 Action2_ARGTYPE4_t;\
+typedef typename ActionRequest3::ARGTYPE4 Action3_ARGTYPE4_t;\
+typedef typename ActionRequest1::ARGTYPE5 Action1_ARGTYPE5_t;\
+typedef typename ActionRequest2::ARGTYPE5 Action2_ARGTYPE5_t;\
+typedef typename ActionRequest3::ARGTYPE5 Action3_ARGTYPE5_t;\
+\
+typedef typename ActionRequest4::ARGTYPE1 Action4_ARGTYPE1_t;\
+typedef typename ActionRequest5::ARGTYPE1 Action5_ARGTYPE1_t;\
+typedef typename ActionRequest6::ARGTYPE1 Action6_ARGTYPE1_t;\
+typedef typename ActionRequest4::ARGTYPE2 Action4_ARGTYPE2_t;\
+typedef typename ActionRequest5::ARGTYPE2 Action5_ARGTYPE2_t;\
+typedef typename ActionRequest6::ARGTYPE2 Action6_ARGTYPE2_t;\
+typedef typename ActionRequest4::ARGTYPE3 Action4_ARGTYPE3_t;\
+typedef typename ActionRequest5::ARGTYPE3 Action5_ARGTYPE3_t;\
+typedef typename ActionRequest6::ARGTYPE3 Action6_ARGTYPE3_t;\
+typedef typename ActionRequest4::ARGTYPE4 Action4_ARGTYPE4_t;\
+typedef typename ActionRequest5::ARGTYPE4 Action5_ARGTYPE4_t;\
+typedef typename ActionRequest6::ARGTYPE4 Action6_ARGTYPE4_t;\
+typedef typename ActionRequest4::ARGTYPE5 Action4_ARGTYPE5_t;\
+typedef typename ActionRequest5::ARGTYPE5 Action5_ARGTYPE5_t;\
+typedef typename ActionRequest6::ARGTYPE5 Action6_ARGTYPE5_t;\
+\
+typedef typename ActionRequest1::RETURNTYPE Action1_RETURNTYPE_t;\
+typedef typename ActionRequest2::RETURNTYPE Action2_RETURNTYPE_t;\
+typedef typename ActionRequest3::RETURNTYPE Action3_RETURNTYPE_t;\
+typedef typename ActionRequest4::RETURNTYPE Action4_RETURNTYPE_t;\
+typedef typename ActionRequest5::RETURNTYPE Action5_RETURNTYPE_t;\
+typedef typename ActionRequest6::RETURNTYPE Action6_RETURNTYPE_t;\
+\
+typedef typename ActionRequest1::CLASSTOPASS Action1_CLASSTOPASS_t;\
+typedef typename ActionRequest2::CLASSTOPASS Action2_CLASSTOPASS_t;\
+typedef typename ActionRequest3::CLASSTOPASS Action3_CLASSTOPASS_t;\
+typedef typename ActionRequest4::CLASSTOPASS Action4_CLASSTOPASS_t;\
+typedef typename ActionRequest5::CLASSTOPASS Action5_CLASSTOPASS_t;\
+typedef typename ActionRequest6::CLASSTOPASS Action6_CLASSTOPASS_t;
+
 //template<class TActionRequestToRun>\
 
 #define DeclareUtilityRequestFunctions \
@@ -478,6 +560,66 @@ Token* RunRequestWithWait3(uint16_t AOID, Action3_ARGTYPE1_t arg1 = false, Actio
 \
 template<class TActionRequestToRun = bool>\
 void DoneWithRequest3(Token* tokenOfRequest);
+
+
+
+#define DeclareUtilityRequestFunctions2 \
+template<class  TActionRequestToRun = bool>\
+void RunRequest1(uint16_t AOID, Action1_ARGTYPE1_t arg1 = false, Action1_ARGTYPE2_t arg2 = false, Action1_ARGTYPE3_t arg3 = false, Action1_ARGTYPE4_t arg4 = false, Action1_ARGTYPE5_t arg5 = false);\
+\
+template<class TActionRequestToRun = bool>\
+void RunRequest2(uint16_t AOID, Action2_ARGTYPE1_t arg1 = false, Action2_ARGTYPE2_t arg2 = false, Action2_ARGTYPE3_t arg3 = false, Action2_ARGTYPE4_t arg4 = false, Action2_ARGTYPE5_t arg5 = false);\
+\
+template<class TActionRequestToRun = bool>\
+void RunRequest3(uint16_t AOID, Action3_ARGTYPE1_t arg1 = false, Action3_ARGTYPE2_t arg2 = false, Action3_ARGTYPE3_t arg3 = false, Action3_ARGTYPE4_t arg4 = false, Action3_ARGTYPE5_t arg5 = false);\
+\
+\
+template<class  TActionRequestToRun = bool>\
+void RunRequest4(uint16_t AOID, Action4_ARGTYPE1_t arg1 = false, Action4_ARGTYPE2_t arg2 = false, Action4_ARGTYPE3_t arg3 = false, Action4_ARGTYPE4_t arg4 = false, Action4_ARGTYPE5_t arg5 = false);\
+\
+template<class TActionRequestToRun = bool>\
+void RunRequest5(uint16_t AOID, Action5_ARGTYPE1_t arg1 = false, Action5_ARGTYPE2_t arg2 = false, Action5_ARGTYPE3_t arg3 = false, Action5_ARGTYPE4_t arg4 = false, Action5_ARGTYPE5_t arg5 = false);\
+\
+template<class TActionRequestToRun = bool>\
+void RunRequest6(uint16_t AOID, Action6_ARGTYPE1_t arg1 = false, Action6_ARGTYPE2_t arg2 = false, Action6_ARGTYPE3_t arg3 = false, Action6_ARGTYPE4_t arg4 = false, Action6_ARGTYPE5_t arg5 = false);\
+\
+\
+template<class TActionRequestToRun = bool>\
+Token* RunRequestWithWait1(uint16_t AOID, Action1_ARGTYPE1_t arg1 = false, Action1_ARGTYPE2_t arg2 = false, Action1_ARGTYPE3_t arg3 = false, Action1_ARGTYPE4_t arg4 = false, Action1_ARGTYPE5_t arg5 = false);\
+\
+template<class TActionRequestToRun = bool>\
+void DoneWithRequest1(Token* tokenOfRequest);\
+\
+template<class TActionRequestToRun = bool>\
+Token* RunRequestWithWait2(uint16_t AOID, Action2_ARGTYPE1_t arg1 = false, Action2_ARGTYPE2_t arg2 = false, Action2_ARGTYPE3_t arg3 = false, Action2_ARGTYPE4_t arg4 = false, Action2_ARGTYPE5_t arg5 = false); \
+\
+template<class TActionRequestToRun = bool>\
+void DoneWithRequest2(Token* tokenOfRequest);\
+\
+template<class TActionRequestToRun = bool>\
+Token* RunRequestWithWait3(uint16_t AOID, Action3_ARGTYPE1_t arg1 = false, Action3_ARGTYPE2_t arg2 = false, Action3_ARGTYPE3_t arg3 = false, Action3_ARGTYPE4_t arg4 = false, Action3_ARGTYPE5_t arg5 = false); \
+\
+template<class TActionRequestToRun = bool>\
+void DoneWithRequest3(Token* tokenOfRequest);\
+\
+\
+template<class TActionRequestToRun = bool>\
+Token* RunRequestWithWait4(uint16_t AOID, Action4_ARGTYPE1_t arg1 = false, Action4_ARGTYPE2_t arg2 = false, Action4_ARGTYPE3_t arg3 = false, Action4_ARGTYPE4_t arg4 = false, Action4_ARGTYPE5_t arg5 = false);\
+\
+template<class TActionRequestToRun = bool>\
+void DoneWithRequest4(Token* tokenOfRequest);\
+\
+template<class TActionRequestToRun = bool>\
+Token* RunRequestWithWait5(uint16_t AOID, Action5_ARGTYPE1_t arg1 = false, Action5_ARGTYPE2_t arg2 = false, Action5_ARGTYPE3_t arg3 = false, Action5_ARGTYPE4_t arg4 = false, Action5_ARGTYPE5_t arg5 = false); \
+\
+template<class TActionRequestToRun = bool>\
+void DoneWithRequest5(Token* tokenOfRequest);\
+\
+template<class TActionRequestToRun = bool>\
+Token* RunRequestWithWait6(uint16_t AOID, Action6_ARGTYPE1_t arg1 = false, Action6_ARGTYPE2_t arg2 = false, Action6_ARGTYPE3_t arg3 = false, Action6_ARGTYPE4_t arg4 = false, Action6_ARGTYPE5_t arg5 = false); \
+\
+template<class TActionRequestToRun = bool>\
+void DoneWithRequest6(Token* tokenOfRequest);
 
 //macro for AEAOResource -----------------------------------------
 

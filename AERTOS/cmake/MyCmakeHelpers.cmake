@@ -195,10 +195,14 @@ include("${CMAKE_SOURCE_DIR}/cmake/AEIntegrationTestsManager.cmake")
 ####################################################################################################
 macro(CREATE_TARGET_INTEGRATIONEXE) 
 set(options)
-set(oneValueArgs NAME_OF_TARGET LOCATION_OF_TARGET )
+set(oneValueArgs NAME_OF_TARGET LOCATION_OF_TARGET)
 set(multiValueArgs LibrariesToLinkTo LIST_OF_TESTS) 
 cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN}) 
 
+
+#if(NOT DEFINED _arg_ONLY_CREATE_LIBRARY)
+    #set(_arg_ONLY_CREATE_LIBRARY "FALSE")
+#endif()
 
 
 
@@ -207,6 +211,13 @@ if(${INTEGRATION_TESTS} STREQUAL "${_arg_NAME_OF_TARGET}")
 message("building integration test for target ${_arg_NAME_OF_TARGET}. using specific test of name ${NAME_OF_TARGET}")
 
 set(FULL_PATH_TO_TARGET ${_arg_LOCATION_OF_TARGET})
+
+
+#run the cgen macro for utilities
+#Generate_Macro2_Using_Cgen(
+#WORKINGDIRECTORY ${FULL_PATH_TO_TARGET}
+#MACRO2_COMMAND AEServiceMacro)
+
 
 #get the fsrc files from the include and src directory of this location 
 file(GLOB TARGET_SRCS
@@ -217,6 +228,8 @@ file(GLOB TARGET_HEADERS
      "${FULL_PATH_TO_TARGET}/include/*.h"
      "${FULL_PATH_TO_TARGET}/include/*.hpp"
 )
+
+set(ALL_SOURCES_HEADERS  ${TARGET_SRCS}   ${TARGET_HEADERS}  ) 
 
 _CREATE_AEOBJECTS_FILE()
 
@@ -229,16 +242,76 @@ set(EXE_USER_CONFIG_FILES
     ${FULL_PATH_TO_TARGET}/conf/EventsForProject.h 
     ) 
 
- add_bsp_based_executable(
-	NAME ${_arg_NAME_OF_TARGET}
-	SOURCES ${FULL_PATH_TO_TARGET}/main.cpp ${SRCS_TO_USER_CONFIG_FILES}
-    ${FULL_PATH_TO_TARGET}/AEObjects.h
+     
+    
+     add_bsp_based_library(
+	NAME ${_arg_NAME_OF_TARGET}_lib
+	SOURCES  
+                #${EXE_USER_CONFIG_FILES}
+    #${FULL_PATH_TO_TARGET}/AEObjects.h 
     ${TARGET_SRCS}
-    ${TARGET_HEADERS}
-    ${EXE_USER_CONFIG_FILES}
-	GENERATE_BIN
-	GENERATE_MAP) 
-	 
+    ${TARGET_HEADERS} 
+    ) 
+
+    #write to  AEBUILD_INFO_DIR the directory 
+    file(APPEND "${AEBUILD_INFO_DIR}" "BuildTarget==${_arg_NAME_OF_TARGET}_lib\n") 
+    
+
+    if(((${_arg_ONLY_CREATE_LIBRARY} STREQUAL 0  )))#  or NOT DEFINED  ONLY_CREATE_LIBRARY
+
+
+         #add_bsp_based_library(
+	#NAME ${_arg_NAME_OF_TARGET}_conf 
+	#SOURCES         
+    #) 
+
+
+         add_bsp_based_executable(
+	        NAME ${_arg_NAME_OF_TARGET}
+	        SOURCES ${FULL_PATH_TO_TARGET}/main.cpp ${SRCS_TO_USER_CONFIG_FILES}  
+                            ${EXE_USER_CONFIG_FILES}
+    ${FULL_PATH_TO_TARGET}/AEObjects.h 
+    #${FULL_PATH_TO_TARGET}/include/LoopObjeect1Test.h 
+	        GENERATE_BIN
+	        GENERATE_MAP) 
+
+
+    file(APPEND "${AEBUILD_INFO_DIR}" "BuildTarget==${_arg_NAME_OF_TARGET}\n") 
+
+                if(${INCLUDE_HAL} STREQUAL "TRUE")
+    target_link_libraries(${_arg_NAME_OF_TARGET}  PUBLIC  AEHalLib  )  
+    target_include_directories(AEHalLib PUBLIC "${FULL_PATH_TO_TARGET}/conf")
+    endif()
+    
+            #target_link_libraries(${_arg_NAME_OF_TARGET}_lib PUBLIC  ${_arg_NAME_OF_TARGET}_conf)  
+            target_link_libraries(${_arg_NAME_OF_TARGET} PUBLIC  ${_arg_NAME_OF_TARGET}_lib)  
+            target_include_directories(${_arg_NAME_OF_TARGET} PUBLIC "${FULL_PATH_TO_TARGET}/include")
+            target_include_directories(${_arg_NAME_OF_TARGET} PUBLIC "${FULL_PATH_TO_TARGET}/conf")
+            target_include_directories(${_arg_NAME_OF_TARGET}_lib  PUBLIC "${FULL_PATH_TO_TARGET}/include")
+            target_include_directories(${_arg_NAME_OF_TARGET}_lib  PUBLIC "${FULL_PATH_TO_TARGET}")
+            target_include_directories(${_arg_NAME_OF_TARGET}_lib PUBLIC "${FULL_PATH_TO_TARGET}/conf")
+
+
+            foreach(integtest  ${_arg_LIST_OF_TESTS})
+	            AEintegrationTest_create_test(
+	            TEST_NAME ${integtest} 
+	            FOR_USER_CONFIG_GROUP  Test_Group1)  
+
+               AEintegrationTest_add_test(
+               FOR_TARGET ${_arg_NAME_OF_TARGET}  
+               All_TEST_NAMES  ${_arg_LIST_OF_TESTS} )
+             endforeach()    
+
+	 endif()      
+     foreach(tar ${_arg_LibrariesToLinkTo}) 
+                 target_link_libraries(${_arg_NAME_OF_TARGET}_lib PUBLIC  ${tar})  
+            endforeach() 
+
+    #if the hal is included, add this library
+    if(${INCLUDE_HAL} STREQUAL "TRUE")
+    target_link_libraries(${_arg_NAME_OF_TARGET}_lib PUBLIC  AEHalLib  )  
+    endif()
+
 		#Always do this for BSP targets. I dont really understand why yet you need this
 	target_include_directories(BSP PUBLIC "${FULL_PATH_TO_TARGET}/conf") 
 
@@ -255,18 +328,12 @@ else()
 
 endif()
 
-target_include_directories(${_arg_NAME_OF_TARGET} PUBLIC "${FULL_PATH_TO_TARGET}/include")
+
+#target_include_directories(${_arg_NAME_OF_TARGET}_lib PUBLIC "${FULL_PATH_TO_TARGET}/include")
+#target_include_directories(${_arg_NAME_OF_TARGET}_lib PUBLIC "${FULL_PATH_TO_TARGET}/src")
 	 
 
-foreach(integtest  ${_arg_LIST_OF_TESTS})
-	AEintegrationTest_create_test(
-	TEST_NAME ${integtest} 
-	FOR_USER_CONFIG_GROUP  Test_Group1)  
 
-   AEintegrationTest_add_test(
-   FOR_TARGET ${_arg_NAME_OF_TARGET}  
-   All_TEST_NAMES  ${_arg_LIST_OF_TESTS} )
-endforeach()
 
 	#AEintegrationTest_create_test(
 	#TEST_NAME defaultTest 
@@ -279,9 +346,7 @@ endforeach()
 #target_link_libraries(${_arg_NAME_OF_TARGET}  PUBLIC  AECoreLib)    
 
 #put all libraries this target links to 
-foreach(tar ${_arg_LibrariesToLinkTo}) 
-target_link_libraries(${_arg_NAME_OF_TARGET} PUBLIC  ${tar})  
-endforeach() 
+
 
 
 Set_Sources_in_SourceGroup(
@@ -291,7 +356,7 @@ LISTOFSOURCES ${EXE_USER_CONFIG_FILES})
 Set_Sources_in_SourceGroup(
 NAMEOFGROUP target_sources
 LISTOFSOURCES ${TARGET_SRCS})
-
+#
     Set_Sources_in_SourceGroup(
 NAMEOFGROUP target_headers
 LISTOFSOURCES ${TARGET_HEADERS})
@@ -322,6 +387,32 @@ endmacro()
 
 
 
+
+
+#########################
+#generate cgen macro2 command in the directory specified
+#MACRO2_COMMAND: the macro2 command you want to use.
+#WORKINGDIRECTORY the directory to put the generated file
+
+######################### 
+function(Generate_Macro2_Using_Cgen )
+    set(options)
+    set(oneValueArgs WORKINGDIRECTORY MACRO2_COMMAND)
+    set(multiValueArgs)
+    cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+        
+    #run cgen macro in this directory to generate the cmake generated file
+    execute_process(COMMAND  cgen macro2 ${_arg_MACRO2_COMMAND}
+            WORKING_DIRECTORY ${_arg_WORKINGDIRECTORY}
+            OUTPUT_VARIABLE outVar 
+            ERROR_VARIABLE errorVar)
+              
+    message("Ran macro2  ${_arg_MACRO2_COMMAND}  in directory ${_arg_WORKINGDIRECTORY}")         
+    message("outVar: ${outVar}")         
+    message("errorVar: ${errorVar}")         
+
+endfunction()
 
 
 
@@ -375,6 +466,26 @@ if(NOT EXISTS "${_arg_WORKINGDIRECTORY}/${_arg_OUTPUT_FILE_NAME}.${OUTPUT_FILE_E
 
 
 endfunction()
+
+
+
+
+#########################
+# generate the build file that will build all targets in proper order
+#########################
+macro(Generate_AEBuildFile)
+execute_process(COMMAND cgen aebuild
+            WORKING_DIRECTORY ${CODEGENGUI_PATH}
+            OUTPUT_VARIABLE outVar 
+            ERROR_VARIABLE errorVar)
+			
+			message("outVar: ${outVar}")
+			message("errorVar: ${errorVar}")
+endmacro()
+
+
+
+
 
 
 

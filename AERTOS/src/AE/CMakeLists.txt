@@ -68,11 +68,15 @@ Cgen_Option(
  ###################################
  #get all user config files
  ###################################
- set(USER_CONFIG_FILES ${USER_CONFIG_FILES}) 
- set(USER_CONFIG_FILES ${USER_CONFIG_FILES} 
+ #set(USER_CONFIG_FILES ${USER_CONFIG_FILES})  
+ set(USER_CONFIG_FILES 
+ "${INTEGRATION_TARGET_DIRECTORY}/conf/AEConfig.h"
+ "${INTEGRATION_TARGET_DIRECTORY}/conf/EventsForProject.h"
+ "${INTEGRATION_TARGET_DIRECTORY}/conf/UserBSPConfig.cpp"
+ )   
 
  #UserBSPConfig.cpp
-)
+
   
  #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -310,6 +314,7 @@ if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 		) 
 	#Always do this for BSP targets. I dont really understand why yet you need this
 	target_include_directories(BSP PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")  
+	target_include_directories(BSP PUBLIC "${INTEGRATION_TARGET_DIRECTORY}/conf")  
 
 	
  else()
@@ -343,6 +348,7 @@ if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
  endif()
 
 Set_Sources_in_SourceGroup(NAMEOFGROUP "HelperFunctions" LISTOFSOURCES  ${HelperFunctions})
+Set_Sources_in_SourceGroup(NAMEOFGROUP "Configs" LISTOFSOURCES  ${USER_CONFIG_FILES})
 Set_Sources_in_SourceGroup(NAMEOFGROUP "SetupFiles" LISTOFSOURCES  ${AESetupFiles})
 Set_Sources_in_SourceGroup(NAMEOFGROUP "AEClocks" LISTOFSOURCES  ${AECoreLib_Clocks})
 Set_Sources_in_SourceGroup(NAMEOFGROUP "AEEvents" LISTOFSOURCES  ${AECoreLib_EVENTS})

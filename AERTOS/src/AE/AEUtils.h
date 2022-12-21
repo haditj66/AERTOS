@@ -588,9 +588,13 @@ public: \
 
 
 enum StyleOfSPB {
+	// look at file AESPBObservor.cpp at funciton _RefreshCheckStyle() for where this implementation makes a difference. 
 	EachSPBTask,  //each spb has its own task that it will use to execute its refresh
 	ChainOfSPBsTask, // there is one "chain task" that will run all refreshs
-	ChainOfSPBsFromInterrupt //there are no tasks involved and so everything is run within the interrupt. 
+	//there are no tasks involved and so everything is run within the interrupt(although doesnt need to be an interrupt, can also just be from a normal tick() of a clock).
+	//Currently this doesnt look to be any different than the 
+	//ChainOfSPBsTask so maybe use this for now intead of that one. Remeber that if you do infact use this in an interrupt, it should be a VERY quick spb
+	ChainOfSPBsFromInterrupt 
 
 }
 ;
@@ -643,6 +647,9 @@ else \
 
 
 
+//############################### 
+//SPB helpers
+//############################### 
 
 
 

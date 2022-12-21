@@ -7,28 +7,30 @@
  
 
 
-#ifndef USING_AEI2C 
-#error you included this file but you did not provide a AEI2C.h file in AEHalFiles directory.
+#ifndef USING_AESPI
+#error you included this file but you did not provide a AESPI.h file in AEHalFiles directory.
 #endif 
 
 #ifdef USING_AEDMA 
 #include "AEDMA.h"
 #endif 
 
+#define  SPIRecieveBufferSize  200
 
-typedef void(*AE_I2C_MasterTxCpltCallback_t)(void);
-typedef void(*AE_I2C_MasterRxCpltCallback_t)(void);
+typedef void(*AE_SPI_TxCpltCallback_t)(void);
+typedef void(*AE_SPI_RxCpltCallback_t)(void);
 
-class AEI2C
+class AESPI
 { 
 #ifdef BOARD_USED__STM32F411RE
-	friend void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *I2C_Handle);
-	friend void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *I2C_Handle);
+//	friend void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *I2C_Handle);
+//	friend void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *I2C_Handle);
 #endif
 	
 public:
-	AEI2C() {AE_I2C_MasterTxCpltCallback = []()->void {};
-		AE_I2C_MasterRxCpltCallback = []()->void {}; }; 
+	AESPI() {
+		AE_SPI_MasterTxCpltCallback = []()->void {};
+		AE_SPI_MasterRxCpltCallback = []()->void {}; }; 
 	
 	
 #ifdef USING_AEDMA 
@@ -37,75 +39,68 @@ public:
 	//DMA_HandleTypeDef dmaForI2C;
 #endif 
 	
-	
-	
-	uint8_t* GetI2CBuffer()
+	uint32_t GetSPIBufferSize()
 	{
-		return I2Cbuffer22;
+		return SPIRecieveBufferSize;
 	}
 	
-	void SetI2C_MasterTxCpltCallback_t(AE_I2C_MasterTxCpltCallback_t ae_I2C_MasterTxCpltCallback_t)
+	uint8_t* GetSPIBuffer()
 	{
-		AE_I2C_MasterTxCpltCallback = ae_I2C_MasterTxCpltCallback_t;
+		return bufferForSPI;
 	}
 	
-	void SetI2C_MasterRxCpltCallback(AE_I2C_MasterRxCpltCallback_t ae_I2C_MasterRxCpltCallback_t)
+	void SetSPI_MasterTxCpltCallback_t(AE_SPI_TxCpltCallback_t ae_SPI_MasterTxCpltCallback)
 	{
-		AE_I2C_MasterRxCpltCallback = ae_I2C_MasterRxCpltCallback_t;
+		AE_SPI_MasterTxCpltCallback = ae_SPI_MasterTxCpltCallback;
+	}
+	
+	void SetI2C_MasterRxCpltCallback(AE_SPI_RxCpltCallback_t ae_SPI_MasterRxCpltCallback)
+	{
+		AE_SPI_MasterRxCpltCallback = ae_SPI_MasterRxCpltCallback;
 	}
 	
 	
-	bool writeBit(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint8_t datatoWrite) {
-		uint8_t b;
-		//readByte(devAddr, regAddr, &b, 400);
-		//b = (data != 0) ? (b | (1 << bitNum)) : (b & ~(1 << bitNum));
-		return WriteByte(devAddr, regAddr, b);
-	}
+	void AE_SPI_Transmit(uint8_t* data, uint16_t size); 
 	
-	bool WriteByte(uint8_t devAddr, uint8_t regAddr, uint8_t datatoWrite) {
-		return WriteBytes(devAddr, regAddr, 1, &datatoWrite);
-	}  
-
-
-	int8_t readByte(uint8_t devAddr, uint8_t *data, uint16_t timeout) {
-		return ReadBytes(devAddr, 1, data, timeout);
-	}
- 
-
-	bool WriteBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t* datatoWrite);
-	int8_t ReadBytes(uint8_t devAddr, uint8_t length, uint8_t *pdata, uint16_t timeout = 100000);
+	void AE_SPI_Receive(uint8_t* data, uint16_t size);
+	void AE_SPI_TransmitReceive(uint8_t* dataToTransmit, uint16_t sizeToTransmit, uint8_t* dataToReceive, uint16_t sizeToReceive);
+	 
 	
 	
-	void Init(I2C_Handle* i2c_Handle)//, I2C_Handle* gPIO_Handle_inst) 
+	void Init(SPI_Handle* spi_Handle, Port_t nssPort, Pin_t nssPin)//, I2C_Handle* gPIO_Handle_inst) 
 	{ 
-		_i2c_Handle = i2c_Handle; 
+		_spi_Handle = spi_Handle; 
+		NssPort = nssPort;
+		NssPin = nssPin;
 	} 
 	
-	I2C_Handle* _i2c_Handle;
-
+	Port_t NssPort;
+	Pin_t NssPin;
+	
+	SPI_Handle* _spi_Handle; 
+	AE_SPI_TxCpltCallback_t AE_SPI_MasterTxCpltCallback; 
+	AE_SPI_RxCpltCallback_t AE_SPI_MasterRxCpltCallback; 
 private:  
+	 
 	
-	AE_I2C_MasterTxCpltCallback_t AE_I2C_MasterTxCpltCallback; 
-	AE_I2C_MasterRxCpltCallback_t AE_I2C_MasterRxCpltCallback; 
-	
-	uint8_t I2Cbuffer22[100];
+	uint8_t bufferForSPI[SPIRecieveBufferSize];
 	
 	
 };
 
-#define NumOFPinsNeeded 2 
+#define NumOFPinsNeeded 4
 
  
 
-#define templateForI2C_def uint16_t WhichInstanceOfI2C, Portenum I2C_SCL_Port, PinEnum I2C_SCL_Pin, Portenum I2C_SDA_Port, PinEnum I2C_SDA_Pin, uint32_t Clockspeed
-#define templateargsForI2C WhichInstanceOfI2C, I2C_SCL_Port, I2C_SCL_Pin, I2C_SDA_Port, I2C_SDA_Pin, Clockspeed
-#define templateargsForHardware I2C_SCL_Port, I2C_SCL_Pin, I2C_SDA_Port, I2C_SDA_Pin
+#define templateForSPI uint16_t WhichInstanceOfSPI, bool SLAVEMODE, Portenum SPI_SCK_Port, PinEnum SPI_SCK_Pin, Portenum SPI_MISO_Port, PinEnum SPI_MISO_Pin, Portenum SPI_MOSI_Port, PinEnum SPI_MOSI_Pin, Portenum SPI_NSS_Port, PinEnum SPI_NSS_Pin
+#define templateargsForSPI WhichInstanceOfSPI, SLAVEMODE, SPI_SCK_Port, SPI_SCK_Pin, SPI_MISO_Port, SPI_MISO_Pin, SPI_MOSI_Port, SPI_MOSI_Pin, SPI_NSS_Port, SPI_NSS_Pin
+#define templateargsForHardware  SPI_SCK_Port, SPI_SCK_Pin, SPI_MISO_Port, SPI_MISO_Pin, SPI_MOSI_Port, SPI_MOSI_Pin, SPI_NSS_Port, SPI_NSS_Pin
 
-template<templateForI2C_def>
-	class I2CPeripheral :
-		public AEPeripheral <I2CPeripheral<templateargsForI2C>,
+template<templateForSPI>
+	class SPIPeripheral :
+		public AEPeripheral <SPIPeripheral<templateargsForSPI>,
 		NumOFPinsNeeded, 
-		I2C_Handle, 
+		SPI_Handle, 
 		templateargsForHardware>
 	{
 		
@@ -114,20 +109,19 @@ template<templateForI2C_def>
 	public:
 //		DMA_HandleTypeDef hdma_adcc;
 #ifdef USING_AEDMA 
-		//AEDMA dmaForI2C;
-		AEDMA dmaForI2C;
+		
+		AEDMA dmaForSPI;
 #endif 
-		
-		
+		 
 		
  
-		AEI2C InstanceOfI2C; 
+		AESPI InstanceOfSPI; 
 //		AEI2C AEI2C_inst2;
 //		AEI2C AEI2C_inst3;
 //		AEI2C AEI2C_inst4;
 //		AEI2C AEI2C_inst5;
 
-		protected :
+		protected:
  
 //		Port_t ch1_Port;
 //		Pin_t  ch1_Pin;
@@ -140,9 +134,9 @@ template<templateForI2C_def>
 //		Port_t ch5_Port;
 //		Pin_t  ch5_Pin;
 		
-		AEI2C* GetPeripheralInstance(){ 
-			this->InstanceOfI2C.Init(&(this->PeripheralHandle_t)); 
-			return &InstanceOfI2C;}
+		AESPI* GetPeripheralInstance() { 
+			this->InstanceOfSPI.Init(&(this->PeripheralHandle_t), this->GPIOPinSelected4.GetThePort(), this->GPIOPinSelected4.GetThePin()); 
+			return &InstanceOfSPI;}
 
 		// Inherited via AEPeripheral 
 		void _InitializePinSelectors(CreateTypeSelector_funcPtr(&functPtrsToChangeTypeSelectorss)[NumOFPinsNeeded]) override;
@@ -219,13 +213,13 @@ template<templateForI2C_def>
  
 
  //global pheripherals declaration
-#ifdef I2CPERIPHERAL1
-extern I2CPERIPHERAL1* I2CPERIPHERAL1_Instance;  
-#define I2CPERIPHERAL1_INITIALIZE I2CPERIPHERAL1_Instance->ForWhichPeripheralNumber = 1; I2CPERIPHERAL1_Instance->initializePeripheral(); I2CPERIPHERAL1_Name = I2CPERIPHERAL1_Instance->GetPeripheralInstance();
-#ifndef I2CPERIPHERAL1_Name
-#error You need to define I2CPERIPHERAL1_Name
+#ifdef SPIPERIPHERAL1
+extern SPIPERIPHERAL1* SPIPERIPHERAL1_Instance;  
+#define SPIPERIPHERAL1_INITIALIZE SPIPERIPHERAL1_Instance->ForWhichPeripheralNumber = 1; SPIPERIPHERAL1_Instance->initializePeripheral(); SPIPERIPHERAL1_Name = SPIPERIPHERAL1_Instance->GetPeripheralInstance();
+#ifndef SPIPERIPHERAL1_Name
+#error You need to define SPIPERIPHERAL1_Name
 #else
-extern  AEI2C* I2CPERIPHERAL1_Name;
+extern  AESPI* SPIPERIPHERAL1_Name;
 #endif
 #endif 
 

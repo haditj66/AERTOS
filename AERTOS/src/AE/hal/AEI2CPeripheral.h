@@ -127,7 +127,7 @@ template<templateForI2C_def>
 //		AEI2C AEI2C_inst4;
 //		AEI2C AEI2C_inst5;
 
-		protected :
+		protected:
  
 //		Port_t ch1_Port;
 //		Pin_t  ch1_Pin;

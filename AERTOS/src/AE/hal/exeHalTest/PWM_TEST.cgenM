@@ -1,0 +1,40 @@
+##Macro1 
+##Macro2  
+##Macro3  
+##Macro4
+##Macro5
+##Macro6
+##Macro7
+##Macro8
+##Macro9
+##Macro10
+##LoopIncrement1 
+##LoopIncrement2 
+##LoopIncrement3 
+##LoopIncrement4 
+##LoopIncrement5 
+##LoopIncrement6
+##LoopIncrement7
+##LoopIncrement8
+##LoopIncrement9
+##LoopIncrement10
+
+##ToFile PWM_TEST.cpp
+
+#if INTEGRATION_TESTS_FOR_exeHalTest__PWM_TEST
+ 
+#include "IntegTestPipeline.h"
+
+##UserCode_a
+
+void RunSelectedIntegrationTest_PWM_TEST()
+{
+
+##UserCode_b
+
+}
+
+
+##UserCode_c
+
+#endif

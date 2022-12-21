@@ -77,7 +77,18 @@
   </Build>
   <CustomBuild>
     <PreSyncActions />
-    <PreBuildActions />
+    <PreBuildActions>
+      <CustomActionBase xsi:type="CommandLineAction">
+        <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+        <RemoteHost>
+          <HostName>BuildMachine</HostName>
+          <Transport>BuiltinShortcut</Transport>
+        </RemoteHost>
+        <Command>AEBuildProject.bat</Command>
+        <WorkingDirectory>$(TargetDir)</WorkingDirectory>
+        <BackgroundMode>false</BackgroundMode>
+      </CustomActionBase>
+    </PreBuildActions>
     <PostBuildActions />
     <PreCleanActions />
     <PostCleanActions />
@@ -95,10 +106,20 @@
   <UserDefinedVariables />
   <ImportedPropertySheets />
   <CodeSense>
-    <Enabled>Unknown</Enabled>
+    <Enabled>True</Enabled>
+    <ExternalSourceFileList>..\..\CodeGenerator\CodeGenerator\macro2Test\CGENTest\include</ExternalSourceFileList>
     <ExtraSettings>
       <HideErrorsInSystemHeaders>true</HideErrorsInSystemHeaders>
       <SupportLightweightReferenceAnalysis>true</SupportLightweightReferenceAnalysis>
+      <DiscoverySettings>
+        <Mode>Enabled</Mode>
+        <SearchInProjectDir>true</SearchInProjectDir>
+        <SearchInSourceDirs>true</SearchInSourceDirs>
+        <SearchInIncludeSubdirs>true</SearchInIncludeSubdirs>
+        <ExtraSearchDirs>
+          <string>..\..\CodeGenerator\CodeGenerator\macro2Test\CGENTest\include</string>
+        </ExtraSearchDirs>
+      </DiscoverySettings>
       <CheckForClangFormatFiles>true</CheckForClangFormatFiles>
       <FormattingEngine xsi:nil="true" />
     </ExtraSettings>
@@ -108,10 +129,10 @@
   </CodeSense>
   <Configurations>
     <VisualGDBConfiguration>
-      <PlatformName>exeHalTest_arm</PlatformName>
+      <PlatformName>AE_STM32F411RE</PlatformName>
     </VisualGDBConfiguration>
     <VisualGDBConfiguration>
-      <PlatformName>exeHalTest_mingw</PlatformName>
+      <PlatformName>AE_mingw</PlatformName>
       <ProjectSettingsOverride xsi:type="com.visualgdb.project.windows">
         <CustomSourceDirectories>
           <Directories />
@@ -229,6 +250,27 @@
         <SuppressArgumentVariablesCheck>false</SuppressArgumentVariablesCheck>
       </DebugSettingsOverride>
     </VisualGDBConfiguration>
+    <VisualGDBConfiguration>
+      <Name>Debug</Name>
+    </VisualGDBConfiguration>
+    <VisualGDBConfiguration>
+      <Name>Debug_testTDU</Name>
+    </VisualGDBConfiguration>
+    <VisualGDBConfiguration>
+      <Name>Debug_testFilters</Name>
+    </VisualGDBConfiguration>
+    <VisualGDBConfiguration>
+      <Name>Debug_testActionRequest</Name>
+    </VisualGDBConfiguration>
+    <VisualGDBConfiguration>
+      <Name>Release</Name>
+    </VisualGDBConfiguration>
+    <VisualGDBConfiguration>
+      <Name>RelWithDebInfo</Name>
+    </VisualGDBConfiguration>
+    <VisualGDBConfiguration>
+      <Name>MinSizeRel</Name>
+    </VisualGDBConfiguration>
   </Configurations>
   <ProgramArgumentsSuggestions />
   <Debug xsi:type="com.visualgdb.debug.embedded">
@@ -300,7 +342,31 @@
     <ValidateEndOfStackAddress>true</ValidateEndOfStackAddress>
     <StopAtEntryPoint>false</StopAtEntryPoint>
     <EnableVirtualHalts>false</EnableVirtualHalts>
-    <DynamicAnalysisSettings />
+    <DynamicAnalysisSettings>
+      <StackVerifier>
+        <VerifyStackBounds>false</VerifyStackBounds>
+        <AutoStepOutOfHook>true</AutoStepOutOfHook>
+        <StackLimitControlledByUser>false</StackLimitControlledByUser>
+        <ExplicitSizeLimit>0</ExplicitSizeLimit>
+        <ExplicitStackBase>0</ExplicitStackBase>
+        <Mode>Auto</Mode>
+      </StackVerifier>
+      <RealTimeWatch>
+        <SupportRTOSAnalysis>false</SupportRTOSAnalysis>
+        <SupportFunctionInstrumentation>false</SupportFunctionInstrumentation>
+        <MeasureOverhead>true</MeasureOverhead>
+      </RealTimeWatch>
+      <RTOSFeatures>
+        <RTOSFeatureSetting>
+          <FeatureID>com.sysprogs.analysis.thread.timing</FeatureID>
+          <Enabled>true</Enabled>
+        </RTOSFeatureSetting>
+        <RTOSFeatureSetting>
+          <FeatureID>com.sysprogs.analysis.freertos.queues</FeatureID>
+          <Enabled>true</Enabled>
+        </RTOSFeatureSetting>
+      </RTOSFeatures>
+    </DynamicAnalysisSettings>
     <EndOfStackSymbol>_estack</EndOfStackSymbol>
     <TimestampProviderTicksPerSecond>0</TimestampProviderTicksPerSecond>
     <KeepConsoleAfterExit>false</KeepConsoleAfterExit>

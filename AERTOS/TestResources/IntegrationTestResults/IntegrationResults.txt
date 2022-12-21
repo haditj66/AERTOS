@@ -1,6 +1,6 @@
 #####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
 TESTNAME: FINISH_TEST_GROUP
 STATUS: FINISHED
 FILE: None
@@ -8,383 +8,88 @@ LINE: 0
 MESSAGE: done test group
 NumOfPasses: 0
 NumOfFails: 0
-OPTIONS: @AERTOS_ENVIRONMENT::RTOS_PC @AERTOS_ENVIRONMENT::RTOS_PC @Build_System::VSGDBCmake_Ninja @RTOS_USED::FREERTOS @OS_USED::WINDOWS @SIM_REAL::REALITY @SWIL_HWIL_DRIVEN::SWIL @BOARD_USED::X64 @TOOLCHAIN_USED::mingw @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @OS_USED::WINDOWS @PRINT_METHOD::NORMAL_PRINTF @INCLUDE_HAL::TRUE @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
-STATUS: FAILED
-FILE: 
-LINE: 0
-MESSAGE: This test never ran.
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @AERTOS_ENVIRONMENT::RTOS_PC @AERTOS_ENVIRONMENT::RTOS_PC @Build_System::VSGDBCmake_Ninja @RTOS_USED::FREERTOS @OS_USED::WINDOWS @SIM_REAL::REALITY @SWIL_HWIL_DRIVEN::SWIL @BOARD_USED::X64 @TOOLCHAIN_USED::mingw @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @OS_USED::WINDOWS @PRINT_METHOD::NORMAL_PRINTF @INCLUDE_HAL::TRUE @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
-STATUS: FAILED
-FILE: 
-LINE: 0
-MESSAGE: This test never ran.
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
-STATUS: FAILED
-FILE: 
-LINE: 0
-MESSAGE: This test never ran.
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
 STATUS: PASSED
-FILE: 
-LINE: 0
-MESSAGE: test has run
-NumOfPasses: 1
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test
-STATUS: FAILED
-FILE: C:/AERTOSCopy/src/AE/hal/exeHalTest/ADC_TEST.cpp
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
 LINE: 46
-MESSAGE: test adc1 is getting adc value
-NumOfPasses: 0
-NumOfFails: 249
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC2 test
-STATUS: FAILED
-FILE: C:/AERTOSCopy/src/AE/hal/exeHalTest/ADC_TEST.cpp
-LINE: 58
-MESSAGE: test adc2 is getting adc value
-NumOfPasses: 225
-NumOfFails: 26
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC3 test
-STATUS: FAILED
-FILE: C:/AERTOSCopy/src/AE/hal/exeHalTest/ADC_TEST.cpp
-LINE: 73
-MESSAGE: test adc3 is getting adc value
-NumOfPasses: 0
-NumOfFails: 252
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
-STATUS: FAILED
-FILE: 
-LINE: 0
-MESSAGE: This test never ran.
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
-STATUS: FAILED
-FILE: 
-LINE: 0
-MESSAGE: This test never ran.
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
-STATUS: PASSED
-FILE: 
-LINE: 0
-MESSAGE: test has run
+MESSAGE: initially BlindsUI FSM is in idle state
 NumOfPasses: 1
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test
-STATUS: FAILED
-FILE: ../../../src/AE/hal/exeHalTest/ADC_TEST.cpp
-LINE: 46
-MESSAGE: test adc1 is getting adc value
-NumOfPasses: 0
-NumOfFails: 250
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC2 test
-STATUS: FAILED
-FILE: ../../../src/AE/hal/exeHalTest/ADC_TEST.cpp
-LINE: 58
-MESSAGE: test adc2 is getting adc value
-NumOfPasses: 218
-NumOfFails: 33
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC3 test
-STATUS: FAILED
-FILE: ../../../src/AE/hal/exeHalTest/ADC_TEST.cpp
-LINE: 73
-MESSAGE: test adc3 is getting adc value
-NumOfPasses: 0
-NumOfFails: 252
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
-STATUS: FAILED
-FILE: 
-LINE: 0
-MESSAGE: This test never ran.
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: I2C_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::I2C_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: I2C_TEST
-TESTNAME: i2c_returned_EXPECTED
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
 STATUS: PASSED
-FILE: 
-LINE: 0
-MESSAGE: test has run
-NumOfPasses: 1
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 45
+MESSAGE: random test
+NumOfPasses: 9
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::I2C_TEST 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: I2C_TEST
-TESTNAME: i2c_returned
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
 STATUS: PASSED
-FILE: ../../../src/AE/hal/exeHalTest/I2C_TEST.cpp
-LINE: 500MESSAGE: mpu returned data with az greater than 10000
-NumOfPasses: 24
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::I2C_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: ADC_TEST
-TESTNAME: ADC1 test_EXPECTED
-STATUS: FAILED
-FILE: 
-LINE: 0
-MESSAGE: This test never ran.
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::ADC_TEST 
-
-#####################################################################################
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: I2C_TEST
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::I2C_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: I2C_TEST
-TESTNAME: i2c_returned_EXPECTED
-STATUS: PASSED
-FILE: 
-LINE: 0
-MESSAGE: test has run
-NumOfPasses: 1
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::I2C_TEST 
-
-TESTGROUPNAME: exeHalTest
-TESTSPECIFIC: I2C_TEST
-TESTNAME: i2c_returned
-STATUS: PASSED
-FILE: ../../../src/AE/hal/exeHalTest/I2C_TEST.cpp
-LINE: 502MESSAGE: mpu returned data with az greater than 10000
-NumOfPasses: 24
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::exeHalTest @INTEGRATION_TESTS_FOR_exeHalTest::I2C_TEST 
-
-#####################################################################################
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testTDU
-TESTNAME: FINISH_TEST_GROUP
-STATUS: FINISHED
-FILE: None
-LINE: 0
-MESSAGE: done test group
-NumOfPasses: 0
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testTDU 
-
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testTDU
-TESTNAME: TDUWaitForEvent_EXPECTED
-STATUS: PASSED
-FILE: 
-LINE: 0
-MESSAGE: test has run
-NumOfPasses: 1
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testTDU 
-
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testTDU
-TESTNAME: TDUENTERED
-STATUS: PASSED
-FILE: ../../../src/AE/AECoreTestEXE/include/ActionRequestForUARTTransmitTDU.h
-LINE: 41
-MESSAGE: TDU wait for event ran
-NumOfPasses: 153
-NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testTDU 
-
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testTDU
-TESTNAME: TDUWaitForEvent
-STATUS: PASSED
-FILE: ../../../src/AE/AECoreTestEXE/include/ActionRequestForUARTTransmitTDU.h
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
 LINE: 51
-MESSAGE: TDU wait for event ran
-NumOfPasses: 15
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testTDU 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 56
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 61
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 70
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 76
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
 #####################################################################################
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
 TESTNAME: FINISH_TEST_GROUP
 STATUS: FINISHED
 FILE: None
@@ -392,65 +97,88 @@ LINE: 0
 MESSAGE: done test group
 NumOfPasses: 0
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: average_EXPECTED
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
 STATUS: PASSED
-FILE: 
-LINE: 0
-MESSAGE: test has run
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 46
+MESSAGE: initially BlindsUI FSM is in idle state
 NumOfPasses: 1
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: clockfreq
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
 STATUS: PASSED
-FILE: ../../../src/AE/AECoreTestEXE/testSPB.cpp
-LINE: 161MESSAGE: frequency of AEclock should be about 1 millisec
-NumOfPasses: 2499
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 45
+MESSAGE: random test
+NumOfPasses: 9
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: average
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
 STATUS: PASSED
-FILE: ../../../src/AE/AECoreTestEXE/include/AverageSPB.h
-LINE: 72
-MESSAGE: should be entered.
-NumOfPasses: 1497
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 51
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: TimerOfSPBToAdder
-STATUS: FAILED
-FILE: ../../../src/AE/AECoreTestEXE/include/AdderSPB.h
-LINE: 74
-MESSAGE: time from clock call to final addersbp should be less than time 1.5 millisec
-NumOfPasses: 498
-NumOfFails: 1
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
-
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: averageadder
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
 STATUS: PASSED
-FILE: ../../../src/AE/AECoreTestEXE/include/AdderSPB.h
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 56
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 61
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 70
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
 LINE: 76
-MESSAGE: should be added.
-NumOfPasses: 499
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
 #####################################################################################
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
 TESTNAME: FINISH_TEST_GROUP
 STATUS: FINISHED
 FILE: None
@@ -458,59 +186,970 @@ LINE: 0
 MESSAGE: done test group
 NumOfPasses: 0
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: average_EXPECTED
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
 STATUS: PASSED
-FILE: 
-LINE: 0
-MESSAGE: test has run
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 46
+MESSAGE: initially BlindsUI FSM is in idle state
 NumOfPasses: 1
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: clockfreq
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
 STATUS: PASSED
-FILE: ../../../src/AE/AECoreTestEXE/testSPB.cpp
-LINE: 161MESSAGE: frequency of AEclock should be about 1 millisec
-NumOfPasses: 2499
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 45
+MESSAGE: random test
+NumOfPasses: 9
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: average
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
 STATUS: PASSED
-FILE: ../../../src/AE/AECoreTestEXE/include/AverageSPB.h
-LINE: 72
-MESSAGE: should be entered.
-NumOfPasses: 1497
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 51
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: TimerOfSPBToAdder
-STATUS: FAILED
-FILE: ../../../src/AE/AECoreTestEXE/include/AdderSPB.h
-LINE: 74
-MESSAGE: time from clock call to final addersbp should be less than time 1.5 millisec
-NumOfPasses: 498
-NumOfFails: 1
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
-
-TESTGROUPNAME: AECoreTestEXE
-TESTSPECIFIC: testSPB
-TESTNAME: averageadder
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
 STATUS: PASSED
-FILE: ../../../src/AE/AECoreTestEXE/include/AdderSPB.h
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 56
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 61
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 70
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
 LINE: 76
-MESSAGE: should be added.
-NumOfPasses: 499
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
 NumOfFails: 0
-OPTIONS: @INTEGRATION_TESTS::AECoreTestEXE @INTEGRATION_TESTS_FOR_AECoreTestEXE::testSPB 
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 46
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 45
+MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 51
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 56
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 61
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 70
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 76
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 46
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 45
+MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 51
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 56
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 61
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 70
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 76
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 46
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 187MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 51
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 56
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 61
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 70
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 76
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 46
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 188MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 51
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 56
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 61
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 70
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 76
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 52
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 65
+MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 57
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 62
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 67
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 76
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 82
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 52
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 65
+MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 57
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 62
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 67
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 76
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 82
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 54
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 65
+MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 59
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 64
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 69
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 78
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 84
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 54
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 65
+MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 59
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 64
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 69
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 78
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 84
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 54
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 65
+MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 59
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 64
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 69
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 78
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 84
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+#####################################################################################
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FINISH_TEST_GROUP
+STATUS: FINISHED
+FILE: None
+LINE: 0
+MESSAGE: done test group
+NumOfPasses: 0
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FirstState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 54
+MESSAGE: initially BlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: randomTest
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/LoopObjeect1Test.h
+LINE: 65
+MESSAGE: random test
+NumOfPasses: 9
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: SecondState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 59
+MESSAGE: ConfigBlindsUI FSM is in idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: ThirdState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 64
+MESSAGE: ConfigBlindsUI FSM is in SettingTopLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: FourthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 69
+MESSAGE: ConfigBlindsUI FSM is in SettingBottomLimit state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: fifthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 78
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
+
+TESTGROUPNAME: CGENTest
+TESTSPECIFIC: defaultTest
+TESTNAME: sixthState
+STATUS: PASSED
+FILE: C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include/AELoopObjectTest2.h
+LINE: 84
+MESSAGE: ConfigBlindsUI FSM Has left and entered BlindsUI FSM idle state
+NumOfPasses: 1
+NumOfFails: 0
+OPTIONS: @BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::FALSE 
 

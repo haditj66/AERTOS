@@ -23,3 +23,9 @@
 
 //I2C
 #define I2C_Handle I2C_HandleTypeDef
+
+//SPI
+#define SPI_Handle SPI_HandleTypeDef
+
+//PWM
+#define PWM_Handle TIM_HandleTypeDef

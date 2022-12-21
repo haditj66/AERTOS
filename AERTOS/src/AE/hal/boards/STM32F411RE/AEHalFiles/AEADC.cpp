@@ -16,7 +16,9 @@ extern "C" {
 	//UserCode_Section0
 	void ADC_IRQHandler(void)
 	{
+#if defined(ADCPERIPHERAL1_Name_CH1) || defined(ADCPERIPHERAL1_Name_CH2) || defined(ADCPERIPHERAL1_Name_CH3) || defined(ADCPERIPHERAL1_Name_CH4) || defined(ADCPERIPHERAL1_Name_CH5)
 		HAL_ADC_IRQHandler(&ADCPERIPHERAL1_Instance->PeripheralHandle_t);
+#endif
 	}
 //	void DMA2_Stream0_IRQHandler(void)
 //	{

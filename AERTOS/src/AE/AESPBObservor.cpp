@@ -627,7 +627,6 @@ void AESPBObservor::AddSignalFlowLink(AESPBObservor * toObservor, uint16_t ToCha
 }
 
 
-
 inline void AESPBObservor::_RefreshCheckStyle()
 {
 	if (this->styleOfSPB == EachSPBTask)

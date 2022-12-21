@@ -10,9 +10,6 @@
 #include "IntegTestPipeline.h"
 
 //UserCode_Sectiona
-//Hadi: TDU works. now put some tests. I also got the WaitForEvent working here. Make a test for that too.
-	
- 
 #include "AECore.h"
 #include "AE_Init.h" 
 #include "AEClock.h"
