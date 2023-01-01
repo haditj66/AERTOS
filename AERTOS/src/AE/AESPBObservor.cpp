@@ -3,6 +3,7 @@
  #include "AELinkSignalFlow.h"
 #include <cmath>
 
+#include "AEAOUpdateableAAS.h"
 
 #include "TaskPoolForSPBChain.h"
 
@@ -293,6 +294,9 @@ void AESPBObservor::ConfigureRefreshFrequency()
 		}
 
 	}
+	
+ 
+	
 
 	//configure filters for this spb
 	this->InitializeFilters();

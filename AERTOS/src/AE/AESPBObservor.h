@@ -7,7 +7,7 @@
 
 //forward declare
 class TaskPoolForSPBChain;
-
+ 
 
 class AESPBObservor : public AEObservorBase
 {
@@ -20,6 +20,9 @@ class AESPBObservor : public AEObservorBase
 	template<TemplateFor_AEAOUpdateableAAP_NoDefaults_friend>
 	friend class AEAOUpdateableAAP;
 	friend class TaskSPBChain;
+	
+	template<TemplateFor_Service_NoDefaults_friend>
+		friend class AEAOUpdateable;
 
 public:
 
@@ -44,8 +47,13 @@ public:
 	//void SetObservorIPointTo(AESPBObservor * sPBObservorsIPointTo);
 	void InputSignal(float * input, uint16_t toChannelId);
 
+	
+	  float* GetOutputSignalAddr() const {return OutputSignal;};
+	
 protected:
 
+	
+	
 
 	StyleOfSPB styleOfSPB;
 
@@ -73,9 +81,11 @@ protected:
 	static void ConfigureSPBTypesAndInputTypes();
 	static void ConfigureAllSPBsFromNodes(AEObservorBase* (&nodes)[MAXNUMOFOBSERVORS], uint16_t& nodeListSize);
 	 
+	TaskHandle_t* UpdateTasksForTDUsIFlowTo[(NUM_OF_TDUS_THAT_FLOW_FROM_SPBS == 0) + NUM_OF_TDUS_THAT_FLOW_FROM_SPBS];   
 	uint8_t numOfTdusThatAreSetToMyClock; 
 	template<class TTDUToSetToThisClock> 
-	void SetTDUToMyClock(TTDUToSetToThisClock TDUSetToThisSPBClock);
+	void SetTDUToMySPBClock(TTDUToSetToThisClock TDUSetToThisSPBClock);
+	
 
 	virtual void CheckIfConfiguredProperly()  const override;
 
@@ -169,10 +179,15 @@ private:
 
 
 template<class TTDUToSetToThisClock>
-inline void AESPBObservor::SetTDUToMyClock(TTDUToSetToThisClock TDUSetToThisSPBClock)
-{
+	inline void AESPBObservor::SetTDUToMySPBClock(TTDUToSetToThisClock TDUSetToThisSPBClock)
+{ 
+	UpdateTasksForTDUsIFlowTo[numOfTdusThatAreSetToMyClock] = &TDUSetToThisSPBClock->GaurdUpdateTask;  
 	
-	//TDUSetToMeRefreshers[numOfTdusThatAreSetToMyClock] = &(TDUSetToThisSPBClock->SPBIamSetToHasbeenRefreshed);
-
-	//numOfTdusThatAreSetToMyClock++;
+	numOfTdusThatAreSetToMyClock++;
 }
+
+
+
+	
+
+

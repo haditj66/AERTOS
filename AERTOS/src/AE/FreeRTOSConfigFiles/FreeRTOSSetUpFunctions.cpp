@@ -158,8 +158,7 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, signed char *pcTaskName)
 		static char msgFormattedstackoverflow[70];
 		snprintf(msgFormattedstackoverflow, 70, "\n\nEXCEPTION STACK OVERFLOW: occured for task %s", pcTaskName);
  
-		//AEPrint(msgFormattedstackoverflow);
-		
+		AEPrint(msgFormattedstackoverflow); 
 		configASSERT(false);
 	}
 	

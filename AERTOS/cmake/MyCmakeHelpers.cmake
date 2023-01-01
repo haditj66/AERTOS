@@ -196,7 +196,7 @@ include("${CMAKE_SOURCE_DIR}/cmake/AEIntegrationTestsManager.cmake")
 macro(CREATE_TARGET_INTEGRATIONEXE) 
 set(options)
 set(oneValueArgs NAME_OF_TARGET LOCATION_OF_TARGET)
-set(multiValueArgs LibrariesToLinkTo LIST_OF_TESTS) 
+set(multiValueArgs LibrariesToLinkTo AnyAdditionalIncludeDirs  AnyAdditionalSRCDirs LIST_OF_TESTS) 
 cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN}) 
 
 
@@ -207,7 +207,7 @@ cmake_parse_arguments(_arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${
 
 
 
-if(${INTEGRATION_TESTS} STREQUAL "${_arg_NAME_OF_TARGET}")
+#if(${INTEGRATION_TESTS} STREQUAL "${_arg_NAME_OF_TARGET}")
 message("building integration test for target ${_arg_NAME_OF_TARGET}. using specific test of name ${NAME_OF_TARGET}")
 
 set(FULL_PATH_TO_TARGET ${_arg_LOCATION_OF_TARGET})
@@ -244,6 +244,35 @@ set(EXE_USER_CONFIG_FILES
 
      
     
+    ## get additional source directories
+    if(DEFINED _arg_AnyAdditionalSRCDirs) 
+        set(TARGET_SRC_ADDITIONAL)
+        foreach(tar ${_arg_AnyAdditionalSRCDirs})  
+       
+            file(GLOB TARGET_SRC_ADD
+                 "${tar}/*.c"
+                 "${tar}/*.cpp"
+                 )
+            set(TARGET_SRC_ADDITIONAL ${TARGET_SRC_ADDITIONAL} ${TARGET_SRC_ADD} )
+ 
+
+         endforeach() 
+     endif()
+
+        if(DEFINED _arg_AnyAdditionalIncludeDirs) 
+        set(TARGET_H_ADDITIONAL)
+        foreach(tar ${_arg_AnyAdditionalSRCDirs})  
+       
+            file(GLOB TARGET_H_ADD
+                 "${tar}/*.h"
+                 "${tar}/*.hpp"
+                 )
+            set(TARGET_H_ADDITIONAL ${TARGET_H_ADDITIONAL} ${TARGET_H_ADD} )
+ 
+
+         endforeach() 
+     endif()
+
      add_bsp_based_library(
 	NAME ${_arg_NAME_OF_TARGET}_lib
 	SOURCES  
@@ -251,7 +280,29 @@ set(EXE_USER_CONFIG_FILES
     #${FULL_PATH_TO_TARGET}/AEObjects.h 
     ${TARGET_SRCS}
     ${TARGET_HEADERS} 
+    ${TARGET_SRC_ADDITIONAL} 
+    ${TARGET_H_ADDITIONAL} 
     ) 
+    target_include_directories(${_arg_NAME_OF_TARGET}_lib PUBLIC "${FULL_PATH_TO_TARGET}/include") 
+
+    # add property to give the libraries base directory
+    set_target_properties(${_arg_NAME_OF_TARGET}_lib PROPERTIES LIB_BASE_DIR ${FULL_PATH_TO_TARGET})
+    if(DEFINED _arg_AnyAdditionalIncludeDirs) 
+        set(TARGET_HEADERS_ADDITIONAL)
+        foreach(tar ${_arg_AnyAdditionalIncludeDirs}) 
+        set_target_properties(${_arg_NAME_OF_TARGET}_lib PROPERTIES ANYADDITIONALINCLUDEDIRS "${_arg_AnyAdditionalIncludeDirs}")
+     
+            target_include_directories(${_arg_NAME_OF_TARGET}_lib PUBLIC  ${tar})  
+
+            file(GLOB TARGET_HEADERS_ADD
+                 "${FULL_PATH_TO_TARGET}/include/*.h"
+                 "${FULL_PATH_TO_TARGET}/include/*.hpp"
+                 )
+            set(TARGET_HEADERS_ADDITIONAL ${TARGET_HEADERS_ADDITIONAL} ${TARGET_HEADERS_ADD} )
+ 
+
+         endforeach() 
+     endif()
 
     #write to  AEBUILD_INFO_DIR the directory 
     file(APPEND "${AEBUILD_INFO_DIR}" "BuildTarget==${_arg_NAME_OF_TARGET}_lib\n") 
@@ -260,28 +311,30 @@ set(EXE_USER_CONFIG_FILES
     if(((${_arg_ONLY_CREATE_LIBRARY} STREQUAL 0  )))#  or NOT DEFINED  ONLY_CREATE_LIBRARY
 
 
-         #add_bsp_based_library(
-	#NAME ${_arg_NAME_OF_TARGET}_conf 
-	#SOURCES         
-    #) 
+             #add_bsp_based_library(
+	    #NAME ${_arg_NAME_OF_TARGET}_conf 
+	    #SOURCES         
+        #) 
 
 
-         add_bsp_based_executable(
-	        NAME ${_arg_NAME_OF_TARGET}
-	        SOURCES ${FULL_PATH_TO_TARGET}/main.cpp ${SRCS_TO_USER_CONFIG_FILES}  
-                            ${EXE_USER_CONFIG_FILES}
-    ${FULL_PATH_TO_TARGET}/AEObjects.h 
-    #${FULL_PATH_TO_TARGET}/include/LoopObjeect1Test.h 
-	        GENERATE_BIN
-	        GENERATE_MAP) 
+             add_bsp_based_executable(
+	            NAME ${_arg_NAME_OF_TARGET}
+	            SOURCES ${FULL_PATH_TO_TARGET}/main.cpp ${SRCS_TO_USER_CONFIG_FILES}  
+                                ${EXE_USER_CONFIG_FILES}
+        ${FULL_PATH_TO_TARGET}/AEObjects.h 
+        #${FULL_PATH_TO_TARGET}/include/LoopObjeect1Test.h 
+	            GENERATE_BIN
+	            GENERATE_MAP) 
 
+                     
+     #target_include_directories(${_arg_NAME_OF_TARGET} PUBLIC "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include" )
 
-    file(APPEND "${AEBUILD_INFO_DIR}" "BuildTarget==${_arg_NAME_OF_TARGET}\n") 
+        file(APPEND "${AEBUILD_INFO_DIR}" "BuildTarget==${_arg_NAME_OF_TARGET}\n") 
 
-                if(${INCLUDE_HAL} STREQUAL "TRUE")
-    target_link_libraries(${_arg_NAME_OF_TARGET}  PUBLIC  AEHalLib  )  
-    target_include_directories(AEHalLib PUBLIC "${FULL_PATH_TO_TARGET}/conf")
-    endif()
+         if(${INCLUDE_HAL} STREQUAL "TRUE")
+        target_link_libraries(${_arg_NAME_OF_TARGET}  PUBLIC  AEHalLib  )  
+        target_include_directories(AEHalLib PUBLIC "${FULL_PATH_TO_TARGET}/conf")
+        endif()
     
             #target_link_libraries(${_arg_NAME_OF_TARGET}_lib PUBLIC  ${_arg_NAME_OF_TARGET}_conf)  
             target_link_libraries(${_arg_NAME_OF_TARGET} PUBLIC  ${_arg_NAME_OF_TARGET}_lib)  
@@ -304,8 +357,22 @@ set(EXE_USER_CONFIG_FILES
 
 	 endif()      
      foreach(tar ${_arg_LibrariesToLinkTo}) 
-                 target_link_libraries(${_arg_NAME_OF_TARGET}_lib PUBLIC  ${tar})  
+        target_link_libraries(${_arg_NAME_OF_TARGET}_lib PUBLIC  ${tar})   
+        #include the directories of the depending library!
+        get_target_property( _LIB_BASE_DIR ${tar} LIB_BASE_DIR) 
+        get_target_property( _ANYADDITIONALINCLUDEDIRS ${tar} ANYADDITIONALINCLUDEDIRS) 
+        if(NOT ${_LIB_BASE_DIR}  STREQUAL "_LIB_BASE_DIR-NOTFOUND")
+            target_include_directories(${_arg_NAME_OF_TARGET}_lib PUBLIC "${_LIB_BASE_DIR}/include" )
+        endif()
+        if(NOT ${_ANYADDITIONALINCLUDEDIRS}  STREQUAL "_ANYADDITIONALINCLUDEDIRS-NOTFOUND")
+            foreach(tarInc ${_ANYADDITIONALINCLUDEDIRS}) 
+            target_include_directories(${_arg_NAME_OF_TARGET}_lib PUBLIC "${tarInc}" )
             endforeach() 
+        endif()
+     endforeach()  
+
+            #target_include_directories(${_arg_NAME_OF_TARGET}_lib PUBLIC "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest/include" )
+
 
     #if the hal is included, add this library
     if(${INCLUDE_HAL} STREQUAL "TRUE")
@@ -360,10 +427,18 @@ LISTOFSOURCES ${TARGET_SRCS})
     Set_Sources_in_SourceGroup(
 NAMEOFGROUP target_headers
 LISTOFSOURCES ${TARGET_HEADERS})
+
+    Set_Sources_in_SourceGroup(
+NAMEOFGROUP target_sources_additional
+LISTOFSOURCES ${TARGET_SRC_ADDITIONAL})  
+
+Set_Sources_in_SourceGroup(
+NAMEOFGROUP target_headers_additional
+LISTOFSOURCES ${TARGET_H_ADDITIONAL})
  
 
 
-endif()
+#endif()
 
 endmacro()
 

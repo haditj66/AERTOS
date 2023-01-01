@@ -172,3 +172,9 @@ AEPWM* PWMPERIPHERAL5_Name = nullptr;
 PWMPERIPHERAL6* PWMPERIPHERAL6_Instance = PWMPERIPHERAL6::getInstance();   
 AEPWM* PWMPERIPHERAL6_Name = nullptr;
 #endif   
+
+
+
+#ifdef USING_AEI2C 
+uint8_t AEI2C::TotalNumOfI2cID = 0;
+#endif

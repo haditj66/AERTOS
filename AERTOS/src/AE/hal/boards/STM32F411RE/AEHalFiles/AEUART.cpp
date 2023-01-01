@@ -27,6 +27,54 @@ extern "C" {
 #endif
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	void HAL_UART_TxCpltCallback(UART_HandleTypeDef* UartHandle)
+	{
+		
+		AEUART* foruart;
+		
+#ifdef UARTPERIPHERAL1
+		if (UartHandle->Instance = USART1)
+		{
+			//			 forUartHandle = &UARTPERIPHERAL1_Instance->PeripheralHandle_t;
+			foruart = UARTPERIPHERAL1_Name; 
+		}
+#endif
+#ifdef UARTPERIPHERAL2
+		if (UartHandle->Instance = USART2)
+		{
+			//			forUartHandle = &UARTPERIPHERAL2_Instance->PeripheralHandle_t;
+			foruart = UARTPERIPHERAL2_Name; 
+		}
+#endif
+		
+#ifdef UARTPERIPHERAL6
+		if (UartHandle->Instance = USART6)
+		{ 
+			foruart = UARTPERIPHERAL6_Name; 
+		}
+#endif
+		
+		foruart->_TxCpltCallback_t( );
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	int8_t command;
 	void HAL_UART_RxCpltCallback(UART_HandleTypeDef* UartHandle)
 	{

@@ -112,7 +112,7 @@ protected:
 	static AEObservorInterpretorBase* InterpretorBasePool[MAXNUMOFINTERPRETORS];
 
 	
-	float FrequencyIRefreshAt;
+	
 	uint16_t ObservorsOfInfluence[MAXNUMOFOBSERVERINFLUENCES];
 	bool* ObservorsOfInfluenceNeedARefeshValues[MAXNUMOFOBSERVERINFLUENCES];
 	uint16_t numOfObservorsOfInfluence;
@@ -129,7 +129,7 @@ protected:
 	virtual void InitializeFilters() = 0;
 
 private:
-
+	float FrequencyIRefreshAt;
 	uint16_t MyObservorType;
 
 	static void GetAllSPBRecursivelyThisObservorPointsToandCheckIfTheyAreEndChains(AEObservorBase* theObservorToGetSPBs);

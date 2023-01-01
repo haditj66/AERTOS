@@ -700,6 +700,16 @@ inline void AESPBObservorOutputType<TEMPLATEFOR_AESPBOUTPARAMS>
 				SPBObservorsIPointTo[i]->InputSignal(OutputSignal, ChannelIdsIConnectTo[i]);
 			}
 		}
+		
+		//notify all tdus that I flow into that they need to update
+		if (this->numOfTdusThatAreSetToMyClock > 0)
+		{
+			for (uint16_t i = 0; i < this->numOfTdusThatAreSetToMyClock; i++)
+			{
+				xTaskNotifyGive(*UpdateTasksForTDUsIFlowTo[i]);
+			}
+			
+		}
 		 
 
 

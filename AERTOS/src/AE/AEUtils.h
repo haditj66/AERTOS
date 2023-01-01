@@ -211,6 +211,21 @@ template<>
 		memcpy(dest, &source, size);
 	}
 template<>
+	inline void ArrayCheckToMemCopy<int32_t>::AEMemcpy(void* dest, int32_t source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
+template<>
+	inline void ArrayCheckToMemCopy<int16_t>::AEMemcpy(void* dest, int16_t source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
+template<>
+	inline void ArrayCheckToMemCopy<int8_t>::AEMemcpy(void* dest, int8_t source, uint32_t size)
+	{
+		memcpy(dest, &source, size);
+	}
+template<>
 	inline void ArrayCheckToMemCopy<bool>::AEMemcpy(void* dest, bool source, uint32_t size)
 	{
 		memcpy(dest, &source, size);

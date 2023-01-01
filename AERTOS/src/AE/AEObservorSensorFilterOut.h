@@ -51,7 +51,7 @@ public:
 
 
 
-protected:
+public: //protected:
 
 
 #if MAXNUMBEROF_FILTERS_From_A_Sensor >= 1  
@@ -245,11 +245,11 @@ inline void AEObservorSensorFilterOut<TEMPLATESPB_FilterParams>::UpdateOVERRIDE(
 		// a value of zero means that it does not.
 		if (Filter2LinksFrom != 0)
 		{
-			OutputsOfFilters[1] = Filter2(OutputsOfFilters[Filter2LinksFrom - 1]);
+			OutputsOfFilters[1] = this->Filter2(OutputsOfFilters[Filter2LinksFrom - 1]);
 		}
 		else
 		{
-			OutputsOfFilters[1] = Filter2(this->ConvertPtrValueToFloat());
+			OutputsOfFilters[1] = this->Filter2(this->ConvertPtrValueToFloat());
 		}
 #ifdef IARBuild
 		StopTimer(2)

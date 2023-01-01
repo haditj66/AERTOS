@@ -228,8 +228,10 @@ void AEObservorBase::AddSignalFlowLink(AESPBObservor * toObservor, uint16_t ToCh
 	this->numOfSPBLinksIPoint++;
 	toObservor->numOfSignalLinksPointToMe++;
 	*/
-
+	
 	//SetObservorIPointTo(toObservor); 
+	configASSERT(NumOfSPBObservorsIPointTo < MAXNUMBEROFOUTPUTSIGNALS_TO_A_SPB);
+		
 	OutputFilterThatSignalGoesFrom[NumOfSPBObservorsIPointTo] = toOutPutFilter-1;
 	SPBObservorsIPointTo[NumOfSPBObservorsIPointTo] = toObservor;
 	ChannelIdsIConnectTo[NumOfSPBObservorsIPointTo] = ToChannel;

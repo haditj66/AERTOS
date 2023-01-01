@@ -68,6 +68,46 @@ enum ProjectEventSignals {
 #if Signal7 != 1000
 	Signal7,
 #endif 
+#if Signal8 != 1000
+	Signal8,
+#endif 
+#if Signal9 != 1000
+	Signal9,
+#endif 
+#if Signal10 != 1000
+	Signal10,
+#endif 
+#if Signal11 != 1000
+	Signal11,
+#endif 
+#if Signal12 != 1000
+	Signal12,
+#endif 
+#if Signal13 != 1000
+	Signal13,
+#endif 
+#if Signal14 != 1000
+	Signal14,
+#endif 
+#if Signal15 != 1000
+	Signal15,
+#endif 
+#if Signal16 != 1000
+	Signal16,
+#endif 
+#if Signal17 != 1000
+	Signal17,
+#endif 
+#if Signal18 != 1000
+	Signal18,
+#endif 
+#if Signal19 != 1000
+	Signal19,
+#endif 
+#if Signal20 != 1000
+	Signal20,
+#endif 
+	
 
 	_MAX_NumOfAllEvents,
 	//the following events are events used ONLY by fsms. they are not stored in the event subscribers buffer as they are always posted

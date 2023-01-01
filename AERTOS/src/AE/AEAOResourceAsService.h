@@ -17,7 +17,7 @@
 //implemented.
 static uint32_t blabdlasjbdl = 89;
 
-#if ((configAE_USE_TDUs_AsService == 1)  || (configAE_USE_U_AsService == 1) || (configAE_USE_DDSM_AsService == 1))
+#if 0//((configAE_USE_TDUs_AsService == 1)  || (configAE_USE_U_AsService == 1) || (configAE_USE_DDSM_AsService == 1))
 
 template<TemplateFor_RAsAService>
 class AEAOResourceAsService : public AEAO
@@ -579,7 +579,10 @@ template<TemplateFor_Service>
 
 		QueueClassForActionRequest TheRequestToServerNext;
 
-		//std::queue<QueueClassForActionRequest> QueueForAOArgs[MAXNUMOFOBSERVORS];
+		//TODO: QueueForAOArgs for possessors neds to be optimized! simplest way to do this is to make the poolsize 1 for
+		//possessing utilties, and then iteratethrough the QueueForAOArgs list based on NUMOFACTIVEOBJECTS. 
+		//divide the requested pool size (requested at code generation stage) by the NUMOFACTIVEOBJECTS to get actual POOLSIZE
+		// requested_pool_size  / NUMOFACTIVEOBJECTS = POOLSIZE 
 		AECircularBuffer<QueueClassForActionRequest, POOLSIZE> QueueForAOArgs[NUMOFACTIVEOBJECTS];
 		xSemaphoreHandle CountingSemaphoreForActionRequestExecutionTest;
 
@@ -666,6 +669,8 @@ template<TemplateFor_Service>
 		AEAOResourceService()
 			//(funcPtr actionReq1, funcPtr actionReq2, funcPtr actionReq3) : ActionReq1(actionReq1), ActionReq2(actionReq2), ActionReq3(actionReq3) 
 		{
+			
+			IsExclusivelyPossessed = false;
 
 
 			//set AOID in the AOID_OfResource for the action requests.
@@ -721,7 +726,13 @@ template<TemplateFor_Service>
 				ActionReq6.Init(this); 
 			}
 		}
-		;
+		
+		
+		AEAO* PossessingAO;
+		bool IsExclusivelyPossessed = false;
+		void  SetExclusivePossessor(AEAO * TheAOToPossessThisAO); 
+		void  SetPossessiongAO(AEAO * newPossessiongAO);
+			
 
 		//template<class TRequestType>
 		//TRequestType* GetActionRequest();
@@ -785,6 +796,31 @@ template<TemplateFor_Service>
 
 	};
 
+
+
+template<TemplateFor_Service_NoDefaults>
+	inline void AEAOResourceService<TemplateARGSFor_Service>::SetExclusivePossessor(AEAO * TheAOToPossessThisAO)
+	{
+		//assert that it has not already been exclusively possessed.
+		configASSERT(!IsExclusivelyPossessed);
+
+		SetPossessiongAO(TheAOToPossessThisAO);
+		IsExclusivelyPossessed = true;
+	}
+
+template<TemplateFor_Service_NoDefaults>
+	inline void AEAOResourceService<TemplateARGSFor_Service>::SetPossessiongAO(AEAO * newPossessiongAO)
+	{
+		PossessingAO = newPossessiongAO;
+		//tell all action requests what the requesting AOID is 
+		ActionReq1.AOID_OfCurrentRequestingAO = newPossessiongAO->GetAO_ID();
+		ActionReq2.AOID_OfCurrentRequestingAO = newPossessiongAO->GetAO_ID();
+		ActionReq3.AOID_OfCurrentRequestingAO = newPossessiongAO->GetAO_ID();
+		ActionReq4.AOID_OfCurrentRequestingAO = newPossessiongAO->GetAO_ID();
+		ActionReq5.AOID_OfCurrentRequestingAO = newPossessiongAO->GetAO_ID();
+		ActionReq6.AOID_OfCurrentRequestingAO = newPossessiongAO->GetAO_ID();
+	}
+
  
 
 
@@ -807,14 +843,21 @@ template<TemplateFor_Service_NoDefaults>
 			}
 #endif
 			//push the request in the proper queue. the ActionReq1() will get the request.
+			
+			if (IsExclusivelyPossessed == true)
+			{
+				//assert that the requesting AO is the possessing AO
+				configASSERT(PossessingAO != nullptr);
+				configASSERT(AOID == this->PossessingAO->GetAO_ID());
+			}
         
 			QueueClassForActionRequest* reqtopush1 = ((ActionReq1)(arg1, arg2, arg3, arg4, arg5));
 			QueueClassForActionRequest reqtopush = *reqtopush1;
         
-			if ((reqtopush.ActionFunctionId > 3) || (reqtopush.ActionFunctionId <= 0))  
-			{
-				oaisncoiscn++;
-			}
+//			if ((reqtopush.ActionFunctionId > 3) || (reqtopush.ActionFunctionId <= 0))  
+//			{
+//				oaisncoiscn++;
+//			}
          
 			((QueueForAOArgs[AOID])).Push(reqtopush);
 
@@ -835,6 +878,13 @@ template<TemplateFor_Service_NoDefaults>
 				TActionRequestToRun* dummyVar = static_cast<ActionRequest2*>(&ActionReq2);
 			}
 #endif
+			
+			if (IsExclusivelyPossessed == true)
+			{
+				//assert that the requesting AO is the possessing AO
+				configASSERT(PossessingAO != nullptr);
+				configASSERT(AOID == this->PossessingAO->GetAO_ID());
+			}
 
 			//push the request in the proper queue. the ActionReq1() will get the request.
 			((QueueForAOArgs[AOID])).Push(
@@ -858,6 +908,14 @@ template<TemplateFor_Service_NoDefaults>
 			}
 #endif
 
+			if (IsExclusivelyPossessed == true)
+			{
+				//assert that the requesting AO is the possessing AO
+				configASSERT(PossessingAO != nullptr);
+				configASSERT(AOID == this->PossessingAO->GetAO_ID());
+			}
+			
+			
 			//push the request in the proper queue. the ActionReq1() will get the request.
 			((QueueForAOArgs[AOID])).Push(
 				*((ActionReq3)(arg1, arg2, arg3, arg4, arg5)));
@@ -879,6 +937,13 @@ template<TemplateFor_Service_NoDefaults>
 				TActionRequestToRun* dummyVar = static_cast<ActionRequest1*>(&ActionReq1);
 			}
 #endif
+			
+			if (IsExclusivelyPossessed == true)
+			{
+				//assert that the requesting AO is the possessing AO
+				configASSERT(PossessingAO != nullptr);
+				configASSERT(AOID == this->PossessingAO->GetAO_ID());
+			}
 
 			QueueClassForActionRequest request;
 			Token* ret = (ActionReq1).Wait(request, arg1, arg2, arg3, arg4, arg5);
@@ -918,6 +983,13 @@ template<TemplateFor_Service_NoDefaults>
 				TActionRequestToRun* dummyVar = static_cast<ActionRequest2*>(&ActionReq2);
 			}
 #endif
+			
+			if (IsExclusivelyPossessed == true)
+			{
+				//assert that the requesting AO is the possessing AO
+				configASSERT(PossessingAO != nullptr);
+				configASSERT(AOID == this->PossessingAO->GetAO_ID());
+			}
 
 			QueueClassForActionRequest request;
 			Token* ret = (ActionReq2).Wait(request, arg1, arg2, arg3, arg4, arg5);
@@ -958,6 +1030,13 @@ template<TemplateFor_Service_NoDefaults>
 				TActionRequestToRun* dummyVar = static_cast<ActionRequest3*>(&ActionReq3);
 			}
 #endif
+			
+			if (IsExclusivelyPossessed == true)
+			{
+				//assert that the requesting AO is the possessing AO
+				configASSERT(PossessingAO != nullptr);
+				configASSERT(AOID == this->PossessingAO->GetAO_ID());
+			}
 
 			QueueClassForActionRequest request;
 			Token* ret = (ActionReq3).Wait(request, arg1, arg2, arg3, arg4, arg5);

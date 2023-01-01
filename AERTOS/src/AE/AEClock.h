@@ -644,14 +644,13 @@ inline void AEClock<TEMPLATEFORParams_AEClock>
 
 
 
-
+#if  RetireThis
 TEMPLATEFORNoDefaults_AEClock
 template<class TAETDU, class TAESPBObservor>
 inline void AEClock<TEMPLATEFORParams_AEClock>
 ::SetTDUToSPBClock(TAETDU TDU, TAESPBObservor * spbObservorToUpdateWith, float percentageOfDeltaRefresh)
 {
-
-
+ 
 	// I need to assert that the spbObservorToUpdateWith has already had its frequency configured
 	configASSERT(spbObservorToUpdateWith->FrequencyHasBeenConfigured == true);
 	//also assert that the SPB the TDU will be going off of is set to this clock
@@ -733,3 +732,4 @@ inline void AEClock<TEMPLATEFORParams_AEClock>
 
 
 }
+#endif

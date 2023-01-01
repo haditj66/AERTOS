@@ -59,6 +59,7 @@ public:
 	bool _frequencyIUpdateAt;
 	bool Input;
 	bool ClassForActionRequest;
+	bool LinkedSPBData; 
 
 	bool AOID_OfCurrentRequestingAO;
 	bool AOID_OfResource;
@@ -652,7 +653,8 @@ protected:
 
 		//the argument pool for the action request was all used up. you may
 		//need to inscrease the pool size for the action request.
-		configASSERT(false);
+		AEAssertRuntime(false,
+			"the argument pool for the action request was all used up. you may need to inscrease the pool size for the action request.");
 		return nullptr;
 	}
 

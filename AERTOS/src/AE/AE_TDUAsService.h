@@ -8,7 +8,7 @@
 
 //only imlement all this if configAE_USE_TDUs_AsService
 
-#if configAE_USE_TDUs_AsService == 1
+#if configAE_USE_TDUs_AsService == 0
 
 template<TemplateFor_AEAOUpdateableAAS>
 class AETDUAsService : public AEAOUpdateableAAS<TemplateARGSFor_AEAOUpdateableAAS>

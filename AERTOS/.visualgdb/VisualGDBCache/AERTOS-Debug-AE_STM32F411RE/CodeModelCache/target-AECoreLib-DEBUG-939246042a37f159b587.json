@@ -1,0 +1,2552 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/AE/libAECoreLib.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_bsp_based_library",
+			"_target_link_libraries",
+			"target_link_libraries",
+			"add_compile_options",
+			"add_compile_definitions",
+			"include",
+			"Cgen_Start",
+			"add_subdirectory",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"C:/Program Files (x86)/Sysprogs/VisualGDB/CMake/embedded/root.cmake",
+			"src/AE/CMakeLists.txt",
+			"cmake/MyCmakeHelpers.cmake",
+			"CMakeLists.txt",
+			"C:/AERTOSProjects/commonHalAOs/CGensaveFiles/cmakeGui/commonHalAOs_STM32F411RE/DEBUG/cgenCmakeCache_CAERTOSAERTOS.cmake",
+			"C:/AERTOSProjects/commonHalAOs/CGensaveFiles/cmakeGui/commonHalAOs_STM32F411RE/DEBUG/cgenCmakeCache.cmake",
+			"cmake/CgenCmakeConfigFunctions.cmake",
+			"cmake/GetBoardMetaTypes.cmake",
+			"AETarget.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 292,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 213,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 17,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 407,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 17,
+				"parent" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 392,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 17,
+				"parent" : 7
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 26,
+				"parent" : 9
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 350,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 87,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 89,
+				"parent" : 9
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 138,
+				"parent" : 9
+			},
+			{
+				"command" : 6,
+				"file" : 6,
+				"line" : 207,
+				"parent" : 14
+			},
+			{
+				"file" : 5,
+				"parent" : 15
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 1,
+				"parent" : 16
+			},
+			{
+				"file" : 4,
+				"parent" : 17
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 6,
+				"parent" : 18
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 95,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 2,
+				"parent" : 18
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 4,
+				"parent" : 18
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 381,
+				"parent" : 9
+			},
+			{
+				"file" : 7,
+				"parent" : 23
+			},
+			{
+				"command" : 5,
+				"file" : 7,
+				"line" : 178,
+				"parent" : 24
+			},
+			{
+				"command" : 5,
+				"file" : 7,
+				"line" : 216,
+				"parent" : 24
+			},
+			{
+				"command" : 5,
+				"file" : 7,
+				"line" : 140,
+				"parent" : 24
+			},
+			{
+				"command" : 5,
+				"file" : 7,
+				"line" : 100,
+				"parent" : 24
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 145,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 81,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 11,
+				"parent" : 18
+			},
+			{
+				"command" : 5,
+				"file" : 6,
+				"line" : 111,
+				"parent" : 14
+			},
+			{
+				"command" : 5,
+				"file" : 6,
+				"line" : 110,
+				"parent" : 14
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 10,
+				"parent" : 18
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 129,
+				"parent" : 9
+			},
+			{
+				"file" : 8,
+				"parent" : 35
+			},
+			{
+				"command" : 5,
+				"file" : 8,
+				"line" : 10,
+				"parent" : 36
+			},
+			{
+				"command" : 5,
+				"file" : 8,
+				"line" : 7,
+				"parent" : 36
+			},
+			{
+				"command" : 5,
+				"file" : 8,
+				"line" : 8,
+				"parent" : 36
+			},
+			{
+				"command" : 5,
+				"file" : 8,
+				"line" : 11,
+				"parent" : 36
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 91,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 6,
+				"line" : 186,
+				"parent" : 14
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 8,
+				"parent" : 18
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 97,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 99,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 472,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 93,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 85,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 581,
+				"parent" : 9
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 440,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 28,
+				"parent" : 9
+			},
+			{
+				"command" : 9,
+				"file" : 3,
+				"line" : 475,
+				"parent" : 9
+			},
+			{
+				"command" : 9,
+				"file" : 3,
+				"line" : 585,
+				"parent" : 9
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 383,
+				"parent" : 0
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 384,
+				"parent" : 0
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 385,
+				"parent" : 0
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 386,
+				"parent" : 0
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 408,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " --save-temps -g3 -O0"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : "-Wl,-verbose,"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : "-lC:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "-O0"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mcpu=cortex-m4"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mthumb"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mfpu=fpv4-sp-d16"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mfloat-abi=hard"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "C:/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerFreeRTOSHooks.h"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 12,
+					"define" : "AEPLATFORM__VSGDBCmakeNinja_armnoneabiid"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "AERTOS_ENVIRONMENT__RTOS_MICRO"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "ARM_MATH_CM4"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "ARM_OPTIMIZATION_SETTINGS__level0"
+				},
+				{
+					"backtrace" : 20,
+					"define" : "BOARD_USED__STM32F411RE"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "BUILD_TESTS__TRUE"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "BUILD_UNIT_TESTS__FALSE"
+				},
+				{
+					"backtrace" : 25,
+					"define" : "BoardModelType1=11"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "BoardModelType2="
+				},
+				{
+					"backtrace" : 27,
+					"define" : "BoardSeries=F4"
+				},
+				{
+					"backtrace" : 28,
+					"define" : "BoardVendor=STM32"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "Build_System__VSGDBCmake_Ninja"
+				},
+				{
+					"backtrace" : 30,
+					"define" : "CGEN_ALLOPTIONS=\"\""
+				},
+				{
+					"backtrace" : 31,
+					"define" : "CGEN_ALLOPTIONS=\"@BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE \""
+				},
+				{
+					"backtrace" : 32,
+					"define" : "CGEN_CMAKE_CURRENT_BINARY_DIR=\"C:/AERTOS/AERTOS/build/AE_STM32F411RE/Debug\""
+				},
+				{
+					"backtrace" : 33,
+					"define" : "CGEN_CMAKE_CURRENT_SOURCE_DIR=\"C:/AERTOS/AERTOS\""
+				},
+				{
+					"backtrace" : 4,
+					"define" : "DEBUG=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_BLOCKING_MODE=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_BUFFER_SIZE=4096"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_PROFILER_DRIVER=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_STDIO_DRIVER=1"
+				},
+				{
+					"backtrace" : 34,
+					"define" : "INCLUDE_HAL__TRUE"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "INTEGRATION_TESTS_FOR_commonHalAOs__defaultTest"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "INTEGRATION_TESTS__commonHalAOs"
+				},
+				{
+					"backtrace" : 39,
+					"define" : "INTEGRATION_TEST_CHOSEN=\"commonHalAOs\""
+				},
+				{
+					"backtrace" : 40,
+					"define" : "INTEGRATION_TEST_CHOSEN_SPECIFIC=\"defaultTest\""
+				},
+				{
+					"backtrace" : 41,
+					"define" : "OS_USED__NONE"
+				},
+				{
+					"backtrace" : 42,
+					"define" : "PATH_TO_TESTMACRO_FILE=\"C:/AERTOSProjects/commonHalAOs/CGensaveFiles/cmakeGui/commonHalAOs_STM32F411RE/DEBUG/IntegrationTestMacros.h\""
+				},
+				{
+					"backtrace" : 43,
+					"define" : "PRINT_METHOD__PRINT_SEMIHOSTING"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "PROFILER_STM32F4"
+				},
+				{
+					"backtrace" : 44,
+					"define" : "RTOS_USED__FREERTOS"
+				},
+				{
+					"backtrace" : 45,
+					"define" : "SIM_REAL__REALITY"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "STM32F411RE"
+				},
+				{
+					"backtrace" : 46,
+					"define" : "STM32F411xE"
+				},
+				{
+					"backtrace" : 47,
+					"define" : "SWIL_HWIL_DRIVEN__HWIL"
+				},
+				{
+					"backtrace" : 48,
+					"define" : "TOOLCHAIN_USED__arm_non_eabi_id"
+				},
+				{
+					"backtrace" : 49,
+					"define" : "USE_FREERTOS"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_FREERTOS_IF_FOUND"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "USE_HAL_DRIVER"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEADC"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEDMA"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEGPIOInput"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEGPIOOutput"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEI2C"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEPWM"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AESPI"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEUART"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "Using_AEHAL"
+				},
+				{
+					"backtrace" : 51,
+					"define" : "aehal"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "flash_layout"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/STM32F4xx_HAL_Driver/Inc"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/STM32F4xx_HAL_Driver/Inc/Legacy"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/CMSIS_HAL/Device/ST/STM32F4xx/Include"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/CMSIS_HAL/Core/Include"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/CMSIS_HAL/Include"
+				},
+				{
+					"backtrace" : 53,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/CMSIS_RTOS"
+				},
+				{
+					"backtrace" : 53,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/include"
+				},
+				{
+					"backtrace" : 53,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS"
+				},
+				{
+					"backtrace" : 53,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/portable/GCC/ARM_CM4F"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "C:/AERTOS/AERTOS/src/AE"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "C:/AERTOS/AERTOS/src/AE/HelperFunctions"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "C:/AERTOS/AERTOS/src/AE/exeTest"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "C:/AERTOS/AERTOS/src/AE/FreeRTOSConfigFiles"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/STM32F411RE/board_files"
+				},
+				{
+					"backtrace" : 56,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles"
+				},
+				{
+					"backtrace" : 57,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_STM32"
+				},
+				{
+					"backtrace" : 57,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_STM32/Series_F4"
+				},
+				{
+					"backtrace" : 57,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_STM32/Series_F4/ModelType1_11"
+				},
+				{
+					"backtrace" : 57,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_STM32/Series_F4/ModelType1_11/ModelType2_RE"
+				},
+				{
+					"backtrace" : 58,
+					"path" : "C:/AERTOS/AERTOS/src/AE/cmake/Framework1/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/AERTOS/AERTOS/."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/AERTOSProjects/commonHalAOs/conf"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/STM32F411RE/AEHalFiles"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/STM32F4xx_HAL_Driver/Inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/STM32F4xx_HAL_Driver/Inc/Legacy"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/CMSIS_HAL/Core/Include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/CMSIS_HAL/Device/ST/STM32F4xx/Include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/CMSIS_HAL/Include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/CMSIS_HAL/RTOS2/Include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				1,
+				3,
+				5,
+				7,
+				10,
+				15,
+				17,
+				23,
+				25,
+				28,
+				31,
+				34,
+				37,
+				39,
+				41,
+				46,
+				47,
+				50,
+				52,
+				54,
+				55,
+				57,
+				60,
+				63,
+				67,
+				69,
+				74,
+				78,
+				81,
+				83,
+				85,
+				91,
+				93
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " --save-temps -g3 -O0"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : "-Wl,-verbose,"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : "-lC:/Users/Hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "-O0"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mcpu=cortex-m4"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mthumb"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mfpu=fpv4-sp-d16"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-mfloat-abi=hard"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "C:/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerFreeRTOSHooks.h"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 12,
+					"define" : "AEPLATFORM__VSGDBCmakeNinja_armnoneabiid"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "AERTOS_ENVIRONMENT__RTOS_MICRO"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "ARM_MATH_CM4"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "ARM_OPTIMIZATION_SETTINGS__level0"
+				},
+				{
+					"backtrace" : 20,
+					"define" : "BOARD_USED__STM32F411RE"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "BUILD_TESTS__TRUE"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "BUILD_UNIT_TESTS__FALSE"
+				},
+				{
+					"backtrace" : 25,
+					"define" : "BoardModelType1=11"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "BoardModelType2="
+				},
+				{
+					"backtrace" : 27,
+					"define" : "BoardSeries=F4"
+				},
+				{
+					"backtrace" : 28,
+					"define" : "BoardVendor=STM32"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "Build_System__VSGDBCmake_Ninja"
+				},
+				{
+					"backtrace" : 30,
+					"define" : "CGEN_ALLOPTIONS=\"\""
+				},
+				{
+					"backtrace" : 31,
+					"define" : "CGEN_ALLOPTIONS=\"@BUILD_TESTS::TRUE @BUILD_UNIT_TESTS::FALSE @ARM_OPTIMIZATION_SETTINGS::level0 @PRINT_METHOD::PRINT_SEMIHOSTING @INCLUDE_HAL::TRUE \""
+				},
+				{
+					"backtrace" : 32,
+					"define" : "CGEN_CMAKE_CURRENT_BINARY_DIR=\"C:/AERTOS/AERTOS/build/AE_STM32F411RE/Debug\""
+				},
+				{
+					"backtrace" : 33,
+					"define" : "CGEN_CMAKE_CURRENT_SOURCE_DIR=\"C:/AERTOS/AERTOS\""
+				},
+				{
+					"backtrace" : 4,
+					"define" : "DEBUG=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_BLOCKING_MODE=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_BUFFER_SIZE=4096"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_PROFILER_DRIVER=1"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "FAST_SEMIHOSTING_STDIO_DRIVER=1"
+				},
+				{
+					"backtrace" : 34,
+					"define" : "INCLUDE_HAL__TRUE"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "INTEGRATION_TESTS_FOR_commonHalAOs__defaultTest"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "INTEGRATION_TESTS__commonHalAOs"
+				},
+				{
+					"backtrace" : 39,
+					"define" : "INTEGRATION_TEST_CHOSEN=\"commonHalAOs\""
+				},
+				{
+					"backtrace" : 40,
+					"define" : "INTEGRATION_TEST_CHOSEN_SPECIFIC=\"defaultTest\""
+				},
+				{
+					"backtrace" : 41,
+					"define" : "OS_USED__NONE"
+				},
+				{
+					"backtrace" : 42,
+					"define" : "PATH_TO_TESTMACRO_FILE=\"C:/AERTOSProjects/commonHalAOs/CGensaveFiles/cmakeGui/commonHalAOs_STM32F411RE/DEBUG/IntegrationTestMacros.h\""
+				},
+				{
+					"backtrace" : 43,
+					"define" : "PRINT_METHOD__PRINT_SEMIHOSTING"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "PROFILER_STM32F4"
+				},
+				{
+					"backtrace" : 44,
+					"define" : "RTOS_USED__FREERTOS"
+				},
+				{
+					"backtrace" : 45,
+					"define" : "SIM_REAL__REALITY"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "STM32F411RE"
+				},
+				{
+					"backtrace" : 46,
+					"define" : "STM32F411xE"
+				},
+				{
+					"backtrace" : 47,
+					"define" : "SWIL_HWIL_DRIVEN__HWIL"
+				},
+				{
+					"backtrace" : 48,
+					"define" : "TOOLCHAIN_USED__arm_non_eabi_id"
+				},
+				{
+					"backtrace" : 49,
+					"define" : "USE_FREERTOS"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "USE_FREERTOS_IF_FOUND"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "USE_HAL_DRIVER"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEADC"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEDMA"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEGPIOInput"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEGPIOOutput"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEI2C"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEPWM"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AESPI"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "USING_AEUART"
+				},
+				{
+					"backtrace" : 50,
+					"define" : "Using_AEHAL"
+				},
+				{
+					"backtrace" : 51,
+					"define" : "aehal"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "flash_layout"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/STM32F4xx_HAL_Driver/Inc"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/STM32F4xx_HAL_Driver/Inc/Legacy"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/CMSIS_HAL/Device/ST/STM32F4xx/Include"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/CMSIS_HAL/Core/Include"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32f4ll/CMSIS_HAL/Include"
+				},
+				{
+					"backtrace" : 53,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/CMSIS_RTOS"
+				},
+				{
+					"backtrace" : 53,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/include"
+				},
+				{
+					"backtrace" : 53,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS"
+				},
+				{
+					"backtrace" : 53,
+					"path" : "C:/AERTOS/AERTOS/frameworks/FreeRTOS/portable/GCC/ARM_CM4F"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "C:/AERTOS/AERTOS/src/AE"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "C:/AERTOS/AERTOS/src/AE/HelperFunctions"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "C:/AERTOS/AERTOS/src/AE/exeTest"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "C:/AERTOS/AERTOS/src/AE/FreeRTOSConfigFiles"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/STM32F411RE/board_files"
+				},
+				{
+					"backtrace" : 56,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles"
+				},
+				{
+					"backtrace" : 57,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_STM32"
+				},
+				{
+					"backtrace" : 57,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_STM32/Series_F4"
+				},
+				{
+					"backtrace" : 57,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_STM32/Series_F4/ModelType1_11"
+				},
+				{
+					"backtrace" : 57,
+					"path" : "C:/AERTOS/AERTOS/src/AE/AESetup/Board/Vendor_STM32/Series_F4/ModelType1_11/ModelType2_RE"
+				},
+				{
+					"backtrace" : 58,
+					"path" : "C:/AERTOS/AERTOS/src/AE/cmake/Framework1/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/AERTOS/AERTOS/."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/AERTOSProjects/commonHalAOs/conf"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal/boards/STM32F411RE/AEHalFiles"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/AERTOS/AERTOS/src/AE/hal"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/STM32F4xx_HAL_Driver/Inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/STM32F4xx_HAL_Driver/Inc/Legacy"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/CMSIS_HAL/Core/Include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/CMSIS_HAL/Device/ST/STM32F4xx/Include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/CMSIS_HAL/Include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/AERTOS/AERTOS/frameworks/stm32half4/CMSIS_HAL/RTOS2/Include"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				11,
+				14
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "BSP::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "FreeRTOS::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "stm32half4::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "BSP_EFP_Profiler::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "stm32f4ll::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "AECoreLib::@dbae314adb83077d4c0f",
+	"name" : "AECoreLib",
+	"nameOnDisk" : "libAECoreLib.a",
+	"paths" : 
+	{
+		"build" : "src/AE",
+		"source" : "src/AE"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "SetupFiles",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		},
+		{
+			"name" : "Configs",
+			"sourceIndexes" : 
+			[
+				8,
+				9,
+				10
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				11,
+				14,
+				15,
+				17,
+				46,
+				47
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				12,
+				13,
+				16,
+				21,
+				42,
+				43,
+				44,
+				45,
+				48
+			]
+		},
+		{
+			"name" : "HelperFunctions",
+			"sourceIndexes" : 
+			[
+				18,
+				19,
+				20
+			]
+		},
+		{
+			"name" : "AELoops",
+			"sourceIndexes" : 
+			[
+				22,
+				23,
+				24,
+				25
+			]
+		},
+		{
+			"name" : "AE",
+			"sourceIndexes" : 
+			[
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35
+			]
+		},
+		{
+			"name" : "AEIntegrationTesting",
+			"sourceIndexes" : 
+			[
+				36,
+				37
+			]
+		},
+		{
+			"name" : "AEManagers",
+			"sourceIndexes" : 
+			[
+				38,
+				39,
+				40,
+				41
+			]
+		},
+		{
+			"name" : "AEClocks",
+			"sourceIndexes" : 
+			[
+				49,
+				50
+			]
+		},
+		{
+			"name" : "AEEvents",
+			"sourceIndexes" : 
+			[
+				51,
+				52,
+				53,
+				54,
+				55
+			]
+		},
+		{
+			"name" : "AESPBS",
+			"sourceIndexes" : 
+			[
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65
+			]
+		},
+		{
+			"name" : "AEObservors",
+			"sourceIndexes" : 
+			[
+				66,
+				67,
+				68,
+				69,
+				70,
+				71
+			]
+		},
+		{
+			"name" : "AEInterpretors",
+			"sourceIndexes" : 
+			[
+				72,
+				73,
+				74,
+				75
+			]
+		},
+		{
+			"name" : "AEFilters",
+			"sourceIndexes" : 
+			[
+				76,
+				77,
+				78,
+				79
+			]
+		},
+		{
+			"name" : "AELinks",
+			"sourceIndexes" : 
+			[
+				80,
+				81,
+				82,
+				83,
+				84,
+				85
+			]
+		},
+		{
+			"name" : "AEUtilities",
+			"sourceIndexes" : 
+			[
+				86,
+				87,
+				88
+			]
+		},
+		{
+			"name" : "AETDU",
+			"sourceIndexes" : 
+			[
+				89,
+				90,
+				91
+			]
+		},
+		{
+			"name" : "AEFSM",
+			"sourceIndexes" : 
+			[
+				92,
+				93
+			]
+		},
+		{
+			"name" : "Object Libraries",
+			"sourceIndexes" : 
+			[
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128,
+				129,
+				130,
+				131,
+				132,
+				133,
+				134,
+				135,
+				136,
+				137,
+				138,
+				139,
+				140,
+				141,
+				142,
+				143,
+				144,
+				145,
+				146,
+				147,
+				148,
+				149,
+				150,
+				151,
+				152,
+				153,
+				154,
+				155,
+				156,
+				157,
+				158,
+				159,
+				160,
+				161,
+				162,
+				163,
+				164,
+				165,
+				166,
+				167,
+				168,
+				169,
+				170,
+				171,
+				172,
+				173,
+				174,
+				175,
+				176,
+				177,
+				178
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESetup/Board/Vendor_STM32/BoardVendorSetup.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AESetup/Board/Vendor_STM32/BoardVendorSetup.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESetup/Board/Vendor_STM32/Series_F4/SeriesSetup.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AESetup/Board/Vendor_STM32/Series_F4/SeriesSetup.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESetup/Board/Vendor_STM32/Series_F4/ModelType1_11/ModelType1Setup.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AESetup/Board/Vendor_STM32/Series_F4/ModelType1_11/ModelType1Setup.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESetup/Board/Vendor_STM32/Series_F4/ModelType1_11/ModelType2_RE/ModelType2Setup.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AESetup/Board/Vendor_STM32/Series_F4/ModelType1_11/ModelType2_RE/ModelType2Setup.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "C:/AERTOSProjects/commonHalAOs/conf/AEConfig.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "C:/AERTOSProjects/commonHalAOs/conf/EventsForProject.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "C:/AERTOSProjects/commonHalAOs/conf/UserBSPConfig.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/boards/STM32F411RE/board_files/UARTConsole.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/hal/boards/STM32F411RE/board_files/UARTConsole.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/hal/boards/STM32F411RE/board_files/stm32f4xx_hal_conf.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "src/AE/hal/boards/STM32F411RE/board_files/system_stm32f4xx.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles/AEPerformanceTimer.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles/AETimerSimple.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/hal/boards/STM32F411RE/AECoreHalRequiredFiles/AETimerSimple.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/HelperFunctions/AEmemcpy.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/HelperFunctions/ByteSerializer.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/HelperFunctions/FastSine.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEPerformanceTimer.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AELoopObject.h",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AELoopObject.cpp",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AELoop.h",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AELoop.cpp",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AE.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AE_Init.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AE_Init.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AECore.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEAO.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEAO.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEAOUpdateableAAS.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/InlineISubscribeable.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEUtils.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEUtils.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEIntegrationTesting.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEIntegrationTesting.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEPublishSubscribeManager.h",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEPublishSubscribeManager.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEPoolManager.h",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEPoolManager.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEDefines.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESet.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEFastTrig.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AECircularBuffer.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AECircularBuffer.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/FreeRTOSConfigFiles/FreeRTOSSetUpFunctions.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/FreeRTOSConfigFiles/FreeRTOSConfig.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEClock.h",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEClock.cpp",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/QueueArgStructures.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/QueueArgStructures.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEEventBase.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEEventBase.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/EventsForProject.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESPBObservor.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AESPBObservor.cpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESPBObservorOutputType.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/SPBDataSubscription.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/SPBDataSubscription.cpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/SPBSubprivateImp.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/InputChannel.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/InputChannel.cpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/InputChannelOutputType.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/TaskPoolForSPBChain.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEObservorBase.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEObservorBase.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEObservorSensor.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEObservorSensor.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEObservorTypes.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEObservorSensorFilterOut.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEObservorInterpretorOutputType.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEObservorInterpretorBase.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEObservorInterpretorBase.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEObservorInterpretor.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEFilter.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEMultiChannelFilter.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AEMultiChannelFilter.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEMultiChannelFilterCHANNELSELECT.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AELinkSignalFlow.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AELinkSignalFlow.cpp",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AELinkDeterministic.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AELinkDeterministic.cpp",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AELinkBase.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AELinkBase.cpp",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/ActionRequestObjectArg.h",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEAOResourceAsService.h",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AEUtilityAsService.h",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AE_TDUAsService.h",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/ActionRequestObjectArgTDU.h",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/ActionRequestObjectArgTDU.cpp",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/AE/AESimpleFSM.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/AE/AESimpleFSM.cpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/BSP.dir/C_/Users/hadi/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/STM32F4xxxx/StartupFiles/startup_stm32f411xe.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/BSP_EFP_Profiler.dir/C_/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/FastSemihosting.cpp.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/BSP_EFP_Profiler.dir/C_/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/InstrumentingProfiler.cpp.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/BSP_EFP_Profiler.dir/C_/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/TestResourceManager.cpp.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/BSP_EFP_Profiler.dir/C_/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/SamplingProfiler.cpp.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/BSP_EFP_Profiler.dir/C_/Users/hadi/AppData/Local/VisualGDB/EmbeddedEFPs/Profiler/ProfilerRTOS_FreeRTOS.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dfsdm.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpsmbus.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpsmbus_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smbus.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 8,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/stm32half4.dir/frameworks/stm32half4/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/croutine.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/event_groups.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/list.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/queue.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/stream_buffer.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/tasks.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/timers.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/CMSIS_RTOS/cmsis_os.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/portable/GCC/ARM_CM4F/port.c.obj",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 6,
+			"isGenerated" : true,
+			"path" : "build/AE_STM32F411RE/Debug/CMakeFiles/FreeRTOS.dir/frameworks/FreeRTOS/portable/MemMang/heap_4.c.obj",
+			"sourceGroupIndex" : 19
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

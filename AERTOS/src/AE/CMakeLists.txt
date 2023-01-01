@@ -101,7 +101,9 @@ Cgen_Option(
 
  #AEObjects.h
  AESet.h 
+ AEFastTrig.h
  AECircularBuffer.h
+ AECircularBuffer.cpp
  #PeripheralImplementations.h
  #PeripheralImplementations.cpp
 
@@ -161,6 +163,7 @@ set(AECoreLib_SPBS
  AESPBObservorOutputType.h
  SPBDataSubscription.h
  SPBDataSubscription.cpp
+ SPBSubprivateImp.h
  InputChannel.h
  InputChannel.cpp
  InputChannelOutputType.h
@@ -316,6 +319,8 @@ if(${Build_System} STREQUAL "VSGDBCmake_Ninja" )
 	target_include_directories(BSP PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")  
 	target_include_directories(BSP PUBLIC "${INTEGRATION_TARGET_DIRECTORY}/conf")  
 
+	set_target_properties(AECoreLib PROPERTIES LIB_BASE_DIR "") 
+    set_target_properties(AECoreLib PROPERTIES ANYADDITIONALINCLUDEDIRS "")
 	
  else()
 

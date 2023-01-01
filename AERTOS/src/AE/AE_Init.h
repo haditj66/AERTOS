@@ -2,6 +2,8 @@
 
 #include "AE.h"
 
+#include "SPBSubprivateImp.h"
+
 //#include "AEObjects.h"
 
   

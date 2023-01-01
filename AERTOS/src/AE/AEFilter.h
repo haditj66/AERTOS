@@ -4,6 +4,13 @@
 #include "AECircularBuffer.h"
 #include "AEUtils.h"
 
+
+
+
+//#define DEFINE_CRTP_SELF(derived_param) \
+//     derived_param const& self() const { return *static_cast<derived_param const*>(this); } \
+//derived_param& self() { return *static_cast<derived_param*>(this); } 
+
 template<class TFilterDerived, uint16_t PastDataBufferSize = 1>
 class Filter
 {
@@ -18,6 +25,10 @@ TEMPLATEFOR_AESPBOUTPUT
 friend class   SPBSubprivateImp;
 
 public: 
+	
+	
+//	DEFINE_CRTP_SELF(TFilterDerived)
+		
 	uint16_t BufferSize;
         float SamplingPeriodOfObservorInSeconds;
         
@@ -30,6 +41,8 @@ public:
 	
 
 protected:
+	
+	TFilterDerived filterImpl;
 
 	//only meant to be called by AEObservorSensorFilterOut GetObservationFromFilter() function.
 	float GetObservation();
@@ -39,6 +52,10 @@ protected:
 	float FilterOutputValue;
 
 	float* GetOutputDataAddress();
+	
+
+//	friend TFilterDerived;
+//	Filter() = default;
 };
 
 
@@ -66,23 +83,32 @@ inline Filter<TFilterDerived, PastDataBufferSize>::Filter()
 template<class TFilterDerived, uint16_t PastDataCircularBuffer>
 inline float Filter<TFilterDerived, PastDataCircularBuffer>::operator()(float a)
 { 
-	TFilterDerived& derivedFilter =  static_cast<TFilterDerived&>(*this);
+//	TFilterDerived& derivedFilter =  static_cast<TFilterDerived&>(*this);
+ 
 
 	//push this new past value into the circular bufer for that filter.
 	PastDataCircularBuffer.Push(a, false);
 
-	FilterOutputValue = derivedFilter.RunFilter(a);
+	FilterOutputValue = filterImpl.RunFilter(a);
 
 	return FilterOutputValue;
 }
 
+
+
 template<class TFilterDerived, uint16_t PastDataBufferSize>
 inline void Filter<TFilterDerived, PastDataBufferSize>::Initialize(float samplingPeriodOfObservorInSeconds)
 {
-	TFilterDerived& derivedFilter = static_cast<TFilterDerived&>(*this);
+
+	
+//	TFilterDerived& derivedFilter = *static_cast<TFilterDerived*>(this);
+ 
 
 	SamplingPeriodOfObservorInSeconds = samplingPeriodOfObservorInSeconds;
 
-	derivedFilter.InitializeImpl(samplingPeriodOfObservorInSeconds);
+	filterImpl.PastDataCircularBuffer = PastDataCircularBuffer.GetBufferAddress();
+	filterImpl.SamplingPeriodOfObservorInSeconds = samplingPeriodOfObservorInSeconds;
+	filterImpl.PastDataBufferSize = PastDataBufferSize;
+	filterImpl.InitializeImpl(samplingPeriodOfObservorInSeconds);
 }
 

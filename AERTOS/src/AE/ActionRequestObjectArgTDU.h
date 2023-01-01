@@ -64,6 +64,9 @@ public:
 
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating. 
 //protected:	typedef void(*SetServiceReqFunc)(ForwardDeclaredTDU* p, ARG1 Argument1);
+protected: typedef void(*CancelCleanUp_fptr)(ForwardDeclaredTDU* p);
+protected:	CancelCleanUp_fptr _CancelCleanUp = nullptr;
+public: void SetCancelCleanUpFunc(CancelCleanUp_fptr s) {this->_CancelCleanUp = s; }	
 	typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1);
 //public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
 public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }		
@@ -89,18 +92,20 @@ protected:
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
 
-	virtual void CancelCleanUp();
+	void CancelCleanUp() ;
 
-	float* Input;
+	float* LinkedSPBData;
 	float _frequencyIUpdateAt;
 
 };
 
 template<TemplateForActionArgTDU_NoDefaults1>
-inline void ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::CancelCleanUp()
+inline void ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::CancelCleanUp() 
 {
 	//this CancelCleanUp needs to be implemented for the action request you tries to cancel
-	configASSERT(false);
+	configASSERT(_CancelCleanUp != nullptr);
+	
+	this->_CancelCleanUp(this->ClassForActionRequest);
 }
 
 template<TemplateForActionArgTDU_NoDefaults1>
@@ -227,9 +232,12 @@ public:
 	};
 
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
-	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2) = 0;
+//	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2) = 0;
 	//this is the function that will continueally by called while updating.
 	//virtual bool Update() = 0;
+protected: typedef void(*CancelCleanUp_fptr)(ForwardDeclaredTDU* p);
+protected:	CancelCleanUp_fptr _CancelCleanUp = nullptr;
+public: void SetCancelCleanUpFunc(CancelCleanUp_fptr s) {this->_CancelCleanUp = s; }	
 protected: typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1, ARG2 Argument2);
 	//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
 public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }		
@@ -259,9 +267,9 @@ protected:
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
 
-	virtual void CancelCleanUp();
+	void CancelCleanUp()  ;
 
-	float* Input;
+	float* LinkedSPBData;
 	float _frequencyIUpdateAt;
 
 };
@@ -270,7 +278,9 @@ template<TemplateForActionArgTDU_NoDefaults2>
 inline void ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::CancelCleanUp()
 {
 	//this CancelCleanUp needs to be implemented for the action request you tries to cancel
-	configASSERT(false);
+	configASSERT(_CancelCleanUp != nullptr);
+	
+	this->_CancelCleanUp(this->ClassForActionRequest);
 }
 
 template<TemplateForActionArgTDU_NoDefaults2>
@@ -399,9 +409,12 @@ public:
 	};
 
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
-	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3) = 0;
+//	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3) = 0;
 	//this is the function that will continueally by called while updating.
 	//virtual bool Update() = 0;
+protected: typedef void(*CancelCleanUp_fptr)(ForwardDeclaredTDU* p);
+protected:	CancelCleanUp_fptr _CancelCleanUp = nullptr;
+public: void SetCancelCleanUpFunc(CancelCleanUp_fptr s) {this->_CancelCleanUp = s; }	
 protected: typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1, ARG2 Argument22, ARG3 Argument3);
 	//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
 public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }		
@@ -430,9 +443,9 @@ protected:
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
 
-	virtual void CancelCleanUp();
+	void CancelCleanUp()  ;
 
-	float* Input;
+	float* LinkedSPBData;
 	float _frequencyIUpdateAt;
 
 };
@@ -441,7 +454,9 @@ template<TemplateForActionArgTDU_NoDefaults3>
 inline void ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::CancelCleanUp()
 {
 	//this CancelCleanUp needs to be implemented for the action request you tries to cancel
-	configASSERT(false);
+	configASSERT(_CancelCleanUp != nullptr);
+	
+	this->_CancelCleanUp(this->ClassForActionRequest);
 }
 
 template<TemplateForActionArgTDU_NoDefaults3>
@@ -568,9 +583,12 @@ public:
 	};
 
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
-	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4) = 0;
+//	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4) = 0;
 	//this is the function that will continueally by called while updating.
 	//virtual bool Update() = 0;
+protected: typedef void(*CancelCleanUp_fptr)(ForwardDeclaredTDU* p);
+protected:	CancelCleanUp_fptr _CancelCleanUp = nullptr;
+public: void SetCancelCleanUpFunc(CancelCleanUp_fptr s) {this->_CancelCleanUp = s; }	
 protected: typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1, ARG2 Argument22, ARG3 Argument3, ARG4 Argument4);
 	//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
 public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }	
@@ -598,9 +616,9 @@ protected:
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
 
-	virtual void CancelCleanUp();
+	void CancelCleanUp()  ;
 
-	float* Input;
+	float* LinkedSPBData;
 	float _frequencyIUpdateAt;
 
 };
@@ -609,7 +627,9 @@ template<TemplateForActionArgTDU_NoDefaults4>
 inline void ActionRequestObjectArgTDU4<TemplateForActionArgTDU_Args4>::CancelCleanUp()
 {
 	//this CancelCleanUp needs to be implemented for the action request you tries to cancel
-	configASSERT(false);
+	configASSERT(_CancelCleanUp != nullptr);
+	
+	this->_CancelCleanUp(this->ClassForActionRequest);
 }
 
 template<TemplateForActionArgTDU_NoDefaults4>
@@ -736,9 +756,13 @@ public:
 	};
 
 	//this is the function that ets the parameters for the initiation of the actionrequest to start updating.
-	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5) = 0;
+//	virtual void RequestImpl(ARG1 Argument1, ARG2 Argument2, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5) = 0;
 	//this is the function that will continueally by called while updating.
 	//virtual bool Update() = 0;
+	
+protected: typedef bool(*CancelCleanUp_fptr)(ForwardDeclaredTDU* p);
+protected:	CancelCleanUp_fptr _CancelCleanUp = nullptr;
+public: void SetCancelCleanUpFunc(CancelCleanUp_fptr s) {this->_CancelCleanUp = s; }	
 protected: typedef bool(*UpdateFunc)(ForwardDeclaredTDU* p, ARG1 Argument1, ARG2 Argument22, ARG3 Argument3, ARG4 Argument4, ARG5 Argument5);
 	//public: void SetServiceFunc(SetServiceReqFunc s) {_RequestImpl = s; }
 public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }	
@@ -767,18 +791,20 @@ protected:
 	void PostEvtToRequestingAO(AEEventDiscriminator_t * const evtToPost);
 
 
-	virtual void CancelCleanUp();
+	void CancelCleanUp() override;
 
-	float* Input;
+	float* LinkedSPBData;
 	float _frequencyIUpdateAt;
 
 };
 
 template<TemplateForActionArgTDU_NoDefaults5>
-inline void ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::CancelCleanUp()
+inline void ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::CancelCleanUp()  
 {
 	//this CancelCleanUp needs to be implemented for the action request you tries to cancel
-	configASSERT(false);
+	configASSERT(_CancelCleanUp != nullptr);
+	
+	this->_CancelCleanUp(this->ClassForActionRequest);
 }
 
 template<TemplateForActionArgTDU_NoDefaults5>

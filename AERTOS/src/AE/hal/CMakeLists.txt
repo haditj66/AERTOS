@@ -63,7 +63,10 @@ add_bsp_based_library(NAME AEHalLib
 		AllPeripheralObjects.h
 		
 		)
-		 
+
+	set_target_properties(AEHalLib PROPERTIES LIB_BASE_DIR "") 
+    set_target_properties(AEHalLib PROPERTIES ANYADDITIONALINCLUDEDIRS "")
+
 target_link_libraries(AEHalLib PUBLIC  AECoreLib)  
 
 set(HalLibSrcs "${PATH_TO_REQUIRED_Hal_FILES}/UserDefinedInstances.cpp"  

@@ -4,6 +4,8 @@
  
 #include "AEIntegrationTesting.h" 
 #include "AEFilter.h"
+#include "AESPBObservor.h"
+#include "AEObservorSensorFilterOut.h"
 
 #ifdef RTOS_USED__FREERTOS
 #include "FreeRTOS.h"

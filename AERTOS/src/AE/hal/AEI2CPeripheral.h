@@ -15,9 +15,9 @@
 #include "AEDMA.h"
 #endif 
 
-
-typedef void(*AE_I2C_MasterTxCpltCallback_t)(void);
-typedef void(*AE_I2C_MasterRxCpltCallback_t)(void);
+class AEI2C;
+typedef void(*AE_I2C_MasterTxCpltCallback_t)(AEI2C*);
+typedef void(*AE_I2C_MasterRxCpltCallback_t)(AEI2C*);
 
 class AEI2C
 { 
@@ -27,8 +27,12 @@ class AEI2C
 #endif
 	
 public:
-	AEI2C() {AE_I2C_MasterTxCpltCallback = []()->void {};
-		AE_I2C_MasterRxCpltCallback = []()->void {}; }; 
+	AEI2C() {
+		TotalNumOfI2cID++;
+		ID = TotalNumOfI2cID;
+		AE_I2C_MasterTxCpltCallback = [](AEI2C* p) ->void {};
+		AE_I2C_MasterRxCpltCallback = [](AEI2C* p)->void {};
+	}; 
 	
 	
 #ifdef USING_AEDMA 
@@ -38,13 +42,17 @@ public:
 #endif 
 	
 	
+	uint16_t GetId() const
+	{
+		return ID;
+	}
 	
 	uint8_t* GetI2CBuffer()
 	{
 		return I2Cbuffer22;
 	}
 	
-	void SetI2C_MasterTxCpltCallback_t(AE_I2C_MasterTxCpltCallback_t ae_I2C_MasterTxCpltCallback_t)
+	void SetI2C_MasterTxCpltCallback(AE_I2C_MasterTxCpltCallback_t ae_I2C_MasterTxCpltCallback_t)
 	{
 		AE_I2C_MasterTxCpltCallback = ae_I2C_MasterTxCpltCallback_t;
 	}
@@ -84,6 +92,9 @@ public:
 	I2C_Handle* _i2c_Handle;
 
 private:  
+	
+	static uint8_t TotalNumOfI2cID;
+	uint8_t ID;
 	
 	AE_I2C_MasterTxCpltCallback_t AE_I2C_MasterTxCpltCallback; 
 	AE_I2C_MasterRxCpltCallback_t AE_I2C_MasterRxCpltCallback; 
