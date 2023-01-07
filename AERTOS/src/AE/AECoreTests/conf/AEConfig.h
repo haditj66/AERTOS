@@ -35,8 +35,10 @@
 #define AOPRIORITYLOWEST 5
 #define AOPRIORITYMEDIUM 10
 #define AOPRIORITYHIGHEST 29
-#define NUMOFACTIVEOBJECTS 5
-#define HIGHEST_NUM_OF_EVT_INSTANCES 2
+#define NUMOFACTIVEOBJECTS 2
+#define HIGHEST_NUM_OF_EVT_INSTANCES 3
+#define MAX_OUTPUT_SIZE_OF_SPB_SET_TO_TDU 0
+#define NUM_OF_TDUS_THAT_FLOW_FROM_SPBS 0
 #define MAXSPB_CHAIN_POOLSIZE 5
 #define MAXNUMOFINTERPRETORS 3
 #define MAXNUMOFOBSERVERINFLUENCES 2
@@ -47,9 +49,10 @@
 #define MaxNumOfAELoops 3
 #define MAXNUMBEROFINPUTSIGNALS_TO_A_SPB 1
 #define MAXNUMBEROFOUTPUTSIGNALS_TO_A_SPB 1
-#define MAXNUM_OF_SUBSCRIBERS_To_A_SPB 3
-#define MAXNUM_OF_AE_SUBSCRIPTIONS_To_SPBs 3
-#define TOTALMAXNUMBEROFOUTPUTSIGNALS_TO_ALL_SPBs 25
+#define MAXNUM_OF_SUBSCRIBERS_To_A_SPB 1
+#define MAXNUM_OF_AE_SUBSCRIPTIONS_To_SPBs 1
+#define MAXNUM_OF_TOTAL_SPB_SUBSCRIPTIONS 1
+#define TOTALMAXNUMBEROFOUTPUTSIGNALS_TO_ALL_SPBs 10
 #define MAXNUMOFTDUSSETTOTheSameSPB 3
 #define configAE_USE_TDUs_AsService 1
 #define configAE_USE_U_AsService 1
@@ -57,7 +60,6 @@
 #define DontCheckForHardDeadlinesInSPBsForEverySetInput
 #define AEDontCheckForCorrectActionRequestTemplate
 #define Target_stm32f4
-#define SPB_OF_FILTER1_SUBSCRIBED
 
 
 
@@ -70,8 +72,11 @@
 //AO defines
 //####################################
 
-#define Event1 I2C_RXCpltEVT
-#define Event1Size 5
+#define Event1 DummyEVT
+#define Event1Size 1
+
+#define Event2 I2C_RXCpltEVT
+#define Event2Size 5
 
 #define Signal1 SomeOther
 
@@ -80,9 +85,6 @@
 #define Signal3 Button2
 
 #define Signal4 Button3
-
-
-
 
 
 

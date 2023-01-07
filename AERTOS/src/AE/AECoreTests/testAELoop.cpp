@@ -40,6 +40,11 @@ AE_Init();
 	AEITEST_EXPECT_TEST_TO_RUN_AECoreTests("Looponce");
 //UserCode_Sectionbeforemain_end
 
+
+
+
+
+
 static AELoopObjectTest objectTest_l;
 objectTest = &objectTest_l;
 objectTest->InitObject(10, AEPriorities::MediumPriority);
@@ -48,6 +53,7 @@ objectTest->InitObject(10, AEPriorities::MediumPriority);
 
 //UserCode_Sectionbeforelinks
 //UserCode_Sectionbeforelinks_end
+
 
 
 //UserCode_Sectionbeforeclock

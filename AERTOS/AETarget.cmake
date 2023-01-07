@@ -3,15 +3,15 @@
 ################################################
 
 
-set(INTEGRATION_TESTS commonHalAOs)
+set(INTEGRATION_TESTS AECoreTests)
 add_compile_definitions(INTEGRATION_TESTS__${INTEGRATION_TESTS})
-add_compile_definitions(INTEGRATION_TEST_CHOSEN="commonHalAOs")
-set(INTEGRATION_TESTS_FOR_commonHalAOs dataupload1VarTest)
-add_compile_definitions(INTEGRATION_TESTS_FOR_commonHalAOs__${INTEGRATION_TESTS_FOR_commonHalAOs})
-add_compile_definitions(INTEGRATION_TEST_CHOSEN_SPECIFIC="dataupload1VarTest")
+add_compile_definitions(INTEGRATION_TEST_CHOSEN="AECoreTests")
+set(INTEGRATION_TESTS_FOR_AECoreTests testAELoop)
+add_compile_definitions(INTEGRATION_TESTS_FOR_AECoreTests__${INTEGRATION_TESTS_FOR_AECoreTests})
+add_compile_definitions(INTEGRATION_TEST_CHOSEN_SPECIFIC="testAELoop")
 add_compile_definitions(CGEN_ALLOPTIONS="")
 
-set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOSProjects/commonHalAOs")
+set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/AECoreTests")
 
 
 #macro(Target_Directory_Chooser)
@@ -24,8 +24,8 @@ set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOSProjects/commonHalAOs")
         #set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/hal/exeHalTest")
         #elseif(${_arg_TARGET_NAME} STREQUAL "AECoreTestEXE")
         #set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/AECoreTestEXE")
-        #elseif(${_arg_TARGET_NAME} STREQUAL "commonHalAOs")
-        #set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/commonHalAOs")
+        #elseif(${_arg_TARGET_NAME} STREQUAL "AECoreTests")
+        #set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/AECoreTests")
         #elseif(${_arg_TARGET_NAME} STREQUAL "CGENTest2")
         #set(INTEGRATION_TARGET_DIRECTORY "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest2")
         #endif()

@@ -7,9 +7,9 @@
 
 #pragma once
 
-void RunSelectedIntegrationTest_testFSM();
+void RunSelectedIntegrationTest_testAELoop();
 
 static void RunSelectedIntegrationTest()
 {
-    RunSelectedIntegrationTest_testFSM();
+    RunSelectedIntegrationTest_testAELoop();
 }
