@@ -6,10 +6,7 @@
 
 
 
- 
- 
-
-inline bool AEI2C::WriteBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t* datatoWrite)
+inline void AEI2C::WriteBytes_ASYNC(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t* datatoWrite)
 {
 	devAddr = devAddr << 1; // needs to be shifted because of the way stm hal shifts addresses over by one
 	this->I2Cbuffer22[0] = regAddr;
@@ -18,26 +15,39 @@ inline bool AEI2C::WriteBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, 
 		memcpy(this->I2Cbuffer22 + 1, datatoWrite, length);
 	} 
 	HAL_I2C_Master_Transmit_IT(this->_i2c_Handle, devAddr, this->I2Cbuffer22, length + 1);
-	//int16_t attempts = 0;
-	//while (HAL_I2C_GetState(this->_i2c_Handle) != HAL_I2C_STATE_READY) {}
+	
+}
+
+inline void AEI2C::ReadBytes_ASYNC(uint8_t devAddr, uint8_t length)
+{
+	devAddr = devAddr << 1; // needs to be shifted because of the way stm hal shifts addresses over by one
+	//while (HAL_I2C_GetState(&this->PeripheralHandle_t) != HAL_I2C_STATE_READY)
+	//{}
+	HAL_I2C_Master_Receive_DMA(this->_i2c_Handle, devAddr, I2Cbuffer22, length); //_DMA
+ 
+	 
+}
+ 
+ 
+
+inline bool AEI2C::WriteBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t* datatoWrite)
+{
+	WriteBytes_ASYNC(devAddr, regAddr, length, datatoWrite);
+	while (HAL_I2C_GetState(this->_i2c_Handle) != HAL_I2C_STATE_READY) {}
 	return true;
 }
 
 inline int8_t AEI2C::ReadBytes(uint8_t devAddr, uint8_t length, uint8_t *pdata, uint16_t timeout)
 {
-	devAddr = devAddr << 1; // needs to be shifted because of the way stm hal shifts addresses over by one
-	//while (HAL_I2C_GetState(&this->PeripheralHandle_t) != HAL_I2C_STATE_READY)
-	//{}
-	HAL_I2C_Master_Receive_DMA(this->_i2c_Handle, devAddr, I2Cbuffer22, length);
+	ReadBytes_ASYNC(devAddr, length);
+	
 	//int16_t attempts = 0;
-	//while (HAL_I2C_GetState(this->_i2c_Handle) != HAL_I2C_STATE_READY) {}
-	//for (uint8_t i = 0; i < length; i++) { pdata[i] = I2Cbuffer22[i]; }
+	while (HAL_I2C_GetState(this->_i2c_Handle) != HAL_I2C_STATE_READY) {}
+	memcpy(pdata, I2Cbuffer22, length);
 
-
- 
 	return 1;
 }
-
+ 
 
 
 template<templateForI2C_def>

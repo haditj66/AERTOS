@@ -6,9 +6,9 @@
 set(INTEGRATION_TESTS commonHalAOs)
 add_compile_definitions(INTEGRATION_TESTS__${INTEGRATION_TESTS})
 add_compile_definitions(INTEGRATION_TEST_CHOSEN="commonHalAOs")
-set(INTEGRATION_TESTS_FOR_commonHalAOs defaultTest)
+set(INTEGRATION_TESTS_FOR_commonHalAOs dataupload1VarTest)
 add_compile_definitions(INTEGRATION_TESTS_FOR_commonHalAOs__${INTEGRATION_TESTS_FOR_commonHalAOs})
-add_compile_definitions(INTEGRATION_TEST_CHOSEN_SPECIFIC="defaultTest")
+add_compile_definitions(INTEGRATION_TEST_CHOSEN_SPECIFIC="dataupload1VarTest")
 add_compile_definitions(CGEN_ALLOPTIONS="")
 
 set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOSProjects/commonHalAOs")

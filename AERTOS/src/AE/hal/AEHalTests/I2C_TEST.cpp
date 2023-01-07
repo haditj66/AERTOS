@@ -336,10 +336,10 @@ AE_Init();
 	
 #ifdef aehal
 		
-	I2CPERIPHERAL_inst1->SetI2C_MasterTxCpltCallback_t([]()->void {
+	I2CPERIPHERAL_inst1->SetI2C_MasterTxCpltCallback([](AEI2C* i)->void {
 		txcmplt = true;
 	});
-	I2CPERIPHERAL_inst1->SetI2C_MasterRxCpltCallback([]()->void {
+	I2CPERIPHERAL_inst1->SetI2C_MasterRxCpltCallback([](AEI2C* i)->void {
 		rxcmplt = true;
 	});
 	
@@ -428,8 +428,11 @@ AE_Init();
 
 
 
+
+
 //UserCode_Sectionbeforelinks
 //UserCode_Sectionbeforelinks_end
+
 
 
 //UserCode_Sectionbeforeclock

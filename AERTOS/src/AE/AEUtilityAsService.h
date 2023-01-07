@@ -320,7 +320,7 @@ protected:
 			ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
                         
 			//clock for this tdu seems to have been too fast because it is trying to update before the last update finished.
-			configASSERT(this->isCurrentlyExecuting == false);
+			AEAssertRuntime(this->isCurrentlyExecuting == false, "clock for this tdu seems to have been too fast because it is trying to update before the last update finished.");
 
 			//I need to do the following if this TDU is set to a SPB
 			if (this->IsSetToAnSPBRefresh)

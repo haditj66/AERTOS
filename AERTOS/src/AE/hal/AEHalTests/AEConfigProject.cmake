@@ -30,7 +30,8 @@ endif()
 CREATE_TARGET_INTEGRATIONEXE(NAME_OF_TARGET AEHalTests
 LOCATION_OF_TARGET "C:/AERTOS/AERTOS/src/AE/hal/AEHalTests"
 LibrariesToLinkTo AECoreLib 
-AnyAdditionalIncludeDirs 
+AnyAdditionalIncludeDirs  
+AnyAdditionalSRCDirs 
 LIST_OF_TESTS ADC_TEST UART_TEST PWM_TEST I2C_TEST SPI_TEST
 ) 
 

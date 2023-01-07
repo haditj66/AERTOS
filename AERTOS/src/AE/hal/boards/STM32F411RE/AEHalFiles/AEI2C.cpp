@@ -103,7 +103,7 @@ extern "C" {
 		}
 #endif
 		
-		fori2c->AE_I2C_MasterTxCpltCallback();
+		fori2c->AE_I2C_MasterTxCpltCallback(fori2c);
 		  
 		
 		
@@ -148,7 +148,7 @@ extern "C" {
 		}
 #endif
 		
-		fori2c->AE_I2C_MasterRxCpltCallback();
+		fori2c->AE_I2C_MasterRxCpltCallback(fori2c);
 		
 		
 //		static I2C_RXCpltEVT* evtToPublish = PoolManager->GetEvtFromPoolFromISR<I2C_RXCpltEVT>();

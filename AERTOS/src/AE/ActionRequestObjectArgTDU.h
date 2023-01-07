@@ -54,11 +54,13 @@ public:
 	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
 	template <uint16_t Tevt>
 		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+		bool WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
 
 	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
 	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
 	template <uint16_t Tevt>
 		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
+		bool WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 
 	
 
@@ -122,15 +124,14 @@ inline void ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::PostEvtTo
 
 
 template<TemplateForActionArgTDU_NoDefaults1>
-template <uint16_t Tevt>
-inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
+inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
 {
 	//you ned to attempt at least 1 time to wait for an event
 	configASSERT(numOfAttempts > 0);
 
 	//first attempt the first wait
 	bool eventFound = false;
-	eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+	eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 	if (eventFound == false)
 	{
 
@@ -138,9 +139,9 @@ inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEv
 		for (uint16_t i = 0; i < numOfAttempts - 1; i++)
 		{
 			//call the callback for a timeoutattempt
-			callBackForTimeOutAttempt(this);
+			callBackForTimeOutAttempt(this->ClassForActionRequest);
 			//now wait for the event
-			eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+			eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 			if (eventFound == true)
 			{
 				return eventFound;
@@ -149,15 +150,21 @@ inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEv
 
 	}
 	return eventFound;
-
 }
 
 template<TemplateForActionArgTDU_NoDefaults1>
 template <uint16_t Tevt>
-inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
+inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
+{
+	WaitForEventWithTimeOutAttempts(Tevt,   callBackWhenEvtPublishes,   timeoutMillisec,   numOfAttempts,   callBackForTimeOutAttempt);
+
+}
+
+template<TemplateForActionArgTDU_NoDefaults1>
+inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
 {
 	//first I need to subscribe to the event 
-	PublishSubscribeManager->_SubscribeToEvt(Tevt, this->AOID_OfResource);// EventSubscribers[Tevt][this->AOID_OfResource] = true;
+	PublishSubscribeManager->_SubscribeToEvt(Tevt, this->AOID_OfResource); // EventSubscribers[Tevt][this->AOID_OfResource] = true;
 	IsWaitingForEvent = true;
 	//check for if user wants a timeout
 	if (timeoutMillisec == 0xffffffff)
@@ -182,7 +189,7 @@ inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEv
 
 	if (callBackWhenEvtPublishes != nullptr)
 	{
-		callBackWhenEvtPublishes(this, EvtWaitingFor);
+		callBackWhenEvtPublishes(this->ClassForActionRequest, EvtWaitingFor);
 	}
 
 	//after the callback is done with the reference, decrement the counter
@@ -193,6 +200,13 @@ inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEv
 
 	//after being, give semaphore back and unsubscribe
 	PublishSubscribeManager->_UnSubscribeToEvt(Tevt, this->AOID_OfResource);
+}
+
+template<TemplateForActionArgTDU_NoDefaults1>
+template <uint16_t Tevt>
+inline bool ActionRequestObjectArgTDU1<TemplateForActionArgTDU_Args1>::WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
+{
+	WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 
 }
 
@@ -246,12 +260,13 @@ public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }
 	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
 	template <uint16_t Tevt>
 		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+	bool WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
 
 	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
 	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
 	template <uint16_t Tevt>
 		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
-
+	bool WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 	
 	
 protected:
@@ -297,15 +312,21 @@ inline void ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::PostEvtTo
 
 
 template<TemplateForActionArgTDU_NoDefaults2>
-template <uint16_t Tevt>
+	template <uint16_t Tevt>
 inline bool ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
+{
+	WaitForEventWithTimeOutAttempts(Tevt, callBackWhenEvtPublishes, timeoutMillisec, numOfAttempts, callBackForTimeOutAttempt);
+}
+
+template<TemplateForActionArgTDU_NoDefaults2>
+inline bool ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
 {
 	//you ned to attempt at least 1 time to wait for an event
 	configASSERT(numOfAttempts > 0);
 
 	//first attempt the first wait
 	bool eventFound = false;
-	eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+	eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 	if (eventFound == false)
 	{
 
@@ -313,9 +334,9 @@ inline bool ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::WaitForEv
 		for (uint16_t i = 0; i < numOfAttempts - 1; i++)
 		{
 			//call the callback for a timeoutattempt
-			callBackForTimeOutAttempt(this);
+			callBackForTimeOutAttempt(this->ClassForActionRequest);
 			//now wait for the event
-			eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+			eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 			if (eventFound == true)
 			{
 				return eventFound;
@@ -330,6 +351,11 @@ inline bool ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::WaitForEv
 template<TemplateForActionArgTDU_NoDefaults2>
 template <uint16_t Tevt>
 inline bool ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
+{
+	WaitForEvent(  Tevt,   callBackWhenEvtPublishes,   timeoutMillisec);
+}
+template<TemplateForActionArgTDU_NoDefaults2> 
+	inline bool ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
 {
 	//first I need to subscribe to the event 
 	PublishSubscribeManager->_SubscribeToEvt(Tevt, this->AOID_OfResource);// EventSubscribers[Tevt][this->AOID_OfResource] = true;
@@ -357,7 +383,7 @@ inline bool ActionRequestObjectArgTDU2<TemplateForActionArgTDU_Args2>::WaitForEv
 
 	if (callBackWhenEvtPublishes != nullptr)
 	{
-		callBackWhenEvtPublishes(this, EvtWaitingFor);
+		callBackWhenEvtPublishes(this->ClassForActionRequest, EvtWaitingFor);
 	}
 
 	//after the callback is done with the reference, decrement the counter
@@ -423,12 +449,13 @@ public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }
 	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
 	template <uint16_t Tevt>
 		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+	bool WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
 
 	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
 	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
 	template <uint16_t Tevt>
 		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
-
+	bool WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 	
 	
 protected:
@@ -476,12 +503,17 @@ template<TemplateForActionArgTDU_NoDefaults3>
 template <uint16_t Tevt>
 inline bool ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
 {
+	WaitForEventWithTimeOutAttempts(Tevt, callBackWhenEvtPublishes, timeoutMillisec, numOfAttempts, callBackForTimeOutAttempt);
+}
+template<TemplateForActionArgTDU_NoDefaults3>
+	inline bool ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::WaitForEventWithTimeOutAttempts(uint16_t Tevt,CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
+{
 	//you ned to attempt at least 1 time to wait for an event
 	configASSERT(numOfAttempts > 0);
 
 	//first attempt the first wait
 	bool eventFound = false;
-	eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+	eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 	if (eventFound == false)
 	{
 
@@ -489,9 +521,9 @@ inline bool ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::WaitForEv
 		for (uint16_t i = 0; i < numOfAttempts - 1; i++)
 		{
 			//call the callback for a timeoutattempt
-			callBackForTimeOutAttempt(this);
+			callBackForTimeOutAttempt(this->ClassForActionRequest);
 			//now wait for the event
-			eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+			eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 			if (eventFound == true)
 			{
 				return eventFound;
@@ -506,6 +538,11 @@ inline bool ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::WaitForEv
 template<TemplateForActionArgTDU_NoDefaults3>
 template <uint16_t Tevt>
 inline bool ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
+{
+	WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
+}
+template<TemplateForActionArgTDU_NoDefaults3> 
+inline bool ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
 {
 	//first I need to subscribe to the event 
 	PublishSubscribeManager->_SubscribeToEvt(Tevt, this->AOID_OfResource);// EventSubscribers[Tevt][this->AOID_OfResource] = true;
@@ -533,7 +570,7 @@ inline bool ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::WaitForEv
 
 	if (callBackWhenEvtPublishes != nullptr)
 	{
-		callBackWhenEvtPublishes(this, EvtWaitingFor);
+		callBackWhenEvtPublishes(this->ClassForActionRequest, EvtWaitingFor);
 	}
 
 	//after the callback is done with the reference, decrement the counter
@@ -596,12 +633,13 @@ public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }
 	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
 	template <uint16_t Tevt>
 		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+	bool WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
 
 	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
 	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
 	template <uint16_t Tevt>
 		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
-
+	bool WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 
 protected:
 	 
@@ -649,12 +687,17 @@ template<TemplateForActionArgTDU_NoDefaults4>
 template <uint16_t Tevt>
 inline bool ActionRequestObjectArgTDU4<TemplateForActionArgTDU_Args4>::WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
 {
+	WaitForEventWithTimeOutAttempts(  Tevt,   callBackWhenEvtPublishes,   timeoutMillisec,   numOfAttempts,   callBackForTimeOutAttempt);
+}
+template<TemplateForActionArgTDU_NoDefaults4>
+	inline bool ActionRequestObjectArgTDU4<TemplateForActionArgTDU_Args4>::WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
+{
 	//you ned to attempt at least 1 time to wait for an event
 	configASSERT(numOfAttempts > 0);
 
 	//first attempt the first wait
 	bool eventFound = false;
-	eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+	eventFound = this->WaitForEvent(Tevt,  callBackWhenEvtPublishes, timeoutMillisec);
 	if (eventFound == false)
 	{
 
@@ -662,9 +705,9 @@ inline bool ActionRequestObjectArgTDU4<TemplateForActionArgTDU_Args4>::WaitForEv
 		for (uint16_t i = 0; i < numOfAttempts - 1; i++)
 		{
 			//call the callback for a timeoutattempt
-			callBackForTimeOutAttempt(this);
+			callBackForTimeOutAttempt(this->ClassForActionRequest);
 			//now wait for the event
-			eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+			eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 			if (eventFound == true)
 			{
 				return eventFound;
@@ -679,6 +722,12 @@ inline bool ActionRequestObjectArgTDU4<TemplateForActionArgTDU_Args4>::WaitForEv
 template<TemplateForActionArgTDU_NoDefaults4>
 template <uint16_t Tevt>
 inline bool ActionRequestObjectArgTDU4<TemplateForActionArgTDU_Args4>::WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
+{
+	WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
+}
+
+template<TemplateForActionArgTDU_NoDefaults4> 
+inline bool ActionRequestObjectArgTDU4<TemplateForActionArgTDU_Args4>::WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
 {
 	//first I need to subscribe to the event 
 	PublishSubscribeManager->_SubscribeToEvt(Tevt, this->AOID_OfResource);// EventSubscribers[Tevt][this->AOID_OfResource] = true;
@@ -706,7 +755,7 @@ inline bool ActionRequestObjectArgTDU4<TemplateForActionArgTDU_Args4>::WaitForEv
 
 	if (callBackWhenEvtPublishes != nullptr)
 	{
-		callBackWhenEvtPublishes(this, EvtWaitingFor);
+		callBackWhenEvtPublishes(this->ClassForActionRequest, EvtWaitingFor);
 	}
 
 	//after the callback is done with the reference, decrement the counter
@@ -771,12 +820,13 @@ public: void SetUpdateFunc(UpdateFunc s) {this->_Update = s; }
 	//returns true if the event it was waiting on happened, otherwise returns false if it timedout
 	template <uint16_t Tevt>
 		bool WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
+	bool WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec = 0xffffffff);
 
 	//this will wait for an event with a timeout, if a timeout occurs, it will call the callbackTimeout and attempt to wait again
 	//a number of times that you designate. if a event was found, it will return true, otherwise if it timedout all attempts to wait, it returns false.
 	template <uint16_t Tevt>
 		bool WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
-
+	bool WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt);
 	
 protected:
 	 
@@ -824,12 +874,18 @@ template<TemplateForActionArgTDU_NoDefaults5>
 template <uint16_t Tevt>
 inline bool ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::WaitForEventWithTimeOutAttempts(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
 {
+	WaitForEventWithTimeOutAttempts(Tevt, callBackWhenEvtPublishes, timeoutMillisec, numOfAttempts, callBackForTimeOutAttempt);
+}
+
+template<TemplateForActionArgTDU_NoDefaults5> 
+inline bool ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::WaitForEventWithTimeOutAttempts(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec, uint32_t numOfAttempts, CallBackForWaitTimeOut_t callBackForTimeOutAttempt)
+{
 	//you ned to attempt at least 1 time to wait for an event
 	configASSERT(numOfAttempts > 0);
 
 	//first attempt the first wait
 	bool eventFound = false;
-	eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+	eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 	if (eventFound == false)
 	{
 
@@ -837,9 +893,9 @@ inline bool ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::WaitForEv
 		for (uint16_t i = 0; i < numOfAttempts - 1; i++)
 		{
 			//call the callback for a timeoutattempt
-			callBackForTimeOutAttempt(this);
+			callBackForTimeOutAttempt(this->ClassForActionRequest);
 			//now wait for the event
-			eventFound = this->WaitForEvent<Tevt>(callBackWhenEvtPublishes, timeoutMillisec);
+			eventFound = this->WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
 			if (eventFound == true)
 			{
 				return eventFound;
@@ -854,6 +910,12 @@ inline bool ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::WaitForEv
 template<TemplateForActionArgTDU_NoDefaults5>
 template <uint16_t Tevt>
 inline bool ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::WaitForEvent(CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
+{
+	WaitForEvent(Tevt, callBackWhenEvtPublishes, timeoutMillisec);
+}
+
+template<TemplateForActionArgTDU_NoDefaults5> 
+	inline bool ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::WaitForEvent(uint16_t Tevt, CallBackForWaitForEvt_t callBackWhenEvtPublishes, uint32_t timeoutMillisec)
 {
 	//first I need to subscribe to the event 
 	PublishSubscribeManager->_SubscribeToEvt(Tevt, this->AOID_OfResource);// EventSubscribers[Tevt][this->AOID_OfResource] = true;
@@ -881,7 +943,7 @@ inline bool ActionRequestObjectArgTDU5<TemplateForActionArgTDU_Args5>::WaitForEv
 
 	if (callBackWhenEvtPublishes != nullptr)
 	{
-		callBackWhenEvtPublishes(this, EvtWaitingFor);
+		callBackWhenEvtPublishes(this->ClassForActionRequest, EvtWaitingFor);
 	}
 
 	//after the callback is done with the reference, decrement the counter

@@ -10,6 +10,17 @@
   
  
   
+class DummyEVT : public AEEventBase
+{
+public: 
+	static EventPoolSize_t EvtIdStatic;
+
+	
+ 
+	 
+};
+ 
+  
 class I2C_RXCpltEVT : public AEEventBase
 {
 public: 

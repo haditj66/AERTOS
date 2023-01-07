@@ -22,7 +22,10 @@ typedef void(*AE_UART_TxCpltCallback_t)(void);
 class AEUART
 {
 public:
-	AEUART() {}
+	AEUART() {
+		_RxCpltCallback_t = [](char* msgReceived, uint32_t sizeOfReceivedMsg) -> void {};
+		_TxCpltCallback_t = []( ) -> void {};
+	}
 	;
 	
 	
@@ -38,6 +41,9 @@ public:
 		_uartHandle = uartHandle;
 		_ReadBuffer = readBuffer;
 		_ReceiveMsgSize = receiveMsgSize;
+		
+		
+		
 	}
 	;
 	

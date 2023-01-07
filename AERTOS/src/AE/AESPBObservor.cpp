@@ -702,7 +702,8 @@ void AESPBObservor::InputSignal(float * input, uint16_t toChannelId)
 
 			//this spb is Going to attempt to trigger a refresh while this spb is already refreshing. This should never happen either 
 			//lower the update frequency of this spb, or significantly reduce  processing time of it.
-			configASSERT(this->isCurrentlyExecuting == false);
+			AEAssertRuntime(this->isCurrentlyExecuting == false,
+				" this spb is Going to attempt to trigger a refresh while this spb is already refreshing. This should never happen either  lower the update frequency of this spb, or significantly reduce  processing time of it.");
 
 
 			//run the refresh

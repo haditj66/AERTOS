@@ -63,6 +63,13 @@ public:
 	}
 	
 	
+	
+	
+		
+	//=====================================================================
+	//writing stuff
+	//===================================================================== 
+	
 	bool writeBit(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint8_t datatoWrite) {
 		uint8_t b;
 		//readByte(devAddr, regAddr, &b, 400);
@@ -73,15 +80,162 @@ public:
 	bool WriteByte(uint8_t devAddr, uint8_t regAddr, uint8_t datatoWrite) {
 		return WriteBytes(devAddr, regAddr, 1, &datatoWrite);
 	}  
+	
+	bool writeBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data) {
+		//      010 value to write
+		// 76543210 bit numbers
+		//    xxx   args: bitStart=4, length=3
+		// 00011100 mask byte
+		// 10101111 original value (sample)
+		// 10100011 original & ~mask
+		// 10101011 masked | value
+		uint8_t b;
+		if (readByte(devAddr, regAddr, &b, 40000) != 0) {
+			uint8_t mask = ((1 << length) - 1) << (bitStart - length + 1);
+			data <<= (bitStart - length + 1); // shift data into correct position
+			data &= mask; // zero all non-important bits in data
+			b &= ~(mask); // zero all important bits in existing byte
+			b |= data; // combine data with existing byte
+			return writeByte(devAddr, regAddr, b);
+		}
+		else {
+			return false;
+		}
+	}
+	
+	bool  writeByte(uint8_t devAddr, uint8_t regAddr, uint8_t data) {
+		return WriteBytes(devAddr, regAddr, 1, &data);
+	}
+	
+	bool  writeWord(uint8_t devAddr, uint8_t regAddr, uint16_t data) {
+		return writeWords(devAddr, regAddr, 1, &data);
+	}
+	
+	bool writeWords(uint8_t devAdd, uint8_t regAddr, uint8_t length, uint16_t* data) {
+		
+		uint8_t a1 = (uint8_t)((data[0] >> 8) && 0xFF);
+		uint8_t data2[length*2];
+		for (size_t i = 0; i < length; i += 2)
+		{
+			data2[i] = (data[i] >> 8) & 0xFF;
+			data2[i+1] =  data[i] & 0xFF;
+		} 
+			
+		return WriteBytes(devAdd, regAddr, length*2, data2);
+		 
+	}
+	
+	
+	
+	
+	//=====================================================================
+	//reading stuff
+	//===================================================================== 
+	int8_t readWords(uint8_t devAdd, uint8_t regAddr, uint8_t length, uint16_t *data, uint16_t timeout = 100000) {
+//#ifdef IARBuild 
+//
+//		devAdd = devAdd << 1; // needs to be shifted because of the way stm hal shifts addresses over by one
+//		I2Cbuffer2[0] = regAddr;
+//		HAL_I2C_Master_Transmit_IT(hi2c1, devAdd, I2Cbuffer2, 1); 
+//		int16_t attempts = 0;
+//		uint8_t firstval;
+//		uint8_t secondval;
+//		while (HAL_I2C_GetState(hi2c1) != HAL_I2C_STATE_READY)
+//		{
+//			attempts++;
+//			if (attempts > timeout)
+//			{return 0;}
+//		}
+//   
+//		uint8_t buf = 0;
+//		bool first = true;
+//		for (uint8_t i = 0; i < length; i++)
+//		{
+//			HAL_I2C_Master_Receive_DMA(hi2c1, devAdd, &buf, 1); 
+//			int16_t attempts = 0; 
+//			while (HAL_I2C_GetState(hi2c1) != HAL_I2C_STATE_READY)
+//			{
+//				attempts++;
+//				if (attempts > timeout)
+//				{return 0;}
+//			} 
+//			if (first == true)
+//			{ firstval = buf; }
+//			else
+//			{
+//				secondval = buf;
+//				data[i] =  firstval << 8 | secondval; 
+//			}
+//    
+//    
+//    
+//			first = !first; 
+//		}
+//   
+//#endif
+		//bytes read succesfully
+		return 1;
+	}
+	
+	int8_t readWord(uint8_t devAddr, uint8_t regAddr, uint16_t *data, uint16_t timeout = 100000) {
+		return readWords(devAddr, regAddr, 1, data, timeout);
+	}
+	
+	int8_t  readBitW(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint16_t *data, uint16_t timeout = 100000) {
+		uint16_t b;
+		uint8_t count = readWord(devAddr, regAddr, &b, timeout);
+		*data = b & (1 << bitNum);
+		return count;
+	}
+	
+	int8_t  readBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data, uint16_t timeout = 100000) {
+		// 01101001 read byte
+		// 76543210 bit numbers
+		//    xxx   args: bitStart=4, length=3
+		//    010   masked
+		//   -> 010 shifted
+		uint8_t count, b;
+		if ((count = readByte(devAddr, regAddr, &b, timeout)) != 0) {
+			uint8_t mask = ((1 << length) - 1) << (bitStart - length + 1);
+			b &= mask;
+			b >>= (bitStart - length + 1);
+			*data = b;
+		}
+		return count;
+	}
 
-
-	int8_t readByte(uint8_t devAddr, uint8_t *data, uint16_t timeout) {
+	int8_t readByte(uint8_t devAddr, uint8_t *data, uint16_t timeout = 100000) {
 		return ReadBytes(devAddr, 1, data, timeout);
 	}
- 
+	
+	int8_t readByte(uint8_t devAddr, uint8_t regAddr, uint8_t *data, uint16_t timeout = 100000) {
+		return ReadBytes(devAddr, regAddr, 1, data, timeout); 
+	}
+	
+	
+	int8_t readBit(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data, uint16_t timeout = 100000) {
+		uint8_t b;
+		uint8_t count = readByte(devAddr, regAddr, &b, timeout);
+		*data = b & (1 << bitNum);
+		return count;
+	}
+	
+ 	int8_t ReadBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *pdata, uint16_t timeout = 100000)
+	{
+		//set to register address
+		uint8_t * t = { 0};
+		WriteBytes(devAddr, regAddr, 0, t);
+		return ReadBytes(devAddr, length, pdata, timeout);
+	}
 
 	bool WriteBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t* datatoWrite);
 	int8_t ReadBytes(uint8_t devAddr, uint8_t length, uint8_t *pdata, uint16_t timeout = 100000);
+	
+
+
+	void WriteBytes_ASYNC(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t* datatoWrite);
+	void ReadBytes_ASYNC(uint8_t devAddr, uint8_t length);
+
 	
 	
 	void Init(I2C_Handle* i2c_Handle)//, I2C_Handle* gPIO_Handle_inst) 

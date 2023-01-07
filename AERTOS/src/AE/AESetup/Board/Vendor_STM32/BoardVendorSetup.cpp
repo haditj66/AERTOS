@@ -22,7 +22,9 @@ extern "C" void HardFault_Handler()
 	//if integration testing is on, then signal a failed because
 	//of a hardfault
 #ifdef BUILD_TESTS__TRUE
+	AEPrint("\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*HardFault occured!!!\n");
 	AEITEST_END_HARDFAULT_FUNC();
+	
 #endif
 	for (;;)
 	{  

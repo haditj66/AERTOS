@@ -379,6 +379,30 @@ template <class T>
 
 
 
+#include <cmath>
+
+template< int64_t WholeNum, uint8_t MoveDecimalToLeftThisMany>
+	class FloatInTemplateWorkAround
+	{
+	public:
+		FloatInTemplateWorkAround() {}
+		; 
+	
+		float GetValue()
+		{
+			float TenToThe = pow(10, MoveDecimalToLeftThisMany);
+			return (float)((float)WholeNum / (float)TenToThe);
+		}
+
+	private:
+	
+	};
+
+
+
+
+
+
 //AEPrint ------------------------------------------------
 
 
@@ -1066,8 +1090,204 @@ static void AEEndProgram()
 
 
 
+template <class TTypeOfVars>
+	inline uint32_t AEmemcpy_MultipleVariablesToArray(TTypeOfVars* varWriteTo,
+		TTypeOfVars* varWriteFrom1,
+		int varSize_NotInBytes1,
+		TTypeOfVars* varWriteFrom2,
+		int varSize_NotInBytes2 )
+	{
+	
+		int totalSizeBytes = sizeof(TTypeOfVars)* (varSize_NotInBytes1 + varSize_NotInBytes2 );
+		int ind = 0;
+		memcpy(varWriteTo, varWriteFrom1, varSize_NotInBytes1 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes1;
+		memcpy(&varWriteTo[ind], varWriteFrom2, varSize_NotInBytes2 * sizeof(TTypeOfVars)); 
+	
+		return totalSizeBytes;
+	}
+
+template <class TTypeOfVars>
+	inline uint32_t AEmemcpy_MultipleVariablesToArray(TTypeOfVars* varWriteTo,
+		TTypeOfVars* varWriteFrom1,
+		int varSize_NotInBytes1,
+		TTypeOfVars* varWriteFrom2,
+		int varSize_NotInBytes2,
+		TTypeOfVars* varWriteFrom3,
+		int varSize_NotInBytes3 )
+	{
+	
+		int totalSizeBytes = sizeof(TTypeOfVars)* (varSize_NotInBytes1 + varSize_NotInBytes2 + varSize_NotInBytes3  );
+		int ind = 0;
+		memcpy(varWriteTo, varWriteFrom1, varSize_NotInBytes1 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes1;
+		memcpy(&varWriteTo[ind], varWriteFrom2, varSize_NotInBytes2 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes2;
+		memcpy(&varWriteTo[ind], varWriteFrom3, varSize_NotInBytes3 * sizeof(TTypeOfVars));  
+	
+		return totalSizeBytes;
+	}
 
 
+template <class TTypeOfVars>
+	inline uint32_t AEmemcpy_MultipleVariablesToArray(TTypeOfVars* varWriteTo,
+		TTypeOfVars* varWriteFrom1,
+		int varSize_NotInBytes1,
+		TTypeOfVars* varWriteFrom2,
+		int varSize_NotInBytes2,
+		TTypeOfVars* varWriteFrom3,
+		int varSize_NotInBytes3,
+		TTypeOfVars* varWriteFrom4,
+		int varSize_NotInBytes4 )
+	{
+	
+		int totalSizeBytes = sizeof(TTypeOfVars)* (varSize_NotInBytes1 + varSize_NotInBytes2 + varSize_NotInBytes3 + varSize_NotInBytes4 );
+		int ind = 0;
+		memcpy(varWriteTo, varWriteFrom1, varSize_NotInBytes1 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes1;
+		memcpy(&varWriteTo[ind], varWriteFrom2, varSize_NotInBytes2 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes2;
+		memcpy(&varWriteTo[ind], varWriteFrom3, varSize_NotInBytes3 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes3;
+		memcpy(&varWriteTo[ind], varWriteFrom4, varSize_NotInBytes4 * sizeof(TTypeOfVars)); 
+	
+		return totalSizeBytes;
+	}
+
+template <class TTypeOfVars>
+	inline uint32_t AEmemcpy_MultipleVariablesToArray(TTypeOfVars* varWriteTo,
+		TTypeOfVars* varWriteFrom1,
+		int varSize_NotInBytes1,
+		TTypeOfVars* varWriteFrom2,
+		int varSize_NotInBytes2,
+		TTypeOfVars* varWriteFrom3,
+		int varSize_NotInBytes3,
+		TTypeOfVars* varWriteFrom4,
+		int varSize_NotInBytes4,
+		TTypeOfVars* varWriteFrom5,
+		int varSize_NotInBytes5 )
+	{
+	
+		int totalSizeBytes = sizeof(TTypeOfVars)* (varSize_NotInBytes1 + varSize_NotInBytes2 + varSize_NotInBytes3 + varSize_NotInBytes4 + varSize_NotInBytes5   );
+		int ind = 0;
+		memcpy(varWriteTo, varWriteFrom1, varSize_NotInBytes1 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes1;
+		memcpy(&varWriteTo[ind], varWriteFrom2, varSize_NotInBytes2 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes2;
+		memcpy(&varWriteTo[ind], varWriteFrom3, varSize_NotInBytes3 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes3;
+		memcpy(&varWriteTo[ind], varWriteFrom4, varSize_NotInBytes4 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes4;
+		memcpy(&varWriteTo[ind], varWriteFrom5, varSize_NotInBytes5 * sizeof(TTypeOfVars)); 
+	
+		return totalSizeBytes;
+	}
+
+template <class TTypeOfVars>
+	inline uint32_t AEmemcpy_MultipleVariablesToArray(TTypeOfVars* varWriteTo,
+		TTypeOfVars* varWriteFrom1,
+		int varSize_NotInBytes1,
+		TTypeOfVars* varWriteFrom2,
+		int varSize_NotInBytes2,
+		TTypeOfVars* varWriteFrom3,
+		int varSize_NotInBytes3,
+		TTypeOfVars* varWriteFrom4,
+		int varSize_NotInBytes4,
+		TTypeOfVars* varWriteFrom5,
+		int varSize_NotInBytes5,
+		TTypeOfVars* varWriteFrom6,
+		int varSize_NotInBytes6)
+	{
+	
+		int totalSizeBytes = sizeof(TTypeOfVars)* (varSize_NotInBytes1 + varSize_NotInBytes2 + varSize_NotInBytes3 + varSize_NotInBytes4 + varSize_NotInBytes5 + varSize_NotInBytes6  );
+		int ind = 0;
+		memcpy(varWriteTo, varWriteFrom1, varSize_NotInBytes1 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes1;
+		memcpy(&varWriteTo[ind], varWriteFrom2, varSize_NotInBytes2 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes2;
+		memcpy(&varWriteTo[ind], varWriteFrom3, varSize_NotInBytes3 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes3;
+		memcpy(&varWriteTo[ind], varWriteFrom4, varSize_NotInBytes4 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes4;
+		memcpy(&varWriteTo[ind], varWriteFrom5, varSize_NotInBytes5 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes5;
+		memcpy(&varWriteTo[ind], varWriteFrom6, varSize_NotInBytes6 * sizeof(TTypeOfVars)); 
+	
+		return totalSizeBytes;
+	}
+
+template <class TTypeOfVars>
+	inline uint32_t AEmemcpy_MultipleVariablesToArray(TTypeOfVars* varWriteTo,
+		TTypeOfVars* varWriteFrom1,
+		int varSize_NotInBytes1,
+		TTypeOfVars* varWriteFrom2,
+		int varSize_NotInBytes2,
+		TTypeOfVars* varWriteFrom3,
+		int varSize_NotInBytes3,
+		TTypeOfVars* varWriteFrom4,
+		int varSize_NotInBytes4,
+		TTypeOfVars* varWriteFrom5,
+		int varSize_NotInBytes5,
+		TTypeOfVars* varWriteFrom6,
+		int varSize_NotInBytes6,
+		TTypeOfVars* varWriteFrom7,
+		int varSize_NotInBytes7 
+	)
+	{
+	
+		int totalSizeBytes = sizeof(TTypeOfVars)* (varSize_NotInBytes1 + varSize_NotInBytes2 + varSize_NotInBytes3 + varSize_NotInBytes4 + varSize_NotInBytes5 + varSize_NotInBytes6 + varSize_NotInBytes7   );
+		int ind = 0;
+		memcpy(varWriteTo, varWriteFrom1, varSize_NotInBytes1 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes1;
+		memcpy(&varWriteTo[ind], varWriteFrom2, varSize_NotInBytes2 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes2;
+		memcpy(&varWriteTo[ind], varWriteFrom3, varSize_NotInBytes3 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes3;
+		memcpy(&varWriteTo[ind], varWriteFrom4, varSize_NotInBytes4 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes4;
+		memcpy(&varWriteTo[ind], varWriteFrom5, varSize_NotInBytes5 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes5;
+		memcpy(&varWriteTo[ind], varWriteFrom6, varSize_NotInBytes6 * sizeof(TTypeOfVars));
+		ind += varSize_NotInBytes6;
+		memcpy(&varWriteTo[ind], varWriteFrom7, varSize_NotInBytes7 * sizeof(TTypeOfVars)); 
+	
+		return totalSizeBytes;
+	}
+
+
+template <class TTypeOfVars>
+	inline uint32_t AEmemcpy_MultipleVariablesToArray(TTypeOfVars* varWriteTo,
+	TTypeOfVars* varWriteFrom1, int varSize_NotInBytes1,
+		TTypeOfVars* varWriteFrom2, int varSize_NotInBytes2,
+		TTypeOfVars* varWriteFrom3, int varSize_NotInBytes3,
+		TTypeOfVars* varWriteFrom4, int varSize_NotInBytes4,
+		TTypeOfVars* varWriteFrom5, int varSize_NotInBytes5,
+		TTypeOfVars* varWriteFrom6, int varSize_NotInBytes6,
+		TTypeOfVars* varWriteFrom7, int varSize_NotInBytes7,
+		TTypeOfVars* varWriteFrom8, int varSize_NotInBytes8
+	)
+{
+	
+	int totalSizeBytes = sizeof(TTypeOfVars)* (varSize_NotInBytes1 + varSize_NotInBytes2 + varSize_NotInBytes3 + varSize_NotInBytes4 + varSize_NotInBytes5 + varSize_NotInBytes6 + varSize_NotInBytes7 + varSize_NotInBytes8);
+	int ind = 0;
+	memcpy(varWriteTo, varWriteFrom1, varSize_NotInBytes1 * sizeof(TTypeOfVars));
+	ind += varSize_NotInBytes1;
+	memcpy(&varWriteTo[ind], varWriteFrom2, varSize_NotInBytes2 * sizeof(TTypeOfVars));
+	ind += varSize_NotInBytes2;
+	memcpy(&varWriteTo[ind], varWriteFrom3, varSize_NotInBytes3 * sizeof(TTypeOfVars));
+	ind += varSize_NotInBytes3;
+	memcpy(&varWriteTo[ind], varWriteFrom4, varSize_NotInBytes4 * sizeof(TTypeOfVars));
+	ind += varSize_NotInBytes4;
+	memcpy(&varWriteTo[ind], varWriteFrom5, varSize_NotInBytes5 * sizeof(TTypeOfVars));
+	ind += varSize_NotInBytes5;
+	memcpy(&varWriteTo[ind], varWriteFrom6, varSize_NotInBytes6 * sizeof(TTypeOfVars));
+	ind += varSize_NotInBytes6;
+	memcpy(&varWriteTo[ind], varWriteFrom7, varSize_NotInBytes7 * sizeof(TTypeOfVars));
+	ind += varSize_NotInBytes7;
+	memcpy(&varWriteTo[ind], varWriteFrom8, varSize_NotInBytes8 * sizeof(TTypeOfVars));
+	
+	return totalSizeBytes;
+}
 
 
 //#include "AEmemcpy.h"
