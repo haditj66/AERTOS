@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# SPB
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -28,7 +28,15 @@
  
 
 ### Page Contents
-- [Overview](#overview)
+- [What are SPBs ](#what-are-spbs-)
+
+- [Sampling frequency reduces](#sampling-frequency-reduces)
+
+- [Channel connect limitations](#channel-connect-limitations)
+
+- [style of spb efficiencies](#style-of-spb-efficiencies)
+
+- [create your own spb](#create-your-own-spb)
 
 
 
@@ -37,10 +45,30 @@
 //UserCode_Sectionb_end
  -->
  
-## Overview
+## What are SPBs 
 <!--  
- //UserCode_Sectionoverview
-//UserCode_Sectionoverview_end
+ //UserCode_Sectionwhatarespbs
+//UserCode_Sectionwhatarespbs_end
+-->
+## Sampling frequency reduces
+<!--  
+ //UserCode_Sectionsamplingfrequencyreduces
+//UserCode_Sectionsamplingfrequencyreduces_end
+-->
+## Channel connect limitations
+<!--  
+ //UserCode_Sectionchannelconnectlimitations
+//UserCode_Sectionchannelconnectlimitations_end
+-->
+## style of spb efficiencies
+<!--  
+ //UserCode_Sectionstyleofspbefficiencies
+//UserCode_Sectionstyleofspbefficiencies_end
+-->
+## create your own spb
+<!--  
+ //UserCode_Sectioncreateyourownspb
+//UserCode_Sectioncreateyourownspb_end
 -->
 
 

@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# Example blinky
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end

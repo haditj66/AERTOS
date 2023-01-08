@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# Advanced Example Motor speed controller
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end

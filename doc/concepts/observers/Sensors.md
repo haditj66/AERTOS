@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# Sensors
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -28,7 +28,9 @@
  
 
 ### Page Contents
-- [Overview](#overview)
+- [What are sensors](#what-are-sensors)
+
+- [how to set them](#how-to-set-them)
 
 
 
@@ -37,10 +39,15 @@
 //UserCode_Sectionb_end
  -->
  
-## Overview
+## What are sensors
 <!--  
- //UserCode_Sectionoverview
-//UserCode_Sectionoverview_end
+ //UserCode_Sectionwhataresensors
+//UserCode_Sectionwhataresensors_end
+-->
+## how to set them
+<!--  
+ //UserCode_Sectionhowtosetthem
+//UserCode_Sectionhowtosetthem_end
 -->
 
 

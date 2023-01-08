@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# Target PC or embedded device
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end

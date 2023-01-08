@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# Integration Testing Debugging
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -30,6 +30,10 @@
 ### Page Contents
 - [Overview](#overview)
 
+- [How to use integration functions](#how-to-use-integration-functions)
+
+- [Other helpful functions](#other-helpful-functions)
+
 
 
 <!--  
@@ -41,6 +45,16 @@
 <!--  
  //UserCode_Sectionoverview
 //UserCode_Sectionoverview_end
+-->
+## How to use integration functions
+<!--  
+ //UserCode_Sectionhowtouseintegrationfunctions
+//UserCode_Sectionhowtouseintegrationfunctions_end
+-->
+## Other helpful functions
+<!--  
+ //UserCode_Sectionotherhelpfulfunctions
+//UserCode_Sectionotherhelpfulfunctions_end
 -->
 
 

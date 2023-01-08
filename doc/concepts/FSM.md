@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# Finite State Machine
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -28,7 +28,15 @@
  
 
 ### Page Contents
-- [Overview](#overview)
+- [What are FSMs](#what-are-fsms)
+
+- [SubStateMachine feature](#substatemachine-feature)
+
+- [Waiting for event](#waiting-for-event)
+
+- [Create your own utility](#create-your-own-utility)
+
+- [View FSM graph generated](#view-fsm-graph-generated)
 
 
 
@@ -37,10 +45,30 @@
 //UserCode_Sectionb_end
  -->
  
-## Overview
+## What are FSMs
 <!--  
- //UserCode_Sectionoverview
-//UserCode_Sectionoverview_end
+ //UserCode_Sectionwhatarefsms
+//UserCode_Sectionwhatarefsms_end
+-->
+## SubStateMachine feature
+<!--  
+ //UserCode_Sectionsubstatemachinefeature
+//UserCode_Sectionsubstatemachinefeature_end
+-->
+## Waiting for event
+<!--  
+ //UserCode_Sectionwaitingforevent
+//UserCode_Sectionwaitingforevent_end
+-->
+## Create your own utility
+<!--  
+ //UserCode_Sectioncreateyourownutility
+//UserCode_Sectioncreateyourownutility_end
+-->
+## View FSM graph generated
+<!--  
+ //UserCode_Sectionviewfsmgraphgenerated
+//UserCode_Sectionviewfsmgraphgenerated_end
 -->
 
 

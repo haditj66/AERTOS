@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# AEHal
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -30,6 +30,8 @@
 ### Page Contents
 - [Overview](#overview)
 
+- [function demos](#function-demos)
+
 
 
 <!--  
@@ -41,6 +43,11 @@
 <!--  
  //UserCode_Sectionoverview
 //UserCode_Sectionoverview_end
+-->
+## function demos
+<!--  
+ //UserCode_Sectionfunctiondemos
+//UserCode_Sectionfunctiondemos_end
 -->
 
 

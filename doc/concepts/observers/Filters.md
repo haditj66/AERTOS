@@ -1,5 +1,5 @@
 
-# Creating an AERTOS project
+# Filters
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -28,7 +28,11 @@
  
 
 ### Page Contents
-- [Overview](#overview)
+- [What are filters ](#what-are-filters-)
+
+- [how to set them](#how-to-set-them)
+
+- [create your own filter](#create-your-own-filter)
 
 
 
@@ -37,10 +41,20 @@
 //UserCode_Sectionb_end
  -->
  
-## Overview
+## What are filters 
 <!--  
- //UserCode_Sectionoverview
-//UserCode_Sectionoverview_end
+ //UserCode_Sectionwhatarefilters
+//UserCode_Sectionwhatarefilters_end
+-->
+## how to set them
+<!--  
+ //UserCode_Sectionhowtosetthem
+//UserCode_Sectionhowtosetthem_end
+-->
+## create your own filter
+<!--  
+ //UserCode_Sectioncreateyourownfilter
+//UserCode_Sectioncreateyourownfilter_end
 -->
 
 
