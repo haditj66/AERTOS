@@ -1,6 +1,6 @@
 AERTOS is a framework and development environment for writing RTOS applications on embedded devices. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
 # Table of Contents
- - [Overview](https://github.com/haditj66/AERTOSCopy/blob/master/README.md)
+ - [Overview](https://github.com/haditj66/AERTOSCopy)
  - [Installation](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Installation)
  - [Creating an AERTOS project](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Creating_an_AERTOS_project)
  - [Example project: Blinky](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Blinky)
