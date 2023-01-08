@@ -3,13 +3,13 @@
 <!--  
 //UserCode_Sectiona
  -->
-AERTOS is a framework and development environment for writing RTOS applications on embedded devices. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
+AERTOS is a framework and development environment for writing RTOS applications on embedded devices. It uses visual programming to aid the you with rapid prototyping, even if you are not a very experienced programmer. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
 <!--  
 //UserCode_Sectiona_end
 -->
 
 ## Table of Contents
-- [About](https://github.com/haditj66/AERTOSCopy/README.md)
+- [About](https://github.com/haditj66/AERTOSCopy)
 - [Installation](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Installation.md)
 - [Creating an AERTOS project](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Creating_an_AERTOS_project.md)
 - [AERTOS concepts](https://github.com/haditj66/AERTOSCopy/blob/master/doc/AERTOS_concepts.md)
@@ -36,6 +36,8 @@ AERTOS is a framework and development environment for writing RTOS applications 
 ### Page Contents
 - [Overview](#overview)
 
+- [Example](#example)
+
 
 
 <!--  
@@ -47,11 +49,18 @@ AERTOS is a framework and development environment for writing RTOS applications 
 <!--  
  //UserCode_Sectionoverview
    -->
- AERTOS came about as a need to rapidly prototype embedded applications without having to worry about the details of RTOS mechanisms such as semaphores and tasks. Instead this is abstracted with concepts of a event-driven architecture. Finite state machines, Service calls, signal processing blocks are a few examples of the concepts used in AERTOS. Below is an example of what can be possible with AERTOS. This is a basic on-off control system for maintaining the desired acceleration of whatever you can imagine.
+ AERTOS came about as a need to rapidly prototype embedded applications without having to worry about the details of RTOS mechanisms such as semaphores and tasks. Instead this is abstracted with concepts of an event-driven architecture. Finite state machines, Service calls, signal processing blocks are a few examples of the concepts used in AERTOS. 
+
+ Below is an example of what can be possible with AERTOS. This is a basic on-off control system for maintaining the desired acceleration of whatever you can imagine.
 
 TODO: show image and function calls in this.
 <!-- 
 //UserCode_Sectionoverview_end
+-->
+## Example
+<!--  
+ //UserCode_Sectionexample
+//UserCode_Sectionexample_end
 -->
 
 
