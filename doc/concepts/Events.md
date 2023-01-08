@@ -17,9 +17,13 @@
 
 ### Page Contents
 [What are events](#what-are-events)
+
 [signal_event vs event](#signal_event-vs-event)
+
 [Publishing an event](#publishing-an-event)
+
 [Create your own event](#create-your-own-event)
+
 
 
 <!--  

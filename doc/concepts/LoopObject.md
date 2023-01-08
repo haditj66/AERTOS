@@ -17,8 +17,11 @@
 
 ### Page Contents
 [What are LoopObjects](#what-are-loopobjects)
+
 [how to subscribe to events](#how-to-subscribe-to-events)
+
 [Create your own LoopObject](#create-your-own-loopobject)
+
 
 
 <!--  

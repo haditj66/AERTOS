@@ -17,10 +17,15 @@
 
 ### Page Contents
 [Prerequisites](#prerequisites)
+
 [Installing visualgdb](#installing-visualgdb)
+
 [installing CGEN](#installing-cgen)
+
 [Installing AERTOS](#installing-aertos)
+
 [Installing AERTOS projects](#installing-aertos-projects)
+
 
 
 <!--  
