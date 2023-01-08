@@ -1,0 +1,35 @@
+Overview: what is aertos -- table of contents -- quick demo highlights of what it can do. --
+
+installing aertos: steps to get it installed properly.
+
+Creating your first project: how to aeinit new project. add project to your configure project. link to commonAOs library. how to aeselect to another project. how to aegenerate your project. how to aeconfig.
+
+example project blinky:create an aeloop object blinky
+
+
+AE concepts:
+	AOs: what are they? (persistent objects with code that runs asynchronously of each other.)
+		Events: what they are. difference between a signal-event and an event. how to publish an event. how to publish an event from an interrupt. how to create your own event. 
+		AELoopObject: what it is. how to create your own. how to subscribe to events		
+		AEClock: what they are, how to set them, or have them flow to a tdu, sensor, or tick from an interrupt.
+		Observors: brief description of what they are and how they can be useful to you.
+			Sensors: what they are, how to set them. Talk about where the sensor data can come from (can be mocked or set to an adc). how to have them flow to a filter, spb. 
+			filters: what they are. how to create your own filter.
+			spb: what they are. talk about the frequency drop concept of count buffers. talk about the limitations of spbs input channels. talk about how to have a spb chain run via the same task for efficiency. when to use a spb vs filter (when multiple channels are needed).  how to create your own spb. 
+		Utilities: what are they and why you would use it (to encapsulate a shared resource and manage it via priorities of the calling AO). talk about services and and how they queue requests. talk about the difference between a normal service and a tdu service. how to set a tdu to a clock or a spb. how to wait for an event. how to create your own utility. 
+		FSMs: what are they. explain the substatemachine feature. how to create your own. how to view the graph generated for your fsm.
+		
+
+switching between pc target and embedded device: how to do it
+
+AEHal: what it is with function demos. how to create your own hal implementation for a device.
+
+integration testing/ debugging:  (aeprint, aememcpyfrombottom) functions demos and where to find your test results. performance timers functions and where to find times.
+ 
+
+advanced project example motor speed controller: quick image of the diagram and an explanation of how it works.
+
+
+aertos uploadDataToPC utility: how to use it. Limitations.
+
+
