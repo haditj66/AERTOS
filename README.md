@@ -1,4 +1,5 @@
 
+
 # About
 <!--  
 //UserCode_Sectiona
@@ -51,15 +52,17 @@ AERTOS is a framework and development environment for writing RTOS applications 
    -->
  AERTOS came about as a need to rapidly prototype embedded applications without having to worry about the details of RTOS mechanisms such as semaphores and tasks. Instead this is abstracted with concepts of an event-driven architecture. Finite state machines, Service calls, signal processing blocks are a few examples of the concepts used in AERTOS. 
 
- Below is an example of what can be possible with AERTOS. This is a basic on-off control system for maintaining the desired acceleration of whatever you can imagine.
-
-TODO: show image and function calls in this.
 <!-- 
 //UserCode_Sectionoverview_end
 -->
 ## Example
 <!--  
  //UserCode_Sectionexample
+  -->
+ Below is an example of what can be possible with AERTOS. This example shows the creation of a basic on-off control system for maintaining the desired acceleration of whatever system you can imagine. For this case,  we are looking at a small autonomous robotic car. It has two sensors to get it current position. The rotational position is obtained from an encoder on the wheel. This sensor is susceptible to dead reckoning error (errors that cumulate over time). To get a better state estimate of the robot, a second sensor is used. This is the ultrasound sensor. However this sensor is not very accurate. Sensor fusion is used to combine the two readings with a complementary algorithm. Afterwards the signal is differentiated twice to get the acceleration in the x direction. Finally the On-Off utility block will up the power of the motor (via a PWM) when the acceleration is below the desired value and lower the power when it is above.
+![enter image description here](https://github.com/haditj66/AERTOSCopy/blob/master/images/About_img1.PNG)
+
+ <!--  
 //UserCode_Sectionexample_end
 -->
 
