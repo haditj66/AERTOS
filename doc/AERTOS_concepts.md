@@ -1,5 +1,5 @@
 
-# Events
+# AERTOS concepts
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -16,10 +16,7 @@
  
 
 ### Page Contents
-[What are events](#what-are-events)
-[signal_event vs event](#signal_event-vs-event)
-[Publishing an event](#publishing-an-event)
-[Create your own event](#create-your-own-event)
+[Overview](#overview)
 
 
 <!--  
@@ -27,25 +24,10 @@
 //UserCode_Sectionb_end
  -->
  
-## What are events
+## Overview
 <!--  
- //UserCode_Sectionwhatareevents
-//UserCode_Sectionwhatareevents_end
--->
-## signal_event vs event
-<!--  
- //UserCode_Sectionsignal_eventvsevent
-//UserCode_Sectionsignal_eventvsevent_end
--->
-## Publishing an event
-<!--  
- //UserCode_Sectionpublishinganevent
-//UserCode_Sectionpublishinganevent_end
--->
-## Create your own event
-<!--  
- //UserCode_Sectioncreateyourownevent
-//UserCode_Sectioncreateyourownevent_end
+ //UserCode_Sectionoverview
+//UserCode_Sectionoverview_end
 -->
 
 

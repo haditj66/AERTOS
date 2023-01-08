@@ -1,5 +1,5 @@
 
-# Events
+# LoopObject
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -16,10 +16,9 @@
  
 
 ### Page Contents
-[What are events](#what-are-events)
-[signal_event vs event](#signal_event-vs-event)
-[Publishing an event](#publishing-an-event)
-[Create your own event](#create-your-own-event)
+[What are LoopObjects](#what-are-loopobjects)
+[how to subscribe to events](#how-to-subscribe-to-events)
+[Create your own LoopObject](#create-your-own-loopobject)
 
 
 <!--  
@@ -27,25 +26,20 @@
 //UserCode_Sectionb_end
  -->
  
-## What are events
+## What are LoopObjects
 <!--  
- //UserCode_Sectionwhatareevents
-//UserCode_Sectionwhatareevents_end
+ //UserCode_Sectionwhatareloopobjects
+//UserCode_Sectionwhatareloopobjects_end
 -->
-## signal_event vs event
+## how to subscribe to events
 <!--  
- //UserCode_Sectionsignal_eventvsevent
-//UserCode_Sectionsignal_eventvsevent_end
+ //UserCode_Sectionhowtosubscribetoevents
+//UserCode_Sectionhowtosubscribetoevents_end
 -->
-## Publishing an event
+## Create your own LoopObject
 <!--  
- //UserCode_Sectionpublishinganevent
-//UserCode_Sectionpublishinganevent_end
--->
-## Create your own event
-<!--  
- //UserCode_Sectioncreateyourownevent
-//UserCode_Sectioncreateyourownevent_end
+ //UserCode_Sectioncreateyourownloopobject
+//UserCode_Sectioncreateyourownloopobject_end
 -->
 
 

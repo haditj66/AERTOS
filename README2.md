@@ -1,5 +1,5 @@
 
-# Events
+# About
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -16,10 +16,7 @@
  
 
 ### Page Contents
-[What are events](#what-are-events)
-[signal_event vs event](#signal_event-vs-event)
-[Publishing an event](#publishing-an-event)
-[Create your own event](#create-your-own-event)
+[Overview](#overview)
 
 
 <!--  
@@ -27,25 +24,15 @@
 //UserCode_Sectionb_end
  -->
  
-## What are events
+## Overview
 <!--  
- //UserCode_Sectionwhatareevents
-//UserCode_Sectionwhatareevents_end
--->
-## signal_event vs event
-<!--  
- //UserCode_Sectionsignal_eventvsevent
-//UserCode_Sectionsignal_eventvsevent_end
--->
-## Publishing an event
-<!--  
- //UserCode_Sectionpublishinganevent
-//UserCode_Sectionpublishinganevent_end
--->
-## Create your own event
-<!--  
- //UserCode_Sectioncreateyourownevent
-//UserCode_Sectioncreateyourownevent_end
+ //UserCode_Sectionoverview
+  -->
+ AERTOS came about as a need to rapidly prototype embedded applications without having to worry about the details of RTOS mechanisms such as semaphores and tasks. Instead this is abstracted with concepts of a event-driven architecture. Finite state machines, Service calls, signal processing blocks are a few examples of the concepts used in AERTOS. Below is an example of what can be possible with AERTOS. This is a basic on-off control system for maintaining the desired acceleration of whatever you can imagine.
+
+TODO: show image and function calls in this.
+<!-- 
+//UserCode_Sectionoverview_end
 -->
 
 
