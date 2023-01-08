@@ -1,5 +1,5 @@
 
-# AEClock
+# Example Projects
 <!--  
 //UserCode_Sectiona
 //UserCode_Sectiona_end
@@ -31,13 +31,7 @@
  
 
 ### Page Contents
-- [What are AEClocks](#what-are-aeclocks)
-
-- [how to set them](#how-to-set-them)
-
-- [how to flow to other AOs](#how-to-flow-to-other-aos)
-
-- [tick from interrupt or other source](#tick-from-interrupt-or-other-source)
+- [Overview](#overview)
 
 
 
@@ -46,25 +40,10 @@
 //UserCode_Sectionb_end
  -->
  
-## What are AEClocks
+## Overview
 <!--  
- //UserCode_Sectionwhatareaeclocks
-//UserCode_Sectionwhatareaeclocks_end
--->
-## how to set them
-<!--  
- //UserCode_Sectionhowtosetthem
-//UserCode_Sectionhowtosetthem_end
--->
-## how to flow to other AOs
-<!--  
- //UserCode_Sectionhowtoflowtootheraos
-//UserCode_Sectionhowtoflowtootheraos_end
--->
-## tick from interrupt or other source
-<!--  
- //UserCode_Sectiontickfrominterruptorothersource
-//UserCode_Sectiontickfrominterruptorothersource_end
+ //UserCode_Sectionoverview
+//UserCode_Sectionoverview_end
 -->
 
 
