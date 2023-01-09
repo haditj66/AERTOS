@@ -86,7 +86,7 @@ template<TemplateFor_Service>
 		float GetFrequencyIUpdateAt() { return FrequencyIUpdateAt; }
 		;
 		
-		void SetToSPBTick(AESPBObservor * spb);
+		void SetToSPBTick(AESPBObservor * spb, uint16_t filterNum = 0);
 
 		
 			
@@ -118,13 +118,43 @@ template<TemplateFor_Service>
 
 template<TemplateFor_Service_NoDefaults>
 	inline void AEAOUpdateable<TemplateARGSFor_Service>
-	::SetToSPBTick(AESPBObservor * spb)
+	::SetToSPBTick(AESPBObservor * spb, uint16_t filterNum)
 	{ 
 		this->IsSetToAnSPBRefresh = true;
 		spbIFlowTo = spb;
 		
-		LinkedSPBOutPutSize = spb->GetOutPutSize();
-		ReferenceOfLinkedSPBOutput = spb->GetOutputSignalAddr(); //spb->OutputSignal;
+		if (filterNum == 0)
+		{
+			LinkedSPBOutPutSize = spb->GetOutPutSize();
+			ReferenceOfLinkedSPBOutput = spb->GetOutputSignalAddr();  
+		}
+		else if (filterNum == 1)
+		{
+			LinkedSPBOutPutSize = 1;
+			ReferenceOfLinkedSPBOutput = spb->GetOutputSignalAddrFilter(1);  
+		}
+		else if (filterNum == 2)
+		{
+			LinkedSPBOutPutSize = 1;
+			ReferenceOfLinkedSPBOutput = spb->GetOutputSignalAddrFilter(2);  
+		}
+		else if (filterNum == 3)
+		{
+			LinkedSPBOutPutSize = 1;
+			ReferenceOfLinkedSPBOutput = spb->GetOutputSignalAddrFilter(3);  
+		}
+		else if (filterNum == 4)
+		{
+			LinkedSPBOutPutSize = 1;
+			ReferenceOfLinkedSPBOutput = spb->GetOutputSignalAddrFilter(4);  
+		}
+		else if (filterNum == 5)
+		{
+			LinkedSPBOutPutSize = 1;
+			ReferenceOfLinkedSPBOutput = spb->GetOutputSignalAddrFilter(5);  
+		}
+		
+		
 		this->ActionReq4.LinkedSPBData = LinkedSPBData;
 		
 		

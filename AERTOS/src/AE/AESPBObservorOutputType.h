@@ -84,6 +84,49 @@ public:
 #if MAXNUMBEROF_FILTERS >= 5
 	TFilter5 Filter5;
 #endif
+	
+	float* GetOutputSignalAddrFilter(uint16_t forFilter) const override
+	{
+		if (forFilter == 0)
+		{
+			return this->GetOutputSignalAddr();
+		}
+		else if (forFilter == 1)
+		{
+#if MAXNUMBEROF_FILTERS >= 1 
+			return Filter1->GetOutputDataAddress(); 
+#endif 
+			return nullptr; 
+		}
+		else if (forFilter == 2)
+		{
+#if MAXNUMBEROF_FILTERS >= 2
+			return Filter2->GetOutputDataAddress(); 
+#endif 
+			return nullptr; 
+		}
+		else if (forFilter == 3)
+		{
+#if MAXNUMBEROF_FILTERS >= 3
+			return Filter3->GetOutputDataAddress(); 
+#endif 
+			return nullptr; 
+		}
+		else if (forFilter == 4)
+		{
+#if MAXNUMBEROF_FILTERS >= 4
+			return Filter4->GetOutputDataAddress(); 
+#endif 
+			return nullptr; 
+		}
+		else if (forFilter == 5)
+		{
+#if MAXNUMBEROF_FILTERS >= 5
+			return Filter5->GetOutputDataAddress(); 
+#endif 
+			return nullptr; 
+		}
+	}
 
 	InputChannel channels[NUMOFINPUTSIGNALS];
 	//float channelbuffer1[TheParameterNOTone1];

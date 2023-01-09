@@ -38,7 +38,7 @@ public:
 
 	void Initialize(float samplingPeriodOfObservorInSeconds) ;
 
-	
+	float* GetOutputDataAddress();
 
 protected:
 	
@@ -51,7 +51,7 @@ protected:
 
 	float FilterOutputValue;
 
-	float* GetOutputDataAddress();
+	
 	
 
 //	friend TFilterDerived;

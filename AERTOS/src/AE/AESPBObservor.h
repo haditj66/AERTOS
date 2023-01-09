@@ -49,6 +49,8 @@ public:
 
 	
 	  float* GetOutputSignalAddr() const {return OutputSignal;};
+	  virtual float* GetOutputSignalAddrFilter(uint16_t forFilter) const = 0;
+	   
 	
 protected:
 

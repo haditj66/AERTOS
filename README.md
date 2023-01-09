@@ -62,6 +62,42 @@ AERTOS is a framework and development environment for writing RTOS applications 
  Below is an example of what can be possible with AERTOS. This example shows the creation of a basic on-off control system for maintaining the desired acceleration of whatever system you can imagine. For this case,  we are looking at a small autonomous robotic car. It has two sensors to get it current position. The rotational position is obtained from an encoder on the wheel. This sensor is susceptible to dead reckoning error (errors that cumulate over time). To get a better state estimate of the robot, a second sensor is used. This is the ultrasound sensor. However this sensor is not very accurate. Sensor fusion is used to combine the two readings with a complementary algorithm. Afterwards the signal is differentiated twice to get the acceleration in the x direction. Finally the On-Off utility block will up the power of the motor (via a PWM) when the acceleration is below the desired value and lower the power when it is above.
 ![enter image description here](https://github.com/haditj66/AERTOSCopy/blob/master/doc/images/About_img1.PNG)
 
+Below is how you would configure this setup.  It is done in an intuitive c# api. CGEN will then generate the  C/C++ AERTOS project that you can tweak or add more functionality. When everything is to your liking, you can start and debug the application directly on your board (assuming your board has a programmer with debugging).
+
+            AEClock aEClock1 = new AEClock("clock1", 1000);
+            AEClock aEClock2 = new AEClock("clock2", 1000);
+            AESensor sensor1 = new AESensor("Ultraviolet", ADC1);
+            AESensor sensor2 = new AESensor("Rotational", ADC2); 
+
+
+
+            AverageSPB averageSPB1 = new AverageSPB("averageSPB1", StyleOfSPB.EachSPBTask, " ", false, new SPBChannelUserDefinedCountBuffer(10));
+            AverageSPB averageSPB2 = new AverageSPB("averageSPB2", StyleOfSPB.EachSPBTask, " ", false, new SPBChannelUserDefinedCountBuffer(5));
+
+            Complementary complementary = new Complementary("complementary", StyleOfSPB.EachSPBTask, " ", false);
+
+
+            OnOffUtility onOffUtility = new OnOffUtility("onOffUtility", AEPriorities.MediumPriority);
+
+
+            aEClock1
+            .FlowIntoSensor(sensor1, AEClock_PrescalerEnum.PRESCALER1)
+            .FlowIntoSPB(averageSPB1, SPBChannelNum.CH0, LinkTypeEnum.Copy);
+            aEClock1
+            .FlowIntoSensor(sensor2, AEClock_PrescalerEnum.PRESCALER1)
+            .FlowIntoSPB(averageSPB2, SPBChannelNum.CH0, LinkTypeEnum.Copy);
+
+            averageSPB1.FlowIntoTDU
+            .FlowIntoSPB(complementary, SPBChannelNum.CH0, LinkTypeEnum.Copy);
+
+            averageSPB2
+            .FlowIntoSPB(complementary, SPBChannelNum.CH1, LinkTypeEnum.Copy); ;
+
+            complementary
+            .FlowIntoFilter(new DerivativeFilter())
+            .FlowIntoFilter(new DerivativeFilter())
+            .FlowIntoTDU(OnOffUtility); 
+            
  <!--  
 //UserCode_Sectionexample_end
 -->
