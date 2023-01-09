@@ -1,5 +1,6 @@
 
 
+
 # About
 <!--  
 //UserCode_Sectiona
@@ -63,7 +64,7 @@ AERTOS is a framework and development environment for writing RTOS applications 
 ![enter image description here](https://github.com/haditj66/AERTOSCopy/blob/master/doc/images/About_img1.PNG)
 
 Below is how you would configure this setup.  It is done in an intuitive c# api. CGEN will then generate the  C/C++ AERTOS project that you can tweak or add more functionality. When everything is to your liking, you can start and debug the application directly on your board (assuming your board has a programmer with debugging).
-
+```csharp 
             AEClock aEClock1 = new AEClock("clock1", 1000);
             AEClock aEClock2 = new AEClock("clock2", 1000);
             AESensor sensor1 = new AESensor("Ultraviolet", ADC1);
@@ -78,26 +79,27 @@ Below is how you would configure this setup.  It is done in an intuitive c# api.
 
 
             OnOffUtility onOffUtility = new OnOffUtility("onOffUtility", AEPriorities.MediumPriority);
-
-
+ 
+			//linking AO by flowing 
             aEClock1
             .FlowIntoSensor(sensor1, AEClock_PrescalerEnum.PRESCALER1)
             .FlowIntoSPB(averageSPB1, SPBChannelNum.CH0, LinkTypeEnum.Copy);
-            aEClock1
+            aEClock2
             .FlowIntoSensor(sensor2, AEClock_PrescalerEnum.PRESCALER1)
             .FlowIntoSPB(averageSPB2, SPBChannelNum.CH0, LinkTypeEnum.Copy);
 
-            averageSPB1.FlowIntoTDU
+            averageSPB1
             .FlowIntoSPB(complementary, SPBChannelNum.CH0, LinkTypeEnum.Copy);
 
             averageSPB2
-            .FlowIntoSPB(complementary, SPBChannelNum.CH1, LinkTypeEnum.Copy); ;
+            .FlowIntoSPB(complementary, SPBChannelNum.CH1, LinkTypeEnum.Copy); 
 
             complementary
             .FlowIntoFilter(new DerivativeFilter())
             .FlowIntoFilter(new DerivativeFilter())
             .FlowIntoTDU(OnOffUtility); 
-            
+```       
+
  <!--  
 //UserCode_Sectionexample_end
 -->
