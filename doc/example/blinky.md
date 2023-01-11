@@ -76,7 +76,7 @@ run the cgen command
 
     cgen aeinit blinky
     
-   ![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky1.png)
+   ![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky1.PNG)
  <!--  
 //UserCode_Sectionstep1initproject_end
 -->
@@ -88,13 +88,13 @@ run the cgen command
 
     C:\AERTOSProjects\AAAConfigProj
 double click on the ".sln" file. right click on the solution, and click as shown in the image below
-![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky2.png)
+![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky2.PNG)
 
 Now navigate to the blinky project you just initiated. Add the file shown in the image below by choosing "add as link"
-![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky3.png) 
+![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky3.PNG) 
 
 double click on the file you just added in the solution explorer. right click on the "ConfigProjects" and build your solution. It should build. This blinky.cs file is your config file for your AERTOS. If you want more details of this configuration file, go here [Creating an AERTOS project](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Creating_an_AERTOS_project.md) . For now, take a look at the "defaultTest" function. This is where you will declare Active Objects. The diagram below shows the project.
-![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky4.png) 
+![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky4.PNG) 
 
 Here is what is going on. The purple clock at the bottom ticks at a frequency of 1000 hz. The sine sensor it set to this clock. This means it too runs at this frequency. At every tick, it will read the sensor signal data (in this case the data comes from a static float array to simulate a sine wave ADC signal). That data will be noisy so it will need to be processed a bit. An Average signal process block is next in the chain. It will buffer 4 signals from the sine sensor, and then take the average of them. 
 On the right side, a GPIO sensor will read the state of the gpio port A pin 1 every 250 hz. The left and right signals will then meet at the "If Right On" SPB. This SPB will output the left signal only when the right signal reads true. Finally this is sent to a PWM Controller Utility. This utility will handle the PWM. It will have a service function call that you can call to turn on the PWM controller.
@@ -193,7 +193,7 @@ Now go to your AERTOS project. File located here
 
     C:/AERTOS/AERTOS.sln
 You need to build your project with cmake. To do this, you can right click the solution in the solution explorer and select "Reload cmake settings". Afterwards, a GUI will pop up that will help you configure cgen options. You only do this once per project. Select the "Start config Options" button, select the options you want same to the one in the image below.
-![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky5.png) 
+![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky5.PNG) 
 
 Verify your project builds by finding the "blinky" target in the solution explorer, right clicking on it and selecting "build target". Or you could to control+shift+b to build. If you have a succeeded build, you can now copy and paste the below code to blinky -> TestFiles ->defaultTest.cpp  . You can only write in //UserCode_Section blocks as everything outside these blocks will get overwritten when you run aegenerate. 
 On around line 32 for //UserCode_Sectiona block paste this code
