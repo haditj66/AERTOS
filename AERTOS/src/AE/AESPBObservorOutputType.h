@@ -94,35 +94,35 @@ public:
 		else if (forFilter == 1)
 		{
 #if MAXNUMBEROF_FILTERS >= 1 
-			return Filter1->GetOutputDataAddress(); 
+			return Filter1.GetOutputDataAddress(); 
 #endif 
 			return nullptr; 
 		}
 		else if (forFilter == 2)
 		{
 #if MAXNUMBEROF_FILTERS >= 2
-			return Filter2->GetOutputDataAddress(); 
+			return Filter2.GetOutputDataAddress(); 
 #endif 
 			return nullptr; 
 		}
 		else if (forFilter == 3)
 		{
 #if MAXNUMBEROF_FILTERS >= 3
-			return Filter3->GetOutputDataAddress(); 
+			return Filter3.GetOutputDataAddress(); 
 #endif 
 			return nullptr; 
 		}
 		else if (forFilter == 4)
 		{
 #if MAXNUMBEROF_FILTERS >= 4
-			return Filter4->GetOutputDataAddress(); 
+			return Filter4.GetOutputDataAddress(); 
 #endif 
 			return nullptr; 
 		}
 		else if (forFilter == 5)
 		{
 #if MAXNUMBEROF_FILTERS >= 5
-			return Filter5->GetOutputDataAddress(); 
+			return Filter5.GetOutputDataAddress(); 
 #endif 
 			return nullptr; 
 		}

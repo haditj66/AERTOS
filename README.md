@@ -1,17 +1,15 @@
 
-
-
-# About
+# AERTOS
 <!--  
 //UserCode_Sectiona
  -->
-AERTOS is a framework and development environment for writing RTOS applications on embedded devices. It uses visual programming to aid the you with rapid prototyping, even if you are not a very experienced programmer. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
+AERTOS is a framework and development environment for writing RTOS applications on embedded devices. It uses visual programming to aid you with rapid prototyping, even if you are not a very experienced programmer. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
 <!--  
 //UserCode_Sectiona_end
 -->
 
 ## Table of Contents
-- [About](https://github.com/haditj66/AERTOSCopy)
+- [AERTOS](https://github.com/haditj66/AERTOSCopy)
 - [Installation](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Installation.md)
 - [Creating an AERTOS project](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Creating_an_AERTOS_project.md)
 - [AERTOS concepts](https://github.com/haditj66/AERTOSCopy/blob/master/doc/AERTOS_concepts.md)
@@ -51,7 +49,7 @@ AERTOS is a framework and development environment for writing RTOS applications 
 <!--  
  //UserCode_Sectionoverview
    -->
- AERTOS came about as a need to rapidly prototype embedded applications without having to worry about the details of RTOS mechanisms such as semaphores and tasks. Instead this is abstracted with concepts of an event-driven architecture. Finite state machines, Service calls, signal processing blocks are a few examples of the concepts used in AERTOS. 
+ AERTOS came about as a need to rapidly prototype embedded applications without having to worry about the details of RTOS mechanisms such as semaphores and tasks. Instead, this is abstracted with concepts of an event-driven architecture. Finite state machines, Service calls, and signal processing blocks are a few examples of the concepts used in AERTOS. 
 
 <!-- 
 //UserCode_Sectionoverview_end
@@ -66,7 +64,7 @@ AERTOS is a framework and development environment for writing RTOS applications 
 Below is how you would configure this setup.  It is done in an intuitive c# api. CGEN will then generate the  C/C++ AERTOS project that you can tweak or add more functionality. When everything is to your liking, you can start and debug the application directly on your board (assuming your board has a programmer with debugging).
 ```csharp 
             AEClock aEClock1 = new AEClock("clock1", 1000);
-            AEClock aEClock2 = new AEClock("clock2", 1000);
+            AEClock aEClock2 = new AEClock("clock2", 500);
             AESensor sensor1 = new AESensor("Ultraviolet", ADC1);
             AESensor sensor2 = new AESensor("Rotational", ADC2); 
 

@@ -102,6 +102,8 @@ Cgen_Option(
  #AEObjects.h
  AESet.h 
  AEFastTrig.h
+ AERand.h 
+ AERand.cpp
  AECircularBuffer.h
  AECircularBuffer.cpp
  #PeripheralImplementations.h

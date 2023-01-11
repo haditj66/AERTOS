@@ -6,6 +6,8 @@
 //#include "FreeRTOS.h"
 #include "task.h"
 
+#include "AERand.h"
+
 AEPerformanceTimer* AEPerfTimer1;
 AEPerformanceTimer* AEPerfTimer2;
 AEPerformanceTimer* AEPerfTimer3;
@@ -14,6 +16,8 @@ void AE_Init(void)
 {
     setup.BSPInit();
 
+	
+	AE_rand::init_QRrand();
 	
 
 	//create instances of the performance timers

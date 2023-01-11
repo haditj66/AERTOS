@@ -6,7 +6,7 @@
 -->
 
 ## Table of Contents
-- [About](https://github.com/haditj66/AERTOSCopy)
+- [AERTOS](https://github.com/haditj66/AERTOSCopy)
 - [Installation](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Installation.md)
 - [Creating an AERTOS project](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Creating_an_AERTOS_project.md)
 - [AERTOS concepts](https://github.com/haditj66/AERTOSCopy/blob/master/doc/AERTOS_concepts.md)

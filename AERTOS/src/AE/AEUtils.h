@@ -94,7 +94,7 @@ public:float operator()(float a) { return 0; }
 	;
 	float GetObservation() { return 1; }
 	;
-	float* GetOutputDataAddress() { return nullptr; }
+	float* GetOutputDataAddress() const { return nullptr; }
 	;
 };
 
@@ -1288,6 +1288,10 @@ template <class TTypeOfVars>
 	
 	return totalSizeBytes;
 }
+
+
+
+
 
 
 //#include "AEmemcpy.h"
