@@ -2,6 +2,9 @@
 # Observers
 <!--  
 //UserCode_Sectiona
+-->
+Observers are objects that process a signal in some way, and then output the processed signal into another observer. Observers are either Signal processing blocks (SPB), filters, or sensors.
+<!--  
 //UserCode_Sectiona_end
 -->
 

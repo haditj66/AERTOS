@@ -1,7 +1,11 @@
 
+
 # Filters
 <!--  
 //UserCode_Sectiona
+-->
+Filters are simple blocks that will take a single sample data streaming in, run an algorithm on it with a past history of data, and output a single sample float data. 
+<!--  
 //UserCode_Sectiona_end
 -->
 
@@ -47,16 +51,56 @@
 ## What are filters 
 <!--  
  //UserCode_Sectionwhatarefilters
+ -->
+Graphically filters are represented as an orange block. Filters are used when you want to process data as it comes streaming in. This is the block to use when you want to implement something like a moving average. Moving averages need the most recent data point with a history of the previous data. SPBs in contrast do not hold a history of past data. Also filters run within the same task as the observer they originate from so are a good choice when you are outputting data of size one and don't need to set it to an spb of multiple input channels or an input channel with a count buffer.
+<!--  
 //UserCode_Sectionwhatarefilters_end
 -->
 ## how to set them
 <!--  
  //UserCode_Sectionhowtosetthem
+  -->
+In the config file, you dont create an instance of them but instead flow to a filter.
+```cpp 
+            clockFormpudata.FlowIntoSensor(sensorForAccelx, AEClock_PrescalerEnum.PRESCALER1)
+                .FlowIntoFilter(new GainFilter(-accelUnitConversion)); 
+```
+If your filter flows to multiple Observers, you need to grab the instance of it like this
+```cpp 
+        var filter1 = clockFormpudata.FlowIntoSensor(sensorForAccelx, AEClock_PrescalerEnum.PRESCALER1)
+                .FlowIntoFilter(new GainFilter(-accelUnitConversion)); 
+       filter1.FlowIntoSPB(spb1,SPBChannelNum.CH0, LinkTypeEnum.Copy);
+       filter1.FlowIntoSPB(spb2,SPBChannelNum.CH0, LinkTypeEnum.Copy);
+```
+
+
+<!--  
 //UserCode_Sectionhowtosetthem_end
 -->
 ## create your own filter
 <!--  
  //UserCode_Sectioncreateyourownfilter
+  -->
+In the config file do this for example
+```cpp
+    public class GainFilter : AEFilter_ConstructorArg<float>
+    {
+        public GainFilter(float arg1Value)
+            : base("gain", arg1Value, "commonAOs", 1)
+        {
+        }
+    }
+```
+So notice how I inherited from  ```AEFilter_ConstructorArg<float>``` This is because in that gain filter I wanted to pass in an argument called gain field at constructor of the object which is a single float field. I can also pass in an int and float arg like this ```AEFilter_ConstructorArg<uint32_t, float>``` 
+
+Now after you aegenerate this, go to your AERTOS project, reload cmake and go to the filter file it generated. You can fill in the implementation of your filter. Remember to stay within the usercode sections. In my example of the gain filter, It is a very simple implementation in the RunFilter function
+```cpp
+inline float GainFilter< _gain >::RunFilter(float newestInput)
+{   
+	return G_gain * newestInput;  
+}
+```
+<!--  
 //UserCode_Sectioncreateyourownfilter_end
 -->
 

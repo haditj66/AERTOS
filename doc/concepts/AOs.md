@@ -2,6 +2,9 @@
 # Active Objects (AO)
 <!--  
 //UserCode_Sectiona
+-->
+Active objects are objects in AERTOS that exhibit a common theme of persistence throughout the application, priority of runtime, and an ability to publish events. 
+<!--  
 //UserCode_Sectiona_end
 -->
 
@@ -45,11 +48,17 @@
 ## What are Active Objects
 <!--  
  //UserCode_Sectionwhatareactiveobjects
+ -->
+Most of the concepts in AERTOS concepts are type of AO.  Each AO is created to aid in different use cases but there can be multiple ways with different combinations of AOs to solve the same problem.
+<!--  
 //UserCode_Sectionwhatareactiveobjects_end
 -->
 ## Priorities
 <!--  
  //UserCode_Sectionpriorities
+ -->
+Each AO have their own priority. Some priorities are set by the user, like the FSM, and some are automictically set. A high priority AO will be first to use utilities when in queue for requesting a service to be run. They will also preempt lower priority AOs during runtime.
+<!--  
 //UserCode_Sectionpriorities_end
 -->
 

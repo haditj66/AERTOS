@@ -1,7 +1,11 @@
 
+
 # Sensors
 <!--  
 //UserCode_Sectiona
+-->
+Sensors are your entry point for data that will either come from an ADC, in memory data, or anything else you can read from.
+<!--  
 //UserCode_Sectiona_end
 -->
 
@@ -45,11 +49,32 @@
 ## What are sensors
 <!--  
  //UserCode_Sectionwhataresensors
+ -->
+ Sensors are represented graphically as a red block. They have an output of a float array of size one. They must be powered from a AEClock.
+ <!--  
 //UserCode_Sectionwhataresensors_end
 -->
 ## how to set them
 <!--  
  //UserCode_Sectionhowtosetthem
+ -->
+you can set a clock from an ADC or any other source. 
+#### From an ADC
+---
+In the config project, do this
+```cpp
+AESensor opticalsensor1 = 
+new AESensor("opticalsensor1",  ADCPERIPHERAL1_CH1.Instance, 0, 100);
+```
+the "ADCPERIPHERAL1_CH1.Instance" in that example is an instance of the ADC you want to use. The 0, 100) means that the output of the data will be mapped from 0 to 100.
+
+#### From another source
+```cpp
+ sensorForAccelx = 
+ new AESensor("sensorForAccelx", SensorResolution.Resolution16Bit, SensorDataType.int16_T);
+```
+You can set the sensor to have any integer datatype you want. In this case it is a int16_T with a 16 bit resolution set.
+<!--  
 //UserCode_Sectionhowtosetthem_end
 -->
 

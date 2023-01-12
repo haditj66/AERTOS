@@ -1,0 +1,203 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				},
+				{
+					"build" : "src/AE",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/AE",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src/AE/hal",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/AE/hal",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "DEBUG",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "AERTOS",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "AECoreLib::@dbae314adb83077d4c0f",
+					"jsonFile" : "target-AECoreLib-DEBUG-4e4654e4b13433bafa5c.json",
+					"name" : "AECoreLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "AEHalLib::@f3e1d49ac31996c899d3",
+					"jsonFile" : "target-AEHalLib-DEBUG-0515932ccc55326e3040.json",
+					"name" : "AEHalLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP-DEBUG-491b0dbe38cb8b172290.json",
+					"name" : "BSP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BSP_EFP_Profiler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BSP_EFP_Profiler-DEBUG-efbfad6887f8f0d94e6c.json",
+					"name" : "BSP_EFP_Profiler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FreeRTOS::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FreeRTOS-DEBUG-9cdd104f6cfc52431ceb.json",
+					"name" : "FreeRTOS",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TESTFW::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TESTFW-DEBUG-23f1e06b037948371ee2.json",
+					"name" : "TESTFW",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "blinky::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-blinky-DEBUG-6557e12de07bc80b8334.json",
+					"name" : "blinky",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "blinky-bin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-blinky-bin-DEBUG-85b08bd6dedd77b066bd.json",
+					"name" : "blinky-bin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "blinky_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-blinky_lib-DEBUG-44eaf563faa3a3a96c7f.json",
+					"name" : "blinky_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commonAOs_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commonAOs_lib-DEBUG-3488cc3ff767f1fe5c7e.json",
+					"name" : "commonAOs_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commonHalAOs_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commonHalAOs_lib-DEBUG-247128957dbaebcd1d6b.json",
+					"name" : "commonHalAOs_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32f4ll::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32f4ll-DEBUG-2971505b87093212843a.json",
+					"name" : "stm32f4ll",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32half4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32half4-DEBUG-ccfa0e94c8778fa04f5e.json",
+					"name" : "stm32half4",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/AERTOS/AERTOS/build/AE_STM32F411RE/Debug",
+		"source" : "C:/AERTOS/AERTOS"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

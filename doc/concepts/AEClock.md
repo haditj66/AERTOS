@@ -2,6 +2,10 @@
 # AEClock
 <!--  
 //UserCode_Sectiona
+-->
+Clocks are what power your AOs to tick at a designated frequency.
+
+<!--  
 //UserCode_Sectiona_end
 -->
 
@@ -37,8 +41,6 @@
 
 - [how to flow to other AOs](#how-to-flow-to-other-aos)
 
-- [tick from interrupt or other source](#tick-from-interrupt-or-other-source)
-
 
 
 <!--  
@@ -49,22 +51,60 @@
 ## What are AEClocks
 <!--  
  //UserCode_Sectionwhatareaeclocks
+ -->
+clocks are represented graphically with a purple clock icon. The tick at some designated frequency. They can tick from one of two sources
+
+ - From a FREERTOS timer
+ - From an interrupt or loopobject.
+
+If it ticks from a FREERTOS timer, you are limited to less than 1000 hz. If it ticks from an interrupt, you have no limit on the frequency however whatever implementation is in those ticks, needs to finish quickly. 
+
+<!--  
 //UserCode_Sectionwhatareaeclocks_end
 -->
 ## how to set them
 <!--  
  //UserCode_Sectionhowtosetthem
+  -->
+ As stated, It can tick from two different sources. 
+### From a FREERTOS timer
+ ---
+ in the config file, do this.
+ ```csharp
+ AEClock aEClock = new AEClock("clock1",100 );
+```
+The 100 means it will tick at 100 hz
+
+### From an interrupt or loop object
+
+in the config file, do this.
+```csharp
+AEClockTicksNotFromRtosTimer clock1 = new AEClockTicksNotFromRtosTimer("clock1", 10000);
+```
+You need to specify the frequency of the source it will tick at. For example if you know the interrupt triggers at 10000 hz. you set it as 10000.  Now in AERTOS, you need to tick the timer manually.  You need to call  TickWithoutTimer in whatever function body it is ticking from.
+```csharp
+ clock1->TickWithoutTimer();
+```
+This is needed when you want to run a spb chain from an interrupt. More on that in [SPB](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/observers/SPB.md).
+
+<!--  
 //UserCode_Sectionhowtosetthem_end
 -->
 ## how to flow to other AOs
 <!--  
  //UserCode_Sectionhowtoflowtootheraos
+ -->
+ Clocks can flow to either a sensor or a Utility AO to power them. in the config file you can either call
+ ```csharp
+ clock1.FlowIntoSensor(sensor1, AEClock_PrescalerEnum.PRESCALER1)
+ ```
+ or you can call
+ ```csharp
+  clock1.FlowIntoTDU(utility1, AEClock_PrescalerEnum.PRESCALER1)
+ ```
+ the prescaler divides the frequency. 
+ <!--
 //UserCode_Sectionhowtoflowtootheraos_end
--->
-## tick from interrupt or other source
-<!--  
- //UserCode_Sectiontickfrominterruptorothersource
-//UserCode_Sectiontickfrominterruptorothersource_end
 -->
 
 

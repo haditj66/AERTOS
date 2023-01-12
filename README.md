@@ -3,7 +3,7 @@
 <!--  
 //UserCode_Sectiona
  -->
-AERTOS is a framework and development environment for writing RTOS applications on embedded devices. It uses visual programming to aid you with rapid prototyping, even if you are not a very experienced programmer. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
+AERTOS is a framework and development environment for writing RTOS applications on embedded devices. can be thought of as a sort of Arduino but for RTOS applications. It uses visual programming to aid you with rapid prototyping, even if you are not a very experienced programmer. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
 <!--  
 //UserCode_Sectiona_end
 -->
@@ -49,7 +49,7 @@ AERTOS is a framework and development environment for writing RTOS applications 
 <!--  
  //UserCode_Sectionoverview
    -->
- AERTOS came about as a need to rapidly prototype embedded applications without having to worry about the details of RTOS mechanisms such as semaphores and tasks. Instead, this is abstracted with concepts of an event-driven architecture. Finite state machines, Service calls, and signal processing blocks are a few examples of the concepts used in AERTOS. 
+ AERTOS came about as a need to rapidly prototype embedded applications without having to worry about the details of RTOS mechanisms such as semaphores and tasks. Instead, this is abstracted with concepts of an event-driven architecture. Finite state machines, Service calls, and signal processing blocks are a few examples of the concepts used in AERTOS. Go here for a begginer project to get started [Example blinky](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/blinky.md) .
 
 <!-- 
 //UserCode_Sectionoverview_end

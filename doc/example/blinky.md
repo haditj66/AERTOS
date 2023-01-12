@@ -60,8 +60,8 @@ In this example, you will learn how to create a simple AERTOS blinky project.
   -->
 You will need an STM32F411xx board.
 
- This blinky is a little different than the usual. Instead of just blinking an led, it will fade the led based on a sinusoidal signal. GPIO Port A Pin 1 being set to high will turn off the LED. An output PWM signal from Port D Pin 12 that  will control the LED light intensity of the onboard LED.
-Make sure you have everything installed [Installation](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Installation.md). This will walk through creating a blinky program. 
+ This blinky is a little different than the usual. Instead of just blinking an LED, it will fade the LED based on a sinusoidal signal. GPIO Port A Pin 1 being set to high will turn off the LED. An output PWM signal from Port D Pin 12  will control the LED light intensity of the onboard LED.
+Make sure you have everything  [installed](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Installation.md).
  <!--  
 //UserCode_Sectionoverview_end
 -->
@@ -102,7 +102,7 @@ On the right side, a GPIO sensor will read the state of the gpio port A pin 1 ev
  
  
  
-
+```csharp
     using CgenMin.MacroProcesses;
     using commonAOsProject;
     using commonHalAOsProject;
@@ -181,6 +181,14 @@ On the right side, a GPIO sensor will read the state of the gpio port A pin 1 ev
      
         } 
     }
+```
+
+build your config project. (control+shift+b) 
+Now select and then generate this project by running in cmd
+
+    cgen aeselect blinky defaultTest
+
+    cgen aegenerate
 
  <!--  
 //UserCode_Sectionstep2configproject_end
@@ -192,20 +200,22 @@ On the right side, a GPIO sensor will read the state of the gpio port A pin 1 ev
 Now go to your AERTOS project. File located here
 
     C:/AERTOS/AERTOS.sln
-You need to build your project with cmake. To do this, you can right click the solution in the solution explorer and select "Reload cmake settings". Afterwards, a GUI will pop up that will help you configure cgen options. You only do this once per project. Select the "Start config Options" button, select the options you want same to the one in the image below.
+You need to build your project with cmake. To do this, you can right click the solution in the solution explorer and select "Reload cmake settings". Afterwards, a GUI will pop up that will help you configure cgen options. You only do this once per project. Select the "Start config Options" button, select the options you want, same to the one in the image below.
 ![](https://github.com/haditj66/AERTOS/blob/master/doc/images/Blinky5.PNG) 
 
 Verify your project builds by finding the "blinky" target in the solution explorer, right clicking on it and selecting "build target". Or you could to control+shift+b to build. If you have a succeeded build, you can now copy and paste the below code to blinky -> TestFiles ->defaultTest.cpp  . You can only write in //UserCode_Section blocks as everything outside these blocks will get overwritten when you run aegenerate. 
 On around line 32 for //UserCode_Sectiona block paste this code
 
+```csharp
     #include "AERand.h"
     const int sinDataSize = 1000;
     static float NoisySineData[sinDataSize];
     static int indexSine = 0;
     static bool  firstTick = false;  
-
+```
 On around line 46 for //UserCode_Sectionbeforemainblock paste this code
 
+```csharp
     const float Pi = 3.14159;
     for (int i = 0; i < sinDataSize; i++)
     { 
@@ -213,13 +223,15 @@ On around line 46 for //UserCode_Sectionbeforemainblock paste this code
     	NoisySineData[i] = (sin((i*  Pi / (sinDataSize ))) + noise);
     	NoisySineData[i] = NoisySineData[i] * 100; //scale it for a pwm value 
     }
-
+```
 On around line 108 for //UserCode_Sectionb paste this code
 
+```csharp
     pWMDriverU->UserInitialize(PWMPERIPHERAL_inst1);
-    
+```
 On around line 121 for //UserCode_Sectionclock1before paste this code
 
+```csharp
     indexSine = indexSine == 1000 ? 0 : indexSine+1;
     sineSensor_data[0] = NoisySineData[indexSine];
     sengpioSensorsor2_data[0] = (int16_t)!GPIOPERIPHERAL_inst1->GPIO_ReadPin();
@@ -229,7 +241,7 @@ On around line 121 for //UserCode_Sectionclock1before paste this code
     		pWMDriverU->StartPWMFromSPBLinked(0,true);
     		firstTick = true;
     	}
-	
+```
  <!--  
 //UserCode_Sectionstep3aertosprojectcode_end
 -->

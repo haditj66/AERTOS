@@ -2,6 +2,9 @@
 # LoopObject
 <!--  
 //UserCode_Sectiona
+-->
+Loop objects are the most fundamental AO that  has one looping task that updates at a frequency you specify. 
+<!--  
 //UserCode_Sectiona_end
 -->
 
@@ -47,16 +50,44 @@
 ## What are LoopObjects
 <!--  
  //UserCode_Sectionwhatareloopobjects
+ -->
+Think of Loop objects as a decision maker in your application. It is the object that utilizes utilities, sequences actions, and subscribes subscribe to events. You can then specify callbacks for the events it subscribes too. 
+<!--  
 //UserCode_Sectionwhatareloopobjects_end
 -->
 ## how to subscribe to events
 <!--  
  //UserCode_Sectionhowtosubscribetoevents
+  -->
+You do that in the created Loopobject header file. In the StartAOLoopObject function.  you need to use the following "AELoopSubscribe" macro. 
+```csharp
+    void StartAOLoopObject()  override
+	{ 
+		AELoopSubscribe(Button1, AELoopObject1Test, Button1_Callback); 
+	}
+```
+in that scenario, Button1 is the event name, AELoopObject1Test is the name of the LoopObject, and Button1_Callback is the callback function you want to trigger when that event is called.
+<!--  
 //UserCode_Sectionhowtosubscribetoevents_end
 -->
 ## Create your own LoopObject
 <!--  
  //UserCode_Sectioncreateyourownloopobject
+ -->
+example 
+```csharp
+    public class MyLoopObject: AELoopObject
+    {
+        public MyLoopObject(string instanceName, AEPriorities priority, int freqOfLoop)
+            : base("AECoreTests", instanceName, priority, freqOfLoop,
+                  new CppFunctionArgs (
+                      new CppFunctionArg("SomeClassType", "someClassType",false))
+                  )
+        {  }
+    }
+```
+The CppFunctionArgs  is a way to be able to pass in contructor arguments that will later be called with the Userintialize() function. 
+ <!--  
 //UserCode_Sectioncreateyourownloopobject_end
 -->
 

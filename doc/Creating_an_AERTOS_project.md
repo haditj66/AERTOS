@@ -52,6 +52,10 @@
 
 - [additional include and src files](#additional-include-and-src-files)
 
+- [write your own cmake for a project](#write-your-own-cmake-for-a-project)
+
+- [the cmakegui for cmake options](#the-cmakegui-for-cmake-options)
+
 
 
 <!--  
@@ -63,202 +67,196 @@
 <!--  
  //UserCode_Sectionoverview 
  -->
-You will need an STM32F411xx board.
+ 
+There are three components to AERTOS. To walk through a full example of creating a simple project, see  [Example blinky](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/blinky.md).
 
- This blinky is a little different than the usual. Instead of just blinking an led, it will fade the led based on a sinusoidal signal. GPIO Port A Pin 1 being set to high will turn off the LED. An output PWM signal from Port D Pin 12 that  will control the LED light intensity of the onboard LED.
-Make sure you have everything installed [Installation](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Installation.md). This will walk through creating a blinky program. 
-### step 1  
-Open a command prompt window and set the working directory to 
+ - CGEN: A .NET application that aids with code generating your AERTOS project.
+ - AERTOS config project: A .NET application that you use to write c# code that CGEN will use to code generate.
+ - AERTOS: The actual AERTOS project that will run on your embedded target. 
+ 
+ 
 
-    C:/AERTOSProjects/blinky
-run the cgen command
-
-    cgen aeinit blinky
+ 
     
    ![](https://github.com/haditj66/AERTOS/tree/master/doc/images/Blinky1.png)
-### step 2
- Go to your configuration project. This is a .Net application that you will use to help generate your AERTOS project. The code is in c# but minimal c#  experience is needed. the project is located here
-
-    C:\AERTOSProjects\AAAConfigProj
-double click on the ".sln" file. right click on the solution, and click as shown in the image below
-![](https://github.com/haditj66/AERTOS/tree/master/doc/images/Blinky2.png)
-
-Now navigate to the blinky project you just initiated. Add the file shown in the image below by choosing "add as link"
-![](https://github.com/haditj66/AERTOS/tree/master/doc/images/Blinky3.png) 
-
-double click on the file you just added in the solution explorer. right click on the "ConfigProjects" and build your solution. It should build. This blinky.cs file is your config file for your AERTOS. If you want more details of this configuration file, go here [Creating an AERTOS project](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Creating_an_AERTOS_project.md) . For now, take a look at the "defaultTest" function. This is where you will declare Active Objects. The diagram below shows the project.
-![](https://github.com/haditj66/AERTOS/tree/master/doc/images/Blinky4.png) 
-
-Here is what is going on. The purple clock at the bottom ticks at a frequency of 1000 hz. The sine sensor it set to this clock. This means it too runs at this frequency. At every tick, it will read the sensor signal data (in this case the data comes from a static float array to simulate a sine wave ADC signal). That data will be noisy so it will need to be processed a bit. An Average signal process block is next in the chain. It will buffer 4 signals from the sine sensor, and then take the average of them. 
-On the right side, a GPIO sensor will read the state of the gpio port A pin 1 every 250 hz. The left and right signals will then meet at the "If Right On" SPB. This SPB will output the left signal only when the right signal reads true. Finally this is sent to a PWM Controller Utility. This utility will handle the PWM. It will have a service function call that you can call to turn on the PWM controller.
- You want to now configure this diagram in the blinky.cs file. Replace the contents of that file with this code.
  
- 
- 
-
-    using CgenMin.MacroProcesses;
-    using commonAOsProject;
-    using commonHalAOsProject;
-    using System.Collections.Generic;
-    
-    namespace blinkyProject
-    {
-    
-        public class blinky : AEProject
-        {
-    		[AEEXETest]
-            public void defaultTest()
-            {
-                AEClock clock1 = new AEClock("clock1", 1000);
-    
-                AESensor sineSensor = new AESensor("sineSensor", SensorResolution.Resolution16Bit,SensorDataType.int16_T);
-                AESensor gpioSensor = new AESensor("sengpioSensorsor2", SensorResolution.Resolution16Bit,SensorDataType.int16_T);
-    
-                AverageSPB averageSPB = new AverageSPB("averageSPB", StyleOfSPB.EachSPBTask,  false, new SPBChannelUserDefinedCountBuffer(4));
-                IfRightOnSPB ifRightOnSPB = new IfRightOnSPB("ifRightOnSPB", StyleOfSPB.EachSPBTask,  false);
-                 
-                PWMDriverU pWMDriverU = new PWMDriverU("pWMDriverU",10,AEPriorities.MediumPriority, ifRightOnSPB);
-    
-                //linking ----------
-                clock1.
-                    FlowIntoSensor(sineSensor, AEClock_PrescalerEnum.PRESCALER1)
-                   .FlowIntoSPB(averageSPB,SPBChannelNum.CH0,LinkTypeEnum.Copy);
-                averageSPB.FlowIntoSPB(ifRightOnSPB, SPBChannelNum.CH0, LinkTypeEnum.Copy);
-    
-                clock1.
-                    FlowIntoSensor(gpioSensor, AEClock_PrescalerEnum.PRESCALER4)
-                   .FlowIntoSPB(ifRightOnSPB, SPBChannelNum.CH1, LinkTypeEnum.Copy);
-    
-                
-    
-    
-            }
-    
-            protected override string _GetDirectoryOfLibrary()
-            {
-                return @"blinky"; 
-            }
-    
-            protected override List<AEEvent> _GetEventsInLibrary()
-            {
-                return new List<AEEvent>() { };
-            }
-    
-    		protected override List<AEHal> _GetPeripheralsInLibrary()
-            {
-    		//ADCPERIPHERAL1_CH1.Init(Portenum.PortB, PinEnum.PIN0)
-                return new List<AEHal>() {
-                    PWMPERIPHERAL1.Init(Portenum.PortD, PinEnum.PIN12),
-                    GPIOPERIPHERAL1.Init(Portenum.PortA, PinEnum.PIN1)
-                };
-            }
-    
-            protected override List<AEProject> _GetLibrariesIDependOn()
-            {
-                return new List<AEProject>() {
-                new commonAOs(),
-                new commonHalAOs()
-                };
-            }
-    		
-    		protected override List<string> _GetAnyAdditionalIncludeDirs()
-            {
-                return new List<string>() { };
-            }
-    		
-    		protected override List<string> _GetAnyAdditionalSRCDirs()
-            {
-                return new List<string>() {  };
-            }
-    		
-     
-        } 
-    }
-
-Now go to your AERTOS project. File located here
-
-    C:/AERTOS/AERTOS.sln
-You need to build your project with cmake. To do this, you can right click the solution in the solution explorer and select "Reload cmake settings". Afterwards, a GUI will pop up that will help you configure cgen options. You only do this once per project. Select the "Start config Options" button, select the options you want same to the one in the image below.
-![](https://github.com/haditj66/AERTOS/tree/master/doc/images/Blinky5.png) 
-
-Verify your project builds by finding the "blinky" target in the solution explorer, right clicking on it and selecting "build target". Or you could to control+shift+b to build. If you have a succeeded build, you can now copy and paste the below code to blinky -> TestFiles ->defaultTest.cpp  . You can only write in //UserCode_Section blocks as everything outside these blocks will get overwritten when you run aegenerate. 
-On around line 32 for //UserCode_Sectiona block paste this code
-
-    #include "AERand.h"
-    const int sinDataSize = 1000;
-    static float NoisySineData[sinDataSize];
-    static int indexSine = 0;
-    static bool  firstTick = false;  
-
-On around line 46 for //UserCode_Sectionbeforemainblock paste this code
-
-    const float Pi = 3.14159;
-    for (int i = 0; i < sinDataSize; i++)
-    { 
-    	float noise = AE_rand::getRandomGaussianDistribution(0,.01);
-    	NoisySineData[i] = (sin((i*  Pi / (sinDataSize ))) + noise);
-    	NoisySineData[i] = NoisySineData[i] * 100; //scale it for a pwm value 
-    }
-
-On around line 108 for //UserCode_Sectionb paste this code
-
-    pWMDriverU->UserInitialize(PWMPERIPHERAL_inst1);
-    
-On around line 121 for //UserCode_Sectionclock1before paste this code
-
-    indexSine = indexSine == 1000 ? 0 : indexSine+1;
-    sineSensor_data[0] = NoisySineData[indexSine];
-    sengpioSensorsor2_data[0] = (int16_t)!GPIOPERIPHERAL_inst1->GPIO_ReadPin();
-    
-    	if (firstTick == false)
-    	{
-    		pWMDriverU->StartPWMFromSPBLinked(0,true);
-    		firstTick = true;
-    	}
-	
-Now just run your project by clicking the "Start" button at the top, or by pressing F5. if a breakpoint is hit at start, just hit continue. You should see your LED, or whatever is on the receiving  end of the PWM, fade with a sinusoidal pattern. You will see the onboard LED fade as well.
  <!--  
 //UserCode_Sectionoverview_end
 -->
 ## CGEN commands for AERTOS
 <!--  
  //UserCode_Sectioncgencommandsforaertos
+ -->
+ 
+ 
+ To create a brand new AERTOS project, run the following command in the directory you want the project to be. Make sure to be in the AERTOS base directory of C:/AERTOSProjects
+
+     cgen aeinit <name>
+
+----
+To select a project you want to work in
+
+    cgen aeselect <nameOfProject> <nameOfProjectTest> 
+Make sure to reload cmake so the project updates in AERTOS after running this command.
+   
+  ---
+  To code generate your currently selected project based on your config project
+
+    cgen aegenerate
+Make sure to reload cmake so the project updates in AERTOS after running this command.
+   <!--  
 //UserCode_Sectioncgencommandsforaertos_end
 -->
 ## The Config file
 <!--  
  //UserCode_Sectiontheconfigfile
+ -->
+ you will find your config file, which is a c# script, in the conf folder of you AERTOS project. To use it in your config project located here 
+
+     C:/AERTOSProjects/AAAConfigProj
+
+<!--  
 //UserCode_Sectiontheconfigfile_end
 -->
 ## AEConfig
 <!--  
  //UserCode_Sectionaeconfig
+  -->
+ In your config project, you can set AERTOS  settings per project test. To do this, look at the 
+ [AEEXETest] attribute. You can open  parenthesis and intellesense will give you some settings you can set. For example doing this
+
+    [AEEXETest(aEconfigTOTAL_HEAP_SIZE:85000)]
+   gives the setting that the total available size of AERTOS will be 85000 bytes.
+
+<!--  
 //UserCode_Sectionaeconfig_end
 -->
 ## ProjectTests
 <!--  
  //UserCode_Sectionprojecttests
+   -->
+ Look at the  [AEEXETest] attribute in a config project. This signifies that the function below it is a AERTOS test. You can create more than one test. To make another test, just write another function. Name it the name of your test, and give it the above attribute. Like this
+```csharp
+      [AEEXETest]
+     public void NameOfYourNewTest()
+     {  }
+```
+build your config project to update everything. 
+dont forget to do 
+
+    cgen aeselect NameOfYourNewTest
+if you want to select this test to work in. run cgen aegenerate when necessary.
+<!--  
 //UserCode_Sectionprojecttests_end
 -->
 ## Declaring events in project
 <!--  
  //UserCode_Sectiondeclaringeventsinproject
+ -->
+ Every project needs to declare all events it will be using or will need to use. All depending libraries will automatically have the events they use be imported in. To include events, do so in your config project within"_GetEventsInLibrary" function.
+Here is an example of me includeing ButtonChanged event. the 2 means that I expect I will need no more than 2 instances of that event set to a pool.
+```csharp
+    protected override List<AEEvent> _GetEventsInLibrary()
+            {
+                return new List<AEEvent>() {
+                    ButtonChanged.Init(2) 
+                };
+            }
+```       
+
+<!--  
 //UserCode_Sectiondeclaringeventsinproject_end
 -->
 ## peripheral declaration
 <!--  
  //UserCode_Sectionperipheraldeclaration
+  -->
+Same as events, you need to declare the peripherals that your project will use. Do this in function _GetPeripheralsInLibrary. Here is an example from the blinky project that includes a gpio and a pwm peripheral
+```csharp
+	protected override List<AEHal> _GetPeripheralsInLibrary()
+    { 
+        return new List<AEHal>() {
+            PWMPERIPHERAL1.Init(Portenum.PortD, PinEnum.PIN12),
+            GPIOPERIPHERAL1.Init(Portenum.PortA, PinEnum.PIN1)
+        };
+    }
+```
+<!--  
 //UserCode_Sectionperipheraldeclaration_end
 -->
 ## Libraries project depends on
 <!--  
  //UserCode_Sectionlibrariesprojectdependson
+ -->
+You can easily import other libraries other people have created or that you created yourself. Do this in the _GetLibrariesIDependOn function. An exmple from the blinky project looks like this
+```csharp
+        protected override List<AEProject> _GetLibrariesIDependOn()
+        {
+            return new List<AEProject>() {
+            new commonAOs(),
+            new commonHalAOs()
+            };
+        }
+``` 
+Notice how here I use the commonAOs and the commonHalAOs library. Of course make sure the config files of libraries you depend on are also linked in the config project.
+
+<!--  
 //UserCode_Sectionlibrariesprojectdependson_end
 -->
 ## additional include and src files
 <!--  
  //UserCode_Sectionadditionalincludeandsrcfiles
+ -->
+Sometimes you want to include other 3rd party libraries like all header libraries like Eigen. You cant put all source files in the include directory so you might need to add additional header and source directories. For eigen, for example. I did so like this.
+ 
+
+```csharp
+	protected override List<string> _GetAnyAdditionalIncludeDirs()
+    {
+        return new List<string>() { "eigen3/Eigen", "matlab_common" , "Rot2EulAngle" , "Angle2Quat", "EllipseFit" };
+    }
+
+    protected override List<string> _GetAnyAdditionalSRCDirs()
+    {
+        return new List<string>() { "matlab_common", "Rot2EulAngle", "Angle2Quat", "EllipseFit" };
+    }
+``` 
+
+
+<!--  
 //UserCode_Sectionadditionalincludeandsrcfiles_end
+-->
+## write your own cmake for a project
+<!--  
+ //UserCode_Sectionwriteyourowncmakeforaproject
+ -->
+if you need to write you own custom cmake stuff for perhaps adding a third party c++ library that is not header only, or needs some cmake initialization, you can do so in the file 
+
+    AEConfigProjectUser.cmake
+located in the base directory of your project. For example, if you project is blinky, it will be located here
+
+    C:\AERTOSProjects\blinky\AEConfigProjectUser.cmake
+
+<!--  
+//UserCode_Sectionwriteyourowncmakeforaproject_end
+-->
+## the cmakegui for cmake options
+<!--  
+ //UserCode_Sectionthecmakeguiforcmakeoptions
+  -->
+the cmake gui is a way to aid in helping you select cmake options a project might need to run. It pops up automatically when you run reload cmake if you are missing some options that have not been selected yet. You can create your own cmake options in the AEConfigProjectUser.cmake file for a particular project like this 
+
+    Cgen_Option( 
+            NAME MY_CUSTOM_OPTION
+            DESCRIPTION "what environment is this AE application set in"
+            POSSIBLEVALUES MY_POSSIBLE_VALUE1 MY_POSSIBLE_VALUE2 MY_POSSIBLE_VALUE3
+            CONSTRICTS_LATER_OPTIONS
+    )
+
+the gui will automatically read this and represent your option  as a selection.
+
+<!-- 
+//UserCode_Sectionthecmakeguiforcmakeoptions_end
 -->
 
 

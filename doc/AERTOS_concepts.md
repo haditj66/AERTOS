@@ -2,6 +2,10 @@
 # AERTOS concepts
 <!--  
 //UserCode_Sectiona
+-->
+These AERTOS concepts abstract RTOS concepts into structures that an RTOS application may commonly use.
+
+<!--  
 //UserCode_Sectiona_end
 -->
 
