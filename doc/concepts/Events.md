@@ -72,24 +72,24 @@ Signals are events that have no data attached to it.  Non-signals are events tha
  //UserCode_Sectionpublishinganevent
  -->
 The API for publishing Events, signals are different. Also it is different depending on if you are publishing from an Interrupt or not. 
-### For events Not from Interrupt
+#### For events Not from Interrupt
 ---
 example
 ```csharp
-		ButtonChanged* evt = PoolManager->GetEvtFromPool<ButtonChanged>();
-		evt->ForButton = 0;
-		evt->isButtonWentDown = DOWN;
-		this->PublishEvt(evt);
+ButtonChanged* evt = PoolManager->GetEvtFromPool<ButtonChanged>();
+evt->ForButton = 0;
+evt->isButtonWentDown = DOWN;
+this->PublishEvt(evt);
 ```
 So you publish it from the AO instance. (this->). You need to grab an instance of an event from the pool.
 		
-### For signals Not from Interrupt
+#### For signals Not from Interrupt
 ---
 ```csharp
 this->PublishEvt(&Button3_Sig_Instance);	
 ```
 
-### For events from Interrupt
+#### For events from Interrupt
 ---
 ```csharp
 ButtonChanged* evt = PoolManager->GetEvtFromPoolFromISR<ButtonChanged>();
@@ -97,7 +97,7 @@ evt->ForButton = 0;
 evt->isButtonWentDown = DOWN;
 PublishSubscribeManager->PublishEvtFromISR(evt);
 ``` 
-### For signals from Interrupt
+#### For signals from Interrupt
 ---
 ```csharp
 PublishSubscribeManager->PublishEvtFromISR(&I2CRXCmplt1_Instance);
@@ -121,28 +121,28 @@ PublishSubscribeManager->PublishEvtFromISR(&I2CRXCmplt1_Instance);
 ---
 notice how for the example below, I add data ForButton and isButtonWentDown. these fields will be passed with whatever ButtonChanged event you publish.
 ```csharp
-    public class ButtonChanged : AEEventEVT<ButtonChanged>
-    {
-        public ButtonChanged() :
-            base("ButtonChanged",
-            "uint8_t ForButton;", "bool isButtonWentDown;"
-            )
-        { }
-    }
+public class ButtonChanged : AEEventEVT<ButtonChanged>
+{
+    public ButtonChanged() :
+        base("ButtonChanged",
+        "uint8_t ForButton;", "bool isButtonWentDown;"
+        )
+    { }
+}
 ```
 
 
 ### example of creating a signal 
 ---
 ```csharp
-      public class NameOfYourSignal: AEEventSignal<NameOfYourSignal>
-        {
-            public NameOfYourSignal() :
-                base("NameOfYourSignal",
-                ""
-                )
-            { }
-        }
+  public class NameOfYourSignal: AEEventSignal<NameOfYourSignal>
+    {
+        public NameOfYourSignal() :
+            base("NameOfYourSignal",
+            ""
+            )
+        { }
+    }
 ``` 
  <!--  
 //UserCode_Sectioncreateyourownevent_end

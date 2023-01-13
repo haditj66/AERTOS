@@ -3,7 +3,7 @@
 <!--  
 //UserCode_Sectiona
 -->
- In this example, you will learn how to create a simple AERTOS blinky project.
+ These are the components to creating an AERTOS project.
  <!--  
 //UserCode_Sectiona_end
 -->
