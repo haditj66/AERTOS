@@ -1,5 +1,4 @@
 
-
 # SPB
 <!--  
 //UserCode_Sectiona
@@ -82,6 +81,12 @@ These are represented by green blocks. Signal processing blocks (SPB) are simila
  -->
 You have the option to pass by reference or by copy when making an SPB channel. Choosing a pass-by-copy means that the count buffer will be it's own separate array of memory that the signal that flows into it will be copied into. 
 pass-by-reference means that the data from the inputting signal will not be copied to the count buffer. Instead the SPB will use the data of the inputting signal directly from its referenced address. Generally you would choose this if, for one the count buffer needs to be one, and two you feel that the inputting signal will not change or be written to within the SPB processing it. Remember that the same  signal can go to other SPBs. If any of those SPBs change the signal, you will get corrupt data. This is a good choice however if the inputting data has a very large size, and you want to save memory by not having to copy it to a count buffer.
+
+
+You can check rules for when you can pass by reference here
+![](https://github.com/haditj66/AERTOS/blob/master/doc/images/spb1_ref1.PNG) 
+![](https://github.com/haditj66/AERTOS/blob/master/doc/images/spb1_ref2.PNG) 
+
  <!--  
 //UserCode_Sectionpassbyreferenceorcopy_end
 -->
@@ -111,7 +116,10 @@ There are different styles a SPB can execute. A style of execution either
  - (ChainOfSPBsFromInterrupt): Entire chain executes within the same chain.
  - (EachSPBTask): Each SPB runs within it's own task. 
 It can be difficult to identify which style to choose. By default, if you do not know, just choose EachSPBTask. If you want to better the performance of your execution, you can look at the image below that  shows a guide into when you are able to choose ChainOfSPBsFromInterrupt. IMPORTANT NOTE: remember that when one spb has been chosen as ChainOfSPBsFromInterrupt, the entire chain must be the same style.
- ![Guide into when you are able to choose ChainOfSPBsFromInterrupt](https://github.com/haditj66/AERTOS/blob/master/doc/images/spb1.PNG) 
+ ![Guide into when you are able to choose ChainOfSPBsFromInterrupt](https://github.com/haditj66/AERTOS/blob/master/doc/images/spb2.PNG) 
+
+
+
 
  <!--  
 //UserCode_Sectionstyleofspbefficiencies_end
