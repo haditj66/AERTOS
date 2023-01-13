@@ -2,6 +2,9 @@
 # Target PC or embedded device
 <!--  
 //UserCode_Sectiona
+-->
+You can easily change the target your application will run on.
+<!--  
 //UserCode_Sectiona_end
 -->
 
@@ -23,6 +26,7 @@
     - [Target PC or embedded device](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/Target_PC_Or_Embed.md)
     - [AEHal](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/AEHal.md)
     - [Integration Testing Debugging](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/IntegrationTesting.md)
+    - [Unit Testing](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/UnitTesting.md)
 - [Example Projects](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Examples.md)
     - [Example blinky](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/blinky.md)
     - [Advanced Example Motor speed controller](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/motor_speed_controller.md)
@@ -43,6 +47,14 @@
 ## Overview
 <!--  
  //UserCode_Sectionoverview
+ -->
+To do this you just select your target from the drag down selection next to the start button.
+![](https://github.com/haditj66/AERTOS/blob/master/doc/images/target1.PNG)
+
+You can also create new targets for other devices.
+
+TODO: tutorial on how to do this.
+<!--  
 //UserCode_Sectionoverview_end
 -->
 

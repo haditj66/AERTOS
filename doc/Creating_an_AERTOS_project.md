@@ -26,6 +26,7 @@
     - [Target PC or embedded device](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/Target_PC_Or_Embed.md)
     - [AEHal](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/AEHal.md)
     - [Integration Testing Debugging](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/IntegrationTesting.md)
+    - [Unit Testing](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/UnitTesting.md)
 - [Example Projects](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Examples.md)
     - [Example blinky](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/blinky.md)
     - [Advanced Example Motor speed controller](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/motor_speed_controller.md)
@@ -172,7 +173,7 @@ Here is an example of me includeing ButtonChanged event. the 2 means that I expe
  //UserCode_Sectionperipheraldeclaration
   -->
 Same as events, you need to declare the peripherals that your project will use. Do this in function _GetPeripheralsInLibrary. Here is an example from the blinky project that includes a gpio and a pwm peripheral
-```csharp
+```cpp
 	protected override List<AEHal> _GetPeripheralsInLibrary()
     { 
         return new List<AEHal>() {
@@ -181,6 +182,8 @@ Same as events, you need to declare the peripherals that your project will use. 
         };
     }
 ```
+A thing to note about declaring peripherals is that They do not carry over from depending libraries like events do. 
+
 <!--  
 //UserCode_Sectionperipheraldeclaration_end
 -->

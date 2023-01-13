@@ -2,6 +2,9 @@
 # Advanced Example Motor speed controller
 <!--  
 //UserCode_Sectiona
+-->
+Example project to building a motor speed controller.
+<!-- 
 //UserCode_Sectiona_end
 -->
 
@@ -23,6 +26,7 @@
     - [Target PC or embedded device](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/Target_PC_Or_Embed.md)
     - [AEHal](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/AEHal.md)
     - [Integration Testing Debugging](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/IntegrationTesting.md)
+    - [Unit Testing](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/UnitTesting.md)
 - [Example Projects](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Examples.md)
     - [Example blinky](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/blinky.md)
     - [Advanced Example Motor speed controller](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/motor_speed_controller.md)
@@ -43,6 +47,12 @@
 ## Overview
 <!--  
  //UserCode_Sectionoverview
+ -->
+ TODO: is to flesh this out more. For now you can take a look at the project directly by selecting it in ```cgen aeselect MotorDriverEncoder defaultTest```
+
+Here is the project diagram.
+![](https://github.com/haditj66/AERTOS/blob/master/doc/images/speedcontrol1.PNG)
+<!--  
 //UserCode_Sectionoverview_end
 -->
 

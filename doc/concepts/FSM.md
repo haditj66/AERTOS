@@ -1,5 +1,4 @@
 
-
 # Finite State Machine
 <!--  
 //UserCode_Sectiona
@@ -27,6 +26,7 @@ Finite state machines are a common pattern used in many software architectures.
     - [Target PC or embedded device](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/Target_PC_Or_Embed.md)
     - [AEHal](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/AEHal.md)
     - [Integration Testing Debugging](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/IntegrationTesting.md)
+    - [Unit Testing](https://github.com/haditj66/AERTOSCopy/blob/master/doc/concepts/UnitTesting.md)
 - [Example Projects](https://github.com/haditj66/AERTOSCopy/blob/master/doc/Examples.md)
     - [Example blinky](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/blinky.md)
     - [Advanced Example Motor speed controller](https://github.com/haditj66/AERTOSCopy/blob/master/doc/example/motor_speed_controller.md)
@@ -153,6 +153,7 @@ Here is an example of the Config ui FSM that is the substatemachine of BlindsUIT
         }
     }
 ```    
+After you aergenerate your FSMs, go to the respective file in AERTOS and fill in the user sections. You'll notice that the event callbacks are in switch statements (performance reasons).
 <!--  
 //UserCode_Sectioncreateyourownfsm_end
 -->
