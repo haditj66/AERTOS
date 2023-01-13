@@ -235,11 +235,11 @@ template<>
 	{
 		memcpy(dest, &source, size);
 	}
-template<>
-	inline void ArrayCheckToMemCopy<int>::AEMemcpy(void* dest, int source, uint32_t size)
-	{
-		memcpy(dest, &source, size);
-	}
+//template<>
+//	inline void ArrayCheckToMemCopy<int>::AEMemcpy(void* dest, int source, uint32_t size)
+//	{
+//		memcpy(dest, &source, size);
+//	}
 
 
 

@@ -19,7 +19,7 @@ inline bool AEI2C::WriteBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, 
 	} 
 	
 	//trigger fake itnerrupt?
-	this->AE_I2C_MasterTxCpltCallback();
+	this->AE_I2C_MasterTxCpltCallback(this);
 	
 	return true;
 }
@@ -37,7 +37,7 @@ inline int8_t AEI2C::ReadBytes(uint8_t devAddr, uint8_t length, uint8_t *pdata, 
 	//for (uint8_t i = 0; i < length; i++) { pdata[i] = I2Cbuffer22[i]; }
 
 	//trigger fake itnerrupt?
-	this->AE_I2C_MasterRxCpltCallback();
+	this->AE_I2C_MasterRxCpltCallback(this);
  
 	return 1;
 }
