@@ -39,6 +39,8 @@ AERTOS is a framework and development environment for writing RTOS applications 
 
 - [Example](#example)
 
+- [License](#license)
+
 
 
 <!--  
@@ -101,6 +103,15 @@ Below is how you would configure this setup.  It is done in an intuitive c# api.
 
  <!--  
 //UserCode_Sectionexample_end
+-->
+## License
+<!--  
+ //UserCode_Sectionlicense
+ -->
+ AERTOS is an open source GPLv3. However dual-licensing for commerial use is available. 
+ Contact this email address for enquiries: haditjuta@gmail.com
+ <!--  
+//UserCode_Sectionlicense_end
 -->
 
 
