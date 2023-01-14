@@ -45,6 +45,8 @@ Signal processing blocks (SPB) are blocks that take signals, potentially buffer 
 
 - [style of spb efficiencies](#style-of-spb-efficiencies)
 
+- [subscribe to the output of spb](#subscribe-to-the-output-of-spb)
+
 - [create your own spb](#create-your-own-spb)
 
 
@@ -124,6 +126,20 @@ It can be difficult to identify which style to choose. By default, if you do not
 
  <!--  
 //UserCode_Sectionstyleofspbefficiencies_end
+-->
+## subscribe to the output of spb
+<!--  
+ //UserCode_Sectionsubscribetotheoutputofspb
+ -->
+ If you have an AO that need the data of the output to an SPB but does not need to have the data signal flow to it, you can subscribe to the output.
+example in the config file.
+```cpp
+SomeAO.SubscribeToSPB(someSPBToSubscribeTo, "CurrentPosition", 0);
+```
+The zero there indicates the filter number it wants to subscribe to. in this case no filter is chosen. The CurrentPosition is a float class member of the subcribing AO. This field will automatically be written to from the subscribed SPB.
+
+ <!--  
+//UserCode_Sectionsubscribetotheoutputofspb_end
 -->
 ## create your own spb
 <!--  
