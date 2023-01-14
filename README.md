@@ -3,7 +3,7 @@
 <!--  
 //UserCode_Sectiona
  -->
-AERTOS is a framework and development environment for writing RTOS applications on embedded devices. can be thought of as a sort of Arduino but for RTOS applications. It uses visual programming to aid you with rapid prototyping, even if you are not a very experienced programmer. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
+AERTOS is a framework and development environment for writing RTOS applications on embedded devices. It can be thought of as a sort of Arduino but for RTOS applications. It uses visual programming to aid you with rapid prototyping, even if you are not a very experienced programmer. Currently only supports stm32F4 boards but can be easily ported to be used on almost any dev board that supports FREERTOS.
 <!--  
 //UserCode_Sectiona_end
 -->
