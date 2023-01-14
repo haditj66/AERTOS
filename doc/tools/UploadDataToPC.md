@@ -3,7 +3,7 @@
 <!--  
 //UserCode_Sectiona
 -->
-This tool allows you to stream data via uart from an SPB or a utility directly to a matlab or test file on your PC.
+This tool allows you to stream data via uart from a SPB or a utility directly to a matlab or test file on your PC.
 <!-- 
 //UserCode_Sectiona_end
 -->
@@ -76,7 +76,7 @@ To initialize the SPB you can do this
 ```cpp
 var dataToPC_SPB = DataToPC_SPB.GetDataToPC_SPB("dataToPC_SPB", StyleOfSPB.EachSPBTask, uploadDataToPcU);
 ```
-Now this is for 3 variable streaming SPB. because the uploadDataToPcU instance was for 3 variables.
+Now this is for 3 variable streaming SPB because the uploadDataToPcU instance was for 3 variables.
 
 
 <!-- 
