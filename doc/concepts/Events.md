@@ -72,7 +72,7 @@ Signals are events that have no data attached to it.  Non-signals are events tha
 <!--  
  //UserCode_Sectionpublishinganevent
  -->
-The API for publishing Events, signals are different. Also it is different depending on if you are publishing from an Interrupt or not. 
+The API for publishing Events and signals are different. Also it is different depending on if you are publishing from an Interrupt or not. 
 #### For events Not from Interrupt
 ---
 example
