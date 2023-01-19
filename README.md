@@ -67,7 +67,7 @@ Below is how you would configure this setup.  It is done in an intuitive c# api.
 ```csharp 
             AEClock aEClock1 = new AEClock("clock1", 1000);
             AEClock aEClock2 = new AEClock("clock2", 500);
-            AESensor sensor1 = new AESensor("Ultraviolet", ADC1);
+            AESensor sensor1 = new AESensor("Ultrasound", ADC1);
             AESensor sensor2 = new AESensor("Rotational", ADC2); 
 
 
