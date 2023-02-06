@@ -69,7 +69,7 @@ You do that in the created Loopobject header file. In the StartAOLoopObject func
 	
 	void Button1_Callback(AEEventDiscriminator_t* evt )
 	{
-		
+		Button1* msglora = AE_CastEvent(Button1*);
 	}
 ```
 in that scenario, Button1 is the event name, AELoopObject1Test is the name of the LoopObject, and Button1_Callback is the callback function you want to trigger when that event is called.
