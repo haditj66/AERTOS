@@ -11,7 +11,9 @@
 
 AEAO const * AEAO::AllAO[NUMOFACTIVEOBJECTS] = {};
 uint16_t AEAO::idIndex = 0;
+bool AEAO::AERTOSStarted = false;
 uint16_t AEAO::AOIDsInOrderOfPriorities[NUMOFACTIVEOBJECTS] = {};
+
 
 
 AEAO::AEAO()  
@@ -184,6 +186,8 @@ void AEAO::ConfigureAndStart()
 	{
 		AEPrint("ssvsc %d", 1);
 	}
+	AERTOSStarted = true;
+	
 	vTaskStartScheduler();//12000
 }
 

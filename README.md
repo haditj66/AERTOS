@@ -1,4 +1,4 @@
-![enter image description here](https://github.com/haditj66/AERTOSCopy/blob/master/doc/images/logosmall1.PNG)
+
 # AERTOS
 <!--  
 //UserCode_Sectiona

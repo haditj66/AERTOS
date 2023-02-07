@@ -144,9 +144,11 @@ protected:
 
 		AE_UpdateALLWritableVariables
 
-		this->isCurrentlyExecuting = true;
-		Update();
-		this->isCurrentlyExecuting = false;
+//		this->isCurrentlyExecuting = true;
+		AEEventDiscriminator_t* ptrToUpdate = &AEEventDiscriminator_t::UpdateEvtInstance;
+		xQueueSendToBack(this->queueExecuteForEvt, &ptrToUpdate, 0);
+//		Update();
+//		this->isCurrentlyExecuting = false;
 	}
 	
 	 
@@ -281,24 +283,44 @@ protected:
 		{
 			xQueueReceive(this->queueExecuteForEvt, &evt, portMAX_DELAY);
 				
+			AEAssertRuntime(uxQueueSpacesAvailable(queueExecuteForEvt) > 1, "queue for your AEObject has filled. This should never happen. Your implementaions in update or event callbacks are too long. or your udpate frequency is too fast.");
+			
 			auto evtID = evt->GetEvtID();
-				
-				
-			//go through all EventLoopCallBack and check
-			EventLoopCallBack_t callbackForEvt;
-			xSemaphoreTake(MutexForSubbing, portMAX_DELAY);
-			for (size_t i = 0; i < ProjectEventSignals::_MAX_NumOfAllEvents; i++)
+			
+			if (evtID == AEEventDiscriminator_t::UpdateEvtInstance.GetEvtID())
 			{
-				if (evtID == EventLoopCallBack[i].ToEventID)		
-				{
-					callbackForEvt = EventLoopCallBack[i].CallbackToCall;
-					break;
-				} 
+				this->isCurrentlyExecuting = true;
+				Update();
+				this->isCurrentlyExecuting = false;
+				 
 			}
-			xSemaphoreGive(MutexForSubbing);
+			else
+			{
+				//go through all EventLoopCallBack and check
+				EventLoopCallBack_t callbackForEvt;
+				xSemaphoreTake(MutexForSubbing, portMAX_DELAY);
+				for (size_t i = 0; i < ProjectEventSignals::_MAX_NumOfAllEvents; i++)
+				{
+					if (evtID == EventLoopCallBack[i].ToEventID)		
+					{
+						callbackForEvt = EventLoopCallBack[i].CallbackToCall;
+						break;
+					} 
+				}
+				xSemaphoreGive(MutexForSubbing);
 				
-			//call the callback
-			callbackForEvt(evt, this);
+				//call the callback
+				callbackForEvt(evt, this);	
+				
+				
+				if (evt->type == 1)
+				{
+					evt->evt->DecrementRefCounter();
+				}
+			}
+			
+				
+
 				
 		}
 

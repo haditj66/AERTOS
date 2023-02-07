@@ -74,6 +74,8 @@ public:
 	static void ConfigureAndStart();
 
 	
+	static bool GetAERTOSStarted()  {return AERTOSStarted;}
+	
 
 	//stufffor different AO -------------------------------
 	/*template <class Tevt>
@@ -91,6 +93,7 @@ protected:
 
 	AEAO();
 
+	static bool AERTOSStarted;
 	
 
 	virtual void CheckIfConfiguredProperly() const {

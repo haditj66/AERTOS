@@ -25,6 +25,7 @@ class AEEventBase
 	friend class AEPoolManager;
 	friend class AEAO;
 	friend class AEPublishSubscribeManager;
+	friend class AELoopObject;
 	friend class AEEventListener;
 	template<TemplateFor_SimpleFSM_NoDefaults>
 	friend class AESimpleFSM;

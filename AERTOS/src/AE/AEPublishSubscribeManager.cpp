@@ -148,6 +148,8 @@ void AEPublishSubscribeManager::GaurdTaskForSubAndPub(void * pvParameters)
 void AEPublishSubscribeManager::PublishEvtFromISR(AEEventBase * evt)
 {
 	
+	AEAssertRuntime(AEAO::GetAERTOSStarted() == true, "AERTOS has not been started but you tried to publish something via PublishEvtFromISR. This is not allowed");
+	
 	// I need to get the AEEventDiscriminator_t from evt
 	ThreeIntAndAEEvtBasePtr* publishArgs =
 		ThreeIntAndAEEvtBasePtr::GetFromPool(0, 0xffff, 2, PoolManager->EventPoolsDisc[evt->EvtId][evt->poolId]);
@@ -163,6 +165,8 @@ void AEPublishSubscribeManager::PublishEvtFromISR(AEEventBase * evt)
 
 void AEPublishSubscribeManager::PublishEvtFromISR(AEEventDiscriminator_t * evt)
 {
+	
+	AEAssertRuntime(AEAO::GetAERTOSStarted() == true, "AERTOS has not been started but you tried to publish something via PublishEvtFromISR. This is not allowed");
 
 	// I need to get the AEEventDiscriminator_t from evt
 	ThreeIntAndAEEvtBasePtr* publishArgs = ThreeIntAndAEEvtBasePtr::GetFromPool(0, 0xffff, 2, evt);
@@ -201,6 +205,8 @@ bool AEPublishSubscribeManager::IsAOSubscribedToEvent(uint16_t AOID, uint16_t ev
 void AEPublishSubscribeManager::PublishEvt(ThreeIntAndAEEvtBasePtr* AddingsubscriberArgs)
 {
 
+	AEAssertRuntime(AEAO::GetAERTOSStarted() == true, "AERTOS has not been started but you tried to publish something via PublishEvtFromISR. This is not allowed");
+	
 	//from that event, tell all subscribed AO to execute that the event by passing it the shared pointer event std::shared_ptr<AEEventBase>
 	uint16_t numOfReferences = 0;
 	uint16_t evtId = AddingsubscriberArgs->Arg4->GetEvtID();

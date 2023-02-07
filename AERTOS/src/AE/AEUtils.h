@@ -1039,7 +1039,26 @@ inline void _AELogTimer(PerfElapsed_t duration, const char* FileNameToWriteTo)
 #define AE_GET_LAST_BITS(VarToGetBits, ThisManyBitsFromLast) ((VarToGetBits) & ((1<<(ThisManyBitsFromLast))-1))
 #define AE_GET_MID_BITS(VarToGetBits,FromBit,ToBit) AE_GET_LAST_BITS((VarToGetBits)>>(FromBit),((ToBit)-(FromBit)))
 
-
+	
+static std::string AE_convertToString(char* a, int size)
+{
+	int i;
+	std::string s = "";
+	for (i = 0; i < size; i++) {
+		s = s + a[i];
+	}
+	return s;
+}
+	
+static std::string AE_convertToString(const char* a, int size)
+{
+	int i;
+	std::string s = "";
+	for (i = 0; i < size; i++) {
+		s = s + a[i];
+	}
+	return s;
+}
 
 
 static float AE_Map(float valueToMap, float lowerBoundOfMapFROM, float UpperBoundOfMapFROM, float lowerBoundOfMapTO, float UpperBoundOfMapTO)

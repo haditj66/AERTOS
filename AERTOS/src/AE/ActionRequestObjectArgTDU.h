@@ -581,7 +581,7 @@ inline bool ActionRequestObjectArgTDU3<TemplateForActionArgTDU_Args3>::WaitForEv
 
 	//after being, give semaphore back and unsubscribe
 	PublishSubscribeManager->_UnSubscribeToEvt(Tevt, this->AOID_OfResource);
-
+	return true;
 }
 
 

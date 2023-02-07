@@ -24,38 +24,137 @@ class AEUART
 public:
 	AEUART() {
 		_RxCpltCallback_t = [](char* msgReceived, uint32_t sizeOfReceivedMsg) -> void {};
-		_TxCpltCallback_t = []( ) -> void {};
+		_TxCpltCallback_t = []() -> void {};
+		
+
 	}
 	;
 	
+	void TansmitMsg(char const*  msg, uint32_t size)
+	{
+		rxBlocking = true;
+		_TansmitMsg(msg, size);
+	}
+	void _TansmitMsg(char const*  msg, uint32_t size);
+	bool GetIsStateIsBusy() const;
 	
-	void TansmitMsg(char const*  msg, uint32_t size);
- 
+	///this shouldnt be called in normal circumstances as this is NOT THREAD SAFE
+	const char* ReceiveMsgBlocking()
+	{
+		
+		while (GetIsStateIsBusy() == true || rxBlocking == true)
+		{ 
+		}
+		
+		return this->_bufferBeforeTriggeringCallback;
+	}
+	   
+	std::string ReceiveMsgBlocking_String()
+	{  
+		return AE_convertToString(ReceiveMsgBlocking(), RxSizeOfPreviousReceivedMsg) ;
+	}
 
 	
 	void SetRxCpltCallback(AE_UART_RxCpltCallback_t rxCpltCallback_t) {_RxCpltCallback_t = rxCpltCallback_t; }
 	void SetTxCpltCallback(AE_UART_TxCpltCallback_t txCpltCallback_t) {_TxCpltCallback_t = txCpltCallback_t; }
 	 
 
-	void Init(UART_Handle* uartHandle, char* const readBuffer, uint32_t receiveMsgSize) {
+	void Init(UART_Handle* uartHandle, char* const readBuffer, uint32_t receiveMsgSize, char* bufferBeforeTriggeringCallback) {
 		_uartHandle = uartHandle;
 		_ReadBuffer = readBuffer;
 		_ReceiveMsgSize = receiveMsgSize;
+		_ReceiveMsgSizeMax = receiveMsgSize;
+		_bufferBeforeTriggeringCallback = bufferBeforeTriggeringCallback;
 		
+		isDelimiterTriggered = false;
+		delimiter = '\n'; 
+		counter = 0;
 		
+		rxBlocking = false;
+		
+		memset(_bufferBeforeTriggeringCallback, '\0', _ReceiveMsgSizeMax);
 		
 	}
 	;
 	
-	AE_UART_RxCpltCallback_t _RxCpltCallback_t;
+	void RecieveOnDelimiter(char theDelimiter)
+	{
+		isDelimiterTriggered = true;
+		delimiter = theDelimiter;
+		counter = 0;
+	}
+	
+	void RecieveOnMsgSize(int32_t theSize)
+	{
+		//any new sizes needs to be less than the largest size possible
+		AEAssertRuntime(theSize < _ReceiveMsgSizeMax, "RecieveOnMsgSize needs to be a size less than _ReceiveMsgSizeMax");
+		
+		isDelimiterTriggered = false;
+		_ReceiveMsgSize = theSize;
+		counter = 0;
+	}
+	
+	void RXDataCallback()
+	{ 
+		
+		_bufferBeforeTriggeringCallback[counter] =  _ReadBuffer[0]; counter++;
+		if (counter >= _ReceiveMsgSize)
+		{
+			rxBlocking = false; 
+			RxSizeOfPreviousReceivedMsg = counter;
+			counter = 0;
+			_RxCpltCallback_t(_bufferBeforeTriggeringCallback, RxSizeOfPreviousReceivedMsg); //(foruart->_ReadBuffer, 1);// foruart->_ReceiveMsgSize);
+			
+			
+			//clear the buffer
+			memset(_bufferBeforeTriggeringCallback, '\0', counter);
+			return;
+		 
+		}
+		 
+		if (isDelimiterTriggered == true)
+		{	 
+			if (_ReadBuffer[0] == delimiter)
+			{
+				rxBlocking = false;
+				RxSizeOfPreviousReceivedMsg = counter;
+				counter = 0;
+				_RxCpltCallback_t(_bufferBeforeTriggeringCallback, RxSizeOfPreviousReceivedMsg);
+				 
+				//clear the buffer
+				memset(_bufferBeforeTriggeringCallback, '\0', counter); 
+				return;
+			}
+			
+		}
+ 
+	}
+	
 	AE_UART_TxCpltCallback_t _TxCpltCallback_t;
+	
+
 	
 	char* _ReadBuffer;
 	uint32_t _ReceiveMsgSize;
 	
+	uint32_t GetRxSizeOfPreviousReceivedMsg() const{ return RxSizeOfPreviousReceivedMsg;}
+	uint32_t GetMaxReceivedMsgSize() const{ return _ReceiveMsgSizeMax;}
+	
 	UART_Handle* _uartHandle;
 private: 
 	
+	AE_UART_RxCpltCallback_t _RxCpltCallback_t;
+	 
+	uint32_t _ReceiveMsgSizeMax;
+	
+	bool rxBlocking;
+	bool isDelimiterTriggered;
+	char delimiter;
+	
+	char* _bufferBeforeTriggeringCallback;
+	
+	uint32_t counter;
+	uint32_t RxSizeOfPreviousReceivedMsg;
 }
 ;
  
@@ -78,50 +177,51 @@ template<templateForUART>
 		NumOFPinsNeeded,
 		UART_Handle,
 		templateargsForHardware>
-{
+	{
 		
-	friend void AE_Init(void);
+		friend void AE_Init(void);
 		
-	friend class AEUART;
-public:
+		friend class AEUART;
+	public:
 		
 		
 		
 #ifdef USING_AEDMA 
-	AEDMA dmaForUART;
+		AEDMA dmaForUART;
 #endif  
 	
-	char readBuffer[ReceiveMsgSize];
+		char readBuffer[1]; //[ReceiveMsgSize];
+		char bufferBeforeTriggeringCallback[ReceiveMsgSize]; //[ReceiveMsgSize];
 	
 
  
-protected:
-	Port_t UART_Port;
-	Pin_t  UART_Pin;
-	Port_t TX_Port;
-	Pin_t  TX_Pin;
-	Port_t RX_Port;
-	Pin_t  RX_Pin;
+	protected:
+		Port_t UART_Port;
+		Pin_t  UART_Pin;
+		Port_t TX_Port;
+		Pin_t  TX_Pin;
+		Port_t RX_Port;
+		Pin_t  RX_Pin;
 		
-	AEUART InstanceOfUart;
+		AEUART InstanceOfUart;
 
 
 
 
 
-	// Inherited via HardwarePeripheral 
-	void _InitializePinSelectors(CreateTypeSelector_funcPtr(&functPtrsToChangeTypeSelectorss)[2]) override;
+		// Inherited via HardwarePeripheral 
+		void _InitializePinSelectors(CreateTypeSelector_funcPtr(&functPtrsToChangeTypeSelectorss)[2]) override;
 
  
 
-	// Inherited via HardwarePeripheral
-	void _Initialize(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)override;
+		// Inherited via HardwarePeripheral
+		void _Initialize(Port_t port1, Pin_t pin1, Port_t port2, Pin_t pin2, Port_t port3, Pin_t pin3, Port_t port4, Pin_t pin4, Port_t port5, Pin_t pin5)override;
 		
-	AEUART* GetPeripheralInstance(){ this->InstanceOfUart.Init((&this->PeripheralHandle_t), readBuffer, ReceiveMsgSize); return &InstanceOfUart;}
+		AEUART* GetPeripheralInstance(){ this->InstanceOfUart.Init((&this->PeripheralHandle_t), readBuffer, ReceiveMsgSize, bufferBeforeTriggeringCallback); return &InstanceOfUart;}
 		 
 
-}
-;
+	}
+	;
 	
 
 
@@ -134,7 +234,7 @@ protected:
 
 
 
- //global pheripherals declaration
+//global pheripherals declaration
 #ifdef UARTPERIPHERAL1
 extern UARTPERIPHERAL1* UARTPERIPHERAL1_Instance;  
 #define UARTPERIPHERAL1_INITIALIZE UARTPERIPHERAL1_Instance->ForWhichPeripheralNumber = 1; UARTPERIPHERAL1_Instance->initializePeripheral(); UARTPERIPHERAL1_Name = UARTPERIPHERAL1_Instance->GetPeripheralInstance();

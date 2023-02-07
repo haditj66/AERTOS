@@ -3,15 +3,15 @@
 ################################################
 
 
-set(INTEGRATION_TESTS blinky)
+set(INTEGRATION_TESTS loraTest)
 add_compile_definitions(INTEGRATION_TESTS__${INTEGRATION_TESTS})
-add_compile_definitions(INTEGRATION_TEST_CHOSEN="blinky")
-set(INTEGRATION_TESTS_FOR_blinky defaultTest)
-add_compile_definitions(INTEGRATION_TESTS_FOR_blinky__${INTEGRATION_TESTS_FOR_blinky})
+add_compile_definitions(INTEGRATION_TEST_CHOSEN="loraTest")
+set(INTEGRATION_TESTS_FOR_loraTest defaultTest)
+add_compile_definitions(INTEGRATION_TESTS_FOR_loraTest__${INTEGRATION_TESTS_FOR_loraTest})
 add_compile_definitions(INTEGRATION_TEST_CHOSEN_SPECIFIC="defaultTest")
 add_compile_definitions(CGEN_ALLOPTIONS="")
 
-set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOSProjects/blinky")
+set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOSProjects/loraTest")
 
 
 #macro(Target_Directory_Chooser)
@@ -24,8 +24,8 @@ set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOSProjects/blinky")
         #set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/hal/exeHalTest")
         #elseif(${_arg_TARGET_NAME} STREQUAL "AECoreTestEXE")
         #set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/AECoreTestEXE")
-        #elseif(${_arg_TARGET_NAME} STREQUAL "blinky")
-        #set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/blinky")
+        #elseif(${_arg_TARGET_NAME} STREQUAL "loraTest")
+        #set(INTEGRATION_TARGET_DIRECTORY "C:/AERTOS/AERTOS/src/AE/loraTest")
         #elseif(${_arg_TARGET_NAME} STREQUAL "CGENTest2")
         #set(INTEGRATION_TARGET_DIRECTORY "C:/CodeGenerator/CodeGenerator/macro2Test/CGENTest2")
         #endif()
