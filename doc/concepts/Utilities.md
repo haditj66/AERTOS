@@ -111,6 +111,11 @@ you can wait for events during your updates. Do this like this
 ```csharp
 bool eventreceived = request->WaitForEvent(this->evtToWaitFor, [](void* p, AEEventDiscriminator_t* evt)->void
 	   { //your callback of when the event is triggered.
+	   
+	   //you can case to your class to do things like this
+	   auto yourUtilityClass = static_cast<YourUtilityClass*>(p);
+	   yourUtilityClass->ActionReq4.SetReturnArg(false); 
+	   
 	   },1000);
 ```
 The timeout of 1000 means that it will move on after 1 second of waiting and eventreceived  will be false. You can also wait with multiple timeout callbacks before it fails. This means that it will trigger that callback X amount of times before it fails to wait. Do this like this

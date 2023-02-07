@@ -112,9 +112,10 @@ Make sure to reload cmake so the project updates in AERTOS after running this co
 <!--  
  //UserCode_Sectiontheconfigfile
  -->
- you will find your config file, which is a c# script, in the conf folder of you AERTOS project. To use it in your config project located here 
+ you will find your config file, which is a c# script, in the conf folder of you AERTOS project. To use it in your config project, located here 
 
      C:/AERTOSProjects/AAAConfigProj
+Open the solution in your config project, and add that config file to the project by "add existing item". Make sure to "add as link" (little arrow button next to add).
 
 <!--  
 //UserCode_Sectiontheconfigfile_end
